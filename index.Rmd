@@ -1,0 +1,97 @@
+---
+title: <center><font face="Baskerville Old Face">**Welcome to my site!**</font></center>
+---
+<style>
+img {
+  width: 140px;
+  float: left;
+  margin: 20px;
+}
+</style>
+
+
+<font face="Times New Roman" color=black size=5>
+
+Hello!
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm Harry. My family is from Beijing, China. I have just graduated from UMass Amherst in Mathematics.
+
+![](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Business_Photo_Small.png)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During my undergraduate study, I got in touch with R programming and RStudio. Now I'm using RStudio to do a lot of stuff other than programming, like writing $\LaTeX$, making beamer documents, taking notes, and constructing website.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Here's the [projects](Projects.html) that I did.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I engaged all sorts of [activities](Activity.html)!
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Want to know more [about me](About.html)? 
+
+</font>
+
+<script type="text/javascript">
+var caution=false
+function setCookie(name,value,expires,path,domain,secure) 
+{
+ var curCookie=name+"="+escape(value) +
+ ((expires)?";expires="+expires.toGMTString() : "") +
+ ((path)?"; path=" + path : "") +
+ ((domain)? "; domain=" + domain : "") +
+ ((secure)?";secure" : "")
+ if(!caution||(name + "=" + escape(value)).length <= 4000)
+ {
+ document.cookie = curCookie
+ }
+ else if(confirm("Cookie exceeds 4KB and will be cut!"))
+ {
+ document.cookie = curCookie
+ }
+}
+function getCookie(name) 
+{
+ var prefix = name + "="
+ var cookieStartIndex = document.cookie.indexOf(prefix)
+ if (cookieStartIndex == -1)
+ {
+ return null
+ }    
+ var cookieEndIndex=document.cookie.indexOf(";",cookieStartIndex+prefix.length)
+ if(cookieEndIndex == -1)
+ {
+ cookieEndIndex = document.cookie.length
+ }
+ return unescape(document.cookie.substring(cookieStartIndex+prefix.length,cookieEndIndex))
+}
+function deleteCookie(name, path, domain) 
+{
+ if(getCookie(name)) 
+ {
+ document.cookie = name + "=" + 
+ ((path) ? "; path=" + path : "") +
+ ((domain) ? "; domain=" + domain : "") +
+ "; expires=Thu, 01-Jan-70 00:00:01 GMT"
+ }
+}
+function fixDate(date) 
+{
+ var base=new Date(0)
+ var skew=base.getTime()
+ if(skew>0)
+ {
+ date.setTime(date.getTime()-skew)
+ }    
+}
+var now=new Date()
+fixDate(now)
+now.setTime(now.getTime()+365 * 24 * 60 * 60 * 1000)
+var visits = getCookie("counter")
+if(!visits)
+{
+ visits=1;
+}  
+else
+{
+ visits=parseInt(visits)+1;
+}  
+setCookie("counter", visits, now)
+document.write("Number of Visit: " + visits)
+</script>

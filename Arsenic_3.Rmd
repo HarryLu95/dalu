@@ -1,0 +1,124 @@
+---
+title: <center><font face="Baskerville Old Face">**Determination of arsenic in rice with the Hach EZ testkit - 2**</font></center>
+author:
+    <center><font face="Baskerville Old Face">Da Lu, Julian Tyson</font></center>
+    <center><font face="Baskerville Old Face">University of Massachusetts Amherst</font></center>
+date: <center><font face="Baskerville Old Face">Fall 2014 (December)</font></center>
+output: html_document
+---
+<div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
+<div id="back"><a href="Arsenic_Measurement.html"><i class="fa fa-undo" aria-hidden="true"></i></a></div>
+
+#<font face="Calibri" color=black size=5>**Abstract**</font>
+
+<font face="Calibri" color=black size=4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Experiments to extract arsenic from 500μg·kg^-1^ standard rice by using dialysis bag and to investigate the diffusion rate of arsenic (III) ion were performed. Arsenic species were quantified by both the Hach EZ testkit and atomic fluorescence spectrometer. The rice-outside-and-water-inside 50μg·L^-1^ test showed that the Hach test could only showed a result around 25μg·L^-1^ although the AFS's results was around 50μg·L^-1^. The second experiment showed that the longer the time, the higher the diffusion percentage.
+</font>
+
+#<font face="Calibri" color=black size=5>**1. Introduction**</font>
+
+<font face="Calibri" color=black size=4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arsenic has many toxic compounds which exhibit a range of toxicities; inorganic arsenic, in particular arsenite [As (III)], is one of the most toxic forms. As the toxicity of arsenic depends upon the chemical species, it is important to determine which chemical species are present in foodstuff in addition to the total arsenic concentration. Therefore, arsenic speciation has become standard practice throughout the world.^**1**^ For most people, besides the diet, usually there are smaller intakes of arsenic from drinking water and air.^**2**^ Among foods, some of the highest concentrations are found in fish and shellfish; however, this arsenic exists primarily as organic compounds, which are essentially nontoxic. Inorganic arsenic compounds (the most toxic form of arsenic) are the predominant forms in drinking water.^**2**^ The USFDA has been monitoring the levels of arsenic in foods for decades, and in 2011, increased its testing.^**3**^ Rice is a dietary staple in many countries and contributes to arsenic intake than any other Asian agricultural products.^**4**^ So, for that reason, people should know the amount of arsenic in their rice for a safe consumption.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Measuring the arsenic in rice had been done in many different ways. For example, one of the most precise ways is by using HPLC-ICP-MS. Raber et al reported an HPLC-ICP-MS method based on sample extraction with trifluoroacetic acid/H~2~O~2~, separation of three arsenic species, and measurement of arsenate by anion-exchange HPLC-ICP-MS using aqueous malonic acid as mobile phase.^**5**^  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using 80°C hot water is also well known for extracting arsenic from rice. After an hour's heating, take small amount of liquid and centrifuge for a long time. Then using 0.45μm filter to filtrate out the large molecules and inject only small amount (few micro-liter) of the clear solution into HPLC.^**6**^ Any procedure for extracting arsenic species from rice prior to HPLC separation would be suitable. But our final goal is performing the experiment in a kitchen with 50ml and without any centrifuge or 0.45μm filters.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However, according to previous work, the Hach testkit did not show a very high percentage result due to the interference of starch. So is there a method that could not only extract most of the arsenic but also reduce the effect of starch interference?  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Previously, many tests were done on the relationship between the color on the test strip and extraction from different starch concentration arsenic solution, and TFA extraction. Different concentration of starch solutions were made and added to the standard arsenic solution for the Hach test. The work showed that the color which appeared on the test strip got lighter than a normal standard test which meant that there were some factors influenced the reaction.^**7**^ It is necessary to find a method that could remove the interference of starch during the extraction and test. Results for experiments using dialysis are reported.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dialysis bag had been used for separating the big molecules from starch solution. Dialysis works on the principles of the diffusion of solutes and ultra-filtration of fluid across a semi-permeable membrane.^**8**^ A semi-permeable membrane is a thin layer of material that contains holes of various sizes, or pores. Smaller solutes and fluid pass through the membrane, but the membrane blocks the passage of larger substances.^**8**^ Today, dialysis tubing for laboratory applications comes in a variety of dimensions and molecular-weight cutoffs (MWCO).^**9**^  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;According to Fang Zhong’s group work, the rice starch has the molecular weight range between 60 to 130 million. The dialysis bag which our group used in lab could prevent most of the starch molecules go through the membrane.^**10**^  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The goal of the work reported in the paper is to investigate the possibility of separating the extracted arsenic species from the co-extracted starch by dialysis.
+</font>
+
+#<font face="Calibri" color=black size=5>**2. Experimental**</font>
+
+<font face="Calibri" color=black size=4>
+**2.1. Reagents and materials**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;500μg·kg^-1^ contaminated rice flour, Hach EZ testkit, D9777 SIGMA dialysis tubing cellulose membrane, 6% L-cysteine solution, concentrated nitric acid, 100mg·L^-1^ standard arsenic (III) solution, 1000μg·L^-1^ standard arsenic (III) solution.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D9777 SIGMA has a typical molecular weight cutoff at 14,000 and the diameter is 25mm.  
+**2.2. Instrumentation**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hot plate, thermometer, atomic fluorescence spectrometer, glass rod, coffee grinder.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The atomic fluorescence spectrometer was a model Millennium Excalibur, (PS Analytical, Deerfield Beach, FL, USA), with a built in Permapure dryer system (part number M025D002) and a gas-liquid separator (part number M055G003). The instrument was modified so that the flame was sustained by hydrogen from a cylinder rather than from the reaction of excess borohydride with acid in the continuous flow mode that is the normal operating procedure. Hydrogen gas was introduced through Teflon tubing into the system by merging with the purging argon gas before they were introduced into the gas-liquid separator. The hydrogen flow rate was controlled by a needle valve (Swagelok, Cleveland, US) and measured by a soap-bubble flow meter. The operating conditions are given in <font color=red>Table 1</font>. Operation was controlled by Sams software (PS Analytical), which also recorded the signal. Further data processing was done with Microsoft Excel.^**11**^  
+**2.3. Procedure**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Make standard 500μg·kg^-1^ contaminated rice and flour**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GOYA rice (420g) was weighted out into a 1L beaker and washed for 20 times to remove the surface starch. Each washing was using about 800ml water and a glass rod was used for stirring the mixture for 30s. After washing, water was added to the rice until the rice surface was just covered by the water. 2.1ml of 100mg·L^-1^ As (III) solution was added. The mixture was stirred by glass rod for 30s to let the arsenic evenly distributed. Each time before extracting, the required amount of 500μg·kg^-1^ rice grain was taken out and ground to flour in a coffee grinder for 30s.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Visual evaluation of movement of ions across the membrane**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cation: A CuSO~4~ solution had been made no matter the concentration was so that the color was clearly visible. 100ml water was heated to 80°C in a 250ml beaker and the temperature was kept at around 80°C. Two 30cm dialysis bags which had already tied one end ware prepared. One bag was added 20ml CuSO~4~ solution and the other was added 20ml water. The other ends of both of the bag were tied on the glass rod. Two bags were put into the beaker and heated for 2 hours. Then the beaker was cooled for 24h.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anion: A KMnO~4~ solution had been made no matter the concentration was so that the color was clearly visible. 100ml water was heated to 80°C in a 250ml beaker and was kept at around 80°C. One 30cm dialysis bag which had already tied one end was prepared. The bag was added 20ml KMnO~4~ solution. The other end of the bag was tied on the glass rod and the bag was put into the beaker and heated for 2 hours. Then the beaker was cooled for 24h.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**The rice-inside-and-water-outside 25μg·L^-1^ test**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In order to get a theoretical 25μg·L^-1^ solution from the·500μg kg^-1^ rice, 10g of rice flour was used. Each 2g of flour was put into a 10cm tied-two-end dialysis bag with 5ml of water for moisture. From Narukawa's result, 80°C hot water was chosen for the extraction. 175ml water was heated to 80°C in a 250ml beaker and the temperature was kept at around 80°C. 5 bags of moist rice flour was put into the beaker and heated for 2h.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**The rice-outside-and-water-inside 25μg·L^-1^ test**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rather than putting rice flour in the bags, this design was putting rice flour outside the bag and water inside bags. Each section of dialysis bag was 30cm with one end tied. 20ml of water was added to the bag and the other end of the bag was tied on the glass rod. 4 more bags were made as before. 100ml water was heated to 80°C in a 250ml beaker and the temperature was kept at around 80°C. 10g of 500μg·kg^-1^ rice flour was added to the beaker and a glass rod was used to let the rice flour distribute evenly. Then the group of 5 bags of water was put into the beaker which the surfaces of water inside the bags were lower than the surface outside. The apparatus was heated 2h at 80°C and cooled down for 20h a day for three days. Water was added while heating to keep the total volume 200ml.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**The rice-outside-and-water-inside 50μg·L^-1^ test**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The only difference between the previous one was that the experiment used 20g of 500μg·kg^-1^ rice flour rather than 10g. Some solutions from the bag which did not ran the test was sampled as bag 4, bag 5-1, and bag 5-2.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**The rate of arsenic ion transport test**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100ml of water was heated to 80°C in a 250ml beaker and 1ml of 100mg·L^-1^ As (III) solution was added into the beaker. Five tied one end 30cm dialysis bag were prepared. 20ml of water was added to each bag. The other end of each bag was tied on the glass rod and the five bags were put into the 1000μg·L^-1^ arsenic solution. The temperature was kept at about 80°C and after each 20min, bag 1 was taken out to take about 6ml from it to a vessel and pored the left solution back. Repeat that until all 5 bags were done. The second bag was sampled after 40min; the third bag was sampled after 60min; the fourth bag was sampled after 80min; the fifth bag was sampled after 100min.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Standard solutions and samples were prepared which are shown in Table 1.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The standards and samples were run in the atomic fluorescence spectrometer.
+</font>
+
+#<font face="Calibri" color=black size=5>**3. Results and Discussion**</font>
+
+<font face="Calibri" color=black size=4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Make standard 500μg·kg^-1^ contaminated rice and flour**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The reason that kept the rice grain in the beaker and ground it before use was that the inorganic As (III) was hard to be oxidized to As (V) in rice grain but easy in powder state.<font color=red>^**12**^</font>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Visual evaluation of movement of ions across the membrane**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cation: The color of the water in the beaker was getting blue during heating. After a day, all the three parts were in the same color. It showed that cation can diffusion in and out of the dialysis bag easily.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anion: The color of the water in the beaker was getting pink during the first 15min. After that, the color inside and outside the bag became red. After a day, the color inside the bag was dark red but not purple any more. The color in the beaker was still pale red which was nearly not change compared to 1 day ago. The reason maybe that KMnO~4~ was reduced by the heating and formed precipitate and the precipitate which could not be seen blocked the holes of the membrane. Need to repeat this experiment with acidified solution.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**The rice-inside-and-water-outside 25μg·L^-1^ test**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The color on the test strip was corresponded to about 10μg·L^-1^ after 20min test. And the color was corresponded to about 10 to 25μg·L^-1^ after 40min. Also, some of the rice flour was still dry in the bag because the outer moist layer prevented water keep going in.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**The rice-outside-and-water-inside 25μg·L^-1^ test**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The color on the test strip for both 20min and40 min test were on the range between 10 to 25μg·L^-1^.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**The rice-outside-and-water-inside 50μg·L^-1^ test**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The color on the test strip for both 20min and 40min test were on the range between 10 to 25μg·L^-1^. However, the AFS results were very close to 50μg·L^-1^ which shown that the extraction was successful but there was some problems with on the Hach test.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**The rate of arsenic ion transport test**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The instrument was calibrated with the standards and the samples were analyzed. The data are given in Table 2 and the plots of standards are shown in Figure 1.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The data of the sample showed an increasing tendency of the arsenic concentration in the bag which meant that extraction percentage increased during time got longer.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Standard equation is $y=3.7279x-3.2799$ which $y$ is actual height and $x$ is concentration.
+</font>
+
+#<font face="Calibri" color=black size=5>**4. Conclusion**</font>
+
+<font face="Calibri" color=black size=4>
+**4.1. Improvement for the experiment**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1) For each extraction test, the bag would cost around 15 dollar each time. It is better to use shorter length to lower the cost. Also, it is not necessary to tie the second end on the glass rod. It could be just tied both end and put the whole bag into the water for a larger surface area.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) It should use less acid for preparing the standards and samples because the volume data were come from the group who wanted to dissolve the whole grain of rice. Acidify a clear solution does not need that much of acid.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3) Use a dialysis bag with smaller hole.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4) Use another colored compounds such as food dye or acid/base indicator for the movement of ions experiment.  
+**4.2. Further work need to do**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1) Find out the best ratio for water to starch. 5ml to 1g ratio was too thick and 10ml to 1g ratio seemed it could add more rice flour in.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) Find the best extracting time from the rate test.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3) Use solid-phase material in the bag to absorb arsenic.
+</font>
+
+#<font face="Calibri" color=black size=5>**5. Acknowledgement**</font>
+
+<font face="Calibri" color=black size=4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thanks Cassandra Martin for helping to do the AFS test for the samples.
+</font>
+
+<center><font face="Calibri" color=black size=4>**Table 1** The preparation of standards and samples</font></center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2001.png" width=70%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2001.png)</center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2002.png" width=70%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2002.png)</center>
+
+</br>
+
+<center><font face="Calibri" color=black size=4>**Table 2** samples of the rate of arsenic ion transport test</font></center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2003.png" width=90%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2003.png)</center>
+
+</br>
+
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2004.png" width=60%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2004.png)</center>  
+<center><font face="Calibri" color=black size=4>**Figure 1** Plots of standards. The x-axis is the concentration of standards and the y-axis is the actual height from AFS test.</font></center>
+
+#<font face="Calibri" color=black size=5>**6. References**</font>
+**1** Tyson, Julian. "The determination of arsenic compounds: a critical review." *ISRN Analytical Chemistry* 2013 (2013).  
+**2** Agency for Toxic Substances and Disease Registry (ATSDR). Toxicological Profile for Arsenic (Update). U.S. Public Health Service, U.S. Department of Health and Human Services, Atlanta, GA. 2007.  
+**3** USFDA. [Arsenic in Rice and Rice Products](http://www.fda.gov/food/foodborneillnesscontaminants/metals/ucm319870.htm). (accessed Feb 4, 2018)  
+**4** WHO, Joint FAO/WHO food standards programme, in: Proceedings of the Sixth Session of CODEX Committee on Contaminants in Foods, Maastricht, The Netherlands, 26-30 March2012.  
+**5** Raber, Georg, et al. "An improved HPLC-ICPMS method for determining inorganic arsenic in food: application to rice, wheat and tuna fish." *Food chemistry* 134.1 (2012): 524-532.  
+**6** Narukawa, Tomohiro, et al. "Extraction techniques for arsenic species in rice flour and their speciation by HPLC-ICP-MS." *Talanta* 130 (2014): 213-220.  
+**7** Lu, Da, and Julian Tyson. "Determination of arsenic in rice with the Hach EZ testkit."  
+**8** Berry, Lisa. "[Mosby’s Dictionary of Medicine, Nursing & Health Professions-Seventh edition](http://www.abebooks.com/Mosbys-Dictionary-Medicine-Nursing-Health-Professions/4249467019/bd)." (accessed Feb 4, 2018)  
+**9** Haney P, Herting K, Smith S. [Molecular weight cut-off (MWCO) specifications and rates of buffer exchange with Slide-A-Lyzer Dialysis Devices and Snakeskin Dialysis Tubing](https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-biology-learning-center/protein-biology-resource-library/protein-biology-application-notes/separation-characteristics-dialysis-membranes.html#/legacy=www.piercenet.com). *Thermo Fischer Scientific.* 2013; 4: 100. (accessed Feb 4, 2018)  
+**10** Zhong, Fang, et al. "Rice starch, amylopectin, and amylose: molecular weight and solubility in dimethyl sulfoxide-based solvents." *Journal of agricultural and food chemistry* 54.6 (2006): 2320-2326.  
+**11** Wang, Nan, and Julian Tyson. "Non-chromatographic speciation of inorganic arsenic by atomic fluorescence spectrometry with flow injection hydride generation with a tetrahydroborate-form anion-exchanger." *Journal of Analytical Atomic Spectrometry* 29.4 (2014): 665-673.  
+**12** <font color=red>Need to find the paper</font>

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 52px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+
+.section h2 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h3 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h4 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h5 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h6 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><font face="Algerian">Harry Lu</font></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="About.html">
+    <span class="fa fa-bars"></span>
+     
+    About Me
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-folder-open"></span>
+     
+    Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Projects.html">
+        <span class="fa fa-bars"></span>
+         
+        Summary
+      </a>
+    </li>
+    <li>
+      <a href="Forecasting_Stock_Value.html">
+        <span class="fa fa-book"></span>
+         
+        Forecasting Stock Value
+      </a>
+    </li>
+    <li>
+      <a href="Arsenic_Measurement.html">
+        <span class="fa fa-book"></span>
+         
+        Arsenic Measurement
+      </a>
+    </li>
+    <li>
+      <a href="Amazon_s_Secret.html">
+        <span class="fa fa-book"></span>
+         
+        Amazon's Secret
+      </a>
+    </li>
+    <li>
+      <a href="Outlier_Detection.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Outlier Detection
+      </a>
+    </li>
+    <li>
+      <a href="Interactive_Web_App.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Interactive Web App
+      </a>
+    </li>
+    <li>
+      <a href="Web_Data_Wrangling.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Web Data Wrangling
+      </a>
+    </li>
+    <li>
+      <a href="Birds_Breeding_Pairs.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Birds Breeding Pairs
+      </a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Activity.html">
+    <span class="fa fa-star"></span>
+     
+    Activities
+  </a>
+</li>
+<li>
+  <a href="Gallery.html">
+    <span class="fa fa-picture-o"></span>
+     
+    Gallery
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore"><center>
+<font face="Baskerville Old Face">Notes</font>
+</center></h1>
+<h4 class="date"><em><center>
+<font face="Baskerville Old Face">2018-02-05</font>
+</center></em></h4>
+
+</div>
+
+
+<div id="backhome">
+<a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+</div>
+<div id="back">
+<a href="About.html"><i class="fa fa-undo" aria-hidden="true"></i></a>
+</div>
+<div id="i-rmarkdown" class="section level1">
+<h1><font face="Baskerville Old Face">(I) RMarkdown</font></h1>
+<div id="header-section" class="section level2">
+<h2><font face="Baskerville Old Face">1. Header Section</font></h2>
+<div id="a-automatic-date" class="section level3">
+<h3><font face="Baskerville Old Face">(a) Automatic Date</font></h3>
+<pre><code>r Sys.Date()</code></pre>
+</div>
+<div id="b-output-options" class="section level3">
+<h3><font face="Baskerville Old Face">(b) Output Options</font></h3>
+<pre><code>output: 
+  html_document:
+    toc: false
+    toc_float: 
+      collapsed: true
+    toc_depth: 2</code></pre>
+</div>
+</div>
+<div id="available-fonts" class="section level2">
+<h2><font face="Baskerville Old Face">2. Available Fonts</font></h2>
+<font size=5>
+<div class="two-column">
+<ul>
+<li><font face="Algerian">Algerian</font></li>
+<li><font face="Baskerville Old Face">Baskerville Old Face</font></li>
+<li><font face="Belwe">Belwe</font></li>
+<li><font face="Brush Script MT">Brush Script MT</font></li>
+<li><font face="Calibri">Calibri</font></li>
+<li><font face="Candara">Candara</font></li>
+<li><font face="Castellar">Castellar</font></li>
+<li><font face="Comic Sans MS">Comic Sans MS</font></li>
+<li><font face="Cooper Black">Cooper Black</font></li>
+<li><font face="Footlight MT Light">Footlight MT Light</font></li>
+<li><font face="Gabriola">Gabriola</font></li>
+<li><font face="GungsuhChe">GungsuhChe</font></li>
+<li><font face="Harlow Solid Italic">Harlow Solid Italic</font></li>
+<li><font face="Helvetica">Helvetica</font> (default font)</li>
+<li><font face="High Tower Text">High Tower Text</font></li>
+<li><font face="Jokerman">Jokerman</font></li>
+<li><font face="Kristen ITC">Kristen ITC</font></li>
+<li><font face="Old English Text MT">Old English Text MT</font></li>
+<li><font face="Segoe Print">Segoe Print</font></li>
+<li><font face="Segoe Script">Segoe Script</font></li>
+<li><font face="Times New Roman">Times New Roman</font></li>
+<li><font face="Trebuchet MS">Trebuchet MS</font></li>
+<li><font face="Tw Cen MT">Tw Cen MT</font></li>
+</ul>
+</div>
+<p></font></p>
+</div>
+</div>
+<div id="ii-r-packages" class="section level1">
+<h1><font face="Baskerville Old Face">(II) R packages</font></h1>
+<div id="a-ggplot2" class="section level2">
+<h2><font face="Baskerville Old Face">(a) <code>ggplot2</code></font></h2>
+</div>
+</div>
+<div id="iii-javascript-add-on" class="section level1">
+<h1><font face="Baskerville Old Face">(III) JavaScript Add-On</font></h1>
+<div id="visitor-counter" class="section level2">
+<h2><font face="Baskerville Old Face">1. Visitor Counter</font></h2>
+<div id="a" class="section level3">
+<h3><font face="Baskerville Old Face">(a)</font></h3>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+var caution=false
+function setCookie(name,value,expires,path,domain,secure)
+{
+ var curCookie=name+&quot;=&quot;+escape(value) +
+ ((expires)?&quot;;expires=&quot;+expires.toGMTString() : &quot;&quot;) +
+ ((path)?&quot;; path=&quot; + path : &quot;&quot;) +
+ ((domain)? &quot;; domain=&quot; + domain : &quot;&quot;) +
+ ((secure)?&quot;;secure&quot; : &quot;&quot;)
+ if(!caution||(name + &quot;=&quot; + escape(value)).length &lt;= 4000)
+ {
+ document.cookie = curCookie
+ }
+ else if(confirm(&quot;Cookie exceeds 4KB and will be cut!&quot;))
+ {
+ document.cookie = curCookie
+ }
+}
+function getCookie(name)
+{
+ var prefix = name + &quot;=&quot;
+ var cookieStartIndex = document.cookie.indexOf(prefix)
+ if (cookieStartIndex == -1)
+ {
+ return null
+ }
+ var cookieEndIndex=document.cookie.indexOf(&quot;;&quot;,cookieStartIndex+prefix.length)
+ if(cookieEndIndex == -1)
+ {
+ cookieEndIndex = document.cookie.length
+ }
+ return unescape(document.cookie.substring(cookieStartIndex+prefix.length,cookieEndIndex))
+}
+function deleteCookie(name, path, domain)
+{
+ if(getCookie(name))
+ {
+ document.cookie = name + &quot;=&quot; +
+ ((path) ? &quot;; path=&quot; + path : &quot;&quot;) +
+ ((domain) ? &quot;; domain=&quot; + domain : &quot;&quot;) +
+ &quot;; expires=Thu, 01-Jan-70 00:00:01 GMT&quot;
+ }
+}
+function fixDate(date)
+{
+ var base=new Date(0)
+ var skew=base.getTime()
+ if(skew&gt;0)
+ {
+ date.setTime(date.getTime()-skew)
+ }
+}
+var now=new Date()
+fixDate(now)
+now.setTime(now.getTime()+365 * 24 * 60 * 60 * 1000)
+var visits = getCookie(&quot;counter&quot;)
+if(!visits)  
+{
+ visits=1;
+}
+else
+{
+ visits=parseInt(visits)+1;
+}
+setCookie(&quot;counter&quot;, visits, now)
+document.write(&quot;Number of Visitors: &quot; + visits)
+&lt;/script&gt;</code></pre>
+</div>
+<div id="b" class="section level3">
+<h3><font face="Baskerville Old Face">(b)</font></h3>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+var caution=false
+function setCookie(name,value,expires,path,domain,secure)
+{
+ var curCookie=name+&quot;=&quot;+escape(value) +
+ ((expires)?&quot;;expires=&quot;+expires.toGMTString() : &quot;&quot;) +
+ ((path)?&quot;; path=&quot; + path : &quot;&quot;) +
+ ((domain)? &quot;; domain=&quot; + domain : &quot;&quot;) +
+ ((secure)?&quot;;secure&quot; : &quot;&quot;)
+ if(!caution||(name + &quot;=&quot; + escape(value)).length &lt;= 4000)
+ {
+ document.cookie = curCookie
+ }
+ else if(confirm(&quot;Cookie exceeds 4KB and will be cut!&quot;))
+ {
+ document.cookie = curCookie
+ }
+}
+function getCookie(name)
+{
+ var prefix = name + &quot;=&quot;
+ var cookieStartIndex = document.cookie.indexOf(prefix)
+ if (cookieStartIndex == -1)
+ {
+ return null
+ }
+ var cookieEndIndex=document.cookie.indexOf(&quot;;&quot;,cookieStartIndex+prefix.length)
+ if(cookieEndIndex == -1)
+ {
+ cookieEndIndex = document.cookie.length
+ }
+ return unescape(document.cookie.substring(cookieStartIndex+prefix.length,cookieEndIndex))
+}
+function deleteCookie(name, path, domain)
+{
+ if(getCookie(name))
+ {
+ document.cookie = name + &quot;=&quot; +
+ ((path) ? &quot;; path=&quot; + path : &quot;&quot;) +
+ ((domain) ? &quot;; domain=&quot; + domain : &quot;&quot;) +
+ &quot;; expires=Thu, 01-Jan-70 00:00:01 GMT&quot;
+ }
+}
+function fixDate(date)
+{
+ var base=new Date(0)
+ var skew=base.getTime()
+ if(skew&gt;0)
+ {
+ date.setTime(date.getTime()-skew)
+ }
+}
+var now=new Date()
+fixDate(now)
+now.setTime(now.getTime()+365 * 24 * 60 * 60 * 1000)
+var visits = getCookie(&quot;counter&quot;)
+if(!visits)
+{
+ visits=1;
+}
+else
+{
+ visits=parseInt(visits)+1;
+}
+setCookie(&quot;counter&quot;, visits, now)
+document.write(&quot;Number of Visitors: &quot; + visits)
+&lt;/script&gt;</code></pre>
+</div>
+</div>
+<div id="location-button" class="section level2">
+<h2><font face="Baskerville Old Face">2. Location Button</font></h2>
+<pre><code>&lt;p id=&quot;demo&quot;&gt;Press this button to get your location: &lt;/p&gt;
+&lt;button onclick=&quot;getLocation()&quot;&gt;Try me!&lt;/button&gt;
+&lt;script&gt;
+var x=document.getElementById(&quot;demo&quot;);
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.innerHTML=&quot;Geolocation is not supported by this browser.&quot;;}
+  }
+function showPosition(position)
+  {
+  x.innerHTML=&quot;Latitude: &quot; + position.coords.latitude + 
+  &quot;&lt;br /&gt;Longitude: &quot; + position.coords.longitude;  
+  }
+&lt;/script&gt;</code></pre>
+</div>
+</div>
+<div id="iv-html" class="section level1">
+<h1><font face="Baskerville Old Face">(IV) HTML</font></h1>
+<div id="background-color" class="section level2">
+<h2><font face="Baskerville Old Face">1. Background Color</font></h2>
+<div id="a-heading-paragraph" class="section level3">
+<h3><font face="Baskerville Old Face">(a) Heading &amp; Paragraph</font></h3>
+<pre><code>&lt;body style=&quot;background-color:white&quot;&gt;
+&lt;h2 style=&quot;background-color:red&quot; width=200&gt;This is a heading&lt;/h2&gt;
+&lt;p style=&quot;background-color:green&quot; width=200&gt;This is a paragraph.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+</div>
+<div id="b-table" class="section level3">
+<h3><font face="Baskerville Old Face">(b) Table</font></h3>
+<pre><code>&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=gold height=40 width=125 valign=top align=center&gt;
+This is background color of a table
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre>
+</div>
+</div>
+<div id="create-a-table" class="section level2">
+<h2><font face="Baskerville Old Face">2. Create a Table</font></h2>
+<pre><code>&lt;table border=&quot;1&quot;&gt;
+&lt;tr&gt;
+&lt;td width=200 height=50&gt;row 1, cell 1&lt;/td&gt;
+&lt;td&gt;row 1, cell 2&lt;/td&gt;
+&lt;td&gt;1,3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td width=200&gt;row 2, cell 1&lt;/td&gt;
+&lt;td&gt;row 2, cell 2&lt;/td&gt;
+&lt;td&gt;2,3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+</div>
+<div id="input-box" class="section level2">
+<h2><font face="Baskerville Old Face">3. Input Box</font></h2>
+<pre><code>&lt;form&gt;
+ First name:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;firstname&quot;&gt;
+&lt;br&gt;
+ Last name:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;lastname&quot;&gt;
+&lt;/form&gt;</code></pre>
+</div>
+</div>
+<div id="v-css" class="section level1">
+<h1><font face="Baskerville Old Face">(V) CSS</font></h1>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+---
+title: <center><font face="Baskerville Old Face">**Web Data Wrangling**</font></center>
+output: html_document
+---
+<div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
+<div id="back"><a href="Projects.html"><i class="fa fa-undo" aria-hidden="true"></i></a></div>
+
+Still under constructions.
+
+#<font face="Baskerville Old Face">(I) Background</font>
+<font face="Times New Roman" color=black size=4>
+
+- Instructor: Peng Wang, AVP, Head of Data Science - Operation & Fraud Detection at MassMutual Financial Group
+- Goal: Get the latest top 250 movies' detailed data from IMDb.
+- In this project, terms that need to be collected include *Rank*, *Link*, *Title*, *Year*, *Content Rating*, *User Rating*, *Number of Rater*, *Genre*, *Budget*, *Opening Weekend USA*, *Gross USA* and *Cumulative Worldwide Gross*. However, some of terms might not be provided by the website.
+
+Name in writing|Name in Code
+:-:|:-:
+*Rank*|`movie.rank`
+*Link*|`movie.link`
+*Title*|`movie.title`
+*Year*|`movie.year`
+*Content Rating*|`movie.content.rating`
+*User Rating*|`movie.user.rating`
+*Number of Rater*|`movie.num.rater`
+*Genre*|`movie.genre`
+*Budget (\$)*|`movie.budget`
+*Opening Weekend USA (\$)*|`movie.opening`
+*Gross USA (\$)*|`movie.gross`
+*Cumulative Worldwide Gross (\$)*|`movie.worldwide.gross`
+
+</font>
+
+#<font face="Baskerville Old Face">(II) Creating general list of IMDb Top Rated Movies</font>
+<font face="Times New Roman" color=black size=4>
+
+- Read and load each line of source code of top 250 movies from IMDb.
+    - http://www.imdb.com/chart/top?ref_=ft_250
+- Use regular expression to retrieve and extract *Rank*, *Link*, *Title* and *Year*.
+- The data was collected on `r Sys.Date()`.
+
+</font>
+
+```{r Main_Page,message=FALSE,warning=FALSE}
+library(knitr)
+#Read source code from the webpage
+source.code=readLines(con="http://www.imdb.com/chart/top?ref_=ft_250",encoding="UTF-8")
+
+#Get lines which have each movie's rank, link and title
+##structure:
+##  <td class="titleColumn">
+##  rank of the movie
+##  link of the movie (this line is the target)
+##  title of the movie
+##  year of the movie
+movie.rank=source.code[grep("<td class=\"titleColumn\">",source.code)+1]
+movie.link=source.code[grep("<td class=\"titleColumn\">",source.code)+2]
+movie.title=source.code[grep("<td class=\"titleColumn\">",source.code)+3]
+movie.year=source.code[grep("<td class=\"titleColumn\">",source.code)+4]
+
+#Clean movie rank
+movie.rank=substr(movie.rank,start=7,stop=nchar(movie.rank)-1)
+
+#Clean movie link
+movie.link=substr(movie.link,start=16,stop=32)
+movie.link=paste("http://www.imdb.com",movie.link,sep="")
+
+#Clean movie title
+temp=c()
+for (i in 1:250){temp=c(temp,strsplit(movie.title,split="\" >")[[i]][2])}
+movie.title=substr(temp,start=1,stop=nchar(temp)-4)
+remove(i,temp)
+
+#Clean movie year
+movie.year=substr(movie.year,38,41)
+
+#Visulization
+x=data.frame(movie.rank,movie.link,movie.title,movie.year)
+x$movie.rank=as.character(movie.rank)
+x$movie.link=as.character(movie.link)
+x$movie.title=as.character(movie.title)
+x$movie.year=as.character(movie.year)
+kable(x,align="c",col.names=c("Rank","Link","Title","Year"))
+```
+
+#<font face="Baskerville Old Face">(III) Creating detailed list of IMDb Top Rated Movies</font>
+<font face="Times New Roman" color=black size=4>
+
+- Read and load each line of source code of all the 250 movies.
+    - Each link is saved in `movie.link`.
+- Use regular expression to retrieve and extract *Title*, *Year*, *Content Rating*, *User Rating*, *Number of Rater*, *Genre*, *Budget*, *Opening Weekend USA*, *Gross USA* and *Cumulative Worldwide Gross*.
+- The data was collected on `r Sys.Date()`.
+
+Target|Regular Expression
+:-:|:-:
+*Title*|`h1 itemprop="name"`
+*Year*|Next line of *Title*
+*Content Rating*|`meta itemprop="contentRating"`
+*User Rating*|`span itemprop="ratingValue"`
+*Number of Rater*|`itemprop="ratingCount"`
+*Genre*|`span class="itemprop" itemprop="genre"`
+*Budget*|`<h4 class="inline">Budget`
+*Opening Weekend USA (\$)*|`<h4 class="inline">Opening Weekend USA`
+*Gross USA (\$)*|`<h4 class="inline">Gross`
+*Cumulative Worldwide Gross (\$)*|`<h4 class="inline">Cumulative`
+
+</font>
+
+```{r Individual_Page,message=FALSE,warning=FALSE}
+#Design function to get target information from a single page
+#Each input is a website link from `movie.link`
+get.target.info=function(input){
+  temp=readLines(con=input,encoding="UTF-8")
+  
+  #1. title----
+  temp.movie.title=temp[grep("h1 itemprop=\"name\"",temp)]
+  temp.movie.title=strsplit(temp.movie.title,split=">")[[1]][2]
+  temp.movie.title=strsplit(temp.movie.title,split="&")[[1]][1]
+  
+  #2. year----
+  temp.movie.year=temp[grep("h1 itemprop=\"name\"",temp)+1]
+  temp.movie.year=strsplit(temp.movie.year,split=">")[[1]][2]
+  temp.movie.year=strsplit(temp.movie.year,split="<")[[1]][1]
+  
+  #3. content rating----
+  temp.movie.content.rating=temp[grep("meta itemprop=\"contentRating\"",temp)]
+  if (length(temp.movie.content.rating)==1){
+    temp.movie.content.rating=strsplit(temp.movie.content.rating,split=">")[[1]][2]
+  }
+  if (length(temp.movie.content.rating)==0){
+    temp.movie.content.rating=NA
+  }
+  
+  #4. user rating----
+  temp.movie.user.rating=temp[grep("span itemprop=\"ratingValue\"",temp)]
+  temp.movie.user.rating=strsplit(temp.movie.user.rating,split=">")[[1]][3]
+  temp.movie.user.rating=strsplit(temp.movie.user.rating,split="<")[[1]][1]
+  
+  #5. number of rater----
+  temp.movie.num.rater=temp[grep("itemprop=\"ratingCount\"",temp)]
+  temp.movie.num.rater=strsplit(temp.movie.num.rater,split=">")[[1]][3]
+  temp.movie.num.rater=strsplit(temp.movie.num.rater,split="<")[[1]][1]
+  
+  #6. genre----
+  temp.movie.genre=temp[grep("span class=\"itemprop\" itemprop=\"genre\"",temp)]
+  temp.movie.genre.l=length(temp.movie.genre)
+  for (i in 1:temp.movie.genre.l){
+    temp.movie.genre[[i]]=strsplit(temp.movie.genre,split=">")[[i]][3]
+    temp.movie.genre[[i]]=strsplit(temp.movie.genre,split="<")[[i]][1]
+  }
+  remove(i,temp.movie.genre.l)
+  temp.movie.genre=paste(temp.movie.genre,collapse=", ")
+  
+  #7. budget----
+  temp.movie.budget=temp[grep("<h4 class=\"inline\">Budget",temp)]
+  if (length(temp.movie.budget)==1){
+    temp.movie.budget=strsplit(temp.movie.budget,split=">")[[1]][3]
+    a=strsplit(temp.movie.budget,split="")[[1]]
+    if (paste(a[1],a[2],a[3],sep="")=="FRF"){
+      temp.movie.budget=paste(strsplit(temp.movie.budget,split="&nbsp;")[[1]][1],strsplit(temp.movie.budget,split="&nbsp;")[[1]][2],sep=" ")
+    }
+    if (paste(a[1],a[2],a[3],sep="")=="JPY"){
+      temp.movie.budget=paste(strsplit(temp.movie.budget,split="&nbsp;")[[1]][1],strsplit(temp.movie.budget,split="&nbsp;")[[1]][2],sep=" ")
+    }
+    if (paste(a[1],a[2],a[3],sep="")=="INR"){
+      temp.movie.budget=paste(strsplit(temp.movie.budget,split="&nbsp;")[[1]][1],strsplit(temp.movie.budget,split="&nbsp;")[[1]][2],sep=" ")
+    }
+    if (paste(a[1],a[2],a[3],sep="")=="DEM"){
+      temp.movie.budget=paste(strsplit(temp.movie.budget,split="&nbsp;")[[1]][1],strsplit(temp.movie.budget,split="&nbsp;")[[1]][2],sep=" ")
+    }
+    if (paste(a[1],a[2],a[3],sep="")=="RUR"){
+      temp.movie.budget=paste(strsplit(temp.movie.budget,split="&nbsp;")[[1]][1],strsplit(temp.movie.budget,split="&nbsp;")[[1]][2],sep=" ")
+    }
+    if (paste(a[1],a[2],a[3],sep="")=="TRL"){
+      temp.movie.budget=paste(strsplit(temp.movie.budget,split="&nbsp;")[[1]][1],strsplit(temp.movie.budget,split="&nbsp;")[[1]][2],sep=" ")
+    }
+    if (paste(a[1],a[2],a[3],sep="")=="AUD"){
+      temp.movie.budget=paste(strsplit(temp.movie.budget,split="&nbsp;")[[1]][1],strsplit(temp.movie.budget,split="&nbsp;")[[1]][2],sep=" ")
+    }
+    if (paste(a[1],a[2],a[3],sep="")=="KRW"){
+      temp.movie.budget=paste(strsplit(temp.movie.budget,split="&nbsp;")[[1]][1],strsplit(temp.movie.budget,split="&nbsp;")[[1]][2],sep=" ")
+    }
+    if (paste(a[1],a[2],a[3],a[4],a[5],a[6],sep="")=="&euro;"){
+      temp.movie.budget=paste("EUR",substr(temp.movie.budget,start=7,stop=nchar(temp.movie.budget)))
+    }
+    if (paste(a[1],a[2],a[3],a[4],a[5],a[6],a[7],sep="")=="&pound;"){
+      temp.movie.budget=paste("GBP",substr(temp.movie.budget,start=8,stop=nchar(temp.movie.budget)))
+    }
+    remove(a)
+  }
+  if (length(temp.movie.budget)==0){
+    temp.movie.budget=NA
+  }
+  
+  #8. opening----
+  temp.movie.opening=temp[grep("<h4 class=\"inline\">Opening Weekend USA",temp)]
+  if (length(temp.movie.opening)==1){
+    temp.movie.opening=strsplit(temp.movie.opening,split=">")[[1]][3]
+    temp.movie.opening=strsplit(temp.movie.opening,split=" ")[[1]][2]
+    a=strsplit(temp.movie.opening,split="")[[1]]
+    if (a[length(a)]==","){
+      temp.movie.opening=substr(temp.movie.opening,start=1,stop=nchar(temp.movie.opening)-1)
+    }
+    remove(a)
+  }
+  if (length(temp.movie.opening)==0){
+    temp.movie.opening=NA
+  }
+  
+  #9. gross----
+  temp.movie.gross=temp[grep("<h4 class=\"inline\">Gross",temp)]
+  if (length(temp.movie.gross)==1){
+    temp.movie.gross=strsplit(temp.movie.gross,split=">")[[1]][3]
+    temp.movie.gross=strsplit(temp.movie.gross,split=" ")[[1]][2]
+    a=strsplit(temp.movie.gross,split="")[[1]]
+    if (a[length(a)]==","){
+      temp.movie.gross=substr(temp.movie.gross,start=1,stop=nchar(temp.movie.gross)-1)
+    }
+    remove(a)
+  }
+  if (length(temp.movie.gross)==0){
+    temp.movie.gross=NA
+  }
+  
+  #10. worldwide gross----
+  temp.movie.worldwide.gross=temp[grep("<h4 class=\"inline\">Cumulative",temp)]
+  if (length(temp.movie.worldwide.gross)==1){
+    temp.movie.worldwide.gross=strsplit(temp.movie.worldwide.gross,split=">")[[1]][3]
+    temp.movie.worldwide.gross=strsplit(temp.movie.worldwide.gross,split=" ")[[1]][2]
+    a=strsplit(temp.movie.worldwide.gross,split="")[[1]]
+    if (a[length(a)]==","){
+      temp.movie.worldwide.gross=substr(temp.movie.worldwide.gross,start=1,stop=nchar(temp.movie.worldwide.gross)-1)
+    }
+    remove(a)
+  }
+  if (length(temp.movie.worldwide.gross)==0){
+    temp.movie.worldwide.gross=NA
+  }
+  
+  #11. result----
+  return(c(temp.movie.title,temp.movie.year,temp.movie.content.rating,temp.movie.user.rating,temp.movie.num.rater,temp.movie.genre,temp.movie.budget,temp.movie.opening,temp.movie.gross,temp.movie.worldwide.gross))
+}
+
+#Collecting data----
+movie.title=c()
+movie.year=c()
+movie.content.rating=c()
+movie.user.rating=c()
+movie.num.rater=c()
+movie.genre=c()
+movie.budget=c()
+movie.opening=c()
+movie.gross=c()
+movie.worldwide.gross=c()
+for (i in 1:250){
+  temp.target.info=get.target.info(movie.link[i])
+  movie.title=c(movie.title,temp.target.info[1])
+  movie.year=c(movie.year,temp.target.info[2])
+  movie.content.rating=c(movie.content.rating,temp.target.info[3])
+  movie.user.rating=c(movie.user.rating,temp.target.info[4])
+  movie.num.rater=c(movie.num.rater,temp.target.info[5])
+  movie.genre=c(movie.genre,temp.target.info[6])
+  movie.budget=c(movie.budget,temp.target.info[7])
+  movie.opening=c(movie.opening,temp.target.info[8])
+  movie.gross=c(movie.gross,temp.target.info[9])
+  movie.worldwide.gross=c(movie.worldwide.gross,temp.target.info[10])
+}
+
+#Visulization----
+library(knitr)
+y=data.frame(movie.rank,movie.title,movie.year,movie.content.rating,movie.user.rating,movie.num.rater,movie.genre,movie.budget,movie.opening,movie.gross,movie.worldwide.gross)
+y$movie.rank=as.character(movie.rank)
+y$movie.title=as.character(movie.title)
+y$movie.year=as.character(movie.year)
+y$movie.content.rating=as.character(movie.content.rating)
+y$movie.user.rating=as.character(movie.user.rating)
+y$movie.num.rater=as.character(movie.num.rater)
+y$movie.genre=as.character(movie.genre)
+y$movie.budget=as.character(movie.budget)
+y$movie.opening=as.character(movie.opening)
+y$movie.gross=as.character(movie.gross)
+y$movie.worldwide.gross=as.character(movie.worldwide.gross)
+kable(y,align="c",col.names=c("Rank","Title","Year","Content Rating","User Rating","Number of Rater","Genre","Budget","Opening Weekend USA","Gross USA","Cumulative Worldwide Gross"))
+```
+

@@ -1,0 +1,15 @@
+---
+title: <center><font face="Baskerville Old Face">**Activities**</font></center>
+output: html_document
+---
+<div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
+
+#<font face="Baskerville Old Face">1. Extra-curriculum Experiences</font>
+<font face="Times New Roman" size=5>
+
+- Guest Speaker at *EducationUSA*, Beijing, China.
+- Student Ambassador of *Massachusetts Education International (MEI)* at UMass Amherst.
+
+</font>
+
+Still under constructions.

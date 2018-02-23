@@ -1,0 +1,100 @@
+---
+title: <center><font face="Baskerville Old Face">**Determination of arsenic in rice with the Hach EZ testkit**</font></center>
+author:
+    <center><font face="Baskerville Old Face">Da Lu, Julian Tyson</font></center>
+    <center><font face="Baskerville Old Face">University of Massachusetts Amherst</font></center>
+date: <center><font face="Baskerville Old Face">Spring 2014</font></center>
+output: html_document
+---
+<div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
+<div id="back"><a href="Arsenic_Measurement.html"><i class="fa fa-undo" aria-hidden="true"></i></a></div>
+
+#<font face="Calibri" color=black size=5>**Abstract**</font>
+
+<font face="Calibri" color=black size=4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Two experiments to figure out the starch interference to arsenic and to find out trifluoroacetic acid (TFA) extraction had been done this semester. The equipment Hach EZ testkit had been used through the process. For the first experiment, different concentration on starch solution had been made. Compared the normal test results with the starch test results, there were little differences between them but the starch test always resulted in lighter color. Therefore the presentation of starch had a little effect to the final result when the test ran. The second experiment was about using TFA for extracting the arsenic from contaminated rice powder rather than using hot water. The results showed that TFA did a very similar work as hot water because the results that came from TFA extraction were the same as hot water extraction under the naked eye observation.
+</font>
+
+#<font face="Calibri" color=black size=5>**1. Introduction**</font>
+
+<font face="Calibri" color=black size=4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arsenic, a naturally occurring element, is found throughout the environment;^**1**^ for most people, food is the major source of exposure. Acute (short-term) high-level inhalation exposure to arsenic dust or fumes has resulted in gastrointestinal effects (nausea, diarrhea, abdominal pain); central and peripheral nervous system disorders have occurred in workers acutely exposed to inorganic arsenic.^**1**^ Chronic (long-term) inhalation exposure to inorganic arsenic of humans is associated with irritation of the skin and mucous membranes and effects in the brain and nervous system. Chronic oral exposure to elevated levels of inorganic arsenic has resulted in gastrointestinal effects, anemia, peripheral neuropathy, skin lesions, hyperpigmentation, and liver or kidney damage in humans.^**1**^ Inorganic arsenic exposure of humans, by the inhalation route, has been shown to be strongly associated with lung cancer, while ingestion of inorganic arsenic by humans has been linked to a form of skin cancer and also to bladder, liver, and lung cancer.^**1**^ USEPA has classified inorganic arsenic as a human carcinogen. Arsine is a gas consisting of arsenic and hydrogen. It is extremely toxic to humans, with headaches, vomiting, and abdominal pains occurring within a few hours of exposure. EPA has not classified arsine for carcinogenicity.^**1**^  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However, acute inhalation exposure to arsine by humans has resulted in death; it has been reported that a half-hour exposure to 25 to 50 parts per million (ppm) can be lethal.^**2**^ For most people, besides the diet, usually there are smaller intakes of arsenic from drinking water and air.^**3**^ Among foods, some of the highest levels are found in fish and shellfish; however, this arsenic exists primarily as organic compounds, which are essentially nontoxic. Inorganic arsenic compounds (the most toxic form of arsenic) are the predominant forms in drinking water.^**3**^ FDA has been monitoring the levels of arsenic in foods for decades, and in 2011, increased its testing.^**4**^  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Measuring the arsenic in rice had been done in many different ways. One of the most precise ways is by using HPLC-ICPMS. Georg Raber along his group reported an HPLC-ICPMS method based on sample extraction with trifluoroacetic acid/H~2~O~2~, and measurement of arsenate by anion-exchange HPLC-ICPMS using aqueous malonic acid as mobile phase.^**5**^ However, the research did not report why they used trifluoroacetic acid (TFA) as an extracting agent. Using hot water to extract arsenic from rice is quite well known. So the question arising here is that is TFA extraction better than hot water extraction?  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The purpose for using the Hach EZ testkit was that our group wanted to discover a method for people to easily test the arsenic level in the rice in their own kitchen by low cost equipment and simple reagents.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last semester, I did a lot of works on making 500ppb contaminated rice grains and tested the arsenic level from these standard contaminated rice grains by using the Hach testkit. I ground the 500ppb rice by grander and used 10 grams from each experiment. The predicted result should be around 500ppb. However, the results were quite impressive. Each of them was nearly just around 100ppb which was much less than what Professor Tyson and I expected. Then, I suspected what could cause that and finally I thought the starch in the rice might be a factor which cause the resulted figure to be significantly lower.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Therefore, at the beginning of this semester, I decided to find out the starch interference. From Georg Raber's result, I chose to use the 80°C hot water for the extraction and the extraction time was 30 minutes because that was the time period to result in 90% of the extraction efficiencies and column recoveries could reach the highest level of 95%.^**5**^ The rate of mass of rice and volume of hot water was 1g to 10ml which was defined as a 100% starch solution. The reason of that was if I use less water, after the extraction, the mixture from the beaker could not consider as a solution but a jelly and it was hard to get much liquid out of the beaker. Also, the rice which I used was not rice grain but was ground rice powder (the rice is Canilla GOYA rice) which was made in lab. The second experiment was the extraction of arsenic from contaminated ground rice powder by TFA rather than by hot water and find out if there is any difference between water extraction and TFA extraction. This time, the ratio of the mass of rice to volume of TFA was 1g per 20ml which was the standard of TFA extraction. Later on, for a better result (darker color on the test strip), I also used 1g per 16ml ratio.
+</font>
+
+#<font face="Calibri" color=black size=5>**2. Experimental**</font>
+
+<font face="Calibri" color=black size=4>
+**2.1. Test kit vessels**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reaction vessels and lids were obtained from the Hach Company (Loveland, CO) in the EZ Arsenic Test Kit (cat. 2822800).  
+**2.2. Reagents and standards**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;High purity water (18 MΩcm) was obtained from a Barnstead/Thermodyne (Dubuque, IA) E-pure unit.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.00L of As (III) standard solution was prepared by using 1.734g of NaAsO~2~. The concentration of the standard solution was 1000ppm.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Diluted As (III) standard solution was prepared by diluting the 1000ppm standard solution to 20ppm.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ground rice powder was prepared by using a coffee grinder to grind 20.000g of Canilla GOYA rice for 1min for each time. The beaker which contained the rice powder should have at least 100.000g of rice powder for using and it was finally covered by aluminum foil to prevent the rice getting moist.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Starch solution was made by putting 5.000g of rice powder into 100.00ml of 80°C deionized water for 30min. The temperature was kept constantly at 80°C by water bath.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2000ppb contaminated rice powder was made by a different way. 50.000g of rice were put into a beaker with deionized water filled over the surface. 1.25ml of 20ppm As (III) solution was transferred into the beaker. The mixture was stirred well and was put into hotbox with around 50°C to 60°C for at least 5 days for completely dry. That temperature prevented the rice to be cooked. 20.000g contaminated rice were ground for 1min each time and all of the 50.000g contained rice powder were gathered in a beaker. Aluminum foil is covered on top of the beaker to prevent the moisture.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;200ppb contaminated rice starch solution was made by putting 10.000g of 2000ppb contaminated rice powder into 100.00ml of 80°C deionized water for 30min. The temperature was kept constantly by water bath. 100ppb contaminated rice starch solution was made by 5.000g of 2000ppb rice powder with 100.00ml of 80°C deionized water and the procedure was same as the previous one.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.00L of 0.02M TFA was prepared in the volumetric flask. The mass of TFA that should be used was around 2.280g.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TFA extraction starch solution was done by using the same procedure as 100ppb contaminated rice starch solution but the only difference was using 100.00ml of 0.02M TFA rather than 100.00ml deionized water.  
+**2.3. Experiment procedure**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The standard test for 200ppb was run by putting 49.50ml of deionized water and 0.50ml of 20ppm As (III) into the vessel. And the rest of the procedure was followed by the instruction on the test kit. Different concentration standard tests were done by using different volume of 20ppm solution.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The standard rice-starch test for 200ppb was run by putting 49.50ml of the starch solution and 0.50ml of 20ppm As (III) into the vessel for 20min. Different concentration standard rice-starch tests were done by using different volume of 20ppb solution. Different concentration of starch concentration was done by using deionized water to dilute the starch solution. Two times diluting was done by using 25.00ml starch solution and 25.00ml deionized water. Four times diluting was done by using 12.50ml starch solution and 37.50ml deiozied water. Further diluting was done by controlling the volume of starch solution and deiozied water.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The contaminated rice test was run by using 50.00ml of contaminated rice starch solution with one zinc package and one acid package for 20min. Different contaminated rice tests were done by using different concentration of contaminated rice starch solution.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For each test, swiveling the vessel and tapping the vessel was needed to keep the zinc powder react with the sulfamic acid properly. A spin bar was used for each test in the vessel and the speed was controlled as medium.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The TFA extraction test was run by using the same procedure as contaminated rice test but the only difference was that using 50.00ml TFA extraction starch solution rather than contaminated rice starch solution.
+</font>
+
+#<font face="Calibri" color=black size=5>**3. Results and Discussion**</font>
+
+<font face="Calibri" color=black size=4>
+**3.1. The interference of starch**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There was some interference which was made by the presenting of starch in the solution. However, each of my result showed that the impact of starch did a very small work on the final result. The color from a standard test and a standard rice-starch test were very similar by visual comparison.  
+**3.2. 2000ppb rice TFA extraction**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Results showed that TFA extraction for the 2000ppb was similar as hot water extraction under the condition that I used. It is better to use a scanner^**6**^ rather than just use naked eye for justify the result.  
+**3.3 About side experiments**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I did two side experiments that I found the double-standard test (using 99.00ml deionized water and 1.00ml of 20ppm As (III) solution with 2 packages for each reagent for 20min) showed that when the reagents were doubled, the results were doubled which meant that the results were proportional to the amount of arsenic but not to the arsenic concentration in the solution.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The TFA-standard test (same procedure as standard test but replace the 49.50ml deionized water by 49.50ml 0.02M TFA) showed that a reaction based on 0.02M TFA had only a little difference with the standard test. The colors on the strips for the TFA test were similar to the colors on the strips for a standard test which were determined by naked eye. Although TFA was acidic, the test still needed a package of sulfamic acid.
+</font>
+
+#<font face="Calibri" color=black size=5>**4. Conclusions**</font>
+
+<font face="Calibri" color=black size=4>
+**4.1. Improve the method of recording the data**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Based on this semester's data, I found that there were many cases which the reaction conditions were different but the results looked similar. The analysis of results was much correlated to the environment and different individuals to do the experiment could cause different results. The environment problems were mainly the light intensity and shadows on the strips, and different people could read the color differently. Therefore, I suggest that in the future, after finish each experiment, scan each test strips by a scanner^**6**^ for keeping the freshness of the results (because after a long period such as a month, the color will become lighter) and people could analysis the results on computer by using some software which could record the RGB value from the spot on the strips.  
+**4.2. Plot a graph about the starch interference with different starch concentration**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With the help of scanner, analysis different results under different starch concentration becomes much easier than analysis the results by eyes. Also, by using some kinds of distribution for the RGB data, it is workable to draw a curve for different level of diluting of starch.  
+**4.3. Create a better calibration**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If we can do the standard test several times for many concentrations, then use the software to get a mean value of RGB for each concentration, we could get a much more precise calibration based on the RGB value rather than the color strip on the bottle.
+</font>
+
+#<font face="Calibri" color=black size=5>**5. Supplementary data**</font>
+
+<font face="Calibri" color=black size=4><center>
+[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202014%20-%2001.JPG" width=25%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202014%20-%2001.JPG)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202014%20-%2002.JPG" width=25%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202014%20-%2002.JPG)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202014%20-%2003.JPG" width=25%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202014%20-%2003.JPG)
+
+A standard 500 ppb test
+
+[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202014%20-%2004.JPG" width=25%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202014%20-%2004.JPG)
+
+A double standard test for the side expeiment
+
+[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202014%20-%2005.JPG" width=25%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202014%20-%2005.JPG)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202014%20-%2006.JPG" width=25%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202014%20-%2006.JPG)
+
+A big problem for each test which contained starch solution: it always formed a lot of foaming
+</center></font>
+
+#<font face="Calibri" color=black size=5>**6. References**</font>
+
+<font face="Calibri" color=black size=4>
+**1** USEPA. [Arsenic Compounds](https://www.epa.gov/sites/production/files/2016-09/documents/arsenic-compounds.pdf). (accessed Feb 4, 2018)  
+**2** USEPA. *Integrated Risk Information System (IRIS) on Arsine.* National Center for Environmental Assessment, Office of Research and Development, Washington, DC. 1994.  
+**3** Agency for Toxic Substances and Disease Registry (ATSDR). Toxicological Profile for Arsenic (Update). U.S. Public Health Service, U.S. Department of Health and Human Services, Atlanta, GA. 2007.  
+**4** USFDA. [Arsenic in Rice and Rice Products](http://www.fda.gov/food/foodborneillnesscontaminants/metals/ucm319870.htm). (accessed Feb 4, 2018)  
+**5** Raber, Georg, et al. "An improved HPLC-ICPMS method for determining inorganic arsenic in food: application to rice, wheat and tuna fish." *Food chemistry* 134.1 (2012): 524-532.  
+**6** Kearns, James, and Julian Tyson. "Improving the accuracy and precision of an arsenic field test kit: increased reaction time and digital image analysis." *Analytical Methods* 4.6 (2012): 1693-1698.
+</font>

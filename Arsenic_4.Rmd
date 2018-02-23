@@ -1,0 +1,190 @@
+---
+title: <center><font face="Baskerville Old Face">**Determination of Arsenic in Rice:&nbsp;Extraction of inorganic arsenic by dialysis**</font></center>
+author:
+    <center><font face="Baskerville Old Face">Da Lu, Julian Tyson</font></center>
+    <center><font face="Baskerville Old Face">University of Massachusetts Amherst</font></center>
+date: <center><font face="Baskerville Old Face">Spring 2015 (May)</font></center>
+output: html_document
+---
+<div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
+<div id="back"><a href="Arsenic_Measurement.html"><i class="fa fa-undo" aria-hidden="true"></i></a></div>
+
+#<font face="Calibri" color=black size=5>**Abstract**</font>
+
+<font face="Calibri" color=black size=4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The extraction of arsenic from rice spiked at 500μg·kg^-1^ by hot water with the technique of separation of large molecules by dialysis bag was studied. Arsenic species were quantified by both the Hach EZ testkit and atomic fluorescence spectrometry (AFS). The Hach test always showed a lower result than the expected concentration, which was 50μg·L^-1^ or 33μg·L^-1^. However, the AFS results always showed out a higher number than the expected number, which was 5μg·L^-1^ or 3.3μg·L^-1^. Spike addition test for AFS showed that the higher results were not caused by systematic instrumental error.
+</font>
+
+#<font face="Calibri" color=black size=5>**1. Introduction**</font>
+
+<font face="Calibri" color=black size=4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arsenic forms many toxic compounds that exhibit a range of toxicities. Inorganic arsenic, in particular arsenite [As (III)], is one of the most toxic forms. As the toxicity of arsenic depends upon the chemical species, it is important to determine which chemical species are present in foodstuff in addition to the total arsenic concentration. Therefore, arsenic speciation has become standard practice throughout the world.^**1**^ For most people, besides the diet, usually there are smaller intakes of arsenic from drinking water and air.^**2**^ Among foods, some of the highest concentrations are found in fish and shellfish; however, this arsenic exists primarily as organic compounds, which are essentially nontoxic. Inorganic arsenic compounds (the most toxic form of arsenic) are the predominant forms in drinking water.^**2**^ The USFDA has been monitoring the levels of arsenic in foods for decades, and in 2011, increased its testing.^**3**^ Rice is a dietary staple in many countries and contributes to arsenic intake than any other Asian agricultural products.^**4**^ So, for that reason, people should know the amount of arsenic in their rice for a safe consumption.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Measuring the arsenic in rice had been done in many different ways. For example, one of the most precise ways is by using HPLC-ICP-MS. Raber et al reported an HPLC-ICP-MS method based on sample extraction with trifluoroacetic acid/H~2~O~2~, separation of three arsenic species, and measurement of arsenate by anion-exchange HPLC-ICP-MS using aqueous malonic acid as mobile phase.^**5**^  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The method of using dialysis bag to extract arsenic from rice flour by hot water as extracting solvent had been developed previously.^**6**^ However, there was only one set of experiments had been performed and it supported the dialysis bag method was viable.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The goal of the work described in this paper was to collect more data from AFS in addition to that for the Hach test to verify the previous conclusion, which was that the dialysis bag extraction could have a very high efficiency for extracting As (III).^**6**^
+</font>
+
+#<font face="Calibri" color=black size=5>**2. Experimental**</font>
+
+<font face="Calibri" color=black size=4>
+**2.1. Reagents and materials**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contaminated rice flour (500μg·kg^-1^), Hach EZ testkit, D9777 SIGMA dialysis tubing cellulose membrane, L-cysteine, 6% L-cysteine solution, concentrated nitric acid (70%), standard arsenic (III) solution (50, 100, 1000μg·L^-1^).  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D9777 SIGMA has a typical molecular weight cutoff at 14,000 and the diameter is 25mm.  
+**2.2. Instrumentation**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hot plate, thermometer, atomic fluorescence spectrometer, glass rod, coffee grinder, 50ml tubes, 15ml tubes, magnetic stir bar, stir plate.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The atomic fluorescence spectrometer was a model Millennium Excalibur, (PS Analytical, Deerfield Beach, FL, USA), with a built in Permapure dryer system (part number M025D002) and a gas-liquid separator (part number M055G003). The instrument was modified so that the flame was sustained by hydrogen from a cylinder rather than from the reaction of excess borohydride with acid in the continuous flow mode that is the normal operating procedure. Hydrogen gas was introduced through Teflon tubing into the system by merging with the purging argon gas before they were introduced into the gas-liquid separator. The hydrogen flow rate was controlled by a needle valve (Swagelok, Cleveland, US) and measured by a soap-bubble flow meter. The operating conditions are given in <font color=red>Table 1</font>. Operation was controlled by Sams software (PS Analytical), which also recorded the signal. Further data processing was done with Microsoft Excel.^**7**^  
+**2.3. Method Development**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hydride Generation 1 (HG1)**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Each 5ml of extract was diluted to a 50ml of sample by add 11.1ml of concentrated nitric acid, 16.7ml of 6% L-cysteine solution, and deionized water. The concentration of the acid was 15.5% and the concentration of L-cysteine was 2%. The standards were kept at the sample concentration as the sample. The calibration curve was shown in Figure 1.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hydride Generation 2 (HG2)**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;According to Brindle's work, a presence of low concentration of acid was better to HG rather than using large amount of acid.^**8**^ A new set of standards was made based on the ratio from his paper.^**8**^ The 0μg·L^-1^ standard was made by dissolving 12.5g of L-cysteine and 2.25ml of concentrated nitric acid in 1L of deionized water. The 1, 2, 3, 4, 5μg·L^-1^ standards were made by dissolving 6.25g of L-cysteine and 1.125ml of concentrated nitric acid with 0.5, 1.0, 1.5, 2.0, 2.5ml 1000μg·L^-1^ As (III) standard in 0.5L of deionized water separately. The concentration of acid was 0.16% and the concentration of L-cysteine was 1.25%. The testing samples were made by using 5ml from the left extract and the concentration of acid and L-cysteine was same as the standards. The calibration curve was shown in Figure 2.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Carrier Solution**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A carrier solution was made by dissolving 1.25g of NaOH and 1.75g of NaBH~4~ in 250ml of deionized water and the concentration for NaOH and NaBH~4~ was 0.5% and 0.7% separately.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Flow Rate**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The flow rate for the sample was 0.9ml·min^-1^ and the flow rate for the carrier solution was 1.8ml·min^-1^.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Testing**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Each of sample was followed a 0ppm standard so that the result would be more accurate. [0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, sample 1, 0, sample 2, etc.]  
+**2.4. Procedure**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Make standard 500μg·kg^-1^ contaminated and flour**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;According to the previous work, the 500μg·kg^-1^ rice flour was prepared each time before
+extraction from the 500μg·kg^-1^ contaminated rice. ^**6**^  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Extraction 1** *(Feb 24, 2015)*  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contaminated rice flour (20g of 500μg·kg^-1^) was prepared which was followed the procedure from the previous work. ^**6**^ Five sections of 22cm dialysis bags were taken and put into a beaker of deionized water. After the bags became soft, one end of the bag was tied. 20ml of deionized water was added to each bag and the other end of each bag was tied. 200ml of deionized water was heated to 80°C on the hot plate with level 3. The rice flour was added to the hot water gradually and the suspension was stirred by a glass rod for a better dissolving. Five dialysis bags with the water inside were put into the rice suspension and the beaker was heated for 2h at a constant temperature of 80°C. The water level was marked on the beaker. The water level was kept at the mark while heating. Then the suspension was cooled for more than 12h where the top of the beaker was sealed by aluminium foils. Then, the tin paper was removed and the suspension was reheated to a constant temperature 80°C for 2h.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After heating, the bags were carefully taken out and washed by deionized water to remove the starch on the outside surface. Each bag was cut on the top in order to take out the solution inside. 75ml of inside solution was saved in two 50ml tube for the Hach test. The left solution was saved in another 50ml tube for the AFS sample.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hach test for extraction 1**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 75ml of extract was poured into the reaction Hach test vessel and reagent 1 was added which was sulfamic acid. The reason of using 75ml but not 50ml was that the expected value for the 75ml test was 50μg·L^-1^ and the relationship of the color and the concentration was almost linear. And from previous work, a volume which was more than 50ml was viable for the Hach test.^**9**^ A stir bar was put into the vessel and the stir plate was set as medium level for 1min to dissolve the acid. Then the switch of the plate was turned off. The reagent 2 was added and the vessel was closed by the cap with test strip on simultaneously. The plate was turned on again and the time was counted at that point. The color was recorded at 20min, 40min, and 60min.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**AFS sample preparation and AFS test for extraction 1**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The sample was made based on the HG1 method.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Extraction 2** *(Mar 10)*  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The extracting procedure was similar to extraction 1 but the only difference was the mass of rice flour that used in the extraction was 30g.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50ml of inside solution was saved in a 50ml tube for the Hach test and the solution is a combination of 10ml from each bag. And the left solution from each bag was saved separately in another five 15ml tubes.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hach Test for extraction 2**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 50ml of extract was used for the test and the rest procedure was same as before.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**AFS sample preparation and AFS test for extraction 2**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The sample was made based on the HG2 method.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Extraction 3** *(Apr 15)*  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20g of 500μg·kg^-1^ rice flour was prepared. The procedure was similar to extraction 1 but the only difference was the heating time was just 2h. Then 10ml of extract was taken out from the 5 bags and mixed in a 50ml tube. The left extract was saved separately in five 15ml tubes.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hach Test for extraction 3**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The procedure was same as Hach test 2.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**AFS sample preparation and AFS test for extraction 3**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The sample was made based on the HG2 method. Before adding water to dilute the sample to 50ml, some samples were prepared by spiking 5 more μg·L^-1^ by adding 2.5ml of 100μg·L^-1^ standard solution. The spiking data were showed in Table 1.
+</font>
+
+#<font face="Calibri" color=black size=5>**3. Results and Discussion**</font>
+
+<font face="Calibri" color=black size=4>
+**3.1. Results**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Expected value**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All the expected values were calculated under the assumption of 100% extraction efficiency and equal concentration inside and outside the dialysis bag. The expected value for the Hach test was calculated by the formula $\frac{m\cdot V}{30}$ where $m$ was the mass of the contaminated rice flour and $V$ was the volume used for Hach test. The expected value for the AFS was calculated by the formula $\frac{m}{6}$ where $m$ was the mass of the contaminated rice flour. The unit of expected value would be μg·L^-1^.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hach test for extraction 1**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At 20min, the color was corresponding to 10μg·L^-1^ by naked eye according to the calibration color strip on the bottle. At 40min, the color was corresponding to 10 to 25μg·L^-1^. At 60min, the color was also corresponding to 10 to 25μg·L^-1^. As reaction time getting longer, the color shown on the test strip would get darker but the number was lower than the expected 33μg·L^-1^. The result was showed in Table 2.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**AFS test for extraction 1**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The sample gave a 9.97μg·L^-1^ result. The expected value was 3.3μg·L^-1^ which meant the extraction gave out a much higher extracting ratio about 3 times. The result was showed in Table 3.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hach test for extraction 2**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At 20min, the color was corresponding to 10μg·L^-1^. At 40min, the color was still corresponding to 10μg·L^-1^. At 60min, the color was between 10 to 25μg·L^-1^ which was lower than expected 50μg·L^-1^. The result was showed in Table 4.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**AFS test for extraction 2**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The sample 1 gave 14.79μg·L^-1^ which was about 3 times of the expected value 5μg·L^-1^. The sample 2 gave 10.63μg·L^-1^ and sample 3 gave 10.97μg·L^-1^ which were about 2 times of the expected value. The result was showed in Table 5.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hach test for extraction 3**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At 20min, the color was corresponding to 10 to 25μg·L^-1^. At 40min and 60min the color were corresponding to 25μg·L^-1^. The results were better than the extraction 1 but the number was still lower than expected number 33μg·L^-1^. The result was showed in Table 6.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**AFS test for extraction 3**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The result was showed in Table 7. From the addition standard samples, we can conclude that the higher results from extraction 1 and 2 were not caused by the systematic error of the machine. Both the AFS results from the normal and spiked sample had a higher recovery than the recovery of the spiked 5μg·L^-1^.  
+**3.2. Discussion**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All the Hach tests showed that the values were lower than expectation. This result may caused by reasons listing below: first, some of the arsine gas was dissolved in the solution so they did not come out of the solution and reacted with the reactant on the test strip; second, the reaction was somehow incomplete. However, AFS results showed a different situation. All of the numbers were higher than expectation, and some could even reach about 3 times of the expectation.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From the results of two different methods of hydride generation, it was easy to conclude that the HG2 condition was much efficient than the HG1 condition because the second method (peak value from 0 to 70) could get a much higher peak value than the first method (peak value from 0 to 5) from the AFS.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The reason that the Hach test had a lower result than the expected value may caused by the pore size of the dialysis bag that was not small enough. It could still let some small starch molecules pass the membrane of the bag so the Hach test would still be interfered by the starch. Also, some small molecules from the rice could enter the bag and finally affect the Hach test result.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The reason that the AFS test had a much high number may caused by many reason. First, there may be a big difference of moisture between the contaminated rice and the fresh rice which came from the bag of rice, so the mass which was taken from the contaminated rice would correspond to a larger mass of the fresh rice before drying which meant more arsenic was taken. Second, during the extraction, rice flour may absorb some amount of water inside so the actual volume for the extraction was smaller and the actual arsenic concentration would be higher. Third, AFS may give a signal from the DMA which was extracted from rice.
+</font>
+
+#<font face="Calibri" color=black size=5>**4. Conclusion**</font>
+
+<font face="Calibri" color=black size=4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 0.16% of acid and 1.25% of L-cysteine was a very great condition for hydride generation of As (V).
+
+- **Improvement for the experiment**  
+&nbsp;&nbsp;&nbsp;&nbsp;1) Try to use rice grain for the extraction instead of rice flour.  
+&nbsp;&nbsp;&nbsp;&nbsp;2) Try to use less time for the extraction.  
+&nbsp;&nbsp;&nbsp;&nbsp;3) Use different diameter tubing for the extraction.
+
+- **Further work need to do**  
+&nbsp;&nbsp;&nbsp;&nbsp;1) Do the test with only arsenic in the solution and test the arsenic concentration for both inside and outside.  
+&nbsp;&nbsp;&nbsp;&nbsp;2) Find out the efficiency of extraction from rice grain and compare it to the efficiency from rice flour.
+
+</font>
+
+#<font face="Calibri" color=black size=5>**5. Acknowledgement**</font>
+
+<font face="Calibri" color=black size=4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thanks to Cassandra Martin for help with the AFS measurements.
+</font>
+
+<center><font face="Calibri" color=black size=4>**Table 1** AFS sample preparation for extraction 3</font></center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2001.png" width=90%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2001.png)</center>
+
+</br>
+
+<center><font face="Calibri" color=black size=4>**Table 2** Hach test for extraction 1 with expected value of 50μg·L^-1^</font></center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2002.png" width=50%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2002.png)</center>
+
+</br>
+
+<center><font face="Calibri" color=black size=4>**Table 3** AFS test for extraction 1 with expected value of 3.3μg·L^-1^</font></center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2003.png" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2003.png)</center>
+
+</br>
+
+<center><font face="Calibri" color=black size=4>**Table 4** Hach test for extraction 2 with expected value of 50μg·L^-1^</font></center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2004.png" width=50%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2004.png)</center>
+
+</br>
+
+<center><font face="Calibri" color=black size=4>**Table 5** AFS test for extraction 2 with expected value of 5.0μg·L^-1^</font></center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2005.png" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2005.png)</center>
+
+</br>
+
+<center><font face="Calibri" color=black size=4>**Table 6** Hach test for extraction 3 with expected value of 33μg·L^-1^</font></center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2006.png" width=50%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2006.png)</center>
+
+</br>
+
+<center><font face="Calibri" color=black size=4>**Table 7** AFS test for extraction 3</font></center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2007.png" width=90%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2007.png)</center>
+
+</br>
+
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2008.png" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2008.png)</center>  
+<center><font face="Calibri" color=black size=4>**Figure 1** Calibration curve for HG1</font></center>
+
+</br>
+
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2009.png" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2009.png)</center>  
+<center><font face="Calibri" color=black size=4>**Figure 2** Calibration curve for HG2</font></center>
+
+#<font face="Calibri" color=black size=5>**6. References**</font>
+
+<font face="Calibri" color=black size=4>
+**1** Tyson, Julian. "The determination of arsenic compounds: a critical review." *ISRN Analytical Chemistry* 2013 (2013).  
+**2** Agency for Toxic Substances and Disease Registry (ATSDR). Toxicological Profile for Arsenic (Update). U.S. Public Health Service, U.S. Department of Health and Human Services, Atlanta, GA. 2007.  
+**3** USFDA. [Arsenic in Rice and Rice Products](http://www.fda.gov/food/foodborneillnesscontaminants/metals/ucm319870.htm). (accessed Feb 4, 2018)  
+**4** WHO, Joint FAO/WHO food standards programme, in: Proceedings of the Sixth Session of CODEX Committee on Contaminants in Foods, Maastricht, The Netherlands, 26-30 March2012.  
+**5** Raber, Georg, et al. "An improved HPLC-ICPMS method for determining inorganic arsenic in food: application to rice, wheat and tuna fish." *Food chemistry* 134.1 (2012): 524-532.  
+**6** Lu, Da, and Julian Tyson. "Determination of arsenic in rice with the Hach EZ testkit - 2."  
+**7** Wang, Nan, and Julian Tyson. "Non-chromatographic speciation of inorganic arsenic by atomic fluorescence spectrometry with flow injection hydride generation with a tetrahydroborate-form anion-exchanger." *Journal of Analytical Atomic Spectrometry* 29.4 (2014): 665-673.  
+**8** Chen, Hengwu, Ian D. Brindle, and Xiao Chun Le. "Prereduction of arsenic (V) to arsenic (III), enhancement of the signal, and reduction of interferences by L-cysteine in the determination of arsenic by hydride generation." *Analytical Chemistry* 64.6 (1992): 667-672.  
+**9** Lu, Da, et al. "Analytical Chemistry of Arsenic in Rice."
+</font>
+
+#<font face="Calibri" color=black size=5>**7. Supplementary data**</font>
+
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2010.JPG" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2010.JPG)</center>  
+<center><font face="Calibri" color=black size=4>**Figure S1** Contaminated rice flour</font></center>
+
+</br>
+
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2011.JPG" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2011.JPG)</center>  
+<center><font face="Calibri" color=black size=4>**Figure S2** Five dialysis bags with 20ml deionized water in side (tied both end)</font></center>
+
+</br>
+
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2012.JPG" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2012.JPG)</center>  
+<center><font face="Calibri" color=black size=4>**Figure S3** Extraction (5 bags inside)</font></center>

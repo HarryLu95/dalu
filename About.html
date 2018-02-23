@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 52px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+
+.section h2 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h3 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h4 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h5 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h6 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><font face="Algerian">Harry Lu</font></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="About.html">
+    <span class="fa fa-bars"></span>
+     
+    About Me
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-folder-open"></span>
+     
+    Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Projects.html">
+        <span class="fa fa-bars"></span>
+         
+        Summary
+      </a>
+    </li>
+    <li>
+      <a href="Forecasting_Stock_Value.html">
+        <span class="fa fa-book"></span>
+         
+        Forecasting Stock Value
+      </a>
+    </li>
+    <li>
+      <a href="Arsenic_Measurement.html">
+        <span class="fa fa-book"></span>
+         
+        Arsenic Measurement
+      </a>
+    </li>
+    <li>
+      <a href="Amazon_s_Secret.html">
+        <span class="fa fa-book"></span>
+         
+        Amazon's Secret
+      </a>
+    </li>
+    <li>
+      <a href="Outlier_Detection.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Outlier Detection
+      </a>
+    </li>
+    <li>
+      <a href="Interactive_Web_App.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Interactive Web App
+      </a>
+    </li>
+    <li>
+      <a href="Web_Data_Wrangling.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Web Data Wrangling
+      </a>
+    </li>
+    <li>
+      <a href="Birds_Breeding_Pairs.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Birds Breeding Pairs
+      </a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Activity.html">
+    <span class="fa fa-star"></span>
+     
+    Activities
+  </a>
+</li>
+<li>
+  <a href="Gallery.html">
+    <span class="fa fa-picture-o"></span>
+     
+    Gallery
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore"><center>
+<font face="Baskerville Old Face"><strong>About Me</strong></font>
+</center></h1>
+
+</div>
+
+
+<div id="backhome">
+<a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+</div>
+<div id="i-educational-background" class="section level1">
+<h1><font face="Baskerville Old Face" size=6>(I) Educational Background</font></h1>
+<p><font face="Times New Roman" color=black size=4></p>
+<ul>
+<li><strong>Undergraduate School</strong>
+<ul>
+<li>University of Massachusetts Amherst, MA, USA</li>
+<li>September 2013 - May 2017</li>
+<li><i class="fa fa-hand-o-right"></i>   <a href="http://www.umass.edu/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Buttons%20%26%20Logos/UMA_Logo.png" width="75"></a></li>
+<li>Degree: Bachelor of Science</li>
+<li>Major: Mathematics</li>
+<li>Major Concentrations: Applied Mathematics, Statistics, Actuary</li>
+<li>Minor: Chemistry</li>
+</ul></li>
+<li><strong>High School</strong>
+<ul>
+<li>International Department, Beijing National Day School (BNDS), Beijing, China</li>
+<li>September 2010 - July 2013</li>
+<li><i class="fa fa-hand-o-right"></i> <a href="http://www.bndsedu.com/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Buttons%20%26%20Logos/BNDS_Logo.png" width="100"></a></li>
+</ul></li>
+<li><strong>Middle School</strong>
+<ul>
+<li>The Experimental High School Attached to Beijing Normal University (ESBNU), Beijing, China</li>
+<li>September 2007 - July 2010</li>
+<li><i class="fa fa-hand-o-right"></i>   <a href="http://www.sdsz.com.cn/item/list.asp?id=1635"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Buttons%20%26%20Logos/SDSZ_Logo.png" width="75"></a></li>
+</ul></li>
+</ul>
+<p></font></p>
+</div>
+<div id="ii-professional-background" class="section level1">
+<h1><font face="Baskerville Old Face" size=6>(II) Professional Background</font></h1>
+<p><font face="Times New Roman" color=black size=4></p>
+<ul>
+<li><strong>Fishmarket Inc.</strong>
+<ul>
+<li><strong>Marketing Analyst, Website Maintainer</strong></li>
+<li>September 2017 - Present</li>
+<li>Louisville, KY, United States</li>
+<li><i class="fa fa-hand-o-right"></i> <a href="http://fishmarketseafoods.net">Website</a></li>
+</ul></li>
+<li><strong>Massachusetts Education International (MEI)</strong>
+<ul>
+<li><strong>UMass Amherst Campus Ambassador</strong></li>
+<li>February 2017 - May 2017</li>
+<li>Amherst, MA, United States</li>
+<li><i class="fa fa-hand-o-right"></i> <a href="https://www.meiedu.us/">Website</a></li>
+</ul></li>
+<li><strong>EducationUSA, U.S. Embassy in Beijing</strong>
+<ul>
+<li><strong>Guest Speaker</strong></li>
+<li>June 2014 - August 2016</li>
+<li>Beijing, China</li>
+<li><i class="fa fa-hand-o-right"></i> <a href="https://educationusa.state.gov/centers/educationusa-china">Website 1</a> <font color=DodgerBlue>/</font> <a href="https://china.usembassy-china.org.cn/education-culture/study-usa/">Website 2</a> <font color=DodgerBlue>/</font> <a href="https://weibo.com/educationusa">Weibo</a></li>
+</ul></li>
+<li><strong>CERNET Education Development Co., Ltd.</strong>
+<ul>
+<li><strong>Marketing Assistant</strong></li>
+<li>July 2015 - August 2015</li>
+<li>Beijing, China</li>
+<li><i class="fa fa-hand-o-right"></i> <a href="http://www.cerschool.edu.cn/">Website</a></li>
+</ul></li>
+<li><strong>Penghua Fund Management Company Ltd.</strong>
+<ul>
+<li><strong>Business Assistant</strong></li>
+<li>June 2014 - July 2014</li>
+<li>Beijing, China</li>
+<li><i class="fa fa-hand-o-right"></i> <a href="https://www.phfund.com.cn/web/en/index">Website</a></li>
+</ul></li>
+<li><a href="https://www.linkedin.com/in/dalu0511/">Come to visit my LinkedIn! <i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+</ul>
+<p></font></p>
+</div>
+<div id="iii-skills" class="section level1">
+<h1><font face="Baskerville Old Face" size=6>(III) Skills</font></h1>
+<p><font face="Times New Roman" color=black size=4></p>
+<ul>
+<li>Languages: Mandarin, English</li>
+<li>Computer Languages: <a href="https://www.r-project.org/">R</a>, HTML, CSS, Markdown, SQL, Python, Java, Git Bash</li>
+<li>Computer Software: Microsoft Excel, Microsoft Word, Microsoft PowerPoint, <a href="https://www.rstudio.com/">RStudio</a>, Adobe Photoshop, <a href="http://www.umassk12.net/adi/">Analyzing Digital Images</a></li>
+<li><a href="https://github.com/HarryLu95">Come to visit my GitHub! <i class="fa fa-github" aria-hidden="true"></i></a></li>
+</ul>
+<p></font></p>
+</div>
+<div id="iv-hobby" class="section level1">
+<h1><font face="Baskerville Old Face" size=6>(IV) Hobby</font></h1>
+<p><font face="Times New Roman" color=black size=4></p>
+<ul>
+<li>Sports: Swimming, Running, Cycling, Skating, Volleyball, Ping Pong, Billiards, Chess, Yoga, etc.</li>
+<li>Musical Instruments: Piano, Keyboard, Oboe.</li>
+<li>I’m a photographer. <a href="Gallery.html">Come to see what I’ve taken!</a></li>
+<li>I’m also a cook. I love cooking, especially Chinese food. <a href="Gallery.html">Come to see what I’ve cooked!</a></li>
+</ul>
+<p></font></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

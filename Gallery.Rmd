@@ -1,0 +1,34 @@
+---
+title: <center><font face="Baskerville Old Face">**Gallery**</font></center>
+output: html_document
+---
+<div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
+
+<font face="Times New Roman" size=5>
+
+
+
+</font>
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE,fig.align="center"}
+library(tidyverse)
+cool_function <- function(x, alpha) return(sin(alpha*x))
+xs <- seq(0, pi*1.5, 0.005)
+ys <- cool_function(xs, 1)
+results <- data_frame(xs, ys, alpha = "1")
+for(alpha in seq(0,3, 0.1)){
+  results <- results %>% 
+    bind_rows(data_frame(
+      xs, 
+      ys = cool_function(xs, alpha),
+      alpha = as.character(alpha)
+    ))
+}
+
+ggplot(results, aes(x = xs, y = ys, color = alpha)) + 
+  geom_line() + 
+  theme_bw() + 
+  theme(legend.position="none")
+```
+
+Still under constructions.

@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 52px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+
+.section h2 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h3 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h4 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h5 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h6 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><font face="Algerian">Harry Lu</font></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="About.html">
+    <span class="fa fa-bars"></span>
+     
+    About Me
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-folder-open"></span>
+     
+    Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Projects.html">
+        <span class="fa fa-bars"></span>
+         
+        Summary
+      </a>
+    </li>
+    <li>
+      <a href="Forecasting_Stock_Value.html">
+        <span class="fa fa-book"></span>
+         
+        Forecasting Stock Value
+      </a>
+    </li>
+    <li>
+      <a href="Arsenic_Measurement.html">
+        <span class="fa fa-book"></span>
+         
+        Arsenic Measurement
+      </a>
+    </li>
+    <li>
+      <a href="Amazon_s_Secret.html">
+        <span class="fa fa-book"></span>
+         
+        Amazon's Secret
+      </a>
+    </li>
+    <li>
+      <a href="Outlier_Detection.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Outlier Detection
+      </a>
+    </li>
+    <li>
+      <a href="Interactive_Web_App.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Interactive Web App
+      </a>
+    </li>
+    <li>
+      <a href="Web_Data_Wrangling.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Web Data Wrangling
+      </a>
+    </li>
+    <li>
+      <a href="Birds_Breeding_Pairs.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Birds Breeding Pairs
+      </a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Activity.html">
+    <span class="fa fa-star"></span>
+     
+    Activities
+  </a>
+</li>
+<li>
+  <a href="Gallery.html">
+    <span class="fa fa-picture-o"></span>
+     
+    Gallery
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore"><center>
+<font face="Baskerville Old Face"><strong>A Study on Birds Breeding Pairs</strong></font>
+</center></h1>
+
+</div>
+
+
+<div id="backhome">
+<a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+</div>
+<div id="back">
+<a href="Projects.html"><i class="fa fa-undo" aria-hidden="true"></i></a>
+</div>
+<p>Still under constructions.</p>
+<div id="i-background" class="section level1">
+<h1><font face="Baskerville Old Face">(I) Background</font></h1>
+<p><font face="Times New Roman" color=black size=4></p>
+<ul>
+<li>Instructor: Michael Lavine</li>
+<li>This project has been done in an undergraduate statistics courses, <em>Regression &amp; Analysis of Variance</em>.</li>
+<li>Team members: Da Lu, Dan Wang, YangJunqing Qiao, Kweku Fynn</li>
+<li>Date: Apr/28/2017</li>
+</ul>
+<p>        The data set, which was provided by <em>Martin Cody, PhD, UCLA, Department of OBEE</em>, was downloaded from <a href="http://www.stat.ucla.edu/projects/datasets/birds.dat" class="uri">http://www.stat.ucla.edu/projects/datasets/birds.dat</a>.<br />
+        The keywords for the data set were <em>Birds</em>, <em>Diversity</em>, <em>Vegetation Structure</em> and <em>Density</em>.<br />
+        The following quotes are the descriptions of the data set.</p>
+<blockquote>
+<p><strong>1. GENERAL EXPLANATION OF THE STUDY (done by <em>Martin Cody</em>)</strong><br />
+        The accompanying data set is from a study on the diversity patterns of bird communities in North American oak woodlands and Australian eucalyptus woodlands. Because the study’s entire data set is very large, the only data included here are from sites in Californian oak woodlands. Very roughly, the data provide information about the location, vegetation structure, and number of species of breeding bird pairs at various sites throughout California’s woodlands. The term “woodlands” refers to moderately thick forests with uneven canopy cover, and the numerical indexes of vegetation structure provided by the data can be thought of as a kind of scientific description of the overall look of a forest - the height of its trees, the density of its foliage, the variation from forest floor to forest ceiling.<br />
+        Although the study itself was primarily concerned with somewhat complex comparisons between the bird diversity patterns in North America and Australia, these data can be used to study ecological aspects of the bird diversity problem - a subject emphasized in much of the earlier literature on species diversity. These ecological aspects focus on predicting the number and density of different bird species from information about the vegetation structure and location of a site, particularly its latitude. Thus the data can be used to answer the following kinds of questions: Are there more species of birds in denser forests? Are birds concentrated more densely in areas where vegetation is more dense? In general, is there more diversity in locations at higher latitudes, or lower latitudes? And, perhaps most importantly, which technical measure of vegetation structure is the best predictor of the number of bird species in a forest. Many other, more subtle questions can be explored using these data as well.<br />
+        Explanations of the measures of vegetation structure and other variables are given below. It should be noted, finally, that the natural logarithms of variables, rather than the raw variables as given in the data, are generally used when examining relationships or identifying good predictors. Thus the correlation between the log of the “Profile Area” and the number of bird species in a forest - to take a concrete example - is stronger than the correlation between the “Profile Area” and the number of species.<br />
+        This study has not yet been published (12/09/99).<br />
+<strong>2. BRIEF DESCRIPTION OF THE DATA</strong><br />
+        Data were gathered at 40 different California oak woodland sites. Most of the data were collected in spring, during the bird breeding season, in 1994.<br />
+        The sites were around 5 hectares in size - the equivalent of about 12 acres, or 0.019 square miles - and were situated in relatively homogeneous habitat. At least three visits were made to each site, and the number of breeding pairs of each bird species were counted by sight and by analyzing sound recordings.<br />
+        Measurements of vegetation structure were also made during the visits.<br />
+<strong>3. HOW TO USE THE DATA FILES</strong><br />
+        The data file is a comma delimited text file. Missing data are indicated by periods (“.”). The following list explains each of the seven variables. To understand the measurements of vegetation structure, you’ll need the concept of a forest’s vegetation density at a particular height. Roughly, this is just a measure of how thick the foliage is at a given cross-sectional height. To attach a number to this thickness, two researchers position themselves at the height whose vegetation density they wish to measure and one holds a flat wooden board and moves away from the other. The stationary researcher then notes the distance to “semi-obscurity”: how far away his partner is when the view of the board is half obscured by foliage. Since this distance will be smaller in thicker foliage, its reciprocal is taken as the measure of vegetation density. Thus higher numbers will correspond to thicker foliage.<br />
+        <strong>1) ELEVATION</strong><br />
+        The height of the site above sea level. Given in meters.<br />
+        <strong>2) PROFILE AREA</strong><br />
+        Roughly, a measure of the total amount of foliage at a site. Technically, this number is obtained by plotting vegetation density versus height above ground and taking the total area under the graph. The units, however, are not typical area units, as vegetation density is the reciprocal of a distance; the units are specially designed to measure profile area, and are called f.p. units (foliage profile units).<br />
+        <strong>3) HEIGHT</strong><br />
+        Roughly, the height of the top of the forest canopy. Technically, the height above which horizontal distance to semi-obscurity exceeds 30 meters. Given in meters.<br />
+        <strong>4) HALF-HEIGHT</strong><br />
+        Roughly, the height that divides total foliage in two: half the forest is above it, and half below. Technically, the median of the graph of vegetation density versus height. Given in meters.<br />
+        <strong>5) LATITUDE</strong><br />
+        The latitude of the site. Given in degrees.<br />
+        <strong>6) LONGITUDE</strong><br />
+        The longitude of the site. Given in degrees.<br />
+        <strong>7) NO. SPECIES</strong><br />
+        The number of different species of breeding bird pairs.<br />
+        <strong>8) TOTAL DENSITY</strong><br />
+        A measure of the bird population density. It is simply the number of pairs of birds per hectare.</p>
+</blockquote>
+<p></font></p>
+</div>
+<div id="ii-introduction" class="section level1">
+<h1><font face="Baskerville Old Face">(II) Introduction</font></h1>
+<p><font face="Times New Roman" color=black size=4></p>
+<ul>
+<li>This data is from a study done on the number of breeding pairs of birds in 40 locations around the American Pacific coastline as well as closer inland. Taken during the spring of 1994, the sites were all around 5 hetacres in size and situated in relativly homogenous habitats. The number breeding pairs of bird species was counted by sight and by analyzing sound recordings. The variables are defined by the researchers as follows:
+<ul>
+<li><code>SITE</code>: The place where the data were collected.</li>
+<li><code>Elevation</code>: The height of the site above sea level. Given in meters.</li>
+<li><code>Profile.Area</code>: Roughly, a measure of the total amount of foliage at a site. We consider it as the density of forest at certain height.</li>
+<li><code>Height</code>: Roughly, the height of the top of the forest canopy. Technically, the height above which horizontal distance to semi-obscurity exceeds 30 meters(a height from which line of sight is over 30 meters).</li>
+<li><code>Half.height</code>: Roughly, the height that divides total foliage in two: half the forest is above it, and half below. Technically, the median of the graph of vegetation density versus height. Given in meters.</li>
+<li><code>Latitude</code>: The latitude of the site. Given in degrees.</li>
+<li><code>Longitude</code>: The longitude of the site. Given in degrees.</li>
+<li><code>No..Species</code>: The number of different species of breeding bird pairs.</li>
+<li><code>Total.density</code>: A measure of the bird population density. It is simply the number of pairs of birds per hectare.</li>
+</ul></li>
+<li>There is data missing from the <code>Elevation</code>, <code>Profile.Area</code>, <code>Height</code>, and <code>Half.height</code> variables. The missing points of elevation seem to be random. However, the missing data points for <code>Profile.Area</code>, <code>Height</code>, and <code>Half.height</code> follow the following conditions:
+<ul>
+<li>A site missing its <code>Half.height</code> will also not have its <code>Profile area</code> and vice versa.</li>
+<li>If a site is missing its <code>Height</code> variable, it will also be missing its <code>Profile.Area</code> and <code>Half.height</code> variables.</li>
+<li>A likely explanation for this is that <code>Profile.Area</code> is related in some way to <code>Half.height</code>, according to the description of the variables, <code>Half.height</code> and <code>Profile.Area</code> are both calculated from vegetation density with respect to height. So it would also make sense that in the cases where <code>Height</code> was not calculatable that the data points for <code>Profile.Area</code> and <code>Half.height</code> are missing as well. In our calculations and work, we chose to simply ignore missing values in our plots and for fitting our models.</li>
+</ul></li>
+</ul>
+<p></font></p>
+<pre class="r"><code>library(knitr)
+bird=read.table(&quot;http://www.stat.ucla.edu/projects/datasets/birds.dat&quot;,header=TRUE,sep=&quot;,&quot;,fill=TRUE)
+kable(bird,align=&quot;c&quot;)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="center">SITE</th>
+<th align="center">Elevation</th>
+<th align="center">Profile.Area</th>
+<th align="center">Height</th>
+<th align="center">Half.height</th>
+<th align="center">Latitude</th>
+<th align="center">Longitude</th>
+<th align="center">No..Species</th>
+<th align="center">Total.density</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Thurston</td>
+<td align="center">60</td>
+<td align="center">46.2</td>
+<td align="center">25.6</td>
+<td align="center">5.5</td>
+<td align="center">46.82</td>
+<td align="center">123.00</td>
+<td align="center">37</td>
+<td align="center">14.000</td>
+</tr>
+<tr class="even">
+<td align="center">Goshen</td>
+<td align="center">45</td>
+<td align="center">36.8</td>
+<td align="center">21.5</td>
+<td align="center">9.3</td>
+<td align="center">44.03</td>
+<td align="center">122.96</td>
+<td align="center">21</td>
+<td align="center">7.900</td>
+</tr>
+<tr class="odd">
+<td align="center">Rogue</td>
+<td align="center">.</td>
+<td align="center">29.2</td>
+<td align="center">10.8</td>
+<td align="center">4.3</td>
+<td align="center">42.45</td>
+<td align="center">123.12</td>
+<td align="center">26</td>
+<td align="center">9.150</td>
+</tr>
+<tr class="even">
+<td align="center">MadR</td>
+<td align="center">985</td>
+<td align="center">46.62</td>
+<td align="center">23.9</td>
+<td align="center">12.8</td>
+<td align="center">40.43</td>
+<td align="center">123.51</td>
+<td align="center">27</td>
+<td align="center">8.450</td>
+</tr>
+<tr class="odd">
+<td align="center">Redding</td>
+<td align="center">.</td>
+<td align="center">21.2</td>
+<td align="center">11.5</td>
+<td align="center">2.3</td>
+<td align="center">40.64</td>
+<td align="center">122.28</td>
+<td align="center">21</td>
+<td align="center">7.250</td>
+</tr>
+<tr class="even">
+<td align="center">Chico</td>
+<td align="center">40</td>
+<td align="center">30.6</td>
+<td align="center">15.2</td>
+<td align="center">4.2</td>
+<td align="center">39.77</td>
+<td align="center">121.78</td>
+<td align="center">21</td>
+<td align="center">10.170</td>
+</tr>
+<tr class="odd">
+<td align="center">Glenn</td>
+<td align="center">26</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">39.58</td>
+<td align="center">122.00</td>
+<td align="center">28</td>
+<td align="center">9.125</td>
+</tr>
+<tr class="even">
+<td align="center">Sutter</td>
+<td align="center">68</td>
+<td align="center">24.6</td>
+<td align="center">8.98</td>
+<td align="center">3.87</td>
+<td align="center">39.25</td>
+<td align="center">121.77</td>
+<td align="center">22</td>
+<td align="center">2.988</td>
+</tr>
+<tr class="odd">
+<td align="center">Carmichael</td>
+<td align="center">21</td>
+<td align="center">42.8</td>
+<td align="center">24.24</td>
+<td align="center">5.33</td>
+<td align="center">38.62</td>
+<td align="center">121.30</td>
+<td align="center">22</td>
+<td align="center">11.700</td>
+</tr>
+<tr class="even">
+<td align="center">Sonoma</td>
+<td align="center">147</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">38.33</td>
+<td align="center">122.50</td>
+<td align="center">26</td>
+<td align="center">3.255</td>
+</tr>
+<tr class="odd">
+<td align="center">Solano</td>
+<td align="center">92</td>
+<td align="center">.</td>
+<td align="center">11.5</td>
+<td align="center">.</td>
+<td align="center">38.27</td>
+<td align="center">122.17</td>
+<td align="center">47</td>
+<td align="center">10.320</td>
+</tr>
+<tr class="even">
+<td align="center">CCCo</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">37.95</td>
+<td align="center">121.92</td>
+<td align="center">26</td>
+<td align="center">8.460</td>
+</tr>
+<tr class="odd">
+<td align="center">Bolinas</td>
+<td align="center">60</td>
+<td align="center">31.6</td>
+<td align="center">13.24</td>
+<td align="center">3.88</td>
+<td align="center">37.92</td>
+<td align="center">122.75</td>
+<td align="center">29</td>
+<td align="center">11.300</td>
+</tr>
+<tr class="even">
+<td align="center">Hayward</td>
+<td align="center">66</td>
+<td align="center">40</td>
+<td align="center">20.45</td>
+<td align="center">8.09</td>
+<td align="center">37.65</td>
+<td align="center">122.04</td>
+<td align="center">34</td>
+<td align="center">13.800</td>
+</tr>
+<tr class="odd">
+<td align="center">Jasper</td>
+<td align="center">167</td>
+<td align="center">40.4</td>
+<td align="center">18.99</td>
+<td align="center">6.91</td>
+<td align="center">37.41</td>
+<td align="center">122.23</td>
+<td align="center">28</td>
+<td align="center">12.350</td>
+</tr>
+<tr class="even">
+<td align="center">SierrGlen</td>
+<td align="center">1030</td>
+<td align="center">25</td>
+<td align="center">10</td>
+<td align="center">2</td>
+<td align="center">36.68</td>
+<td align="center">118.96</td>
+<td align="center">25</td>
+<td align="center">13.400</td>
+</tr>
+<tr class="odd">
+<td align="center">Miramonte</td>
+<td align="center">.</td>
+<td align="center">23</td>
+<td align="center">8.5</td>
+<td align="center">1.5</td>
+<td align="center">36.62</td>
+<td align="center">119.04</td>
+<td align="center">19</td>
+<td align="center">6.200</td>
+</tr>
+<tr class="even">
+<td align="center">Hastings</td>
+<td align="center">583</td>
+<td align="center">20.4</td>
+<td align="center">7.88</td>
+<td align="center">0.61</td>
+<td align="center">36.38</td>
+<td align="center">121.55</td>
+<td align="center">32</td>
+<td align="center">4.260</td>
+</tr>
+<tr class="odd">
+<td align="center">Big.Ck</td>
+<td align="center">260</td>
+<td align="center">36.2</td>
+<td align="center">18.56</td>
+<td align="center">7.06</td>
+<td align="center">36.00</td>
+<td align="center">121.44</td>
+<td align="center">32</td>
+<td align="center">8.900</td>
+</tr>
+<tr class="even">
+<td align="center">Lompoc</td>
+<td align="center">.</td>
+<td align="center">27.8</td>
+<td align="center">10.33</td>
+<td align="center">3.33</td>
+<td align="center">34.64</td>
+<td align="center">120.26</td>
+<td align="center">29</td>
+<td align="center">11.650</td>
+</tr>
+<tr class="odd">
+<td align="center">StaBarbara</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">20</td>
+<td align="center">.</td>
+<td align="center">34.46</td>
+<td align="center">119.71</td>
+<td align="center">29</td>
+<td align="center">7.510</td>
+</tr>
+<tr class="even">
+<td align="center">SnGabesOJ</td>
+<td align="center">1394</td>
+<td align="center">22.6</td>
+<td align="center">3.64</td>
+<td align="center">1.06</td>
+<td align="center">34.41</td>
+<td align="center">117.80</td>
+<td align="center">16</td>
+<td align="center">8.550</td>
+</tr>
+<tr class="odd">
+<td align="center">SnGabesOP</td>
+<td align="center">1545</td>
+<td align="center">31.4</td>
+<td align="center">13.03</td>
+<td align="center">2.94</td>
+<td align="center">34.40</td>
+<td align="center">117.74</td>
+<td align="center">21</td>
+<td align="center">9.950</td>
+</tr>
+<tr class="even">
+<td align="center">SnGabesBlOak</td>
+<td align="center">1742</td>
+<td align="center">41.1</td>
+<td align="center">21.82</td>
+<td align="center">7.06</td>
+<td align="center">34.38</td>
+<td align="center">117.70</td>
+<td align="center">24</td>
+<td align="center">11.800</td>
+</tr>
+<tr class="odd">
+<td align="center">Topanga</td>
+<td align="center">420</td>
+<td align="center">40</td>
+<td align="center">12.1</td>
+<td align="center">4.5</td>
+<td align="center">34.09</td>
+<td align="center">118.58</td>
+<td align="center">37</td>
+<td align="center">22.300</td>
+</tr>
+<tr class="even">
+<td align="center">ColdCk</td>
+<td align="center">500</td>
+<td align="center">36</td>
+<td align="center">14</td>
+<td align="center">5</td>
+<td align="center">34.09</td>
+<td align="center">118.64</td>
+<td align="center">38</td>
+<td align="center">16.000</td>
+</tr>
+<tr class="odd">
+<td align="center">Chiquita</td>
+<td align="center">.</td>
+<td align="center">44.7</td>
+<td align="center">14.24</td>
+<td align="center">5.21</td>
+<td align="center">33.70</td>
+<td align="center">117.30</td>
+<td align="center">30</td>
+<td align="center">10.850</td>
+</tr>
+<tr class="even">
+<td align="center">SnJCapistran</td>
+<td align="center">545</td>
+<td align="center">36.9</td>
+<td align="center">15.6</td>
+<td align="center">5.76</td>
+<td align="center">33.60</td>
+<td align="center">117.46</td>
+<td align="center">20</td>
+<td align="center">5.800</td>
+</tr>
+<tr class="odd">
+<td align="center">BellCyn1</td>
+<td align="center">197</td>
+<td align="center">.</td>
+<td align="center">15</td>
+<td align="center">.</td>
+<td align="center">33.59</td>
+<td align="center">117.57</td>
+<td align="center">23</td>
+<td align="center">10.870</td>
+</tr>
+<tr class="even">
+<td align="center">BellCny2</td>
+<td align="center">197</td>
+<td align="center">.</td>
+<td align="center">15</td>
+<td align="center">.</td>
+<td align="center">33.59</td>
+<td align="center">117.57</td>
+<td align="center">30</td>
+<td align="center">14.780</td>
+</tr>
+<tr class="odd">
+<td align="center">Caspers</td>
+<td align="center">158</td>
+<td align="center">40.8</td>
+<td align="center">14.24</td>
+<td align="center">5.73</td>
+<td align="center">33.59</td>
+<td align="center">117.57</td>
+<td align="center">27</td>
+<td align="center">9.650</td>
+</tr>
+<tr class="even">
+<td align="center">StarrRnch</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">18</td>
+<td align="center">.</td>
+<td align="center">33.59</td>
+<td align="center">117.55</td>
+<td align="center">32</td>
+<td align="center">9.330</td>
+</tr>
+<tr class="odd">
+<td align="center">Cleveland</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">.</td>
+<td align="center">33.56</td>
+<td align="center">117.44</td>
+<td align="center">17</td>
+<td align="center">2.590</td>
+</tr>
+<tr class="even">
+<td align="center">CALiveOak</td>
+<td align="center">164</td>
+<td align="center">.</td>
+<td align="center">11</td>
+<td align="center">.</td>
+<td align="center">33.43</td>
+<td align="center">117.17</td>
+<td align="center">24</td>
+<td align="center">18.760</td>
+</tr>
+<tr class="odd">
+<td align="center">KitCarson</td>
+<td align="center">156</td>
+<td align="center">43.2</td>
+<td align="center">18.18</td>
+<td align="center">6.3</td>
+<td align="center">33.08</td>
+<td align="center">117.05</td>
+<td align="center">32</td>
+<td align="center">17.550</td>
+</tr>
+<tr class="even">
+<td align="center">CuyamacaOC</td>
+<td align="center">1494</td>
+<td align="center">45.8</td>
+<td align="center">19.4</td>
+<td align="center">9.39</td>
+<td align="center">33.00</td>
+<td align="center">116.60</td>
+<td align="center">29</td>
+<td align="center">11.250</td>
+</tr>
+<tr class="odd">
+<td align="center">CuyamacaOP</td>
+<td align="center">1500</td>
+<td align="center">40</td>
+<td align="center">18.48</td>
+<td align="center">7.52</td>
+<td align="center">32.92</td>
+<td align="center">116.53</td>
+<td align="center">40</td>
+<td align="center">14.700</td>
+</tr>
+<tr class="even">
+<td align="center">CuyamacaLO</td>
+<td align="center">.</td>
+<td align="center">38.4</td>
+<td align="center">16.97</td>
+<td align="center">7.58</td>
+<td align="center">32.91</td>
+<td align="center">116.54</td>
+<td align="center">31</td>
+<td align="center">12.400</td>
+</tr>
+<tr class="odd">
+<td align="center">Descanso</td>
+<td align="center">.</td>
+<td align="center">35.7</td>
+<td align="center">14.55</td>
+<td align="center">4.48</td>
+<td align="center">32.82</td>
+<td align="center">116.62</td>
+<td align="center">38</td>
+<td align="center">13.700</td>
+</tr>
+<tr class="even">
+<td align="center">LaGiganta</td>
+<td align="center">1455</td>
+<td align="center">25</td>
+<td align="center">12</td>
+<td align="center">3</td>
+<td align="center">23.53</td>
+<td align="center">110.03</td>
+<td align="center">35</td>
+<td align="center">12.700</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

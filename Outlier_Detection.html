@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 52px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+
+.section h2 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h3 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h4 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h5 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h6 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><font face="Algerian">Harry Lu</font></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="About.html">
+    <span class="fa fa-bars"></span>
+     
+    About Me
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-folder-open"></span>
+     
+    Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Projects.html">
+        <span class="fa fa-bars"></span>
+         
+        Summary
+      </a>
+    </li>
+    <li>
+      <a href="Forecasting_Stock_Value.html">
+        <span class="fa fa-book"></span>
+         
+        Forecasting Stock Value
+      </a>
+    </li>
+    <li>
+      <a href="Arsenic_Measurement.html">
+        <span class="fa fa-book"></span>
+         
+        Arsenic Measurement
+      </a>
+    </li>
+    <li>
+      <a href="Amazon_s_Secret.html">
+        <span class="fa fa-book"></span>
+         
+        Amazon's Secret
+      </a>
+    </li>
+    <li>
+      <a href="Outlier_Detection.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Outlier Detection
+      </a>
+    </li>
+    <li>
+      <a href="Interactive_Web_App.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Interactive Web App
+      </a>
+    </li>
+    <li>
+      <a href="Web_Data_Wrangling.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Web Data Wrangling
+      </a>
+    </li>
+    <li>
+      <a href="Birds_Breeding_Pairs.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Birds Breeding Pairs
+      </a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Activity.html">
+    <span class="fa fa-star"></span>
+     
+    Activities
+  </a>
+</li>
+<li>
+  <a href="Gallery.html">
+    <span class="fa fa-picture-o"></span>
+     
+    Gallery
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore"><center>
+<font face="Baskerville Old Face"><strong>Outlier Detection</strong></font>
+</center></h1>
+
+</div>
+
+
+<div id="backhome">
+<a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+</div>
+<div id="back">
+<a href="Projects.html"><i class="fa fa-undo" aria-hidden="true"></i></a>
+</div>
+<div id="i-background" class="section level1">
+<h1><font face="Baskerville Old Face">(I) Background</font></h1>
+<p><font face="Times New Roman" color=black size=4></p>
+<ul>
+<li>Instructor: Peng Wang, AVP, Head of Data Science - Operation &amp; Fraud Detection at MassMutual Financial Group</li>
+<li>Goal:
+<ul>
+<li>Detect some outliers in a time series.</li>
+<li>Write a general outlier detection algorithm.</li>
+</ul></li>
+<li>The data we used in this project is <code>oil.price</code>, from R library <code>TSA</code>.
+<ul>
+<li>Monthly spot price for crude oil, Cushing, OK (in U.S. dollars per barrel), 01/1986 - 01/2006.</li>
+<li>Source: tonto.eia.doe.gov/dnav/pet/hist/rwtcM.htm</li>
+</ul></li>
+</ul>
+<p></font></p>
+</div>
+<div id="ii-dectection-of-outliers" class="section level1">
+<h1><font face="Baskerville Old Face">(II) Dectection of Outliers</font></h1>
+<p><font face="Times New Roman" color=black size=5>1. Visualize the time series</font></p>
+<pre class="r"><code>library(TSA)
+data(&quot;oil.price&quot;)
+plot(oil.price,ylab=&quot;oil price ($)&quot;,main=&quot;Oil Price 01/1986 - 01/2006&quot;)</code></pre>
+<p><img src="Outlier_Detection_files/figure-html/Visualization-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><font face="Times New Roman" color=black size=5>2. Decompose the time series</font></p>
+<pre class="r"><code>plot(decompose(oil.price))</code></pre>
+<p><img src="Outlier_Detection_files/figure-html/Decomposition-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><font face="Times New Roman" color=black size=5>3. Extract the general trend and periodical trend</font></p>
+<pre class="r"><code>#remove linear trend
+diff1.oil.price=diff(oil.price)
+plot(diff1.oil.price,ylab=&quot;oil price ($)&quot;,main=&quot;1st difference&quot;)</code></pre>
+<p><img src="Outlier_Detection_files/figure-html/Extractioin-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#remove seasonal trend
+diff2.oil.price=diff(diff1.oil.price,lag=12)
+plot(diff2.oil.price,ylab=&quot;oil price ($)&quot;,main=&quot;2nd difference&quot;)</code></pre>
+<p><img src="Outlier_Detection_files/figure-html/Extractioin-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><font face="Times New Roman" color=black size=5>4. Fit a time series model to the remaining residuals</font></p>
+<pre class="r"><code>plot(armasubsets(diff1.oil.price,6,6))</code></pre>
+<p><img src="Outlier_Detection_files/figure-html/Model_Selection-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>f1=arima(oil.price,order=c(5,1,1),fixed=c(0,0,0,NA,NA,NA))
+plot(armasubsets(diff2.oil.price,6,6))</code></pre>
+<p><img src="Outlier_Detection_files/figure-html/Model_Selection-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>f2=arima(oil.price,order=c(4,2,0),fixed=c(NA,NA,0,NA))
+AIC(f1);BIC(f1)</code></pre>
+<pre><code>## [1] 1027.163</code></pre>
+<pre><code>## [1] 1041.085</code></pre>
+<pre class="r"><code>AIC(f2);BIC(f2)</code></pre>
+<pre><code>## [1] 1092.394</code></pre>
+<pre><code>## [1] 1106.3</code></pre>
+<pre class="r"><code>mean(diff1.oil.price);mean(diff2.oil.price)</code></pre>
+<pre><code>## [1] 0.1772917</code></pre>
+<pre><code>## [1] 0.1005263</code></pre>
+<p><font face="Times New Roman" color=black size=4></p>
+<ul>
+<li>From the AIC and BIC results, <code>f1</code> is better than <code>f2</code>, although the second differencing with lag=12 has a smaller mean value.</li>
+</ul>
+<p></font></p>
+<p><font face="Times New Roman" color=black size=5>5. Use the model to determine if a data point is an outlier</font></p>
+<pre class="r"><code>fitted=fitted(f1)
+plot(oil.price,main=&quot;Oil Price Simulation with Outlier Points&quot;,ylab=&quot;Oil Price&quot;)
+lines(fitted,col=2,lty=2)
+legend(&quot;topleft&quot;,legend=c(&quot;Original&quot;,&quot;Simulation&quot;),lty=1:2,col=1:2)
+
+upper=fitted+2.5*sqrt(f1$sigma2)
+lower=fitted-2.5*sqrt(f1$sigma2)
+out=(oil.price&lt;lower|oil.price&gt;upper)
+which(out==TRUE)</code></pre>
+<pre><code>## [1]   2  56 180 226 227 234</code></pre>
+<pre class="r"><code>points(time(oil.price)[out],oil.price[out],pch=19)</code></pre>
+<p><img src="Outlier_Detection_files/figure-html/Outlier_Determination-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><font face="Times New Roman" color=black size=5>6. Detect outliers in the following time series</font></p>
+<pre class="r"><code>plot(oil.price,type=&quot;n&quot;,ylim=range(lower,upper))
+polygon(c(time(oil.price),rev(time(oil.price))),c(upper,rev(lower)),col=rgb(0,0,0.6,0.2),border=FALSE)
+lines(oil.price)
+points(time(oil.price)[out],oil.price[out],pch=19)</code></pre>
+<p><img src="Outlier_Detection_files/figure-html/Final_Plotting-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="ii-general-outlier-dectection-algorithm" class="section level1">
+<h1><font face="Baskerville Old Face">(II) General Outlier Dectection Algorithm</font></h1>
+<p><font face="Times New Roman" color=black size=5>1. Algorithm Design</font></p>
+<pre class="r"><code>f=function(input){
+  #diff1 is normal difference of input data, diff2 is seasonal difference of diff1
+  diff1=diff(input)
+  diff2=diff(diff1,lag=12)
+  
+  #Let f1 be the ARIMA model based on diff1 and f2 be the ARIMA model based on diff2.
+  #ARMA subset summary does not give in descending order of BIC, so determination of the row with smallest BIC value is necessary. Fortunately, the 6th section of the summary is BIC value.
+  temp=summary(armasubsets(diff1,6,6))[[6]]##get all BIC values
+  temp=which(temp==min(temp))##pick out the smallest one
+  #The 1st section of the summary is AR and MA part. TRUE indicates shaded box from the plot.
+  f1.ar=summary(armasubsets(diff1,6,6))[[1]][temp,2:7]
+  f1.ar=unname(f1.ar)#get shaded box logic value for AR part of f1
+  f1.ma=summary(armasubsets(diff1,6,6))[[1]][temp,8:13]
+  f1.ma=unname(f1.ma)#get shaded box logic value for MA part of f1
+  #Same for f2
+  temp=summary(armasubsets(diff2,6,6))[[6]]
+  temp=which(temp==min(temp))
+  f2.ar=summary(armasubsets(diff2,6,6))[[1]][temp,2:7]
+  f2.ar=unname(f2.ar)
+  f2.ma=summary(armasubsets(diff2,6,6))[[1]][temp,8:13]
+  f2.ma=unname(f2.ma)
+  
+  remove(temp)
+  
+  #Now, shaded boxes for both f1 and f2 are ready. Need to determine order and fixed position of AR and MA.
+  f1.ar.position=which(f1.ar==TRUE)
+  if (length(f1.ar.position)!=0){f1.ar.order=max(f1.ar.position)}
+  if (length(f1.ar.position)==0){f1.ar.order=0}
+  f1.ma.position=which(f1.ma==TRUE)
+  if (length(f1.ma.position)!=0){f1.ma.order=max(f1.ma.position)}
+  if (length(f1.ma.position)==0){f1.ma.order=0}
+  f1.fixed.length=f1.ar.order+f1.ma.order
+  f1.fixed=rep(0,f1.fixed.length)
+  f1.fixed[c(f1.ar.position,f1.ar.order+f1.ma.position)]=NA
+  
+  f2.ar.position=which(f2.ar==TRUE)
+  if (length(f2.ar.position)!=0){f2.ar.order=max(f2.ar.position)}
+  if (length(f2.ar.position)==0){f2.ar.order=0}
+  f2.ma.position=which(f2.ma==TRUE)
+  if (length(f2.ma.position)!=0){f2.ma.order=max(f2.ma.position)}
+  if (length(f2.ma.position)==0){f2.ma.order=0}
+  f2.fixed.length=f2.ar.order+f2.ma.order
+  f2.fixed=rep(0,f2.fixed.length)
+  f2.fixed[c(f2.ar.position,f2.ar.order+f2.ma.position)]=NA
+  
+  #Now f1 and f2 could be set
+  f1=arima(input,order=c(f1.ar.order,1,f1.ma.order),fixed=f1.fixed)
+  f2=arima(input,order=c(f2.ar.order,2,f2.ma.order),fixed=f2.fixed)
+  
+  #Compair BIC of both f1 and f2, and let the one with smaller BIC value be the optimize simulation model
+  if (BIC(f1)&lt;=BIC(f2)){fit=f1}
+  if (BIC(f1)&gt;BIC(f2)){fit=f2}
+  return(fit)
+}
+ff=function(input){
+  fit=f(input)
+  fitted=fitted(fit)
+  upper=fitted+2.5*sqrt(fit$sigma2)
+  lower=fitted-2.5*sqrt(fit$sigma2)
+  out=(input&lt;lower|input&gt;upper)
+  
+  #Return position of outliers
+  which(out==TRUE)
+  
+  #Return graph
+  plot(input,type=&quot;n&quot;,ylim=range(lower,upper),main=&quot;Outlier Detection&quot;)
+  polygon(c(time(input),rev(time(input))),c(upper,rev(lower)),col=rgb(0,0,0.6,0.2),border=FALSE)
+  lines(input)
+  points(time(input)[out],input[out],pch=19)
+  return(which(out==TRUE))
+}</code></pre>
+<p><font face="Times New Roman" color=black size=5>2. Test</font></p>
+<pre class="r"><code>library(TSA)
+data(&quot;oil.price&quot;)
+input=oil.price
+ff(input)</code></pre>
+<p><img src="Outlier_Detection_files/figure-html/Test-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>## [1]   2  56 180 226 227 234</code></pre>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

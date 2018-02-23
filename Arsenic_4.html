@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 52px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+
+.section h2 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h3 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h4 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h5 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h6 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><font face="Algerian">Harry Lu</font></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="About.html">
+    <span class="fa fa-bars"></span>
+     
+    About Me
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-folder-open"></span>
+     
+    Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Projects.html">
+        <span class="fa fa-bars"></span>
+         
+        Summary
+      </a>
+    </li>
+    <li>
+      <a href="Forecasting_Stock_Value.html">
+        <span class="fa fa-book"></span>
+         
+        Forecasting Stock Value
+      </a>
+    </li>
+    <li>
+      <a href="Arsenic_Measurement.html">
+        <span class="fa fa-book"></span>
+         
+        Arsenic Measurement
+      </a>
+    </li>
+    <li>
+      <a href="Amazon_s_Secret.html">
+        <span class="fa fa-book"></span>
+         
+        Amazon's Secret
+      </a>
+    </li>
+    <li>
+      <a href="Outlier_Detection.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Outlier Detection
+      </a>
+    </li>
+    <li>
+      <a href="Interactive_Web_App.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Interactive Web App
+      </a>
+    </li>
+    <li>
+      <a href="Web_Data_Wrangling.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Web Data Wrangling
+      </a>
+    </li>
+    <li>
+      <a href="Birds_Breeding_Pairs.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Birds Breeding Pairs
+      </a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Activity.html">
+    <span class="fa fa-star"></span>
+     
+    Activities
+  </a>
+</li>
+<li>
+  <a href="Gallery.html">
+    <span class="fa fa-picture-o"></span>
+     
+    Gallery
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore"><center>
+<font face="Baskerville Old Face"><strong>Determination of Arsenic in Rice: Extraction of inorganic arsenic by dialysis</strong></font>
+</center></h1>
+<h4 class="author"><em><center>
+<font face="Baskerville Old Face">Da Lu, Julian Tyson</font>
+</center>
+<center>
+<font face="Baskerville Old Face">University of Massachusetts Amherst</font>
+</center></em></h4>
+<h4 class="date"><em><center>
+<font face="Baskerville Old Face">Spring 2015 (May)</font>
+</center></em></h4>
+
+</div>
+
+
+<div id="backhome">
+<a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+</div>
+<div id="back">
+<a href="Arsenic_Measurement.html"><i class="fa fa-undo" aria-hidden="true"></i></a>
+</div>
+<div id="abstract" class="section level1">
+<h1><font face="Calibri" color=black size=5><strong>Abstract</strong></font></h1>
+<p><font face="Calibri" color=black size=4>         The extraction of arsenic from rice spiked at 500μg·kg<sup>-1</sup> by hot water with the technique of separation of large molecules by dialysis bag was studied. Arsenic species were quantified by both the Hach EZ testkit and atomic fluorescence spectrometry (AFS). The Hach test always showed a lower result than the expected concentration, which was 50μg·L<sup>-1</sup> or 33μg·L<sup>-1</sup>. However, the AFS results always showed out a higher number than the expected number, which was 5μg·L<sup>-1</sup> or 3.3μg·L<sup>-1</sup>. Spike addition test for AFS showed that the higher results were not caused by systematic instrumental error. </font></p>
+</div>
+<div id="introduction" class="section level1">
+<h1><font face="Calibri" color=black size=5><strong>1. Introduction</strong></font></h1>
+<p><font face="Calibri" color=black size=4>         Arsenic forms many toxic compounds that exhibit a range of toxicities. Inorganic arsenic, in particular arsenite [As (III)], is one of the most toxic forms. As the toxicity of arsenic depends upon the chemical species, it is important to determine which chemical species are present in foodstuff in addition to the total arsenic concentration. Therefore, arsenic speciation has become standard practice throughout the world.<sup><strong>1</strong></sup> For most people, besides the diet, usually there are smaller intakes of arsenic from drinking water and air.<sup><strong>2</strong></sup> Among foods, some of the highest concentrations are found in fish and shellfish; however, this arsenic exists primarily as organic compounds, which are essentially nontoxic. Inorganic arsenic compounds (the most toxic form of arsenic) are the predominant forms in drinking water.<sup><strong>2</strong></sup> The USFDA has been monitoring the levels of arsenic in foods for decades, and in 2011, increased its testing.<sup><strong>3</strong></sup> Rice is a dietary staple in many countries and contributes to arsenic intake than any other Asian agricultural products.<sup><strong>4</strong></sup> So, for that reason, people should know the amount of arsenic in their rice for a safe consumption.<br />
+        Measuring the arsenic in rice had been done in many different ways. For example, one of the most precise ways is by using HPLC-ICP-MS. Raber et al reported an HPLC-ICP-MS method based on sample extraction with trifluoroacetic acid/H<sub>2</sub>O<sub>2</sub>, separation of three arsenic species, and measurement of arsenate by anion-exchange HPLC-ICP-MS using aqueous malonic acid as mobile phase.<sup><strong>5</strong></sup><br />
+        The method of using dialysis bag to extract arsenic from rice flour by hot water as extracting solvent had been developed previously.<sup><strong>6</strong></sup> However, there was only one set of experiments had been performed and it supported the dialysis bag method was viable.<br />
+        The goal of the work described in this paper was to collect more data from AFS in addition to that for the Hach test to verify the previous conclusion, which was that the dialysis bag extraction could have a very high efficiency for extracting As (III).<sup><strong>6</strong></sup> </font></p>
+</div>
+<div id="experimental" class="section level1">
+<h1><font face="Calibri" color=black size=5><strong>2. Experimental</strong></font></h1>
+<p><font face="Calibri" color=black size=4> <strong>2.1. Reagents and materials</strong><br />
+        Contaminated rice flour (500μg·kg<sup>-1</sup>), Hach EZ testkit, D9777 SIGMA dialysis tubing cellulose membrane, L-cysteine, 6% L-cysteine solution, concentrated nitric acid (70%), standard arsenic (III) solution (50, 100, 1000μg·L<sup>-1</sup>).<br />
+        D9777 SIGMA has a typical molecular weight cutoff at 14,000 and the diameter is 25mm.<br />
+<strong>2.2. Instrumentation</strong><br />
+        Hot plate, thermometer, atomic fluorescence spectrometer, glass rod, coffee grinder, 50ml tubes, 15ml tubes, magnetic stir bar, stir plate.<br />
+        The atomic fluorescence spectrometer was a model Millennium Excalibur, (PS Analytical, Deerfield Beach, FL, USA), with a built in Permapure dryer system (part number M025D002) and a gas-liquid separator (part number M055G003). The instrument was modified so that the flame was sustained by hydrogen from a cylinder rather than from the reaction of excess borohydride with acid in the continuous flow mode that is the normal operating procedure. Hydrogen gas was introduced through Teflon tubing into the system by merging with the purging argon gas before they were introduced into the gas-liquid separator. The hydrogen flow rate was controlled by a needle valve (Swagelok, Cleveland, US) and measured by a soap-bubble flow meter. The operating conditions are given in <font color=red>Table 1</font>. Operation was controlled by Sams software (PS Analytical), which also recorded the signal. Further data processing was done with Microsoft Excel.<sup><strong>7</strong></sup><br />
+<strong>2.3. Method Development</strong><br />
+        <strong>Hydride Generation 1 (HG1)</strong><br />
+        Each 5ml of extract was diluted to a 50ml of sample by add 11.1ml of concentrated nitric acid, 16.7ml of 6% L-cysteine solution, and deionized water. The concentration of the acid was 15.5% and the concentration of L-cysteine was 2%. The standards were kept at the sample concentration as the sample. The calibration curve was shown in Figure 1.<br />
+        <strong>Hydride Generation 2 (HG2)</strong><br />
+        According to Brindle’s work, a presence of low concentration of acid was better to HG rather than using large amount of acid.<sup><strong>8</strong></sup> A new set of standards was made based on the ratio from his paper.<sup><strong>8</strong></sup> The 0μg·L<sup>-1</sup> standard was made by dissolving 12.5g of L-cysteine and 2.25ml of concentrated nitric acid in 1L of deionized water. The 1, 2, 3, 4, 5μg·L<sup>-1</sup> standards were made by dissolving 6.25g of L-cysteine and 1.125ml of concentrated nitric acid with 0.5, 1.0, 1.5, 2.0, 2.5ml 1000μg·L<sup>-1</sup> As (III) standard in 0.5L of deionized water separately. The concentration of acid was 0.16% and the concentration of L-cysteine was 1.25%. The testing samples were made by using 5ml from the left extract and the concentration of acid and L-cysteine was same as the standards. The calibration curve was shown in Figure 2.<br />
+        <strong>Carrier Solution</strong><br />
+        A carrier solution was made by dissolving 1.25g of NaOH and 1.75g of NaBH<sub>4</sub> in 250ml of deionized water and the concentration for NaOH and NaBH<sub>4</sub> was 0.5% and 0.7% separately.<br />
+        <strong>Flow Rate</strong><br />
+        The flow rate for the sample was 0.9ml·min<sup>-1</sup> and the flow rate for the carrier solution was 1.8ml·min<sup>-1</sup>.<br />
+        <strong>Testing</strong><br />
+        Each of sample was followed a 0ppm standard so that the result would be more accurate. [0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, sample 1, 0, sample 2, etc.]<br />
+<strong>2.4. Procedure</strong><br />
+        <strong>Make standard 500μg·kg<sup>-1</sup> contaminated and flour</strong><br />
+        According to the previous work, the 500μg·kg<sup>-1</sup> rice flour was prepared each time before extraction from the 500μg·kg<sup>-1</sup> contaminated rice. <sup><strong>6</strong></sup><br />
+        <strong>Extraction 1</strong> <em>(Feb 24, 2015)</em><br />
+        Contaminated rice flour (20g of 500μg·kg<sup>-1</sup>) was prepared which was followed the procedure from the previous work. <sup><strong>6</strong></sup> Five sections of 22cm dialysis bags were taken and put into a beaker of deionized water. After the bags became soft, one end of the bag was tied. 20ml of deionized water was added to each bag and the other end of each bag was tied. 200ml of deionized water was heated to 80°C on the hot plate with level 3. The rice flour was added to the hot water gradually and the suspension was stirred by a glass rod for a better dissolving. Five dialysis bags with the water inside were put into the rice suspension and the beaker was heated for 2h at a constant temperature of 80°C. The water level was marked on the beaker. The water level was kept at the mark while heating. Then the suspension was cooled for more than 12h where the top of the beaker was sealed by aluminium foils. Then, the tin paper was removed and the suspension was reheated to a constant temperature 80°C for 2h.<br />
+        After heating, the bags were carefully taken out and washed by deionized water to remove the starch on the outside surface. Each bag was cut on the top in order to take out the solution inside. 75ml of inside solution was saved in two 50ml tube for the Hach test. The left solution was saved in another 50ml tube for the AFS sample.<br />
+        <strong>Hach test for extraction 1</strong><br />
+        The 75ml of extract was poured into the reaction Hach test vessel and reagent 1 was added which was sulfamic acid. The reason of using 75ml but not 50ml was that the expected value for the 75ml test was 50μg·L<sup>-1</sup> and the relationship of the color and the concentration was almost linear. And from previous work, a volume which was more than 50ml was viable for the Hach test.<sup><strong>9</strong></sup> A stir bar was put into the vessel and the stir plate was set as medium level for 1min to dissolve the acid. Then the switch of the plate was turned off. The reagent 2 was added and the vessel was closed by the cap with test strip on simultaneously. The plate was turned on again and the time was counted at that point. The color was recorded at 20min, 40min, and 60min.<br />
+        <strong>AFS sample preparation and AFS test for extraction 1</strong><br />
+        The sample was made based on the HG1 method.<br />
+        <strong>Extraction 2</strong> <em>(Mar 10)</em><br />
+        The extracting procedure was similar to extraction 1 but the only difference was the mass of rice flour that used in the extraction was 30g.<br />
+        50ml of inside solution was saved in a 50ml tube for the Hach test and the solution is a combination of 10ml from each bag. And the left solution from each bag was saved separately in another five 15ml tubes.<br />
+        <strong>Hach Test for extraction 2</strong><br />
+        The 50ml of extract was used for the test and the rest procedure was same as before.<br />
+        <strong>AFS sample preparation and AFS test for extraction 2</strong><br />
+        The sample was made based on the HG2 method.<br />
+        <strong>Extraction 3</strong> <em>(Apr 15)</em><br />
+        20g of 500μg·kg<sup>-1</sup> rice flour was prepared. The procedure was similar to extraction 1 but the only difference was the heating time was just 2h. Then 10ml of extract was taken out from the 5 bags and mixed in a 50ml tube. The left extract was saved separately in five 15ml tubes.<br />
+        <strong>Hach Test for extraction 3</strong><br />
+        The procedure was same as Hach test 2.<br />
+        <strong>AFS sample preparation and AFS test for extraction 3</strong><br />
+        The sample was made based on the HG2 method. Before adding water to dilute the sample to 50ml, some samples were prepared by spiking 5 more μg·L<sup>-1</sup> by adding 2.5ml of 100μg·L<sup>-1</sup> standard solution. The spiking data were showed in Table 1. </font></p>
+</div>
+<div id="results-and-discussion" class="section level1">
+<h1><font face="Calibri" color=black size=5><strong>3. Results and Discussion</strong></font></h1>
+<p><font face="Calibri" color=black size=4> <strong>3.1. Results</strong><br />
+        <strong>Expected value</strong><br />
+        All the expected values were calculated under the assumption of 100% extraction efficiency and equal concentration inside and outside the dialysis bag. The expected value for the Hach test was calculated by the formula <span class="math inline">\(\frac{m\cdot V}{30}\)</span> where <span class="math inline">\(m\)</span> was the mass of the contaminated rice flour and <span class="math inline">\(V\)</span> was the volume used for Hach test. The expected value for the AFS was calculated by the formula <span class="math inline">\(\frac{m}{6}\)</span> where <span class="math inline">\(m\)</span> was the mass of the contaminated rice flour. The unit of expected value would be μg·L<sup>-1</sup>.<br />
+        <strong>Hach test for extraction 1</strong><br />
+        At 20min, the color was corresponding to 10μg·L<sup>-1</sup> by naked eye according to the calibration color strip on the bottle. At 40min, the color was corresponding to 10 to 25μg·L<sup>-1</sup>. At 60min, the color was also corresponding to 10 to 25μg·L<sup>-1</sup>. As reaction time getting longer, the color shown on the test strip would get darker but the number was lower than the expected 33μg·L<sup>-1</sup>. The result was showed in Table 2.<br />
+        <strong>AFS test for extraction 1</strong><br />
+        The sample gave a 9.97μg·L<sup>-1</sup> result. The expected value was 3.3μg·L<sup>-1</sup> which meant the extraction gave out a much higher extracting ratio about 3 times. The result was showed in Table 3.<br />
+        <strong>Hach test for extraction 2</strong><br />
+        At 20min, the color was corresponding to 10μg·L<sup>-1</sup>. At 40min, the color was still corresponding to 10μg·L<sup>-1</sup>. At 60min, the color was between 10 to 25μg·L<sup>-1</sup> which was lower than expected 50μg·L<sup>-1</sup>. The result was showed in Table 4.<br />
+        <strong>AFS test for extraction 2</strong><br />
+        The sample 1 gave 14.79μg·L<sup>-1</sup> which was about 3 times of the expected value 5μg·L<sup>-1</sup>. The sample 2 gave 10.63μg·L<sup>-1</sup> and sample 3 gave 10.97μg·L<sup>-1</sup> which were about 2 times of the expected value. The result was showed in Table 5.<br />
+        <strong>Hach test for extraction 3</strong><br />
+        At 20min, the color was corresponding to 10 to 25μg·L<sup>-1</sup>. At 40min and 60min the color were corresponding to 25μg·L<sup>-1</sup>. The results were better than the extraction 1 but the number was still lower than expected number 33μg·L<sup>-1</sup>. The result was showed in Table 6.<br />
+        <strong>AFS test for extraction 3</strong><br />
+        The result was showed in Table 7. From the addition standard samples, we can conclude that the higher results from extraction 1 and 2 were not caused by the systematic error of the machine. Both the AFS results from the normal and spiked sample had a higher recovery than the recovery of the spiked 5μg·L<sup>-1</sup>.<br />
+<strong>3.2. Discussion</strong><br />
+        All the Hach tests showed that the values were lower than expectation. This result may caused by reasons listing below: first, some of the arsine gas was dissolved in the solution so they did not come out of the solution and reacted with the reactant on the test strip; second, the reaction was somehow incomplete. However, AFS results showed a different situation. All of the numbers were higher than expectation, and some could even reach about 3 times of the expectation.<br />
+        From the results of two different methods of hydride generation, it was easy to conclude that the HG2 condition was much efficient than the HG1 condition because the second method (peak value from 0 to 70) could get a much higher peak value than the first method (peak value from 0 to 5) from the AFS.<br />
+        The reason that the Hach test had a lower result than the expected value may caused by the pore size of the dialysis bag that was not small enough. It could still let some small starch molecules pass the membrane of the bag so the Hach test would still be interfered by the starch. Also, some small molecules from the rice could enter the bag and finally affect the Hach test result.<br />
+        The reason that the AFS test had a much high number may caused by many reason. First, there may be a big difference of moisture between the contaminated rice and the fresh rice which came from the bag of rice, so the mass which was taken from the contaminated rice would correspond to a larger mass of the fresh rice before drying which meant more arsenic was taken. Second, during the extraction, rice flour may absorb some amount of water inside so the actual volume for the extraction was smaller and the actual arsenic concentration would be higher. Third, AFS may give a signal from the DMA which was extracted from rice. </font></p>
+</div>
+<div id="conclusion" class="section level1">
+<h1><font face="Calibri" color=black size=5><strong>4. Conclusion</strong></font></h1>
+<p><font face="Calibri" color=black size=4>         The 0.16% of acid and 1.25% of L-cysteine was a very great condition for hydride generation of As (V).</p>
+<ul>
+<li><p><strong>Improvement for the experiment</strong><br />
+    1) Try to use rice grain for the extraction instead of rice flour.<br />
+    2) Try to use less time for the extraction.<br />
+    3) Use different diameter tubing for the extraction.</p></li>
+<li><p><strong>Further work need to do</strong><br />
+    1) Do the test with only arsenic in the solution and test the arsenic concentration for both inside and outside.<br />
+    2) Find out the efficiency of extraction from rice grain and compare it to the efficiency from rice flour.</p></li>
+</ul>
+<p></font></p>
+</div>
+<div id="acknowledgement" class="section level1">
+<h1><font face="Calibri" color=black size=5><strong>5. Acknowledgement</strong></font></h1>
+<p><font face="Calibri" color=black size=4>         Thanks to Cassandra Martin for help with the AFS measurements. </font></p>
+<center>
+<font face="Calibri" color=black size=4><strong>Table 1</strong> AFS sample preparation for extraction 3</font>
+</center>
+<center>
+<a href="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2001.png"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2001.png" width=90%></a>
+</center>
+<p></br></p>
+<center>
+<font face="Calibri" color=black size=4><strong>Table 2</strong> Hach test for extraction 1 with expected value of 50μg·L<sup>-1</sup></font>
+</center>
+<center>
+<a href="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2002.png"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2002.png" width=50%></a>
+</center>
+<p></br></p>
+<center>
+<font face="Calibri" color=black size=4><strong>Table 3</strong> AFS test for extraction 1 with expected value of 3.3μg·L<sup>-1</sup></font>
+</center>
+<center>
+<a href="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2003.png"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2003.png" width=40%></a>
+</center>
+<p></br></p>
+<center>
+<font face="Calibri" color=black size=4><strong>Table 4</strong> Hach test for extraction 2 with expected value of 50μg·L<sup>-1</sup></font>
+</center>
+<center>
+<a href="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2004.png"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2004.png" width=50%></a>
+</center>
+<p></br></p>
+<center>
+<font face="Calibri" color=black size=4><strong>Table 5</strong> AFS test for extraction 2 with expected value of 5.0μg·L<sup>-1</sup></font>
+</center>
+<center>
+<a href="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2005.png"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2005.png" width=40%></a>
+</center>
+<p></br></p>
+<center>
+<font face="Calibri" color=black size=4><strong>Table 6</strong> Hach test for extraction 3 with expected value of 33μg·L<sup>-1</sup></font>
+</center>
+<center>
+<a href="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2006.png"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2006.png" width=50%></a>
+</center>
+<p></br></p>
+<center>
+<font face="Calibri" color=black size=4><strong>Table 7</strong> AFS test for extraction 3</font>
+</center>
+<center>
+<a href="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2007.png"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2007.png" width=90%></a>
+</center>
+<p></br></p>
+<center>
+<a href="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2008.png"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2008.png" width=40%></a>
+</center>
+<center>
+<font face="Calibri" color=black size=4><strong>Figure 1</strong> Calibration curve for HG1</font>
+</center>
+<p></br></p>
+<center>
+<a href="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2009.png"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2009.png" width=40%></a>
+</center>
+<center>
+<font face="Calibri" color=black size=4><strong>Figure 2</strong> Calibration curve for HG2</font>
+</center>
+</div>
+<div id="references" class="section level1">
+<h1><font face="Calibri" color=black size=5><strong>6. References</strong></font></h1>
+<p><font face="Calibri" color=black size=4> <strong>1</strong> Tyson, Julian. “The determination of arsenic compounds: a critical review.” <em>ISRN Analytical Chemistry</em> 2013 (2013).<br />
+<strong>2</strong> Agency for Toxic Substances and Disease Registry (ATSDR). Toxicological Profile for Arsenic (Update). U.S. Public Health Service, U.S. Department of Health and Human Services, Atlanta, GA. 2007.<br />
+<strong>3</strong> USFDA. <a href="http://www.fda.gov/food/foodborneillnesscontaminants/metals/ucm319870.htm">Arsenic in Rice and Rice Products</a>. (accessed Feb 4, 2018)<br />
+<strong>4</strong> WHO, Joint FAO/WHO food standards programme, in: Proceedings of the Sixth Session of CODEX Committee on Contaminants in Foods, Maastricht, The Netherlands, 26-30 March2012.<br />
+<strong>5</strong> Raber, Georg, et al. “An improved HPLC-ICPMS method for determining inorganic arsenic in food: application to rice, wheat and tuna fish.” <em>Food chemistry</em> 134.1 (2012): 524-532.<br />
+<strong>6</strong> Lu, Da, and Julian Tyson. “Determination of arsenic in rice with the Hach EZ testkit - 2.”<br />
+<strong>7</strong> Wang, Nan, and Julian Tyson. “Non-chromatographic speciation of inorganic arsenic by atomic fluorescence spectrometry with flow injection hydride generation with a tetrahydroborate-form anion-exchanger.” <em>Journal of Analytical Atomic Spectrometry</em> 29.4 (2014): 665-673.<br />
+<strong>8</strong> Chen, Hengwu, Ian D. Brindle, and Xiao Chun Le. “Prereduction of arsenic (V) to arsenic (III), enhancement of the signal, and reduction of interferences by L-cysteine in the determination of arsenic by hydride generation.” <em>Analytical Chemistry</em> 64.6 (1992): 667-672.<br />
+<strong>9</strong> Lu, Da, et al. “Analytical Chemistry of Arsenic in Rice.” </font></p>
+</div>
+<div id="supplementary-data" class="section level1">
+<h1><font face="Calibri" color=black size=5><strong>7. Supplementary data</strong></font></h1>
+<center>
+<a href="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2010.JPG"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2010.JPG" width=40%></a>
+</center>
+<center>
+<font face="Calibri" color=black size=4><strong>Figure S1</strong> Contaminated rice flour</font>
+</center>
+<p></br></p>
+<center>
+<a href="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2011.JPG"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2011.JPG" width=40%></a>
+</center>
+<center>
+<font face="Calibri" color=black size=4><strong>Figure S2</strong> Five dialysis bags with 20ml deionized water in side (tied both end)</font>
+</center>
+<p></br></p>
+<center>
+<a href="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2012.JPG"><img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2012.JPG" width=40%></a>
+</center>
+<center>
+<font face="Calibri" color=black size=4><strong>Figure S3</strong> Extraction (5 bags inside)</font>
+</center>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+name: HarryLu-Website
+output_dir: '.'
+navbar:
+  title: <font face="Algerian">Harry Lu</font>
+  left:
+  - text: Home
+    icon: fa-home
+    href: index.html
+  - text: About Me
+    icon: fa-bars
+    href: About.html
+  - text: Projects
+    icon: fa-folder-open
+    menu: 
+        - text: Summary
+          icon: fa-bars
+          href: Projects.html
+        - text: Forecasting Stock Value
+          icon: fa-book
+          href: Forecasting_Stock_Value.html
+        - text: Arsenic Measurement
+          icon: fa-book
+          href: Arsenic_Measurement.html
+        - text: Amazon's Secret
+          icon: fa-book
+          href: Amazon_s_Secret.html
+        - text: Outlier Detection
+          icon: fa-calendar-check-o
+          href: Outlier_Detection.html
+        - text: Interactive Web App
+          icon: fa-calendar-check-o
+          href: Interactive_Web_App.html
+        - text: Web Data Wrangling
+          icon: fa-calendar-check-o
+          href: Web_Data_Wrangling.html
+        - text: Birds Breeding Pairs
+          icon: fa-calendar-check-o
+          href: Birds_Breeding_Pairs.html
+  - text: Activities
+    icon: fa-star
+    href: Activity.html
+  - text: Gallery
+    icon: fa-picture-o
+    href: Gallery.html
+output:
+  html_document:
+    theme: spacelab
+    highlight: default
+    self_contained: no
+    css: style.css

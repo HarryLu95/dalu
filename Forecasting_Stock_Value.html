@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 52px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+
+.section h2 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h3 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h4 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h5 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h6 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><font face="Algerian">Harry Lu</font></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="About.html">
+    <span class="fa fa-bars"></span>
+     
+    About Me
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-folder-open"></span>
+     
+    Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Projects.html">
+        <span class="fa fa-bars"></span>
+         
+        Summary
+      </a>
+    </li>
+    <li>
+      <a href="Forecasting_Stock_Value.html">
+        <span class="fa fa-book"></span>
+         
+        Forecasting Stock Value
+      </a>
+    </li>
+    <li>
+      <a href="Arsenic_Measurement.html">
+        <span class="fa fa-book"></span>
+         
+        Arsenic Measurement
+      </a>
+    </li>
+    <li>
+      <a href="Amazon_s_Secret.html">
+        <span class="fa fa-book"></span>
+         
+        Amazon's Secret
+      </a>
+    </li>
+    <li>
+      <a href="Outlier_Detection.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Outlier Detection
+      </a>
+    </li>
+    <li>
+      <a href="Interactive_Web_App.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Interactive Web App
+      </a>
+    </li>
+    <li>
+      <a href="Web_Data_Wrangling.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Web Data Wrangling
+      </a>
+    </li>
+    <li>
+      <a href="Birds_Breeding_Pairs.html">
+        <span class="fa fa-calendar-check-o"></span>
+         
+        Birds Breeding Pairs
+      </a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Activity.html">
+    <span class="fa fa-star"></span>
+     
+    Activities
+  </a>
+</li>
+<li>
+  <a href="Gallery.html">
+    <span class="fa fa-picture-o"></span>
+     
+    Gallery
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore"><center>
+<font face="Baskerville Old Face"><strong>Forecasting Stock Value</strong></font>
+</center></h1>
+
+</div>
+
+
+<div id="backhome">
+<a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+</div>
+<div id="back">
+<a href="Projects.html"><i class="fa fa-undo" aria-hidden="true"></i></a>
+</div>
+<div id="background" class="section level1">
+<h1><font face="Baskerville Old Face">Background</font></h1>
+<p><font face="Times New Roman" size=5></p>
+<ul>
+<li>Instructor: <a href="http://people.math.umass.edu/~hongkun/">Hong-Kun Zhang</a>, Department of Mathematics and Statistics, University of Massachusetts Amherst</li>
+<li>The research started from May 2016 to July 2016. The original data used was <a href="https://finance.yahoo.com/quote/%5ESTI?p=%5ESTI"><strong><em>Straits Times Index (^STI)</em></strong></a> from <a href="https://finance.yahoo.com/">Yahoo Finance</a>.</li>
+<li>The historical data for Straits Times Index is no longer available, so <a href="https://finance.yahoo.com/quote/GOOG?p=GOOG"><strong><em>Alphabet Inc. (GOOG)</em></strong></a> is used in this research note.</li>
+<li>The data was downloaded on January 15, 2018. The data is from August 19, 2004 to January 12, 2018.</li>
+</ul>
+<p></font></p>
+</div>
+<div id="model-ar1---garch11" class="section level1">
+<h1><font face="Baskerville Old Face">Model: AR(1) - GARCH(1,1)</font></h1>
+<p><font face="Times New Roman" size=5></p>
+<p><span class="math display">\[\hat{r}_{t}=\mu_{t}+\sigma_{t}\cdot\epsilon_{t}\]</span> We have:</p>
+<ul>
+<li><span class="math inline">\(r_{t}\)</span>: Log Return of Adjusted Close Value</li>
+<li><span class="math inline">\(\mu_{t}\)</span>: Rolling Average of Log Returns</li>
+<li><span class="math inline">\(\sigma_{t}\)</span>: Standard Deviation of Log Returns</li>
+<li><span class="math inline">\(\epsilon_{t}=\cfrac{r_{t}-\mu_{t}}{\sigma_{t}}\)</span></li>
+</ul>
+<p>AR(1) <span class="math display">\[\hat\mu_{t}=a_{t-1}+b_{t-1}\cdot\mu_{t-1}\]</span></p>
+<p>GARCH(1,1) <span class="math display">\[{\hat\sigma_{t}}^2=\omega_{t-1}+\alpha_{t-1}\cdot{\mu_{t-1}}^2+\beta_{t-1}\cdot{\sigma_{t-1}}^2\]</span></p>
+<p>Therefore, <span class="math display">\[\hat{r}_{t}=\hat\mu_{t}+\hat\sigma_{t}\cdot\epsilon_{t}=(a_{t-1}+b_{t-1}\cdot\mu_{t-1})+\sqrt{\omega_{t-1}+\alpha_{t-1}\cdot{\mu_{t-1}}^2+\beta_{t-1}\cdot{\sigma_{t-1}}^2}\cdot{\epsilon_{t}}\]</span></p>
+<pre class="r"><code>#read local data
+goog=read.csv(&quot;C:/Users/thinkpad/Documents/GitHub/dalu0511/Project Files/FM Research/GOOG.csv&quot;)</code></pre>
+<p>The original data has 7 columns: <code>Date</code>, <code>Open</code>, <code>High</code>, <code>Low</code>, <code>Close</code>, <code>Adj.Close</code>, and <code>Volumn</code>.</p>
+<p><code>Day</code> and <code>Log.Return</code> (<span class="math inline">\(r_t\)</span>) are added to the data frame. <span class="math display">\[r_t=\ln(\frac{P_t}{P_{t-1}})\]</span> where <span class="math inline">\(P\)</span> represents adjusted close value.</p>
+<pre class="r"><code>#load package: fGarch
+library(fGarch)</code></pre>
+<pre class="r"><code>#plot the adjusted value
+plot.ts(goog$Adj.Close,ylab=&quot;Adjusted Value&quot;,main=&quot;Alphabet Inc. Adjusted Stock Value from Aug/19/2004 to Jan/12/2018&quot;)</code></pre>
+<p><img src="Forecasting_Stock_Value_files/figure-html/Basic_Visulization-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>plot.ts(diff(goog$Adj.Close),main=&quot;Differencing Level 1&quot;)</code></pre>
+<p><img src="Forecasting_Stock_Value_files/figure-html/Basic_Visulization-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#compute log return value
+l=dim(goog)[1]
+goog$Day=1:l
+goog$Log.Return=NA
+for (i in 2:l){
+  goog$Log.Return[i]=log(goog$Adj.Close[i]/goog$Adj.Close[i-1],base=exp(1))
+}</code></pre>
+<pre class="r"><code>#plot the log return value
+plot.ts(goog$Log.Return,ylab=&quot;Log Return&quot;,main=&quot;Alphabet Inc. Log Return&quot;)</code></pre>
+<p><img src="Forecasting_Stock_Value_files/figure-html/Log_Return_Visulization-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>The first <span class="math inline">\(n\)</span> data (<code>g1</code>) were used for Model, and the rest (<code>g2</code>) were used for back testing.</p>
+<pre class="r"><code>#divide the date into two groups, the second part is used for back testing
+n=as.integer(2800)
+#n=floor(l/6*5)
+goog$g1=NA
+goog$g2=NA
+goog$g1[2:n]=goog$Log.Return[2:n]
+goog$g2[(n+1):l]=goog$Log.Return[(n+1):l]</code></pre>
+<p>Using linear model on Rolling <code>Log.Return</code> to compute <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, and then <span class="math inline">\(\hat\mu\)</span>.</p>
+<pre class="r"><code>#compute the value of mu hat
+goog$mu.hat=NA
+for (i in n:(l-1)){
+  lm=lm(goog$Log.Return[2:i]~goog$Day[2:i])
+  a=lm$coefficient[[1]]
+  b=lm$coefficient[[2]]
+  mu=mean(goog$Log.Return[2:i])
+  temp.mu.hat=a+b*mu
+  goog$mu.hat[i+1]=temp.mu.hat
+}
+#plot.ts(goog$mu.hat[(n+1):l],main=&quot;mu hat&quot;,ylab=&quot;&quot;)</code></pre>
+<p>Using GARCH model on Rolling <code>Log.Return</code> to compute <span class="math inline">\(\omega\)</span>, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>, and then <span class="math inline">\(\hat\sigma^2\)</span>.</p>
+<pre class="r"><code>#compute the value of sigma hat square
+goog$sigma.hat.square=NA
+for (i in n:(l-1)){
+  g=garchFit(~garch(1,1),goog$Log.Return[2:i],trace=FALSE)
+  omega=g@fit$coef[[2]]
+  alpha=g@fit$coef[[3]]
+  beta=g@fit$coef[[4]]
+  mu=mean(goog$Log.Return[2:i])
+  sigma=sd(goog$Log.Return[2:i])
+  temp.sigma.hat.sq=omega+alpha*mu^2+beta*sigma^2
+  goog$sigma.hat.square[i+1]=temp.sigma.hat.sq
+}</code></pre>
+<pre class="r"><code>#compute the value of sigma hat
+goog$sigma.hat=sqrt(goog$sigma.hat.square)</code></pre>
+<pre class="r"><code>#compute the r hat, and plot the back testing log return value with the r hat value (predicted value)
+goog$r.hat=goog$mu.hat+goog$sigma.hat*rnorm(1,0,1)
+plot(goog$Log.Return[2801:l],type=&quot;l&quot;,lty=3,col=1,ylim=c(-0.06,0.08),ylab=&quot;&quot;)
+par(new=TRUE)
+plot(goog$r.hat[2801:l],type=&quot;l&quot;,lty=1,col=2,ylim=c(-0.06,0.08),ylab=&quot;&quot;)
+legend(&quot;topright&quot;,legend=c(&quot;original data&quot;,&quot;predicted data&quot;),lty=c(3,1),col=c(1,2))</code></pre>
+<p><img src="Forecasting_Stock_Value_files/figure-html/Compute_r_hat_and_plot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p></font></p>
+</div>
+<div id="model-markov-switching---ar1---garch11" class="section level1">
+<h1><font face="Baskerville Old Face">Model: Markov Switching - AR(1) - GARCH(1,1)</font></h1>
+<p><font face="Times New Roman" size=5></p>
+<p>In this model, the <code>Log.Return</code> was divided into two groups: one with relative high volatility and one with relative low volatility.</p>
+<p>Method 1: Set a pair of threshold level, <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span>, where <span class="math inline">\(n_1&gt;n_2\)</span>. In <code>Log.Return</code> data, any value greater than <span class="math inline">\(n_1\)</span> or less than <span class="math inline">\(n_2\)</span> would be put into group <code>High</code>, and the left would be put into group <code>Low</code>.</p>
+<pre class="r"><code>#find the thresholds, plot out the graph
+n1=mean(goog$Log.Return[2:l])+0.02
+n2=mean(goog$Log.Return[2:l])-0.02
+count=0
+while (count&lt;l*0.4){
+  count=0
+  for (i in 2:l){
+    if (goog$Log.Return[i]&gt;n1|goog$Log.Return[i]&lt;n2){
+      count=count+1
+    }
+  }
+  if (count&lt;l*0.4){
+    n1=n1-0.001
+    n2=n2+0.001
+  }
+}
+print(count)</code></pre>
+<pre><code>## [1] 1375</code></pre>
+<pre class="r"><code>plot(goog$Log.Return[2:l],type=&quot;l&quot;,lty=3,ylab=&quot;Log Return&quot;,main=&quot;Alphabet Inc. Log Return (Grouping)&quot;)
+abline(h=n1,col=&quot;red&quot;,lty=1)
+abline(h=n2,col=&quot;blue&quot;,lty=1)
+legend(&quot;topright&quot;,legend=c(&quot;Log Return&quot;,&quot;n1&quot;,&quot;n2&quot;),col=c(&quot;black&quot;,&quot;red&quot;,&quot;blue&quot;),lty=c(3,1,1))</code></pre>
+<p><img src="Forecasting_Stock_Value_files/figure-html/Creat_High_Group_And_Low_Group-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#get the data of group high and group low
+High=c()
+Low=c()
+for (i in 2:l){
+  if (goog$Log.Return[i]&gt;n1|goog$Log.Return[i]&lt;n2){
+    High=c(High,goog$Log.Return[i])
+  }
+  else{
+    Low=c(Low,goog$Log.Return[i])
+  }
+}</code></pre>
+<p></font></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

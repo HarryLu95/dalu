@@ -1,0 +1,54 @@
+/*==========================主页图标==========================*/
+#backhome a { /* back to home button */
+	position: fixed;
+	bottom: 25px; /* 小按钮到浏览器底边的距离 */
+	right: 25px; /* 小按钮到浏览器右边框的距离 */
+	color: Black; /* 小按钮中文字的颜色 */
+	z-index: 1000;
+	background: Lavender; /* 小按钮底色 */
+	padding: 5px; /* 小按钮中文字到按钮边缘的距离 */
+	border-radius: 4px; /* 小按钮圆角的弯曲程度(半径)*/
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	font-weight: normal; /* 小按钮中文字的粗细 */
+	text-decoration: none;
+}
+
+#backhome a:hover { /* 小按钮上有鼠标悬停时 */
+	background: MediumSlateBlue; /* 小按钮的底色 */
+	color: White; /* 文字颜色 */
+}
+/*==========================返回图标==========================*/
+#back a { /* back to home button */
+	position: fixed;
+	bottom: 60px; /* 小按钮到浏览器底边的距离 */
+	right: 25px; /* 小按钮到浏览器右边框的距离 */
+	color: Black; /* 小按钮中文字的颜色 */
+	z-index: 1000;
+	background: Lavender; /* 小按钮底色 */
+	padding: 5px; /* 小按钮中文字到按钮边缘的距离 */
+	border-radius: 4px; /* 小按钮圆角的弯曲程度(半径)*/
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	font-weight: normal; /* 小按钮中文字的粗细 */
+	text-decoration: none;
+}
+
+#back a:hover { /* 小按钮上有鼠标悬停时 */
+	background: MediumSlateBlue; /* 小按钮的底色 */
+	color: White; /* 文字颜色 */
+}
+/*=========================自适应设置=========================*/
+/*    ------------============大屏============------------    */
+@media screen and (min-width:600px) {
+/*    ----------------------两列文字----------------------    */
+.two-column {
+  padding: 1em;
+  -moz-column-count: 2;
+  -moz-column-gap: 1em;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 1em;
+  column-count: 2;
+  column-gap: 1em;
+}
+}
