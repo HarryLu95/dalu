@@ -16,7 +16,7 @@ Hello!
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm Harry. My family is from Beijing, China. I have just graduated from UMass Amherst in Mathematics.
 
-![](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Business_Photo_Small.png)
+![](https://raw.githubusercontent.com/HarryLu95/dalu/master/Business_Photo_Small.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During my undergraduate study, I got in touch with R programming and RStudio. Now I'm using RStudio to do a lot of stuff other than programming, like writing $\LaTeX$, making beamer documents, taking notes, and constructing website.
 

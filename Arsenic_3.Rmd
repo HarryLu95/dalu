@@ -96,17 +96,17 @@ output: html_document
 </font>
 
 <center><font face="Calibri" color=black size=4>**Table 1** The preparation of standards and samples</font></center>  
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2001.png" width=70%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2001.png)</center>  
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2002.png" width=70%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2002.png)</center>
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2001.png" width=70%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2001.png)</center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2002.png" width=70%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2002.png)</center>
 
 </br>
 
 <center><font face="Calibri" color=black size=4>**Table 2** samples of the rate of arsenic ion transport test</font></center>  
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2003.png" width=90%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2003.png)</center>
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2003.png" width=90%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2003.png)</center>
 
 </br>
 
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2004.png" width=60%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2004.png)</center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2004.png" width=60%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Fall%202014%20-%2004.png)</center>  
 <center><font face="Calibri" color=black size=4>**Figure 1** Plots of standards. The x-axis is the concentration of standards and the y-axis is the actual height from AFS test.</font></center>
 
 #<font face="Calibri" color=black size=5>**6. References**</font>

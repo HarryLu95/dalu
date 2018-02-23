@@ -118,46 +118,46 @@ extraction from the 500μg·kg^-1^ contaminated rice. ^**6**^
 </font>
 
 <center><font face="Calibri" color=black size=4>**Table 1** AFS sample preparation for extraction 3</font></center>  
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2001.png" width=90%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2001.png)</center>
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2001.png" width=90%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2001.png)</center>
 
 </br>
 
 <center><font face="Calibri" color=black size=4>**Table 2** Hach test for extraction 1 with expected value of 50μg·L^-1^</font></center>  
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2002.png" width=50%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2002.png)</center>
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2002.png" width=50%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2002.png)</center>
 
 </br>
 
 <center><font face="Calibri" color=black size=4>**Table 3** AFS test for extraction 1 with expected value of 3.3μg·L^-1^</font></center>  
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2003.png" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2003.png)</center>
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2003.png" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2003.png)</center>
 
 </br>
 
 <center><font face="Calibri" color=black size=4>**Table 4** Hach test for extraction 2 with expected value of 50μg·L^-1^</font></center>  
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2004.png" width=50%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2004.png)</center>
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2004.png" width=50%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2004.png)</center>
 
 </br>
 
 <center><font face="Calibri" color=black size=4>**Table 5** AFS test for extraction 2 with expected value of 5.0μg·L^-1^</font></center>  
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2005.png" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2005.png)</center>
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2005.png" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2005.png)</center>
 
 </br>
 
 <center><font face="Calibri" color=black size=4>**Table 6** Hach test for extraction 3 with expected value of 33μg·L^-1^</font></center>  
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2006.png" width=50%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2006.png)</center>
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2006.png" width=50%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2006.png)</center>
 
 </br>
 
 <center><font face="Calibri" color=black size=4>**Table 7** AFS test for extraction 3</font></center>  
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2007.png" width=90%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2007.png)</center>
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2007.png" width=90%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2007.png)</center>
 
 </br>
 
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2008.png" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2008.png)</center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2008.png" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2008.png)</center>  
 <center><font face="Calibri" color=black size=4>**Figure 1** Calibration curve for HG1</font></center>
 
 </br>
 
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2009.png" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2009.png)</center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2009.png" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2009.png)</center>  
 <center><font face="Calibri" color=black size=4>**Figure 2** Calibration curve for HG2</font></center>
 
 #<font face="Calibri" color=black size=5>**6. References**</font>
@@ -176,15 +176,15 @@ extraction from the 500μg·kg^-1^ contaminated rice. ^**6**^
 
 #<font face="Calibri" color=black size=5>**7. Supplementary data**</font>
 
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2010.JPG" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2010.JPG)</center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2010.JPG" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2010.JPG)</center>  
 <center><font face="Calibri" color=black size=4>**Figure S1** Contaminated rice flour</font></center>
 
 </br>
 
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2011.JPG" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2011.JPG)</center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2011.JPG" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2011.JPG)</center>  
 <center><font face="Calibri" color=black size=4>**Figure S2** Five dialysis bags with 20ml deionized water in side (tied both end)</font></center>
 
 </br>
 
-<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2012.JPG" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2012.JPG)</center>  
+<center>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2012.JPG" width=40%>](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Tyson%E2%80%98s%20Lab/Spring%202015%20-%2012.JPG)</center>  
 <center><font face="Calibri" color=black size=4>**Figure S3** Extraction (5 bags inside)</font></center>
