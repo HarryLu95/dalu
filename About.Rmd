@@ -4,7 +4,21 @@ output: html_document
 ---
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
 
-#<font face="Baskerville Old Face" size=6>(I) Educational Background</font>
+<nav>
+<font face="Baskerville Old Face" color=black size=6>Contact</font>
+
+<font face="Times New Roman" color=black size=4>
+
+- Email: lvda_1\@163.com
+- [Github](https://github.com/HarryLu95)
+- [LinkedIn](https://www.linkedin.com/in/dalu0511/)
+
+</font>
+</nav>
+
+<section>
+
+#<font face="Baskerville Old Face" color=black size=6>(I) Educational Background</font>
 <font face="Times New Roman" color=black size=4>
 
 - **Undergraduate School**
@@ -28,7 +42,7 @@ output: html_document
 
 </font>
 
-#<font face="Baskerville Old Face" size=6>(II) Professional Background</font>
+#<font face="Baskerville Old Face" color=black size=6>(II) Professional Background</font>
 <font face="Times New Roman" color=black size=4>
 
 - **Fishmarket Inc.**
@@ -60,7 +74,7 @@ output: html_document
 
 </font>
 
-#<font face="Baskerville Old Face" size=6>(III) Skills</font>
+#<font face="Baskerville Old Face" color=black size=6>(III) Skills</font>
 <font face="Times New Roman" color=black size=4>
 
 - Languages: Mandarin, English
@@ -70,7 +84,7 @@ output: html_document
 
 </font>
 
-#<font face="Baskerville Old Face" size=6>(IV) Hobby</font>
+#<font face="Baskerville Old Face" color=black size=6>(IV) Hobby</font>
 <font face="Times New Roman" color=black size=4>
 
 - Sports: Swimming, Running, Cycling, Skating, Volleyball, Ping Pong, Billiards, Chess, Yoga, etc.
@@ -79,3 +93,4 @@ output: html_document
 - I'm also a cook. I love cooking, especially Chinese food. [Come to see what I've cooked!](Gallery.html)
 
 </font>
+</section>
