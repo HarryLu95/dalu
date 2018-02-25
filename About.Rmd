@@ -64,7 +64,7 @@ output: html_document
     - **Marketing Assistant**
     - July 2015 - August 2015
     - Beijing, China
-    - <i class="fa fa-hand-o-right"></i> [<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/CernetEdu_Logo.jpg" width="125">](http://www.cerschool.edu.cn/)
+    - <i class="fa fa-hand-o-right"></i>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/CernetEdu_Logo.jpg" width="250">](http://www.cerschool.edu.cn/)
 - **Penghua Fund Management Company Ltd.**
     - **Business Assistant**
     - June 2014 - July 2014
