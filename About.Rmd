@@ -45,9 +45,15 @@ output: html_document
 #<font face="Baskerville Old Face" color=black size=6>(II) Professional Background</font>
 <font face="Times New Roman" color=black size=4>
 
+- **Crane Management Service, Inc.**
+    - **Statistical Analyst of Marketing**
+    - March 2018 - Present
+    - Los Alamitos, CA, United States
 - **Fishmarket Inc.**
-    - **Marketing Analyst, Website Maintainer**
-    - September 2017 - Present
+    - **Marketing Analyst**
+    - September 2017 - December 2017
+    - **Website Developer and Maintainer**
+    - October 2017 - Present
     - Louisville, KY, United States
     - <i class="fa fa-hand-o-right"></i> [Website](http://fishmarketseafoods.net)
 - **Massachusetts Education International (MEI)**
