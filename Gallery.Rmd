@@ -31,4 +31,6 @@ ggplot(results, aes(x = xs, y = ys, color = alpha)) +
   theme(legend.position="none")
 ```
 
+<center><iframe height="300" src="https://www.youtube.com/embed/gElVRdaifj0?autoplay=1"></iframe></center>
+
 Still under constructions.
