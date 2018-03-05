@@ -31,6 +31,14 @@ ggplot(results, aes(x = xs, y = ys, color = alpha)) +
   theme(legend.position="none")
 ```
 
+</br>
+
+<center><font face="Times New Roman" size=5>Beijing Subway</font></center>
+</br>
+<center>[<img src="https://www.travelchinaguide.com/images/map/beijing/beijing-subway.gif" width=60%>](https://www.travelchinaguide.com/images/map/beijing/beijing-subway.gif)</center>
+
+</br>
+
 <center><iframe height="300" src="https://www.youtube.com/embed/gElVRdaifj0?autoplay=1"></iframe></center>
 
 Still under constructions.
