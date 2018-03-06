@@ -304,9 +304,163 @@ $(document).ready(function () {
 <p><font face="Times New Roman" color=black size=4></p>
 <ul>
 <li>Instructor: Peng Wang, AVP, Head of Data Science - Operation &amp; Fraud Detection at MassMutual Financial Group</li>
+<li>The data set used in this project is <strong><em>gapminder</em></strong> from <strong>bioconnector.org</strong>. The data set includes the data of <em>Life Expectancy</em>, <em>Population</em>, <em>GDP per Capita</em> of all the countries of each continent from 1952 to 2007 with an interval of 5 years.</li>
+<li><i class="fa fa-hand-o-right"></i> <a href="http://bioconnector.org/data/gapminder.csv">Download Data</a></li>
+<li>Multiple visulizations of the data set (Section II) and an interactive web application (Section III) were made in this project report.</li>
 </ul>
 <p></font></p>
-<p>Still under constructions.</p>
+</div>
+<div id="ii-visulizations" class="section level1">
+<h1><font face="Baskerville Old Face">(II) Visulizations</font></h1>
+<pre class="r"><code>library(dplyr)
+library(readr)
+library(stats)
+library(knitr)
+library(ggplot2)
+gapminder=read.csv(&quot;http://bioconnector.org/data/gapminder.csv&quot;)
+colnames(gapminder)=c(&quot;Country&quot;,&quot;Continent&quot;,&quot;Year&quot;,&quot;Life.Expectancy&quot;,&quot;Population&quot;,&quot;GDP.per.Capita&quot;)</code></pre>
+<div id="how-many-unique-countries-are-represented-per-continent" class="section level2">
+<h2><font face="Baskerville Old Face">1. How many unique countries are represented per continent?</font></h2>
+<pre class="r"><code>table.1=gapminder %&gt;%
+  group_by(Continent) %&gt;%
+  summarise(Country=n_distinct(Country))
+kable(table.1,col.names=c(&quot;Continent&quot;,&quot;Country&quot;),align=&quot;c&quot;)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Continent</th>
+<th align="center">Country</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Africa</td>
+<td align="center">52</td>
+</tr>
+<tr class="even">
+<td align="center">Americas</td>
+<td align="center">25</td>
+</tr>
+<tr class="odd">
+<td align="center">Asia</td>
+<td align="center">33</td>
+</tr>
+<tr class="even">
+<td align="center">Europe</td>
+<td align="center">30</td>
+</tr>
+<tr class="odd">
+<td align="center">Oceania</td>
+<td align="center">2</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>ggplot(data=table.1)+
+  geom_col(mapping=aes(Continent,Country))+
+  ggtitle(&quot;Country Number of Each Continent&quot;)+
+  xlab(&quot;Continent&quot;)+
+  ylab(&quot;Country&quot;)+
+  theme(plot.title=element_text(size=20,hjust=0.5))</code></pre>
+<p><img src="Interactive_Web_App_files/figure-html/V1-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="according-to-the-data-available-what-was-the-average-life-expectancy-across-each-continent-from-1952-to-2007" class="section level2">
+<h2><font face="Baskerville Old Face">2. According to the data available, what was the average <em>Life Expectancy</em> across each continent from 1952 to 2007?</font></h2>
+<pre class="r"><code>le=tapply(gapminder$Life.Expectancy,list(gapminder$Continent,gapminder$Year),mean)
+le=data.frame(t(le))
+Year=seq(from=1952,to=2007,by=5)
+le=cbind(Year,le)
+row.names(le)=1:12
+
+p=ggplot(data=le,aes())+
+  geom_point(mapping=aes(Year,Africa),color=1)+
+  geom_line(mapping=aes(Year,Africa),color=1,linetype=&quot;dashed&quot;)+
+  geom_point(mapping=aes(Year,Americas),color=2)+
+  geom_line(mapping=aes(Year,Americas),color=2,linetype=&quot;dashed&quot;)+
+  geom_point(mapping=aes(Year,Asia),color=3)+
+  geom_line(mapping=aes(Year,Asia),color=3,linetype=&quot;dashed&quot;)+
+  geom_point(mapping=aes(Year,Europe),color=4)+
+  geom_line(mapping=aes(Year,Europe),color=4,linetype=&quot;dashed&quot;)+
+  geom_point(mapping=aes(Year,Oceania),color=5)+
+  geom_line(mapping=aes(Year,Oceania),color=5,linetype=&quot;dashed&quot;)+
+  ggtitle(&quot;Average Life Expectancy&quot;)+
+  xlab(&quot;Years&quot;)+
+  ylab(&quot;Life Expectancy (Years)&quot;)+
+  theme(plot.title=element_text(size=20,hjust=0.5))
+p</code></pre>
+<p><img src="Interactive_Web_App_files/figure-html/V2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="life-expectancy-for-every-countries-in-americas" class="section level3">
+<h3>2.1 Life Expectancy for Every Countries in Americas</h3>
+<pre class="r"><code>le.Americas=gapminder%&gt;%filter(Continent==&quot;Americas&quot;)
+le.Americas=tapply(le.Americas$Life.Expectancy,list(le.Americas$Country,le.Americas$Year),mean)
+le.Americas=t(data.frame(le.Americas))
+row.names(le.Americas)=seq(1952,2007,5)
+matplot(seq(1952,2007,5),le.Americas,type=&quot;l&quot;,lty=1,xlab=&quot;Years&quot;,ylab=&quot;Life Expectancy&quot;)</code></pre>
+<p><img src="Interactive_Web_App_files/figure-html/V2.1-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="countries-that-have-the-longest-average-life-expectancy-in-the-world" class="section level3">
+<h3>2.2 Countries that have the <strong>longest</strong> average Life Expectancy in the world</h3>
+<pre class="r"><code>lle=sort(tapply(gapminder$Life.Expectancy,gapminder$Country,mean),decreasing=TRUE)[1:5]
+lle=as.data.frame(lle)
+colnames(lle)=&quot;Average Life Expectancy&quot;
+lle</code></pre>
+<pre><code>##             Average Life Expectancy
+## Iceland                    76.51142
+## Sweden                     76.17700
+## Norway                     75.84300
+## Netherlands                75.64850
+## Switzerland                75.56508</code></pre>
+</div>
+<div id="countries-that-have-the-shortest-average-life-expectancy-in-the-world" class="section level3">
+<h3>2.3 Countries that have the <strong>shortest</strong> average Life Expectancy in the world</h3>
+<pre class="r"><code>sle=sort(tapply(gapminder$Life.Expectancy,gapminder$Country,mean),decreasing=FALSE)[1:5]
+sle=as.data.frame(sle)
+colnames(sle)=&quot;Average Life Expectancy&quot;
+sle</code></pre>
+<pre><code>##               Average Life Expectancy
+## Sierra Leone                 36.76917
+## Afghanistan                  37.47883
+## Angola                       37.88350
+## Guinea-Bissau                39.21025
+## Mozambique                   40.37950</code></pre>
+</div>
+</div>
+<div id="according-to-the-data-available-what-was-the-average-population-across-each-continent-from-1952-to-2007" class="section level2">
+<h2><font face="Baskerville Old Face">3. According to the data available, what was the average <em>Population</em> across each continent from 1952 to 2007?</font></h2>
+<pre class="r"><code>pop=tapply(gapminder$Population,list(gapminder$Continent,gapminder$Year),mean)
+pop.data=t(data.frame(pop))
+row.names(pop.data)=seq(1952,2007,5)
+matplot(seq(1952,2007,5),pop.data,type=&quot;l&quot;,col=1:5,lty=1,xlab=&quot;Years&quot;,ylab=&quot;Population&quot;)
+legend(&quot;topleft&quot;,legend=c(&quot;Africa&quot;,&quot;Americas&quot;,&quot;Asia&quot;,&quot;Europe&quot;,&quot;Ocenia&quot;),col=1:5,lty=1,cex=1)</code></pre>
+<p><img src="Interactive_Web_App_files/figure-html/V3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="population-for-every-countries-in-americas" class="section level3">
+<h3>3.1 Population for Every Countries in Americas</h3>
+<pre class="r"><code>pop.Americas=gapminder%&gt;%filter(Continent==&quot;Americas&quot;)
+pop.Americas=tapply(pop.Americas$Population,list(pop.Americas$Country,pop.Americas$Year),mean)
+pop.Americas=t(data.frame(pop.Americas))
+row.names(pop.Americas)=seq(1952,2007,5)
+matplot(seq(1952,2007,5),pop.Americas,type=&quot;l&quot;,lty=1,xlab=&quot;Years&quot;,ylab=&quot;Population&quot;)</code></pre>
+<p><img src="Interactive_Web_App_files/figure-html/V3.1-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="according-to-the-data-available-what-was-the-average-gdp-per-capita-across-each-continent-from-1952-to-2007" class="section level2">
+<h2><font face="Baskerville Old Face">4. According to the data available, what was the average <em>GDP per Capita</em> across each continent from 1952 to 2007?</font></h2>
+<pre class="r"><code>gdp=tapply(gapminder$GDP.per.Capita,list(gapminder$Continent,gapminder$Year),mean)
+gdp.data=t(data.frame(gdp))
+row.names(gdp.data)=seq(1952,2007,5)
+matplot(seq(1952,2007,5),gdp.data,type=&quot;l&quot;,col=1:5,lty=1,xlab=&quot;Years&quot;,ylab=&quot;GDP Per Capita&quot;)
+legend(&quot;topleft&quot;,legend=c(&quot;Africa&quot;,&quot;Americas&quot;,&quot;Asia&quot;,&quot;Europe&quot;,&quot;Ocenia&quot;),col=1:5,lty=1,cex=1)</code></pre>
+<p><img src="Interactive_Web_App_files/figure-html/V4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="gdp-per-capita-for-every-countries-in-americas" class="section level3">
+<h3>4.1 GDP Per Capita for Every Countries in Americas</h3>
+<pre class="r"><code>gdp.Americas=gapminder%&gt;%filter(Continent==&quot;Americas&quot;)
+gdp.Americas=tapply(gdp.Americas$GDP.per.Capita,list(gdp.Americas$Country,gdp.Americas$Year),mean)
+gdp.Americas=t(data.frame(gdp.Americas))
+row.names(gdp.Americas)=seq(1952,2007,5)
+matplot(seq(1952,2007,5),gdp.Americas,type=&quot;l&quot;,lty=1,xlab=&quot;Years&quot;,ylab=&quot;GDP Per Capita&quot;)
+legend(&quot;topleft&quot;,legend=c(&quot;Top 1: America&quot;,&quot;Top 2: Canada&quot;),lty=1,col=3)</code></pre>
+<p><img src="Interactive_Web_App_files/figure-html/V4.1-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
 </div>
 
 
