@@ -18,6 +18,8 @@ Hello!
 
 ![](https://raw.githubusercontent.com/HarryLu95/dalu/master/Business_Photo_Small.png)
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Currently I am working at Crane Management Service, Inc. in California.
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During my undergraduate study, I got in touch with R programming and RStudio. Now I'm using RStudio to do a lot of stuff other than programming, like writing $\LaTeX$, making beamer documents, taking notes, and constructing website.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Here's the [projects](Projects.html) that I did.
