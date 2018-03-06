@@ -370,7 +370,6 @@ le=data.frame(t(le))
 Year=seq(from=1952,to=2007,by=5)
 le=cbind(Year,le)
 row.names(le)=1:12
-
 p=ggplot(data=le,aes())+
   geom_point(mapping=aes(Year,Africa),color=1)+
   geom_line(mapping=aes(Year,Africa),color=1,linetype=&quot;dashed&quot;)+
@@ -383,11 +382,28 @@ p=ggplot(data=le,aes())+
   geom_point(mapping=aes(Year,Oceania),color=5)+
   geom_line(mapping=aes(Year,Oceania),color=5,linetype=&quot;dashed&quot;)+
   ggtitle(&quot;Average Life Expectancy&quot;)+
-  xlab(&quot;Years&quot;)+
+  xlab(&quot;Year&quot;)+
   ylab(&quot;Life Expectancy (Years)&quot;)+
   theme(plot.title=element_text(size=20,hjust=0.5))
 p</code></pre>
 <p><img src="Interactive_Web_App_files/figure-html/V2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>le=tapply(gapminder$Life.Expectancy,list(gapminder$Continent,gapminder$Year),mean)
+le=data.frame(t(le))
+Mean.Life.Expectancy=c(le$Africa,le$Americas,le$Asia,le$Europe,le$Oceania)
+Continent=rep(c(&quot;Africa&quot;,&quot;Americas&quot;,&quot;Asia&quot;,&quot;Europe&quot;,&quot;Ocenia&quot;),each=12)
+Year=rep(seq(from=1952,to=2007,by=5),5)
+le=data.frame(cbind(Continent,Year,Mean.Life.Expectancy))
+le$Continent=ordered(le$Continent)
+le$Year=as.numeric(as.character(le$Year))
+le$Mean.Life.Expectancy=as.numeric(as.character(le$Mean.Life.Expectancy))
+q=ggplot(data=le,mapping=aes(Year,Mean.Life.Expectancy))+
+  geom_point()+
+  ggtitle(&quot;Average Life Expectancy&quot;)+
+  xlab(&quot;Year&quot;)+
+  ylab(&quot;Life Expectancy (Years)&quot;)+
+  theme(plot.title=element_text(size=20,hjust=0.5))
+q</code></pre>
+<p><img src="Interactive_Web_App_files/figure-html/V2-2.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="life-expectancy-for-every-countries-in-americas" class="section level3">
 <h3>2.1 Life Expectancy for Every Countries in Americas</h3>
 <pre class="r"><code>le.Americas=gapminder%&gt;%filter(Continent==&quot;Americas&quot;)
@@ -402,26 +418,74 @@ matplot(seq(1952,2007,5),le.Americas,type=&quot;l&quot;,lty=1,xlab=&quot;Years&q
 <pre class="r"><code>lle=sort(tapply(gapminder$Life.Expectancy,gapminder$Country,mean),decreasing=TRUE)[1:5]
 lle=as.data.frame(lle)
 colnames(lle)=&quot;Average Life Expectancy&quot;
-lle</code></pre>
-<pre><code>##             Average Life Expectancy
-## Iceland                    76.51142
-## Sweden                     76.17700
-## Norway                     75.84300
-## Netherlands                75.64850
-## Switzerland                75.56508</code></pre>
+kable(lle,align=&quot;c&quot;)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Average Life Expectancy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Iceland</td>
+<td align="center">76.51142</td>
+</tr>
+<tr class="even">
+<td>Sweden</td>
+<td align="center">76.17700</td>
+</tr>
+<tr class="odd">
+<td>Norway</td>
+<td align="center">75.84300</td>
+</tr>
+<tr class="even">
+<td>Netherlands</td>
+<td align="center">75.64850</td>
+</tr>
+<tr class="odd">
+<td>Switzerland</td>
+<td align="center">75.56508</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="countries-that-have-the-shortest-average-life-expectancy-in-the-world" class="section level3">
 <h3>2.3 Countries that have the <strong>shortest</strong> average Life Expectancy in the world</h3>
 <pre class="r"><code>sle=sort(tapply(gapminder$Life.Expectancy,gapminder$Country,mean),decreasing=FALSE)[1:5]
 sle=as.data.frame(sle)
 colnames(sle)=&quot;Average Life Expectancy&quot;
-sle</code></pre>
-<pre><code>##               Average Life Expectancy
-## Sierra Leone                 36.76917
-## Afghanistan                  37.47883
-## Angola                       37.88350
-## Guinea-Bissau                39.21025
-## Mozambique                   40.37950</code></pre>
+kable(sle,align=&quot;c&quot;)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Average Life Expectancy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sierra Leone</td>
+<td align="center">36.76917</td>
+</tr>
+<tr class="even">
+<td>Afghanistan</td>
+<td align="center">37.47883</td>
+</tr>
+<tr class="odd">
+<td>Angola</td>
+<td align="center">37.88350</td>
+</tr>
+<tr class="even">
+<td>Guinea-Bissau</td>
+<td align="center">39.21025</td>
+</tr>
+<tr class="odd">
+<td>Mozambique</td>
+<td align="center">40.37950</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div id="according-to-the-data-available-what-was-the-average-population-across-each-continent-from-1952-to-2007" class="section level2">

@@ -44,6 +44,28 @@ ggplot(data=table.1)+
 ```{r V2,fig.align="center"}
 le=tapply(gapminder$Life.Expectancy,list(gapminder$Continent,gapminder$Year),mean)
 le=data.frame(t(le))
+Year=seq(from=1952,to=2007,by=5)
+le=cbind(Year,le)
+row.names(le)=1:12
+p=ggplot(data=le,aes())+
+  geom_point(mapping=aes(Year,Africa),color=1)+
+  geom_line(mapping=aes(Year,Africa),color=1,linetype="dashed")+
+  geom_point(mapping=aes(Year,Americas),color=2)+
+  geom_line(mapping=aes(Year,Americas),color=2,linetype="dashed")+
+  geom_point(mapping=aes(Year,Asia),color=3)+
+  geom_line(mapping=aes(Year,Asia),color=3,linetype="dashed")+
+  geom_point(mapping=aes(Year,Europe),color=4)+
+  geom_line(mapping=aes(Year,Europe),color=4,linetype="dashed")+
+  geom_point(mapping=aes(Year,Oceania),color=5)+
+  geom_line(mapping=aes(Year,Oceania),color=5,linetype="dashed")+
+  ggtitle("Average Life Expectancy")+
+  xlab("Year")+
+  ylab("Life Expectancy (Years)")+
+  theme(plot.title=element_text(size=20,hjust=0.5))
+p
+
+le=tapply(gapminder$Life.Expectancy,list(gapminder$Continent,gapminder$Year),mean)
+le=data.frame(t(le))
 Mean.Life.Expectancy=c(le$Africa,le$Americas,le$Asia,le$Europe,le$Oceania)
 Continent=rep(c("Africa","Americas","Asia","Europe","Ocenia"),each=12)
 Year=rep(seq(from=1952,to=2007,by=5),5)
@@ -54,8 +76,8 @@ le$Mean.Life.Expectancy=as.numeric(as.character(le$Mean.Life.Expectancy))
 q=ggplot(data=le,mapping=aes(Year,Mean.Life.Expectancy))+
   geom_point()+
   ggtitle("Average Life Expectancy")+
-#  xlab("Year")+
-#  ylab("Life Expectancy (Years)")+
+  xlab("Year")+
+  ylab("Life Expectancy (Years)")+
   theme(plot.title=element_text(size=20,hjust=0.5))
 q
 ```
@@ -74,7 +96,7 @@ matplot(seq(1952,2007,5),le.Americas,type="l",lty=1,xlab="Years",ylab="Life Expe
 lle=sort(tapply(gapminder$Life.Expectancy,gapminder$Country,mean),decreasing=TRUE)[1:5]
 lle=as.data.frame(lle)
 colnames(lle)="Average Life Expectancy"
-lle
+kable(lle,align="c")
 ```
 
 ###2.3 Countries that have the **shortest** average Life Expectancy in the world
@@ -82,7 +104,7 @@ lle
 sle=sort(tapply(gapminder$Life.Expectancy,gapminder$Country,mean),decreasing=FALSE)[1:5]
 sle=as.data.frame(sle)
 colnames(sle)="Average Life Expectancy"
-sle
+kable(sle,align="c")
 ```
 
 ##<font face="Baskerville Old Face">3. According to the data available, what was the average *Population* across each continent from 1952 to 2007?</font>
