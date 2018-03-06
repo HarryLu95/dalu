@@ -43,13 +43,14 @@
 @media screen and (min-width:750px) {
   /*----------------------左右分栏----------------------*/
   nav {
-    float: left;
-    width: 20%;
+    margin-right: 0%;
+    float: right;
+    width: 30%;
   }
   section {
-  /*margin-left: 25%;*/
-    float: right;
-    width: 75%;
+    margin-left: 5%;
+    float: left;
+    width: 60%;
   }
   /*----------------------两列文字----------------------*/
   .two-column {
