@@ -1,5 +1,5 @@
 ---
-title: <center><font face="Baskerville Old Face">**Research & Projects**</font></center>
+title: <center><font face="Baskerville Old Face">**Academic Research & Projects**</font></center>
 output: 
   html_document:
     toc: false
