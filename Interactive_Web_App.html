@@ -317,6 +317,7 @@ library(readr)
 library(stats)
 library(knitr)
 library(ggplot2)
+library(tidyr)
 gapminder=read.csv(&quot;http://bioconnector.org/data/gapminder.csv&quot;)
 colnames(gapminder)=c(&quot;Country&quot;,&quot;Continent&quot;,&quot;Year&quot;,&quot;Life.Expectancy&quot;,&quot;Population&quot;,&quot;GDP.per.Capita&quot;)</code></pre>
 <div id="how-many-unique-countries-are-represented-per-continent" class="section level2">
@@ -370,40 +371,16 @@ le=data.frame(t(le))
 Year=seq(from=1952,to=2007,by=5)
 le=cbind(Year,le)
 row.names(le)=1:12
-p=ggplot(data=le,aes())+
-  geom_point(mapping=aes(Year,Africa),color=1)+
-  geom_line(mapping=aes(Year,Africa),color=1,linetype=&quot;dashed&quot;)+
-  geom_point(mapping=aes(Year,Americas),color=2)+
-  geom_line(mapping=aes(Year,Americas),color=2,linetype=&quot;dashed&quot;)+
-  geom_point(mapping=aes(Year,Asia),color=3)+
-  geom_line(mapping=aes(Year,Asia),color=3,linetype=&quot;dashed&quot;)+
-  geom_point(mapping=aes(Year,Europe),color=4)+
-  geom_line(mapping=aes(Year,Europe),color=4,linetype=&quot;dashed&quot;)+
-  geom_point(mapping=aes(Year,Oceania),color=5)+
-  geom_line(mapping=aes(Year,Oceania),color=5,linetype=&quot;dashed&quot;)+
+le=gather(data=le,Continent,Average.Life.Expectancy,-Year)
+p=ggplot(data=le,aes(x=Year,y=Average.Life.Expectancy,color=Continent))+
+  geom_point()+
+  geom_line()+
   ggtitle(&quot;Average Life Expectancy&quot;)+
   xlab(&quot;Year&quot;)+
   ylab(&quot;Life Expectancy (Years)&quot;)+
   theme(plot.title=element_text(size=20,hjust=0.5))
 p</code></pre>
 <p><img src="Interactive_Web_App_files/figure-html/V2-1.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>le=tapply(gapminder$Life.Expectancy,list(gapminder$Continent,gapminder$Year),mean)
-le=data.frame(t(le))
-Mean.Life.Expectancy=c(le$Africa,le$Americas,le$Asia,le$Europe,le$Oceania)
-Continent=rep(c(&quot;Africa&quot;,&quot;Americas&quot;,&quot;Asia&quot;,&quot;Europe&quot;,&quot;Ocenia&quot;),each=12)
-Year=rep(seq(from=1952,to=2007,by=5),5)
-le=data.frame(cbind(Continent,Year,Mean.Life.Expectancy))
-le$Continent=ordered(le$Continent)
-le$Year=as.numeric(as.character(le$Year))
-le$Mean.Life.Expectancy=as.numeric(as.character(le$Mean.Life.Expectancy))
-q=ggplot(data=le,mapping=aes(Year,Mean.Life.Expectancy))+
-  geom_point()+
-  ggtitle(&quot;Average Life Expectancy&quot;)+
-  xlab(&quot;Year&quot;)+
-  ylab(&quot;Life Expectancy (Years)&quot;)+
-  theme(plot.title=element_text(size=20,hjust=0.5))
-q</code></pre>
-<p><img src="Interactive_Web_App_files/figure-html/V2-2.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="life-expectancy-for-every-countries-in-americas" class="section level3">
 <h3>2.1 Life Expectancy for Every Countries in Americas</h3>
 <pre class="r"><code>le.Americas=gapminder%&gt;%filter(Continent==&quot;Americas&quot;)
