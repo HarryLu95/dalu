@@ -382,7 +382,7 @@ p=ggplot(data=le,aes(x=Year,y=Average.Life.Expectancy,color=Continent))+
 p</code></pre>
 <p><img src="Interactive_Web_App_files/figure-html/V2-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="life-expectancy-for-every-countries-in-americas" class="section level3">
-<h3>2.1 Life Expectancy for Every Countries in Americas</h3>
+<h3><font face="Baskerville Old Face">2.1 Life Expectancy for Every Countries in Americas</font></h3>
 <pre class="r"><code>le.Americas=gapminder%&gt;%filter(Continent==&quot;Americas&quot;)
 le.Americas=tapply(le.Americas$Life.Expectancy,list(le.Americas$Country,le.Americas$Year),mean)
 le.Americas=t(data.frame(le.Americas))
@@ -391,7 +391,7 @@ matplot(seq(1952,2007,5),le.Americas,type=&quot;l&quot;,lty=1,xlab=&quot;Years&q
 <p><img src="Interactive_Web_App_files/figure-html/V2.1-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="countries-that-have-the-longest-average-life-expectancy-in-the-world" class="section level3">
-<h3>2.2 Countries that have the <strong>longest</strong> average Life Expectancy in the world</h3>
+<h3><font face="Baskerville Old Face">2.2 Countries that have the <strong>longest</strong> average Life Expectancy in the world</font></h3>
 <pre class="r"><code>lle=sort(tapply(gapminder$Life.Expectancy,gapminder$Country,mean),decreasing=TRUE)[1:5]
 lle=as.data.frame(lle)
 colnames(lle)=&quot;Average Life Expectancy&quot;
@@ -428,7 +428,7 @@ kable(lle,align=&quot;c&quot;)</code></pre>
 </table>
 </div>
 <div id="countries-that-have-the-shortest-average-life-expectancy-in-the-world" class="section level3">
-<h3>2.3 Countries that have the <strong>shortest</strong> average Life Expectancy in the world</h3>
+<h3><font face="Baskerville Old Face">2.3 Countries that have the <strong>shortest</strong> average Life Expectancy in the world</font></h3>
 <pre class="r"><code>sle=sort(tapply(gapminder$Life.Expectancy,gapminder$Country,mean),decreasing=FALSE)[1:5]
 sle=as.data.frame(sle)
 colnames(sle)=&quot;Average Life Expectancy&quot;
@@ -474,7 +474,7 @@ matplot(seq(1952,2007,5),pop.data,type=&quot;l&quot;,col=1:5,lty=1,xlab=&quot;Ye
 legend(&quot;topleft&quot;,legend=c(&quot;Africa&quot;,&quot;Americas&quot;,&quot;Asia&quot;,&quot;Europe&quot;,&quot;Ocenia&quot;),col=1:5,lty=1,cex=1)</code></pre>
 <p><img src="Interactive_Web_App_files/figure-html/V3-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="population-for-every-countries-in-americas" class="section level3">
-<h3>3.1 Population for Every Countries in Americas</h3>
+<h3><font face="Baskerville Old Face">3.1 Population for Every Countries in Americas</font></h3>
 <pre class="r"><code>pop.Americas=gapminder%&gt;%filter(Continent==&quot;Americas&quot;)
 pop.Americas=tapply(pop.Americas$Population,list(pop.Americas$Country,pop.Americas$Year),mean)
 pop.Americas=t(data.frame(pop.Americas))
@@ -492,7 +492,7 @@ matplot(seq(1952,2007,5),gdp.data,type=&quot;l&quot;,col=1:5,lty=1,xlab=&quot;Ye
 legend(&quot;topleft&quot;,legend=c(&quot;Africa&quot;,&quot;Americas&quot;,&quot;Asia&quot;,&quot;Europe&quot;,&quot;Ocenia&quot;),col=1:5,lty=1,cex=1)</code></pre>
 <p><img src="Interactive_Web_App_files/figure-html/V4-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="gdp-per-capita-for-every-countries-in-americas" class="section level3">
-<h3>4.1 GDP Per Capita for Every Countries in Americas</h3>
+<h3><font face="Baskerville Old Face">4.1 GDP Per Capita for Every Countries in Americas</font></h3>
 <pre class="r"><code>gdp.Americas=gapminder%&gt;%filter(Continent==&quot;Americas&quot;)
 gdp.Americas=tapply(gdp.Americas$GDP.per.Capita,list(gdp.Americas$Country,gdp.Americas$Year),mean)
 gdp.Americas=t(data.frame(gdp.Americas))

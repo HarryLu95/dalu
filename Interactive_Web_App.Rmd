@@ -59,7 +59,7 @@ p=ggplot(data=le,aes(x=Year,y=Average.Life.Expectancy,color=Continent))+
 p
 ```
 
-###2.1 Life Expectancy for Every Countries in Americas
+###<font face="Baskerville Old Face">2.1 Life Expectancy for Every Countries in Americas</font>
 ```{r V2.1,fig.align="center"}
 le.Americas=gapminder%>%filter(Continent=="Americas")
 le.Americas=tapply(le.Americas$Life.Expectancy,list(le.Americas$Country,le.Americas$Year),mean)
@@ -68,7 +68,7 @@ row.names(le.Americas)=seq(1952,2007,5)
 matplot(seq(1952,2007,5),le.Americas,type="l",lty=1,xlab="Years",ylab="Life Expectancy")
 ```
 
-###2.2 Countries that have the **longest** average Life Expectancy in the world
+###<font face="Baskerville Old Face">2.2 Countries that have the **longest** average Life Expectancy in the world</font>
 ```{r V2.2,fig.align="center"}
 lle=sort(tapply(gapminder$Life.Expectancy,gapminder$Country,mean),decreasing=TRUE)[1:5]
 lle=as.data.frame(lle)
@@ -76,7 +76,7 @@ colnames(lle)="Average Life Expectancy"
 kable(lle,align="c")
 ```
 
-###2.3 Countries that have the **shortest** average Life Expectancy in the world
+###<font face="Baskerville Old Face">2.3 Countries that have the **shortest** average Life Expectancy in the world</font>
 ```{r V2.3,fig.align="center"}
 sle=sort(tapply(gapminder$Life.Expectancy,gapminder$Country,mean),decreasing=FALSE)[1:5]
 sle=as.data.frame(sle)
@@ -93,7 +93,7 @@ matplot(seq(1952,2007,5),pop.data,type="l",col=1:5,lty=1,xlab="Years",ylab="Popu
 legend("topleft",legend=c("Africa","Americas","Asia","Europe","Ocenia"),col=1:5,lty=1,cex=1)
 ```
 
-###3.1 Population for Every Countries in Americas
+###<font face="Baskerville Old Face">3.1 Population for Every Countries in Americas</font>
 ```{r V3.1,fig.align="center"}
 pop.Americas=gapminder%>%filter(Continent=="Americas")
 pop.Americas=tapply(pop.Americas$Population,list(pop.Americas$Country,pop.Americas$Year),mean)
@@ -111,7 +111,7 @@ matplot(seq(1952,2007,5),gdp.data,type="l",col=1:5,lty=1,xlab="Years",ylab="GDP 
 legend("topleft",legend=c("Africa","Americas","Asia","Europe","Ocenia"),col=1:5,lty=1,cex=1)
 ```
 
-###4.1 GDP Per Capita for Every Countries in Americas
+###<font face="Baskerville Old Face">4.1 GDP Per Capita for Every Countries in Americas</font>
 ```{r V4.1,fig.align="center"}
 gdp.Americas=gapminder%>%filter(Continent=="Americas")
 gdp.Americas=tapply(gdp.Americas$GDP.per.Capita,list(gdp.Americas$Country,gdp.Americas$Year),mean)
