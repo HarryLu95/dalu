@@ -34,7 +34,7 @@ table.1=gapminder %>%
   summarise(Country=n_distinct(Country))
 kable(table.1,col.names=c("Continent","Country"),align="c")
 ggplot(data=table.1)+
-  geom_col(mapping=aes(Continent,Country))+
+  geom_col(mapping=aes(Continent,Country),width=0.5)+
   ggtitle("Country Number of Each Continent")+
   xlab("Continent")+
   ylab("Country")+
@@ -47,16 +47,15 @@ le=tapply(gapminder$Life.Expectancy,list(gapminder$Continent,gapminder$Year),mea
 le=data.frame(t(le))
 Year=seq(from=1952,to=2007,by=5)
 le=cbind(Year,le)
-row.names(le)=1:12
 le=gather(data=le,Continent,Average.Life.Expectancy,-Year)
-p=ggplot(data=le,aes(x=Year,y=Average.Life.Expectancy,color=Continent))+
+p1=ggplot(data=le,aes(x=Year,y=Average.Life.Expectancy,color=Continent))+
   geom_point()+
   geom_line()+
   ggtitle("Average Life Expectancy")+
   xlab("Year")+
   ylab("Life Expectancy (Years)")+
   theme(plot.title=element_text(size=20,hjust=0.5))
-p
+p1
 ```
 
 ###<font face="Baskerville Old Face">2.1 Life Expectancy for Every Countries in Americas</font>
@@ -87,10 +86,18 @@ kable(sle,align="c")
 ##<font face="Baskerville Old Face">3. According to the data available, what was the average *Population* across each continent from 1952 to 2007?</font>
 ```{r V3,fig.align="center"}
 pop=tapply(gapminder$Population,list(gapminder$Continent,gapminder$Year),mean)
-pop.data=t(data.frame(pop))
-row.names(pop.data)=seq(1952,2007,5)
-matplot(seq(1952,2007,5),pop.data,type="l",col=1:5,lty=1,xlab="Years",ylab="Population")
-legend("topleft",legend=c("Africa","Americas","Asia","Europe","Ocenia"),col=1:5,lty=1,cex=1)
+pop=data.frame(t(pop))
+Year=seq(from=1952,to=2007,by=5)
+pop=cbind(Year,pop)
+pop=gather(data=pop,Continent,Population,-Year)
+p2=ggplot(data=pop,aes(x=Year,y=Population,color=Continent))+
+  geom_point()+
+  geom_line()+
+  ggtitle("Average Population")+
+  xlab("Year")+
+  ylab("Population")+
+  theme(plot.title=element_text(size=20,hjust=0.5))
+p2
 ```
 
 ###<font face="Baskerville Old Face">3.1 Population for Every Countries in Americas</font>
@@ -105,10 +112,18 @@ matplot(seq(1952,2007,5),pop.Americas,type="l",lty=1,xlab="Years",ylab="Populati
 ##<font face="Baskerville Old Face">4. According to the data available, what was the average *GDP per Capita* across each continent from 1952 to 2007?</font>
 ```{r V4,fig.align="center"}
 gdp=tapply(gapminder$GDP.per.Capita,list(gapminder$Continent,gapminder$Year),mean)
-gdp.data=t(data.frame(gdp))
-row.names(gdp.data)=seq(1952,2007,5)
-matplot(seq(1952,2007,5),gdp.data,type="l",col=1:5,lty=1,xlab="Years",ylab="GDP Per Capita")
-legend("topleft",legend=c("Africa","Americas","Asia","Europe","Ocenia"),col=1:5,lty=1,cex=1)
+gdp=data.frame(t(gdp))
+Year=seq(from=1952,to=2007,by=5)
+gdp=cbind(Year,gdp)
+gdp=gather(data=gdp,Continent,GDP.per.Capita,-Year)
+p3=ggplot(data=gdp,aes(x=Year,y=GDP.per.Capita,color=Continent))+
+  geom_point()+
+  geom_line()+
+  ggtitle("Average GDP per Capita")+
+  xlab("Year")+
+  ylab("GDP per Capita")+
+  theme(plot.title=element_text(size=20,hjust=0.5))
+p3
 ```
 
 ###<font face="Baskerville Old Face">4.1 GDP Per Capita for Every Countries in Americas</font>

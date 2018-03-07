@@ -357,7 +357,7 @@ kable(table.1,col.names=c(&quot;Continent&quot;,&quot;Country&quot;),align=&quot
 </tbody>
 </table>
 <pre class="r"><code>ggplot(data=table.1)+
-  geom_col(mapping=aes(Continent,Country))+
+  geom_col(mapping=aes(Continent,Country),width=0.5)+
   ggtitle(&quot;Country Number of Each Continent&quot;)+
   xlab(&quot;Continent&quot;)+
   ylab(&quot;Country&quot;)+
@@ -370,16 +370,15 @@ kable(table.1,col.names=c(&quot;Continent&quot;,&quot;Country&quot;),align=&quot
 le=data.frame(t(le))
 Year=seq(from=1952,to=2007,by=5)
 le=cbind(Year,le)
-row.names(le)=1:12
 le=gather(data=le,Continent,Average.Life.Expectancy,-Year)
-p=ggplot(data=le,aes(x=Year,y=Average.Life.Expectancy,color=Continent))+
+p1=ggplot(data=le,aes(x=Year,y=Average.Life.Expectancy,color=Continent))+
   geom_point()+
   geom_line()+
   ggtitle(&quot;Average Life Expectancy&quot;)+
   xlab(&quot;Year&quot;)+
   ylab(&quot;Life Expectancy (Years)&quot;)+
   theme(plot.title=element_text(size=20,hjust=0.5))
-p</code></pre>
+p1</code></pre>
 <p><img src="Interactive_Web_App_files/figure-html/V2-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="life-expectancy-for-every-countries-in-americas" class="section level3">
 <h3><font face="Baskerville Old Face">2.1 Life Expectancy for Every Countries in Americas</font></h3>
@@ -468,10 +467,18 @@ kable(sle,align=&quot;c&quot;)</code></pre>
 <div id="according-to-the-data-available-what-was-the-average-population-across-each-continent-from-1952-to-2007" class="section level2">
 <h2><font face="Baskerville Old Face">3. According to the data available, what was the average <em>Population</em> across each continent from 1952 to 2007?</font></h2>
 <pre class="r"><code>pop=tapply(gapminder$Population,list(gapminder$Continent,gapminder$Year),mean)
-pop.data=t(data.frame(pop))
-row.names(pop.data)=seq(1952,2007,5)
-matplot(seq(1952,2007,5),pop.data,type=&quot;l&quot;,col=1:5,lty=1,xlab=&quot;Years&quot;,ylab=&quot;Population&quot;)
-legend(&quot;topleft&quot;,legend=c(&quot;Africa&quot;,&quot;Americas&quot;,&quot;Asia&quot;,&quot;Europe&quot;,&quot;Ocenia&quot;),col=1:5,lty=1,cex=1)</code></pre>
+pop=data.frame(t(pop))
+Year=seq(from=1952,to=2007,by=5)
+pop=cbind(Year,pop)
+pop=gather(data=pop,Continent,Population,-Year)
+p2=ggplot(data=pop,aes(x=Year,y=Population,color=Continent))+
+  geom_point()+
+  geom_line()+
+  ggtitle(&quot;Average Population&quot;)+
+  xlab(&quot;Year&quot;)+
+  ylab(&quot;Population&quot;)+
+  theme(plot.title=element_text(size=20,hjust=0.5))
+p2</code></pre>
 <p><img src="Interactive_Web_App_files/figure-html/V3-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="population-for-every-countries-in-americas" class="section level3">
 <h3><font face="Baskerville Old Face">3.1 Population for Every Countries in Americas</font></h3>
@@ -486,10 +493,18 @@ matplot(seq(1952,2007,5),pop.Americas,type=&quot;l&quot;,lty=1,xlab=&quot;Years&
 <div id="according-to-the-data-available-what-was-the-average-gdp-per-capita-across-each-continent-from-1952-to-2007" class="section level2">
 <h2><font face="Baskerville Old Face">4. According to the data available, what was the average <em>GDP per Capita</em> across each continent from 1952 to 2007?</font></h2>
 <pre class="r"><code>gdp=tapply(gapminder$GDP.per.Capita,list(gapminder$Continent,gapminder$Year),mean)
-gdp.data=t(data.frame(gdp))
-row.names(gdp.data)=seq(1952,2007,5)
-matplot(seq(1952,2007,5),gdp.data,type=&quot;l&quot;,col=1:5,lty=1,xlab=&quot;Years&quot;,ylab=&quot;GDP Per Capita&quot;)
-legend(&quot;topleft&quot;,legend=c(&quot;Africa&quot;,&quot;Americas&quot;,&quot;Asia&quot;,&quot;Europe&quot;,&quot;Ocenia&quot;),col=1:5,lty=1,cex=1)</code></pre>
+gdp=data.frame(t(gdp))
+Year=seq(from=1952,to=2007,by=5)
+gdp=cbind(Year,gdp)
+gdp=gather(data=gdp,Continent,GDP.per.Capita,-Year)
+p3=ggplot(data=gdp,aes(x=Year,y=GDP.per.Capita,color=Continent))+
+  geom_point()+
+  geom_line()+
+  ggtitle(&quot;Average GDP per Capita&quot;)+
+  xlab(&quot;Year&quot;)+
+  ylab(&quot;GDP per Capita&quot;)+
+  theme(plot.title=element_text(size=20,hjust=0.5))
+p3</code></pre>
 <p><img src="Interactive_Web_App_files/figure-html/V4-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="gdp-per-capita-for-every-countries-in-americas" class="section level3">
 <h3><font face="Baskerville Old Face">4.1 GDP Per Capita for Every Countries in Americas</font></h3>
