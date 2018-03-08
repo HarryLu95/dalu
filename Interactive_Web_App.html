@@ -518,6 +518,78 @@ legend(&quot;topleft&quot;,legend=c(&quot;Top 1: America&quot;,&quot;Top 2: Cana
 </div>
 </div>
 </div>
+<div id="ii-interactive-web-application" class="section level1">
+<h1><font face="Baskerville Old Face">(II) Interactive Web Application</font></h1>
+<ul>
+<li><a href="https://harrylu95.shinyapps.io/World_Facts/">Click me to reach the App</a></li>
+</ul>
+<pre class="r"><code>library(shiny)
+UI=fluidPage(
+  titlePanel(&quot;World Facts&quot;),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput(inputId=&quot;select&quot;,
+                  label=&quot;Choose a country&quot;,
+                  choices=unique(gapminder$Country)
+      ),
+      selectInput(inputId=&quot;object&quot;,
+                  label=&quot;Choose from the following&quot;,
+                  choices=c(&quot;Life Expectancy&quot;,&quot;Population&quot;,&quot;GDP per Capita&quot;)
+      )
+    ),
+    mainPanel(plotOutput(outputId=&quot;figure&quot;),
+              tableOutput(outputId=&quot;data&quot;)
+    )
+  )
+)
+
+SERVER=function(input,output){
+  f=function(temp){
+    result=subset(gapminder,gapminder$Country==temp)
+    return(result)
+  }
+  output$figure=renderPlot({
+    country.name=reactive(input$select)
+    dat=f(country.name())
+    if (input$object==&quot;Life Expectancy&quot;){
+      plot(dat$Life.Expectancy~dat$Year,xlim=c(1950,2010),xlab=&quot;Year&quot;,ylab=&quot;Life Expectancy&quot;,lty=2,type=&quot;l&quot;,main=c(&quot;Life Expectancy of &quot;,country.name()))
+      points(dat$Life.Expectancy~dat$Year,pch=19,col=1)
+    }
+    if (input$object==&quot;Population&quot;){
+      plot(dat$Population~dat$Year,xlim=c(1950,2010),xlab=&quot;Year&quot;,ylab=&quot;Population&quot;,lty=2,type=&quot;l&quot;,main=c(&quot;Population of &quot;,country.name()))
+      points(dat$Population~dat$Year,pch=19,col=1)
+    }
+    if (input$object==&quot;GDP per Capita&quot;){
+      plot(dat$GDP.per.Capita~dat$Year,xlim=c(1950,2010),xlab=&quot;Year&quot;,ylab=&quot;GDP per Capita&quot;,lty=2,type=&quot;l&quot;,main=c(&quot;GDP per Capita of &quot;,country.name()))
+      points(dat$GDP.per.Capita~dat$Year,pch=19,col=1)
+    }
+  })
+  output$data=renderTable(colnames=T,{
+    country.name=reactive(input$select)
+    dat=f(country.name())
+    if (input$object==&quot;Life Expectancy&quot;){
+      temp=c()
+      temp$Year=dat$Year
+      temp$`Life Expectancy`=dat$Life.Expectancy
+      return(temp)
+    }
+    if (input$object==&quot;Population&quot;){
+      temp=c()
+      temp$Year=dat$Year
+      temp$Population=dat$Population
+      return(temp)
+    }
+    if (input$object==&quot;GDP per Capita&quot;){
+      temp=c()
+      temp$Year=dat$Year
+      temp$`GDP per Capita`=dat$GDP.per.Capita
+      return(temp)
+    }
+  })
+}
+
+shinyApp(ui=UI,server=SERVER)</code></pre>
+</div>
 
 
 

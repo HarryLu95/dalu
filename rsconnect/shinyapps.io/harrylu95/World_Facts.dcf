@@ -1,0 +1,12 @@
+name: World_Facts
+title: World_Facts
+username:
+account: harrylu95
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 295643
+bundleId: 1258652
+url: https://harrylu95.shinyapps.io/World_Facts/
+when: 1520494915.04635
+asMultiple: FALSE
+asStatic: FALSE

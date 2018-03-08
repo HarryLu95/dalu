@@ -1,0 +1,13 @@
+name: World_Facts
+title: World_Facts
+username:
+account: harrylu95
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 295643
+bundleId: 1258658
+url: https://harrylu95.shinyapps.io/World_Facts/
+when: 1520495018.37796
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: _config.yml|_site.yml|About.html|About.Rmd|Activity.html|Activity.Rmd|Amazon_s_Secret.html|Amazon_s_Secret.Rmd|Arsenic_1.html|Arsenic_1.Rmd|Arsenic_2.html|Arsenic_2.Rmd|Arsenic_3.html|Arsenic_3.Rmd|Arsenic_4.html|Arsenic_4.Rmd|Arsenic_5.html|Arsenic_5.Rmd|Arsenic_Measurement.html|Arsenic_Measurement.Rmd|Birds_Breeding_Pairs.html|Birds_Breeding_Pairs.Rmd|build_site.R|Business Network.Rmd|Business_Network.html|Business_Photo_Small.png|Codes.html|Codes.Rmd|Forecasting_Stock_Value.html|Forecasting_Stock_Value.Rmd|Gallery.html|Gallery.Rmd|hide.html|hide.Rmd|index.html|index.Rmd|Interactive_Web_App.html|Interactive_Web_App.Rmd|Outlier_Detection.html|Outlier_Detection.Rmd|Projects.html|Projects.Rmd|README.html|README.md|RStudio_Web.html|RStudio_Web.Rmd|style.css|Web_Data_Wrangling.html|Web_Data_Wrangling.Rmd|Forecasting_Stock_Value_files/figure-html/Basic_Visulization-1.png|Forecasting_Stock_Value_files/figure-html/Basic_Visulization-2.png|Forecasting_Stock_Value_files/figure-html/Compute_r_hat_and_plot-1.png|Forecasting_Stock_Value_files/figure-html/Creat_High_Group_And_Low_Group-1.png|Forecasting_Stock_Value_files/figure-html/Log_Return_Visulization-1.png|Gallery_files/figure-html/unnamed-chunk-1-1.png|Buttons & Logos|Interactive_Web_App_files|Outlier_Detection_files|Project Files|README_files|site_libs
