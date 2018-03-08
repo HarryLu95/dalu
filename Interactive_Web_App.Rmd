@@ -139,6 +139,10 @@ legend("topleft",legend=c("Top 1: America","Top 2: Canada"),lty=1,col=3)
 #<font face="Baskerville Old Face">(III) Interactive Web Application</font>
 - [Click me to reach the App](https://harrylu95.shinyapps.io/World_Facts/)
 
+<center>![](https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/Shiny%20Sample.png)</center>
+
+</br>
+
 ```{r App,eval=FALSE}
 library(shiny)
 UI=fluidPage(
