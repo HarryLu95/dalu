@@ -11,31 +11,31 @@ navbar:
     href: About.html
   - text: Projects
     icon: fa-folder-open
-    menu: 
-        - text: Summary
-          icon: fa-bars
-          href: Projects.html
-        - text: Forecasting Stock Value
-          icon: fa-book
-          href: Forecasting_Stock_Value.html
-        - text: Arsenic Measurement
-          icon: fa-book
-          href: Arsenic_Measurement.html
-        - text: Amazon's Secret
-          icon: fa-book
-          href: Amazon_s_Secret.html
-        - text: Outlier Detection
-          icon: fa-calendar-check-o
-          href: Outlier_Detection.html
-        - text: Interactive Web App
-          icon: fa-calendar-check-o
-          href: Interactive_Web_App.html
-        - text: Web Data Wrangling
-          icon: fa-calendar-check-o
-          href: Web_Data_Wrangling.html
-        - text: Bird Breeding Pairs
-          icon: fa-calendar-check-o
-          href: Birds_Breeding_Pairs.html
+    menu:
+    - text: Summary
+      icon: fa-bars
+      href: Projects.html
+    - text: Forecasting Stock Value
+      icon: fa-book
+      href: Forecasting_Stock_Value.html
+    - text: Arsenic Measurement
+      icon: fa-book
+      href: Arsenic_Measurement.html
+    - text: Amazon's Secret
+      icon: fa-book
+      href: Amazon_s_Secret.html
+    - text: Outlier Detection
+      icon: fa-calendar-check-o
+      href: Outlier_Detection.html
+    - text: Interactive Web App
+      icon: fa-calendar-check-o
+      href: Interactive_Web_App.html
+    - text: Web Data Wrangling
+      icon: fa-calendar-check-o
+      href: Web_Data_Wrangling.html
+    - text: Bird Breeding Pairs
+      icon: fa-calendar-check-o
+      href: Bird_Breeding_Pairs.html
   - text: Activities
     icon: fa-star
     href: Activity.html
@@ -46,5 +46,7 @@ output:
   html_document:
     theme: spacelab
     highlight: default
-    self_contained: no
     css: style.css
+    lib_dir: site_libs
+    self_contained: no
+

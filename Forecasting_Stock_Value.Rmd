@@ -37,14 +37,9 @@ $${\hat\sigma_{t}}^2=\omega_{t-1}+\alpha_{t-1}\cdot{\mu_{t-1}}^2+\beta_{t-1}\cdo
 Therefore,
 $$\hat{r}_{t}=\hat\mu_{t}+\hat\sigma_{t}\cdot\epsilon_{t}=(a_{t-1}+b_{t-1}\cdot\mu_{t-1})+\sqrt{\omega_{t-1}+\alpha_{t-1}\cdot{\mu_{t-1}}^2+\beta_{t-1}\cdot{\sigma_{t-1}}^2}\cdot{\epsilon_{t}}$$
 
-```{r Read_Data_Online,echo=FALSE,eval=FALSE}
+```{r Read_Data_Online,echo=FALSE,eval=TRUE}
 #read data online
-goog=read.csv("https://raw.githubusercontent.com/HarryLu95/dalu0511/master/Project%20Files/FM%20Research/GOOG.csv")
-```
-
-```{r Read_Local_Data,echo=TRUE,eval=TRUE}
-#read local data
-goog=read.csv("C:/Users/thinkpad/Documents/GitHub/dalu0511/Project Files/FM Research/GOOG.csv")
+goog=read.csv("https://raw.githubusercontent.com/HarryLu95/dalu/master/Project%20Files/FM%20Research/GOOG.csv")
 ```
 
 The original data has 7 columns: `Date`, `Open`, `High`, `Low`, `Close`, `Adj.Close`, and `Volumn`.

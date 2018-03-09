@@ -5,20 +5,21 @@ title: <center><font face="Baskerville Old Face">**Hello!**</font></center>
 img {
   width: 140px;
   float: left;
-  margin: 20px;
+  margin-top: 10px;
+  margin-right: 40px;
 }
 </style>
 
 
 <font face="Times New Roman" color=black size=5>
 
-My name is Harry Lu. I am from Beijing, China. I recently graduated from UMass Amherst in 2017 with a mojor in Mathematics.
-
 ![](https://raw.githubusercontent.com/HarryLu95/dalu/master/Business_Photo_Small.png)
 
-Currently I am working as a Statistical Analyst of Marketing at Crane Management Service, Inc. in California.
+My name is Harry Lu. I am from Beijing, China. I recently graduated from UMass Amherst in 2017 with a major in Mathematics.
 
-As a undergraduate student, I learned to program in R and to use RStudio. Aside from programming, I also using RStudio to do many other things, like writing $\LaTeX$, making beamer documents, taking notes, and constructing website.
+Currently I am working as a *Statistical Analyst of Marketing* at Crane Management Service, Inc. in California.
+
+As an undergraduate student, I learned to program in R and to use RStudio. Aside from programming, I am also using RStudio to do many other things, like writing $\LaTeX$, making beamer documents, taking notes, and constructing websites.
 
 Here are the [projects](Projects.html) that I did.
 

@@ -252,10 +252,10 @@ $(document).ready(function () {
       </a>
     </li>
     <li>
-      <a href="Birds_Breeding_Pairs.html">
+      <a href="Bird_Breeding_Pairs.html">
         <span class="fa fa-calendar-check-o"></span>
          
-        Birds Breeding Pairs
+        Bird Breeding Pairs
       </a>
     </li>
   </ul>
@@ -323,8 +323,6 @@ $(document).ready(function () {
 <p>AR(1) <span class="math display">\[\hat\mu_{t}=a_{t-1}+b_{t-1}\cdot\mu_{t-1}\]</span></p>
 <p>GARCH(1,1) <span class="math display">\[{\hat\sigma_{t}}^2=\omega_{t-1}+\alpha_{t-1}\cdot{\mu_{t-1}}^2+\beta_{t-1}\cdot{\sigma_{t-1}}^2\]</span></p>
 <p>Therefore, <span class="math display">\[\hat{r}_{t}=\hat\mu_{t}+\hat\sigma_{t}\cdot\epsilon_{t}=(a_{t-1}+b_{t-1}\cdot\mu_{t-1})+\sqrt{\omega_{t-1}+\alpha_{t-1}\cdot{\mu_{t-1}}^2+\beta_{t-1}\cdot{\sigma_{t-1}}^2}\cdot{\epsilon_{t}}\]</span></p>
-<pre class="r"><code>#read local data
-goog=read.csv(&quot;C:/Users/thinkpad/Documents/GitHub/dalu0511/Project Files/FM Research/GOOG.csv&quot;)</code></pre>
 <p>The original data has 7 columns: <code>Date</code>, <code>Open</code>, <code>High</code>, <code>Low</code>, <code>Close</code>, <code>Adj.Close</code>, and <code>Volumn</code>.</p>
 <p><code>Day</code> and <code>Log.Return</code> (<span class="math inline">\(r_t\)</span>) are added to the data frame. <span class="math display">\[r_t=\ln(\frac{P_t}{P_{t-1}})\]</span> where <span class="math inline">\(P\)</span> represents adjusted close value.</p>
 <pre class="r"><code>#load package: fGarch
