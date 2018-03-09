@@ -33,7 +33,7 @@ navbar:
         - text: Web Data Wrangling
           icon: fa-calendar-check-o
           href: Web_Data_Wrangling.html
-        - text: Birds Breeding Pairs
+        - text: Bird Breeding Pairs
           icon: fa-calendar-check-o
           href: Birds_Breeding_Pairs.html
   - text: Activities

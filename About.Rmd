@@ -21,7 +21,7 @@ output: html_document
 #<font face="Baskerville Old Face" color=black size=6>(I) Educational Background</font>
 <font face="Times New Roman" color=black size=4>
 
-- **Undergraduate School**
+- **Undergraduate**
     - University of Massachusetts Amherst, MA, USA
     - September 2013 - May 2017
     - <i class="fa fa-hand-o-right"></i> &nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/UMA_Logo.png" width="75">](http://www.umass.edu/)
@@ -34,11 +34,6 @@ output: html_document
     - International Department, Beijing National Day School (BNDS), Beijing, China
     - September 2010 - July 2013
     - <i class="fa fa-hand-o-right"></i> [<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/BNDS_Logo.png" width="100">](http://www.bndsedu.com/)
-
-- **Middle School**
-    - The Experimental High School Attached to Beijing Normal University (ESBNU), Beijing, China
-    - September 2007 - July 2010
-    - <i class="fa fa-hand-o-right"></i> &nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/SDSZ_Logo.png" width="75">](http://www.sdsz.com.cn/item/list.asp?id=1635)
 
 </font>
 

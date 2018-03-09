@@ -1,5 +1,5 @@
 ---
-title: <center><font face="Baskerville Old Face">**A Study on Birds Breeding Pairs**</font></center>
+title: <center><font face="Baskerville Old Face">**A Study on Bird Breeding Pairs**</font></center>
 output: html_document
 ---
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
