@@ -39,6 +39,6 @@ ggplot(results, aes(x = xs, y = ys, color = alpha)) +
 
 </br>
 
-<center><iframe height="300" src="https://www.youtube.com/embed/gElVRdaifj0?autoplay=1"></iframe></center>
+<center><iframe height="300" src="https://www.youtube.com/embed/rV70FkmXGM8?autoplay=0"></iframe></center>
 
 Still under constructions.
