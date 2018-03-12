@@ -8,12 +8,15 @@ Still under constructions.
 
 #<font face="Baskerville Old Face">My favorite music and songs!</font>{.tabset}
 ##Playlist
+
 <font face="Times New Roman" size=5>
-
 1 歌に形はないけれど (Uta ni Katachi wa Nai Keredo)
+</font>
 
+<font size=4>
 **doriko**'s second, and one of most notable works, a ballad about how songs do not fade with time. It is included on the album *unformed*.
 
+[*reference*](http://vocaloid.wikia.com/wiki/%E6%AD%8C%E3%81%AB%E5%BD%A2%E3%81%AF%E3%81%AA%E3%81%84%E3%81%91%E3%82%8C%E3%81%A9_(Uta_ni_Katachi_wa_Nai_Keredo)#Japanese%20Lyrics)
 </font>
 
 ##1{.tabset}
