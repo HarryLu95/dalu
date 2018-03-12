@@ -24,7 +24,9 @@ Still under constructions.
 
 <center>歌に形はないけれど</center>
 
-<div class="two-column"><font size=4>
+</br>
+
+<div class="two-column"><font size=4><center>
 
 **Japanese (日本語歌詞)**
 
@@ -132,7 +134,7 @@ katachi no nai mono dakedo
 kimi no kokoro no katasumi de  
 kagayaku hoshi ni naritai
 
-</font></div>
+</center></font></div>
 
 ###1. Piano
 <center><iframe height="300" src="https://www.youtube.com/embed/rV70FkmXGM8?autoplay=0"></iframe></center>
