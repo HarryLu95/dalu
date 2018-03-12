@@ -11,3 +11,31 @@ output: html_document
 - Employment Duration: 2 mos
 - Location: Beijing, China
 - Collected and entered customers' information using Excel, updated company's database, resulting in more efficient searching
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE,fig.align="center"}
+library(tidyverse)
+cool_function <- function(x, alpha) return(sin(alpha*x))
+xs <- seq(0, pi*1.5, 0.005)
+ys <- cool_function(xs, 1)
+results <- data_frame(xs, ys, alpha = "1")
+for(alpha in seq(0,3, 0.1)){
+  results <- results %>% 
+    bind_rows(data_frame(
+      xs, 
+      ys = cool_function(xs, alpha),
+      alpha = as.character(alpha)
+    ))
+}
+
+ggplot(results, aes(x = xs, y = ys, color = alpha)) + 
+  geom_line() + 
+  theme_bw() + 
+  theme(legend.position="none")
+```
+
+</br>
+
+<center><font face="Times New Roman" size=5>Beijing Subway</font></center>
+</br>
+<center>[<img src="https://www.travelchinaguide.com/images/map/beijing/beijing-subway.gif" width=60%>](https://www.travelchinaguide.com/images/map/beijing/beijing-subway.gif)</center>

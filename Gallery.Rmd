@@ -1,44 +1,156 @@
 ---
-title: <center><font face="Baskerville Old Face">**Gallery**</font></center>
+title: <center><font face="Baskerville Old Face">**Collections**</font></center>
 output: html_document
 ---
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
 
+Still under constructions.
+
+#<font face="Baskerville Old Face">My favorite music and songs!</font>{.tabset}
+##Playlist
 <font face="Times New Roman" size=5>
 
+1 歌に形はないけれど (Uta ni Katachi wa Nai Keredo)
 
+**doriko**'s second, and one of most notable works, a ballad about how songs do not fade with time. It is included on the album *unformed*.
 
 </font>
 
-```{r,echo=FALSE,warning=FALSE,message=FALSE,fig.align="center"}
-library(tidyverse)
-cool_function <- function(x, alpha) return(sin(alpha*x))
-xs <- seq(0, pi*1.5, 0.005)
-ys <- cool_function(xs, 1)
-results <- data_frame(xs, ys, alpha = "1")
-for(alpha in seq(0,3, 0.1)){
-  results <- results %>% 
-    bind_rows(data_frame(
-      xs, 
-      ys = cool_function(xs, alpha),
-      alpha = as.character(alpha)
-    ))
-}
+##1{.tabset}
+<font face="Times New Roman" size=5>
 
-ggplot(results, aes(x = xs, y = ys, color = alpha)) + 
-  geom_line() + 
-  theme_bw() + 
-  theme(legend.position="none")
-```
+<center>歌に形はないけれど</center>
 
-</br>
+<div class="two-column"><font size=4>
 
-<center><font face="Times New Roman" size=5>Beijing Subway</font></center>
-</br>
-<center>[<img src="https://www.travelchinaguide.com/images/map/beijing/beijing-subway.gif" width=60%>](https://www.travelchinaguide.com/images/map/beijing/beijing-subway.gif)</center>
+**Japanese (日本語歌詞)**
 
-</br>
+薄紅の時を彩る花びら  
+ひらひら舞う光の中  
+僕は笑えたはず
 
+鮮やかな日々に僕らが残した	
+砂の城は波に溶けて	
+きっと夢が終わる
+
+真っ白な世界で目を覚ませば	
+伸ばす腕は何もつかめない	
+見上げた空が近くなるほどに	
+僕は何を失った？
+
+透通る波	
+映る僕らの影は蒼く遠く  
+あの日僕は世界を知り  
+それは光となった
+
+僕は歌うよ	
+笑顔をくれた君が泣いてるとき	
+ほんの少しだけでもいい  
+君の支えになりたい
+
+僕が泣いてしまった日に  
+君がそうだったように
+
+僕がここに忘れたもの	
+全て君がくれた宝物	
+形のないものだけが	
+時の中で色褪せないまま
+
+透通る波	
+何度消えてしまっても	
+砂の城を僕は君と残すだろう	
+そこに光を集め
+
+僕は歌うよ	
+笑顔をくれた君が泣いてるとき	
+頼りのない僕だけれど	
+君のことを守りたい
+
+遠く離れた君のもとへ	
+この光が	
+空を越えて羽ばたいてゆく	
+そんな歌を届けたい
+
+僕が送るものは全て	
+形のないものだけど	
+君の心の片隅で  
+輝く星になりたい
+
+**Romaji (ローマ字)**
+
+usubeni no toki o irodoru hanabira  
+hirahira mau hikari no naka  
+boku wa waraeta hazu
+
+azayaka na hibi ni bokura ga nokoshita  
+suna no shiro wa nami ni tokete  
+kitto yume ga owaru
+
+masshiro na sekai de me o samaseba  
+nobasu ude wa nani mo tsukamenai  
+miageta sora ga chikaku naruhodo ni  
+boku wa nani o ushinatta?
+
+sukitooru nami  
+utsuru bokura no kage wa aoku tooku  
+ano hi boku wa sekai o shiri  
+sore wa hikari to natta
+
+boku wa utau yo  
+egao o kureta kimi ga naiteru toki  
+hon no sukoshi dake de mo ii  
+kimi no sasae ni naritai
+
+boku ga naite shimatta hi ni  
+kimi ga sou datta you ni
+
+boku ga koko ni wasureta mono  
+subete kimi ga kureta takaramono  
+katachi no nai mono dake ga  
+toki no naka de iroasenai mama
+
+sukitooru nami  
+nando kiete shimatte mo  
+suna no shiro o boku wa kimi to nokosu darou  
+soko ni hikari o atsume
+
+boku wa utau yo  
+egao o kureta kimi ga naiteru toki  
+tayori no nai boku da keredo  
+kimi no koto o mamoritai
+
+tooku hanareta kimi no moto e  
+kono hikari ga  
+sora o koete habataite yuku  
+sonna uta o todoketai
+
+boku ga okuru mono wa subete  
+katachi no nai mono dakedo  
+kimi no kokoro no katasumi de  
+kagayaku hoshi ni naritai
+
+</font></div>
+
+###1. Piano
 <center><iframe height="300" src="https://www.youtube.com/embed/rV70FkmXGM8?autoplay=0"></iframe></center>
 
-Still under constructions.
+###2. Instrumental
+<center><iframe height="300" src="https://www.youtube.com/embed/XiROef7Q4xs?autoplay=0"></iframe></center>
+
+###3. Vocal (Female)
+<center><iframe height="300" src="https://www.youtube.com/embed/Re6JJ_njYR4?autoplay=0"></iframe></center>
+
+###4. Vocal (Male)
+<center><iframe height="300" src="https://www.youtube.com/embed/oAgI773mFT4?autoplay=0"></iframe></center>
+
+###5. Music Video
+http://v.yinyuetai.com/video/2125040
+
+---
+
+</font>
+
+##2
+
+
+
