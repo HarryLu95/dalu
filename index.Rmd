@@ -9,10 +9,6 @@ img {
   margin-right: 40px;
   margin-bottom: 10px;
 }
-body {
-  background-image: url("https://img00.deviantart.net/aac5/i/2007/268/c/3/texture__recycled_paper_by_milokey.jpg");
-  background-size: 100%;
-}
 </style>
 
 

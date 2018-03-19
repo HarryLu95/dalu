@@ -128,7 +128,7 @@ get.target.info=function(input){
     temp.movie.content.rating=strsplit(temp.movie.content.rating,split=">")[[1]][2]
   }
   if (length(temp.movie.content.rating)==0){
-    temp.movie.content.rating=NA
+    temp.movie.content.rating="-"
   }
   
   #4. user rating----
@@ -189,7 +189,7 @@ get.target.info=function(input){
     remove(a)
   }
   if (length(temp.movie.budget)==0){
-    temp.movie.budget=NA
+    temp.movie.budget="-"
   }
   
   #8. opening----
@@ -204,7 +204,7 @@ get.target.info=function(input){
     remove(a)
   }
   if (length(temp.movie.opening)==0){
-    temp.movie.opening=NA
+    temp.movie.opening="-"
   }
   
   #9. gross----
@@ -219,7 +219,7 @@ get.target.info=function(input){
     remove(a)
   }
   if (length(temp.movie.gross)==0){
-    temp.movie.gross=NA
+    temp.movie.gross="-"
   }
   
   #10. worldwide gross----
@@ -234,7 +234,7 @@ get.target.info=function(input){
     remove(a)
   }
   if (length(temp.movie.worldwide.gross)==0){
-    temp.movie.worldwide.gross=NA
+    temp.movie.worldwide.gross="-"
   }
   
   #11. result----
