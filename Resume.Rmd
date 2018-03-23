@@ -1,0 +1,157 @@
+---
+output:
+  html_document: default
+---
+<style>
+  .head-1 {
+    font-family: Times New Roman;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .head-2 {
+    font-family: Times New Roman;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+  }
+  body {
+    font-family: Times New Roman;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  .name {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 0%;
+    float: left;
+    width: 75%;
+  }
+  .time {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 0%;
+    float: right;
+    width: 25%;
+  }
+  .content-group {
+    margin-left: 0%;
+    float: left;
+    width: 100%;
+  }
+  .content {
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: 5%;
+    float: left;
+    width: 70%;
+  }
+  .content-time {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 0%;
+    float: right;
+    width: 25%;
+  }
+  hr {
+    border: 0;
+    height: 2px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    background: black;
+#    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  }
+</style>
+
+
+
+<!--==========================Title==========================-->
+</br>
+<div class="head-1">Da Lu</div>
+<div class="head-2">lvda_1\@163.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(413) 559-1266</div>
+
+
+<!--=======================Body Start========================-->
+<body>
+
+
+<!--======================Body-Education=====================-->
+<div class="content-group">
+  <h1>Education</h1>
+  <hr/>
+</div>
+
+
+<!--========================Education 1======================-->
+<div class="name">University of Massachusetts Amherst</div>
+<div class="time">Sep 2013 - May 2017</div>
+
+<div class="content">
+  **Degree**: Bachelor of Science in Mathematics  
+  **Concentrations**: Applied Mathematics, Statistics, Actuary  
+  **Minor**: Chemistry  
+  **Dean’s List**  
+  **Director Scholarship**
+</div>
+
+<div class="content-time">
+  </br>
+  </br>
+  </br>
+  Jan 2014 - Jan 2017  
+  Sep 2013 - May 2017
+</div>
+
+
+<!--=======================Body-Current======================-->
+<div class="content-group">
+  </br>
+  <h1>Current Internship & Research Experiences</h1>
+  <hr/>
+</div>
+
+
+<!--========================Current 1========================-->
+<div class="name">Crane Management Service Inc., Los Alamitos, CA</div>
+<div class="time">Mar 2018 - Present</div>
+
+<div class="content">
+  **Statistical Analyst of Marketing**
+</div>
+
+
+<!--========================Current 2========================-->
+<div class="name">Are Customer Review Scores Influencing Sale Rankings? A Study on Amazon Best Sellers</div>
+<div class="time">Sep 2017 - Present</div>
+
+<div class="content">
+  **Assistant Researcher**
+  
+  - Cooperated with Assistant Professor Fang Tian, Business Administration Division, Seaver College, Pepperdine University
+  - Applied nonparametric methods to study Amazon Best Sellers to determine customer review scores’ impacts on sales ranking
+  - Collected and processed data including sales ranking, price, star points, customer average reviews, review numbers and answered questions of selected commodities including Baby Musical Toys and Single Room Humidifiers, conducted Spearman and Kendall tests to evaluate correlation between sales ranking and rest variables and generate correlation charts of relevant tests, and executed Wilcoxon Rank-Sum test to verify derived conclusions.
+</div>
+
+
+<!--========================Current 3========================-->
+<div class="name">Fishmarket Inc., Louisville, KY</div>
+<div class="time">Sep 2017 - Present</div>
+
+<div class="content">
+**Marketing Analyst**
+
+- Comprehended working contents that included food production and processing, warehouse management, purchase order and invoice handling, client interview, data processing, accounting and logistics.
+- Learned to use QuickBooks and to handle purchase order and invoice.
+- Helped organize goods of transportation, manage warehouse, check logistics information, and process cooperation procedures with food retailers, schools and restaurants.
+- Completed the trend chart of 1400 products from August 2015 and August 2017 with R.
+- Accomplished the measurement, modification and organization of Kentucky Proud Program Vendor Info data.
+- Self taught Rmarkdown, HTML, CSS, and constructed the company’s website to offer convenient inquiry for customers.
+</div>
+
+
+<!--========================Body End=========================-->
+</body>
