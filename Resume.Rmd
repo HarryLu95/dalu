@@ -20,11 +20,18 @@ output:
   }
   h1 {
     font-size: 32px;
+    font-weight: bold;
+  }
+  ul {
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
   .name {
     font-size: 20px;
     font-weight: bold;
     text-align: left;
+    margin-top: 10px;
     margin-left: 0%;
     float: left;
     width: 75%;
@@ -33,6 +40,7 @@ output:
     font-size: 20px;
     font-weight: bold;
     text-align: right;
+    margin-top: 10px;
     margin-right: 0%;
     float: right;
     width: 25%;
@@ -57,11 +65,15 @@ output:
     float: right;
     width: 25%;
   }
+  .content-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
   hr {
     border: 0;
     height: 2px;
-    margin-top: 0px;
-    margin-bottom: 5px;
+    margin-top: -5px;
+    margin-bottom: 0px;
     background: black;
 #    background-image: linear-gradient(to right, #ccc, #333, #ccc);
   }
@@ -109,18 +121,17 @@ output:
 
 <!--=======================Body-Current======================-->
 <div class="content-group">
-  </br>
   <h1>Current Internship & Research Experiences</h1>
   <hr/>
 </div>
 
 
 <!--========================Current 1========================-->
-<div class="name">Crane Management Service Inc., Los Alamitos, CA</div>
+<div class="name">Crane Management Service Inc.</div>
 <div class="time">Mar 2018 - Present</div>
 
 <div class="content">
-  **Statistical Analyst of Marketing**
+  <div class="content-title">Statistical Analyst of Marketing</div>
 </div>
 
 
@@ -129,8 +140,7 @@ output:
 <div class="time">Sep 2017 - Present</div>
 
 <div class="content">
-  **Assistant Researcher**
-  
+  <div class="content-title">Assistant Researcher</div>
   - Cooperated with Assistant Professor Fang Tian, Business Administration Division, Seaver College, Pepperdine University
   - Applied nonparametric methods to study Amazon Best Sellers to determine customer review scores’ impacts on sales ranking
   - Collected and processed data including sales ranking, price, star points, customer average reviews, review numbers and answered questions of selected commodities including Baby Musical Toys and Single Room Humidifiers, conducted Spearman and Kendall tests to evaluate correlation between sales ranking and rest variables and generate correlation charts of relevant tests, and executed Wilcoxon Rank-Sum test to verify derived conclusions.
@@ -138,19 +148,91 @@ output:
 
 
 <!--========================Current 3========================-->
-<div class="name">Fishmarket Inc., Louisville, KY</div>
+<div class="name">Fishmarket Inc.</div>
 <div class="time">Sep 2017 - Present</div>
 
 <div class="content">
-**Marketing Analyst**
-
-- Comprehended working contents that included food production and processing, warehouse management, purchase order and invoice handling, client interview, data processing, accounting and logistics.
-- Learned to use QuickBooks and to handle purchase order and invoice.
-- Helped organize goods of transportation, manage warehouse, check logistics information, and process cooperation procedures with food retailers, schools and restaurants.
-- Completed the trend chart of 1400 products from August 2015 and August 2017 with R.
-- Accomplished the measurement, modification and organization of Kentucky Proud Program Vendor Info data.
-- Self taught Rmarkdown, HTML, CSS, and constructed the company’s website to offer convenient inquiry for customers.
+  <div class="content-title">Marketing Analyst</div>
+  - Comprehended working contents that included food production and processing, warehouse management, purchase order and invoice handling, client interview, data processing, accounting and logistics.
+  - Learned to use QuickBooks and to handle purchase order and invoice.
+  - Helped organize goods of transportation, manage warehouse, check logistics information, and process cooperation procedures with food retailers, schools and restaurants.
+  - Completed the trend chart of 1400 products from August 2015 and August 2017 with R.
+  - Accomplished the measurement, modification and organization of Kentucky Proud Program Vendor Info data.
+  - Self taught Rmarkdown, HTML, CSS, and constructed the company’s website to offer convenient inquiry for customers.
 </div>
+
+
+<!--=====================Body-Previous-R=====================-->
+<div class="content-group">
+  <h1>Previous Research Experiences</h1>
+  <hr/>
+</div>
+
+
+<!--=======================PreviousR 1=======================-->
+<div class="name">Forecasting Straits Times Index Stock Value</div>
+<div class="time">May 2016 - July 2016</div>
+
+<div class="content">
+  <div class="content-title">Undergraduate researcher</div>
+  - Cooperated with Associate Prof. Hongkun Zhang, Department of Mathematics and Statistics, UMass Amherst
+  - Applied simple ARMA model to Google Alphabet stock and analyzed statistically how the data distributes.
+  - Studied Markov Switching model, ARCH model and GARCH model.
+  - Applied Markov Switching - AR(1) - GARCH(1,1) model on the STI Index from the Yahoo Finance data (1987/12/28 - 2016/6/14) as well as back-testing to predict future log returns for market close values.
+  - Classified data into two groups by plotting multiple log return graphs and applied AR(1) - GARCH(1,1) to each section.
+  - Built a reliable model and predicted almost all the real prices within given price range.
+</div>
+
+
+<!--=======================PreviousR 2=======================-->
+<div class="name">Study on Measurement Method of Arsenic (As) in Rice with Hach EZ test kit, Tyson’s Lab</div>
+<div class="time">Sep 2013 - Dec 2015</div>
+
+<div class="content">
+  <div class="content-title">Undergraduate researcher</div>
+  - Cooperated with Prof. Julian Tyson, Department of Chemistry, UMass Amherst
+  - Conducted the research weekly eight hours on average for five semesters from my freshmen year, wrote experimental progress reports, attended weekly meetings to discuss with the professor and group members on next procedures.
+  - Utilized statistical methods to deal with experimental data, for instance, using statistical distribution constant to describe As content in different rice samples, using ADI Digital Image Analysis to extract RGB value of test strips when analyzing their As content, and using the logarithmic diagrams in Excel to correspond to the colors on test strips and color charts.
+  - Went through a whole research process, improved my research capacities and academic writing ability, and learned to use statistical methods to serve for experimental analysis.
+</div>
+
+
+<!--======================Body-Teaching======================-->
+<div class="content-group">
+  <h1>Teaching Experiences</h1>
+  <hr/>
+</div>
+
+
+<!--========================Teaching 1=======================-->
+<div class="name">Private Tutor</div>
+<div class="time">Sep 2013 - May 2017</div>
+
+<div class="content">
+  - Subjects: Calculus, Linear Algebra, Ordinary Differential Equation, Probability, Statistics, Chemistry, R programming.
+  - Tutored students in need these subjects generally two hours per week and 3-4 students each year.
+  - Tutored a student on Calculus I in Spring 2017, helped her improve grade from F to A-.
+</div>
+
+
+<!--========================Teaching 2=======================-->
+<div class="name">Chinese Tutor, East Asian Languages and Cultures Program, UMass Amherst</div>
+<div class="time">Jan 2015 - Dec 2015</div>
+
+<div class="content">
+  - Communicated and learned Chinese grammar and teaching skills with head tutor every week.
+  - Created new ideas to the dean of Chinese Program on how to improve the program.
+  - Tutored Chinese Major students pronunciation, grammar, writing and speaking.
+</div>
+
+
+<!--======================Body-Projects======================-->
+<div class="content-group">
+  <h1>Projects</h1>
+  <hr/>
+</div>
+
+
 
 
 <!--========================Body End=========================-->
