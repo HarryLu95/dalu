@@ -4,7 +4,7 @@ output: html_document
 ---
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
 
-<nav>
+<div class="about-contact">
 <font face="Baskerville Old Face" color=black size=6>Contact</font>
 
 <font face="Times New Roman" color=black size=4>
@@ -14,9 +14,9 @@ output: html_document
 - [LinkedIn](https://www.linkedin.com/in/dalu0511/)
 
 </font>
-</nav>
+</div>
 
-<section>
+<div class="about-content">
 
 #<font face="Baskerville Old Face" color=black size=6>(I) Educational Background</font>
 <font face="Times New Roman" color=black size=4>
@@ -96,4 +96,4 @@ output: html_document
 - I'm also a cook. I love cooking, especially Chinese food. [Come to see what I've cooked!](Gallery.html)
 
 </font>
-</section>
+</div>
