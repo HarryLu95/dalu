@@ -148,6 +148,10 @@ output:
 <div class="title">Statistical Analyst of Marketing</div>
 <div class="title-time">Mar 2018 - Present</div>
 
+<div class="content">
+- Rewrote the *User Manual* of SPMT from the equipment supplier.
+</div>
+
 
 <!--========================Current 2========================-->
 <div class="company-research-name">Are Customer Review Scores Influencing Sale Rankings? A Study on Amazon Best Sellers</div>

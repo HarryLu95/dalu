@@ -13,7 +13,7 @@ output: html_document
 - Collected and entered customers' information using Excel, updated company's database, resulting in more efficient searching
 
 
-```{r,echo=FALSE,warning=FALSE,message=FALSE,fig.align="center"}
+```{r,echo=FALSE,warning=FALSE,message=FALSE,fig.align="center",eval=F}
 library(tidyverse)
 cool_function <- function(x, alpha) return(sin(alpha*x))
 xs <- seq(0, pi*1.5, 0.005)
@@ -36,6 +36,14 @@ ggplot(results, aes(x = xs, y = ys, color = alpha)) +
 
 </br>
 
+<!--
 <center><font face="Times New Roman" size=5>Beijing Subway</font></center>
 </br>
 <center>[<img src="https://www.travelchinaguide.com/images/map/beijing/beijing-subway.gif" width=60%>](https://www.travelchinaguide.com/images/map/beijing/beijing-subway.gif)</center>
+-->
+
+<center><iframe height="300" src="https://v.qq.com/iframe/preview.html?vid=x0024hid4b7&auto=0"></iframe></center>
+
+<center><iframe height="300" src="https://www.youtube.com/embed/DYg4egpg_lg?autoplay=0"></iframe></center>
+
+<center><iframe height="300" src="https://www.youtube.com/embed/7A6MFDfxnKc?autoplay=0"></iframe></center>

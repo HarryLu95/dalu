@@ -1,6 +1,6 @@
 ---
-title: <center><font face="Baskerville Old Face">Notes</font></center>
-date: <center><font face="Baskerville Old Face">`r Sys.Date()`</font></center>
+title: <center>Notes</center>
+date: <center>`r Sys.Date()`</center>
 output: 
   html_document:
     toc: true
@@ -11,14 +11,29 @@ output:
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
 <div id="back"><a href="About.html"><i class="fa fa-undo" aria-hidden="true"></i></a></div>
 
-#<font face="Baskerville Old Face">(I) RMarkdown</font>
-##<font face="Baskerville Old Face">1. Header Section</font>
-###<font face="Baskerville Old Face">(a) Automatic Date</font>
+<style>
+h1 {
+  font-family: Baskerville Old Face;
+}
+h2 {
+  font-family: Baskerville Old Face;
+}
+h3 {
+  font-family: Baskerville Old Face;
+}
+li {
+  font-size: 24px;
+}
+</style>
+
+#(I) RMarkdown
+##1. Header Section
+###(a) Automatic Date
 ``` {}
 r Sys.Date()
 ```
 
-###<font face="Baskerville Old Face">(b) Output Options</font>
+###(b) Output Options
 ``` {}
 output: 
   html_document:
@@ -28,9 +43,8 @@ output:
     toc_depth: 2
 ```
 
-##<font face="Baskerville Old Face">2. Available Fonts</font>
-<font size=5><div class="two-column">
-
+##2. Available Fonts
+<div class="two-column">
 - <font face="Algerian">Algerian</font>
 - <font face="Baskerville Old Face">Baskerville Old Face</font>
 - <font face="Belwe">Belwe</font>
@@ -54,15 +68,14 @@ output:
 - <font face="Times New Roman">Times New Roman</font>
 - <font face="Trebuchet MS">Trebuchet MS</font>
 - <font face="Tw Cen MT">Tw Cen MT</font>
+</div>
 
-</div></font>
+#(II) R packages
+##(a) `ggplot2`
 
-#<font face="Baskerville Old Face">(II) R packages</font>
-##<font face="Baskerville Old Face">(a) `ggplot2`</font>
-
-#<font face="Baskerville Old Face">(III) JavaScript Add-On</font>
-##<font face="Baskerville Old Face">1. Visitor Counter</font>
-###<font face="Baskerville Old Face">(a)</font>
+#(III) JavaScript Add-On
+##1. Visitor Counter
+###(a)
 ``` {}
 <script type="text/javascript">
 var caution=false
@@ -133,7 +146,7 @@ document.write("Number of Visitors: " + visits)
 </script>
 ```
 
-###<font face="Baskerville Old Face">(b)</font>
+###(b)
 ``` {}
 <script type="text/javascript">
 var caution=false
@@ -204,7 +217,7 @@ document.write("Number of Visitors: " + visits)
 </script>
 ```
 
-##<font face="Baskerville Old Face">2. Location Button</font>
+##2. Location Button
 ``` {}
 <p id="demo">Press this button to get your location: </p>
 <button onclick="getLocation()">Try me!</button>
@@ -226,9 +239,9 @@ function showPosition(position)
 </script>
 ```
 
-#<font face="Baskerville Old Face">(IV) HTML</font>
-##<font face="Baskerville Old Face">1. Background Color</font>
-###<font face="Baskerville Old Face">(a) Heading & Paragraph</font>
+#(IV) HTML
+##1. Background Color
+###(a) Heading & Paragraph
 ``` {}
 <body style="background-color:white">
 <h2 style="background-color:red" width=200>This is a heading</h2>
@@ -236,14 +249,14 @@ function showPosition(position)
 </body>
 ```
 
-###<font face="Baskerville Old Face">(b) Table</font>
+###(b) Table
 ``` {}
 <table><tr><td bgcolor=gold height=40 width=125 valign=top align=center>
 This is background color of a table
 </td></tr></table>
 ```
 
-##<font face="Baskerville Old Face">2. Create a Table</font>
+##2. Create a Table
 ``` {}
 <table border="1">
 <tr>
@@ -259,7 +272,7 @@ This is background color of a table
 </table>
 ```
 
-##<font face="Baskerville Old Face">3. Input Box</font>
+##3. Input Box
 ``` {}
 <form>
  First name:<br>
@@ -270,4 +283,9 @@ This is background color of a table
 </form>
 ```
 
-#<font face="Baskerville Old Face">(V) CSS</font>
+##4. tags
+- `<bdi>`
+- `<span>`
+- `<div>`
+
+#(V) CSS
