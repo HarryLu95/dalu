@@ -180,6 +180,7 @@ h1 {
   font-family: Baskerville Old Face;
   color: black;
   font-weight: bold;
+  text-decoration: overline underline line-through;
 }
 h1.title {
   font-size: 38px;
