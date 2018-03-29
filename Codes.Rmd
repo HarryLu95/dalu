@@ -1,39 +1,96 @@
 ---
-title: <center>Notes</center>
-date: <center>`r Sys.Date()`</center>
 output: 
   html_document:
     toc: true
     toc_float:
       collapsed: false
-    toc_depth: 2
+    toc_depth: 3
 ---
-<div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
-<div id="back"><a href="About.html"><i class="fa fa-undo" aria-hidden="true"></i></a></div>
-
 <style>
+body {
+  color: black;
+}
 h1 {
   font-family: Baskerville Old Face;
+  font-size: 34px;
+  color: black;
 }
 h2 {
   font-family: Baskerville Old Face;
+  font-size: 30px;
+  margin-left: 20px;
+  color: black;
 }
 h3 {
   font-family: Baskerville Old Face;
-}
-li {
   font-size: 24px;
+  margin-left: 40px;
+  color: black;
+}
+ul {
+  font-size: 18px;
+}
+ul.body {
+  font-family: Baskerville Old Face;
+  font-size: 24px;
+  margin-left: 60px;
+}
+ol.body {
+  font-family: Baskerville Old Face;
+  font-size: 24px;
+  margin-left: 60px;
+}
+dl {
+  margin-left: 60px;
+}
+dd {
+  margin-left: 20px;
+}
+p {
+  font-family: Baskerville Old Face;
+  font-size: 24px;
+  margin-left: 20px;
+}
+pre {
+  margin-left: 60px;
+  color: brown;
+}
+code {
+  
+}
+table {
+  margin-left: 60px;
+}
+form {
+  margin-left: 60px;
+}
+.head-1 {
+  font-family: Times New Roman;
+  font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+}
+.head-2 {
+  font-family: Times New Roman;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
 }
 </style>
 
+</br>
+<div class="head-1">Website Notes</div>
+<div class="head-2">`r Sys.Date()`</div>
+</br>
+
 #(I) RMarkdown
-##1. Header Section
-###(a) Automatic Date
+##(1) Header Section
+###1.1 Automatic Date
 ``` {}
 r Sys.Date()
 ```
 
-###(b) Output Options
+###1.2 Output Options
 ``` {}
 output: 
   html_document:
@@ -43,39 +100,338 @@ output:
     toc_depth: 2
 ```
 
-##2. Available Fonts
+##(2) Available Fonts
 <div class="two-column">
-- <font face="Algerian">Algerian</font>
-- <font face="Baskerville Old Face">Baskerville Old Face</font>
-- <font face="Belwe">Belwe</font>
-- <font face="Brush Script MT">Brush Script MT</font>
-- <font face="Calibri">Calibri</font>
-- <font face="Candara">Candara</font>
-- <font face="Castellar">Castellar</font>
-- <font face="Comic Sans MS">Comic Sans MS</font>
-- <font face="Cooper Black">Cooper Black</font>
-- <font face="Footlight MT Light">Footlight MT Light</font>
-- <font face="Gabriola">Gabriola</font>
-- <font face="GungsuhChe">GungsuhChe</font>
-- <font face="Harlow Solid Italic">Harlow Solid Italic</font>
-- <font face="Helvetica">Helvetica</font> (default font)
-- <font face="High Tower Text">High Tower Text</font>
-- <font face="Jokerman">Jokerman</font>
-- <font face="Kristen ITC">Kristen ITC</font>
-- <font face="Old English Text MT">Old English Text MT</font>
-- <font face="Segoe Print">Segoe Print</font>
-- <font face="Segoe Script">Segoe Script</font>
-- <font face="Times New Roman">Times New Roman</font>
-- <font face="Trebuchet MS">Trebuchet MS</font>
-- <font face="Tw Cen MT">Tw Cen MT</font>
+<ul class="body">
+<li><font face="Algerian">Algerian</font></li>
+<li><font face="Baskerville Old Face">Baskerville Old Face</font></li>
+<li><font face="Belwe">Belwe</font></li>
+<li><font face="Brush Script MT">Brush Script MT</font></li>
+<li><font face="Calibri">Calibri</font></li>
+<li><font face="Candara">Candara</font></li>
+<li><font face="Castellar">Castellar</font></li>
+<li><font face="Comic Sans MS">Comic Sans MS</font></li>
+<li><font face="Cooper Black">Cooper Black</font></li>
+<li><font face="Footlight MT Light">Footlight MT Light</font></li>
+<li><font face="Gabriola">Gabriola</font></li>
+<li><font face="GungsuhChe">GungsuhChe</font></li>
+<li><font face="Harlow Solid Italic">Harlow Solid Italic</font></li>
+<li><font face="Helvetica">Helvetica</font></li> (default font)
+<li><font face="High Tower Text">High Tower Text</font></li>
+<li><font face="Jokerman">Jokerman</font></li>
+<li><font face="Kristen ITC">Kristen ITC</font></li>
+<li><font face="Old English Text MT">Old English Text MT</font></li>
+<li><font face="Segoe Print">Segoe Print</font></li>
+<li><font face="Segoe Script">Segoe Script</font></li>
+<li><font face="Times New Roman">Times New Roman</font></li>
+<li><font face="Trebuchet MS">Trebuchet MS</font></li>
+<li><font face="Tw Cen MT">Tw Cen MT</font></li>
+</ul>
 </div>
 
-#(II) R packages
-##(a) `ggplot2`
+#(II) HTML & CSS
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;Each tag should be paired.  
+&nbsp;&nbsp;&nbsp;&nbsp;e.g. `<tag>`content`</tag>`
+</p>
+
+##(1) Useful Tags
+###1.1 `<style>`
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;Writing CSS within `<style>` tag.
+</p>
+
+###1.2 `<body>`, `<p>`
+```{}
+body {
+  font-family: Baskerville Old Face;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  font-weight: normal;
+}
+p {
+  font-family: Baskerville Old Face;
+  color: black;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+}
+```
+
+###1.3 `<h1>`, `<h2>`, `<3>`, `<h4>`, `<h5>`, `<h6>`
+```{}
+h1 {
+  font-size: 34px;
+  font-family: Baskerville Old Face;
+  color: black;
+  font-weight: bold;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+```
+
+###1.4 `<bdi>`, `<span>`
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;Inline format setting.
+</p>
+```{}
+<style>
+span.some-name-1 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+  color; red;
+}
+bdi#some-name-2 {
+  font-size: 22px;
+  font-weight: normal;
+  text-align: center;
+  color; blue;
+}
+</style>
+
+<span class="some-name-1">content</span>
+<bdi id="some-name-2">content</bdi>
+```
+
+
+###1.5 `<div>`
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;Block format setting.
+</p>
+```{}
+<style>
+.some-name-2 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+  float: left;
+  width: 75%;
+}
+</style>
+
+<div class="some-name-3">
+content
+</div>
+```
+
+###1.6 `<ul>`, `<ol>`, `<li>`, `<dl>`, `<dt>`, `<dd>`
+```{}
+<ul>
+<li>content</li>
+</ul>
+```
+<ul class="body">
+<li>content</li>
+</ul>
+
+```{}
+<ul><ul>
+<li>content</li>
+</ul></ul>
+```
+<ul class="body"><ul>
+<li>content</li>
+</ul></ul>
+
+```{}
+<ul><ul><ul>
+<li>content</li>
+</ul></ul></ul>
+```
+<ul class="body"><ul><ul>
+<li>content</li>
+</ul></ul></ul>
+
+```{}
+<ul type="square">
+<li>content</li>
+</ul>
+```
+<ul class="body" type="square">
+<li>content</li>
+</ul>
+
+<div class="two-column">
+
+```{}
+<ol>
+<li>content</li>
+<li>content</li>
+<li>content</li>
+</ol>
+```
+<ol class="body">
+<li>content</li>
+<li>content</li>
+<li>content</li>
+</ol>
+
+```{}
+<ol type="I">
+<li>content</li>
+<li>content</li>
+<li>content</li>
+</ol>
+```
+<ol class="body" type="I">
+<li>content</li>
+<li>content</li>
+<li>content</li>
+</ol>
+
+```{}
+<ol type="i">
+<li>content</li>
+<li>content</li>
+<li>content</li>
+</ol>
+```
+<ol class="body" type="i">
+<li>content</li>
+<li>content</li>
+<li>content</li>
+</ol>
+
+```{}
+<ol type="A">
+<li>content</li>
+<li>content</li>
+<li>content</li>
+</ol>
+```
+<ol class="body" type="A">
+<li>content</li>
+<li>content</li>
+<li>content</li>
+</ol>
+
+```{}
+<ol type="a">
+<li>content</li>
+<li>content</li>
+<li>content</li>
+</ol>
+```
+<ol class="body" type="a">
+<li>content</li>
+<li>content</li>
+<li>content</li>
+</ol>
+
+```{}
+<ol start="4">
+<li>content</li>
+<li>content</li>
+<li>content</li>
+</ol>
+```
+<ol class="body" start="4">
+<li>content</li>
+<li>content</li>
+<li>content</li>
+</ol>
+
+</div>
+
+```{}
+<style>
+dd {
+  margin-left: 20px;
+}
+</style>
+
+<dl>
+<dt>Definition Term 1</dt>
+<dd>Definition Description 1</dd>
+<dt>Definition Term 2</dt>
+<dd>Definition Description 2</dd>
+<dt>Definition Term 3</dt>
+<dd>Definition Description 3</dd>
+</dl>
+```
+<dl>
+<dt>Definition Term 1</dt>
+<dd>Definition Description 1</dd>
+<dt>Definition Term 2</dt>
+<dd>Definition Description 2</dd>
+<dt>Definition Term 3</dt>
+<dd>Definition Description 3</dd>
+</dl>
+
+###1.7 `<table>`, `<tr>`, `<td>`
+``` {}
+<table border="1">
+<tr>
+<td width=200 height=50>row 1, cell 1</td>
+<td>row 1, cell 2</td>
+<td>1,3</td>
+</tr>
+<tr>
+<td width=200>row 2, cell 1</td>
+<td>row 2, cell 2</td>
+<td>2,3</td>
+</tr>
+</table>
+```
+<table border="1">
+<tr>
+<td width=200 height=50>row 1, cell 1</td>
+<td>row 1, cell 2</td>
+<td>1,3</td>
+</tr>
+<tr>
+<td width=200>row 2, cell 1</td>
+<td>row 2, cell 2</td>
+<td>2,3</td>
+</tr>
+</table>
+
+</br>
+
+##(2) Input Box
+``` {}
+<form>
+First name:</br>
+<input type="text" name="firstname">
+</br>
+Last name:</br>
+<input type="text" name="lastname">
+</form>
+```
+<form>
+First name:</br>
+<input type="text" name="firstname">
+</br>
+Last name:</br>
+<input type="text" name="lastname">
+</form>
+
+</br>
 
 #(III) JavaScript Add-On
-##1. Visitor Counter
-###(a)
+##(1) Visitor Counter
+###1.1 Method 1
 ``` {}
 <script type="text/javascript">
 var caution=false
@@ -146,7 +502,7 @@ document.write("Number of Visitors: " + visits)
 </script>
 ```
 
-###(b)
+###1.2 Method 2
 ``` {}
 <script type="text/javascript">
 var caution=false
@@ -217,7 +573,7 @@ document.write("Number of Visitors: " + visits)
 </script>
 ```
 
-##2. Location Button
+##(2) Location Button
 ``` {}
 <p id="demo">Press this button to get your location: </p>
 <button onclick="getLocation()">Try me!</button>
@@ -238,54 +594,3 @@ function showPosition(position)
   }
 </script>
 ```
-
-#(IV) HTML
-##1. Background Color
-###(a) Heading & Paragraph
-``` {}
-<body style="background-color:white">
-<h2 style="background-color:red" width=200>This is a heading</h2>
-<p style="background-color:green" width=200>This is a paragraph.</p>
-</body>
-```
-
-###(b) Table
-``` {}
-<table><tr><td bgcolor=gold height=40 width=125 valign=top align=center>
-This is background color of a table
-</td></tr></table>
-```
-
-##2. Create a Table
-``` {}
-<table border="1">
-<tr>
-<td width=200 height=50>row 1, cell 1</td>
-<td>row 1, cell 2</td>
-<td>1,3</td>
-</tr>
-<tr>
-<td width=200>row 2, cell 1</td>
-<td>row 2, cell 2</td>
-<td>2,3</td>
-</tr>
-</table>
-```
-
-##3. Input Box
-``` {}
-<form>
- First name:<br>
-<input type="text" name="firstname">
-<br>
- Last name:<br>
-<input type="text" name="lastname">
-</form>
-```
-
-##4. tags
-- `<bdi>`
-- `<span>`
-- `<div>`
-
-#(V) CSS
