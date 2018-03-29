@@ -3,16 +3,6 @@ title: "hide"
 author: "Harry Lu"
 output: html_document
 ---
-領英
-
-- Business Assistant
-- Company Name: Penghua Fund Management Company Ltd
-- Dates Employed: Jun 2014 - Jul 2014
-- Employment Duration: 2 mos
-- Location: Beijing, China
-- Collected and entered customers' information using Excel, updated company's database, resulting in more efficient searching
-
-
 ```{r,echo=FALSE,warning=FALSE,message=FALSE,fig.align="center",eval=F}
 library(tidyverse)
 cool_function <- function(x, alpha) return(sin(alpha*x))
