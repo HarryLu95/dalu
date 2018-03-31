@@ -1,0 +1,53 @@
+---
+output: html_document
+---
+<style>
+pre {
+  font-size: 22px;
+  color: Black;
+  font-family: Calibri;
+}
+pre.full-center {
+  width: 100%;
+  text-align: center;
+}
+pre.full-left {
+  width: 100%;
+  text-align: left;
+}
+pre.left {
+  width: 70%;
+  float: left;
+  margin-left: 0px;
+  text-align: left;
+}
+pre.right {
+  width: 30%;
+  float: right;
+  margin-right: 0px;
+  text-align: right;
+}
+.head-1 {
+  font-family: Times New Roman;
+  font-size: 38px;
+  color: Black;
+  font-weight: bold;
+  text-align: center;
+}
+</style>
+
+</br>
+<div class="head-1">"Resume Design"</div>
+</br>
+
+<pre class="full-center">#head-1</pre>
+<pre class="full-center">#head-2</pre>
+<pre class="full-left">h1</pre>
+<pre class="full-left">hr</pre>
+<pre class="left">#education-name</pre><pre class="right">#education-time</pre>
+<pre class="left">#education-content</pre><pre class="right">#education-content-time</pre>
+<pre class="full-left">h1</pre>
+<pre class="full-left">hr</pre>
+<pre class="full-left">#company-research-name</pre>
+<pre class="left">#title</pre><pre class="right">#title-time</pre>
+<pre class="full-left">#content</pre>
