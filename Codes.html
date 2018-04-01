@@ -281,6 +281,12 @@ p {
   font-size: 24px;
   margin-left: 20px;
 }
+p#level-three {
+  margin-left: 60px;
+}
+blockquote {
+  margin-left: 60px;
+}
 pre {
   margin-left: 60px;
   color: brown;
@@ -312,13 +318,13 @@ form {
 Website Notes
 </div>
 <div class="head-2">
-2018-03-29
+2018-03-31
 </div>
 <p></br></p>
 <div id="i-rmarkdown" class="section level1">
 <h1>(I) RMarkdown</h1>
-<div id="header-section" class="section level2">
-<h2>(1) Header Section</h2>
+<div id="title-section-settings" class="section level2">
+<h2>(1) Title Section Settings</h2>
 <div id="automatic-date" class="section level3">
 <h3>1.1 Automatic Date</h3>
 <pre><code>r Sys.Date()</code></pre>
@@ -333,8 +339,142 @@ Website Notes
     toc_depth: 2</code></pre>
 </div>
 </div>
-<div id="available-fonts" class="section level2">
-<h2>(2) Available Fonts</h2>
+<div id="markdown-syntax-rmarkdown-syntax" class="section level2">
+<h2>(2) Markdown Syntax / RMarkdown Syntax</h2>
+<div id="headers" class="section level3">
+<h3>2.1 Headers</h3>
+<pre><code>#Header Level 1
+##Header Level 2
+###Header Level 3
+####Header Level 4
+#####Header Level 5
+######Header Level 6</code></pre>
+</div>
+<div id="italics-and-bold" class="section level3">
+<h3>2.2 Italics and Bold</h3>
+<pre><code>Text
+*Text*
+**Text**
+***Text***</code></pre>
+<p id="level-three">
+Text<br />
+<em>Text</em><br />
+<strong>Text</strong><br />
+<strong><em>Text</em></strong>
+</p>
+</div>
+<div id="strikeout-delete" class="section level3">
+<h3>2.3 Strikeout / Delete</h3>
+<pre><code>Text
+~~Text~~</code></pre>
+<p id="level-three">
+Text<br />
+<del>Text</del>
+</p>
+</div>
+<div id="subscripts-and-superscripts" class="section level3">
+<h3>2.3 Subscripts and Superscripts</h3>
+<pre><code>Text
+~Text~
+^Text^
+TextText
+Text~Text~
+Text^Text^</code></pre>
+<p id="level-three">
+Text<br />
+<sub>Text</sub><br />
+<sup>Text</sup><br />
+TextText<br />
+Text<sub>Text</sub><br />
+Text<sup>Text</sup>
+</p>
+</div>
+<div id="horizontal-rules-horizontal-lines" class="section level3">
+<h3>2.4 Horizontal Rules / Horizontal Lines</h3>
+<pre><code>---</code></pre>
+<hr style="margin-left: 60px">
+</div>
+<div id="links" class="section level3">
+<h3>2.5 Links</h3>
+<pre><code>[Text](Link)</code></pre>
+<pre><code>[Text][Link Name]
+[Link Name]: Link</code></pre>
+</div>
+<div id="images" class="section level3">
+<h3>2.6 Images</h3>
+<pre><code>![](Link)</code></pre>
+</div>
+<div id="list" class="section level3">
+<h3>2.7 List</h3>
+<pre><code>- Text
+    - Text
+    - Text
+        - Text
+- Text
+- Text</code></pre>
+<pre><code>1. Text
+    1. Text
+    1. Text
+    1. Text
+2. Text
+    100. Text
+    50. Text
+    25. Text
+3. Text</code></pre>
+</div>
+<div id="blockquote" class="section level3">
+<h3>2.8 Blockquote</h3>
+<pre><code>&gt; Text··
+&gt; Text··
+&gt; Text</code></pre>
+<blockquote>
+<p>Text<br />
+Text<br />
+Text</p>
+</blockquote>
+<pre><code>&gt; Text··
+&gt; Text
+&gt; 
+&gt;&gt; Text··
+&gt;&gt; Text
+&gt; 
+&gt; Text··
+&gt; Text</code></pre>
+<p id="level-three">
+<code>·</code> represents ‘space’.
+</p>
+<blockquote>
+<p>Text<br />
+Text</p>
+<blockquote>
+<p>Text<br />
+Text</p>
+</blockquote>
+<p>Text<br />
+Text</p>
+</blockquote>
+</div>
+<div id="paragraphs" class="section level3">
+<h3>2.9 Paragraphs</h3>
+<pre><code>Text
+
+Text</code></pre>
+<p id="level-three">
+Text
+</p>
+<p id="level-three">
+Text
+</p>
+<pre><code>Text··
+Text</code></pre>
+<p id="level-three">
+Text<br />
+Text
+</p>
+</div>
+</div>
+<div id="some-available-fonts" class="section level2">
+<h2>(3) Some Available Fonts</h2>
 <div class="two-column">
 <ul class="body">
 <li>
@@ -410,8 +550,8 @@ Website Notes
 </ul>
 </div>
 </div>
-<div id="colors" class="section level2">
-<h2>(3) Colors</h2>
+<div id="some-available-colors" class="section level2">
+<h2>(4) Some Available Colors</h2>
 <TABLE width="100%">
 <TBODY>
 <TR>
@@ -3356,8 +3496,8 @@ content
 <pre><code>&lt;ul&gt;&lt;ul&gt;
 &lt;li&gt;content&lt;/li&gt;
 &lt;/ul&gt;&lt;/ul&gt;</code></pre>
-<ul class="body">
 <ul>
+<ul class="body">
 <li>
 content
 </li>
@@ -3366,9 +3506,9 @@ content
 <pre><code>&lt;ul&gt;&lt;ul&gt;&lt;ul&gt;
 &lt;li&gt;content&lt;/li&gt;
 &lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt;</code></pre>
+<ul>
+<ul>
 <ul class="body">
-<ul>
-<ul>
 <li>
 content
 </li>
