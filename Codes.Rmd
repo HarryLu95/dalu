@@ -61,6 +61,7 @@ p {
   font-family: Baskerville Old Face;
   font-size: 24px;
   margin-left: 20px;
+  text-align: justify;
 }
 p#level-three {
   margin-left: 60px;
@@ -115,6 +116,19 @@ output:
     toc_float: 
       collapsed: true
     toc_depth: 2
+```
+
+###1.3 Corresponding HTML & CSS of Default Output
+```{}
+title:
+  HTML: <h1 class="title">
+  CSS: h1.title
+author:
+  HTML: <h4 class="author">
+  CSS: h4.author
+date:
+  HTML: <h4 class="date">
+  CSS: h4.date
 ```
 
 ##(2) Markdown Syntax / RMarkdown Syntax
@@ -328,6 +342,7 @@ p {
   font-family: Baskerville Old Face;
   color: black;
   font-size: 18px;
+  text-align: justify;
   margin-left: 20px;
   margin-right: 0px;
   margin-top: 0px;
