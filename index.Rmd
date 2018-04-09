@@ -14,7 +14,7 @@ img {
 
 <font face="Times New Roman" color=black size=5>
 
-<img src="../dalu/Business_Photo_Small.png">
+![](../dalu/Business_Photo_Small.png)
 
 My name is Harry Lu. I am from Beijing, China. I recently graduated from UMass Amherst in 2017 with a major in Mathematics.
 
