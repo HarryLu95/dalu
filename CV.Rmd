@@ -22,15 +22,12 @@ output:
     margin-top: -5px;
     margin-bottom: 0px;
     background: black;
+#   width: 100%;
     width: 910px;
   }
   li {
     margin-top: 0px;
     font-size: 16px;
-  }
-  li.project {
-    font-size: 20px;
-    margin-left: 3%;
   }
   .head-1 {
     font-family: Times New Roman;
@@ -136,10 +133,6 @@ output:
     margin-top: 0px;
     font-size: 16px;
   }
-  li.project {
-    font-size: 20px;
-    margin-left: 2%;
-  }
   .head-1 {
     font-family: Times New Roman;
     font-size: 28px;
@@ -242,9 +235,6 @@ output:
     margin-top: 0px;
     font-size: 16px;
   }
-  li.project {
-    margin-left: 5%;
-  }
   .head-1 {
     font-family: Times New Roman;
     font-size: 28px;
@@ -305,7 +295,7 @@ output:
     font-size: 16px;
     font-weight: bold;
     text-align: left;
-    margin-left: 5%;
+    margin-left: 0%;
     float: left;
     width: 100%;
   }
@@ -347,14 +337,22 @@ output:
 <div class="education-name">University of Massachusetts Amherst</div>
 <div class="education-time">Sep 2013 - May 2017</div>
 
-<div class="education-content">**Degree**: Bachelor of Science in Mathematics  
-**Concentrations**: Applied Mathematics, Statistics, Actuary  
-**Minor**: Chemistry</div>
+<div class="education-content">
+  **Degree**: Bachelor of Science in Mathematics  
+  **Concentrations**: Applied Mathematics, Statistics, Actuary  
+  **Minor**: Chemistry  
+  **Dean’s List**  
+  **Director Scholarship**
+</div>
 
-<div class="education-award-name">**Dean’s List**</div>
-<div class="education-award-time">Jan 2014 - Jan 2017</div>
-<div class="education-award-name">**Director Scholarship**</div>
-<div class="education-award-time">Sep 2013 - May 2017</div>
+<div class="education-content-time">
+  </br>
+  </br>
+  </br>
+  Jan 2014 - Jan 2017  
+  Sep 2013 - May 2017
+</div>
+
 
 <!--=======================Body-Current======================-->
 <h1>Current Internship & Research Experiences</h1>
@@ -471,11 +469,45 @@ output:
 <h1>Projects</h1>
 <hr/>
 
+
+<!--========================Project 1========================-->
+<div class="company-research-name">Development of Interactive Web Applications using R-Shiny</div>
+
 <div class="content">
-<li class="project">Development of Interactive Web Applications using R-Shiny.</li>
-<li class="project">Exploration of Different Visualization Techniques of the 'Gapminder' Data using R-Shiny.</li>
-<li class="project">Information retrieval on the web and data wrangling (NHL Hockey Schedule, Forbes 100, top 250 movies from IMDb).</li>
-<li class="project">Statistical analysis of bird breeding pairs.</li>
+- Visualized the Central Limit Theorem in action with R-Shiny.
+- Implemented many types of UI common distribution such as 'Exponential', 'Normal', 'Uniform', population size, sample size and number of replications.
+</div>
+
+
+<!--========================Project 2========================-->
+<div class="company-research-name">Exploration of Different Visualization Techniques of the 'Gapminder' Data using R-Shiny</div>
+
+<div class="content">
+- Utilized 'gapminder' data, containing information of life expectancy, population, and GDP per capita for different countries and years, from *bioconnector*.
+- Displayed a graph or individual data values based on the user's selection, using different R-Shiny control widgets.
+</div>
+
+
+<!--========================Project 3========================-->
+<div class="company-research-name">Information retrieval on the web and data wrangling (NHL Hockey Schedule, Forbes 100, top 250 movies from IMDb)</div>
+
+<div class="content">
+- Read the source code of IMDb's Top Rated Movies' webpage with R.
+- Extracted data, such as 'title', 'year', 'content rating', 'user rating', 'num raters', 'genre', 'budget' from the imported data with regular expressions.
+- Pre-processed the data to accommodate missing values.
+- Built a clean data frame which contained the extracted information.
+- Conducted further analysis with data frame.
+</div>
+
+
+<!--========================Project 4========================-->
+<div class="company-research-name">Statistical analysis of bird breeding pairs</div>
+
+<div class="content">
+- Referred to the data from a study on the number of breeding pairs of birds in 40 locations around the American Pacific coastline and closer inlands, taken during spring 1994.
+- Visualized the entire data set after cleaning by using scatter plot matrix.
+- Cooperated with group members to identify regressors, such as 'Elevation' and 'Profile Area'.
+- Analyzed the variance of each potential model by using F-test.
 </div>
 
 
