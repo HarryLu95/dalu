@@ -1,0 +1,21 @@
+---
+title: <center>Mathematical Beauty</center>
+output: html_document
+---
+#Archimedean Spiral
+$$x=(\alpha+\beta\theta)\cos(\theta)$$
+$$y=(\alpha+\beta\theta)\sin(\theta)$$
+In the following picture, $\alpha=0$ and $\beta=1$.
+```{r Archimedean_Spiral,message=FALSE,warning=FALSE,echo=FALSE,fig.align="center",fig.height=8,fig.width=8}
+library(ggplot2)
+theta=seq(from=0,to=87.96,by=0.01)
+alpha=0
+beta=1
+x=(alpha+beta*theta)*cos(theta)
+y=(alpha+beta*theta)*sin(theta)
+d=data.frame(x,y)
+ggplot(d,aes(x,y))+
+  geom_point(color="black",size=0.1)+
+  geom_path(color="mediumorchid")
+```
+
