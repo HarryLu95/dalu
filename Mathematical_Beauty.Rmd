@@ -3,10 +3,10 @@ title: <center>Mathematical Beauty</center>
 output: html_document
 ---
 #Archimedean Spiral
-$$x=(\alpha+\beta\theta)\cos(\theta)$$
-$$y=(\alpha+\beta\theta)\sin(\theta)$$
+$$x=(\alpha+\beta\theta)\cos\theta$$
+$$y=(\alpha+\beta\theta)\sin\theta$$
 In the following picture, $\alpha=0$ and $\beta=1$.
-```{r Archimedean_Spiral,message=FALSE,warning=FALSE,echo=FALSE,fig.align="center",fig.height=8,fig.width=8}
+```{r Archimedean_Spiral,message=FALSE,warning=FALSE,echo=FALSE,fig.align="center",fig.width=8,fig.height=7.8}
 library(ggplot2)
 theta=seq(from=0,to=87.96,by=0.01)
 alpha=0
@@ -15,7 +15,39 @@ x=(alpha+beta*theta)*cos(theta)
 y=(alpha+beta*theta)*sin(theta)
 d=data.frame(x,y)
 ggplot(d,aes(x,y))+
-  geom_point(color="black",size=0.1)+
+#  geom_point(color="black",size=0.1)+
   geom_path(color="mediumorchid")
 ```
 
+#Logarithmic Spirals
+$$x=\alpha e^{\beta\theta}\cos\theta$$
+$$y=\alpha e^{\beta\theta}\sin\theta$$
+In the following picture, $\alpha=0.1$ and $\beta=0.1$.
+```{r Logarithmic_Spiral_1,message=FALSE,warning=FALSE,echo=FALSE,fig.align="center",fig.width=8,fig.height=6.6}
+library(ggplot2)
+e=exp(1)
+theta=seq(from=0,to=10*pi,by=0.001)
+alpha=0.1
+beta=0.1
+x=alpha*e^(beta*theta)*cos(theta)
+y=alpha*e^(beta*theta)*sin(theta)
+d=data.frame(x,y)
+ggplot(d,aes(x,y))+
+#  geom_point(color="black",size=0.1)+
+  geom_path(color="mediumorchid")
+```
+
+A special case: when $\beta\approx0.3063489$, the spiral is called a *Golden Spiral*.
+```{r Logarithmic_Spiral_2,message=FALSE,warning=FALSE,echo=FALSE,fig.align="center",fig.width=8,fig.height=5}
+library(ggplot2)
+e=exp(1)
+theta=seq(from=0,to=10*pi,by=0.001)
+alpha=0.001
+beta=0.3063489
+x=alpha*e^(beta*theta)*cos(theta)
+y=alpha*e^(beta*theta)*sin(theta)
+d=data.frame(x,y)
+ggplot(d,aes(x,y))+
+#  geom_point(color="black",size=0.1)+
+  geom_path(color="mediumorchid")
+```
