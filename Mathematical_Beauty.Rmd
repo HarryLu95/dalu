@@ -56,7 +56,7 @@ ggplot(d,aes(x,y))+
 $$x=(\alpha+\beta\cos\theta)\cos\theta$$
 $$y=(\alpha+\beta\cos\theta)\sin\theta$$
 Take $\alpha=0.5$ and $\beta=1$
-```{r Limacon}
+```{r Limacon,message=FALSE,warning=FALSE,echo=FALSE,fig.align="center"}
 library(ggplot2)
 theta=seq(from=0,to=2*pi,by=0.01)
 alpha=0.5

@@ -304,18 +304,7 @@ Mathematical Beauty
 </div>
 <div id="limacon-de-pascal" class="section level1">
 <h1>Limaçon de Pascal</h1>
-<p><span class="math display">\[x=(\alpha+\beta\cos\theta)\cos\theta\]</span> <span class="math display">\[y=(\alpha+\beta\cos\theta)\sin\theta\]</span> Take <span class="math inline">\(\alpha=0.5\)</span> and <span class="math inline">\(\beta=1\)</span></p>
-<pre class="r"><code>library(ggplot2)
-theta=seq(from=0,to=2*pi,by=0.01)
-alpha=0.5
-beta=1
-x=(alpha+beta*cos(theta))*cos(theta)
-y=(alpha+beta*cos(theta))*sin(theta)
-d=data.frame(x,y)
-ggplot(d,aes(x,y))+
-  #  geom_point(color=&quot;black&quot;,size=0.1)+
-  geom_path(color=&quot;mediumorchid&quot;)</code></pre>
-<p><img src="Mathematical_Beauty_files/figure-html/Limacon-1.png" width="672" /></p>
+<p><span class="math display">\[x=(\alpha+\beta\cos\theta)\cos\theta\]</span> <span class="math display">\[y=(\alpha+\beta\cos\theta)\sin\theta\]</span> Take <span class="math inline">\(\alpha=0.5\)</span> and <span class="math inline">\(\beta=1\)</span> <img src="Mathematical_Beauty_files/figure-html/Limacon-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="heart-curve" class="section level1">
 <h1>Heart Curve</h1>
