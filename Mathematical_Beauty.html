@@ -295,12 +295,47 @@ Mathematical Beauty
 
 <div id="archimedean-spiral" class="section level1">
 <h1>Archimedean Spiral</h1>
-<p><span class="math display">\[x=(\alpha+\beta\theta)\cos\theta\]</span> <span class="math display">\[y=(\alpha+\beta\theta)\sin\theta\]</span> In the following picture, <span class="math inline">\(\alpha=0\)</span> and <span class="math inline">\(\beta=1\)</span>. <img src="Mathematical_Beauty_files/figure-html/Archimedean_Spiral-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><span class="math display">\[x=(\alpha+\beta\theta)\cos\theta\]</span> <span class="math display">\[y=(\alpha+\beta\theta)\sin\theta\]</span> Take <span class="math inline">\(\alpha=0\)</span> and <span class="math inline">\(\beta=1\)</span> <img src="Mathematical_Beauty_files/figure-html/Archimedean_Spiral-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="logarithmic-spirals" class="section level1">
 <h1>Logarithmic Spirals</h1>
-<p><span class="math display">\[x=\alpha e^{\beta\theta}\cos\theta\]</span> <span class="math display">\[y=\alpha e^{\beta\theta}\sin\theta\]</span> In the following picture, <span class="math inline">\(\alpha=0.1\)</span> and <span class="math inline">\(\beta=0.1\)</span>. <img src="Mathematical_Beauty_files/figure-html/Logarithmic_Spiral_1-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><span class="math display">\[x=\alpha e^{\beta\theta}\cos\theta\]</span> <span class="math display">\[y=\alpha e^{\beta\theta}\sin\theta\]</span> Take <span class="math inline">\(\alpha=0.1\)</span> and <span class="math inline">\(\beta=0.1\)</span> <img src="Mathematical_Beauty_files/figure-html/Logarithmic_Spiral_1-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>A special case: when <span class="math inline">\(\beta\approx0.3063489\)</span>, the spiral is called a <em>Golden Spiral</em>. <img src="Mathematical_Beauty_files/figure-html/Logarithmic_Spiral_2-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div id="limacon-de-pascal" class="section level1">
+<h1>Limaçon de Pascal</h1>
+<p><span class="math display">\[x=(\alpha+\beta\cos\theta)\cos\theta\]</span> <span class="math display">\[y=(\alpha+\beta\cos\theta)\sin\theta\]</span> Take <span class="math inline">\(\alpha=0.5\)</span> and <span class="math inline">\(\beta=1\)</span></p>
+<pre class="r"><code>library(ggplot2)
+theta=seq(from=0,to=2*pi,by=0.01)
+alpha=0.5
+beta=1
+x=(alpha+beta*cos(theta))*cos(theta)
+y=(alpha+beta*cos(theta))*sin(theta)
+d=data.frame(x,y)
+ggplot(d,aes(x,y))+
+  #  geom_point(color=&quot;black&quot;,size=0.1)+
+  geom_path(color=&quot;mediumorchid&quot;)</code></pre>
+<p><img src="Mathematical_Beauty_files/figure-html/Limacon-1.png" width="672" /></p>
+</div>
+<div id="heart-curve" class="section level1">
+<h1>Heart Curve</h1>
+<p><span class="math display">\[x=\alpha(1-\sin\theta)\cos\theta\]</span> <span class="math display">\[y=\alpha(1-\sin\theta)\sin\theta\]</span> Take <span class="math inline">\(\alpha=1\)</span> <img src="Mathematical_Beauty_files/figure-html/Heart_1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><span class="math display">\[x=\arccos(\sin\theta)\cdot\cos\theta\]</span> <span class="math display">\[y=\arccos(\sin\theta)\cdot\sin\theta\]</span> <img src="Mathematical_Beauty_files/figure-html/Heart_2-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="rose-curve" class="section level1">
+<h1>Rose Curve</h1>
+<p><span class="math display">\[x=\cos n\theta\cdot\cos\theta\]</span> <span class="math display">\[y=\cos n\theta\cdot\sin\theta\]</span> Take <span class="math inline">\(n=\frac{2}{3}\)</span> <img src="Mathematical_Beauty_files/figure-html/Rose_Curve_1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Take <span class="math inline">\(n=\frac{1}{4}\)</span> <img src="Mathematical_Beauty_files/figure-html/Rose_Curve_2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Take <span class="math inline">\(n=\frac{3}{4}\)</span> <img src="Mathematical_Beauty_files/figure-html/Rose_Curve_3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Take <span class="math inline">\(n=\frac{2}{5}\)</span> <img src="Mathematical_Beauty_files/figure-html/Rose_Curve_4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Take <span class="math inline">\(n=\frac{3}{5}\)</span> <img src="Mathematical_Beauty_files/figure-html/Rose_Curve_5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Take <span class="math inline">\(n=e\)</span> <img src="Mathematical_Beauty_files/figure-html/Rose_Curve_6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Take <span class="math inline">\(n=\pi\)</span> <img src="Mathematical_Beauty_files/figure-html/Rose_Curve_7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Take <span class="math inline">\(n=\sqrt{2}\)</span> <img src="Mathematical_Beauty_files/figure-html/Rose_Curve_8-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section" class="section level1">
+<h1>???</h1>
+<p><span class="math display">\[x=\cos\theta-\cos80\theta\cdot\sin\theta\]</span> <span class="math display">\[y=2\sin\theta-\sin80\theta\]</span> <img src="Mathematical_Beauty_files/figure-html/unknown-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 
 
