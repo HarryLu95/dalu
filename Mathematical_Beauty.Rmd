@@ -98,7 +98,7 @@ ggplot(d,aes(x,y))+
   geom_path(color="mediumorchid")
 ```
 
-#Rose Curve
+#[Rose Curve](https://harrylu95.shinyapps.io/Rose_Curve_App/)
 $$x=\cos n\theta\cdot\cos\theta$$
 $$y=\cos n\theta\cdot\sin\theta$$
 Take $n=\frac{2}{3}$
