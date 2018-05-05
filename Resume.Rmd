@@ -463,6 +463,85 @@ output:
 </div>
 
 
+<!--======================Body-Projects======================-->
+<h1>Projects</h1>
+<hr/>
+
+<div class="content">
+<li class="project">Development of Interactive Web Applications using R-Shiny.</li>
+<li class="project">Exploration of Different Visualization Techniques of the 'Gapminder' Data using R-Shiny.</li>
+<li class="project">Information retrieval on the web and data wrangling (NHL Hockey Schedule, Forbes 100, top 250 movies from IMDb).</li>
+<li class="project">Statistical analysis of bird breeding pairs.</li>
+</div>
+
+
+<!--==============Body-Internships & Activities==============-->
+<h1>Internships & Activities</h1>
+<hr/>
+
+
+<!--=======================Activity 1========================-->
+<div class="company-research-name">EducationUSA, Embassy of USA, Beijing, China</div>
+
+<div class="title">Guest Speaker</div>
+<div class="title-time">June 2014 - August 2016</div>
+
+<div class="content">
+- Lectured to coming students and parents on UMass Amherst advantages, college life lessons and study experiences.
+- Represented UMass Amherst to give introduction to the college in the college fair.
+</div>
+
+
+<!--======================Internship 1=======================-->
+<div class="company-research-name">CERNET Education Development Co Ltd, Beijing, China</div>
+
+<div class="title">Marketing Director Assistant</div>
+<div class="title-time">July 2015 - August 2015</div>
+
+<div class="content">
+- Wrote three marketing research reports in English.
+- Published five articles, sharing my own college application preparation experience and my life, on WeChat public platform.
+- Organized two successful orientations for high school students and high school graduates.
+- Prepared the project launch ceremony of the International Pathway Program.
+- Planned the guests (Chinese Education Officials) interview, and the speeches to CERNET executives.
+</div>
+
+
+<!--=======================Activity 2========================-->
+<div class="company-research-name">International Programs Office, UMass Amherst</div>
+
+<div class="title">IPO Buddy</div>
+<div class="title-time">August 2014 - May 2015</div>
+
+<div class="content">
+- Handled daily matters of the office, and offered assistance to international students in choosing courses.
+</div>
+
+
+<!--======================Internship 2=======================-->
+<div class="company-research-name">Penghua Fund Management Company Ltd, Beijing, China</div>
+
+<div class="title">Business Assistant, Business Department</div>
+<div class="title-time">June 2014 - July 2014</div>
+
+<div class="content">
+- Negotiated with bank finance department manager following my supervisor, and learned business etiquette.
+- Built business data forms, and participated in many meetings with other business departments all over China.
+</div>
+
+
+<!--=======================Activity 3========================-->
+<div class="company-research-name">Standard Chartered Investing Competition, Young Elite Camp, Beijing, China</div>
+
+<div class="title">Group Leader</div>
+<div class="title-time">July 2015</div>
+
+<div class="content">
+- Motivated and led group members to solve challenging financial problems and decided the best way of investing money.
+- Learned British Royal Family Etiquette, and completed mock interviews
+</div>
+
+
 <!--======================Body-Teaching======================-->
 <h1>Teaching Experiences</h1>
 <hr/>
@@ -491,85 +570,6 @@ output:
 - Communicated and learned Chinese grammar and teaching skills with head tutor every week.
 - Created new ideas to the dean of Chinese Program on how to improve the program.
 - Tutored Chinese Major students pronunciation, grammar, writing and speaking.
-</div>
-
-
-<!--======================Body-Projects======================-->
-<h1>Projects</h1>
-<hr/>
-
-<div class="content">
-<li class="project">Development of Interactive Web Applications using R-Shiny.</li>
-<li class="project">Exploration of Different Visualization Techniques of the 'Gapminder' Data using R-Shiny.</li>
-<li class="project">Information retrieval on the web and data wrangling (NHL Hockey Schedule, Forbes 100, top 250 movies from IMDb).</li>
-<li class="project">Statistical analysis of bird breeding pairs.</li>
-</div>
-
-
-<!--=====================Body-Activities=====================-->
-<h1>Activities</h1>
-<hr/>
-
-
-<!--=======================Activities 1======================-->
-<div class="company-research-name">EducationUSA, Embassy of USA, Beijing, China</div>
-
-<div class="title">Guest Speaker</div>
-<div class="title-time">June 2014 - August 2016</div>
-
-<div class="content">
-- Lectured to coming students and parents on UMass Amherst advantages, college life lessons and study experiences.
-- Represented UMass Amherst to give introduction to the college in the college fair.
-</div>
-
-
-<!--=======================Activities 2======================-->
-<div class="company-research-name">CERNET Education Development Co Ltd, Beijing, China</div>
-
-<div class="title">Marketing Director Assistant</div>
-<div class="title-time">July 2015 - August 2015</div>
-
-<div class="content">
-- Wrote three marketing research reports in English.
-- Published five articles, sharing my own college application preparation experience and my life, on WeChat public platform.
-- Organized two successful orientations for high school students and high school graduates.
-- Prepared the project launch ceremony of the International Pathway Program.
-- Planned the guests (Chinese Education Officials) interview, and the speeches to CERNET executives.
-</div>
-
-
-<!--=======================Activities 3======================-->
-<div class="company-research-name">International Programs Office, UMass Amherst</div>
-
-<div class="title">IPO Buddy</div>
-<div class="title-time">August 2014 - May 2015</div>
-
-<div class="content">
-- Handled daily matters of the office, and offered assistance to international students in choosing courses.
-</div>
-
-
-<!--=======================Activities 4======================-->
-<div class="company-research-name">Penghua Fund Management Company Ltd, Beijing, China</div>
-
-<div class="title">Business Assistant, Business Department</div>
-<div class="title-time">June 2014 - July 2014</div>
-
-<div class="content">
-- Negotiated with bank finance department manager following my supervisor, and learned business etiquette.
-- Built business data forms, and participated in many meetings with other business departments all over China.
-</div>
-
-
-<!--=======================Activities 5======================-->
-<div class="company-research-name">Standard Chartered Investing Competition, Young Elite Camp, Beijing, China</div>
-
-<div class="title">Group Leader</div>
-<div class="title-time">July 2015</div>
-
-<div class="content">
-- Motivated and led group members to solve challenging financial problems and decided the best way of investing money.
-- Learned British Royal Family Etiquette, and completed mock interviews
 </div>
 
 
