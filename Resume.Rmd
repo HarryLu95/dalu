@@ -10,6 +10,7 @@ output:
   h1 {
     font-size: 32px;
     font-weight: bold;
+    width: 100%;
   }
   ul {
     font-size: 16px;
@@ -49,14 +50,14 @@ output:
     font-weight: bold;
     text-align: left;
     float: left;
-    width: 75%;
+    width: 65%;
   }
   .education-time {
     font-size: 22px;
     font-weight: bold;
     text-align: right;
     float: right;
-    width: 25%;
+    width: 35%;
   }
   .education-content {
     font-size: 16px;
@@ -72,14 +73,14 @@ output:
     text-align: left;
     margin-left: 5%;
     float: left;
-    width: 70%;
+    width: 45%;
   }
   .education-award-time {
     font-size: 16px;
     font-weight: bold;
     text-align: right;
     float: right;
-    width: 25%;
+    width: 50%;
   }
   .company-research-name {
     font-size: 22px;
@@ -94,14 +95,14 @@ output:
     text-align: left;
     margin-left: 5%;
     float: left;
-    width: 70%;
+    width: 55%;
   }
   .title-time {
     font-size: 20px;
     font-weight: bold;
     text-align: right;
     float: right;
-    width: 25%;
+    width: 40%;
   }
   .content {
     font-size: 16px;
@@ -118,6 +119,7 @@ output:
   h1 {
     font-size: 28px;
     font-weight: bold;
+    width: 100%;
   }
   ul {
     font-size: 16px;
@@ -157,12 +159,14 @@ output:
     font-weight: bold;
     text-align: left;
     float: left;
+    width: 100%;
   }
   .education-time {
     font-size: 20px;
     font-weight: bold;
     text-align: right;
     float: right;
+    width: 100%;
   }
   .education-content {
     font-size: 16px;
@@ -178,14 +182,14 @@ output:
     text-align: left;
     margin-left: 5%;
     float: left;
-    width: 65%;
+    width: 45%;
   }
   .education-award-time {
     font-size: 16px;
     font-weight: bold;
     text-align: right;
     float: right;
-    width: 30%;
+    width: 50%;
   }
   .company-research-name {
     font-size: 20px;
@@ -200,14 +204,14 @@ output:
     text-align: left;
     margin-left: 5%;
     float: left;
-    width: 65%;
+    width: 55%;
   }
   .title-time {
     font-size: 16px;
     font-weight: bold;
     text-align: right;
     float: right;
-    width: 30%;
+    width: 40%;
   }
   .content {
     font-size: 16px;
@@ -224,6 +228,7 @@ output:
   h1 {
     font-size: 22px;
     font-weight: bold;
+    width: 100%;
   }
   ul {
     font-size: 16px;
@@ -344,17 +349,24 @@ output:
 
 
 <!--========================Education 1======================-->
+<div class="education-name">Cornell University</div>
+<div class="education-time">Up coming at August 2018</div>
+
+<div class="education-content">**Degree**: Master of Professional Study in Applied Statistics</div>
+
+
+<!--========================Education 2======================-->
 <div class="education-name">University of Massachusetts Amherst</div>
-<div class="education-time">Sep 2013 - May 2017</div>
+<div class="education-time">September 2013 - May 2017</div>
 
 <div class="education-content">**Degree**: Bachelor of Science in Mathematics  
 **Concentrations**: Applied Mathematics, Statistics, Actuary  
 **Minor**: Chemistry</div>
 
 <div class="education-award-name">**Dean’s List**</div>
-<div class="education-award-time">Jan 2014 - Jan 2017</div>
+<div class="education-award-time">January 2014 - January 2017</div>
 <div class="education-award-name">**Director Scholarship**</div>
-<div class="education-award-time">Sep 2013 - May 2017</div>
+<div class="education-award-time">September 2013 - May 2017</div>
 
 <!--=======================Body-Current======================-->
 <h1>Current Internship & Research Experiences</h1>
@@ -365,10 +377,14 @@ output:
 <div class="company-research-name">Crane Management Service Inc.</div>
 
 <div class="title">Statistical Analyst of Marketing</div>
-<div class="title-time">Mar 2018 - Present</div>
+<div class="title-time">March 2018 - Present</div>
 
 <div class="content">
-- Rewrote the *User Manual* of SPMT from the equipment supplier.
+
+- Responsible for completing extensive market research for the company. The research includes logistics, engineering demands, frequency and types of projects, labor unions and their demands, as well as attempting to predict future demands based on the changes faced in the industry regarding cargo ships and their increasing size, ports that will require drastic upgrades and ultimately demand new equipment while also analyzing each ports resources and abilities to perform.
+- Tasked with determining industry demand and statistical analysis that will assist in projecting the company's direction in the market place.
+- The analysis incorporates financial data with regards to potential profit and loss, and determines the potential gross and net profit of prospective jobs in order to determine the attraction to different locations and corresponding industry demands.
+- Rewrote and updated the User Operating Manual of SPMT in order to let the company enter new business areas.
 </div>
 
 
@@ -376,7 +392,7 @@ output:
 <div class="company-research-name">Are Customer Review Scores Influencing Sale Rankings? A Study on Amazon Best Sellers</div>
 
 <div class="title">Assistant Researcher</div>
-<div class="title-time">Sep 2017 - Present</div>
+<div class="title-time">September 2017 - Present</div>
 
 <div class="content">
 - Cooperated with Assistant Professor Fang Tian, Business Administration Division, Seaver College, Pepperdine University
@@ -388,8 +404,25 @@ output:
 <!--========================Current 3========================-->
 <div class="company-research-name">Fishmarket Inc.</div>
 
+<div class="title">Website Developer</div>
+<div class="title-time">October 2017 - Present</div>
+
+<div class="content">
+- Constructed a business website for the company to offer convenient inquiry for customers.
+- Maintain and update the website.
+</div>
+
+
+<!--======================Body-Previous======================-->
+<h1>Previous Research Experiences</h1>
+<hr/>
+
+
+<!--=======================Previous 1========================-->
+<div class="company-research-name">Fishmarket Inc.</div>
+
 <div class="title">Marketing Analyst</div>
-<div class="title-time">Sep 2017 - Present</div>
+<div class="title-time">September 2017 - December 2017</div>
 
 <div class="content">
 - Comprehended working contents that included food production and processing, warehouse management, purchase order and invoice handling, client interview, data processing, accounting and logistics.
@@ -397,16 +430,10 @@ output:
 - Helped organize goods of transportation, manage warehouse, check logistics information, and process cooperation procedures with food retailers, schools and restaurants.
 - Completed the trend chart of 1400 products from August 2015 and August 2017 with R.
 - Accomplished the measurement, modification and organization of Kentucky Proud Program Vendor Info data.
-- Self taught Rmarkdown, HTML, CSS, and constructed the company’s website to offer convenient inquiry for customers.
 </div>
 
 
-<!--=====================Body-Previous-R=====================-->
-<h1>Previous Research Experiences</h1>
-<hr/>
-
-
-<!--=======================PreviousR 1=======================-->
+<!--=======================Previous 2========================-->
 <div class="company-research-name">Forecasting Straits Times Index Stock Value</div>
 
 <div class="title">Undergraduate Researcher</div>
@@ -422,11 +449,11 @@ output:
 </div>
 
 
-<!--=======================PreviousR 2=======================-->
+<!--=======================Previous 3========================-->
 <div class="company-research-name">Study on Measurement Method of Arsenic (As) in Rice with Hach EZ test kit, Tyson’s Lab</div>
 
 <div class="title">Undergraduate Researcher</div>
-<div class="title-time">Sep 2013 - Dec 2015</div>
+<div class="title-time">September 2013 - December 2015</div>
 
 <div class="content">
 - Cooperated with Prof. Julian Tyson, Department of Chemistry, UMass Amherst
@@ -445,7 +472,7 @@ output:
 <div class="company-research-name">UMass Amherst</div>
 
 <div class="title">Private Tutor</div>
-<div class="title-time">Sep 2013 - May 2017</div>
+<div class="title-time">September 2013 - May 2017</div>
 
 <div class="content">
 - Subjects: Calculus, Linear Algebra, Ordinary Differential Equation, Probability, Statistics, Chemistry, R programming.
@@ -458,7 +485,7 @@ output:
 <div class="company-research-name">East Asian Languages and Cultures Program, UMass Amherst</div>
 
 <div class="title">Chinese Tutor</div>
-<div class="title-time">Jan 2015 - Dec 2015</div>
+<div class="title-time">January 2015 - December 2015</div>
 
 <div class="content">
 - Communicated and learned Chinese grammar and teaching skills with head tutor every week.
@@ -488,7 +515,7 @@ output:
 <div class="company-research-name">EducationUSA, Embassy of USA, Beijing, China</div>
 
 <div class="title">Guest Speaker</div>
-<div class="title-time">Jun 2014 - Aug 2016</div>
+<div class="title-time">June 2014 - August 2016</div>
 
 <div class="content">
 - Lectured to coming students and parents on UMass Amherst advantages, college life lessons and study experiences.
@@ -499,8 +526,8 @@ output:
 <!--=======================Activities 2======================-->
 <div class="company-research-name">CERNET Education Development Co Ltd, Beijing, China</div>
 
-<div class="title">Marketing Director Assistant, Marketing Team</div>
-<div class="title-time">Jul 2015 - Aug 2015</div>
+<div class="title">Marketing Director Assistant</div>
+<div class="title-time">July 2015 - August 2015</div>
 
 <div class="content">
 - Wrote three marketing research reports in English.
@@ -515,7 +542,7 @@ output:
 <div class="company-research-name">International Programs Office, UMass Amherst</div>
 
 <div class="title">IPO Buddy</div>
-<div class="title-time">Aug 2014 - May 2015</div>
+<div class="title-time">August 2014 - May 2015</div>
 
 <div class="content">
 - Handled daily matters of the office, and offered assistance to international students in choosing courses.
@@ -525,8 +552,8 @@ output:
 <!--=======================Activities 4======================-->
 <div class="company-research-name">Penghua Fund Management Company Ltd, Beijing, China</div>
 
-<div class="title">Business Assistant, Beijing Business Department</div>
-<div class="title-time">Jun 2014 - Jul 2014</div>
+<div class="title">Business Assistant, Business Department</div>
+<div class="title-time">June 2014 - July 2014</div>
 
 <div class="content">
 - Negotiated with bank finance department manager following my supervisor, and learned business etiquette.
@@ -538,7 +565,7 @@ output:
 <div class="company-research-name">Standard Chartered Investing Competition, Young Elite Camp, Beijing, China</div>
 
 <div class="title">Group Leader</div>
-<div class="title-time">Jul 2015</div>
+<div class="title-time">July 2015</div>
 
 <div class="content">
 - Motivated and led group members to solve challenging financial problems and decided the best way of investing money.
