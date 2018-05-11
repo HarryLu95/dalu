@@ -59,8 +59,7 @@ output:
 - Constructed a business website for the company to offer convenient inquiry for customers.
 - Maintain and update the website.
 </div>
-<!---------------------------Intern3--------------------------->
-<div class="company-research-name">Fishmarket Inc.</div>
+<!---------------------------Intern2--------------------------->
 <div class="title">Marketing Analyst</div>
 <div class="title-time">September 2017 - December 2017</div>
 <div class="content">
@@ -70,7 +69,7 @@ output:
 - Completed the trend chart of 1400 products from August 2015 and August 2017 with R.
 - Accomplished the measurement, modification and organization of Kentucky Proud Program Vendor Info data.
 </div>
-<!---------------------------Intern4--------------------------->
+<!---------------------------Intern3--------------------------->
 <div class="company-research-name">CERNET Education Development Co Ltd, Beijing, China</div>
 <div class="title">Marketing Director Assistant</div>
 <div class="title-time">July 2015 - August 2015</div>
@@ -81,7 +80,7 @@ output:
 - Prepared the project launch ceremony of the International Pathway Program.
 - Planned the guests (Chinese Education Officials) interview, and the speeches to CERNET executives.
 </div>
-<!---------------------------Intern5--------------------------->
+<!---------------------------Intern4--------------------------->
 <div class="company-research-name">Penghua Fund Management Company Ltd, Beijing, China</div>
 <div class="title">Business Assistant, Business Department</div>
 <div class="title-time">June 2014 - July 2014</div>
