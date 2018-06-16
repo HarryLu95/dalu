@@ -1,0 +1,172 @@
+---
+title: Left, Center & Right
+author: Harry Lu
+date: April 2018
+output: html_document
+---
+<style>
+body {
+  color: Black;
+}
+h1 {
+  font-size: 32px;
+}
+h1.title {
+  font-size: 38px;
+  color: Black;
+  font-weight: bold;
+  text-align: center;
+}
+h4.author {
+  color: Black;
+  font-weight: bold;
+  text-align: center;
+}
+h4.date {
+  color: Black;
+  font-weight: bold;
+  text-align: center;
+}
+h2 {
+  font-size: 28px;
+  margin-left: 20px;
+}
+p {
+  font-size: 18px;
+  margin-left: 20px;
+  text-align: justify;
+}
+pre {
+  font-size: 18px;
+  margin-left: 20px;
+}
+table {
+  font-size: 18px;
+  margin-left: 20px;
+}
+</style>
+
+#Game Introduction
+>*From [WIKIPEDIA: LCR (dice game)](https://en.wikipedia.org/wiki/LCR_(dice_game))*
+>
+>Each player receives at least 3 chips. Players take it in turn to roll three six-sided dice, each of which is marked with "L", "C", "R" on one side, and a single dot on the three remaining sides. For each "L" or "R" thrown, the player must pass one chip to the player to their left or right, respectively. A "C" indicates a chip to the center (pot). A dot has no effect.
+>
+>If a player has fewer than three chips left, they are still in the game but their number of chips is the number of dice they roll on their turn, rather than rolling all three. When a player has zero chips, they pass the dice on their turn, but may receive chips from others and take their next turn accordingly. The player who does not receive chips after two passes is out of the game. The winner is the last player with chips left.
+
+#Program
+##Loading Packages
+```{r Loading_Packages,warning=FALSE}
+library(knitr)
+```
+
+##Dice Setting
+```{r Dice_Setting}
+dice.outcome=c("Left","Right","Center","Keep")
+dice.prob=c(1/6,1/6,1/6,1/2)
+dice.num=3
+player.num=5
+```
+
+##Dice Outcome
+<p>`f1`, the function to automatically create the dice outcome with the set probability and corresponding dice number.</p>
+```{r Dice_Outcome}
+f1=function(x=dice.outcome,size=dice.num,prob=dice.prob){
+  temp.outcome=sample(x=x,size=size,replace=TRUE,prob=prob)
+  return(temp.outcome)
+}
+```
+
+##Money Table
+<p>`f2`, the function to automatically create the Money Table. It can detect the number of players and creat the corresponding data frame.</p>
+```{r Money_Table}
+money=as.data.frame(matrix(c(rep(3,times=player.num),0),nrow=1))
+f2=function(x=player.num){
+  temp.colname=c()
+  for (i in 1:x){
+    temp.colname=c(temp.colname,paste(c("Player",i),collapse=" "))
+  }
+  return(temp.colname)
+}
+colnames(money)=c(f2(),"Center")
+kable(money,align="c",row.names=TRUE)
+```
+
+##Something
+```{r Something}
+round=1
+outcomes=c()
+
+for (round in 1:100){
+end.game.detect=length(which(money[round,]==0))
+if (end.game.detect==player.num-1){
+  #break the loop, when there is only one player hold the non-zero money.
+  break
+}
+if (end.game.detect<player.num-1){
+  #center.money, detect the current value of the center.
+  center.money=money[round,player.num+1]
+  #player.detect, get the position of the player who roll the dice.
+  if (round %% player.num!=0){
+    player.detect=round %% player.num
+  }
+  if (round %% player.num==0){
+    player.detect=player.num
+  }
+  #L.player.detect, get the position of the player on the left hand side.
+  if ((round-1) %% player.num!=0){
+    L.player.detect=(round-1) %% player.num
+  }
+  if ((round-1) %% player.num==0){
+    L.player.detect=player.num
+  }
+  #R.player.detect, get the position of the player on the right hand side.
+  if ((round+1) %% player.num!=0){
+    R.player.detect=(round+1) %% player.num
+  }
+  if ((round+1) %% player.num==0){
+    R.player.detect=player.num
+  }
+##return(c(player.detect,L.player.detect,R.player.detect))
+  #player.money, detect the current value of the player.
+  player.money=money[round,player.detect]
+  #L.player.money, detect the current value of the player on the left hand side.
+  L.player.money=money[round,L.player.detect]
+  #R.player.money, detect the current value of the player on the right hand side.
+  R.player.money=money[round,R.player.detect]
+##return(c(player.money,L.player.money,R.player.money))
+  #player.dice.number, detect the actual dice number for the player.
+  player.dice.number=min(3,player.money)
+  if (player.money==0){
+    player.money=0
+  }
+  if (player.money>0){
+    player.dice.outcome=f1(size=player.dice.number)
+    num.L=length(which(player.dice.outcome=="Left"))
+    num.R=length(which(player.dice.outcome=="Right"))
+    num.C=length(which(player.dice.outcome=="Center"))
+    num.K=length(which(player.dice.outcome=="Keep"))
+    player.money=player.money-(num.L+num.R+num.C)
+    L.player.money=L.player.money+num.L
+    R.player.money=R.player.money+num.R
+    center.money=center.money+num.C
+  }
+  #update a new row of outcomes
+  new.money=money[round,]
+  new.money[player.detect]=player.money
+  new.money[L.player.detect]=L.player.money
+  new.money[R.player.detect]=R.player.money
+  new.money[player.num+1]=center.money
+  money=rbind(money,new.money)
+  row.names(money)=1:(round+1)
+  round=round+1
+  outcomes=rbind(outcomes,player.dice.outcome)
+}
+}
+
+kable(money,align="c",row.names=TRUE)
+kable(as.data.frame(outcomes),align="c",row.names=TRUE)
+
+```
+
+
+
