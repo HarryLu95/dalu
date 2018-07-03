@@ -14,11 +14,11 @@ img {
 
 <font face="Times New Roman" color=black size=5>
 
-![](../dalu/Business_Photo_Small.png)
+![](Business_Photo_Small.png)
 
 My name is Harry Lu. I am from Beijing, China. I recently graduated from UMass Amherst in 2017 with a major in Mathematics.
 
-Currently I am working as a *Statistical Analyst of Marketing* at Crane Management Service, Inc. in California.
+Currently I am working as a *Statistical Analyst of Marketing* at Crane Management Services, Inc. in California.
 
 As an undergraduate student, I learned to program in R and to use RStudio. Aside from programming, I am also using RStudio to do many other things, like writing $\LaTeX$, making beamer documents, taking notes, and constructing websites.
 
