@@ -226,7 +226,7 @@ l$coefficients</code></pre>
 <pre class="r"><code>l$coefficients</code></pre>
 <pre><code>##     (Intercept) brain_data$ln_W brain_data$ln_G 
 ##      -0.4572826       0.5511654       0.6678215</code></pre>
-<p>Squared correlation is also known as r-square, we can obtain is from the summary of the linear model:</p>
+<p>Squared correlation is also known as r-square, we can obtain it from the summary of the linear model:</p>
 <pre class="r"><code>summary(l)$`r.squared`</code></pre>
 <pre><code>## [1] 0.9500939</code></pre>
 <pre class="r"><code>summary(l)$`adj.r.squared`</code></pre>
@@ -241,6 +241,8 @@ l$coefficients</code></pre>
 <pre class="r"><code>l_res=summary(l)$residuals
 mean(l_res^2)</code></pre>
 <pre><code>## [1] 0.2327974</code></pre>
+<pre class="r"><code>sqrt(mean(l_res^2))</code></pre>
+<pre><code>## [1] 0.4824908</code></pre>
 <hr />
 </div>
 <div id="g" class="section level1">
