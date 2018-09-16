@@ -9,26 +9,27 @@ img {
   margin-right: 40px;
   margin-bottom: 10px;
 }
+p {
+  font-family: Times New Roman;
+  color: black;
+  font-size: 24px;
+  text-align: justify;
+}
 </style>
-
-
-<font face="Times New Roman" color=black size=5>
 
 ![](Business_Photo_Small.png)
 
-My name is Harry Lu. I am from Beijing, China. I recently graduated from UMass Amherst in 2017 with a major in Mathematics.
+My name is Harry Lu. I am from Beijing, China.
 
-Currently I am working as a *Statistical Analyst of Marketing* at Crane Management Services, Inc. in California.
+Currently I am a master student in Applied Statistics at Cornell University in Ithaca, New York.
 
-As an undergraduate student, I learned to program in R and to use RStudio. Aside from programming, I am also using RStudio to do many other things, like writing $\LaTeX$, making beamer documents, taking notes, and constructing websites.
+I learned to program in R and to use RStudio during my undergraduate study. During my internships at *Fishmarket* and *Crane Management Services*, I used R to clean, to analyze, to visualize (e.g. 'ggplot2', 'ggmap', 'shiny') and to forecast complex data and to distill complex data to make it easier for others to understand. I made sensible interpretations of the result solve business problems and help clients or manager make decisions.
 
-Here are the [projects](Projects.html) that I did.
+Passion for applying my valuable insights, knowledge, experiences and backgrounds on jobs and daily life. Strong people skills, be able to empathy, to listen, to negotiate, to persuade and to make recommendations.
 
-I engaged all sorts of [activities](Activity.html)!
+Welcome to take a look at my [Resume](Resume.html)!
 
-Want to know more [about me](About.html)? 
-
-</font>
+[Find out](About.html) more interesting facts on me!
 
 <script type="text/javascript">
 var caution=false
