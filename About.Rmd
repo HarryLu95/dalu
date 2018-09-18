@@ -12,6 +12,7 @@ output: html_document
 - Email: lvda_1\@163.com
 - [Github](https://github.com/HarryLu95)
 - [LinkedIn](https://www.linkedin.com/in/dalu0511/)
+- <font size=5>[**RESUME**](Resume.html)</font>
 
 </font>
 </div>
@@ -85,9 +86,9 @@ output: html_document
 #<font face="Baskerville Old Face" color=black size=6>(III) Skills</font>
 <font face="Times New Roman" color=black size=4>
 
-- Languages: Mandarin, English
-- Computer Languages: [R](https://www.r-project.org/), HTML, CSS, Markdown, SQL, Python, Java, Git Bash
-- Computer Software: Microsoft Excel, Microsoft Word, Microsoft PowerPoint, [RStudio](https://www.rstudio.com/), Adobe Photoshop, [Analyzing Digital Images](http://www.umassk12.net/adi/)
+- **Languages**: Mandarin, English
+- **Computer Languages**: [R](https://www.r-project.org/), SAS, SQL, Python, Markdown, HTML, CSS, Java, Git Bash
+- **Computer Software**: [RStudio](https://www.rstudio.com/), Eclipse Java, Microsoft Excel, Microsoft Word, Microsoft PowerPoint, Adobe Photoshop, Tableau (future), Hadoop (Future), [Analyzing Digital Images](http://www.umassk12.net/adi/)
 - [Come to visit my GitHub! <i class="fa fa-github" aria-hidden="true"></i>](https://github.com/HarryLu95)
 
 </font>

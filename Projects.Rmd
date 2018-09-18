@@ -17,7 +17,7 @@ output:
 - <i class="fa fa-calendar-check-o" aria-hidden="true"></i> Project: [Development of General Outlier Detection Algorithm](Outlier_Detection.html)
 - <i class="fa fa-calendar-check-o" aria-hidden="true"></i> Project: [Development of Interactive Web Applications and Exploration of Different Visualization Techniques using R-Shiny](Interactive_Web_App.html)
 - <i class="fa fa-calendar-check-o" aria-hidden="true"></i> Project: [Information Retrieval on the web and Data Wrangling](Web_Data_Wrangling.html)
-- <i class="fa fa-calendar-check-o" aria-hidden="true"></i> Project: [Statistical Analysis of Bird Breeding Pairs](Bird_Breeding_Pairs.html)
+- <i class="fa fa-calendar-check-o" aria-hidden="true"></i> Project: [Statistical Analysis of Bird Breeding Pairs](Bird_Breeding_Pairs.html) (F-test, ANOVA, ggplot2, etc.)
 
 </font>
 
