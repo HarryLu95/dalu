@@ -1,0 +1,85 @@
+---
+title: <center>Course Material</center>
+output: html_document
+---
+<style>
+h1 {font-size: 28px; color: black; font-weight: bold; text-align: center;}
+h1.title {color: black}
+h2 {font-size: 20px; color: black; font-weight: bold; font-style: italic;}
+p {font-size: 16px; color: black;}
+ol {font-size: 16px; color: black;}
+ul {font-size: 16px; color: black;}
+</style>
+
+---
+
+#STSCI 5010 - Applied Statistical Computation with SAS
+##Lecture Slides
+1. [Basic Concepts](CU/5010/Lec1.pdf)
+2. [Referencing Files and Setting Options](CU/5010/Lec2.pdf)
+3. [Editing and Debugging](CU/5010/Lec3.pdf)
+4. [Creating List Reports](CU/5010/Lec4.pdf)
+
+##Homework
+1. [HW 1](CU/5010/HW1.pdf)
+    - [data](CU/5010/admit.sas7bdat)
+    - Due: Sep/27/2018 at 11:59PM
+
+##Quiz
+1. [Quiz 1 with Answer](CU/5010/Quiz1.pdf)
+
+---
+
+#STSCI 5030 - Linear Models with Matrices
+##Lecture Slides
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+
+##Homework
+1. Homework 1
+    - [Question 1](CU/5030/HW1-Q1.html)
+    - [Question 2](CU/5030/HW1-Q2.html)
+    - [Question 3](CU/5030/HW1-Q3.html)
+2. Homework 2
+    - [Question 1](CU/5030/HW2-Q1.html)
+    - [Question 2](CU/5030/HW2-Q2.html)
+    - [Question 3](CU/5030/HW2-Q3.html)
+
+---
+
+#STSCI 5060 - Database Management and SAS High Performance Computing with DBMS
+##Lecture Slides
+1. [Chapter 1 - Modern Database Management (MDBM)](CU/5060/Lec1.pdf)
+2. [Chapter 2 - Modeling data in an organization (Basic E-R model)](CU/5060/Lec2.pdf)
+3. [Chapter 3 - Enhanced E-R model](CU/5060/Lec3.pdf)
+4. [Chapter 4 - Logical Database Design and the Relational Model](CU/5060/Lec4.pdf)
+5. Chapter 5 - Physical Database Design and Performance
+
+##Homework
+1. [HW 1](CU/5060/HW1.pdf)
+    - Due: Sep/26/2018 at 11:59PM
+
+##Addition
+1. [SAS PROC SQL 5](CU/5060/SQL.pdf)
+
+---
+
+#STSCI 5080 - Probability Models and Inference
+##Lecture Slides
+1. 
+2. 
+3. 
+
+---
+
+#STSCI 5953 - MPS Professional Development
+##Lecture Slides
+1. 
+2. 
+3. 
