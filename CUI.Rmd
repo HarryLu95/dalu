@@ -83,3 +83,21 @@ ul {font-size: 16px; color: black;}
 1. 
 2. 
 3. 
+
+---
+
+#Tutor in Linear Algebra
+##Textbook
+- [Linear Algebra and Its Applications](CU/Tutor/Linear_Algebra_and_Its_Applications_5th.pdf)
+
+##Past Exams
+1. Midterm 1
+    - [Fall 2013](CU/Tutor/Midterm1-Fall2013.pdf)
+    - [Fall 2014](CU/Tutor/Midterm1-Fall2014.pdf)
+    - [Fall 2015](CU/Tutor/Midterm1-Fall2015.pdf)
+    - [Spring 2014](CU/Tutor/Midterm1-Spring2014.pdf)
+    - [Spring 2015](CU/Tutor/Midterm1-Spring2015.pdf)
+    - [Spring 2017](CU/Tutor/Midterm1-Spring2017.pdf)
+    - [Spring 2018](CU/Tutor/Midterm1-Spring2018.pdf)
+2. Midterm 2
+3. Final
