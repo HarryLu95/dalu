@@ -1,0 +1,39 @@
+---
+title: "Job Application Info"
+output:
+  html_document:
+    toc: false
+    number_sections: true
+---
+<style>
+h1 {font-size: 28px; color: black; font-weight: bold; text-align: left;}
+h1.title {color: black; text-align: center;}
+h2 {font-size: 20px; color: black; font-weight: normal; font-style: italic;}
+p {font-size: 16px; color: black;}
+ol {font-size: 16px; color: black;}
+ul {font-size: 16px; color: black;}
+</style>
+
+---
+
+#Handshake
+##Axtria
+- 9.20 first interview [fail]
+
+
+---
+
+#Others
+##EY
+
+
+##Dit
+
+
+##Amazon
+
+
+##IBM
+
+
+##IBM China

@@ -145,12 +145,122 @@ h4.date {
 <p><span class="math display">\[A B^T = \sum_{k=1}^n \mathbf a_k \mathbf b_k^T\]</span></p>
 <p>by expressing the elements <span class="math inline">\((AB^T)_{ij}\)</span> in terms of the individual entries <span class="math inline">\(a_{ij}\)</span> and <span class="math inline">\(b_{ij}\)</span>.</p>
 </blockquote>
+<p><span class="math display">\[A=
+\left(\begin{array}{c}
+  a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\
+  a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n}\\
+  \vdots &amp; \vdots &amp;  &amp; \vdots\\
+  a_{p1} &amp; a_{p2} &amp; \cdots &amp; a_{pn}
+\end{array}\right)
+=
+\left(\begin{array}{c}
+  \vdots &amp; \cdots &amp; \vdots\\
+  \mathbf{a_{1}} &amp; \cdots &amp; \mathbf{a_{n}}\\
+  \vdots &amp; \cdots &amp; \vdots
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[B=
+\left(\begin{array}{c}
+  b_{11} &amp; b_{12} &amp; \cdots &amp; b_{1n}\\
+  b_{21} &amp; b_{22} &amp; \cdots &amp; b_{2n}\\
+  \vdots &amp; \vdots &amp;  &amp; \vdots\\
+  b_{q1} &amp; b_{q2} &amp; \cdots &amp; b_{qn}
+\end{array}\right)
+=
+\left(\begin{array}{c}
+  \vdots &amp; \cdots &amp; \vdots\\
+  \mathbf{b_{1}} &amp; \cdots &amp; \mathbf{b_{n}}\\
+  \vdots &amp; \cdots &amp; \vdots
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[\begin{align}
+AB^T
+&amp;=
+\left(\begin{array}{c}
+  a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\
+  a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n}\\
+  \vdots &amp; \vdots &amp;  &amp; \vdots\\
+  a_{p1} &amp; a_{p2} &amp; \cdots &amp; a_{pn}
+\end{array}\right)
+\left(\begin{array}{c}
+  b_{11} &amp; b_{21} &amp; \cdots &amp; b_{q1}\\
+  b_{12} &amp; b_{22} &amp; \cdots &amp; b_{q2}\\
+  \vdots &amp; \vdots &amp;  &amp; \vdots\\
+  b_{1n} &amp; b_{2n} &amp; \cdots &amp; b_{qn}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  \sum_{k=1}^{n}{a_{1k}b_{1k}} &amp; \sum_{k=1}^{n}{a_{1k}b_{2k}} &amp; \cdots &amp; \sum_{k=1}^{n}{a_{1k}b_{qk}}\\
+  \sum_{k=1}^{n}{a_{2k}b_{1k}} &amp; \sum_{k=1}^{n}{a_{2k}b_{2k}} &amp; \cdots &amp; \sum_{k=1}^{n}{a_{2k}b_{qk}}\\
+  \vdots &amp; \vdots &amp;  &amp; \vdots\\
+  \sum_{k=1}^{n}{a_{pk}b_{1k}} &amp; \sum_{k=1}^{n}{a_{pk}b_{2k}} &amp; \cdots &amp; \sum_{k=1}^{n}{a_{pk}b_{qk}}
+\end{array}\right)\\
+\sum_{k=1}^{n}{{\mathbf{a}_k}\cdot{\mathbf{b}_k}^T}
+&amp;=
+{\mathbf{a}_1}\cdot{\mathbf{b}_1}^T+\cdots+{\mathbf{a}_n}\cdot{\mathbf{b}_n}^T\\
+&amp;=
+\left(\begin{array}{c}
+  a_{11}b_{11} &amp; a_{11}b_{21} &amp; \cdots &amp; a_{11}b_{q1}\\
+  a_{21}b_{11} &amp; a_{21}b_{21} &amp; \cdots &amp; a_{21}b_{q1}\\
+  \vdots &amp; \vdots &amp;  &amp; \vdots\\
+  a_{p1}b_{11} &amp; a_{p1}b_{21} &amp; \cdots &amp; a_{p1}b_{q1}
+\end{array}\right)
++\cdots+
+\left(\begin{array}{c}
+  a_{1n}b_{1n} &amp; a_{1n}b_{2n} &amp; \cdots &amp; a_{1n}b_{qn}\\
+  a_{2n}b_{1n} &amp; a_{2n}b_{2n} &amp; \cdots &amp; a_{2n}b_{qn}\\
+  \vdots &amp; \vdots &amp;  &amp; \vdots\\
+  a_{pn}b_{1n} &amp; a_{pn}b_{2n} &amp; \cdots &amp; a_{pn}b_{qn}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  \sum_{k=1}^{n}{a_{1k}b_{1k}} &amp; \sum_{k=1}^{n}{a_{1k}b_{2k}} &amp; \cdots &amp; \sum_{k=1}^{n}{a_{1k}b_{qk}}\\
+  \sum_{k=1}^{n}{a_{2k}b_{1k}} &amp; \sum_{k=1}^{n}{a_{2k}b_{2k}} &amp; \cdots &amp; \sum_{k=1}^{n}{a_{2k}b_{qk}}\\
+  \vdots &amp; \vdots &amp;  &amp; \vdots\\
+  \sum_{k=1}^{n}{a_{pk}b_{1k}} &amp; \sum_{k=1}^{n}{a_{pk}b_{2k}} &amp; \cdots &amp; \sum_{k=1}^{n}{a_{pk}b_{qk}}
+\end{array}\right)
+\end{align}\]</span></p>
+<p><span class="math display">\[\text{LHS}=\text{RHS}\]</span></p>
 </div>
 <div id="b" class="section level1">
 <h1>b</h1>
 <blockquote>
 <p>Show that <span class="math inline">\(tr(AB) = tr(BA)\)</span> by writting down each of these in terms of the elements of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
 </blockquote>
+<p>Assume <span class="math inline">\(A\)</span> has dimension <span class="math inline">\(m\times n\)</span> and <span class="math inline">\(B\)</span> has dimension <span class="math inline">\(n\times m\)</span>.</p>
+<p><span class="math display">\[A=
+\left(\begin{array}{c}
+  a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\
+  a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n}\\
+  \vdots &amp; \vdots &amp;  &amp; \vdots\\
+  a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[B=
+\left(\begin{array}{c}
+  b_{11} &amp; b_{12} &amp; \cdots &amp; b_{1m}\\
+  b_{21} &amp; b_{22} &amp; \cdots &amp; b_{2m}\\
+  \vdots &amp; \vdots &amp;  &amp; \vdots\\
+  b_{n1} &amp; b_{n2} &amp; \cdots &amp; b_{nm}
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[\begin{align}
+tr(AB)
+&amp;=
+(a_{11}b_{11}+a_{12}b_{21}+\cdots+a_{1m}b_{m1})\\
+&amp;\quad+(a_{21}b_{12}+a_{22}b_{22}+\cdots+a_{2m}b_{m2})\\
+&amp;\quad+\cdots\\
+&amp;\quad+(a_{n1}b_{1n}+a_{n2}b_{2n}+\cdots+a_{nm}b_{mn})\\
+tr(BA)
+&amp;=
+(b_{11}a_{11}+b_{12}a_{21}+\cdots+b_{1n}a_{n1})\\
+&amp;\quad+(b_{21}a_{12}+b_{22}a_{22}+\cdots+b_{2n}a_{n2})\\
+&amp;\quad+\cdots\\
+&amp;\quad+(b_{m1}a_{1m}+b_{m2}a_{2m}+\cdots+b_{mn}a_{nm})\\
+&amp;=
+(a_{11}b_{11}+a_{12}b_{21}+\cdots+a_{1m}b_{m1})\\
+&amp;\quad+(a_{21}b_{12}+a_{22}b_{22}+\cdots+a_{2m}b_{m2})\\
+&amp;\quad+\cdots\\
+&amp;\quad+(a_{n1}b_{1n}+a_{n2}b_{2n}+\cdots+a_{nm}b_{mn})\\
+&amp;=
+tr(AB)
+\end{align}\]</span></p>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>
@@ -162,6 +272,46 @@ h4.date {
 <li>Observing that <span class="math inline">\(EE^T = I\)</span>, produce <span class="math inline">\(A = EDE^T\)</span>.</li>
 </ol>
 </blockquote>
+<p><span class="math display">\[E=
+\left(\begin{array}{c}
+  \vdots &amp; \cdots &amp; \vdots\\
+  \mathbf{e_{1}} &amp; \cdots &amp; \mathbf{e_{n}}\\
+  \vdots &amp; \cdots &amp; \vdots
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[D=
+\left(\begin{array}{c}
+  d_1 &amp; 0 &amp; \cdots &amp; \cdots &amp; 0\\
+  0 &amp; d_2 &amp; \ddots &amp;   &amp; \vdots\\
+  \vdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \vdots\\
+  \vdots &amp;   &amp; \ddots &amp; d_{n-1} &amp; 0\\
+  0 &amp; \cdots &amp; \cdots &amp; 0 &amp; d_n
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[A\mathbf{e}_{i}=d_{i}\mathbf{e}_{i}\]</span></p>
+<p><span class="math display">\[\begin{align}
+AE
+&amp;=
+A
+\left(\begin{array}{c}
+  \vdots &amp; \cdots &amp; \vdots\\
+  \mathbf{e_{1}} &amp; \cdots &amp; \mathbf{e_{n}}\\
+  \vdots &amp; \cdots &amp; \vdots
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  \vdots &amp; \cdots &amp; \vdots\\
+  A\mathbf{e_{1}} &amp; \cdots &amp; A\mathbf{e_{n}}\\
+  \vdots &amp; \cdots &amp; \vdots
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  \vdots &amp; \cdots &amp; \vdots\\
+  d_{1}\mathbf{e_{1}} &amp; \cdots &amp; d_{n}\mathbf{e_{n}}\\
+  \vdots &amp; \cdots &amp; \vdots
+\end{array}\right)\\
+&amp;=
+ED
+\end{align}\]</span></p>
+<p>Since we know <span class="math inline">\(AE=ED\)</span> from part i, and we observing <span class="math inline">\(EE^T=I\)</span>, then we multiply both side of <span class="math inline">\(AE=ED\)</span> by <span class="math inline">\(E^T\)</span> so that we get <span class="math inline">\(AEE^T=EDE^T\)</span>. Simplify the LHS and we get <span class="math inline">\(A=EDE^T\)</span>.</p>
 </div>
 <div id="d" class="section level1">
 <h1>d</h1>
