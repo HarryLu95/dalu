@@ -91,6 +91,9 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
 }
@@ -223,7 +226,7 @@ AB^T
 <div id="b" class="section level1">
 <h1>b</h1>
 <blockquote>
-<p>Show that <span class="math inline">\(tr(AB) = tr(BA)\)</span> by writting down each of these in terms of the elements of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
+<p>Show that <span class="math inline">\(\text{tr}(AB) = \text{tr}(BA)\)</span> by writting down each of these in terms of the elements of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
 </blockquote>
 <p>Assume <span class="math inline">\(A\)</span> has dimension <span class="math inline">\(m\times n\)</span> and <span class="math inline">\(B\)</span> has dimension <span class="math inline">\(n\times m\)</span>.</p>
 <p><span class="math display">\[A=
@@ -241,13 +244,13 @@ AB^T
   b_{n1} &amp; b_{n2} &amp; \cdots &amp; b_{nm}
 \end{array}\right)\]</span></p>
 <p><span class="math display">\[\begin{align}
-tr(AB)
+\text{tr}(AB)
 &amp;=
 (a_{11}b_{11}+a_{12}b_{21}+\cdots+a_{1m}b_{m1})\\
 &amp;\quad+(a_{21}b_{12}+a_{22}b_{22}+\cdots+a_{2m}b_{m2})\\
 &amp;\quad+\cdots\\
 &amp;\quad+(a_{n1}b_{1n}+a_{n2}b_{2n}+\cdots+a_{nm}b_{mn})\\
-tr(BA)
+\text{tr}(BA)
 &amp;=
 (b_{11}a_{11}+b_{12}a_{21}+\cdots+b_{1n}a_{n1})\\
 &amp;\quad+(b_{21}a_{12}+b_{22}a_{22}+\cdots+b_{2n}a_{n2})\\
@@ -259,7 +262,7 @@ tr(BA)
 &amp;\quad+\cdots\\
 &amp;\quad+(a_{n1}b_{1n}+a_{n2}b_{2n}+\cdots+a_{nm}b_{mn})\\
 &amp;=
-tr(AB)
+\text{tr}(AB)
 \end{align}\]</span></p>
 </div>
 <div id="c" class="section level1">
@@ -319,12 +322,26 @@ ED
 <p>Using the above results, show that we can write</p>
 <p><span class="math display">\[\sum_{i=1}^n d_i \mathbf e_i \mathbf e_i^T = EDE^T\]</span></p>
 </blockquote>
+<p><span class="math display">\[ED=
+\left(\begin{array}{c}
+  \vdots &amp; \cdots &amp; \vdots\\
+  d_{1}\mathbf{e_{1}} &amp; \cdots &amp; d_{n}\mathbf{e_{n}}\\
+  \vdots &amp; \cdots &amp; \vdots
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[E=
+\left(\begin{array}{c}
+  \vdots &amp; \cdots &amp; \vdots\\
+  \mathbf{e_{1}} &amp; \cdots &amp; \mathbf{e_{n}}\\
+  \vdots &amp; \cdots &amp; \vdots
+\end{array}\right)\]</span></p>
+<p>From the result from part a, <span class="math display">\[(ED)E^T=\sum_{i=1}^{n}{(d_{i}\mathbf{e_{i}})\mathbf{e_{i}}^T}\]</span></p>
 </div>
 <div id="e" class="section level1">
 <h1>e</h1>
 <blockquote>
 <p>Hence show that we can express tr<span class="math inline">\((A) = \sum d_i\)</span>.</p>
 </blockquote>
+<p>From the result from part b, <span class="math display">\[\text{tr}(A)=\text{tr}(EDE^T)=\text{tr}(EE^TD)=\text{tr}(D)=\sum{d_i}\]</span></p>
 </div>
 
 

@@ -14,16 +14,22 @@ ul {font-size: 16px; color: black;}
 ---
 
 #STSCI 5010 - Applied Statistical Computation with SAS
+##Syllabus
+- Fall 2018 Syllabus
+
 ##Lecture Slides
 1. [Basic Concepts](CU/5010/Lec1.pdf)
 2. [Referencing Files and Setting Options](CU/5010/Lec2.pdf)
 3. [Editing and Debugging](CU/5010/Lec3.pdf)
 4. [Creating List Reports](CU/5010/Lec4.pdf)
 
-##Homework
+##Homeworks
 1. [HW 1](CU/5010/HW1.pdf)
     - [data](CU/5010/admit.sas7bdat)
     - Due: Sep/27/2018 at 11:59PM
+
+##Labs
+1. 
 
 ##Quiz
 1. [Quiz 1 with Answer](CU/5010/Quiz1.pdf)
@@ -41,7 +47,7 @@ ul {font-size: 16px; color: black;}
 7. 
 8. 
 
-##Homework
+##Homeworks
 1. Homework 1
     - [Question 1](CU/5030/HW1-Q1.html)
     - [Question 2](CU/5030/HW1-Q2.html)
@@ -54,6 +60,9 @@ ul {font-size: 16px; color: black;}
 ---
 
 #STSCI 5060 - Database Management and SAS High Performance Computing with DBMS
+##Syllabus
+- Fall 2018 Syllabus
+
 ##Lecture Slides
 1. [Chapter 1 - Modern Database Management (MDBM)](CU/5060/Lec1.pdf)
 2. [Chapter 2 - Modeling data in an organization (Basic E-R model)](CU/5060/Lec2.pdf)
@@ -61,7 +70,7 @@ ul {font-size: 16px; color: black;}
 4. [Chapter 4 - Logical Database Design and the Relational Model](CU/5060/Lec4.pdf)
 5. Chapter 5 - Physical Database Design and Performance
 
-##Homework
+##Homeworks
 1. [HW 1](CU/5060/HW1.pdf)
     - Due: Sep/26/2018 at 11:59PM
 
@@ -71,10 +80,29 @@ ul {font-size: 16px; color: black;}
 ---
 
 #STSCI 5080 - Probability Models and Inference
+##Syllabus
+- [Fall 2018 Syllabus](CU/5080/Syllabus.pdf)
+
 ##Lecture Slides
-1. 
-2. 
-3. 
+1. [Lecture 1: Introduction](CU/5080/Lec1.pdf)
+2. [Lecture 2: Probability and Conditional Probability](CU/5080/Lec2.pdf)
+3. [Lecture 3: Independence and Random Variables](CU/5080/Lec3.pdf)
+4. [Lecture 4: Discrete Random Variables](CU/5080/Lec4.pdf)
+5. [Lecture 5: Continuous Random Variables](CU/5080/Lec5.pdf)
+6. [Lecture 6: Continuous Random Variables (cont.)](CU/5080/Lec6.pdf)
+7. [Lecture 7: Joint Distributions](CU/5080/Lec7.pdf)
+8. [Lecture 8: Independence of RVs and Conditional Distributions](CU/5080/Lec8.pdf)
+9. [Lecture 9: Generalizations and Functions of Random Vectors](CU/5080/Lec9.pdf)
+
+##Practice Exams
+1. [Practice Midterm 1](CU/5080/PM1.pdf)
+    - [Solutions](CU/5080/PM1_S.pdf)
+
+##Homeworks
+1. [Homework 1](CU/5080/HW1.pdf)
+    - [Solutions](CU/5080/HW1_S.pdf)
+2. [Homework 2](CU/5080/HW2.pdf)
+    - [Solutions](CU/5080/HW2_S.pdf)
 
 ---
 
