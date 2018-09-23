@@ -29,7 +29,9 @@ ul {font-size: 16px; color: black;}
     - Due: Sep/27/2018 at 11:59PM
 
 ##Labs
-1. 
+1. [Lab 1](CU/5010/Lab1.pdf)
+    - [data](CU/5010/nutrition.sas7bdat)
+    - Due: Sep/23/2018 at 11:59PM
 
 ##Quiz
 1. [Quiz 1 with Answer](CU/5010/Quiz1.pdf)
