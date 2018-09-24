@@ -22,6 +22,7 @@ ul {font-size: 16px; color: black;}
 2. [Referencing Files and Setting Options](CU/5010/Lec2.pdf)
 3. [Editing and Debugging](CU/5010/Lec3.pdf)
 4. [Creating List Reports](CU/5010/Lec4.pdf)
+5. [Creating SAS Data Sets From External Files](CU/5010/Lec5.pdf)
 
 ##Homeworks
 1. [HW 1](CU/5010/HW1.pdf)
@@ -40,14 +41,7 @@ ul {font-size: 16px; color: black;}
 
 #STSCI 5030 - Linear Models with Matrices
 ##Lecture Slides
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
+- None
 
 ##Homeworks
 1. Homework 1
