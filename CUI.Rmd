@@ -51,8 +51,11 @@ ul {font-size: 16px; color: black;}
 ---
 
 #STSCI 5030 - Linear Models with Matrices
-##Lecture Slides
-- None
+##Resources
+- [Summary from Year 2016](CU/5030/Notes.pdf)
+- [Lecture 0](CU/5030/Lec0.pdf)
+- [Syllabus](CU/5030/Syllabus.pdf)
+- [Texts Links](CU/5030/TextsLinks.pdf)
 
 ##Homeworks
 1. Homework 1
@@ -63,6 +66,21 @@ ul {font-size: 16px; color: black;}
     - [Question 1](CU/5030/HW2-Q1.html)
     - [Question 2](CU/5030/HW2-Q2.html)
     - [Question 3](CU/5030/HW2-Q3.html)
+
+##Labs
+1. Lab 1
+    - [PDF](CU/5030/Lab1.pdf)
+    - [RMarkdown](CU/5030/Lab1.Rmd) (.Rmd)
+    - [Data](CU/5030/Faithful.csv) (.csv)
+    - [Solution (PDF)](CU/5030/Lab1_S.pdf)
+    - [Solution (RMarkdown)](CU/5030/Lab1_S.Rmd) (.Rmd)
+2. Lab 2
+    - [PDF](CU/5030/Lab2.pdf)
+    - [RMarkdown](CU/5030/Lab2.Rmd) (.Rmd)
+    - [Data](CU/5030/hills.csv) (.csv)
+3. Lab 3
+    - [PDF](CU/5030/Lab3.pdf)
+    - [RMarkdown](CU/5030/Lab3.Rmd) (.Rmd)
 
 ---
 
