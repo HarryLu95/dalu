@@ -91,6 +91,9 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
 }
@@ -144,6 +147,57 @@ h4.date {
 <blockquote>
 <p>Suppose in addition that <span class="math inline">\(\mathbf x_1^T \mathbf x_2 = 0\)</span>. Show that <span class="math inline">\(X^TX\)</span> is diagonal.</p>
 </blockquote>
+<p><span class="math display">\[\mathbf{x_1}=
+\left(\begin{array}{c}
+  x_{11}\\
+  \vdots\\
+  x_{n1}
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[\mathbf{x_2}=
+\left(\begin{array}{c}
+  x_{12}\\
+  \vdots\\
+  x_{n2}
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[\mathbf{x_1}^T\mathbf{x_2}=\sum_{i=1}^{n}{x_{i1}x_{i2}}=0\]</span></p>
+<p><span class="math display">\[X=
+\left(\begin{array}{c}
+  1 &amp; x_{11} &amp; x_{12}\\
+  \vdots &amp; \vdots &amp; \vdots\\
+  1 &amp; x_{n1} &amp; x_{n2}
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[X^T=
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  x_{11} &amp; \cdots &amp; x_{n1}\\
+  x_{12} &amp; \cdots &amp; x_{n2}
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[\begin{align}
+X^TX
+&amp;=
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  x_{11} &amp; \cdots &amp; x_{n1}\\
+  x_{12} &amp; \cdots &amp; x_{n2}
+\end{array}\right)
+\left(\begin{array}{c}
+  1 &amp; x_{11} &amp; x_{12}\\
+  \vdots &amp; \vdots &amp; \vdots\\
+  1 &amp; x_{n1} &amp; x_{n2}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  n &amp; \sum_{i=1}^{n}{x_{i1}} &amp; \sum_{i=1}^{n}{x_{i2}}\\
+  \sum_{i=1}^{n}{x_{i1}} &amp; \sum_{i=1}^{n}{{x_{i1}}^2} &amp; \sum_{i=1}^{n}{x_{i1}x_{i2}}\\
+  \sum_{i=1}^{n}{x_{i2}} &amp; \sum_{i=1}^{n}{x_{i2}x_{i1}} &amp; \sum_{i=1}^{n}{{x_{i2}}^2}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  n &amp; 0 &amp; 0\\
+  0 &amp; \sum_{i=1}^{n}{{x_{i1}}^2} &amp; 0\\
+  0 &amp; 0 &amp; \sum_{i=1}^{n}{{x_{i2}}^2}
+\end{array}\right)
+\end{align}\]</span></p>
 </div>
 <div id="b" class="section level1">
 <h1>b</h1>
@@ -155,6 +209,252 @@ h4.date {
 <li>Fit a multiple linear regression. Show that all three cases give you the same coefficients <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span>.</li>
 </ol>
 </blockquote>
+<ul>
+<li><span class="math inline">\(\mathbf{y}=\beta_{01}+\beta_1\mathbf{x_1}+\mathbf{\epsilon_1}\)</span>
+<ul>
+<li><code>l1=lm(y~x1)</code></li>
+<li><code>beta1=l1$residuals[2]</code></li>
+</ul></li>
+<li><span class="math inline">\(\mathbf{y}=\beta_{02}+\beta_2\mathbf{x_2}+\mathbf{\epsilon_2}\)</span>
+<ul>
+<li><code>l2=lm(y~x2)</code></li>
+<li><code>beta2=l2$residuals[2]</code></li>
+</ul></li>
+<li><span class="math inline">\(\mathbf{y}=\beta_0+\beta_1\mathbf{x_1}+\beta_2\mathbf{x_2}+\mathbf{\epsilon}\)</span>
+<ul>
+<li><code>l3=lm(y~x1+x2)</code></li>
+<li>verify <code>beta1==l3$residuals[2]</code> and <code>beta2==l3$residuals[3]</code></li>
+</ul></li>
+</ul>
+<p><span class="math display">\[\mathbf{\beta}=({X_1}^TX_1)^{-1}{X_1}^T\mathbf{y}\]</span></p>
+<p><span class="math display">\[X_1=
+\left(\begin{array}{c}
+  1 &amp; x_{11}\\
+  \vdots &amp; \vdots\\
+  1 &amp; x_{n1}
+\end{array}\right)
+\quad
+\mathbf{\beta}=
+\left(\begin{array}{c}
+  \beta_{01}\\
+  \beta_1
+\end{array}\right)
+\quad
+\mathbf{y}=
+\left(\begin{array}{c}
+  y_{1}\\
+  \vdots\\
+  y_{n}
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[\begin{align}
+\left(\begin{array}{c}
+  \beta_{01}\\
+  \beta_1
+\end{array}\right)
+&amp;=
+\left[
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  x_{11} &amp; \cdots &amp; x_{n1}
+\end{array}\right)
+\left(\begin{array}{c}
+  1 &amp; x_{11}\\
+  \vdots &amp; \vdots\\
+  1 &amp; x_{n1}
+\end{array}\right)
+\right]^{-1}
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  x_{11} &amp; \cdots &amp; x_{n1}
+\end{array}\right)
+\left(\begin{array}{c}
+  y_{1}\\
+  \vdots\\
+  y_{n}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  n &amp; \sum_{i=1}^{n}{x_{i1}}\\
+  \sum_{i=1}^{n}{x_{i1}} &amp; \sum_{i=1}^{n}{{x_{i1}}^2}
+\end{array}\right)^{-1}
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  x_{11} &amp; \cdots &amp; x_{n1}
+\end{array}\right)
+\left(\begin{array}{c}
+  y_{1}\\
+  \vdots\\
+  y_{n}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  n &amp; 0\\
+  0 &amp; \sum_{i=1}^{n}{{x_{i1}}^2}
+\end{array}\right)^{-1}
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  x_{11} &amp; \cdots &amp; x_{n1}
+\end{array}\right)
+\left(\begin{array}{c}
+  y_{1}\\
+  \vdots\\
+  y_{n}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  \cfrac{1}{n} &amp; 0\\
+  0 &amp; \cfrac{1}{\sum_{i=1}^{n}{{x_{i1}}^2}}
+\end{array}\right)
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  x_{11} &amp; \cdots &amp; x_{n1}
+\end{array}\right)
+\left(\begin{array}{c}
+  y_{1}\\
+  \vdots\\
+  y_{n}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  \cfrac{1}{n} &amp; \cdots &amp; \cfrac{1}{n}\\
+  \cfrac{x_{11}}{\sum_{i=1}^{n}{{x_{i1}}^2}} &amp; \cdots &amp; \cfrac{x_{n1}}{\sum_{i=1}^{n}{{x_{i1}}^2}}
+\end{array}\right)
+\left(\begin{array}{c}
+  y_{1}\\
+  \vdots\\
+  y_{n}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  \cfrac{\sum_{i=1}^{n}{y_i}}{n}\\
+  \cfrac{\sum_{i=1}^{n}{x_{i1}y_i}}{\sum_{i=1}^{n}{{x_{i1}}^2}}
+\end{array}\right)
+\end{align}\]</span></p>
+<p><span class="math display">\[\mathbf{\beta}=({X_2}^TX_2)^{-1}{X_2}^T\mathbf{y}\]</span></p>
+<p><span class="math display">\[X_2=
+\left(\begin{array}{c}
+  1 &amp; x_{12}\\
+  \vdots &amp; \vdots\\
+  1 &amp; x_{n2}
+\end{array}\right)
+\quad
+\mathbf{\beta}=
+\left(\begin{array}{c}
+  \beta_{02}\\
+  \beta_2
+\end{array}\right)
+\quad
+\mathbf{y}=
+\left(\begin{array}{c}
+  y_{1}\\
+  \vdots\\
+  y_{n}
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[\begin{align}
+\left(\begin{array}{c}
+  \beta_{02}\\
+  \beta_2
+\end{array}\right)
+&amp;=
+\left[
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  x_{12} &amp; \cdots &amp; x_{n2}
+\end{array}\right)
+\left(\begin{array}{c}
+  1 &amp; x_{12}\\
+  \vdots &amp; \vdots\\
+  1 &amp; x_{n2}
+\end{array}\right)
+\right]^{-1}
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  x_{12} &amp; \cdots &amp; x_{n2}
+\end{array}\right)
+\left(\begin{array}{c}
+  y_{1}\\
+  \vdots\\
+  y_{n}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  n &amp; \sum_{i=1}^{n}{x_{i2}}\\
+  \sum_{i=1}^{n}{x_{i2}} &amp; \sum_{i=1}^{n}{{x_{i2}}^2}
+\end{array}\right)^{-1}
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  x_{12} &amp; \cdots &amp; x_{n2}
+\end{array}\right)
+\left(\begin{array}{c}
+  y_{1}\\
+  \vdots\\
+  y_{n}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  n &amp; 0\\
+  0 &amp; \sum_{i=1}^{n}{{x_{i2}}^2}
+\end{array}\right)^{-1}
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  x_{12} &amp; \cdots &amp; x_{n2}
+\end{array}\right)
+\left(\begin{array}{c}
+  y_{1}\\
+  \vdots\\
+  y_{n}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  \cfrac{1}{n} &amp; 0\\
+  0 &amp; \cfrac{1}{\sum_{i=1}^{n}{{x_{i2}}^2}}
+\end{array}\right)
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  x_{12} &amp; \cdots &amp; x_{n2}
+\end{array}\right)
+\left(\begin{array}{c}
+  y_{1}\\
+  \vdots\\
+  y_{n}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  \cfrac{1}{n} &amp; \cdots &amp; \cfrac{1}{n}\\
+  \cfrac{x_{12}}{\sum_{i=1}^{n}{{x_{i2}}^2}} &amp; \cdots &amp; \cfrac{x_{n2}}{\sum_{i=1}^{n}{{x_{i2}}^2}}
+\end{array}\right)
+\left(\begin{array}{c}
+  y_{1}\\
+  \vdots\\
+  y_{n}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  \cfrac{\sum_{i=1}^{n}{y_i}}{n}\\
+  \cfrac{\sum_{i=1}^{n}{x_{i2}y_i}}{\sum_{i=1}^{n}{{x_{i2}}^2}}
+\end{array}\right)
+\end{align}\]</span></p>
+<p><span class="math display">\[\mathbf{\beta}=({X}^TX)^{-1}{X}^T\mathbf{y}\]</span></p>
+<p><span class="math display">\[X=
+\left(\begin{array}{c}
+  1 &amp; x_{11} &amp; x_{12}\\
+  \vdots &amp; \vdots &amp; \vdots\\
+  1 &amp; x_{n1} &amp; x_{n2}
+\end{array}\right)
+\quad
+\mathbf{\beta}=
+\left(\begin{array}{c}
+  \beta_0\\
+  \beta_1\\
+  \beta_2
+\end{array}\right)
+\quad
+\mathbf{y}=
+\left(\begin{array}{c}
+  y_{1}\\
+  \vdots\\
+  y_{n}
+\end{array}\right)\]</span></p>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>
