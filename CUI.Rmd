@@ -31,11 +31,22 @@ ul {font-size: 16px; color: black;}
 
 ##Labs
 1. [Lab 1](CU/5010/Lab1.pdf)
-    - [data](CU/5010/nutrition.sas7bdat)
+    - [data](CU/5010/nutrition.sas7bdat) (.sas7bdat)
     - Due: Sep/23/2018 at 11:59PM
+    - [Solutions]((CU/5010/Lab1_S.7z)) (.7z)
 
-##Quiz
-1. [Quiz 1 with Answer](CU/5010/Quiz1.pdf)
+##Quizzes
+1. [Quiz 1 with Solutions](CU/5010/Quiz1.pdf)
+2. [Quiz 2 with Solutions](CU/5010/Quiz2.pdf)
+
+##SAS Data
+1. [workloads](CU/5010/workloads.sas7bdat) (.sas7bdat)
+2. [unequal](CU/5010/unequal.sas7bdat) (.sas7bdat)
+3. [ring](CU/5010/ring.sas7bdat) (.sas7bdat)
+4. [pizza](CU/5010/pizza.sas7bdat) (.sas7bdat)
+5. [fish](CU/5010/fish.sas7bdat) (.sas7bdat)
+6. [credit](CU/5010/credit.sas7bdat) (.sas7bdat)
+7. [bank](CU/5010/bank.sas7bdat) (.sas7bdat)
 
 ---
 
@@ -70,7 +81,11 @@ ul {font-size: 16px; color: black;}
 1. [HW 1](CU/5060/HW1.pdf)
     - Due: Sep/26/2018 at 11:59PM
 
-##Addition
+##Quizzes
+1. [Quiz 1 with Solutions](CU/5060/Quiz1.pdf)
+2. [Quiz 2 with Solutions](CU/5060/Quiz2.pdf)
+
+##Additions
 1. [SAS PROC SQL 5](CU/5060/SQL.pdf)
 
 ---
@@ -89,16 +104,31 @@ ul {font-size: 16px; color: black;}
 7. [Lecture 7: Joint Distributions](CU/5080/Lec7.pdf)
 8. [Lecture 8: Independence of RVs and Conditional Distributions](CU/5080/Lec8.pdf)
 9. [Lecture 9: Generalizations and Functions of Random Vectors](CU/5080/Lec9.pdf)
-
-##Practice Exams
-1. [Practice Midterm 1](CU/5080/PM1.pdf)
-    - [Solutions](CU/5080/PM1_S.pdf)
+10. [Lecture 10: Order Statistics and Expected Values](CU/5080/Lec10.pdf)
 
 ##Homeworks
 1. [Homework 1](CU/5080/HW1.pdf)
     - [Solutions](CU/5080/HW1_S.pdf)
 2. [Homework 2](CU/5080/HW2.pdf)
     - [Solutions](CU/5080/HW2_S.pdf)
+
+##Discussions
+1. [Discussion 1 with Solutions](CU/5080/Dis1.pdf)
+2. [Discussion 2 with Solutions](CU/5080/Dis2.pdf)
+3. [Discussion 3 with Solutions](CU/5080/Dis3.pdf)
+4. [Discussion 4 with Solutions](CU/5080/Dis4.pdf)
+
+##Supplementary Materials
+1. [Some standard distributions](CU/5080/Sup1.pdf)
+2. [Densities of order statistics](CU/5080/Sup2.pdf)
+3. [More general definition of expectation](CU/5080/Sup3.pdf)
+
+##Practice Exams
+1. [Practice Midterm 1](CU/5080/PM1.pdf)
+    - [Solutions](CU/5080/PM1_S.pdf)
+
+##Exams
+1. [Midterm 1 with Solutions](CU/5080/M1_S.pdf)
 
 ---
 
