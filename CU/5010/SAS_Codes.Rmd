@@ -1,0 +1,49 @@
+---
+title: "SAS Codes"
+author: "Harry Lu 呂達"
+output:
+  html_document:
+    toc: TRUE
+    toc_float: 
+      collapsed: FALSE
+    toc_depth: 2
+    number_sections: TRUE
+---
+<style>
+h1 {font-size: 28px; color: black; font-weight: bold; text-align: left; background-color: Orange;}
+h1.title {color: black; text-align: center; background-color: White;}
+h2 {font-size: 20px; color: black; font-weight: bold; font-style: italic; background-color: Yellow;}
+h4.author {color: black; text-align: center;}
+p {font-size: 16px; color: black;}
+ol {font-size: 16px; color: black;}
+ul {font-size: 16px; color: black;}
+</style>
+
+---
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+saspath = "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+sasopts = "-nosplash -ls 75"
+```
+
+#OPTIONS
+
+#PROC
+##PROC PRINT
+```{}
+PROC PRINT data = xxxxxxxx;
+RUN;
+```
+
+
+#DATA
+```{r, engine='sas', engine.path=saspath, engine.opts=sasopts, comment=NA}
+DATA temp;
+  x = 0;
+RUN;
+PROC PRINT data = temp;
+RUN;
+```
+
+
+#

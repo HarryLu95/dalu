@@ -1,10 +1,10 @@
 ---
-title: <center>Course Material</center>
+title: "Course Material"
 output: html_document
 ---
 <style>
 h1 {font-size: 28px; color: black; font-weight: bold; text-align: center;}
-h1.title {color: black}
+h1.title {color: black; text-align: center;}
 h2 {font-size: 20px; color: black; font-weight: bold; font-style: italic;}
 p {font-size: 16px; color: black;}
 ol {font-size: 16px; color: black;}
@@ -47,6 +47,10 @@ ul {font-size: 16px; color: black;}
 5. [fish](CU/5010/fish.sas7bdat) (.sas7bdat)
 6. [credit](CU/5010/credit.sas7bdat) (.sas7bdat)
 7. [bank](CU/5010/bank.sas7bdat) (.sas7bdat)
+
+##SAS Codes
+- [Reference](CU/5010/SAS_Codes.html)
+- [Lab 1 log](CU/5010/Lab1_Log.txt)
 
 ---
 
