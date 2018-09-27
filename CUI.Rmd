@@ -50,7 +50,7 @@ ul {font-size: 16px; color: black;}
 
 ##SAS Codes
 - [Reference](CU/5010/SAS_Codes.html)
-- [Lab 1 log](CU/5010/Lab1_Log.txt)
+- [Lab 1 log](CU/5010/Lab1_Log.pdf)
 
 ---
 
