@@ -17,6 +17,8 @@ h4.author {color: black; text-align: center;}
 p {font-size: 16px; color: black;}
 ol {font-size: 16px; color: black;}
 ul {font-size: 16px; color: black;}
+pre {margin-left: 40px;}
+table {margin-left: 40px; font-size: 16px;}
 </style>
 
 ---
@@ -27,16 +29,346 @@ sasopts = "-nosplash -ls 75"
 ```
 
 #OPTIONS
+- Syntax
+
+```{}
+OPTIONS options;
+```
+
+- `DATE`|`NODATE` to display or suppress dates on the output
+- `NUMBER`|`NONUMBER` to display or suppress page #
+- `PAGENO=` to specify the beginning page number
+- `PAGESIZE=` (or `PS=`) to specify the number of line per page of output
+- `LINESIZE=` (or `LS=`) to specify the width of the printed line
+- `YEARCUTOFF=` to specify which 100-year span is used to interpret two-digit year vales
+- `FIRSTOBS=` to start processing at a specific observation
+- `OBS=` to stop processing after a specific observation
+
+- Example
+
+```{}
+options nonumber nodate;
+PROC PRINT data=clinic. payrollmaster;
+run;
+```
+
+- Example
+
+```{}
+options pageno=1 pagesize=15;
+PROC PRINT data=clinic. payrollmaster;
+run;
+```
+
+- Example (Global)
+
+```{}
+options firstobs=50 obs=100;
+PROC PRINT data=clinic. payrollmaster;
+run;
+```
+
+- Example (Local)
+
+```{}
+PROC PRINT data=clinic. payrollmaster
+(firstobs=50 obs=100);
+run;
+```
+
+- Example
+
+```{}
+options yearcutoff=1950;
+```
+
+##Titles and Footnotes
+- Syntax
+
+```{}
+TITLE<n> 'text';
+FOOTNOTE<n> 'text';
+```
+
+- Example
+
+```{}
+options pagesize=20 nodate;
+title1 'Heart Rates for Patients with';
+title3 'Increased Stress Tolerance Levels';
+footnote1 'Data from Treadmill Tests';
+footnote3 '1st Quarter Admissions';
+proc print data=clinic.stress2;
+  var resthr maxhr rechr;
+  where tolerance='I';
+run;
+```
+
+
+
+
+
+#Comments in SAS
+- Syntax
+
+```{}
+* Prints the data;
+```
+
+- Example
+
+```{}
+proc print data= student;
+run;
+```
+
+- Syntax
+
+```{}
+/* Prints the data*/
+```
+
+- Example
+
+```{}
+proc print data= students;
+run;
+```
+
+
 
 #PROC
-##PROC PRINT
+##PRINT
 ```{}
 PROC PRINT data = xxxxxxxx;
 RUN;
 ```
 
+**SUM**
+
+- Example
+
+```{}
+proc print data=clinic.insure;
+  var name policy balancedue;
+  where pctinsured < 100;
+  sum balancedue;
+run; 
+```
+
+**SUM + BY**
+
+- Example
+
+```{}
+* The data set must be sorted first;
+proc sort data=clinic.admit out=work.activity;
+  by actlevel;
+run;
+proc print data=work.activity;
+  var age height weight fee;
+  where age>30;
+  sum fee;
+  by actlevel;
+run; 
+```
+
+**SUM + BY + ID**
+
+- Example
+
+```{}
+* The data set must be sorted first;
+proc sort data=clinic.admit out=work.activity;
+  by actlevel;
+run;
+proc print data=work.activity;
+  var age height weight fee;
+  where age>30;
+  sum fee;
+  by actlevel;
+  id actlevel;
+run;
+```
+
+**SUM + BY + ID + PAGEBY**
+
+- Example
+
+```{}
+* The data set must be sorted first;
+proc sort data=clinic.admit out=work.activity;
+  by actlevel;
+run;
+proc print data=work.activity;
+  var age height weight fee;
+  where age>30;
+  sum fee;
+  by actlevel;
+  id actlevel;
+  pageby actlevel;
+run;
+```
+
+**DOUBLE**
+
+- Example
+
+```{}
+proc print data=clinic.stress2 double;
+  var resthr maxhr rechr;
+  where tolerance='I';
+run;
+```
+
+**LABEL**
+
+- Example
+
+```{}
+proc print data=clinic.admit label;
+  var age height;
+  label age='Age of Patient';
+  label height='Height in Inches';
+run;
+```
+
+- Example
+
+```{}
+proc print data=clinic.admit label;
+  var age height;
+  label age='Age of Patient'
+    height='Height in Inches';
+run;
+```
+
+**FORMAT**
+
+Format|Specifies values ...|Example
+:----------------|:--------------------------------|:----------------
+COMMAw.d|that contain commas and decimal places|comma8.2
+DOLLAR w.d|that contain dollar signs, commas, and decimal places|dollar6.2
+MMDDYYw.|as date values of the form 09/12/97 (MMDDYY8.) or 09/12/1997 (MMDDYY10.)|mmddyy10.
+w.|rounded to the nearest integer in w spaces|7.
+w.d|rounded to d decimal places in w spaces|8.2
+\$w.|as character values in w spaces|\$12.
+DATEw.|as date values of the form 16OCT99 (DATE7.) or 16OCT1999 (DATE9.)|date9.
+
+- Example
+
+```{}
+proc print data=clinic.admit;
+  var actlevel fee;
+  where actlevel='HIGH';
+  format fee dollar4.;
+run;
+```
+
+Examples of SAS Formats, Stored Values and Displayed Values
+
+Stored Value|Format|Displayed Value
+:-|:-|:-
+38245.3975|COMMA12.2|38,245.40
+38245.3975|12.2|38245.40
+38245.3975|DOLLAR12.2|\$38,245.40
+38245.3975|DOLLAR9.2|\$38245.40
+38245.3975|DOLLAR8.2|38245.40
+0|MMDDYY8.|01/01/60
+0|MMDDYY10.|01/01/1960
+0|DATE7.|01JAN60
+0|DATE9.|01JAN1960
+
+**Permanently Assigned Labels and Formats**
+
+- [click](SAS_Codes.html#41_permanently_assigned_labels_and_formats)
+
+##CONTENTS
+**Summary of dataset**
+
+- Syntax
+
+```{}
+PROC CONTENTS<options>;
+RUN;
+```
+
+- Example
+
+```{}
+proc contents data=clinic._all_nods;
+run;
+```
+
+- Syntax
+
+```{}
+PROC DATASETS<options>;
+CONTENTS<options>;
+QUIT;
+```
+
+- Example
+
+```{}
+proc datasets;
+contents data=clinic._all_nods;
+quit;
+```
+
+##VARNUM
+- Example
+
+```{}
+proc contents data=clinic.admit varnum;
+run;
+```
+
+```{}
+proc datasets;
+contents data=clinic.admit varnum;
+quit;
+```
+
+##SORT
+- Syntax
+
+```{}
+PROC SORT DATA=SAS-data-set<OUT=SAS-data-set>;
+  BY <DESCENDING> BY-variable(s);
+RUN;
+```
+
+- Example 1
+
+```{}
+proc sort data=clinic.admit out=work.wgtadmit;
+  by weight age;
+run;
+proc print data=work.wgtadmit;
+  var weight age height fee;
+  where age>30;
+run;
+```
+
+- Example 2 (DESCENDING option)
+
+```{}
+* The data set must be sorted first;
+proc sort data=clinic.admit out=work.wgtadmit;
+  by descending weight age;
+run;
+proc print data=work.wgtadmit;
+  var weight age height fee;
+  where age>30;
+run; 
+```
+
+
 
 #DATA
+- Example
+
 ```{r, engine='sas', engine.path=saspath, engine.opts=sasopts, comment=NA}
 DATA temp;
   x = 0;
@@ -45,5 +377,149 @@ PROC PRINT data = temp;
 RUN;
 ```
 
+##Permanently Assigned Labels and Formats
+```{}
+data sasuser.paris;
+  set sasuser.laguardia;
+  where dest="PAR" and (boarded=155 or boarded=146);
+  label date=’Departure Date’;
+  format date date9.;
+run;
 
-#
+proc print data=sasuser.paris label;
+  var date dest boarded;
+run;
+```
+
+#Creating List Reports
+##Basic
+- Example
+
+```{}
+options pagesize=500 linesize=200;
+PROC PRINT data = sashelp.cars;
+run;
+```
+
+By default:
+
+- All observations and variables are printed
+- They appear in the same order as in the data set
+- Observation numbers appear in the far left
+
+##VAR
+- Example
+
+```{}
+PROC PRINT data = sashelp.cars;
+var make model weight mpg_city;
+run;
+```
+
+##WHERE
+- Example
+
+```{}
+Options linesize=80;
+PROC PRINT data = sashelp.cars;
+var make model weight mpg_city;
+where weight>5000;
+run;
+```
+
+- **comparison operators**
+
+Symbol|Meaning|Example
+:-|:-|:-
+= or eq|equal to|where name='Jones, C.';
+^= or ne|not equal to|where temp ne 212;
+\> or gt|greater than|where income\>20000;
+\< or lt|less than|where partno lt "BG05";
+\>= or ge|greater than or equal to|where id\>='1543';
+\<= or le|less than or equal to|where pulse le 85;
+
+- **compound expression**
+
+Operator|Meaning
+:----------------|:----------------------------------------------------------------
+AND &|and, both. If both expressions are true, then the compound expression is true.
+OR \||or, either. If either expression is true, then the compound expression is true.
+
+- Example
+
+```{}
+PROC PRINT data = sashelp.cars;
+  var make model weight mpg_city;
+  where weight>3500 AND make ="Audi";
+run;
+```
+
+- Example
+
+```{}
+PROC PRINT data = sashelp.cars;
+  var make model weight mpg_city;
+  where weight>3500 AND (make ="Audi" OR make="BMW");
+run;
+```
+
+**IN**
+
+- Example
+
+```{}
+PROC PRINT data = sashelp.cars;
+  var make model weight mpg_city;
+  where weight>3500 AND make IN ("Audi", "BMW");
+run;
+```
+
+**CONTAINS (?)**
+
+- Example
+
+```{}
+PROC PRINT data = sashelp.cars;
+  var make model weight mpg_city;
+  where weight>3500 AND (make ? "Au" OR make CONTAINS "BM");
+run;
+```
+
+**NOOBS**
+
+- Example
+
+```{}
+Options linesize=80;
+  PROC PRINT data = sashelp.cars noobs;
+  var make model weight mpg_city;
+  where weight>5000;
+run;
+```
+
+**ID**
+
+- Example
+
+```{}
+Options linesize=80;
+  PROC PRINT data = sashelp.cars;
+  id horsepower;
+  var make model weight mpg_city;
+  where weight>5000;
+run;
+```
+
+**ID**, more variables
+
+- Example
+
+```{}
+Options linesize=80;
+  PROC PRINT data = sasuser.customer;
+  id customer_id customer_name;
+  where country='CA';
+run;
+```
+
+

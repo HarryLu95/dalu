@@ -239,21 +239,374 @@ h4.author {color: black; text-align: center;}
 p {font-size: 16px; color: black;}
 ol {font-size: 16px; color: black;}
 ul {font-size: 16px; color: black;}
+pre {margin-left: 40px;}
+table {margin-left: 40px; font-size: 16px;}
 </style>
 <hr />
 <div id="options" class="section level1">
 <h1><span class="header-section-number">1</span> OPTIONS</h1>
+<ul>
+<li>Syntax</li>
+</ul>
+<pre><code>OPTIONS options;</code></pre>
+<ul>
+<li><code>DATE</code>|<code>NODATE</code> to display or suppress dates on the output</li>
+<li><code>NUMBER</code>|<code>NONUMBER</code> to display or suppress page #</li>
+<li><code>PAGENO=</code> to specify the beginning page number</li>
+<li><code>PAGESIZE=</code> (or <code>PS=</code>) to specify the number of line per page of output</li>
+<li><code>LINESIZE=</code> (or <code>LS=</code>) to specify the width of the printed line</li>
+<li><code>YEARCUTOFF=</code> to specify which 100-year span is used to interpret two-digit year vales</li>
+<li><code>FIRSTOBS=</code> to start processing at a specific observation</li>
+<li><p><code>OBS=</code> to stop processing after a specific observation</p></li>
+<li><p>Example</p></li>
+</ul>
+<pre><code>options nonumber nodate;
+PROC PRINT data=clinic. payrollmaster;
+run;</code></pre>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>options pageno=1 pagesize=15;
+PROC PRINT data=clinic. payrollmaster;
+run;</code></pre>
+<ul>
+<li>Example (Global)</li>
+</ul>
+<pre><code>options firstobs=50 obs=100;
+PROC PRINT data=clinic. payrollmaster;
+run;</code></pre>
+<ul>
+<li>Example (Local)</li>
+</ul>
+<pre><code>PROC PRINT data=clinic. payrollmaster
+(firstobs=50 obs=100);
+run;</code></pre>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>options yearcutoff=1950;</code></pre>
+<div id="titles-and-footnotes" class="section level2">
+<h2><span class="header-section-number">1.1</span> Titles and Footnotes</h2>
+<ul>
+<li>Syntax</li>
+</ul>
+<pre><code>TITLE&lt;n&gt; 'text';
+FOOTNOTE&lt;n&gt; 'text';</code></pre>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>options pagesize=20 nodate;
+title1 'Heart Rates for Patients with';
+title3 'Increased Stress Tolerance Levels';
+footnote1 'Data from Treadmill Tests';
+footnote3 '1st Quarter Admissions';
+proc print data=clinic.stress2;
+  var resthr maxhr rechr;
+  where tolerance='I';
+run;</code></pre>
+</div>
+</div>
+<div id="comments-in-sas" class="section level1">
+<h1><span class="header-section-number">2</span> Comments in SAS</h1>
+<ul>
+<li>Syntax</li>
+</ul>
+<pre><code>* Prints the data;</code></pre>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>proc print data= student;
+run;</code></pre>
+<ul>
+<li>Syntax</li>
+</ul>
+<pre><code>/* Prints the data*/</code></pre>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>proc print data= students;
+run;</code></pre>
 </div>
 <div id="proc" class="section level1">
-<h1><span class="header-section-number">2</span> PROC</h1>
-<div id="proc-print" class="section level2">
-<h2><span class="header-section-number">2.1</span> PROC PRINT</h2>
+<h1><span class="header-section-number">3</span> PROC</h1>
+<div id="print" class="section level2">
+<h2><span class="header-section-number">3.1</span> PRINT</h2>
 <pre><code>PROC PRINT data = xxxxxxxx;
 RUN;</code></pre>
+<p><strong>SUM</strong></p>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>proc print data=clinic.insure;
+  var name policy balancedue;
+  where pctinsured &lt; 100;
+  sum balancedue;
+run; </code></pre>
+<p><strong>SUM + BY</strong></p>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>* The data set must be sorted first;
+proc sort data=clinic.admit out=work.activity;
+  by actlevel;
+run;
+proc print data=work.activity;
+  var age height weight fee;
+  where age&gt;30;
+  sum fee;
+  by actlevel;
+run; </code></pre>
+<p><strong>SUM + BY + ID</strong></p>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>* The data set must be sorted first;
+proc sort data=clinic.admit out=work.activity;
+  by actlevel;
+run;
+proc print data=work.activity;
+  var age height weight fee;
+  where age&gt;30;
+  sum fee;
+  by actlevel;
+  id actlevel;
+run;</code></pre>
+<p><strong>SUM + BY + ID + PAGEBY</strong></p>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>* The data set must be sorted first;
+proc sort data=clinic.admit out=work.activity;
+  by actlevel;
+run;
+proc print data=work.activity;
+  var age height weight fee;
+  where age&gt;30;
+  sum fee;
+  by actlevel;
+  id actlevel;
+  pageby actlevel;
+run;</code></pre>
+<p><strong>DOUBLE</strong></p>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>proc print data=clinic.stress2 double;
+  var resthr maxhr rechr;
+  where tolerance='I';
+run;</code></pre>
+<p><strong>LABEL</strong></p>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>proc print data=clinic.admit label;
+  var age height;
+  label age='Age of Patient';
+  label height='Height in Inches';
+run;</code></pre>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>proc print data=clinic.admit label;
+  var age height;
+  label age='Age of Patient'
+    height='Height in Inches';
+run;</code></pre>
+<p><strong>FORMAT</strong></p>
+<table style="width:97%;">
+<colgroup>
+<col width="25%"></col>
+<col width="47%"></col>
+<col width="25%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Format</th>
+<th align="left">Specifies values …</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">COMMAw.d</td>
+<td align="left">that contain commas and decimal places</td>
+<td align="left">comma8.2</td>
+</tr>
+<tr class="even">
+<td align="left">DOLLAR w.d</td>
+<td align="left">that contain dollar signs, commas, and decimal places</td>
+<td align="left">dollar6.2</td>
+</tr>
+<tr class="odd">
+<td align="left">MMDDYYw.</td>
+<td align="left">as date values of the form 09/12/97 (MMDDYY8.) or 09/12/1997 (MMDDYY10.)</td>
+<td align="left">mmddyy10.</td>
+</tr>
+<tr class="even">
+<td align="left">w.</td>
+<td align="left">rounded to the nearest integer in w spaces</td>
+<td align="left">7.</td>
+</tr>
+<tr class="odd">
+<td align="left">w.d</td>
+<td align="left">rounded to d decimal places in w spaces</td>
+<td align="left">8.2</td>
+</tr>
+<tr class="even">
+<td align="left">$w.</td>
+<td align="left">as character values in w spaces</td>
+<td align="left">$12.</td>
+</tr>
+<tr class="odd">
+<td align="left">DATEw.</td>
+<td align="left">as date values of the form 16OCT99 (DATE7.) or 16OCT1999 (DATE9.)</td>
+<td align="left">date9.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>proc print data=clinic.admit;
+  var actlevel fee;
+  where actlevel='HIGH';
+  format fee dollar4.;
+run;</code></pre>
+<p>Examples of SAS Formats, Stored Values and Displayed Values</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Stored Value</th>
+<th align="left">Format</th>
+<th align="left">Displayed Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">38245.3975</td>
+<td align="left">COMMA12.2</td>
+<td align="left">38,245.40</td>
+</tr>
+<tr class="even">
+<td align="left">38245.3975</td>
+<td align="left">12.2</td>
+<td align="left">38245.40</td>
+</tr>
+<tr class="odd">
+<td align="left">38245.3975</td>
+<td align="left">DOLLAR12.2</td>
+<td align="left">$38,245.40</td>
+</tr>
+<tr class="even">
+<td align="left">38245.3975</td>
+<td align="left">DOLLAR9.2</td>
+<td align="left">$38245.40</td>
+</tr>
+<tr class="odd">
+<td align="left">38245.3975</td>
+<td align="left">DOLLAR8.2</td>
+<td align="left">38245.40</td>
+</tr>
+<tr class="even">
+<td align="left">0</td>
+<td align="left">MMDDYY8.</td>
+<td align="left">01/01/60</td>
+</tr>
+<tr class="odd">
+<td align="left">0</td>
+<td align="left">MMDDYY10.</td>
+<td align="left">01/01/1960</td>
+</tr>
+<tr class="even">
+<td align="left">0</td>
+<td align="left">DATE7.</td>
+<td align="left">01JAN60</td>
+</tr>
+<tr class="odd">
+<td align="left">0</td>
+<td align="left">DATE9.</td>
+<td align="left">01JAN1960</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Permanently Assigned Labels and Formats</strong></p>
+<ul>
+<li><a href="SAS_Codes.html#41_permanently_assigned_labels_and_formats">click</a></li>
+</ul>
+</div>
+<div id="contents" class="section level2">
+<h2><span class="header-section-number">3.2</span> CONTENTS</h2>
+<p><strong>Summary of dataset</strong></p>
+<ul>
+<li>Syntax</li>
+</ul>
+<pre><code>PROC CONTENTS&lt;options&gt;;
+RUN;</code></pre>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>proc contents data=clinic._all_nods;
+run;</code></pre>
+<ul>
+<li>Syntax</li>
+</ul>
+<pre><code>PROC DATASETS&lt;options&gt;;
+CONTENTS&lt;options&gt;;
+QUIT;</code></pre>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>proc datasets;
+contents data=clinic._all_nods;
+quit;</code></pre>
+</div>
+<div id="varnum" class="section level2">
+<h2><span class="header-section-number">3.3</span> VARNUM</h2>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>proc contents data=clinic.admit varnum;
+run;</code></pre>
+<pre><code>proc datasets;
+contents data=clinic.admit varnum;
+quit;</code></pre>
+</div>
+<div id="sort" class="section level2">
+<h2><span class="header-section-number">3.4</span> SORT</h2>
+<ul>
+<li>Syntax</li>
+</ul>
+<pre><code>PROC SORT DATA=SAS-data-set&lt;OUT=SAS-data-set&gt;;
+  BY &lt;DESCENDING&gt; BY-variable(s);
+RUN;</code></pre>
+<ul>
+<li>Example 1</li>
+</ul>
+<pre><code>proc sort data=clinic.admit out=work.wgtadmit;
+  by weight age;
+run;
+proc print data=work.wgtadmit;
+  var weight age height fee;
+  where age&gt;30;
+run;</code></pre>
+<ul>
+<li>Example 2 (DESCENDING option)</li>
+</ul>
+<pre><code>* The data set must be sorted first;
+proc sort data=clinic.admit out=work.wgtadmit;
+  by descending weight age;
+run;
+proc print data=work.wgtadmit;
+  var weight age height fee;
+  where age&gt;30;
+run; </code></pre>
 </div>
 </div>
 <div id="data" class="section level1">
-<h1><span class="header-section-number">3</span> DATA</h1>
+<h1><span class="header-section-number">4</span> DATA</h1>
+<ul>
+<li>Example</li>
+</ul>
 <pre class="sas"><code>DATA temp;
   x = 0;
 RUN;
@@ -262,9 +615,184 @@ RUN;</code></pre>
 <pre><code>                                 Obs    x
 
                                   1     0</code></pre>
+<div id="permanently-assigned-labels-and-formats" class="section level2">
+<h2><span class="header-section-number">4.1</span> Permanently Assigned Labels and Formats</h2>
+<pre><code>data sasuser.paris;
+  set sasuser.laguardia;
+  where dest=&quot;PAR&quot; and (boarded=155 or boarded=146);
+  label date=’Departure Date’;
+  format date date9.;
+run;
+
+proc print data=sasuser.paris label;
+  var date dest boarded;
+run;</code></pre>
 </div>
-<div id="section" class="section level1">
-<h1><span class="header-section-number">4</span> </h1>
+</div>
+<div id="creating-list-reports" class="section level1">
+<h1><span class="header-section-number">5</span> Creating List Reports</h1>
+<div id="basic" class="section level2">
+<h2><span class="header-section-number">5.1</span> Basic</h2>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>options pagesize=500 linesize=200;
+PROC PRINT data = sashelp.cars;
+run;</code></pre>
+<p>By default:</p>
+<ul>
+<li>All observations and variables are printed</li>
+<li>They appear in the same order as in the data set</li>
+<li>Observation numbers appear in the far left</li>
+</ul>
+</div>
+<div id="var" class="section level2">
+<h2><span class="header-section-number">5.2</span> VAR</h2>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>PROC PRINT data = sashelp.cars;
+var make model weight mpg_city;
+run;</code></pre>
+</div>
+<div id="where" class="section level2">
+<h2><span class="header-section-number">5.3</span> WHERE</h2>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>Options linesize=80;
+PROC PRINT data = sashelp.cars;
+var make model weight mpg_city;
+where weight&gt;5000;
+run;</code></pre>
+<ul>
+<li><strong>comparison operators</strong></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Symbol</th>
+<th align="left">Meaning</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">= or eq</td>
+<td align="left">equal to</td>
+<td align="left">where name=‘Jones, C.’;</td>
+</tr>
+<tr class="even">
+<td align="left">^= or ne</td>
+<td align="left">not equal to</td>
+<td align="left">where temp ne 212;</td>
+</tr>
+<tr class="odd">
+<td align="left">&gt; or gt</td>
+<td align="left">greater than</td>
+<td align="left">where income&gt;20000;</td>
+</tr>
+<tr class="even">
+<td align="left">&lt; or lt</td>
+<td align="left">less than</td>
+<td align="left">where partno lt “BG05”;</td>
+</tr>
+<tr class="odd">
+<td align="left">&gt;= or ge</td>
+<td align="left">greater than or equal to</td>
+<td align="left">where id&gt;=‘1543’;</td>
+</tr>
+<tr class="even">
+<td align="left">&lt;= or le</td>
+<td align="left">less than or equal to</td>
+<td align="left">where pulse le 85;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>compound expression</strong></li>
+</ul>
+<table>
+<colgroup>
+<col width="21%"></col>
+<col width="78%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Operator</th>
+<th align="left">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">AND &amp;</td>
+<td align="left">and, both. If both expressions are true, then the compound expression is true.</td>
+</tr>
+<tr class="even">
+<td align="left">OR |</td>
+<td align="left">or, either. If either expression is true, then the compound expression is true.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>PROC PRINT data = sashelp.cars;
+  var make model weight mpg_city;
+  where weight&gt;3500 AND make =&quot;Audi&quot;;
+run;</code></pre>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>PROC PRINT data = sashelp.cars;
+  var make model weight mpg_city;
+  where weight&gt;3500 AND (make =&quot;Audi&quot; OR make=&quot;BMW&quot;);
+run;</code></pre>
+<p><strong>IN</strong></p>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>PROC PRINT data = sashelp.cars;
+  var make model weight mpg_city;
+  where weight&gt;3500 AND make IN (&quot;Audi&quot;, &quot;BMW&quot;);
+run;</code></pre>
+<p><strong>CONTAINS (?)</strong></p>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>PROC PRINT data = sashelp.cars;
+  var make model weight mpg_city;
+  where weight&gt;3500 AND (make ? &quot;Au&quot; OR make CONTAINS &quot;BM&quot;);
+run;</code></pre>
+<p><strong>NOOBS</strong></p>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>Options linesize=80;
+  PROC PRINT data = sashelp.cars noobs;
+  var make model weight mpg_city;
+  where weight&gt;5000;
+run;</code></pre>
+<p><strong>ID</strong></p>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>Options linesize=80;
+  PROC PRINT data = sashelp.cars;
+  id horsepower;
+  var make model weight mpg_city;
+  where weight&gt;5000;
+run;</code></pre>
+<p><strong>ID</strong>, more variables</p>
+<ul>
+<li>Example</li>
+</ul>
+<pre><code>Options linesize=80;
+  PROC PRINT data = sasuser.customer;
+  id customer_id customer_name;
+  where country='CA';
+run;</code></pre>
+</div>
 </div>
 
 
