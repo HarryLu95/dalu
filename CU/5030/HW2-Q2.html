@@ -196,28 +196,19 @@ X^TX
 <div id="b" class="section level1">
 <h1>b</h1>
 <blockquote>
-<p>Here we could think of fitting <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> three different ways:</p>
+<p>Here we could think of fitting <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> three different ways. Show that when <span class="math inline">\(\mathbf x_1^T \mathbf x_2 = 0\)</span>, all three cases give you the same coefficients <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span>.</p>
 <ol style="list-style-type: decimal">
 <li>Performing simple linear regression to predict <span class="math inline">\(y_i\)</span> from <span class="math inline">\(x_{i1}\)</span> and <span class="math inline">\(y_i\)</span> from <span class="math inline">\(x_{i2}\)</span> separately.</li>
 <li>Predict <span class="math inline">\(y_i\)</span> from <span class="math inline">\(x_{i1}\)</span> and obtain the residuals <span class="math inline">\(r_i\)</span> from this fit. Then predict <span class="math inline">\(r_i\)</span> from <span class="math inline">\(x_{i2}\)</span>.</li>
 <li>Fit a multiple linear regression. Show that all three cases give you the same coefficients <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span>.</li>
 </ol>
 </blockquote>
+<p><strong>1. Two Simple Linear Regressions</strong></p>
 <ul>
 <li><span class="math inline">\(\mathbf{y}=\beta_{01}+\beta_{11}\mathbf{x_1}+\mathbf{\epsilon_1}\)</span>
 <ul>
 <li><code>l1=lm(y~x1)</code></li>
 <li><code>beta1=l1$residuals[2]</code></li>
-</ul></li>
-<li><span class="math inline">\(\mathbf{y}=\beta_{02}+\beta_{22}\mathbf{x_2}+\mathbf{\epsilon_2}\)</span>
-<ul>
-<li><code>l2=lm(y~x2)</code></li>
-<li><code>beta2=l2$residuals[2]</code></li>
-</ul></li>
-<li><span class="math inline">\(\mathbf{y}=\beta_0+\beta_1\mathbf{x_1}+\beta_2\mathbf{x_2}+\mathbf{\epsilon}\)</span>
-<ul>
-<li><code>l3=lm(y~x1+x2)</code></li>
-<li>verify <code>beta1==l3$residuals[2]</code> and <code>beta2==l3$residuals[3]</code></li>
 </ul></li>
 </ul>
 <p><span class="math display">\[\mathbf{\beta}=({X_1}^TX_1)^{-1}{X_1}^T\mathbf{y}\]</span></p>
@@ -324,6 +315,14 @@ X^TX
   \cfrac{\sum_{i=1}^{n}{x_{i1}y_i}}{\sum_{i=1}^{n}{{x_{i1}}^2}}
 \end{array}\right)
 \end{align}\]</span></p>
+<p>In this case, <span class="math inline">\(\beta_{11}=\cfrac{\sum_{i=1}^{n}{x_{i1}y_i}}{\sum_{i=1}^{n}{{x_{i1}}^2}}\)</span>. (<span class="math inline">\(\beta_{11}\)</span> is the <span class="math inline">\(\beta_1\)</span> of simple linear regression with variable <span class="math inline">\(x_1\)</span>.)</p>
+<ul>
+<li><span class="math inline">\(\mathbf{y}=\beta_{02}+\beta_{22}\mathbf{x_2}+\mathbf{\epsilon_2}\)</span>
+<ul>
+<li><code>l2=lm(y~x2)</code></li>
+<li><code>beta2=l2$residuals[2]</code></li>
+</ul></li>
+</ul>
 <p><span class="math display">\[\mathbf{\beta}=({X_2}^TX_2)^{-1}{X_2}^T\mathbf{y}\]</span></p>
 <p><span class="math display">\[X_2=
 \left(\begin{array}{c}
@@ -428,6 +427,39 @@ X^TX
   \cfrac{\sum_{i=1}^{n}{x_{i2}y_i}}{\sum_{i=1}^{n}{{x_{i2}}^2}}
 \end{array}\right)
 \end{align}\]</span></p>
+<p>In this case, <span class="math inline">\(\beta_{22}=\cfrac{\sum_{i=1}^{n}{x_{i2}y_i}}{\sum_{i=1}^{n}{{x_{i2}}^2}}\)</span>. (<span class="math inline">\(\beta_{22}\)</span> is the <span class="math inline">\(\beta_2\)</span> of simple linear regression with variable <span class="math inline">\(x_2\)</span>.)</p>
+<p><strong>2. Predict <span class="math inline">\(\beta_1\)</span> from <span class="math inline">\(\mathbf{x_1}\)</span> and <span class="math inline">\(\mathbf{y}\)</span>, and predict <span class="math inline">\(\beta_2\)</span> from <span class="math inline">\(\mathbf{x_2}\)</span> and <span class="math inline">\(\mathbf{r}\)</span></strong></p>
+<p>Note: <span class="math inline">\(\mathbf{r}\)</span> and <span class="math inline">\(\mathbf{\epsilon}\)</span> are all notations for residual.</p>
+<p><span class="math display">\[\mathbf{\beta}=\left(\begin{array}{c}\beta_a\\\beta_1\end{array}\right)=({X_1}^TX_1)^{-1}{X_1}^T\mathbf{y}\]</span></p>
+<p>We can obtain <span class="math inline">\(\beta_1\)</span> from above.</p>
+<p><span class="math display">\[H_1={X_1}({X_1}^T{X_1})^{-1}{X_1}^T\]</span></p>
+<p><span class="math display">\[\mathbf{r}=(I-H_1)\mathbf{y}\]</span></p>
+<p><span class="math display">\[\begin{align}
+\mathbf{\beta}=\left(\begin{array}{c}\beta_b\\\beta_2\end{array}\right)
+&amp;=
+({X_2}^TX_2)^{-1}{X_2}^T\mathbf{r}\\
+&amp;=
+({X_2}^TX_2)^{-1}{X_2}^T(I-H_1)\mathbf{y}\\
+&amp;=
+({X_2}^TX_2)^{-1}{X_2}^TI\mathbf{y}-({X_2}^TX_2)^{-1}{X_2}^TH_1\mathbf{y}\\
+&amp;=
+({X_2}^TX_2)^{-1}{X_2}^T\mathbf{y}-({X_2}^TX_2)^{-1}{X_2}^T{X_1}({X_1}^T{X_1})^{-1}{X_1}^T\mathbf{y}\\
+&amp;=
+({X_2}^TX_2)^{-1}{X_2}^T\mathbf{y}-({X_2}^TX_2)^{-1}[{X_2}^T{X_1}]({X_1}^T{X_1})^{-1}{X_1}^T\mathbf{y}\\
+&amp;=
+({X_2}^TX_2)^{-1}{X_2}^T\mathbf{y}-({X_2}^TX_2)^{-1}\mathbf{0}({X_1}^T{X_1})^{-1}{X_1}^T\mathbf{y}\\
+&amp;=
+({X_2}^TX_2)^{-1}{X_2}^T\mathbf{y}
+\end{align}\]</span></p>
+<p>We can obtain <span class="math inline">\(\beta_2\)</span> from above.</p>
+<p><strong>3. Multiple Linear Regression</strong></p>
+<ul>
+<li><span class="math inline">\(\mathbf{y}=\beta_0+\beta_1\mathbf{x_1}+\beta_2\mathbf{x_2}+\mathbf{\epsilon}\)</span>
+<ul>
+<li><code>l3=lm(y~x1+x2)</code></li>
+<li>verify <code>beta1==l3$residuals[2]</code> and <code>beta2==l3$residuals[3]</code></li>
+</ul></li>
+</ul>
 <p><span class="math display">\[\mathbf{\beta}=({X}^TX)^{-1}{X}^T\mathbf{y}\]</span></p>
 <p><span class="math display">\[X=
 \left(\begin{array}{c}
