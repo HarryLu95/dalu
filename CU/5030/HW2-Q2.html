@@ -582,7 +582,7 @@ X^TX
   1 &amp; z_{n} &amp; x_{n1}
 \end{array}\right)\]</span></p>
 <p>In order to show that the ANOVA Decomposition for two models are same, we just need to prove two hat matrices, <span class="math inline">\(H_{Z_1}\)</span> and <span class="math inline">\(H_{Z_2}\)</span> are equal.</p>
-<p>Reason: The three parts of AVONA decompositions are: <span class="math inline">\({\mathbf{y}}^T\bar{J}\mathbf{y}\)</span>, <span class="math inline">\({\mathbf{y}}^T(H-\bar{J})\mathbf{y}\)</span>, and <span class="math inline">\({\mathbf{y}}^T(I-H)\mathbf{y}\)</span>. In each part, <span class="math inline">\(I\)</span> and <span class="math inline">\(\bar{J}\)</span> are always same, only <span class="math inline">\(H\)</span> is different.</p>
+<p>Reason: The three parts of AVONA decomposition are: <span class="math inline">\({\mathbf{y}}^T\bar{J}\mathbf{y}\)</span>, <span class="math inline">\({\mathbf{y}}^T(H-\bar{J})\mathbf{y}\)</span>, and <span class="math inline">\({\mathbf{y}}^T(I-H)\mathbf{y}\)</span>. In each part, <span class="math inline">\(I\)</span> and <span class="math inline">\(\bar{J}\)</span> are always same, only <span class="math inline">\(H\)</span> is different.</p>
 <p><span class="math display">\[\begin{align}
 H_{Z_1}
 &amp;=
@@ -658,19 +658,69 @@ H_{Z_1}
   x_{11} &amp; \cdots &amp; x_{n1}\\
   z_{1} &amp; \cdots &amp; z_{n}
 \end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  \cfrac{1}{n} &amp; \cfrac{x_{11}}{\sum{{x_{i1}}^2}} &amp; \cfrac{z_{1}}{\sum{{z_i}^2}}\\
+  \vdots &amp; \vdots &amp; \vdots\\
+  \cfrac{1}{n} &amp; \cfrac{x_{n1}}{\sum{{x_{i1}}^2}} &amp; \cfrac{z_{n}}{\sum{{z_i}^2}}
+\end{array}\right)
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  x_{11} &amp; \cdots &amp; x_{n1}\\
+  z_{1} &amp; \cdots &amp; z_{n}
+\end{array}\right)
 \end{align}\]</span></p>
+<p>By same mechanism, we can have:</p>
+<p><span class="math display">\[\begin{align}
+H_{Z_2}
+&amp;=
+\left(\begin{array}{c}
+  \cfrac{1}{n} &amp; \cfrac{z_{1}}{\sum{{z_i}^2}} &amp; \cfrac{x_{11}}{\sum{{x_{i1}}^2}}\\
+  \vdots &amp; \vdots &amp; \vdots\\
+  \cfrac{1}{n} &amp; \cfrac{z_{n}}{\sum{{z_i}^2}} &amp; \cfrac{x_{n1}}{\sum{{x_{i1}}^2}}
+\end{array}\right)
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  z_{1} &amp; \cdots &amp; z_{n}\\
+  x_{11} &amp; \cdots &amp; x_{n1}
+\end{array}\right)
+\end{align}\]</span></p>
+<p>The two Hat matrices are same because each entry of the matrix is <span class="math inline">\(\cfrac{1}{n}+\cfrac{x_{a1}x_{b1}}{\sum{{x_{i1}}^2}}+\cfrac{z_az_b}{\sum{{z_i}^2}}\)</span> where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are the row index and column index of the entry.</p>
+<p>Therefore the ANOVA decomposition for the two model would be same.</p>
 </div>
 <div id="e" class="section level1">
 <h1>e</h1>
 <blockquote>
 <p>What is the relationship between the <span class="math inline">\(\gamma_j\)</span> above and the <span class="math inline">\(\beta_j\)</span> in the model at the start of this question?</p>
 </blockquote>
+<p>We have three models.</p>
+<p>Model 1: <span class="math inline">\(\mathbf{y}=\gamma_0+\gamma_1\mathbf{x_1}+\gamma_2\mathbf{z}+\epsilon\)</span></p>
+<p>Model 2: <span class="math inline">\(\mathbf{y}=\beta_0+\beta_1\mathbf{x_1}+\beta_2\mathbf{x_2}+\epsilon\)</span></p>
+<p>Model 3: <span class="math inline">\(\mathbf{x_2}=\alpha_0+\alpha_1\mathbf{x_1}+\mathbf{z}\)</span></p>
+<p>Plug Model 3 into Model 2: <span class="math inline">\(\mathbf{y}=\beta_0+\beta_1\mathbf{x_1}+\beta_2(\alpha_0+\alpha_1\mathbf{x_1}+\mathbf{z})+\epsilon=(\beta_0+\beta_2\alpha_0)+(\beta_1+\beta_2\alpha_1)\mathbf{x_1}+\beta_2\mathbf{z}+\epsilon\)</span></p>
+<p>Compare the coefficients, and we get:</p>
+<ul>
+<li><span class="math inline">\(\gamma_0=\beta_0+\beta_2\alpha_0\)</span></li>
+<li><span class="math inline">\(\gamma_1=\beta_1+\beta_2\alpha_1\)</span></li>
+<li><span class="math inline">\(\gamma_2=\beta_2\)</span></li>
+</ul>
 </div>
 <div id="f" class="section level1">
 <h1>f</h1>
 <blockquote>
 <p>Show further that the ANOVA sum of squares for the model in part d is equivalent to the sequential ANOVA for <span class="math inline">\(x_{i1}\)</span> and <span class="math inline">\(x_{i2}\)</span> where the sums of squares for <span class="math inline">\(x_{i1}\)</span> is calculated first.</p>
 </blockquote>
+<p>To prove the statement above, we just need to prove the hat matrix of model <span class="math inline">\(\mathbf{y}=\gamma_0+\gamma_1\mathbf{x_1}+\gamma_2\mathbf{z}+\epsilon\)</span> and the hat matrix of model <span class="math inline">\(\mathbf{y}=\beta_0+\beta_1\mathbf{x_1}+\beta_2\mathbf{x_2}+\epsilon\)</span>.</p>
+<p>To further simplify it, we just need to find an invertible matrix <span class="math inline">\(A\)</span> so that <span class="math inline">\(\left[\begin{array}{c}  \mathbf{1} &amp; \mathbf{x_1} &amp; \mathbf{x_2} \end{array}\right]A =\left[\begin{array}{c}  \mathbf{1} &amp; \mathbf{x_1} &amp; \mathbf{z} \end{array}\right]\)</span>.</p>
+<p>Because the first two columns of <span class="math inline">\(X\)</span> do not change, the first two columns of <span class="math inline">\(A\)</span> should be (1, 0, 0) and (0, 1, 0).</p>
+<p>Because <span class="math inline">\(\mathbf{z}=-\alpha_0-\alpha_1\mathbf{x_1}+\mathbf{x_2}\)</span>, so the third column of <span class="math inline">\(A\)</span> should be (<span class="math inline">\(-\alpha_0\)</span>, <span class="math inline">\(-\alpha_1\)</span>, 1).</p>
+<p><span class="math display">\[A=
+\left(\begin{array}{c}
+  1 &amp; 0 &amp; -\alpha_0\\
+  0 &amp; 1 &amp; -\alpha_1\\
+  0 &amp; 0 &amp; 1
+\end{array}\right)\]</span></p>
+<p>And <span class="math inline">\(A\)</span> is invertible.</p>
 </div>
 <div id="bonus" class="section level1">
 <h1>Bonus</h1>

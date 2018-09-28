@@ -28,6 +28,103 @@ saspath = "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
 sasopts = "-nosplash -ls 75"
 ```
 
+```{r, engine='sas', engine.path=saspath, engine.opts=sasopts, comment=NA}
+/*==============================Problem 1==============================*/
+/*
+- Create a library called HW1 with the dataset Admit
+*/
+libname HW1 "C:/Users/Harry Lu's X1/Desktop/Cornell/STSCI 5010/HW 1";
+title1 "Summary of Admit Dataset";
+footnote1 "Produced by Da (Harry) Lu";
+OPTIONS NONUMBER NODATE PAGESIZE = 20;
+PROC CONTENTS data = HW1.Admit;
+RUN;
+/*
+- There are 21 observations.
+- There are 9 Variables: ID, Name, Sex, Age, Date, Height, Weight, ActLevel, Fee.
+- The dataset was created on 09/19/2013 at 18:22:16.
+- There are 4 Char variables: ActLevel, ID, Name, Sex.
+- There are 5 Num variables: Age, Date, Fee, Height, Weight.
+*/
+
+/*==============================Problem 2==============================*/
+/*
+- Create al_high
+*/
+title1 "Dataset al_high";
+DATA al_high;
+	Set HW1.Admit;
+	Where ActLevel = "HIGH";
+RUN;
+PROC PRINT data = al_high;
+RUN;
+/*
+- Create al_low
+*/
+title1 "Dataset al_low";
+DATA al_low;
+	Set HW1.Admit;
+	Where ActLevel = "LOW";
+RUN;
+PROC PRINT data = al_low;
+RUN;
+/*
+- Create al_mod
+*/
+title1 "Dataset al_mod";
+DATA al_mod;
+	Set HW1.Admit;
+	Where ActLevel = "MOD";
+RUN;
+PROC PRINT data = al_mod;
+RUN;
+/*
+- Without adding exact lib directory to the front of the newly created dataset
+	the dataset will be automatically saved to Work Library. However, after closing
+	the current session, the three new dataset will not be permanantly saved at
+	Work Library so we cannot find it, unless we re-run the program to re-create it.
+*/
+
+/*==============================Problem 3==============================*/
+/*----------------------------Problem 3 (a)----------------------------*/
+title1 "Patients with HIGH or MOD ActLevel and  pay a Fee within
+the range of [100, 130]";
+PROC PRINT data = HW1.Admit;
+	WHERE (ActLevel = "HIGH" OR ActLevel = "MOD") AND (Fee >= 100 AND Fee <= 130);
+RUN;
+
+/*----------------------------Problem 3 (b)----------------------------*/
+title1 "Patients whose names contains 'J' and 'R'";
+PROC PRINT data = HW1.Admit;
+	VAR ID Name Sex Age;
+	WHERE Name CONTAINS "J" and Name CONTAINS "R";
+RUN;
+
+/*----------------------------Problem 3 (c)----------------------------*/
+title1 "Female patients who pay a fee that is greater than $100";
+Data c;
+	Set HW1.Admit;
+	Label ActLevel = "Activity Level";
+	Format Fee DOLLAR8.2;
+RUN;
+PROC PRINT data = c label;
+	ID ID;
+	WHERE Sex = "F" AND Fee > 100;
+RUN;
+
+/*==============================Problem 4==============================*/
+title1 "Male patients who are at least 65 years old";
+Data HW1.OldMale;
+	Set HW1.Admit;
+	Label Fee = "Fee charged at the time of admission ($)";
+	WHERE Sex = "M" AND Age >= 65;
+	Format Height 6.2;
+RUN;
+PROC PRINT data=HW1.OldMale Label;
+RUN;
+```
+
+
 #OPTIONS
 - Syntax
 
