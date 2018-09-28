@@ -562,7 +562,7 @@ X^TX
 <p>we will try to resolve the ANOVA decomposition. Let <span class="math inline">\(z_i\)</span> be the residual after regressing <span class="math inline">\(x_{i2}\)</span> on <span class="math inline">\(x_{i1}\)</span>. That is <span class="math inline">\(x_{i2} = \alpha_0 + \alpha_1 x_{i1} + z_i\)</span>.</p>
 <p>Show that the sequential ANOVA decomposition for the model <span class="math inline">\(y_i = \gamma_0 + \gamma_1 x_{i1} + \gamma_2 z_i + \epsilon_i\)</span> does not change with the order in which <span class="math inline">\(x_{i1}\)</span> and <span class="math inline">\(z_i\)</span> are entered.</p>
 </blockquote>
-<p>From <strong>c</strong>, we know that <span class="math inline">\(\alpha_{0}+\alpha_{1}x_{i1}\)</span> is orthogonal to <span class="math inline">\(z_{i}\)</span>, so that <span class="math inline">\(x_{i1}\)</span> and <span class="math inline">\(z_{i}\)</span> are orthogonal to each other. Because <span class="math inline">\(\bar{x_1}=\bar{x_2}=0\)</span>, <span class="math inline">\(\bar{z}=-\alpha_0\)</span>.</p>
+<p>From <strong>c</strong>, we know that <span class="math inline">\(\alpha_{0}+\alpha_{1}x_{i1}\)</span> is orthogonal to <span class="math inline">\(z_{i}\)</span>, so that <span class="math inline">\(x_{i1}\)</span> and <span class="math inline">\(z_{i}\)</span> are orthogonal to each other. Because <span class="math inline">\(\bar{x_1}=\bar{x_2}=0\)</span>, <span class="math inline">\(\bar{z}=-\alpha_0\)</span>. And due to the definition of residual, <span class="math inline">\(\bar{z}=0=-\alpha_0\)</span>.</p>
 <ul>
 <li>Model 1: <span class="math inline">\(\mathbf{y}=\gamma_0+\gamma_1\mathbf{x_1}+\gamma_2\mathbf{z}+\mathbf\epsilon\)</span></li>
 </ul>
@@ -633,10 +633,26 @@ H_{Z_1}
   1 &amp; x_{n1} &amp; z_{n}
 \end{array}\right)
 \left(\begin{array}{c}
-  n &amp; 0 &amp; -n\alpha_0\\
+  n &amp; 0 &amp; 0\\
   0 &amp; \sum{{x_{i1}}^2} &amp; 0\\
-  -n\alpha_0 &amp; 0 &amp; \sum{{z_i}^2}
+  0 &amp; 0 &amp; \sum{{z_i}^2}
 \end{array}\right)^{-1}
+\left(\begin{array}{c}
+  1 &amp; \cdots &amp; 1\\
+  x_{11} &amp; \cdots &amp; x_{n1}\\
+  z_{1} &amp; \cdots &amp; z_{n}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  1 &amp; x_{11} &amp; z_{1}\\
+  \vdots &amp; \vdots &amp; \vdots\\
+  1 &amp; x_{n1} &amp; z_{n}
+\end{array}\right)
+\left(\begin{array}{c}
+  \cfrac{1}{n} &amp; 0 &amp; 0\\
+  0 &amp; \cfrac{1}{\sum{{x_{i1}}^2}} &amp; 0\\
+  0 &amp; 0 &amp; \cfrac{1}{\sum{{z_i}^2}}
+\end{array}\right)
 \left(\begin{array}{c}
   1 &amp; \cdots &amp; 1\\
   x_{11} &amp; \cdots &amp; x_{n1}\\
