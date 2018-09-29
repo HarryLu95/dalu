@@ -162,32 +162,6 @@ Must have basic knowledge of statistical concepts such as regression, time serie
 
 Some work experience using statistical concepts such as regression, time series, mixed model, Bayesian methods, clustering, etc., to analyze data and provide insights.
 
-##Dimensional Fund Advisors
-###Researcher
-> Applications close on November 10th at 11:59 pm
-
-The Research group at Dimensional is integral both in the successful day-to-day functioning of the firm and in helping develop Dimensional’s long-term strategy. The team produces high-quality, thought-leadership research on investments and financial markets that is of interest to and helps educate clients. Research is also involved in the design and development of the firm’s investment approach and the application of that approach through portfolio management and trading.
-
-We are seeking a PHD-level Researcher for our Austin and Charlotte offices to help deliver these key services. Researchers are expected to produce high-quality, academically grounded research to support and enhance our investment strategies and for client education. Research findings are shared through white papers and presentations in Dimensional seminars and conferences.
-
-**Responsibilities:**
-
-Duties and responsibilities include, but are not limited to:
-
-- Conduct rigorous empirical research related to portfolio structure and implementation, run historical simulations, perform regression, attribution and characteristics analysis, conduct econometric tests to evaluate the impact of different portfolio construction and implementation approaches on expected performance, costs and diversification of our investment strategies.
-- Work closely with our investment and sales team to develop investment solutions that meet our clients’ needs, goals and preferences in a reliable, cost effective, and transparent way.
-- Share our research findings through white papers and presentations at Dimensional seminars and conferences.
-- Discuss Dimensional’s investment philosophy, process, and strategies with clients and prospects.
-- Review the latest advances in the academic work on asset pricing to support and enhance our investment strategies and for client education.
-
-**Qualifications:**
-
-Candidates must have, or be near completion of a Ph.D. in a discipline such as finance, economics, mathematics, or statistics. Ideal candidates will have extensive experience doing empirical research with large datasets, a strong background in econometrics and statistics, strong programming skills in one or more languages such as R, SQL, SAS, Matlab, C++, or Fortran. The position requires an excellent ability to communicate financial and economic concepts, in both verbal and written form, and the ability to independently complete research projects, from idea generation to paper publication or strategy implementation. Strong candidates will also have exceptional attention to detail as well as imagination and creativity.
-
-When attaching a resume/CV, please also include a cover letter, job market paper, and letters of recommendation. If unable to upload, send documents to phdrecruiting@dimensional.com.
-
-It is the policy of the Company to provide equal employment opportunity for all applicants and employees. The Company does not unlawfully discriminate on the basis of race, color, religion, creed, sex, gender, gender identity, gender expression, national origin, age, disability, genetic information, ancestry, medical condition, marital status, covered veteran status, citizenship status, sexual orientation, or any other protected status. This policy applies to all areas of employment including recruitment, hiring, training, job assignment, promotion, compensation, benefits, transfer, discipline, termination, and social and recreational programs.
-
 ##Raymond James Financial
 ###2019 Summer Internship Development Program- Carillon Tower Advisers-Data Insights & Marketing Analytics Intern
 > Applications close on January 31st at 11:59 pm
