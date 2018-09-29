@@ -70,6 +70,11 @@ ul {font-size: 16px; color: black;}
     - [Question 1](CU/5030/HW2-Q1.html)
     - [Question 2](CU/5030/HW2-Q2.html)
     - [Question 3](CU/5030/HW2-Q3.html)
+3. Homework 3
+    - [Question 1](CU/5030/HW3-Q1.html)
+    - [Question 2](CU/5030/HW3-Q2.html)
+    - [Question 3](CU/5030/HW3-Q3.html)
+    - [Question 4](CU/5030/HW3-Q4.html)
 
 ##Labs
 1. Lab 1
@@ -85,6 +90,11 @@ ul {font-size: 16px; color: black;}
 3. Lab 3
     - [PDF](CU/5030/Lab3.pdf)
     - [RMarkdown](CU/5030/Lab3.Rmd) (.Rmd)
+
+##Exams
+- [Practice Midterm 1.1](CU/5030/Midterm1_1_Fall2017.pdf), Fall 2017 Midterm 1 - 1
+- [Practice Midterm 1.2](CU/5030/Midterm1_2_Fall2017.pdf), Fall 2017 Midterm 1 - 2
+- [Midterm Formulae](CU/5030/Formulae.pdf)
 
 ---
 

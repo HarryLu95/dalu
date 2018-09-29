@@ -19,10 +19,15 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -91,6 +96,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -165,6 +173,107 @@ $(document).ready(function () {
 
 
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
 
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -234,7 +343,8 @@ $(document).ready(function () {
 <style>
 h1 {font-size: 28px; color: black; font-weight: bold; text-align: left;}
 h1.title {color: black; text-align: center;}
-h2 {font-size: 20px; color: black; font-weight: normal; font-style: italic;}
+h2 {font-size: 20px; color: black; font-weight: normal; font-style: normal;}
+h3 {font-size: 20px; color: black; font-weight: normal; font-style: italic;}
 p {font-size: 16px; color: black;}
 ol {font-size: 16px; color: black;}
 ul {font-size: 16px; color: black;}
@@ -245,9 +355,412 @@ ul {font-size: 16px; color: black;}
 <div id="axtria" class="section level2">
 <h2><span class="header-section-number">1.1</span> Axtria</h2>
 <ul>
-<li>9.20 first interview [fail]</li>
+<li>9.20 first interview</li>
 </ul>
+</div>
+<div id="deloitte" class="section level2">
+<h2><span class="header-section-number">1.2</span> Deloitte</h2>
+<div id="deloitte-risk-and-financial-advisory-associate---customer-experience-measurement-summerfall-2019" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Deloitte Risk and Financial Advisory Associate - Customer Experience Measurement (Summer/Fall 2019)</h3>
+<blockquote>
+<p>Applications close on October 4th at 7:55 pm</p>
+</blockquote>
+<p><strong>Customer Experience Measurement Consultant</strong></p>
+<p>Like to travel? Want an opportunity to use your excellent judgement, analytical abilities, and utilize your knowledge in the hospitality industry to serve as a quality consultant? At Deloitte, we provide enhanced brand and reputation risk management services to our clients. As a Customer Experience Measurement Consultant, which involves 100% field-based travel, you will use your expertise to lead quality-assurance examinations for brand assurance programs. You will be our clients’ eyes and ears, offering them information and feedback on their customers’ experience.</p>
+<p><strong>Work you’ll do</strong></p>
+<p>Motivated and ambitious, you will relish the opportunity to travel and work independently as you develop and deliver important summary presentations of evaluation findings to key client executives. Able to lead discussions with clients on business priorities, you will work closely with them to learn about their business, uncover their needs and help execute a program that helps deliver a more engaging, memorable customer experience.</p>
+<p><strong>The team</strong></p>
+<p>We help our clients protect their brands, deepen their customers’ advocacy, and strengthen their reputation through our end-to-end approach to Customer Experience Measurement. Our brand audit capabilities allows us to analyze consistency in numerous brands across different territories to provide property-level data and big picture insights to our clients. Our global capabilities position means we can help our clients minimize the risks to their brand and reputation. Learn more about the team at Deloitte</p>
+<p><strong>Qualifications</strong></p>
+<p>Required:</p>
+<ul>
+<li>BA/BS degree in Hospitality or related fields</li>
+<li>Proficiency with all current word processing, spreadsheet, and presentation creation tools</li>
+<li>Experience working independently on multiple projects, while adhering to strict deadlines</li>
+<li>Excellent communication and analytical skills and be able to develop and present examination results in a friendly, empathetic and helpful manner</li>
+<li>Demonstrated ability to exercise discretion and independent judgment by using industry knowledge and fully comprehending clients’ business models and needs</li>
+<li>Must be prepared to travel extensively throughout any region or country required by the client (100%, 52 weeks per year)</li>
+<li>Ability to obtain valid driver’s license</li>
+<li>Must reside in close proximity to a major international airport ( &lt; 50 Miles) Preferred</li>
+<li>Strong academic track record (minimum GPA of 3.2)</li>
+<li>Internship or minimum one year hospitality, tourism, retail or other customer service experience</li>
+</ul>
+<p><strong>How you’ll grow</strong></p>
+<p>At Deloitte, we believe in professional development and helping our people grow. We offer learning opportunities to help you sharpen your skills in addition to hands-on experience in the global, fast-changing business world. We support the development of leadership and technical skills through leading-edge learning development solutions. When you join, you’ll participate in Welcome to Deloitte, a two-day orientation followed by the New Hire Seminar where you will be introduced to many of the fundamental aspects of your upcoming journey.</p>
+<p><strong>Benefits</strong></p>
+<p>At Deloitte, we know that great people make a great organization. We value our people and offer employees a broad range of benefits.</p>
+<p><strong>Deloitte’s culture</strong></p>
+<p>Our positive and supportive culture encourages our people to do their best work every day. We celebrate individuals by recognizing their uniqueness and offering them the flexibility to make daily choices that can help them to be healthy, centered, confident, and aware. We offer well-being programs and are continuously looking for new ways to maintain a culture where our people excel and lead healthy, happy lives. Learn more about Life at Deloitte.</p>
+<p><strong>Corporate citizenship</strong></p>
+<p>Deloitte is led by a purpose: to make an impact that matters. This purpose defines who we are and extends to relationships with our clients, our people, and our communities. We believe that business has the power to inspire and transform. We focus on education, giving, skill-based volunteerism, and leadership to help drive positive social impact in our communities. Learn more about Deloitte’s impact on the world.</p>
+<p><strong>Recruiter tips</strong></p>
+<p>We want job seekers exploring opportunities at Deloitte to feel prepared and confident. To help you with your interview, we suggest that you do your research: know some background about the organization and the business area you’re applying to. We also suggest that you brush up on your interviewing skills and practice discussing your experience and job history with a family member, friend, or mentor. Check out recruiting tips from Deloitte professionals.</p>
+<p><strong>How to apply</strong></p>
+<ol style="list-style-type: decimal">
+<li>Handshake application: When applying through Handshake, you will need to submit your cover letter, resume, and unofficial transcripts. Please submit your resume and unofficial transcripts on both the campus career center as well as on the Deloitte career site. You may use the following naming convention when naming your documents First,</li>
+<li>Deloitte website: In addition to applying through Handshake, you are also required to apply through the Deloitte website for legal purposes. Below are the steps to apply for this position:</li>
+<li>Go to <a href="https://jobs2.deloitte.com" class="uri">https://jobs2.deloitte.com</a></li>
+<li>Enter the keyword “S19NATEF20JULTB-LRA” to search for the job posting.</li>
+<li>Complete profile.</li>
+</ol>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Once you’ve completed your candidate profile on our website you will be prompted to complete an online application several days after. Please complete that upon receipt.</li>
+<li>Additionally please complete the following survey, <a href="http://talent.force.com/event/checkin?eid=a0T1W0000063ygKUAQ&amp;SC=Multi+School+Event" class="uri">http://talent.force.com/event/checkin?eid=a0T1W0000063ygKUAQ&amp;SC=Multi+School+Event</a></li>
+</ol>
+<p>As used in this document, “Deloitte Risk and Financial Advisory” means Deloitte &amp; Touche LLP, which provides audit and risk advisory services; Deloitte Financial Advisory Services LLP, which provides forensic, dispute, and other consulting services; and its affiliate, Deloitte Transactions and Business Analytics LLP, which provides a wide range of advisory and analytics services. These entities are separate subsidiaries of Deloitte LLP. Please see www.deloitte.com/us/about for a detailed description of our legal structure. Certain services may not be available to attest clients under the rules and regulations of public accounting.</p>
+<p>All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, age, disability or protected veteran status, or any other legally protected basis, in accordance with applicable law.</p>
+</div>
+</div>
+<div id="mckinsey-company" class="section level2">
+<h2><span class="header-section-number">1.3</span> McKinsey &amp; Company</h2>
+<div id="data-scientist" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Data Scientist</h3>
+<blockquote>
+<p>Applications close on October 7th at 11:59 pm</p>
+</blockquote>
+<p><strong>Who You’ll Work With</strong></p>
+<p>You will work with an Advanced Analytics team in one of our global offices. Blending strategic thinking with hands-on practicality, our teams of consultants and experts work to develop and implement complex analytics strategies that solve our clients’ most critical problems.</p>
+<p>Our teams are made up of analysts, mathematicians, data scientists, designers, software engineers, product managers, client development managers and general managers with a base of expertise in a function or industry. Data Scientists are staffed on engagements or product teams and are expected to leverage expertise to solve some of the most pressing and complex issues at clients.</p>
+<p><strong>What You’ll Do</strong></p>
+<p>You will perform statistical data analyses, data mining and optimizations using multiple tools and techniques to get insights from large complex data sets.</p>
+<p>In this role you will conduct hands-on rigorous quantitative analysis, including getting the data, cleaning it (when necessary / relevant), and exploring it for accuracy. You’ll deploy statistical modeling and optimization techniques most suited for the business problem (using R, Python, SQL, and/or other relevant tools). With support, you’ll advise client teams on analytic methodologies and approaches to address their specific needs, including discussing data collection, architecture, associated costs and trade-offs, and recommendations.</p>
+<p>You’ll interpret outputs of statistical models and results to translate input from quantitative analyses into specific and actionable business recommendations and implications. This includes providing detailed documentation of modeling techniques, methodologies, assumptions made and process steps.</p>
+<p>You’ll manage delivery of analytical solutions to client via written and verbal presentations, including capability building as appropriate. You may advance McKinsey’s overall knowledge base by providing analytical rigor and problem solving to our proprietary knowledge investments.</p>
+<p>You’ll begin to own an analytics work stream, manage respective tasks and client project team members/experts, while building client relationships. You’ll support analytics recruiting efforts (e.g., attends recruiting events, participates in WebExes, etc.)</p>
+<p><strong>Qualifications</strong></p>
+<ul>
+<li>University student in their final year in a STEM related field (Ops Research, Statistics, Applied Math, Engineering, Business Analytics); expected graduation date of December 2018 or May 2019. Or, currently completing your first year in a non-business, 2-year masters program and have less than 2 years of work experience</li>
+<li>Deep understanding of statistical and predictive modeling concepts, machine-learning approaches, clustering and classification techniques, and recommendation and optimization algorithms</li>
+<li>Experience in one or more programming languages (R, Python, C++, etc.)</li>
+<li>Ability to easily understand the complex algorithm and logic to process data</li>
+<li>Experience working with a large volume of data with ability to solve performance issues</li>
+<li>Practitioner of statistical data quality procedures or test driven approach for quality assurance</li>
+<li>Basic business intuition and clear expertise in analyses with the ability to describe analytic processes, including when and why specific approaches are favored</li>
+<li>Excellent communication and presentation skills with an ability to visualize and report insights creatively in variety of formats to various stakeholders</li>
+<li>Ability to deliver in deadline-driven environment</li>
+<li>Team player with a passion for coaching colleagues and clients</li>
+<li>Willingness to travel up to 80%</li>
+</ul>
+<p>In order to be properly considered, please apply direct to the role: <a href="https://www.mckinsey.com/careers/search-jobs/jobs/data-scientist-university-students-2736" class="uri">https://www.mckinsey.com/careers/search-jobs/jobs/data-scientist-university-students-2736</a></p>
+</div>
+</div>
+<div id="ibm" class="section level2">
+<h2><span class="header-section-number">1.4</span> IBM</h2>
+<div id="entry-level-data-scientist---178769br---fall-2018" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Entry-Level Data Scientist - 178769BR - (Fall 2018)</h3>
+<blockquote>
+<p>Applications close on November 30th at 6:55 pm</p>
+</blockquote>
+<p>At IBM we have an amazing opportunity to transform the world with cognitive technology. By using the vast amounts of information available today to identify new patterns and make new discoveries, we are helping cities become smarter, hospitals transform patient care, financial institutions minimize risk, and pharmaceuticals find cures for rare diseases. Join the forward-thinking teams at IBM solving some of the world’s most complex problems – there is no better place to grow your career!</p>
+<p>Entry-Level Data Scientists extract knowledge or insights from structured or unstructured data. They draw upon the practice of data analysis, using predictive analytics, data mining, pattern recognition, data modeling, machine learning and various statistical methods in order to solve large scale optimization problems and to understand the meaning behind vast data sets</p>
+<p>Entry-Level Data Scientists are in demand across IBM’s growth areas. You’ll be matched and deployed to a team in a strategic business, based on your offered location and fit.</p>
+<p><strong>What You’ll Do:</strong></p>
+<ul>
+<li>You will implement and validate predictive models, and create and maintain statistical models with a focus on big data.</li>
+<li>You’ll communicate with internal and external clients to understand business needs and provide analytical solutions.</li>
+<li>You will use statistical concepts such as regression, time series, mixed model, Bayesian methods, clustering, etc., to analyze data and provide insights.</li>
+<li>You’ll work in an Agile, collaborative environment, partnering with other scientists, engineers, and database administrators of all backgrounds and disciplines to bring analytical rigor and statistical methods to the challenges of predicting behaviors.</li>
+</ul>
+<p><strong>Who You Are:</strong></p>
+<ul>
+<li>You are great at solving problems, debugging, troubleshooting, and designing &amp; implementing solutions to complex technical issues.</li>
+<li>You thrive on teamwork and have excellent verbal and written communication skills.</li>
+<li>You have strong technical and analytical abilities, a knack for driving impact and growth, and some experience with programming/scripting in a language such as Java or Python.</li>
+<li>You have a basic understanding of statistical programming in a language such as R, SAS, or Python.</li>
+<li>You have an interest in, understanding of, or experience with Design Thinking Methodology</li>
+<li>You have an interest in, understanding of, or experience with Agile development methodology</li>
+</ul>
+<p><strong>Required Technical and Professional Expertise</strong></p>
+<p>Must have basic knowledge of statistical concepts such as regression, time series, mixed model, Bayesian methods, clustering, etc., to analyze data and provide insights.</p>
+<p><strong>Preferred Tech and Prof Experience</strong></p>
+<p>Some work experience using statistical concepts such as regression, time series, mixed model, Bayesian methods, clustering, etc., to analyze data and provide insights.</p>
+</div>
+</div>
+<div id="dimensional-fund-advisors" class="section level2">
+<h2><span class="header-section-number">1.5</span> Dimensional Fund Advisors</h2>
+<div id="researcher" class="section level3">
+<h3><span class="header-section-number">1.5.1</span> Researcher</h3>
+<blockquote>
+<p>Applications close on November 10th at 11:59 pm</p>
+</blockquote>
+<p>The Research group at Dimensional is integral both in the successful day-to-day functioning of the firm and in helping develop Dimensional’s long-term strategy. The team produces high-quality, thought-leadership research on investments and financial markets that is of interest to and helps educate clients. Research is also involved in the design and development of the firm’s investment approach and the application of that approach through portfolio management and trading.</p>
+<p>We are seeking a PHD-level Researcher for our Austin and Charlotte offices to help deliver these key services. Researchers are expected to produce high-quality, academically grounded research to support and enhance our investment strategies and for client education. Research findings are shared through white papers and presentations in Dimensional seminars and conferences.</p>
+<p><strong>Responsibilities:</strong></p>
+<p>Duties and responsibilities include, but are not limited to:</p>
+<ul>
+<li>Conduct rigorous empirical research related to portfolio structure and implementation, run historical simulations, perform regression, attribution and characteristics analysis, conduct econometric tests to evaluate the impact of different portfolio construction and implementation approaches on expected performance, costs and diversification of our investment strategies.</li>
+<li>Work closely with our investment and sales team to develop investment solutions that meet our clients’ needs, goals and preferences in a reliable, cost effective, and transparent way.</li>
+<li>Share our research findings through white papers and presentations at Dimensional seminars and conferences.</li>
+<li>Discuss Dimensional’s investment philosophy, process, and strategies with clients and prospects.</li>
+<li>Review the latest advances in the academic work on asset pricing to support and enhance our investment strategies and for client education.</li>
+</ul>
+<p><strong>Qualifications:</strong></p>
+<p>Candidates must have, or be near completion of a Ph.D. in a discipline such as finance, economics, mathematics, or statistics. Ideal candidates will have extensive experience doing empirical research with large datasets, a strong background in econometrics and statistics, strong programming skills in one or more languages such as R, SQL, SAS, Matlab, C++, or Fortran. The position requires an excellent ability to communicate financial and economic concepts, in both verbal and written form, and the ability to independently complete research projects, from idea generation to paper publication or strategy implementation. Strong candidates will also have exceptional attention to detail as well as imagination and creativity.</p>
+<p>When attaching a resume/CV, please also include a cover letter, job market paper, and letters of recommendation. If unable to upload, send documents to <a href="mailto:phdrecruiting@dimensional.com">phdrecruiting@dimensional.com</a>.</p>
+<p>It is the policy of the Company to provide equal employment opportunity for all applicants and employees. The Company does not unlawfully discriminate on the basis of race, color, religion, creed, sex, gender, gender identity, gender expression, national origin, age, disability, genetic information, ancestry, medical condition, marital status, covered veteran status, citizenship status, sexual orientation, or any other protected status. This policy applies to all areas of employment including recruitment, hiring, training, job assignment, promotion, compensation, benefits, transfer, discipline, termination, and social and recreational programs.</p>
+</div>
+</div>
+<div id="raymond-james-financial" class="section level2">
+<h2><span class="header-section-number">1.6</span> Raymond James Financial</h2>
+<div id="summer-internship-development-program--carillon-tower-advisers-data-insights-marketing-analytics-intern" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> 2019 Summer Internship Development Program- Carillon Tower Advisers-Data Insights &amp; Marketing Analytics Intern</h3>
+<blockquote>
+<p>Applications close on January 31st at 11:59 pm</p>
+</blockquote>
+<p><strong>Department Description:</strong></p>
+<p>Carillon Tower Advisers is a global asset-management company that combines the exceptional insight and agility of individual investment teams with the strength and stability of a full-service firm. We believe providing a lineup of institutional-class portfolio managers — spanning a wide range of disciplines and investing vehicles — is the best way to help investors seek their long-term financial goals.</p>
+<p><strong>Job Summary:</strong></p>
+<p>Under general supervision, uses skills gained through training and experience to assist with specific projects within an assigned functional area for a specified period of time. Follows established procedures to perform tasks and receives general guidance and direction to perform other work with substantial variety and varied complexity. Some judgment is required to adapt procedures, processes and techniques to apply to more complex assignments. Resolves routine questions and problems and refers more complex issues to a higher level. Routine contact with internal and external customers may be required to exchange basic information.</p>
+<p><strong>Essential Duties and Responsibilities:</strong></p>
+<ul>
+<li>Specified projects and varied assignments.</li>
+<li>Operates standard office equipment and uses required software applications.</li>
+<li>Assists in conducting market research projects and analyzing and reporting results.</li>
+<li>Gathers information and data on competitors’ products, services and marketing techniques.</li>
+<li>Assists in reviewing and analyzing the service/product posture of assigned functional area.</li>
+<li>Assists in maintaining a market intelligence database. Maintains records and files on research projects.</li>
+<li>Performs other duties and responsibilities as assigned.</li>
+</ul>
+<p><strong>Knowledge, Skills, and Abilities:</strong></p>
+<p><strong>Knowledge of:</strong></p>
+<ul>
+<li>Fundamental concepts, practices and procedures of a professional office environment.</li>
+<li>Basic concepts, principles and practices of an assigned business unit.</li>
+</ul>
+<p><strong>Skill in:</strong></p>
+<ul>
+<li>Operating standard office equipments and using, or have the ability to learn, required software applications.</li>
+</ul>
+<p><strong>Ability to:</strong></p>
+<ul>
+<li>Organize and prioritize multiple tasks and meet deadlines.</li>
+<li>Communicate effectively, both orally and in writing.</li>
+<li>Work independently as well as collaboratively within a team environment.</li>
+<li>Provide a high level of customer service.</li>
+<li>Establish and maintain effective working relationships</li>
+</ul>
+<p><strong>Educational/Previous Experience Requirements:</strong></p>
+<ul>
+<li>Any equivalent combination of experience, education, and/or training approved by Human Resources.</li>
+<li>Rising Junior or Senior currently enrolled in an accredited university.</li>
+<li>MIS, Data Insights, Marketing, or Finance Majors preferred.</li>
+<li>3.0 GPA minimum preferred.</li>
+</ul>
+<p><strong>Licenses/Certifications:</strong> None Required.</p>
+</div>
+</div>
+<div id="indus-valley-partners" class="section level2">
+<h2><span class="header-section-number">1.7</span> Indus Valley Partners</h2>
+<div id="junior-business-analyst" class="section level3">
+<h3><span class="header-section-number">1.7.1</span> Junior Business Analyst</h3>
+<blockquote>
+<p>Applications close on October 4th at 11:59 pm</p>
+</blockquote>
+<p>Indus Valley Partners (IVP) is currently looking for entry-level Junior Business Analysts to join our team. This is an exciting opportunity to work with an established technology solutions and consultancy in the alternative investment financial services industry.</p>
+<p>Our Junior Business Analysts (JBA) are involved in all aspects of the project lifecycle and work hands on with client stakeholders during the consulting, design, and production stages of each engagement.</p>
+<p><strong>Responsibilities</strong></p>
+<ul>
+<li>Serve as the “liaison” by gathering and analyzing business requirements from client and user groups and then communicating these requirements with development and software engineers.</li>
+<li>Learn and develop understanding of IVP solutions and where they fit in the client workflow</li>
+<li>Hone client skills by gathering requirements from client discussions, interviews, testing, analysis, and other forms of requirements discovery</li>
+<li>Document and present requirements effectively</li>
+<li>Work closely in coordination with development teams to implement and develop technological solutions that satisfy client needs</li>
+<li>Iterate on designs based on user feedback and UAT testing until solutions effectively meet end user requirements</li>
+<li>Lead the implementation cycle, drive decisions, track and document issues, and assist in managing and meeting tight deadlines while working with cross-functional teams to see projects from concept to completion</li>
+<li>Ability to discuss, manage, document, and design decisions to varied audiences</li>
+</ul>
+<p><strong>Qualifications</strong></p>
+<ul>
+<li>A demonstrable interest in both finance and technology with a high degree of computer literacy</li>
+<li>A self-starting, entrepreneurial attitude, willing to take initiative and work through all obstacles to accomplish tasks</li>
+<li>Outstanding communication is a must – presentation, documentation, and interpersonal skills are critical for the role</li>
+<li>Strong analytical and quantitative problem solving ability, able to think, and act decisively</li>
+<li>Ability to thrive when working with multiple groups in a variety of settings with ability to listen, articulate positions, advocate designs, and affect change</li>
+<li>Bachelor’s degree with strong academic background</li>
+<li>Must be open to travel</li>
+<li>Understanding of alternative investments and the financial services industry – preferred</li>
+<li>Proficient with Microsoft Excel, Word, PowerPoint (databases and knowledge of SQL is also preferred) Indus Valley Partners offers a competitive salary and benefits package.</li>
+</ul>
+<p><strong>About Indus Valley Partners (IVP)</strong></p>
+<p>IVP is a technology solutions and consultancy focused on the alternative asset management industry. We assist over 135 alternate asset managers including 25 of the top 50 global hedge funds, and everyday our products and services cover over $1 Trillion in assets with our client base representing over a quarter of all current hedge fund assets under management. We help fund managers generate alpha by analyzing their portfolio data to generate actionable insights, institutionalizing their fund platforms and reducing their non-investment risks.</p>
+<p>Founded in 2000, we currently have 500+ professionals, working across 4 time-zones with over 16 years of in-depth domain expertise and insight. To learn more please visit our website at <a href="http://www.indusvalleypartners.com" class="uri">http://www.indusvalleypartners.com</a>.</p>
+</div>
+</div>
+<div id="procter-gamble-pg" class="section level2">
+<h2><span class="header-section-number">1.8</span> Procter &amp; Gamble (P&amp;G)</h2>
+<div id="business-analytics-manager" class="section level3">
+<h3><span class="header-section-number">1.8.1</span> Business Analytics Manager</h3>
+<blockquote>
+<p>Applications close on December 21st at 11:59 pm</p>
+</blockquote>
+<p>Are you an effective communicator, self-motivated, and able to drive insights into actions that improve business results? You’ll need to mine terabytes of data, derive actionable insights, and translate complex results or algorithms into simple conclusions that will empower others. You are the primary evangelist for the power of predictive analysis and developing business cases to illustrate the “step-change” in decision-making. Business knowledge, interpersonal, and communication skills are therefore a need to thrive in a multi-functional leadership team.</p>
+<p>We are currently looking for Managers for two roles:</p>
+<p><strong>Data Analyst</strong></p>
+<ul>
+<li>You will deliver analytic insights in several business domains (consumer, customer, digital, etc…). With a combination of analytical expertise, data and system knowledge and business acumen, you’ll answer and anticipate critical business questions and opportunities and deliver critical insights. You’ll use data visualization (Spotfire), and analytic tools (R, SAS, JMP, Python, etc) to grasp the business building insights in our mountains of data.</li>
+</ul>
+<p><strong>Trade Spend Analyst</strong></p>
+<ul>
+<li>You will optimize store promotion plans using multiple data sources and analytical models. You’ll perform financial/marketing/promotion analytics and make recommendations back to key partners. You should understand when, how, and where to directly use, to adjust, or to estimate Price &amp; Promotion data. You’ll leverage data visualization (KNIME, RapidMiner, Tableau, Spotfire, etc.), and analytic tools (R, Python, C++, Java, Scala, etc.) to grasp the business building insights in our mountains of data.</li>
+</ul>
+<p><strong>OUR IT</strong></p>
+<p>IT is where business, innovation and technology integrate to build a competitive advantage for us. Our mission is clear – we deliver IT to help win with consumers. Are you a diverse business leader who applies IT mastery to deliver groundbreaking, technology-driven business models and capabilities? Whether your role is to build an IT innovation strategy for a business, protect our critical information systems and assets, or lead a strategic supplier in our state of the art shared services organization, your technical mastery will be recognized and rewarded. Your real passion for the industry will be further nurtured by our culture of continued learning and growth. Your career in IT builds change in leadership and influence skills, breadth of experience across multiple businesses, and depth of expertise in areas like Application &amp; Integration, Infrastructure, Data &amp; Analytics, and Security &amp; Risk.</p>
+<p><strong>WHAT ABOUT P&amp;G?</strong></p>
+<p>P&amp;G serves consumers around the world with one of the strongest portfolios of trusted, quality, leadership brands, including Always®, Ambi Pur®, Ariel®, Bounty®, Charmin®, Crest®, Dawn®, Downy®, Fairy®, Febreze®, Gain®, Gillette®, Head &amp; Shoulders®, Lenor®, Olay®, Oral-B®, Pampers®, Pantene®, SK-II®, Tide®, Vicks®, and Whisper®. The P&amp;G community includes operations in approximately 70 countries worldwide.</p>
+<p>All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, national origin, protected veteran status, disability status, age, sexual orientation, gender identity and expression, marital status, citizenship, HIV/AIDS status or any other legally protected factor.</p>
+<p>Immigration sponsorship is not available for this position. Applicants for U.S. based positions are generally required to be eligible to work in the U.S. without the need for current or future sponsorship. Except in rare situations based on Procter &amp; Gamble’s sole discretion. Procter &amp; Gamble does not sponsor candidates for permanent residency. Any exceptions would be based on the Company’s specific business needs at the time and place of recruitment as well as the particular qualifications of the individual.</p>
+<p>Procter &amp; Gamble participates in e-verify as required by law.</p>
+<p>Qualified individuals will not be disadvantaged based on being unemployed.</p>
+</div>
+<div id="associate-information-technology-manager" class="section level3">
+<h3><span class="header-section-number">1.8.2</span> Associate Information Technology Manager</h3>
+<blockquote>
+<p>Applications close on December 22nd at 12:55 am</p>
+</blockquote>
+<p><strong>General Description:</strong></p>
+<p>As an entry-management level Associate IT Manager in P&amp;G Information Technology function, you will be assigned in a specific business domain (e.g. Digital Marketing, Supply Chain, Sales, IT Infrastructure etc.), partnering with multi-functional &amp; vendor resources to resolve specific business problems by applying information technology. You will be leading the effort of business process transformation, project management and application lifecycle management.</p>
+<p><strong>Key Responsibilities:</strong></p>
+<p><strong>Business Solution Delivery</strong></p>
+<p>Lead business transformation and solution delivery that supports well-defined business objectives by leveraging on technology. Effectively influence business leadership alignment on the transformation.</p>
+<ul>
+<li>Understand and analyze existing business processes.</li>
+<li>Understands business requirements and effectively collaborate with multi-function team to translate business needs and process into technical requirements and specifications.</li>
+<li>Be accountable for the value /success of the final solution as proposed in the business case</li>
+</ul>
+<p><strong>Project Management</strong></p>
+<ul>
+<li>Lead a project team with multi-function and vendor resources. Be accountable for project success by strong project management skill, e.g. scope, budget, time and quality management.</li>
+<li>Own project success criteria and business value realization.</li>
+<li>Manage the delivery of requirements documents, use-case documentation, prototypical user experiences, test plans, and rollout communications</li>
+</ul>
+<p><strong>Application Management &amp; Enterprise Architecture</strong></p>
+<ul>
+<li>Provide technical and thought leadership on system architecture, application integration and development initiatives. Actively participates in the development of technical architecture for assigned systems and projects</li>
+<li>Connect externally, evaluate new technologies and identify the benefit business case for using new technologies.</li>
+<li>Manage complex software development and integration technology projects in a fast paced, constantly changing dynamic environment.</li>
+<li>Manage IT vendor partners to ensure timely, quality and cost effective delivery of solution and services.</li>
+</ul>
+<p><strong>Qualifications</strong></p>
+<ul>
+<li>Strong team leadership and ability to collaborate effectively with both internal and external resources at all levels of the organization (working effectively with peers, vendor-partners, senior management, multi-functional team both internally and externally).</li>
+<li>Strong problem solving skills, technical/analytical skills and ability to multi-task and balance different sets of priorities.</li>
+<li>Ability to engage in senior level technology decision discussions related to business value and the end-to-end information technology lifecycle.</li>
+<li>Demonstrated competency/mastery in one or more fields of IT technology (ERP, Application Management, Database Engineering, IT Infrastructure, Cyber Security, CRM, Mobility and others) and have demonstrated learning agility to learn and apply the latest technologies.</li>
+<li>Proficient written and oral Mandarin and English communication skills are required in this global environment</li>
+</ul>
+</div>
+</div>
+<div id="wayfair" class="section level2">
+<h2><span class="header-section-number">1.9</span> Wayfair</h2>
+<div id="business-analyst---winter-2018-or-summer-2019-full-time-start" class="section level3">
+<h3><span class="header-section-number">1.9.1</span> Business Analyst - Winter 2018 or Summer 2019 Full-Time Start</h3>
+<blockquote>
+<p>Applications close on December 1st at 11:59 pm</p>
+</blockquote>
+<p>Wayfair believes everyone should live in a home they love. Through technology and innovation, Wayfair makes it possible for customers to quickly and easily find exactly what they want from furnishings, décor, home improvement, housewares and more.</p>
+<p>We are always looking for imaginative, analytical, and adaptable people to join our home team. You’ll find a dynamic atmosphere where learning and growth opportunities are abundant, and hard work and results are rewarded. We’re a diverse community of innovators, risk-takers, and trailblazers who know that our unique perspectives make us stronger, smarter, and well-positioned for success. Every voice, every perspective matters. We are proud to be an equal opportunity employer.</p>
+<p>At Wayfair, you can explore your potential outside of the classroom and take the lead on high-impact projects. You’ll find autonomy, mentorship, and development opportunities in an open and collaborative environment. If you’re looking for a challenging and fulfilling career, make yourself at home.</p>
+<p>Wayfair generated $5.7 billion in net revenue for the twelve months ended June 30, 2018. Headquartered in Boston, Massachusetts with operations throughout North America and Europe, the company employs more than 9,700 people.</p>
+<p><strong>THE OPPORTUNITY</strong></p>
+<p>Wayfair is seeking analytical, entrepreneurial, and action-oriented candidates for full-time Business Analyst roles with start dates in Winter 2018 or Summer 2019. Analysts will directly impact Wayfair’s growth strategy and competitive positioning by leveraging data-driven analyses and innovative approaches to drive results for internal and external business partners. Successful Analysts are quantitatively-oriented, endlessly curious, and thrive in fast-paced and collaborative environments. This is an ideal launching point for candidates who are interested in entering the tech space and joining a high-growth company that develops and invests in future leaders.</p>
+<p>Wayfair hires Business Analysts into eight core business functions that fall under the categories of Business and Strategic Analysis, Customer Growth and Product, Operations and Analytics, and Talent &amp; Finance. Function placement is determined through the application and interview process and is dependent on a combination of interest, skills and experience, and growth potential. <strong>When applying, please indicate your top choices for functional areas of interest (in order of preference). If we notice a stronger alignment for a team other than those indicated in the application, we will also consider you for that opportunity.</strong></p>
+<p><strong>Functional areas and potential team placements include:</strong></p>
+<p><strong>1. BUSINESS AND STRATEGIC ANALYSIS</strong></p>
+<p><strong>1.1 Competitive Intelligence</strong></p>
+<p>Competitive Intelligence focuses on optimizing Wayfair’s strategic positioning within its rapidly evolving competitive landscape. This cross-functional and entrepreneurial team uses Big Data and cutting edge advanced analytics capabilities to build products and identify insights that impact every major business function at the company; the unique, external market perspective brought by this team complements our robust internal data asset to Wayfair to make more informed decisions. Past Analyst projects have included: developing first-ever dynamic visualizations that enable category managers to optimize our product selection, creating products that track competitor movements and assess relative strategic importance over time, and collaborating with our Data Science team to build multiple machine-learning algorithms to match competitor products.</p>
+<p><strong>1.2 Strategy &amp; Profitability</strong></p>
+<p>At its core, the Strategy and Profitability team is focused on steering growth strategy and billion-dollar P&amp;L management across Wayfair’s product verticals by leveraging highly quantitative business analytics and cutting-edge data science techniques. This tight-knit team has a big appetite for bold ideas, a strong bias for action, and provides a distinct opportunity to drive high impact decisions with unique executive-level visibility. Analysts directly control Wayfair’s dynamic pricing and product sorting algorithms to manage the delicate tradeoff between short and long term profitability, while working cross-functionally to affect product selection, merchandising, operations, and marketing initiatives. Analysts leverage unique, proprietary, and massive datasets coupled with a constant flow of experimentation on consumer response to answer thorny strategic questions that guide go-to-market strategy. Strong candidates will be highly entrepreneurial, excited to analyze big data, and eager to engage as a thought leader while collaborating with a highly cross-functional group of business partners.</p>
+<p><strong>2. CUSTOMER GROWTH AND PRODUCT</strong></p>
+<p><strong>2.1 Customer Growth</strong></p>
+<p>The Customer Growth team fuels growth by introducing new customers to Wayfair and driving engagement from our loyal customer base. We drive profitable top line revenue by investing our marketing dollars where they will provide the greatest return for the business and leveraging our understanding of the customer to impact the overall business strategy. We work cross-functionally with Engineering, Product Management, and Data Science teams to build our own cutting-edge ad tech platforms and partner closely with leading companies in the tech space such as Google and Facebook to alpha-test new advertising products and influence their product innovations. As an Analyst, you’ll be assigned to a specific channel (e.g. Search, Display, Email, Social Media, TV/Online Video, etc.) and own it end-to-end. You’ll be tasked with managing a multimillion dollar budget, helping drive ad tech development, and devising new testing strategies to grow the business. Applying a test-and-learn approach, your day-to-day decisions will have a direct and measurable impact on the business.</p>
+<p><strong>2.2 Product Management</strong></p>
+<p>Operations Product Innovation (OPI) is the Product Management team for Wayfair Operations. We lead the design and delivery of technology solutions for the customer experience, supplier engagement, delivery network optimization, and warehouse logistics. By partnering with operations, analytics, and engineering we transform data into insights and deliver continuous value to our customers. You will be empowered to drive the end-to-end product management for technically complex strategies from ideation to implementation. This includes problem/opportunity identification, synthesizing project requirements, data analysis to inform prioritization, and iterative development. Strong candidates will possess a bias for action, have an insatiable curiosity when solving unique problems, and effectively collaborate cross-functionally.</p>
+<p><strong>3. OPERATIONS AND ANALYTICS</strong></p>
+<p><strong>3.1 Supply Chain &amp; Logistics</strong></p>
+<p>Wayfair’s Supply Chain organization is revolutionizing the customer experience through the development of a proprietary logistics network and optimization platform that manages inventory from the overseas factory to the customer’s front door. Teams include Inventory Planning Strategy, Product Performance, Product Availability, Small and Large Parcel Strategy, Custom Supply Chain, Global Delivery, and more. Strong candidate will possess strong business acumen, analytical horsepower, and an appetite for solving challenging business problems. This is a unique opportunity to help build another competitive advantage for Wayfair.</p>
+<p><strong>3.2 Supply Chain Analytics</strong></p>
+<p>Supply Chain Analytics sits at the center of Wayfair Logistics, using data and analytics to support strategic and operational decisions such as warehouse location optimization, network and transportation design, forecasting and capacity planning, and processes to reduce damages – all of which are critical to propelling Wayfair’s exponential business growth. This is a top investment area for Wayfair, a CEO focus, and a key strategic differentiator for the business. Team members are exposed to highly cross-functional projects and challenged in innovative thinking, business problem-solving, quantitative data analysis, predictive modeling, and analytic process development. Analysts will be rewarded with not just analytical, but well-rounded business experience to pursue a variety of career paths.</p>
+<p><strong>4. TALENT &amp; FINANCE</strong></p>
+<p><strong>4.1 People Analytics</strong></p>
+<p>The Talent team believes that our people are Wayfair’s greatest asset and biggest differentiator. As Wayfair grows, so too does the need to ensure our talent strategy and approach is best in class. The People Analytics team drives Wayfair’s strategy to attract, retain, and develop world class talent. Analysts will take a data driven approach to human capital and work closely with Wayfair leadership to improve the employee experience through data and raise the bar on organizational effectiveness. Strong candidates will demonstrate sound business acumen, analytical skills, and high EQ.</p>
+<p><strong>4.2 Finance</strong></p>
+<p>The Finance team sits at the intersection of Wayfair’s brands and functional teams and has unique access to the operation and decision-making of the entire business. Analysts will join a Finance Rotational Program that provides the opportunity to gain experience across several of Wayfair’s Strategic Finance teams. Throughout the course of the program, new hires will be embedded on several of Wayfair’s most impactful teams and work alongside senior leadership to drive insights for our growing business. Participating teams include Investor Relations, FP&amp;A, Operational Finance, B2B Operational Finance, Real Estate and Procurement, among others. Strong candidates will possess excellent organizational, quantitative, and analytical skills with a strong aptitude for problem-solving and the ability to make numbers come alive by clearly conveying complex information in a way that supports decision-making.</p>
+<p><strong>Qualifications:</strong></p>
+<ul>
+<li>BA/BS or Master’s degree earned by date of hire; preferably with strong quantitative focus</li>
+<li>Strong academic record</li>
+<li>Demonstrated leadership through campus involvement; former internship or work experience is a plus</li>
+<li>Exceptional problem-solving and analytical skills</li>
+<li>Creative and innovative approach to solving problems; a desire to make processes better</li>
+<li>Entrepreneurial spirit and a demonstrated self-starter mentality</li>
+<li>Ability to juggle multiple projects simultaneously</li>
+<li>Interest in working hard and being challenged in a fast-paced environment</li>
+<li>Strong written and verbal communication skills</li>
+<li>Positive, people-oriented, and enthusiastic attitude</li>
+<li>Proficient with MS Excel</li>
+<li>Experience with programming language (SQL or R) is a plus</li>
+</ul>
+</div>
+</div>
+<div id="ge" class="section level2">
+<h2><span class="header-section-number">1.10</span> GE</h2>
+<div id="digital-technology-leadership-program-dtlp" class="section level3">
+<h3><span class="header-section-number">1.10.1</span> 3150423 - Digital Technology Leadership Program (DTLP)</h3>
+<blockquote>
+<p>Applications close on October 2nd at 11:55 pm</p>
+</blockquote>
+<p><strong>Title: 3150423 - Digital Technology Leadership Program (DTLP)</strong></p>
+<p><strong>Business:</strong> GE Corporate</p>
+<p><strong>Function:</strong> Digital Technology</p>
+<p><strong>Location: Various US Locations</strong></p>
+<p><strong>About Us:</strong></p>
+<p>GE is the world’s Digital Industrial Company, transforming industry with software-defined machines and solutions that are connected, responsive and predictive. Through our people, leadership development, services, technology and scale, GE delivers better outcomes for global customers by speaking the language of industry.</p>
+<p><strong>Role Summary/Purpose:</strong></p>
+<p>The Digital Technology Leadership Program (DTLP) offers those with a passion to grow their leadership, business acumen, and technical skills while building a career with unlimited potential. Program members lead by doing, gaining real-world experience by working on important, challenging projects alongside some of the brightest technical minds in the world.</p>
+<p><strong>Qualifications/Requirements:</strong></p>
+<ul>
+<li>A Bachelor’s Degree in Computer Science, CIS, Computer Engineering, IT Security, ITM, Informatics, Information Science, Information Systems, Information Technology, MIS, Security and Risk Analysis or relevant STEM majors with experience in Software or IT experience</li>
+<li>Minimum cumulative 3.0/4.0 GPA or equivalent</li>
+<li>Graduating by May/June 2019</li>
+</ul>
+<p><strong>Eligibility Requirements:</strong></p>
+<ul>
+<li>Must be geographically mobile as requested by the business</li>
+<li>Legal authorization to work in the U.S. is required. We will not sponsor individuals for employment visas, now or in the future, for this job</li>
+</ul>
+<p><strong>To be considered for an interview you MUST ALSO apply through our website: www.ge.com/careers and search for Job# 3150423</strong></p>
+<p><strong>Desired Characteristics:</strong></p>
+<ul>
+<li>Strong analytical skills.</li>
+<li>Must be flexible and able to navigate an ever-changing work environment</li>
+<li>A strong commitment to a career in technology with a passion and aptitude for both software and information technology</li>
+<li>Up-to-date with current industry standards, trending software, and information technology development tools<br />
+</li>
+<li>Prior intern, co-op, or research experience in IT, software, or relevant area<br />
+</li>
+<li>Solves technical challenges through regular application of common design patterns, and ability to identify appropriate patterns for use in problem solving</li>
+<li>Ability to understand coding standards that meet and deliver desired functionality using the technology selected for the project<br />
+</li>
+<li>Strong customer focus, ability to understand the value proposition for the customer, and commitment to deliver the best value proposition<br />
+</li>
+<li>Able to engage positively across multiple departments to establish clarity, vision, and mutual trust to achieve business goals</li>
+<li>Demonstrated program/project management skills working on and leading teams</li>
+<li>Leadership experience inside and/or outside the classroom</li>
+<li>Excellent written and verbal communication skills; ability to articulate technical problems in clear and simple terms</li>
+<li>Contributes to creative solutions and challenges the status quo</li>
+<li>Proactively learns new tools and identifies opportunities for improvement and promotes their adoption</li>
+</ul>
+<p><strong>Essential Responsibilities:</strong></p>
+<ul>
+<li>Full-time, two-year leadership development program where members work within a GE business alongside experts in various locations</li>
+<li>Four, six-month rotational assignments within your specific business covering diverse projects in Digital Engineering, Data Analytics &amp; Operations, Technical Product Management, and more.</li>
+<li>Global classroom experience and virtual coursework focused on technical training, leadership, and business acumen<br />
+</li>
+<li>Over the course of the program, you’ll receive a broad set of diverse assignments spanning product management, data analytics, IT operations, software development, and more.</li>
+</ul>
+<p>GE offers a great work environment, professional development, challenging careers, and competitive compensation. GE is an Equal Opportunity Employer. Employment decisions are made without regard to race, color, religion, national or ethnic origin, sex, sexual orientation, gender identity or expression, age, disability, protected veteran status or other characteristics protected by law.</p>
 <hr />
+</div>
 </div>
 </div>
 <div id="others" class="section level1">
@@ -255,13 +768,16 @@ ul {font-size: 16px; color: black;}
 <div id="ey" class="section level2">
 <h2><span class="header-section-number">2.1</span> EY</h2>
 </div>
-<div id="dit" class="section level2">
-<h2><span class="header-section-number">2.2</span> Dit</h2>
+<div id="deloitte-1" class="section level2">
+<h2><span class="header-section-number">2.2</span> Deloitte</h2>
+<div id="business-technology-analyst-bta" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Business Technology Analyst (BTA)</h3>
+</div>
 </div>
 <div id="amazon" class="section level2">
 <h2><span class="header-section-number">2.3</span> Amazon</h2>
 </div>
-<div id="ibm" class="section level2">
+<div id="ibm-1" class="section level2">
 <h2><span class="header-section-number">2.4</span> IBM</h2>
 </div>
 <div id="ibm-china" class="section level2">
@@ -271,6 +787,8 @@ ul {font-size: 16px; color: black;}
 
 
 
+</div>
+</div>
 
 </div>
 
