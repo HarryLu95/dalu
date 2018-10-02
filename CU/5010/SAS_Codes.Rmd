@@ -28,7 +28,7 @@ saspath = "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
 sasopts = "-nosplash -ls 75"
 ```
 
-```{r, engine='sas', engine.path=saspath, engine.opts=sasopts, comment=NA}
+```{r, engine='sas', engine.path=saspath, engine.opts=sasopts, comment=NA, eval=FALSE}
 /*==============================Problem 1==============================*/
 /*
 - Create a library called HW1 with the dataset Admit

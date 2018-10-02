@@ -148,12 +148,15 @@ ul {font-size: 16px; color: black;}
 8. [Lecture 8: Independence of RVs and Conditional Distributions](CU/5080/Lec8.pdf)
 9. [Lecture 9: Generalizations and Functions of Random Vectors](CU/5080/Lec9.pdf)
 10. [Lecture 10: Order Statistics and Expected Values](CU/5080/Lec10.pdf)
+11. [Lecture 11: Expected Values](CU/5080/Lec11.pdf)
 
 ##Homeworks
 1. [Homework 1](CU/5080/HW1.pdf)
     - [Solutions](CU/5080/HW1_S.pdf)
 2. [Homework 2](CU/5080/HW2.pdf)
     - [Solutions](CU/5080/HW2_S.pdf)
+3. [Homework 3](CU/5080/HW3.pdf)
+    - [Solutions](CU/5080/HW3_S.pdf)
 
 ##Discussions
 1. [Discussion 1 with Solutions](CU/5080/Dis1.pdf)
