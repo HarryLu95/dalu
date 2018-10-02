@@ -23,11 +23,16 @@ ul {font-size: 16px; color: black;}
 3. [Editing and Debugging](CU/5010/Lec3.pdf)
 4. [Creating List Reports](CU/5010/Lec4.pdf)
 5. [Creating SAS Data Sets From External Files](CU/5010/Lec5.pdf)
+6. [Understanding DATA Step Processing](CU/5010/Lec6.pdf)
+7. [Creating and Applying User-Defined Formats](CU/5010/Lec7.pdf)
 
 ##Homeworks
 1. [HW 1](CU/5010/HW1.pdf)
     - [data](CU/5010/admit.sas7bdat)
     - Due: Sep/27/2018 at 11:59PM
+2. [HW 2](CU/5010/HW2.pdf)
+    - [data](CU/5010/FBPandHIV.xlsx)
+    - Due: Oct/9/2018 at 11:59PM
 
 ##Labs
 1. [Lab 1](CU/5010/Lab1.pdf)
@@ -111,11 +116,13 @@ ul {font-size: 16px; color: black;}
 2. [Chapter 2 - Modeling data in an organization (Basic E-R model)](CU/5060/Lec2.pdf)
 3. [Chapter 3 - Enhanced E-R model](CU/5060/Lec3.pdf)
 4. [Chapter 4 - Logical Database Design and the Relational Model](CU/5060/Lec4.pdf)
-5. Chapter 5 - Physical Database Design and Performance
+5. [Chapter 5 - Physical Database Design and Performance](CU/5060/Lec5.pdf)
 
 ##Homeworks
 1. [HW 1](CU/5060/HW1.pdf)
     - Due: Sep/26/2018 at 11:59PM
+2. [HW 2](CU/5060/HW2.pdf)
+    - Due: Oct/8/2018 at 11:59PM
 
 ##Quizzes
 1. [Quiz 1 with Solutions](CU/5060/Quiz1.pdf)
