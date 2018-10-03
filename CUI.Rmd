@@ -71,19 +71,19 @@ ul {font-size: 16px; color: black;}
     - [Question 1](CU/5030/HW1-Q1.html)
     - [Question 2](CU/5030/HW1-Q2.html)
     - [Question 3](CU/5030/HW1-Q3.html)
-    - Data: [BrainWeight](BrainWeight.txt) (.txt)
+    - Data: [BrainWeight](CU/5030/BrainWeight.txt) (.txt)
 2. Homework 2
     - [Question 1](CU/5030/HW2-Q1.html)
     - [Question 2](CU/5030/HW2-Q2.html)
     - [Question 3](CU/5030/HW2-Q3.html)
-    - Data: [BrainWeight](BrainWeight.txt) (.txt)
+    - Data: [BrainWeight](CU/5030/BrainWeight.txt) (.txt)
 3. Homework 3
     - [Question 1](CU/5030/HW3-Q1.html)
     - [Question 2](CU/5030/HW3-Q2.html)
     - [Question 3](CU/5030/HW3-Q3.html)
     - [Question 4](CU/5030/HW3-Q4.html)
-    - Data: [BrainWeight](BrainWeight.txt) (.txt)
-    - Data: [precipitation](precipitation.csv) (.csv)
+    - Data: [BrainWeight](CU/5030/BrainWeight.txt) (.txt)
+    - Data: [precipitation](CU/5030/precipitation.csv) (.csv)
 
 ##Labs
 1. Lab 1
