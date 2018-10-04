@@ -41,8 +41,8 @@ ul {font-size: 16px; color: black;}
     - [Solutions]((CU/5010/Lab1_S.7z)) (.7z)
 
 ##Quizzes
-1. [Quiz 1 with Solutions](CU/5010/Quiz1.pdf)
-2. [Quiz 2 with Solutions](CU/5010/Quiz2.pdf)
+1. [Quiz 1 with Solutions](CU/5010/Quiz1_S.pdf)
+2. [Quiz 2 with Solutions](CU/5010/Quiz2_S.pdf)
 
 ##SAS Data
 1. [workloads](CU/5010/workloads.sas7bdat) (.sas7bdat)
