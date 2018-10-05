@@ -177,6 +177,8 @@ ul {font-size: 16px; color: black;}
 2. [Discussion 2 with Solutions](CU/5080/Dis2.pdf)
 3. [Discussion 3 with Solutions](CU/5080/Dis3.pdf)
 4. [Discussion 4 with Solutions](CU/5080/Dis4.pdf)
+5. [Discussion 5 with Solutions](CU/5080/Dis5.pdf)
+6. [Discussion 6 with Solutions](CU/5080/Dis6.pdf)
 
 ##Supplementary Materials
 1. [Some standard distributions](CU/5080/Sup1.pdf)
