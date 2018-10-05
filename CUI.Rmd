@@ -31,6 +31,8 @@ ul {font-size: 16px; color: black;}
 6. [Understanding DATA Step Processing](CU/5010/Lec6.pdf)
 7. [Creating and Applying User-Defined Formats](CU/5010/Lec7.pdf)
 8. [Producing Descriptive Statistics](CU/5010/Lec8.pdf)
+9. [Producing HTML Output](CU/5010/Lec9.pdf)
+10. [Creating and Managing Variables_new](CU/5010/Lec10.pdf)
 
 ##Homeworks
 1. [HW 1](CU/5010/HW1.pdf)
@@ -38,7 +40,7 @@ ul {font-size: 16px; color: black;}
     - Due: Sep/27/2018 at 11:59PM
 2. [HW 2](CU/5010/HW2.pdf)
     - [data](CU/5010/FBPandHIV.xlsx)
-    - Due: Oct/9/2018 at 11:59PM
+    - Due: Oct/11/2018 at 11:59PM
 
 ##Labs
 1. [Lab 1](CU/5010/Lab1.pdf)
@@ -123,19 +125,24 @@ ul {font-size: 16px; color: black;}
 3. [Chapter 3 - Enhanced E-R model](CU/5060/Lec3.pdf)
 4. [Chapter 4 - Logical Database Design and the Relational Model](CU/5060/Lec4.pdf)
 5. [Chapter 5 - Physical Database Design and Performance](CU/5060/Lec5.pdf)
+6. [Chapter 6 - Introduction to SQL](CU/5060/Lec6.pdf)
+7. [Chapter 7 - Advanced SQL](CU/5060/Lec7.pdf)
 
 ##Homeworks
 1. [HW 1](CU/5060/HW1.pdf)
     - Due: Sep/26/2018 at 11:59PM
 2. [HW 2](CU/5060/HW2.pdf)
-    - Due: Oct/8/2018 at 11:59PM
+    - Due: Oct/11/2018 at 11:59PM
 
 ##Quizzes
 1. [Quiz 1 with Solutions](CU/5060/Quiz1.pdf)
 2. [Quiz 2 with Solutions](CU/5060/Quiz2.pdf)
 
-##Additions
-1. [SAS PROC SQL 5](CU/5060/SQL.pdf)
+##Supplemental Materials
+- [SAS PROC SQL 5](CU/5060/SQL.pdf)
+- [Oracle Database Datatypes](CU/5060/Sup1.pdf)
+- [Oracle Schema Object Names and Qualifiers](CU/5060/Sup2.pdf)
+- [Download and Install Oracle XE 11g](CU/5060/Sup3.pdf)
 
 ---
 
