@@ -25,6 +25,7 @@ ul {font-size: 16px; color: black;}
 5. [Creating SAS Data Sets From External Files](CU/5010/Lec5.pdf)
 6. [Understanding DATA Step Processing](CU/5010/Lec6.pdf)
 7. [Creating and Applying User-Defined Formats](CU/5010/Lec7.pdf)
+8. [Producing Descriptive Statistics](CU/5010/Lec8.pdf)
 
 ##Homeworks
 1. [HW 1](CU/5010/HW1.pdf)
@@ -149,6 +150,7 @@ ul {font-size: 16px; color: black;}
 9. [Lecture 9: Generalizations and Functions of Random Vectors](CU/5080/Lec9.pdf)
 10. [Lecture 10: Order Statistics and Expected Values](CU/5080/Lec10.pdf)
 11. [Lecture 11: Expected Values](CU/5080/Lec11.pdf)
+12. [Lecture 12: Expected Values (cont.)](CU/5080/Lec12.pdf)
 
 ##Homeworks
 1. [Homework 1](CU/5080/HW1.pdf)
