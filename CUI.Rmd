@@ -5,7 +5,7 @@ output:
     toc: TRUE
     toc_float: 
       collapsed: TRUE
-    toc_depth: 2
+    toc_depth: 1
 ---
 <style>
 h1 {font-size: 28px; color: black; font-weight: bold; text-align: center;}
