@@ -136,26 +136,89 @@ h4.date {text-align: center;}
 <hr />
 <p>This question follows on from Q1 of HW2. As in that case, the file <code>brainweight.txt</code> contains measurements of <strong>brain weight</strong> (B, in kilograms), <strong>body weight</strong> (W, in kilograms), and <strong>gestation period</strong> (G, in days) of a sample of 96 mammal species. The following commands can be used to read the data into R (although you will need point the <strong>setwd</strong> command to the directory on your computer that contains the data file).</p>
 <p>Here we will look at variability. We’ll start by re-fitting the model</p>
-<pre class="r"><code>brain_data =read.table('BrainWeight.txt',head=TRUE)
-colnames(brain_data)=c(&quot;B&quot;,&quot;W&quot;,&quot;G&quot;)
-brain_mod = lm(B~W+G,data=log(brain_data))</code></pre>
+<pre class="r"><code>brain_data=read.table(&quot;https://raw.githubusercontent.com/HarryLu95/dalu/master/CU/5030/BrainWeight.txt&quot;,head=TRUE)
+#colnames(brain_data)=c(&quot;B&quot;,&quot;W&quot;,&quot;G&quot;)
+brain_data$ln_B=log(brain_data$Brain,base=exp(1))
+brain_data$ln_W=log(brain_data$Body,base=exp(1))
+brain_data$ln_G=log(brain_data$Gestation,base=exp(1))
+brain_mod=lm(ln_B~ln_W+ln_G,data=brain_data)</code></pre>
 <div id="a" class="section level1">
 <h1>a</h1>
 <blockquote>
 <p>Calculate the estimated covariance of the coefficients <span class="math inline">\(\sigma^2 (X^T X)^{-1}\)</span>.</p>
 </blockquote>
+<p><span class="math display">\[\sigma^2=\cfrac{\mathbf{y}^T(I-H)\mathbf{y}}{\text{tr}(I-H)}\]</span></p>
+<pre class="r"><code>library(psych)
+x1=rep(1,times=96)
+x2=brain_data$ln_W
+x3=brain_data$ln_G
+X=cbind(x1,x2,x3)
+temp1=solve(t(X)%*%X)
+I=diag(1,nrow=96,ncol=96)
+H=X%*%solve(t(X)%*%X)%*%t(X)
+temp2=(t(brain_data$ln_B)%*%(I-H)%*%brain_data$ln_B)/tr(I-H)
+as.numeric(temp2)*temp1</code></pre>
+<pre><code>##             x1           x2           x3
+## x1  0.21020824  0.011792619 -0.049398988
+## x2  0.01179262  0.001047074 -0.002975323
+## x3 -0.04939899 -0.002975323  0.011825820</code></pre>
 </div>
 <div id="b" class="section level1">
 <h1>b</h1>
 <blockquote>
 <p>What prediction do you make for log(B) for a new animal with Body size 162 and Gestation period 143? What is the standard deviation of that prediction? It may help to write this in terms of <span class="math inline">\(\mathbf x^T \hat{\mathbf \beta}\)</span> and use the results in Q4.</p>
 </blockquote>
+<p><span class="math display">\[\text{Var}(\hat{\mathbf{y}})=\sigma^2I\]</span></p>
+<pre class="r"><code>beta_hat=solve(t(X)%*%X)%*%t(X)%*%brain_data$ln_B
+#beta_hat also equal to the coefficients of brain_mod
+x=as.matrix(c(1,log(162),log(143)))
+y=t(x)%*%beta_hat
+y</code></pre>
+<pre><code>##          [,1]
+## [1,] 5.661119</code></pre>
+<p>The prediction for log(B) is 5.6611191.</p>
+<pre class="r"><code>new_data=c(log(162),log(143),y)
+new=rbind(brain_data[,4:6],new_data)
+X_new=cbind(rep(1,times=97),new$ln_W,new$ln_G)
+I_new=diag(1,nrow=97,ncol=97)
+H_new=X_new%*%solve(t(X_new)%*%X_new)%*%t(X_new)
+sigma_square=t(new$ln_B)%*%(I_new-H_new)%*%new$ln_B/tr(I_new-H_new)
+sqrt(sigma_square)</code></pre>
+<pre><code>##           [,1]
+## [1,] 0.4975499</code></pre>
+<p>The standard deviation of that prediction is 0.4975499.</p>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>
 <blockquote>
 <p>Calulate the VIFs for <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span>, verify that you get the same answer as the <strong>vif</strong> function in the <strong>car</strong> package.</p>
 </blockquote>
+<p><span class="math display">\[\text{VIF}_j=\cfrac{\mathbf{x_j}^TC\mathbf{x_j}}{\mathbf{x_j}^T(I-H_{-j})\mathbf{x_j}}\]</span></p>
+<p><span class="math display">\[\text{VIF}_{\beta_1}=\cfrac{\mathbf{ln_W}^TC\mathbf{ln_W}}{\mathbf{ln_W}^T(I-H_{-ln_W})\mathbf{ln_W}}\]</span></p>
+<p><span class="math display">\[\text{VIF}_{\beta_2}=\cfrac{\mathbf{ln_G}^TC\mathbf{ln_G}}{\mathbf{ln_G}^T(I-H_{-ln_G})\mathbf{ln_G}}\]</span></p>
+<pre class="r"><code>C=I-(1/96)*matrix(1,nrow=96,ncol=96)
+X_no_lnW=cbind(x1,x3)
+H_no_lnW=X_no_lnW%*%solve(t(X_no_lnW)%*%X_no_lnW)%*%t(X_no_lnW)
+VIF_beta1=(t(brain_data$ln_W)%*%C%*%brain_data$ln_W)/(t(brain_data$ln_W)%*%(I-H_no_lnW)%*%brain_data$ln_W)
+VIF_beta1</code></pre>
+<pre><code>##          [,1]
+## [1,] 3.507835</code></pre>
+<pre class="r"><code>X_no_lnG=cbind(x1,x2)
+H_no_lnG=X_no_lnG%*%solve(t(X_no_lnG)%*%X_no_lnG)%*%t(X_no_lnG)
+VIF_beta2=(t(brain_data$ln_G)%*%C%*%brain_data$ln_G)/(t(brain_data$ln_G)%*%(I-H_no_lnG)%*%brain_data$ln_G)
+VIF_beta2</code></pre>
+<pre><code>##          [,1]
+## [1,] 3.507835</code></pre>
+<pre class="r"><code>library(car)
+vif(brain_mod)</code></pre>
+<pre><code>##     ln_W     ln_G 
+## 3.507835 3.507835</code></pre>
+<pre class="r"><code>round(VIF_beta1,5)==round(vif(brain_mod)[[1]],5)</code></pre>
+<pre><code>##      [,1]
+## [1,] TRUE</code></pre>
+<pre class="r"><code>round(VIF_beta2,5)==round(vif(brain_mod)[[2]],5)</code></pre>
+<pre><code>##      [,1]
+## [1,] TRUE</code></pre>
 </div>
 <div id="d" class="section level1">
 <h1>d</h1>
@@ -167,6 +230,12 @@ brain_mod2 = lm(log(B)~log(W)+z,data=brain_data)</code></pre>
 <blockquote>
 <p>Show (numerically) that the VIF for <span class="math inline">\(\beta_1\)</span> in part b is equal to the ratio of its variance in <strong>brain_mod</strong> to its variance in <strong>brain_mod2</strong>.</p>
 </blockquote>
+<pre class="r"><code>brain_data$z=lm(ln_G~ln_W,data=brain_data)$resid
+brain_mod2=lm(ln_B~ln_W+z,data=brain_data)
+X_z=cbind(x1,x2,brain_data$z)
+H_z=X_z%*%solve(t(X_z)%*%X_z)%*%t(X_z)
+s1=(t(brain_data$ln_B)%*%(I-H)%*%brain_data$ln_B)/tr(I-H)
+s2=(t(brain_data$ln_B)%*%(I-H_z)%*%brain_data$ln_B)/tr(I-H_z)</code></pre>
 </div>
 <div id="e" class="section level1">
 <h1>e</h1>
