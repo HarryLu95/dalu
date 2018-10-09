@@ -191,7 +191,7 @@ sqrt(sigma_square)</code></pre>
 <div id="c" class="section level1">
 <h1>c</h1>
 <blockquote>
-<p>Calulate the VIFs for <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span>, verify that you get the same answer as the <strong>vif</strong> function in the <strong>car</strong> package.</p>
+<p>Calulate the VIFs for <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span>, verify that you get the same answer as the <code>vif</code> function in the <code>car</code> package.</p>
 </blockquote>
 <p><span class="math display">\[\text{VIF}_j=\cfrac{\mathbf{x_j}^TC\mathbf{x_j}}{\mathbf{x_j}^T(I-H_{-j})\mathbf{x_j}}\]</span></p>
 <p><span class="math display">\[\text{VIF}_{\beta_1}=\cfrac{\mathbf{ln_W}^TC\mathbf{ln_W}}{\mathbf{ln_W}^T(I-H_{-ln_W})\mathbf{ln_W}}\]</span></p>
@@ -228,7 +228,7 @@ vif(brain_mod)</code></pre>
 <pre class="r"><code>brain_data$z = lm(G~W,data=log(brain_data))$resid
 brain_mod2 = lm(log(B)~log(W)+z,data=brain_data)</code></pre>
 <blockquote>
-<p>Show (numerically) that the VIF for <span class="math inline">\(\beta_1\)</span> in part b is equal to the ratio of its variance in <strong>brain_mod</strong> to its variance in <strong>brain_mod2</strong>.</p>
+<p>Show (numerically) that the VIF for <span class="math inline">\(\beta_1\)</span> in part b is equal to the ratio of its variance in <code>brain_mod</code> to its variance in <code>brain_mod2</code>.</p>
 </blockquote>
 <pre class="r"><code>brain_data$z=lm(ln_G~ln_W,data=brain_data)$resid
 brain_mod2=lm(ln_B~ln_W+z,data=brain_data)
