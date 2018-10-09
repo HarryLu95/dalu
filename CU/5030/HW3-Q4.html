@@ -153,6 +153,18 @@ h4.date {text-align: center;}
 <p>and <span class="math inline">\(b=(-2.7,4.5)^T\)</span>.</p>
 <p><em>You may do these calculations in R if you wish</em>.</p>
 </blockquote>
+<pre class="r"><code>y_mean=c(4.2,3.9,-2.5)
+y_mean=matrix(y_mean,nrow=3,ncol=1)
+A=c(1/3,1/3,1/3,1/2,1/2,-1)
+A=matrix(A,nrow=2,ncol=3,byrow=TRUE)
+b=c(-2.7,4.5)
+b=matrix(b,nrow=2,ncol=1)
+x_mean=A%*%y_mean+b
+x_mean</code></pre>
+<pre><code>##            [,1]
+## [1,] -0.8333333
+## [2,] 11.0500000</code></pre>
+<p><span class="math inline">\(x\)</span> has mean equals to (-0.8333333, 11.05)<span class="math inline">\(^T\)</span>.</p>
 </div>
 <div id="b" class="section level1">
 <h1>b</h1>

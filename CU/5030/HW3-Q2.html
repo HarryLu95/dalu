@@ -232,10 +232,24 @@ brain_mod2 = lm(log(B)~log(W)+z,data=brain_data)</code></pre>
 </blockquote>
 <pre class="r"><code>brain_data$z=lm(ln_G~ln_W,data=brain_data)$resid
 brain_mod2=lm(ln_B~ln_W+z,data=brain_data)
-X_z=cbind(x1,x2,brain_data$z)
-H_z=X_z%*%solve(t(X_z)%*%X_z)%*%t(X_z)
-s1=(t(brain_data$ln_B)%*%(I-H)%*%brain_data$ln_B)/tr(I-H)
-s2=(t(brain_data$ln_B)%*%(I-H_z)%*%brain_data$ln_B)/tr(I-H_z)</code></pre>
+#X_z=cbind(x1,x2,brain_data$z)
+#H_z=X_z%*%solve(t(X_z)%*%X_z)%*%t(X_z)
+#s1=(t(brain_data$ln_B)%*%(I-H)%*%brain_data$ln_B)/tr(I-H)
+#s2=(t(brain_data$ln_B)%*%(I-H_z)%*%brain_data$ln_B)/tr(I-H_z)
+summary(brain_mod)$coefficient</code></pre>
+<pre><code>##               Estimate Std. Error   t value     Pr(&gt;|t|)
+## (Intercept) -0.4572826 0.45848472 -0.997378 3.211691e-01
+## ln_W         0.5511654 0.03235852 17.033086 2.423957e-30
+## ln_G         0.6678215 0.10874659  6.141080 2.002004e-08</code></pre>
+<pre class="r"><code>summary(brain_mod)$r.squared</code></pre>
+<pre><code>## [1] 0.9500939</code></pre>
+<pre class="r"><code>summary(brain_mod2)$coefficient</code></pre>
+<pre><code>##              Estimate Std. Error  t value     Pr(&gt;|t|)
+## (Intercept) 2.3323512 0.06211340 37.54989 5.445553e-58
+## ln_W        0.7191863 0.01727703 41.62674 6.377979e-62
+## z           0.6678215 0.10874659  6.14108 2.002004e-08</code></pre>
+<pre class="r"><code>summary(brain_mod2)$r.squared</code></pre>
+<pre><code>## [1] 0.9500939</code></pre>
 </div>
 <div id="e" class="section level1">
 <h1>e</h1>
