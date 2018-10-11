@@ -52,6 +52,10 @@ ul {font-size: 16px; color: black;}
 1. [Quiz 1 with Solutions](CU/5010/Quiz1_S.pdf)
 2. [Quiz 2 with Solutions](CU/5010/Quiz2_S.pdf)
 
+##Exams
+1. Midterm 1
+    - [Solution](CU/5060/Exam1_S.pdf)
+
 ##SAS Data
 1. [workloads](CU/5010/workloads.sas7bdat) (.sas7bdat)
 2. [unequal](CU/5010/unequal.sas7bdat) (.sas7bdat)
@@ -137,10 +141,6 @@ ul {font-size: 16px; color: black;}
 ##Quizzes
 1. [Quiz 1 with Solutions](CU/5060/Quiz1.pdf)
 2. [Quiz 2 with Solutions](CU/5060/Quiz2.pdf)
-
-##Exams
-1. Midterm 1
-    - [Solution](CU/5060/Exam1_S.pdf)
 
 ##Supplemental Materials
 - [SAS PROC SQL 5](CU/5060/SQL.pdf)
