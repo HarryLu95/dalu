@@ -177,7 +177,7 @@ y</code></pre>
 <pre><code>##          [,1]
 ## [1,] 5.661119</code></pre>
 <p>The prediction for log(B) is 5.6611191.</p>
-<pre class="r"><code>new_data=c(log(162),log(143),y)
+<pre class="r"><code>new_data=c(y,log(162),log(143))
 new=rbind(brain_data[,4:6],new_data)
 X_new=cbind(rep(1,times=97),new$ln_W,new$ln_G)
 I_new=diag(1,nrow=97,ncol=97)
@@ -185,8 +185,8 @@ H_new=X_new%*%solve(t(X_new)%*%X_new)%*%t(X_new)
 sigma_square=t(new$ln_B)%*%(I_new-H_new)%*%new$ln_B/tr(I_new-H_new)
 sqrt(sigma_square)</code></pre>
 <pre><code>##           [,1]
-## [1,] 0.4975499</code></pre>
-<p>The standard deviation of that prediction is 0.4975499.</p>
+## [1,] 0.4875967</code></pre>
+<p>The standard deviation of that prediction is 0.4875967.</p>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>
