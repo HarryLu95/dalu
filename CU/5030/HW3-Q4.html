@@ -237,10 +237,10 @@ A \Sigma A^T
   a_{11} &amp; \cdots &amp; a_{m1}\\
   \vdots &amp;  &amp; \vdots\\
   a_{1n} &amp; \cdots &amp; a_{mn}
-\end{array}\right)\\
-&amp;=
-\sum_{p=1}^{n}\sum_{q=1}^{n}a_{ip}a_{jq}\text{Cov}(a_p,a_q)
+\end{array}\right)
 \end{align}\]</span></p>
+<p><span class="math display">\[(A\Sigma A^T)_{ij}=
+\sum_{p=1}^{n}\sum_{q=1}^{n}a_{ip}a_{jq}\text{Cov}(a_p,a_q)\]</span></p>
 <p><span class="math display">\[\begin{align}
 \text{Cov}[(Ax)_i,(Ax)_j]
 &amp;=
@@ -289,8 +289,8 @@ a_{i1}a_{j1}[\text{E}({x_1}^2)-(\text{E}(x_1))^2]+\cdots+a_{in}a_{jn}[\text{E}({
 </blockquote>
 <p><span class="math display">\[\hat{\mathbf{e}}=(I-H)\mathbf{y}=A\mathbf{y}\]</span></p>
 <p><span class="math display">\[\hat{\mathbf{\beta}}=(X^TX)^{-1}X^T\mathbf{y}=B\mathbf{y}\]</span></p>
-<p>Both <span class="math inline">\(\hat{\mathbf{e}}\)</span> and <span class="math inline">\(\hat{\mathbf{\beta}}\)</span> are related to <span class="math inline">\(\mathbf{y}\)</span>, and <span class="math inline">\(\hat{\sigma}^2\)</span> is a function of <span class="math inline">\(\hat{\mathbf{e}}\)</span>, so in order to show <span class="math inline">\(\hat{\sigma}^2\)</span> is uncorrelated with <span class="math inline">\(\hat{\mathbf{\beta}}\)</span>, we just need to show <span class="math inline">\(AB^T=0\)</span>.</p>
-<p><span class="math display">\[(I-H)[(X^TX)^{-1}X^T]^T=[(I-H)X][(X^TX)^{-1}]^T=0\]</span></p>
+<p>Both <span class="math inline">\(\hat{\mathbf{e}}\)</span> and <span class="math inline">\(\hat{\mathbf{\beta}}\)</span> are related to <span class="math inline">\(\mathbf{y}\)</span>, and <span class="math inline">\(\hat{\sigma}^2\)</span> is a function of <span class="math inline">\(\hat{\mathbf{e}}\)</span>, so in order to show <span class="math inline">\(\text{Cov}(\hat{\sigma}^2,\hat{\mathbf{\beta}})=0\)</span>, we just need to show <span class="math inline">\(A\text{Var}(\mathbf{y})B^T=0\)</span>.</p>
+<p><span class="math display">\[(I-H)(\sigma^2I)[(X^TX)^{-1}X^T]^T=\sigma^2[(I-H)X][(X^TX)^{-1}]^T=0\]</span></p>
 <p><span class="math inline">\(\hat{\sigma}^2\)</span> is uncorrelated with <span class="math inline">\(\hat{\mathbf{\beta}}\)</span>, and from Question 3c, both plots for <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are uncorrelated with <span class="math inline">\(\sigma\)</span>.</p>
 </div>
 <div id="e" class="section level1">
@@ -299,7 +299,14 @@ a_{i1}a_{j1}[\text{E}({x_1}^2)-(\text{E}(x_1))^2]+\cdots+a_{in}a_{jn}[\text{E}({
 <p>In linear regression, we generally assume <span class="math inline">\(\mathbf \epsilon \sim N(0,\sigma^2 I)\)</span> but in spacial statistics and time series we sometimes allow the errors to be correlated: <span class="math inline">\(\mathbf \epsilon \sim N(0,\Sigma)\)</span> instead. When this is the case, what is the variance of the least squares estimate <span class="math inline">\(\hat{\mathbf\beta}\)</span>?</p>
 </blockquote>
 <p>In linear regression, <span class="math inline">\(\text{Var}(\hat\beta)=[(X^TX)^{-1}X^T](\sigma^2I)[(X^TX)^{-1}X^T]^T=\sigma^2(X^TX)^{-1}\)</span>, where <span class="math inline">\(\text{Cov}(e_i,e_j)=0\)</span>.</p>
-<p>In spacial statistics and time series, <span class="math inline">\(\text{Var}(\hat\beta)=[(X^TX)^{-1}X^T]\Sigma[(X^TX)^{-1}X^T]^T\)</span>, where <span class="math inline">\(\text{Cov}(e_i,e_j)\neq0\)</span>. We need to simplify <span class="math inline">\(\text{Var}(\hat\beta)\)</span>.</p>
+<p>In spacial statistics and time series, <span class="math inline">\(\text{Var}(\hat\beta)=[(X^TX)^{-1}X^T]\Sigma[(X^TX)^{-1}X^T]^T\)</span>, where <span class="math inline">\(\text{Cov}(e_i,e_j)\neq0\)</span>.</p>
+<p><span class="math display">\[\begin{align}
+\text{Var}(\hat\beta)
+&amp;=
+[(X^TX)^{-1}X^T]\Sigma[(X^TX)^{-1}X^T]^T\\
+&amp;=
+(X^TX)^{-1}X^T\Sigma X(X^TX)^{-1}
+\end{align}\]</span></p>
 </div>
 
 
