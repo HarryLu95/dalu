@@ -143,7 +143,7 @@ ul {font-size: 16px; color: black;}
 ##Labs
 1. [Lab 1](CU/5060/Lab1.pdf)
     - Due: Oct/16/2018 at 11:59PM
-    - [Lab 1 Summary](CU/5060/Lab1_Smy.pdf)
+    - [Lab 1 Summary](CU/5060/Lab1_Smy.html)
 
 ##Quizzes
 1. [Quiz 1 with Solutions](CU/5060/Quiz1.pdf)
