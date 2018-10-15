@@ -33,6 +33,8 @@ ul {font-size: 16px; color: black;}
 8. [Producing Descriptive Statistics](CU/5010/Lec8.pdf)
 9. [Producing HTML Output](CU/5010/Lec9.pdf)
 10. [Creating and Managing Variables_new](CU/5010/Lec10.pdf)
+11. [Reading SAS Data Sets](CU/5010/Lec11.pdf)
+12. [Combining SAS Data Sets](CU/5010/Lec12.pdf)
 
 ##Homeworks
 1. [HW 1](CU/5010/HW1.pdf)
