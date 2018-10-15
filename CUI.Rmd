@@ -138,6 +138,10 @@ ul {font-size: 16px; color: black;}
 2. [HW 2](CU/5060/HW2.pdf)
     - Due: Oct/11/2018 at 11:59PM
 
+##Labs
+1. [Lab 1](CU/5060/Lab1.pdf)
+    - Due: Oct/16/2018 at 11:59PM
+
 ##Quizzes
 1. [Quiz 1 with Solutions](CU/5060/Quiz1.pdf)
 2. [Quiz 2 with Solutions](CU/5060/Quiz2.pdf)
