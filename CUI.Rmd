@@ -116,8 +116,10 @@ ul {font-size: 16px; color: black;}
 
 ##Exams
 - [Practice Midterm 1.1](CU/5030/Midterm1_1_Fall2017.pdf), Fall 2017 Midterm 1 - 1
+    - [Solution](CU/5030/Midterm1_1_Fall2017_S.pdf)
     - [Summary](CU/5030/Midterm1_1_Fall2017_Summary.html)
 - [Practice Midterm 1.2](CU/5030/Midterm1_2_Fall2017.pdf), Fall 2017 Midterm 1 - 2
+    - [Solution](CU/5030/Midterm1_2_Fall2017_S.pdf)
 - [Midterm Formulae](CU/5030/Formulae.pdf)
 
 ---
