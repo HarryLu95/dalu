@@ -547,7 +547,7 @@ CONSTRAINT OrderLine_FK2 FOREIGN KEY (ProductID) REFERENCES Product_T(ProductID)
 </tbody>
 </table>
 <p><strong>c</strong></p>
-<pre class="sql"><code>ALTER TABLE Customer_T DROP CustomerType;</code></pre>
+<pre class="sql"><code>ALTER TABLE Customer_T DROP COLUMN CustomerType;</code></pre>
 <p>Table altered.</p>
 <pre class="sql"><code>DESCRIBE Customer_T;</code></pre>
 <table>
