@@ -182,7 +182,7 @@ ul {font-size: 16px; color: black;}
 11. [Lecture 11: Expected Values](CU/5080/Lec11.pdf)
 12. [Lecture 12: Expected Values (cont.)](CU/5080/Lec12.pdf)
 13. [Lecture 13: Moment Generating Function](CU/5080/Lec13.pdf)
-14. [Lecture 14: MGF and LLN](CU/5080/Lec14.pdf) draft
+14. [Lecture 14: MGF and LLN](CU/5080/Lec14.pdf)
 
 ##Homeworks
 1. [Homework 1](CU/5080/HW1.pdf)
@@ -191,6 +191,7 @@ ul {font-size: 16px; color: black;}
     - [Solutions](CU/5080/HW2_S.pdf)
 3. [Homework 3](CU/5080/HW3.pdf)
     - [Solutions](CU/5080/HW3_S.pdf)
+4. [Homework 4](CU/5080/HW4.pdf)
 
 ##Discussions
 1. [Discussion 1 with Solutions](CU/5080/Dis1.pdf)
