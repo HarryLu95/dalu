@@ -48,7 +48,14 @@ ul {font-size: 16px; color: black;}
 1. [Lab 1](CU/5010/Lab1.pdf)
     - [data](CU/5010/nutrition.sas7bdat) (.sas7bdat)
     - Due: Sep/23/2018 at 11:59PM
-    - [Solutions]((CU/5010/Lab1_S.7z)) (.7z)
+    - [Solutions](CU/5010/Lab1_S.7z) (.7z)
+2. [Lab 2](CU/5010/Lab2.pdf)
+    - [data 1](CU/5010/Sales.txt) (.txt)
+    - [data 2](CU/5010/empdata.sas7bdat) (.sas7bdat)
+    - [data 3](CU/5010/demog.sas7bdat) (.sas7bdat)
+    - [data 4](CU/5010/visit.sas7bdat) (.sas7bdat)
+    - Due: Oct/21/2018 at 11:59PM
+    - Solution
 
 ##Quizzes
 1. [Quiz 1 with Solutions](CU/5010/Quiz1_S.pdf)
