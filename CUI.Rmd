@@ -162,7 +162,6 @@ ul {font-size: 16px; color: black;}
 2. [Lab 2](CU/5060/Lab2.pdf)
     - Due: Oct/23/2018 at 11:59PM
     - Data: [CREATEPVFC](CU/5060/CREATEPVFC.sql) (.sql)
-    - Lab 2 Summary
 
 ##Quizzes
 1. [Quiz 1 with Solutions](CU/5060/Quiz1.pdf)
