@@ -35,6 +35,7 @@ ul {font-size: 16px; color: black;}
 10. [Creating and Managing Variables_new](CU/5010/Lec10.pdf)
 11. [Reading SAS Data Sets](CU/5010/Lec11.pdf)
 12. [Combining SAS Data Sets](CU/5010/Lec12.pdf)
+13. [Transforming data with SAS functions](CU/5010/Lec13.pdf)
 
 ##Homeworks
 1. [HW 1](CU/5010/HW1.pdf)
@@ -158,6 +159,10 @@ ul {font-size: 16px; color: black;}
 1. [Lab 1](CU/5060/Lab1.pdf)
     - Due: Oct/16/2018 at 11:59PM
     - [Lab 1 Summary](CU/5060/Lab1_Smy.html)
+2. [Lab 2](CU/5060/Lab2.pdf)
+    - Due: Oct/23/2018 at 11:59PM
+    - Data: [CREATEPVFC](CU/5060/CREATEPVFC.sql) (.sql)
+    - Lab 2 Summary
 
 ##Quizzes
 1. [Quiz 1 with Solutions](CU/5060/Quiz1.pdf)
