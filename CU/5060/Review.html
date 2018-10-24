@@ -508,6 +508,7 @@ ul {font-size: 16px; color: black;}
 <li>Physical structures–covered in Chapter 5</li>
 </ul></li>
 </ul>
+<hr />
 </div>
 </div>
 <div id="modeling-data-in-an-organization-basic-e-r-model" class="section level1">
@@ -838,6 +839,7 @@ ul {font-size: 16px; color: black;}
 <li>The associative entity may participate in other relationships other than the entities of the associated relationship.</li>
 <li>Ternary relationships should be converted to associative entities.</li>
 </ul>
+<hr />
 </div>
 </div>
 </div>
@@ -936,6 +938,7 @@ ul {font-size: 16px; color: black;}
 <li>Vendor-supplied data model fosters integration with vendor’s applications</li>
 <li>Universal models support inter-organizational systems</li>
 </ul>
+<hr />
 </div>
 </div>
 <div id="logical-database-design-and-the-relational-model" class="section level1">
@@ -948,12 +951,296 @@ ul {font-size: 16px; color: black;}
 <li>The <strong>relational data model</strong> is a form of logical data model, the one that is most commonly used in the contemporary database applications.</li>
 </ul>
 </div>
+<div id="three-components-of-the-relational-data-model" class="section level2">
+<h2><span class="header-section-number">4.2</span> Three components of the Relational Data Model</h2>
+<ul>
+<li><strong>Data structure:</strong> Data are organized in the form of tables, or relations.</li>
+<li><strong>Data manipulation:</strong> Data are manipulated by the SQL language.</li>
+<li><strong>Data integrity:</strong> Having mechanisms to maintain data integrity when manipulated.</li>
+</ul>
+</div>
+<div id="relation" class="section level2">
+<h2><span class="header-section-number">4.3</span> Relation</h2>
+<ul>
+<li>A <strong>relation</strong> is a named, two-dimensional table of data.</li>
+<li>A table consists of rows (records) and columns (attribute or field).</li>
+<li>Requirements for a table to qualify as a relation:
+<ol style="list-style-type: decimal">
+<li>It must have a unique name.</li>
+<li>Every attribute value must be atomic (not multivalued, not composite).</li>
+<li><strong>Every row must be unique</strong> (can’t have two rows with exactly the same values for all their fields).</li>
+<li>Attributes (columns) in tables must have unique names.</li>
+<li>The order of the columns must be irrelevant.</li>
+<li>The order of the rows must be irrelevant.</li>
+</ol></li>
+</ul>
+</div>
+<div id="correspondence-with-e-r-model" class="section level2">
+<h2><span class="header-section-number">4.4</span> Correspondence with E-R Model</h2>
+<ul>
+<li>Relations (tables) correspond with entity types and with many-to-many relationship types.</li>
+<li>Rows correspond with entity instances and with many-to-many relationship instances.</li>
+<li>Columns correspond with attributes.</li>
+<li>NOTE: The word <strong>relation</strong> (in relational database) is NOT the same as the word <strong>relationship</strong> (in E-R model).</li>
+</ul>
+</div>
+<div id="relation-schema-and-database" class="section level2">
+<h2><span class="header-section-number">4.5</span> Relation, Schema and Database</h2>
+<ul>
+<li>A (relational) database may contain any number of relations.</li>
+<li>The structure of a relational database is described with schemas (a collection of DB objects, e.g. relations).</li>
+<li>Schemas are expressed by the following methods</li>
+<li><strong>Short text statements</strong> using the format of relation name followed by its attributes in parentheses.</li>
+<li><strong>A graphical representation</strong> using a rectangle containing the attributes of a relation.</li>
+</ul>
+</div>
+<div id="key-fields" class="section level2">
+<h2><span class="header-section-number">4.6</span> Key Fields</h2>
+<ul>
+<li>Keys are special fields in a relation that serve two main purposes:
+<ul>
+<li><strong>Primary key (PK):</strong> an attribute or a combination of attributes (composite key) that <strong>uniquely</strong> identifies each row in a relation. It is designated by underlining the attribute name(s).</li>
+<li><strong>Foreign key (FK):</strong> an attribute in a relation that serves the primary key of another relation to represent the relationship of the relations, which is designated by a dashed underline in the relational schema. A foreign key enables a <strong>dependent</strong> relation to refer to its <strong>parent</strong> relation.</li>
+</ul></li>
+</ul>
+</div>
+<div id="integrity-constraints-of-the-relational-data-model" class="section level2">
+<h2><span class="header-section-number">4.7</span> Integrity Constraints of the Relational Data Model</h2>
+<ul>
+<li>Domain Constraints
+<ul>
+<li>Allowable values for an attribute that are from the same domain.</li>
+</ul></li>
+<li>Entity Integrity Rule
+<ul>
+<li>No primary key attribute (or its components) may be null, that is, all primary key fields MUST have data.</li>
+</ul></li>
+<li>Referential Integrity
+<ul>
+<li>Each foreign key value MUST match a primary key value in another relation or the foreign key value MUST be null.</li>
+</ul></li>
+</ul>
+<div id="more-on-referential-constraint" class="section level3">
+<h3><span class="header-section-number">4.7.1</span> More on Referential Constraint</h3>
+<ul>
+<li><strong>Graphical representation:</strong> an arrow from the foreign key to the associated primary key</li>
+<li><strong>When can a FK be NULL?</strong> only when the relationship is optional</li>
+<li><strong>Delete Rules:</strong>
+<ul>
+<li><strong>Prohibit delete:</strong> does not allow to delete the “parent” side (relation that the FK points to) if any related rows exist in the “dependent” side</li>
+<li><strong>Cascade delete:</strong> automatically delete “dependent” side rows that correspond with the “parent” side row to be deleted</li>
+<li><strong>Set-to-Null:</strong> set the foreign key in the dependent side to null if deleting from the “parent” side</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="transforming-eer-diagrams-into-relations" class="section level2">
+<h2><span class="header-section-number">4.8</span> Transforming EER Diagrams into Relations</h2>
+<p>Mapping <strong>Regular Entities</strong> to Relations</p>
+<ul>
+<li><strong>Simple attributes:</strong> E-R attributes map directly onto the relation</li>
+<li><strong>Composite attributes:</strong> Use only their simple, component attributes</li>
+<li><strong>Multivalued Attribute:</strong> Becomes a separate relation with a foreign key taken from the superior entity</li>
+</ul>
+<p>Mapping a <strong>Weak Entity</strong></p>
+<ul>
+<li>Becomes a separate relation with a foreign key taken from the superior entity</li>
+<li>Primary key composed of:
+<ul>
+<li>Partial identifier of weak entity</li>
+<li>Primary key of identifying relation (strong entity)</li>
+</ul></li>
+</ul>
+<p>Mapping <strong>Binary Relationships</strong> (depending on the <strong>degree</strong> and <strong>cardinality</strong>)</p>
+<ul>
+<li>One-to-Many: Primary key on the one side becomes a foreign key on the many side</li>
+<li>Many-to-Many: Create a <strong>new relation</strong> with the primary keys of the two entities as its primary key</li>
+<li>One-to-One: Primary key on the mandatory side becomes a foreign key on the optional side</li>
+</ul>
+<p>Mapping <strong>Associative Entities (AE)</strong></p>
+<ul>
+<li>Identifier Not assigned in AE
+<ul>
+<li>Default primary key for the <strong>associative relation</strong> is composed of the primary keys of the other two entities (as in M:N relationship)</li>
+</ul></li>
+<li>Identifier assigned in AE
+<ul>
+<li>The identifier is used as the primary key of the associative relation.</li>
+<li>The primary keys of the other two entities (as in M:N relationship) become foreign keys of the associative relation.</li>
+</ul></li>
+</ul>
+<p>Mapping <strong>Unary Relationships</strong></p>
+<ul>
+<li><strong>One-to-Many:</strong> A <strong>recursive foreign key</strong> is added to reference the primary key in the same relation; the recursive foreign key must have the same domain as the primary key.</li>
+<li><strong>Many-to-Many:</strong> Two relations are created
+<ul>
+<li>One for the entity type</li>
+<li>One for an <strong>associative relation</strong> in which the primary key has two attributes, both taken from the primary key of the entity</li>
+</ul></li>
+</ul>
+<p>Mapping <strong>Ternary (and n-ary) Relationships</strong></p>
+<ul>
+<li>Create one relation for each entity and one for the associative entity.</li>
+<li>Assign the <strong>default primary key</strong> to the associative entity using the three primary keys of the participating entity types, which are also the foreign keys of the associative entity; in some cases, additional attributes are required to form a unique PK.</li>
+</ul>
+<p>Mapping <strong>Supertype/Subtype Relationships</strong></p>
+<ul>
+<li>Create a <strong>separate</strong> relation for supertype and for each subtype</li>
+<li>Supertype attributes (including identifier and <strong>subtype discriminator</strong>) go into the supertype relation</li>
+<li>Subtype attributes go into respective subtypes; the <strong>primary key</strong> of supertype relation also becomes <strong>primary key</strong> of subtype relation</li>
+<li>Establish 1:1 relationship between the supertype and each subtype, with supertype as primary table</li>
+</ul>
+</div>
+<div id="normalization" class="section level2">
+<h2><span class="header-section-number">4.9</span> Normalization</h2>
+<ul>
+<li>The process of decomposing relations with <strong>anomalies</strong> (errors or inconsistencies that may result when updating a table containing redundant data) to produce smaller, <strong>well-structured</strong> relations, in which the attributes are grouped in a proper way with all the anomalies removed.</li>
+<li>It is primarily a tool to validate and improve a logical design so that it satisfies certain constraints that <strong>avoid problematic duplication of data</strong>.</li>
+</ul>
+</div>
+<div id="well-structured-relation" class="section level2">
+<h2><span class="header-section-number">4.10</span> Well-Structured Relation</h2>
+<ul>
+<li>A relation that contains <strong>minimal data redundancy</strong> and allows users to insert, delete, and update rows without causing data inconsistencies</li>
+<li>The goal is to avoid three kinds of anomalies
+<ul>
+<li><strong>Insertion Anomaly</strong> - adding a new row forces users to add other unnecessary or redundant data</li>
+<li><strong>Deletion Anomaly</strong> - deleting rows may cause a loss of data that would be needed for other purpose</li>
+<li><strong>Modification Anomaly</strong> - changing data in a row forces changes to other rows because of data duplication</li>
+</ul></li>
+</ul>
+<p><em>General rule of thumb: A relation (or table) should not be related to more than one entity type</em></p>
+</div>
+<div id="functional-dependency" class="section level2">
+<h2><span class="header-section-number">4.11</span> Functional Dependency</h2>
+<p>A constraint between two attributes in which the value of one attribute (the determinant) determines the value of another attribute.</p>
+<p>Attribute B is functionally dependent on A (or a value of A uniquely determines the value of B): A -&gt; B, but it is not a mathematical dependency.</p>
+<blockquote>
+<p>Examples:</p>
+<ul>
+<li>SSN -&gt; Name, Address, Birthdate (For a known value of SSN, there can be only one name, one address and one Birthdate.)</li>
+<li>VIN -&gt; Make, Model, Color</li>
+<li>EmpID, CourseTitle -&gt; DateCompleted</li>
+</ul>
+</blockquote>
+</div>
+<div id="candidate-keys" class="section level2">
+<h2><span class="header-section-number">4.12</span> Candidate Keys</h2>
+<ul>
+<li>Candidate Key:
+<ul>
+<li>A unique identifier. One of the candidate keys will become the primary key</li>
+<li>Each non-key attribute is functionally dependent on every candidate key because the value of the key uniquely <strong>identifies</strong> that row.</li>
+</ul></li>
+</ul>
+</div>
+<div id="determinant-vs.candidate-key" class="section level2">
+<h2><span class="header-section-number">4.13</span> Determinant vs. Candidate Key</h2>
+<ul>
+<li>A candidate key is always a determinant</li>
+<li>A determinant may or may not be a candidate key</li>
+<li>A determinant may be part of a composite candidate key, or even a non-key attribute</li>
+</ul>
+</div>
+<div id="normal-form" class="section level2">
+<h2><span class="header-section-number">4.14</span> Normal Form</h2>
+<p>A relation with a state that certain rules regarding the relationships between attributes or functional dependencies are satisfied, e.g., first normal form, second normal form, etc.</p>
+</div>
+<div id="first-normal-form-1nf" class="section level2">
+<h2><span class="header-section-number">4.15</span> First Normal Form (1NF)</h2>
+<ul>
+<li>Having a primary key</li>
+<li>No multivalued attributes (or repeating groups)</li>
+<li>Every attribute value is atomic</li>
+</ul>
+<p><em>All relations are in 1st Normal Form</em></p>
+<div id="an-anomaly-in-1nf" class="section level3">
+<h3><span class="header-section-number">4.15.1</span> An anomaly in 1NF</h3>
+<p><strong>Partial functional dependency:</strong> a situation where one or more non-key attributes are functionally dependent on part (but not all) of the primary key.</p>
+</div>
+</div>
+<div id="second-normal-form-2nf" class="section level2">
+<h2><span class="header-section-number">4.16</span> Second Normal Form (2NF)</h2>
+<p>1NF PLUS every non-key attribute is fully functionally dependent on the ENTIRE primary key</p>
+<p>Two steps to convert a 1NF w/ partial dependency to a 2NF:</p>
+<ul>
+<li>Create a new relation for each partial dependency</li>
+<li>Make the primary key attribute (or a determinant) a primary key of the new relation(s)</li>
+</ul>
+<div id="an-anomaly-in-2nf" class="section level3">
+<h3><span class="header-section-number">4.16.1</span> An anomaly in 2NF</h3>
+<p><strong>Transitive dependency:</strong> A functional dependency between the primary key and one or more non-key attributes that are dependent on primary key via another non-key attribute. (Or, it can be considered as a functional dependency within non-key attributes.)</p>
+</div>
+</div>
+<div id="third-normal-form-3nf" class="section level2">
+<h2><span class="header-section-number">4.17</span> Third Normal Form (3NF)</h2>
+<p>2NF PLUS <strong>no transitive dependencies</strong> (functional dependencies on non-primary-key attributes)</p>
+<p>How to convert a 2NF w/ transitive dependency to a 3NF?</p>
+<ul>
+<li>The non-key determinant with transitive dependencies goes into a new relation</li>
+<li>The non-key determinant becomes primary key in the new relation and stays as foreign key in the old table</li>
+</ul>
+<p><em>3NF is generally considered sufficient for most of practical DB applications.</em></p>
+</div>
+<div id="normal-forms-beyond-3nf" class="section level2">
+<h2><span class="header-section-number">4.18</span> Normal Forms beyond 3NF</h2>
+<ul>
+<li>Boyce-Codd normal form (BCNF): Every determinant is a candidate key so that there is no functionally dependent anomalies.</li>
+</ul>
+<p><em>If a relation has only one candidate key, 3NF and BCNF are equivalent.</em></p>
+</div>
+<div id="fourth-normal-form-4nf" class="section level2">
+<h2><span class="header-section-number">4.19</span> Fourth normal form (4NF)</h2>
+<p>A normal form in BCNF contains no <strong>multivalued dependencies</strong> (ones that exist when there are at least three attributes (A, B and C) in a relation, with a well-defined set of B and C values for each A value, but B and C are independent).</p>
+</div>
+<div id="merging-relations-view-integration" class="section level2">
+<h2><span class="header-section-number">4.20</span> Merging Relations (View Integration)</h2>
+<p>A process of combining entities from multiple ER models into common relations</p>
+</div>
+<div id="some-possible-issues-for-merging-entities-from-different-er-models" class="section level2">
+<h2><span class="header-section-number">4.21</span> Some possible issues for merging entities from different ER models</h2>
+<ul>
+<li>Synonyms - two or more attributes with different names but the same meaning
+<ul>
+<li>Work with users to select one name or create a new one or use a alias</li>
+</ul></li>
+<li>Homonyms - attributes with the same name but different meanings
+<ul>
+<li>Need to create new attribute names</li>
+</ul></li>
+<li>Transitive dependencies - even if relations are in 3NF prior to merging, they may not be after merging
+<ul>
+<li>Remove any newly emerged dependencies</li>
+</ul></li>
+<li>Supertype/subtype relationships - may be hidden prior to merging
+<ul>
+<li>Create a new relation to reflect this relationship</li>
+<li>PATIENT1(PatientID, Name, Address, DateTreated) and PATIENT2(PatientID, RoomNo) -&gt; PATIENT(PatientID, Name, Address), INPATIENT(PatientID, RoomNo) and OUTPATIENT(PatientID, DateTreated)</li>
+</ul></li>
+</ul>
+</div>
+<div id="enterprise-keys" class="section level2">
+<h2><span class="header-section-number">4.22</span> Enterprise Keys</h2>
+<ul>
+<li>Primary keys that are unique in the <strong>whole database</strong>, not just within a single relation.</li>
+<li>The primary keys become values internal to the DB system and have no business meanings.</li>
+<li>The traditional candidate (primary) key (business/natural key), e.g., EmpID, will be included as a non-key attribute.</li>
+<li>It is a relative new concept mainly for merging new relations into an existing DB w/o creating a ripple effect of foreign key changes.</li>
+</ul>
+<hr />
+</div>
 </div>
 <div id="physical-database-design-and-performance" class="section level1">
 <h1><span class="header-section-number">5</span> Physical Database Design and Performance</h1>
+<div id="physical-database-design" class="section level2">
+<h2><span class="header-section-number">5.1</span> Physical Database Design</h2>
+<p>Purpose: translate the <strong>logical</strong> description of data into the <strong>technical specifications</strong> for storing and retrieving data to create a design for storing data that will provide <strong>adequate performance (or data processing efficiency)</strong> and insure <strong>database integrity</strong>, <strong>security</strong>, and <strong>recoverability</strong></p>
+<hr />
+</div>
 </div>
 <div id="introduction-to-sql" class="section level1">
 <h1><span class="header-section-number">6</span> Introduction to SQL</h1>
+<hr />
 </div>
 <div id="advanced-sql" class="section level1">
 <h1><span class="header-section-number">7</span> Advanced SQL</h1>
