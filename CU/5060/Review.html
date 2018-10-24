@@ -128,7 +128,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3",
+      selectors: "h1,h2,h3,h4",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
@@ -407,7 +407,7 @@ ul {font-size: 16px; color: black;}
 </div>
 <div id="relational-database" class="section level3">
 <h3><span class="header-section-number">1.13.4</span> Relational Database</h3>
-<p>A database that represents data as a collection of <strong>tables (relations)</strong> in which all data <em>relationships</em> are represented by common values in the related tables, i.e., the primary/foreign keys in the tables</p>
+<p>A database that represents data as a collection of <strong>tables (relations)</strong> in which all data <strong>relationships</strong> are represented by common values in the related tables, i.e., the primary/foreign keys in the tables</p>
 </div>
 </div>
 <div id="primaryforeign-key-pair" class="section level2">
@@ -479,7 +479,7 @@ ul {font-size: 16px; color: black;}
 <li>Time-consuming but comprehensive</li>
 <li>Long development cycle</li>
 </ul></li>
-<li><strong>Prototyping:</strong> an interactive process of systems development in which requirements are converted to a <em>working system</em> that is <em>continually revised</em> through close work between the developer and users
+<li><strong>Prototyping:</strong> an interactive process of systems development in which requirements are converted to a <strong>working system</strong> that is <strong>continually revised</strong> through close work between the developer and users
 <ul>
 <li>Rapid application development (RAD)</li>
 <li>Cursory attempt at conceptual data modeling</li>
@@ -580,7 +580,7 @@ ul {font-size: 16px; color: black;}
 </div>
 <div id="entity-relationship-e-r-model" class="section level2">
 <h2><span class="header-section-number">2.2</span> Entity-Relationship (E-R) Model</h2>
-<p>A <strong>logical representation</strong> of the data for an organization or for a business area, using <em>entities</em> for categories of data and <em>relationships</em> for associations between entities.</p>
+<p>A <strong>logical representation</strong> of the data for an organization or for a business area, using <strong>entities</strong> for categories of data and <strong>relationships</strong> for associations between entities.</p>
 <p>Entity-relationship diagram (E-R diagram, or ERD): a graphical representation of an E-R model.</p>
 <div id="e-r-model-constructs" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> E-R Model Constructs</h3>
@@ -772,11 +772,191 @@ ul {font-size: 16px; color: black;}
 </ul>
 <div id="relationship-types-and-instances" class="section level4">
 <h4><span class="header-section-number">2.8.0.1</span> Relationship Types and Instances</h4>
+<p>a) Relationship type (“Completes”)</p>
+<p>b) Relationship instances</p>
+</div>
+<div id="degree-of-relationships" class="section level4">
+<h4><span class="header-section-number">2.8.0.2</span> Degree of Relationships</h4>
+<p>Degree of a relationship is the number of entities that participate in it</p>
+<ul>
+<li>Unary Relationship</li>
+<li>Binary Relationship</li>
+<li>Ternary Relationship</li>
+</ul>
+</div>
+<div id="cardinality-of-relationships" class="section level3">
+<h3><span class="header-section-number">2.8.1</span> Cardinality of Relationships</h3>
+<p>(The number of instances of each entity type allowed)</p>
+<ul>
+<li>One-to-One
+<ul>
+<li>Each entity in the relationship will have exactly one related entity instance</li>
+</ul></li>
+<li>One-to-Many
+<ul>
+<li>An instance of an entity on one side of the relationship can have many related instances of the entity on the other side, but the entity on the other side will have a maximum of one related instance of the other entity</li>
+</ul></li>
+<li>Many-to-Many
+<ul>
+<li>Entities on both sides of the relationship can have many related instances of the entity on the other side 31</li>
+</ul></li>
+</ul>
+</div>
+<div id="cardinality-constraints" class="section level3">
+<h3><span class="header-section-number">2.8.2</span> Cardinality Constraints</h3>
+<ul>
+<li>Cardinality Constraints - the <strong>number of instances</strong> of one entity that can or must be associated with each instance of another entity</li>
+<li>Minimum Cardinality
+<ul>
+<li>If zero, then <strong>optional</strong></li>
+<li>If one or more, then <strong>mandatory</strong></li>
+</ul></li>
+<li>Maximum Cardinality
+<ul>
+<li>The maximum number of instances</li>
+</ul></li>
+</ul>
+<p><strong>Examples of Cardinality Constraints</strong></p>
 <ol style="list-style-type: lower-alpha">
-<li>Relationship type (“Completes”)</li>
+<li>Mandatory cardinalities</li>
+<li>One optional, one mandatory</li>
+<li>Optional cardinalities</li>
 </ol>
 </div>
+<div id="associative-entity" class="section level3">
+<h3><span class="header-section-number">2.8.3</span> Associative Entity</h3>
+<p>An entity type that associates one or more entity types and contains attributes that are particular to the relationship between those entity instances.</p>
+<ul>
+<li>An entity - has attributes</li>
+<li>A relationship - links entities together</li>
+</ul>
+<p>When should a <strong>relationship with attributes</strong> instead be an <strong>associative entity</strong>?</p>
+<ul>
+<li>All relationships for the associative entity should be many.</li>
+<li>The associative entity could have meaning independent of the other entities.</li>
+<li>The associative entity <strong>preferably</strong> has a unique identifier, and should also have other attributes.</li>
+<li>The associative entity may participate in other relationships other than the entities of the associated relationship.</li>
+<li>Ternary relationships should be converted to associative entities.</li>
+</ul>
 </div>
+</div>
+</div>
+<div id="enhanced-e-r-model" class="section level1">
+<h1><span class="header-section-number">3</span> Enhanced E-R model</h1>
+<div id="supertypes-and-subtypes" class="section level2">
+<h2><span class="header-section-number">3.1</span> Supertypes and Subtypes</h2>
+<ul>
+<li>Enhanced ER (EER) model: A model extended from the original ER model with new modeling constructs</li>
+<li>Supertype: A generic entity type that has a relationship with one or more subtypes</li>
+<li>Subtype: A subgrouping of the entities in an entity type that has attributes distinct from those in other subgroupings</li>
+<li>Attribute Inheritance:
+<ul>
+<li>Subtype entities inherit values of all attributes of the supertype</li>
+<li>An instance of a subtype is also an instance of the supertype</li>
+</ul></li>
+</ul>
+<p><strong>Basics for supertype/subtype notation</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li>EER notation</li>
+<li>Microsoft Visio Notation</li>
+</ol>
+</div>
+<div id="relationships-and-subtypes" class="section level2">
+<h2><span class="header-section-number">3.2</span> Relationships and Subtypes</h2>
+<ul>
+<li>Relationships at the <strong>supertype</strong> level indicate that all subtypes will participate in the relationship</li>
+<li>The instances of a <strong>subtype</strong> may participate in a relationship unique to that subtype. In this situation, the relationship is shown at the subtype level</li>
+</ul>
+</div>
+<div id="generalization-and-specialization" class="section level2">
+<h2><span class="header-section-number">3.3</span> Generalization and Specialization</h2>
+<ul>
+<li><strong>Generalization:</strong> The process of defining a more general entity type (supertype) from a set of more specialized entity types, a BOTTOM-UP approach</li>
+<li><strong>Specialization:</strong> The process of defining one or more subtypes of the supertype and forming supertype/subtype relationships, a TOP-DOWN approach</li>
+</ul>
+</div>
+<div id="constraints-in-supertypesubtype-relationship-completeness-constraint" class="section level2">
+<h2><span class="header-section-number">3.4</span> Constraints in Supertype/Subtype Relationship: Completeness Constraint</h2>
+<p><strong>Completeness Constraints:</strong> Whether an instance of a supertype <strong>must</strong> also be a member of at least one subtype</p>
+<ul>
+<li>Yes: <strong>total specialization rule</strong> (double line)</li>
+<li>No: <strong>partial specialization rule</strong> (single line)</li>
+</ul>
+</div>
+<div id="constraints-in-supertypesubtype-relationship-disjointness-constraint" class="section level2">
+<h2><span class="header-section-number">3.5</span> Constraints in Supertype/Subtype Relationship: Disjointness Constraint</h2>
+<p><strong>Disjointness Constraints:</strong> Whether an instance of a supertype may <strong>simultaneously</strong> be a member of two (or more) subtypes</p>
+<ul>
+<li><strong>Yes: Overlap Rule</strong> (represented with an “o” in the circle)</li>
+<li><strong>No: Disjoint Rule</strong> (represented with a “d” in the circle)</li>
+</ul>
+</div>
+<div id="constraints-in-supertypesubtype-relationship-subtype-discriminators" class="section level2">
+<h2><span class="header-section-number">3.6</span> Constraints in Supertype/Subtype Relationship: Subtype Discriminators</h2>
+<p><strong>Subtype Discriminator:</strong> An attribute of the supertype whose values determine the target subtype(s). It has two situations:</p>
+<ul>
+<li><strong>Disjoint</strong> - a <strong>simple</strong> attribute with alternative values to indicate the possible subtypes</li>
+<li><strong>Overlapping</strong> - a <strong>composite</strong> attribute whose subparts pertain to different subtypes. Each subpart contains a Boolean value to indicate whether or not the instance belongs to the associated subtype</li>
+</ul>
+</div>
+<div id="supertypesubtype-hierarchy" class="section level2">
+<h2><span class="header-section-number">3.7</span> Supertype/Subtype Hierarchy</h2>
+<ul>
+<li>A subtype may have other subtypes defined on it, so that the subtype becomes a supertype of the newly defined subtypes.</li>
+<li>Supertype/subtype hierarchy is a hierarchal arrangement of supertypes and subtypes in which <strong>each subtype has only one supertype</strong>.</li>
+</ul>
+</div>
+<div id="entity-clusters" class="section level2">
+<h2><span class="header-section-number">3.8</span> Entity Clusters</h2>
+<ul>
+<li>EER diagrams are difficult to read when there are too many entities and relationships</li>
+<li>Solution: Group entities and relationships into <strong>entity clusters</strong></li>
+<li><strong>Entity cluster:</strong> Set of one or more entity types and associated relationships grouped into a single <strong>abstract entity type</strong></li>
+</ul>
+</div>
+<div id="packaged-data-models" class="section level2">
+<h2><span class="header-section-number">3.9</span> Packaged Data Models</h2>
+<ul>
+<li>Predefined data models</li>
+<li>Could be universal or industry-specific</li>
+<li>Universal data model = a generic or template data model that can be reused as a starting point for a data modeling project (also called a “pattern”)</li>
+</ul>
+</div>
+<div id="advantages-of-packaged-data-models" class="section level2">
+<h2><span class="header-section-number">3.10</span> Advantages of Packaged Data Models</h2>
+<ul>
+<li>Use proven model components</li>
+<li>Save time and cost</li>
+<li>Less likelihood of data model errors</li>
+<li>Easier to evolve and modify over time</li>
+<li>Aid in requirements determination</li>
+<li>Easier to read</li>
+<li>Supertype/subtype hierarchies promote reuse</li>
+<li>Many-to-many relationships enhance model flexibility</li>
+<li>Vendor-supplied data model fosters integration with vendor’s applications</li>
+<li>Universal models support inter-organizational systems</li>
+</ul>
+</div>
+</div>
+<div id="logical-database-design-and-the-relational-model" class="section level1">
+<h1><span class="header-section-number">4</span> Logical Database Design and the Relational Model</h1>
+<div id="logical-database-design" class="section level2">
+<h2><span class="header-section-number">4.1</span> Logical Database Design</h2>
+<ul>
+<li>It is a process of transforming the conceptual data model (E-R model) into logical data model.</li>
+<li>It creates <strong>stable</strong> database structures by expressing the requirements in a technical language.</li>
+<li>The <strong>relational data model</strong> is a form of logical data model, the one that is most commonly used in the contemporary database applications.</li>
+</ul>
+</div>
+</div>
+<div id="physical-database-design-and-performance" class="section level1">
+<h1><span class="header-section-number">5</span> Physical Database Design and Performance</h1>
+</div>
+<div id="introduction-to-sql" class="section level1">
+<h1><span class="header-section-number">6</span> Introduction to SQL</h1>
+</div>
+<div id="advanced-sql" class="section level1">
+<h1><span class="header-section-number">7</span> Advanced SQL</h1>
 </div>
 
 
