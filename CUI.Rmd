@@ -236,7 +236,10 @@ ul {font-size: 16px; color: black;}
     - [Solutions](CU/5080/PM1_S.pdf)
 
 ##Exams
-1. [Midterm 1 with Solutions](CU/5080/M1_S.pdf)
+1. [Midterm 1](CU/5080/M1.pdf)
+    - [Midterm 1 with Solutions](CU/5080/M1_S.pdf)
+2. [Midterm 2](CU/5080/M2.pdf)
+    - [Midterm 2 with Solutions](CU/5080/M2_S.pdf)
 
 ---
 
