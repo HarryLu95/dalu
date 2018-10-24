@@ -7,6 +7,7 @@ output:
       collapsed: TRUE
     toc_depth: 1
 ---
+
 <style>
 h1 {font-size: 28px; color: black; font-weight: bold; text-align: center;}
 h1.title {color: black; text-align: center;}
@@ -170,6 +171,9 @@ ul {font-size: 16px; color: black;}
     - Due: Oct/23/2018 at 11:59PM
     - Data: [CREATEPVFC](CU/5060/CREATEPVFC.sql) (.sql)
     - [Lab 2 Summary](CU/5060/Lab2_Smy.html)
+
+##Exams
+- [Review](CU/5060/Review.html)
 
 ##Quizzes
 1. [Quiz 1 with Solutions](CU/5060/Quiz1.pdf)
