@@ -208,6 +208,7 @@ ul {font-size: 16px; color: black;}
 14. [Lecture 14: MGF and LLN](CU/5080/Lec14.pdf)
 15. [Lecture 15: LLN and CLT](CU/5080/Lec15.pdf)
 16. [Lecture 16: CLT, $\chi^2$ and $t$ Distributions](CU/5080/Lec16.pdf)
+17. [Lecture 17: $\chi^2$ and $t$ Distributions](CU/5080/Lec17.pdf)
 
 ##Homeworks
 1. [Homework 1](CU/5080/HW1.pdf)
