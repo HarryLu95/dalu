@@ -1234,13 +1234,481 @@ ul {font-size: 16px; color: black;}
 <h1><span class="header-section-number">5</span> Physical Database Design and Performance</h1>
 <div id="physical-database-design" class="section level2">
 <h2><span class="header-section-number">5.1</span> Physical Database Design</h2>
-<p>Purpose: translate the <strong>logical</strong> description of data into the <strong>technical specifications</strong> for storing and retrieving data to create a design for storing data that will provide <strong>adequate performance (or data processing efficiency)</strong> and insure <strong>database integrity</strong>, <strong>security</strong>, and <strong>recoverability</strong></p>
+<p>Purpose: translate the <strong>logical</strong> description of data into the <strong>technical specifications</strong> for storing and retrieving data to create a design for storing data that will provide <strong>adequate performance (or data processing efficiency)</strong> and insure <strong>database integrity</strong>, <strong>security</strong>, and <strong>recoverability</strong>.</p>
+</div>
+<div id="physical-design-process" class="section level2">
+<h2><span class="header-section-number">5.2</span> Physical Design Process</h2>
+<p>Inputs (requirements prior to physical design) -&gt; Decisions</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li>Normalized relations</li>
+<li>Data volume estimates</li>
+<li>Attribute definitions</li>
+<li>Response time expectations</li>
+<li>Data security needs</li>
+<li>Backup/recovery needs</li>
+<li>Integrity expectations</li>
+<li><strong>DBMS technology to use</strong></li>
+</ul>
+<p><strong>Decisions:</strong></p>
+<ul>
+<li>Attribute data types (storage format)</li>
+<li>Physical record descriptions (it doesn’t always match the logical design of a DBMS)</li>
+<li>File organizations in secondary memory (hard disks)</li>
+<li>Indexes and database overall architectures for efficient data retrieval</li>
+<li>Strategies for query optimization</li>
+</ul>
+</div>
+<div id="data-volume-and-usage-analysis" class="section level2">
+<h2><span class="header-section-number">5.3</span> Data Volume and Usage Analysis</h2>
+<ul>
+<li>Adding notations to the EER diagram representing normalized relations.</li>
+<li>Writing <strong>a number in the lower right corner</strong> of an entity as the data volume.</li>
+<li>Using <strong>dashed arrows</strong> to represent access frequencies.</li>
+</ul>
+</div>
+<div id="designing-fields" class="section level2">
+<h2><span class="header-section-number">5.4</span> Designing Fields</h2>
+<ul>
+<li><strong>Field:</strong> smallest unit of data in a database, corresponding to <strong>a simple attribute</strong> (or a single component of a composite attribute) in the logical data model</li>
+<li>Field design
+<ul>
+<li>Choosing data type</li>
+<li>Controlling data integrity</li>
+<li>Handling missing values</li>
+<li>Dealing with coding, compression and encryption</li>
+</ul></li>
+</ul>
+</div>
+<div id="data-types" class="section level2">
+<h2><span class="header-section-number">5.5</span> Data Types</h2>
+<p>A detailed coding schema recognized by system software (e.g., a DBMS) for representing data.</p>
+<p><strong>Commonly Used Data Types in Oracle 11g</strong></p>
+<ul>
+<li>VARCHAR2
+<ul>
+<li>Variable-length character data with a maximum length of 4,000 characters.</li>
+<li>e.g., VARCHAR2(30)</li>
+</ul></li>
+<li>CHAR
+<ul>
+<li>Fixed-length character data with a maximum length of 2,000 characters.</li>
+<li>e.g., CHAR(5)</li>
+</ul></li>
+<li>CLOB
+<ul>
+<li>Character large object, capable of storing up to 4 gigabytes of one variable-length character data field.</li>
+<li>e.g., to hold a medical instruction or a customer comment</li>
+</ul></li>
+<li>NUMBER
+<ul>
+<li>Positive or negative number in the range <span class="math inline">\(10^{-130}\)</span> to <span class="math inline">\(10^{126}\)</span>.</li>
+<li>e.g., NUMBER(5)</li>
+<li>e.g., NUMBER(5,2)</li>
+</ul></li>
+<li>INTEGER
+<ul>
+<li>Positive or negative integer with up to 38 digits.</li>
+</ul></li>
+<li>DATE</li>
+<li>BLOB
+<ul>
+<li>Binary large object, capable of storing up to 4 gigabytes of binary data.</li>
+<li>e.g., a photograph or sound clip</li>
+</ul></li>
+</ul>
+</div>
+<div id="four-objectives-of-choosing-data-types" class="section level2">
+<h2><span class="header-section-number">5.6</span> Four Objectives of Choosing Data Types</h2>
+<ul>
+<li>Minimize storage space
+<ul>
+<li>Just specify the space that is needed.</li>
+</ul></li>
+<li>Represent all possible values
+<ul>
+<li>The result of mathematical operations may need greater maximum width than the width of normal field members.</li>
+</ul></li>
+<li>Support all data manipulations
+<ul>
+<li>e.g., numeric types for arithmetic operations, and character type for string manipulations.</li>
+</ul></li>
+<li>Improve data integrity
+<ul>
+<li>e.g., The data type enforces the type of data and the length of a field value.</li>
+</ul></li>
+</ul>
+</div>
+<div id="field-data-integrity" class="section level2">
+<h2><span class="header-section-number">5.7</span> Field Data Integrity</h2>
+<ul>
+<li><strong>Default value:</strong> Assumed value if no explicit value is entered, which can reduce data entry time and error.</li>
+<li><strong>Range control:</strong> Allowable value limitations (e.g., a numerical <strong>lower</strong>-to-<strong>upper</strong> bound or a set of specific values).</li>
+<li><strong>Null value control:</strong> Allowing or prohibiting empty fields (e.g., a PK field does not allow a null value).</li>
+<li><strong>Referential integrity:</strong> A special form of range control for foreign-key to primary-key match-ups.</li>
+</ul>
+</div>
+<div id="handling-missing-data" class="section level2">
+<h2><span class="header-section-number">5.8</span> Handling Missing Data</h2>
+<ul>
+<li>Use a default value, or do not permit missing values.</li>
+<li>Substitute an estimate of the missing value (e.g., using a formula for an average value) but must be marked for such a substitution.</li>
+<li>In programs, ignore missing-value data unless the value is significant (based on sensitivity testing).</li>
+<li>Construct a report listing missing values so that people are aware of missing values and resolve unknown values quickly.</li>
+</ul>
+<p><em>Triggers can be used to perform these operations (Ch7)</em></p>
+</div>
+<div id="coding-techniques" class="section level2">
+<h2><span class="header-section-number">5.9</span> Coding Techniques</h2>
+<ul>
+<li>A method of translating an attribute of a <strong>sparse set of values</strong> or <strong>needing considerable storage space</strong> into a *<strong>code</strong> or <strong>translation table</strong> that requires less space.</li>
+<li>A code is similar to a foreign key.</li>
+<li>The code table does not belong to the conceptual or logical model; it is a physical construct.</li>
+<li>Coding is not suitable for an attribute that it is not used frequently, or the number of distinct values of the field is very large.</li>
+<li>Coding saves space but costs <strong>additional space</strong> for the lookup table and an <strong>extra access</strong> to the lookup table (called join) to obtain an actual value.</li>
+</ul>
+</div>
+<div id="normalization-and-physical-db-design" class="section level2">
+<h2><span class="header-section-number">5.10</span> Normalization and Physical DB Design</h2>
+<ul>
+<li>Normalization solves data maintenance anomalies and minimizes data redundancy.</li>
+<li>Efficient use of storage space has become less important due to rapid cost drop of storage/unit of data.</li>
+<li>Efficient data processing dominates the physical DB design.</li>
+<li>Queries that need matching up (or joining) multiple relations are time-consuming.</li>
+<li>One-for-one implementation of normalized relations to physical records may not yield most efficient data processing.</li>
+<li>Sometimes a partially normalized DB is more efficient in processing data using a technique called <strong>denormalization</strong>.</li>
+</ul>
+</div>
+<div id="physical-records" class="section level2">
+<h2><span class="header-section-number">5.11</span> Physical Records</h2>
+<ul>
+<li><strong>Physical Record:</strong> A group of fields stored in adjacent memory locations and retrieved together as a unit.</li>
+<li><strong>Page:</strong> The amount of data read or written in one I/O operation.</li>
+<li><strong>Blocking Factor:</strong> The number of physical records per page.</li>
+</ul>
+</div>
+<div id="denormalization" class="section level2">
+<h2><span class="header-section-number">5.12</span> Denormalization</h2>
+<ul>
+<li>Definition: Transforming <strong>normalized</strong> relations into <strong>non-normalized</strong> physical record specifications by combining attributes from different relations, or partitioning a relation, or both.</li>
+<li>Benefits:
+<ul>
+<li>To improve performance (speed) by reducing number of table lookups (i.e. <strong>reduce number of necessary join queries</strong>), especially when the frequency of use is high.</li>
+</ul></li>
+<li>Costs (due to data duplication and anomalies):
+<ul>
+<li>Wasted storage space.</li>
+<li>Data integrity/consistency threats.</li>
+<li>Must be used with caution.</li>
+</ul></li>
+<li>Common denormalization opportunities:
+<ul>
+<li>One-to-one relationship.</li>
+<li>Many-to-many relationship with non-key attributes (associative entity).</li>
+<li>Reference data (1:M relationship where 1-side participates in no other relationship).</li>
+</ul></li>
+</ul>
+</div>
+<div id="partitioning" class="section level2">
+<h2><span class="header-section-number">5.13</span> Partitioning</h2>
+<ul>
+<li><strong>Definition:</strong> Another form of denormalization by often partitioning a relation into multiple physical tables; it often corresponds with user views.</li>
+<li><strong>It has both advantages and disadvantages.</strong></li>
+<li><strong>Horizontal Partitioning.</strong></li>
+<li><strong>Vertical Partitioning.</strong></li>
+</ul>
+<div id="partitioning-advantages-vs.disadvantages" class="section level3">
+<h3><span class="header-section-number">5.13.1</span> Partitioning: Advantages vs. Disadvantages</h3>
+<p><strong>Advantages of Partitioning</strong></p>
+<ol style="list-style-type: decimal">
+<li>Efficiency</li>
+<li>Local optimization</li>
+<li>Security</li>
+<li>Recovery and uptime</li>
+<li>Load balancing</li>
+</ol>
+<p><strong>Disadvantages of Partitioning</strong></p>
+<ol style="list-style-type: decimal">
+<li>Inconsistent access speed</li>
+<li>Complexity</li>
+<li>Extra space and update time</li>
+</ol>
+</div>
+<div id="horizontal-partitioning" class="section level3">
+<h3><span class="header-section-number">5.13.2</span> Horizontal Partitioning</h3>
+<ul>
+<li>A partitioning method that places different <strong>rows</strong> of a table into several separate tables based on common column values. It is very similar to creating a supertype/subtype relationship.
+<ul>
+<li>Useful for situations where different users need access to different rows</li>
+<li>Oracle DBMS uses a method that one table has several partitions rather than separate tables. Oracle 11g has three methods: range partitioning, hash partitioning, and list partitioning.</li>
+</ul></li>
+</ul>
+</div>
+<div id="oracle-11g-horizontal-partitioning-methods" class="section level3">
+<h3><span class="header-section-number">5.13.3</span> Oracle 11g Horizontal Partitioning Methods</h3>
+<ul>
+<li>Range partitioning
+<ul>
+<li>Partitions defined by a range of field values (lower and upper key value limits)</li>
+<li>Could result in unbalanced distribution of rows</li>
+</ul></li>
+<li>Hash partitioning
+<ul>
+<li>Partitions defined via hash functions</li>
+<li>Will guarantee balanced distribution of rows</li>
+<li>Partition could contain widely varying valued fields</li>
+</ul></li>
+<li>List partitioning
+<ul>
+<li>Based on predefined lists of values for the partitioning key</li>
+<li>e.g., a partitioning based on the value of the column State, rows having a State value of “NY”, “MA”, or “NJ” are in one partition</li>
+</ul></li>
+</ul>
+<p>(Composite partitioning: a combination of two of the three approaches)</p>
+</div>
+<div id="vertical-partitioning" class="section level3">
+<h3><span class="header-section-number">5.13.4</span> Vertical Partitioning</h3>
+<p>A partitioning method that distributes the <strong>columns</strong> of a table into several separate tables; <strong>the primary key is repeated in each table</strong>. It is useful for situations where different users need to access to different columns.</p>
+</div>
+</div>
+<div id="designing-physical-files" class="section level2">
+<h2><span class="header-section-number">5.14</span> Designing Physical Files</h2>
+<ul>
+<li>**Physical <a href="File:**" class="uri">File:**</a> A named portion of secondary memory allocated for the purpose of storing physical records</li>
+<li><strong>Tablespace:</strong> A named <strong>logical storage unit</strong> in which physical files for database tables, views and other database objects can be stored</li>
+<li><strong>Extent:</strong> Contiguous section of disk storage space, which consists of contiguous data blocks</li>
+<li><strong>Data block:</strong> the smallest unit of storage space</li>
+<li><strong>Constructs</strong> linking two pieces of data:
+<ul>
+<li>Sequential storage</li>
+<li>Pointers: A field of data that can be used to locate related fields or records</li>
+</ul></li>
+</ul>
+</div>
+<div id="file-organizations" class="section level2">
+<h2><span class="header-section-number">5.15</span> File Organizations</h2>
+<ul>
+<li>A technique for physically arranging the records of a file on secondary storage devices</li>
+<li><strong>Seven factors</strong> for selecting a file organization:
+<ul>
+<li>Fast data retrieval</li>
+<li>High throughput for data input and maintenance transactions</li>
+<li>Efficient storage space utilization</li>
+<li>Protection from failure and data loss</li>
+<li>Minimizing need for reorganization</li>
+<li>Accommodating growth</li>
+<li>Security from unauthorized use</li>
+</ul></li>
+<li><strong>Three types</strong> of file organizations
+<ul>
+<li>Sequential</li>
+<li>Indexed</li>
+<li>Hashed</li>
+</ul></li>
+</ul>
+<div id="sequential-file-organization" class="section level3">
+<h3><span class="header-section-number">5.15.1</span> Sequential File Organization</h3>
+<ul>
+<li>Records of the file are stored in sequence by the primary key field values.</li>
+<li><p>Sequential files are not used in an active database but may be used for the files to back up a database.</p></li>
+<li>If sorted - every insert or delete requires resort</li>
+<li><p>If not sorted - Average time to find desired record = n/2</p></li>
+</ul>
+</div>
+<div id="indexed-file-organizations" class="section level3">
+<h3><span class="header-section-number">5.15.2</span> Indexed File Organizations</h3>
+<ul>
+<li><strong>Indexed File Organization:</strong> the records are stored either sequentially or nonsequentially with an index that allows software to locate individual records.</li>
+<li><strong>Index:</strong> a table or other data structure used to determine more quickly and efficiently in a file the location of records that satisfy some condition.</li>
+<li>The structure of an index: often a <strong>table</strong> by itself with 2 columns: the key and the address of the record(s) containing that key value.</li>
+<li>Primary keys are automatically indexed.</li>
+</ul>
+<div id="indexed-file-organization-b-tree-index" class="section level4">
+<h4><span class="header-section-number">5.15.2.1</span> Indexed File Organization: B-tree Index</h4>
+<p><strong>Uses a tree search</strong></p>
+<ul>
+<li>Average time to find desired record = depth of the tree</li>
+</ul>
+</div>
+<div id="creating-index-for-the-primary-key" class="section level4">
+<h4><span class="header-section-number">5.15.2.2</span> Creating Index for the Primary Key</h4>
+<pre class="sql"><code>CREATE UNIQUE INDEX CustIndex_PK ON Customer_T (CustomerID);</code></pre>
+<p>Creating Index for a Composite Primary Key:</p>
+<pre class="sql"><code>CREATE UNIQUE INDEX LineIndex_PK ON OrderLine_T (OrderID, ProductID);</code></pre>
+<p>Creating a Nonunique Index:</p>
+<pre class="sql"><code>CREATE INDEX DescIndex_NPK ON Product_T (Description);</code></pre>
+</div>
+<div id="rules-for-using-indexes" class="section level4">
+<h4><span class="header-section-number">5.15.2.3</span> Rules for Using Indexes</h4>
+<ol style="list-style-type: decimal">
+<li>Use on large tables.</li>
+<li>Index the primary key of each table.</li>
+<li>Index search fields (fields frequently in WHERE clause).</li>
+<li>Fields in SQL <strong>ORDER BY</strong> and/or <strong>GROUP BY</strong> commands.</li>
+<li>When there are <strong>&gt;100 values</strong> for an attribute but not when there are &lt;30 values.</li>
+<li>Avoid use of indexes for fields with long values; perhaps compress values first.</li>
+<li>If a key to index is used to determine location of record, use <strong>surrogate</strong> (like a serial #) to allow even spread in storage area.</li>
+<li>DBMS may have a limit on number of indexes per table and number of bytes per indexed field(s).</li>
+<li>Be careful of indexing attributes with null values; many DBMSs will not recognize null values in an index search</li>
+</ol>
+</div>
+<div id="join-index-an-index-on-columns-from-two-or-more-tables-from-the-same-domain-of-values" class="section level4">
+<h4><span class="header-section-number">5.15.2.4</span> Join Index: an Index on Columns from Two or More Tables from the Same Domain of Values</h4>
+<p>a) Join index for common non-key columns</p>
+<p>b) Join Index for Matching Foreign Key (FK) and Primary Key (PK)</p>
+</div>
+</div>
+<div id="hashed-file-organization" class="section level3">
+<h3><span class="header-section-number">5.15.3</span> Hashed File Organization</h3>
+<p><strong>Definition:</strong> A data storage system in which the address for each record is determined by a <strong>hashing algorithm</strong>.</p>
+<p><strong>Hashing algorithm:</strong> A routine that divides each primary key value by a suitable prime number and then use the remainder of the division as the relative storage location (e.g., the <strong>remainder</strong> of 12396/997 is 432, thus record is stored at location 432 in the file).</p>
+<div id="hashing-limitation-and-hash-index-table" class="section level4">
+<h4><span class="header-section-number">5.15.3.1</span> Hashing Limitation and Hash Index Table</h4>
+<ul>
+<li><strong>Hashing limitation:</strong> Only one key can be used for data storage and retrieval.</li>
+<li><strong>Solution:</strong> Combining hashing and indexing into a <strong>hash index table</strong>.</li>
+<li><strong>Hash index table:</strong> A file organization that uses hashing to map a key into a location in an index, where there is a pointer to the actual data record matching the hashing key.</li>
+<li><strong>Result:</strong> Several primary and secondary keys, each with its own hashing algorithm and indexntable, share one data table. This adds flexibilitynand speed for data retrieval and is useful innparallel data processing.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="clustering-files" class="section level2">
+<h2><span class="header-section-number">5.16</span> Clustering Files</h2>
+<ul>
+<li>In some relational DBMSs (e.g., Oracle), related records from different tables can be stored together in the adjacent secondary memory space.</li>
+<li>It is useful for improving performance of join operations.</li>
+<li>Primary key records of the main table are stored adjacent to associated foreign key records of the dependent table.</li>
+<li>It is best used for fairly static records.</li>
+<li>The <strong>CREATE CLUSTER</strong> command in Oracle is for this purpose.</li>
+</ul>
+<div id="first-create-a-cluster-adjacent-disk-space" class="section level3">
+<h3><span class="header-section-number">5.16.1</span> First Create a Cluster (Adjacent Disk Space)</h3>
+<p>in Oracle</p>
+<pre class="sql"><code>CREATE CLUSTER Ordering (CustomerID VARCHAR2(25));</code></pre>
+<p>Then assign tables to the cluster</p>
+<pre class="sql"><code>CREATE TABLE Customer_T (
+  CustomerID VARCHAR2(25) NOT NULL,
+  CustomerAddress VARCHAR2(15))
+  CLUSTER Ordering (CustomerID);
+CREATE TABLE Order_T (
+  OrderID VARCHAR2(20) NOT NULL,
+  CustomerID VARCHAR2(25) NOT NULL,
+  OrderDate DATE)
+  CLUSTER Ordering (CustomerID);</code></pre>
+</div>
+</div>
+<div id="raid" class="section level2">
+<h2><span class="header-section-number">5.17</span> RAID</h2>
+<ul>
+<li>Redundant Array of Inexpensive/Independent Disks.</li>
+<li>A set of disk drives that appear to the user to be a single large logical disk drive.</li>
+<li><strong>Stripes</strong> cut across all disk drives; workload is balanced.</li>
+<li>Allows parallel access to data (improves access speed).</li>
+<li>Pages are arranged in stripes.</li>
+<li>Technologies that are tolerant to the likelihood of disk drive failure and fault by storing redundant data (variations of RAID).</li>
+</ul>
+<div id="raid-types" class="section level3">
+<h3><span class="header-section-number">5.17.1</span> RAID Types</h3>
+<ul>
+<li>RAID 0
+<ul>
+<li>Maximized parallelism</li>
+<li>No redundancy</li>
+<li>No error correction</li>
+<li>No fault tolerance</li>
+</ul></li>
+<li>RAID 1
+<ul>
+<li>Fully redundant, disk mirror</li>
+<li>Write operation must be done twice</li>
+<li>Most common form</li>
+</ul></li>
+<li>RAID 2
+<ul>
+<li>No redundancy</li>
+<li>One record spans across data disks</li>
+<li>Error correction in multiple disks - reconstruct damaged data</li>
+</ul></li>
+<li>RAID 3
+<ul>
+<li>Error correction in one disk</li>
+<li>Record spans multiple data disks (more than RAID2)</li>
+<li>Not good for multi-user environments</li>
+</ul></li>
+<li>RAID 4
+<ul>
+<li>Error correction in one disk</li>
+<li>Multiple records per stripe</li>
+<li>Parallelism, but slow updates due to error correction contention</li>
+</ul></li>
+<li>RAID 5
+<ul>
+<li>Rotating parity array</li>
+<li>Error correction takes place in same disks as data storage</li>
+<li>Parallelism, better performance than Raid4</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="query-optimization" class="section level2">
+<h2><span class="header-section-number">5.18</span> Query Optimization</h2>
+<ul>
+<li>Parallel query processing (possible when working in multiprocessor systems).
+<ul>
+<li>Symmetric multiprocessor (SMP) technology.</li>
+<li>Breaking apart a query into modules that can be processed in parallel by related processors.</li>
+<li>Example: Each processor run a copy of query on a horizontal partition (e.g., ALTER TABLE Order_T PARALLEL 3;).</li>
+</ul></li>
+<li>Overriding automatic query optimization.
+<ul>
+<li>In a DBMS, query optimizer choose the “best” plan to execute the query based on statistics about each table.</li>
+<li>The optimizer’s plan for processing a query can be learned by command ‘EXPLAIN’ or ‘EXPLAIN PLAN’ (steps like access indexes, use parallel servers, join tables…).</li>
+<li>If you know a better way, you can force the DBMS to do the steps differently.</li>
+</ul></li>
+<li>Picking a data block size.
+<ul>
+<li>Too small size results in too many physical I/O operations.</li>
+<li>Too large size results in extra data being transferred.</li>
+<li>Normally 2K to 32K.</li>
+</ul></li>
+<li>Balance I/O across disk controllers.
+<ul>
+<li>Disks are attached to controllers - the more controllers, the better parallel access.</li>
+<li>Collect statistics on disk and controller utilization on table accessing, and balance the workload by moving tables between disk drives and controllers</li>
+</ul></li>
+</ul>
 <hr />
 </div>
 </div>
 <div id="introduction-to-sql" class="section level1">
 <h1><span class="header-section-number">6</span> Introduction to SQL</h1>
+<div id="sql-environment" class="section level2">
+<h2><span class="header-section-number">6.1</span> SQL Environment</h2>
+<ul>
+<li>Catalog
+<ul>
+<li>A set of schemas that constitute the description of a database</li>
+</ul></li>
+<li>Schema
+<ul>
+<li>The structure that contains descriptions of objects created by a user (base tables, views, and constraints)</li>
+</ul></li>
+<li>Data Definition Language (DDL)
+<ul>
+<li>Commands that define a database, including creating, altering, and dropping tables and establishing constraints</li>
+</ul></li>
+<li>Data Manipulation Language (DML)
+<ul>
+<li>Commands that maintain and query a database, including updating, inserting, modifying and querying data</li>
+</ul></li>
+<li>Data Control Language (DCL)
+<ul>
+<li>Commands that control a database, including administering privileges and committing (saving) data</li>
+</ul></li>
+</ul>
 <hr />
+</div>
 </div>
 <div id="advanced-sql" class="section level1">
 <h1><span class="header-section-number">7</span> Advanced SQL</h1>
