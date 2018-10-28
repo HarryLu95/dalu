@@ -1,0 +1,91 @@
+---
+title: "Current"
+output: html_document
+---
+
+<style>
+h1 {font-size: 28px; color: black; font-weight: bold; text-align: left;}
+h1.title {color: black; text-align: center;}
+hr {height: 1px; background-color: black;}
+p {font-size: 16px; color: black;}
+ol {font-size: 16px; color: black;}
+ul {font-size: 16px; color: black;}
+</style>
+
+---
+
+**申請:**
+
+1. Alphonso - [Business and Data Analyst](https://cornell.joinhandshake.com/jobs/832323)
+    - **Oct/30** 11:59pm
+2. EDF Trading North America & EDF Energy Services - [Nodal Power Analyst](https://cornell.joinhandshake.com/jobs/2023541)
+    - **Oct/31** 11:59pm
+
+---
+
+**購物:**
+
+- 咖啡
+- 洗髮水
+- 酸奶
+- 洗手液(公用)
+- 洗碗液(公用)
+- 螃蟹(Yao, Li)
+
+---
+
+**Alphonso - Business and Data Analyst**
+
+We are looking for a Business and Data Analyst for a growing portfolio of customers. As a member of the TV Retargeting products, analytics and business operations team, you will have a huge impact on our business and the success of our customers. You will be one of the early members of the team and will help shape the growth of this team. You should have interest in solving business challenges using data, gathering requirements, analyzing use cases and working towards efficient solutions.
+
+*Responsibilities:*
+
+- Work with our Sales and Account Managers to understand customers' KPIs and goals
+- Work with Business Operations team to launch new and optimize ongoing TV Retargeting digital media campaigns
+- Create case studies by analyzing past viewership and exposure data
+- Work closely with the data engineering team to understand the underlying drivers of positive and negative performance across our customers
+- Develop and run data science experiments and interpret the results
+- Implement the insights gained from your experiments across customers
+- Proactively communicate the key insights from the performance to the relevant internal teams: sales, account management and engineering
+- Communicate your ideas for improvement for our internal toolset within the TV Retargeting product and engineering team
+
+*Requirements:*
+
+- Strong analytical background and critical thinking
+- Strong organizational skills and attention to detail
+- Ability to thrive in a fast-paced, high-volume, and deadline-driven environment
+- Engineering and Technical degree preferred
+- Marketing / Advertising / Analytics related experience is preferred but not necessary
+- Familiarity with the TV or Digital advertising ecosystem is helpful, but not required
+- Experience with a scripting programming language and SQL is helpful, but not required
+
+---
+
+**EDF Trading North America & EDF Energy Services - Nodal Power Analyst**
+
+*Responsibilities*
+
+- Work jointly with OTC and CRR traders to develop views on the ERCOT market
+- Provide fundamental analysis and develop trading strategies in the ERCOT ISO market for both nodal and term traders
+- Help monitor fundamental drivers of positions in trading portfolio.
+- Support traders across a variety of products: heat rates, spark spreads, CRRs and virtuals
+- Develop and maintain dispatch and flow models, communicating fundamental developments and views to stakeholders
+- Build models to track market fundamentals and regularly benchmark against actualizations
+- Improve current processes by automating critical tasks and present the regional trade desk with research on market relevant topics
+- Present relevant market views to EDF Trading's customers and affiliated entities.
+- Act as the central resource on the firm regarding ERCOT information, working with various groups in the organization
+- Work on special research projects as requested by the trading team
+
+*Requirements & Qualifications*
+
+- Bachelor's degree in Engineering, Finance, or Mathematics; Master's/PhD degree a plus
+- Knowledge of energy markets and products, trading instruments including swaps, options, and futures
+- Work experience in the deregulated energy markets or trading floor experience in the energy field preferred
+- Experience analyzing ERCOT (or other ISO) market from a transmission, generation, and fuels perspective
+- Strong coding background with some basic understanding of Matlab, R, and SQL
+- Experience with dispatch or flow models such as Dayzer or Powerworld strongly preferred
+- Experience working with traders or on a trading floor a plus
+- Financial & analytical capabilities in pricing and risk management
+- Highly confident, articulate individual who is a team player and works well across the organization
+- Adaptable to a changing environment and managing multiple priorities
+- Ability to explain complex ideas in a cohesive and clear manner
