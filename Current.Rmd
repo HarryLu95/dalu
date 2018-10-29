@@ -1,5 +1,5 @@
 ---
-title: "Current"
+title: "To Do"
 output: html_document
 ---
 
@@ -14,7 +14,7 @@ ul {font-size: 16px; color: black;}
 
 ---
 
-**申請:**
+**To do 申請:**
 
 1. Alphonso - [Business and Data Analyst](https://cornell.joinhandshake.com/jobs/832323)
     - **Oct/30** 11:59pm
@@ -23,14 +23,30 @@ ul {font-size: 16px; color: black;}
 
 ---
 
+**To do:**
+
+- 5080
+    - [Practice Midterm 2](CU/5080/PM2.pdf)
+    - [Solutions](CU/5080/PM2_S.pdf)
+- 5030
+    - HW4 - [Question 1](CU/5030/HW4-Q1.html)
+    - HW4 - [Question 2](CU/5030/HW4-Q2.html)
+    - HW4 - [Question 3](CU/5030/HW4-Q3.html)
+    - HW4 - [Question 4](CU/5030/HW4-Q4.html)
+    - HW4 - Data: [airpollution](CU/5030/airpollution.csv) (.csv)
+    - HW4 - Data: [NutritionStdy](CU/5030/NutritionStdy.csv) (.csv)
+- 5010
+    - 14\. [Generating Data With Do Loops](CU/5010/Lec14.pdf)
+    - 15\. [Processing Variables with SAS Arrays](CU/5010/Lec15.pdf)
+    - [Quiz 3 with Solutions](CU/5010/Quiz3_S.pdf)
+    - [SAS Certification Exam](CU/5010/SAS_Exam.pdf)
+- 5060
+
+---
+
 **購物:**
 
-- 咖啡
-- 洗髮水
-- 酸奶
-- 洗手液(公用)
-- 洗碗液(公用)
-- 螃蟹(Yao, Li)
+- None
 
 ---
 
