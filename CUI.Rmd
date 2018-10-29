@@ -231,21 +231,25 @@ ul {font-size: 16px; color: black;}
 4. [Discussion 4 with Solutions](CU/5080/Dis4.pdf)
 5. [Discussion 5 with Solutions](CU/5080/Dis5.pdf)
 6. [Discussion 6 with Solutions](CU/5080/Dis6.pdf)
+7. [Discussion 7 with Solutions](CU/5080/Dis7.pdf)
+8. [Discussion 8 with Solutions](CU/5080/Dis8.pdf)
 
 ##Supplementary Materials
 1. [Some standard distributions](CU/5080/Sup1.pdf)
 2. [Densities of order statistics](CU/5080/Sup2.pdf)
 3. [More general definition of expectation](CU/5080/Sup3.pdf)
+4. [CHF and MGF](CU/5080/Sup4.pdf)
+5. [LeCam1986](CU/5080/Sup5.pdf)
+6. [Portnoy2013](CU/5080/Sup6.pdf)
 
 ##Practice Exams
 1. [Practice Midterm 1](CU/5080/PM1.pdf)
     - [Solutions](CU/5080/PM1_S.pdf)
+2. [Practice Midterm 2](CU/5080/PM2.pdf)
+    - [Solutions](CU/5080/PM2_S.pdf)
 
 ##Exams
-1. [Midterm 1](CU/5080/PM1.pdf)
-    - [Midterm 1 with Solutions](CU/5080/PM1_S.pdf)
-2. [Midterm 2](CU/5080/PM2.pdf)
-    - [Midterm 2 with Solutions](CU/5080/PM2_S.pdf)
+1. [Midterm 1 with Solutions](CU/5080/M1_S.pdf)
 
 ---
 
