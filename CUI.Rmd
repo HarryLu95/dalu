@@ -37,6 +37,8 @@ ul {font-size: 16px; color: black;}
 11. [Reading SAS Data Sets](CU/5010/Lec11.pdf)
 12. [Combining SAS Data Sets](CU/5010/Lec12.pdf)
 13. [Transforming data with SAS functions](CU/5010/Lec13.pdf)
+14. [Generating Data With Do Loops](CU/5010/Lec14.pdf)
+15. [Processing Variables with SAS Arrays](CU/5010/Lec15.pdf)
 
 ##Homeworks
 1. [HW 1](CU/5010/HW1.pdf)
@@ -62,6 +64,7 @@ ul {font-size: 16px; color: black;}
 ##Quizzes
 1. [Quiz 1 with Solutions](CU/5010/Quiz1_S.pdf)
 2. [Quiz 2 with Solutions](CU/5010/Quiz2_S.pdf)
+3. [Quiz 3 with Solutions](CU/5010/Quiz3_S.pdf)
 
 ##Exams
 1. Midterm 1
@@ -76,9 +79,10 @@ ul {font-size: 16px; color: black;}
 6. [credit](CU/5010/credit.sas7bdat) (.sas7bdat)
 7. [bank](CU/5010/bank.sas7bdat) (.sas7bdat)
 
-##SAS Codes
+##SAS Related Files
 - [Reference](CU/5010/SAS_Codes.html)
 - [Lab 1 log](CU/5010/Lab1_Log.pdf)
+- [SAS Certification Exam](CU/5010/SAS_Exam.pdf)
 
 ---
 
