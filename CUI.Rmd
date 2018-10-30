@@ -241,6 +241,7 @@ ul {font-size: 16px; color: black;}
 4. [CHF and MGF](CU/5080/Sup4.pdf)
 5. [LeCam1986](CU/5080/Sup5.pdf)
 6. [Portnoy2013](CU/5080/Sup6.pdf)
+- [Formula](CU/5080/Formula.html)
 
 ##Practice Exams
 1. [Practice Midterm 1](CU/5080/PM1.pdf)
