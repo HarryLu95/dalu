@@ -18,6 +18,9 @@ ul {font-size: 16px; color: black;}
 
 1. Alphonso - [Business and Data Analyst](https://cornell.joinhandshake.com/jobs/832323)
     - **Oct/30** 11:59pm
+    - 發郵件
+        - 收件人: careers\@alphonso.tv
+        - 主題: Business and Data Analyst
 2. EDF Trading North America & EDF Energy Services - [Nodal Power Analyst](https://cornell.joinhandshake.com/jobs/2023541)
     - **Oct/31** 11:59pm
 
