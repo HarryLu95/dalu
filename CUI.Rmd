@@ -39,14 +39,19 @@ ul {font-size: 16px; color: black;}
 13. [Transforming data with SAS functions](CU/5010/Lec13.pdf)
 14. [Generating Data With Do Loops](CU/5010/Lec14.pdf)
 15. [Processing Variables with SAS Arrays](CU/5010/Lec15.pdf)
+16. [Reading Raw Data in Fixed Fields](CU/5010/Lec16.pdf)
 
 ##Homeworks
 1. [HW 1](CU/5010/HW1.pdf)
     - [data](CU/5010/admit.sas7bdat)
     - Due: Sep/27/2018 at 11:59PM
+    - [Solutions](CU/5010/HW1_S.7z) (.7z)
 2. [HW 2](CU/5010/HW2.pdf)
     - [data](CU/5010/FBPandHIV.xlsx)
     - Due: Oct/11/2018 at 11:59PM
+    - [Solutions](CU/5010/HW2_S.7z) (.7z)
+3. [HW 3](CU/5010/HW3.pdf)
+    - Due: Nov/8/2018 at 11:59PM
 
 ##Labs
 1. [Lab 1](CU/5010/Lab1.pdf)
@@ -59,7 +64,7 @@ ul {font-size: 16px; color: black;}
     - [data 3](CU/5010/demog.sas7bdat) (.sas7bdat)
     - [data 4](CU/5010/visit.sas7bdat) (.sas7bdat)
     - Due: Oct/21/2018 at 11:59PM
-    - Solution
+    - [Solution](CU/5010/Lab2_S.7z) (.7z)
 
 ##Quizzes
 1. [Quiz 1 with Solutions](CU/5010/Quiz1_S.pdf)
