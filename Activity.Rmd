@@ -4,8 +4,9 @@ output: html_document
 ---
 <style>
 h1 {font-family: Baskerville Old Face; font-size: 28px; color: black; font-weight: bold; text-align: left;}
-h1.title {font-family: Baskerville Old Face; color: black; text-align: center; font-weight: bold;}
-ul {font-family: Times New Roman; font-size: 24px; color: black;}
+h1.title {font-family: Baskerville Old Face; font-size: 36px; color: black; text-align: center; font-weight: bold;}
+ul {font-family: Times New Roman; font-size: 28px; color: black;}
+ul.nav {font-size: 20px;}
 </style>
 
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>

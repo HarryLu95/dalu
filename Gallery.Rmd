@@ -1,11 +1,32 @@
 ---
-title: <center><font face="Baskerville Old Face">**Collections**</font></center>
+title: "Gallery"
 output: html_document
 ---
+<style>
+h1 {font-family: Baskerville Old Face; font-size: 28px; color: black; font-weight: bold; font-style: italic; text-align: left;}
+h1.title {font-family: Baskerville Old Face; font-size: 36px; color: black; font-weight: bold; font-style: normal; text-align: center;}
+ul {font-family: Times New Roman; font-size: 24px; color: black;}
+ul.nav {font-size: 20px;}
+</style>
+
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
 
 Still under constructions.
 
+#Social{.tabset}
+##Summary
+##Amherst, MA
 
-#<font face="Baskerville Old Face">*My cookings!*</font>{.tabset}
+
+##Louisvill, KY
+![](Gallery/Louisville_Kentucky.jpg)
+
+##Cypress, CA
+
+##Ithaca, NY
+
+
+#Cooking{.tabset}
 ##Chinese Cuisine
+
+#Photography
