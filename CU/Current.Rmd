@@ -16,11 +16,9 @@ ul {font-size: 16px; color: black;}
 
 **To do 申請:**
 
-1. EDF Trading North America & EDF Energy Services - [Nodal Power Analyst](https://cornell.joinhandshake.com/jobs/2023541)
-    - **Oct/31** 11:59pm
-2. RELX Group - [Data Scientist](https://4re.referrals.selectminds.com/jobs/data-scientist-18276)
-3. RELX Group - [Associate Statistical Modeler](https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18286)
-4. RELX Group - [Associate Statistical Modeler](https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18070)
+1. RELX Group - [Data Scientist](https://4re.referrals.selectminds.com/jobs/data-scientist-18276)
+2. RELX Group - [Associate Statistical Modeler](https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18286)
+3. RELX Group - [Associate Statistical Modeler](https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18070)
 
 ---
 
@@ -53,38 +51,7 @@ ul {font-size: 16px; color: black;}
 
 ---
 
-**1. EDF Trading North America & EDF Energy Services - Nodal Power Analyst**
-
-*Responsibilities*
-
-- Work jointly with OTC and CRR traders to develop views on the ERCOT market
-- Provide fundamental analysis and develop trading strategies in the ERCOT ISO market for both nodal and term traders
-- Help monitor fundamental drivers of positions in trading portfolio.
-- Support traders across a variety of products: heat rates, spark spreads, CRRs and virtuals
-- Develop and maintain dispatch and flow models, communicating fundamental developments and views to stakeholders
-- Build models to track market fundamentals and regularly benchmark against actualizations
-- Improve current processes by automating critical tasks and present the regional trade desk with research on market relevant topics
-- Present relevant market views to EDF Trading's customers and affiliated entities.
-- Act as the central resource on the firm regarding ERCOT information, working with various groups in the organization
-- Work on special research projects as requested by the trading team
-
-*Requirements & Qualifications*
-
-- Bachelor's degree in Engineering, Finance, or Mathematics; Master's/PhD degree a plus
-- Knowledge of energy markets and products, trading instruments including swaps, options, and futures
-- Work experience in the deregulated energy markets or trading floor experience in the energy field preferred
-- Experience analyzing ERCOT (or other ISO) market from a transmission, generation, and fuels perspective
-- Strong coding background with some basic understanding of Matlab, R, and SQL
-- Experience with dispatch or flow models such as Dayzer or Powerworld strongly preferred
-- Experience working with traders or on a trading floor a plus
-- Financial & analytical capabilities in pricing and risk management
-- Highly confident, articulate individual who is a team player and works well across the organization
-- Adaptable to a changing environment and managing multiple priorities
-- Ability to explain complex ideas in a cohesive and clear manner
-
----
-
-**2. RELX Group - Data Scientist**
+**1. RELX Group - Data Scientist**
 
 *Link:* https://4re.referrals.selectminds.com/jobs/data-scientist-18276
 
@@ -118,7 +85,7 @@ Reed Exhibitions is an equal opportunity employer: qualified applicants are cons
 
 ---
 
-**3. RELX Group - Associate Statistical Modeler**
+**2. RELX Group - Associate Statistical Modeler**
 
 *Link:* https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18286
 
@@ -151,7 +118,7 @@ At LexisNexis Risk Solutions, we believe in the power of data and advanced analy
 
 ---
 
-**4. RELX Group - Associate Statistical Modeler**
+**3. RELX Group - Associate Statistical Modeler**
 
 *Link:* https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18070
 
