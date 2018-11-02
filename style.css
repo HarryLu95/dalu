@@ -2,6 +2,27 @@
 body {
   background-color: Snow;
 }
+/*==========================普通设置==========================*/
+h1 {
+  font-family: Baskerville Old Face;
+  font-size: 28px;
+  color: black;
+  font-weight: bold;
+  font-style: normal;
+  text-align: left;
+}
+h1.title {
+  font-family: Baskerville Old Face;
+  font-size: 36px;
+  color: black;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+}
+ul.nav {
+  font-family: Helvetica;
+  font-size: 15px;
+}
 /*==========================主页图标==========================*/
 #backhome a { /* back to home button */
 	position: fixed;

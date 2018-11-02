@@ -2,19 +2,8 @@
 title: <center><font face="Baskerville Old Face">**Hello!**</font></center>
 ---
 <style>
-img {
-  width: 140px;
-  float: left;
-  margin-top: 10px;
-  margin-right: 40px;
-  margin-bottom: 10px;
-}
-p {
-  font-family: Times New Roman;
-  color: black;
-  font-size: 24px;
-  text-align: justify;
-}
+img {width: 140px; float: left; margin-top: 10px; margin-right: 40px; margin-bottom: 10px;}
+p {font-family: Times New Roman; color: black; font-size: 24px; text-align: justify;}
 </style>
 
 ![](Business_Photo_Small.png)
