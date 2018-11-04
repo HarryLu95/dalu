@@ -4,6 +4,12 @@ output: html_document
 ---
 <style>
 h1 {font-style: italic;}
+@media screen and (min-width:800px) {
+  img {display: block; margin-left: auto; margin-right: auto; width: 50%;}
+}
+@media screen and (max-width:799px) {
+  img {display: block;}
+}
 </style>
 
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
@@ -12,21 +18,37 @@ Still under constructions.
 
 #Social{.tabset}
 ##Summary
-##Amherst, MA
 
+---
+
+##Amherst, MA
+- Bridge of Flowers, June 11, 2017
+
+![](Gallery/UMass_Bridge_of_Flowers.jpg)
+
+---
 
 ##Louisvill, KY
 ![](Gallery/Louisville_Kentucky.jpg)
 
+---
+
 ##Cypress, CA
 
+---
+
 ##Ithaca, NY
+
+---
 
 
 #Cooking{.tabset}
 ##Chinese Cuisine
 
+---
+
 #Photography
 
+---
 
 #Sports
