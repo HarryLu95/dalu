@@ -4,11 +4,12 @@ output: html_document
 ---
 <style>
 h1 {font-style: italic;}
+img {display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px;}
 @media screen and (min-width:800px) {
-  img {display: block; margin-left: auto; margin-right: auto; width: 50%;}
+  img {width: 50%;}
 }
 @media screen and (max-width:799px) {
-  img {display: block;}
+  img {}
 }
 </style>
 
@@ -25,6 +26,14 @@ Still under constructions.
 - Bridge of Flowers, June 11, 2017
 
 ![](Gallery/UMass_Bridge_of_Flowers.jpg)
+
+- Christmas Party at Chi Alpha, December 23, 2014
+
+![](Gallery/UMass_Christmas_2014.jpg)
+
+- Thanksgiving, November 28, 2013
+
+![](Gallery/UMass_Thanksgiving_2013.jpg)
 
 ---
 
