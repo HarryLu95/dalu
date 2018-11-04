@@ -5,20 +5,29 @@ output: html_document
 <style>
 h1 {font-style: italic;}
 img {display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px;}
-@media screen and (min-width:800px) {
+ul {font-family: Times New Roman; font-size: 22px;}
+@media screen and (min-width:700px) {
   img {width: 50%;}
 }
-@media screen and (max-width:799px) {
+@media screen and (max-width:699px) {
   img {}
 }
 </style>
 
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
 
-Still under constructions.
-
 #Social{.tabset}
 ##Summary
+- Amherst, MA
+    - Bridge of Flowers
+    - Christmas Party at Chi Alpha
+    - Thanksgiving at host family
+- Louisville, KU
+    - Final day of internship at Fishmarket Inc
+- Cypress, CA
+    - .
+- Ithaca, NY
+    - .
 
 ---
 
@@ -31,13 +40,15 @@ Still under constructions.
 
 ![](Gallery/UMass_Christmas_2014.jpg)
 
-- Thanksgiving, November 28, 2013
+- Thanksgiving at host family, November 28, 2013
 
 ![](Gallery/UMass_Thanksgiving_2013.jpg)
 
 ---
 
 ##Louisvill, KY
+- Final day of internship at Fishmarket Inc
+
 ![](Gallery/Louisville_Kentucky.jpg)
 
 ---
@@ -61,3 +72,6 @@ Still under constructions.
 ---
 
 #Sports
+
+
+Still under constructions.
