@@ -141,30 +141,161 @@ h4.date {text-align: center;}
 <blockquote>
 <p>Create a new data set (referred to <span class="math inline">\(X^*\)</span> below) in which <code>NONWHITE</code>, <code>NOX</code> and <code>SO2</code> are replaced with the residuals after regressing each of them on <code>PRECIP</code> and <code>EDUC</code>.</p>
 </blockquote>
+<pre class="r"><code>ap=read.csv(file=&quot;https://www.harrylu.net/CU/5030/airpollution.csv&quot;,header=TRUE)
+l_NONWHITE=lm(NONWHITE~PRECIP+EDUC,data=ap)
+NONWHITE_r=summary(l_NONWHITE)$residuals
+l_NOX=lm(NOX~PRECIP+EDUC,data=ap)
+NOX_r=summary(l_NOX)$residuals
+l_SO2=lm(SO2~PRECIP+EDUC,data=ap)
+SO2_r=summary(l_SO2)$residuals
+ap2=ap
+ap2$NONWHITE=NONWHITE_r
+ap2$NOX=NOX_r
+ap2$SO2=SO2_r</code></pre>
 </div>
 <div id="b" class="section level1">
 <h1>b</h1>
 <blockquote>
 <p>Show that when producing a model to predict <code>MORT</code> with either the original covariates or the new covariates, you get the same predicted values (use the maximum absolute difference in predictions to show this).</p>
 </blockquote>
+<pre class="r"><code>l_MORT=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap)
+l_MORT_2=lm(MORT~PRECIP+EDUC+NONWHITE_r+NOX_r+SO2_r,data=ap2)
+#round(fitted(l_MORT),5)==round(fitted(l_MORT_2),5)
+round(max(abs(fitted(l_MORT)-fitted(l_MORT_2))),8)</code></pre>
+<pre><code>## [1] 0</code></pre>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>
 <blockquote>
 <p>Add <code>SO2</code> to <code>MORT</code> (this increases the coefficient of <code>SO2</code> in the model by 1) and obtain a sequential ANOVA table (using the function <code>anova</code>) using the new response. Show that this changes the sum of squares for <code>EDUC</code> when using the original data.</p>
 </blockquote>
+<pre class="r"><code>anova(l_MORT)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: MORT
+##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## PRECIP     1  13744   13744 11.0311 0.0016985 ** 
+## EDUC       1  16288   16288 13.0727 0.0007063 ***
+## NONWHITE   1  44349   44349 35.5946 2.639e-07 ***
+## NOX        1  22243   22243 17.8521 0.0001035 ***
+## SO2        1    647     647  0.5191 0.4746491    
+## Residuals 49  61052    1246                      
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+<pre class="r"><code>l_MORTSO2=lm(MORT+SO2~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap)
+anova(l_MORTSO2)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: MORT + SO2
+##           Df Sum Sq Mean Sq  F value    Pr(&gt;F)    
+## PRECIP     1   4736    4736   3.8008   0.05696 .  
+## EDUC       1  85566   85566  68.6747 6.978e-11 ***
+## NONWHITE   1 109249  109249  87.6826 1.703e-12 ***
+## NOX        1 303939  303939 243.9402 &lt; 2.2e-16 ***
+## SO2        1  25542   25542  20.5000 3.823e-05 ***
+## Residuals 49  61052    1246                       
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+<pre class="r"><code>round(anova(l_MORT)[2,2],8)==round(anova(l_MORTSO2)[2,2],8)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
 </div>
 <div id="d" class="section level1">
 <h1>d</h1>
 <blockquote>
 <p>Do the same thing using the new data set <span class="math inline">\(X^*\)</span> and observe that the sum of squares for <code>EDUC</code> does not change.</p>
 </blockquote>
+<pre class="r"><code>anova(l_MORT_2)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: MORT
+##            Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## PRECIP      1  13744   13744 11.0311 0.0016985 ** 
+## EDUC        1  16288   16288 13.0727 0.0007063 ***
+## NONWHITE_r  1  44349   44349 35.5946 2.639e-07 ***
+## NOX_r       1  22243   22243 17.8521 0.0001035 ***
+## SO2_r       1    647     647  0.5191 0.4746491    
+## Residuals  49  61052    1246                      
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+<pre class="r"><code>l_MORTSO2_2=lm(MORT+SO2~PRECIP+EDUC+NONWHITE_r+NOX_r+SO2_r,data=ap2)
+anova(l_MORTSO2_2)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: MORT + SO2
+##            Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## PRECIP      1  13744   13744  11.031 0.0016985 ** 
+## EDUC        1  16288   16288  13.073 0.0007063 ***
+## NONWHITE_r  1 109249  109249  87.683 1.703e-12 ***
+## NOX_r       1 303939  303939 243.940 &lt; 2.2e-16 ***
+## SO2_r       1  25542   25542  20.500 3.823e-05 ***
+## Residuals  49  61052    1246                      
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+<pre class="r"><code>round(anova(l_MORT_2)[2,2],8)==round(anova(l_MORTSO2_2)[2,2],8)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
 </div>
 <div id="e" class="section level1">
 <h1>e</h1>
 <blockquote>
 <p>What happens if you add <code>EDUC</code> to <code>MORT</code> (ie. make its coefficient larger) instead? Are there differences between the two data sets? Why?</p>
 </blockquote>
+<pre class="r"><code>l_MORTEDUC=lm(MORT+EDUC~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap)
+anova(l_MORTEDUC)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: MORT + EDUC
+##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## PRECIP     1  13309   13309 10.6815 0.0019817 ** 
+## EDUC       1  14892   14892 11.9523 0.0011378 ** 
+## NONWHITE   1  44349   44349 35.5946 2.639e-07 ***
+## NOX        1  22243   22243 17.8521 0.0001035 ***
+## SO2        1    647     647  0.5191 0.4746491    
+## Residuals 49  61052    1246                      
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+<pre class="r"><code>l_MORTEDUC_2=lm(MORT+EDUC~PRECIP+EDUC+NONWHITE_r+NOX_r+SO2_r,data=ap2)
+anova(l_MORTEDUC_2)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: MORT + EDUC
+##            Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## PRECIP      1  13309   13309 10.6815 0.0019817 ** 
+## EDUC        1  14892   14892 11.9523 0.0011378 ** 
+## NONWHITE_r  1  44349   44349 35.5946 2.639e-07 ***
+## NOX_r       1  22243   22243 17.8521 0.0001035 ***
+## SO2_r       1    647     647  0.5191 0.4746491    
+## Residuals  49  61052    1246                      
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+<pre class="r"><code>round(anova(l_MORTEDUC)[2,2],8)==round(anova(l_MORTEDUC_2)[2,2],8)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>anova(l_MORT)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: MORT
+##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## PRECIP     1  13744   13744 11.0311 0.0016985 ** 
+## EDUC       1  16288   16288 13.0727 0.0007063 ***
+## NONWHITE   1  44349   44349 35.5946 2.639e-07 ***
+## NOX        1  22243   22243 17.8521 0.0001035 ***
+## SO2        1    647     647  0.5191 0.4746491    
+## Residuals 49  61052    1246                      
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+<pre class="r"><code>anova(l_MORT_2)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: MORT
+##            Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## PRECIP      1  13744   13744 11.0311 0.0016985 ** 
+## EDUC        1  16288   16288 13.0727 0.0007063 ***
+## NONWHITE_r  1  44349   44349 35.5946 2.639e-07 ***
+## NOX_r       1  22243   22243 17.8521 0.0001035 ***
+## SO2_r       1    647     647  0.5191 0.4746491    
+## Residuals  49  61052    1246                      
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+<p>When the response is either <code>MORT</code> or <code>MORT+EDUC</code>, there is no difference between two anova table, because the sequential anova table is only affected by the true value of covariates. Changing them to their residual would not affect any value of the corresponding table.</p>
 </div>
 
 
