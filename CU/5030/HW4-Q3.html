@@ -144,18 +144,100 @@ h4.date {text-align: center;}
 <blockquote>
 <p>In this question, we will use the <em>mean model</em> coding for our analysis (ie, set <span class="math inline">\(\beta_0 = 0\)</span> and use indicators for all four classes) so that <span class="math inline">\(\mathbf \beta = \mathbf \mu\)</span>. Using this framework, what is the variance of <span class="math inline">\(\hat{\mathbf \beta}\)</span>? Express this in terms of numbers <span class="math inline">\(n_{A}=\ldots=n_{D}=n\)</span> of observations from each level.</p>
 </blockquote>
+<p><span class="math display">\[X^TX=
+\left(\begin{array}{cc}
+  n &amp; 0 &amp; 0 &amp; 0\\
+  0 &amp; n &amp; 0 &amp; 0\\
+  0 &amp; 0 &amp; n &amp; 0\\
+  0 &amp; 0 &amp; 0 &amp; n
+\end{array}\right)\]</span></p>
+<p>and</p>
+<p><span class="math display">\[(X^TX)^{-1}=
+\left(\begin{array}{cc}
+  \frac{1}{n} &amp; 0 &amp; 0 &amp; 0\\
+  0 &amp; \frac{1}{n} &amp; 0 &amp; 0\\
+  0 &amp; 0 &amp; \frac{1}{n} &amp; 0\\
+  0 &amp; 0 &amp; 0 &amp; \frac{1}{n}
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[Var(\hat{\beta})=\sigma^2(X^TX)^{-1}=\frac{\sigma^2}{n}I\]</span></p>
 </div>
 <div id="b" class="section level1">
 <h1>b</h1>
 <blockquote>
 <p>From the above result, what is the variance of <span class="math inline">\(L \hat{\mathbf \beta}\)</span>?</p>
 </blockquote>
+<p><span class="math display">\[\begin{align}
+\text{Var}(L\hat{\beta})
+&amp;=
+L \cdot \text{Var}(\hat{\beta}) \cdot L^T\\
+&amp;=
+\left(\begin{array}{c}
+  1 &amp; -1 &amp; 0 &amp; 0\\
+  0 &amp; 0 &amp; -1 &amp; 1
+\end{array}\right)
+\left(\begin{array}{c}
+  \frac{\sigma^2}{n} &amp; 0 &amp; 0 &amp; 0\\
+  0 &amp; \frac{\sigma^2}{n} &amp; 0 &amp; 0\\
+  0 &amp; 0 &amp; \frac{\sigma^2}{n} &amp; 0\\
+  0 &amp; 0 &amp; 0 &amp; \frac{\sigma^2}{n}
+\end{array}\right)
+\left(\begin{array}{c}
+  1 &amp; 0\\
+  -1 &amp; 0\\
+  0 &amp; -1\\
+  0 &amp; 1
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  \frac{2\sigma^2}{n} &amp; 0\\
+  0 &amp; \frac{2\sigma^2}{n}
+\end{array}\right)\\
+&amp;=
+\frac{2\sigma^2}{n}
+\left(\begin{array}{c}
+  1 &amp; 0\\
+  0 &amp; 1
+\end{array}\right)
+\end{align}\]</span></p>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>
 <blockquote>
 <p>Using the expression above, show that <span class="math inline">\((L\hat{\mathbf \beta})^T \mbox{var}(L\hat{\mathbf \beta})^{-1} L\hat{\mathbf \beta}\)</span> has a <span class="math inline">\(\chi^2_2\)</span> distribution.</p>
 </blockquote>
+<p><span class="math display">\[\begin{align}
+(L\hat{\mathbf\beta})^T\text{Var}(L\hat{\mathbf\beta})^{-1}L\hat{\mathbf\beta}
+&amp;=
+\hat{\beta}^TL^T\text{Var}(L\hat{\beta})^{-1}L\hat{\beta}\\
+&amp;=
+\hat{\beta}^T
+\left(\begin{array}{c}
+  1 &amp; 0\\
+  -1 &amp; 0\\
+  0 &amp; -1\\
+  0 &amp; 1
+\end{array}\right)
+\frac{n}{2\sigma^2}
+\left(\begin{array}{c}
+  1 &amp; 0\\
+  0 &amp; 1
+\end{array}\right)
+\left(\begin{array}{c}
+  1 &amp; -1 &amp; 0 &amp; 0\\
+  0 &amp; 0 &amp; -1 &amp; 1
+\end{array}\right)
+\hat{\beta}\\
+&amp;=
+\frac{n}{2\sigma^2}
+\hat{\beta}^T
+\left(\begin{array}{c}
+  1 &amp; -1 &amp; 0 &amp; 0\\
+  -1 &amp; 1 &amp; 0 &amp; 0\\
+  0 &amp; 0 &amp; 1 &amp; -1\\
+  0 &amp; 0 &amp; -1 &amp; 1
+\end{array}\right)
+\hat{\beta}
+\end{align}\]</span></p>
 </div>
 <div id="d" class="section level1">
 <h1>d</h1>
