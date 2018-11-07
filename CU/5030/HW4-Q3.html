@@ -205,6 +205,13 @@ L \cdot \text{Var}(\hat{\beta}) \cdot L^T\\
 <blockquote>
 <p>Using the expression above, show that <span class="math inline">\((L\hat{\mathbf \beta})^T \mbox{var}(L\hat{\mathbf \beta})^{-1} L\hat{\mathbf \beta}\)</span> has a <span class="math inline">\(\chi^2_2\)</span> distribution.</p>
 </blockquote>
+<p><span class="math display">\[\hat{\beta}=\left(\begin{array}{c}
+  \beta_A\\
+  \beta_B\\
+  \beta_C\\
+  \beta_D
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[\text{Var}(\beta_A)=\text{Var}(\beta_B)=\text{Var}(\beta_C)=\text{Var}(\beta_D)=\frac{\sigma^2}{n}\]</span></p>
 <p><span class="math display">\[\begin{align}
 (L\hat{\mathbf\beta})^T\text{Var}(L\hat{\mathbf\beta})^{-1}L\hat{\mathbf\beta}
 &amp;=
@@ -236,8 +243,16 @@ L \cdot \text{Var}(\hat{\beta}) \cdot L^T\\
   0 &amp; 0 &amp; 1 &amp; -1\\
   0 &amp; 0 &amp; -1 &amp; 1
 \end{array}\right)
-\hat{\beta}
+\hat{\beta}\\
+&amp;=
+\frac{n(\hat{\beta_A}-\hat{\beta_B})^2}{2\sigma^2}+
+\frac{n(\hat{\beta_C}-\hat{\beta_D})^2}{2\sigma^2}
 \end{align}\]</span></p>
+<p><span class="math display">\[\text{Var}(\hat{\beta_A}-\hat{\beta_B})=\text{Var}(\hat{\beta_C}-\hat{\beta_D})=\frac{2\sigma^2}{n}\]</span></p>
+<p>Under null hypothesis, <span class="math inline">\(\hat{\beta_A}=\hat{\beta_B}\)</span> and <span class="math inline">\(\hat{\beta_C}=\hat{\beta_D}\)</span>.</p>
+<p><span class="math display">\[\frac{\sqrt{n}(\hat{\beta_A}-\hat{\beta_B})}{\sqrt{2\sigma^2}} \sim N(0,1) \quad \text{and} \quad \frac{\sqrt{n}(\hat{\beta_C}-\hat{\beta_D})}{\sqrt{2\sigma^2}} \sim N(0,1)\]</span></p>
+<p><span class="math display">\[\frac{n(\hat{\beta_A}-\hat{\beta_B})^2}{2\sigma^2} \sim \chi^2_1 \quad \text{and} \quad \frac{n(\hat{\beta_C}-\hat{\beta_D})^2}{2\sigma^2} \sim \chi^2_1\]</span></p>
+<p><span class="math display">\[\frac{n(\hat{\beta_A}-\hat{\beta_B})^2}{2\sigma^2}+\frac{n(\hat{\beta_C}-\hat{\beta_D})^2}{2\sigma^2} \sim \chi^2_2\]</span></p>
 </div>
 <div id="d" class="section level1">
 <h1>d</h1>
