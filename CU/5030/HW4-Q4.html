@@ -148,24 +148,71 @@ h4.date {text-align: center;}
 <blockquote>
 <p>Read the data in, making sure to specify that <code>Vitamin</code> is a factor and fit a linear model to predict <code>log(BetaPlasma)</code> from the remaining covariates. Extract the covariate matrix for this model using the <code>model.matrix</code> command in <code>R</code> with the output of the <code>lm</code> command as an argument.</p>
 </blockquote>
+<pre class="r"><code>ns=read.csv(file=&quot;https://www.harrylu.net/CU/5030/NutritionStdy.csv&quot;,header=TRUE)
+ns$Vitamin=as.factor(ns$Vitamin)
+l_logBetaPlasma=lm(log(BetaPlasma)~Quetelet+Vitamin+NumSmoke+Fiber+BetaDiet,data=ns)
+m_logBetaPlasma=model.matrix(l_logBetaPlasma)</code></pre>
 </div>
 <div id="b" class="section level1">
 <h1>b</h1>
 <blockquote>
 <p>Write down a matrix of contrasts applied to this covariate matrix to test the hypothesis that i) Levels 1 and 2 of Vitamin are the same, and ii) that Level 3 is the same as the average of Levels 1 and 2. Produce this matrix in <code>R</code>; simply producing the <code>R</code> code with some explanation will suffice.</p>
 </blockquote>
+<p><span class="math display">\[\log(\text{BetaPlasma})=\beta_0+\beta_1\text{Quetelet}+\beta_2(\text{Vitamin}=2)+\beta_3(\text{Vitamin}=3)+\beta_4\text{NumSmoke}+\beta_5\text{Fiber}+\beta_6\text{BetaDiet}\]</span></p>
+<p>i) <span class="math inline">\(\mu_1=\mu_2\)</span></p>
+<p>ii) <span class="math inline">\(\mu_3=(\mu_1+\mu_2)/2\)</span></p>
+<ul>
+<li><span class="math inline">\(\mu_1=\beta_0\)</span></li>
+<li><span class="math inline">\(\mu_2=\beta_0+\beta_2\)</span></li>
+<li><span class="math inline">\(\mu_3=\beta_0+\beta_3\)</span></li>
+</ul>
+<p>i) <span class="math inline">\(\mu_1=\mu_2 \Leftrightarrow \beta_2=0\)</span></p>
+<p>ii) <span class="math inline">\(\mu_3=(\mu_1+\mu_2)/2 \Leftrightarrow -\frac{1}{2}\beta_2+\beta_3=0\)</span></p>
+<p>So the contrast matrix is <span class="math display">\[\left(\begin{array}{cc}0 &amp; 0\\0 &amp; 0\\1 &amp; -\frac{1}{2}\\0 &amp; 1\\0 &amp; 0\\0 &amp; 0\\0 &amp; 0\end{array}\right)\]</span></p>
+<pre class="r"><code>cm=matrix(c(0,0,0,0,1,-1/2,0,1,0,0,0,0,0,0),nrow=7,ncol=2,byrow=T)
+cm</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    0  0.0
+## [2,]    0  0.0
+## [3,]    1 -0.5
+## [4,]    0  1.0
+## [5,]    0  0.0
+## [6,]    0  0.0
+## [7,]    0  0.0</code></pre>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>
 <blockquote>
-<p>What are the estimated values of the two contrasts defined in the previous part? Verify these values against the coefficients supplied by <code>lm</code> when you use the additional argument <code>contrasts = list(Vitamin = &quot;contr.helmert&quot;)</code>. Your answers should be 2 and 3 times the coefficients for <code>Vitamin1</code> and <code>Vitamin2</code> respectively. (<strong>Bonus</strong> explain why this is the case - you will need to look up Helmert contrasts.)</p>
+<p>What are the estimated values of the two contrasts defined in the previous part? Verify these values against the coefficients supplied by <code>lm</code> when you use the additional argument <code>contrasts = list(Vitamin = &quot;contr.helmert&quot;)</code>. Your answers should be 2 and 3 times the coefficients for <code>Vitamin1</code> and <code>Vitamin2</code> respectively. (<strong>Bonus:</strong> explain why this is the case - you will need to look up Helmert contrasts.)</p>
 </blockquote>
+<pre class="r"><code>beta=matrix(l_logBetaPlasma$coefficients,nrow=7,ncol=1)
+t(cm)%*%beta</code></pre>
+<pre><code>##             [,1]
+## [1,] -0.05244799
+## [2,] -0.28716767</code></pre>
+<p>The estimated values of the two contrasts defined in the previous part are -0.05244799 and -0.28716767.</p>
+<pre class="r"><code>l_logBetaPlasma_c=lm(log(BetaPlasma)~Quetelet+Vitamin+NumSmoke+Fiber+BetaDiet,data=ns,contrasts=list(Vitamin=&quot;contr.helmert&quot;))
+l_logBetaPlasma_c$coefficients[3:4]</code></pre>
+<pre><code>##    Vitamin1    Vitamin2 
+## -0.02622400 -0.09572256</code></pre>
+<pre class="r"><code>l_logBetaPlasma_c$coefficients[[3]]*2</code></pre>
+<pre><code>## [1] -0.05244799</code></pre>
+<pre class="r"><code>l_logBetaPlasma_c$coefficients[[4]]*3</code></pre>
+<pre><code>## [1] -0.2871677</code></pre>
 </div>
 <div id="d" class="section level1">
 <h1>d</h1>
 <blockquote>
-<p>Test this hypothesis using the formuae you derived in Question 3. Why does this not change the <span class="math inline">\(F\)</span> statistic that you get from the <code>Anova</code> function?</p>
+<p>Test this hypothesis using the formulae you derived in Question 3. Why does this not change the <span class="math inline">\(F\)</span> statistic that you get from the <code>Anova</code> function?</p>
 </blockquote>
+<pre class="r"><code>summary(l_logBetaPlasma)[10]</code></pre>
+<pre><code>## $fstatistic
+##     value     numdf     dendf 
+##  12.68976   6.00000 307.00000</code></pre>
+<pre class="r"><code>summary(l_logBetaPlasma_c)[10]</code></pre>
+<pre><code>## $fstatistic
+##     value     numdf     dendf 
+##  12.68976   6.00000 307.00000</code></pre>
 </div>
 
 
