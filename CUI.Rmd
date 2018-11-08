@@ -40,6 +40,11 @@ ul {font-size: 16px; color: black;}
 14. [Generating Data With Do Loops](CU/5010/Lec14.pdf)
 15. [Processing Variables with SAS Arrays](CU/5010/Lec15.pdf)
 16. [Reading Raw Data in Fixed Fields](CU/5010/Lec16.pdf)
+17. [Reading Free-Format Data](CU/5010/Lec17.pdf)
+18. [Reading Date and Time Values](CU/5010/Lec18.pdf)
+19. [Creating a Single Observation from Multiple Records](CU/5010/Lec19.pdf)
+20. [Creating Multiple Observations From a Single Record](CU/5010/Lec20.pdf)
+21. [Reading Hierarchical Files](CU/5010/Lec21.pdf)
 
 ##Homeworks
 1. [HW 1](CU/5010/HW1.pdf)
