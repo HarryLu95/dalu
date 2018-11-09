@@ -17,6 +17,7 @@ img {display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px;
 Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/) provides all the downloads.
 
 - [歌に形はないけれど](Music Sheets/歌に形はないけれど.pdf)
+- [Canon in D](Music Sheets/Canon in D.pdf)
 
 #Playlist{.tabset}
 
