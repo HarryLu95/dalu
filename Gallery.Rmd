@@ -20,8 +20,9 @@ ul {font-family: Times New Roman; font-size: 22px;}
 ##Summary
 - Amherst, MA
     - Bridge of Flowers
+    - Mosaic International Student Conference, NJ
     - Christmas Party at Chi Alpha
-    - Thanksgiving at host family
+    - Thanksgiving at Local Host Family
 - Louisville, KU
     - Final day of internship at Fishmarket Inc
 - Cypress, CA
