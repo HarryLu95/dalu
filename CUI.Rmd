@@ -210,6 +210,9 @@ ul {font-size: 16px; color: black;}
     - Due: Oct/23/2018 at 11:59PM
     - Data: [CREATEPVFC](CU/5060/CREATEPVFC.sql) (.sql)
     - [Lab 2 Summary](CU/5060/Lab2_Smy.html)
+3. [Lab 3](CU/5060/Lab3.pdf)
+    - Due: Nov/12/2018 at 11:59PM
+    - [Lab 3 Summary]((CU/5060/Lab3_Smy.html))
 
 ##Exams
 - [Review](CU/5060/Review.html)
