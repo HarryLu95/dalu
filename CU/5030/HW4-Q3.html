@@ -259,18 +259,25 @@ L \cdot \text{Var}(\hat{\beta}) \cdot L^T\\
 <blockquote>
 <p>Why is <span class="math inline">\((L\hat{\mathbf \beta})^T \mbox{var}(L\hat{\mathbf \beta})^{-1} L\hat{\mathbf \beta}\)</span> independent of MSE?</p>
 </blockquote>
+<p>From HW3-Q4, <span class="math inline">\(\hat{\beta}\)</span> is uncorrelated with <span class="math inline">\(\hat{\sigma}^2\)</span>, so <span class="math inline">\(\hat{\beta} \perp \hat{\sigma}\)</span>. MSE is <span class="math inline">\(\hat{\sigma}\)</span>, and <span class="math inline">\((L\hat{\mathbf \beta})^T \mbox{var}(L\hat{\mathbf \beta})^{-1} L\hat{\mathbf \beta}\)</span> is a function of <span class="math inline">\(\hat{\beta}\)</span>. Therefore the statement is true.</p>
 </div>
 <div id="e" class="section level1">
 <h1>e</h1>
 <blockquote>
 <p>Hence, find an <span class="math inline">\(F\)</span> statistic to test <span class="math inline">\(H_0: L {\mathbf \mu} = 0\)</span>.</p>
 </blockquote>
+<p><span class="math display">\[F=\frac{\chi^2_{k_1}/k_1}{\chi^2_{k_2}/k_2}\]</span></p>
+<p><span class="math display">\[(L\hat\beta)^T\text{Var}^{-1}(L\hat\beta)L\hat\beta/2 \sim \chi^2_2\]</span></p>
+<p><span class="math display">\[\text{SSE}/\sigma^2 \sim \chi^2_{N-p-1} \quad \text{where} \quad N=4n \quad \text{and} \quad p=4\]</span></p>
+<p>Therefore</p>
+<p><span class="math display">\[F=\frac{(L\hat\beta)^T\text{Var}^{-1}(L\hat\beta)L\hat\beta/2}{\text{SSE}/\sigma^2(N-p-1)} \sim F^2_{4n-5}\]</span></p>
 </div>
 <div id="f" class="section level1">
 <h1>f</h1>
 <blockquote>
 <p>Many analyses start by assuming that <span class="math inline">\(L\)</span> is orthonormal, <span class="math inline">\(L L^T = I\)</span>. Why?</p>
 </blockquote>
+<p>Orthonormal contrasts are orthogonal contrasts which satisfy the additional condition that, for each contrast, the sum squares of the coefficients add up to one (From Wikipedia). So that this assumption makes the further calculation much easier.</p>
 </div>
 
 

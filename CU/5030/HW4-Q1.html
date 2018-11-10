@@ -145,36 +145,100 @@ h4.date {text-align: center;}
 <blockquote>
 <p>Consider regressing <span class="math inline">\(\mathbf y\)</span> on only <span class="math inline">\(X_{j-1}\)</span>. Give an expression for the estimated <span class="math inline">\(\hat{\mathbf \beta}_{j-1}\)</span>.</p>
 </blockquote>
+<p><span class="math display">\[\begin{align}
+\widehat{\mathbf{y}}
+&amp;=
+H_{j-1}\mathbf{y}\\
+&amp;=
+X_{j-1}\widehat{\beta_{j-1}}\\
+&amp;=
+X_{j-1}({X_{j-1}}^TX_{j-1})^{-1}{X_{j-1}}^T\mathbf{y}
+\end{align}\]</span></p>
+<p><span class="math display">\[\widehat{\beta_{j-1}}=({X_{j-1}}^TX_{j-1})^{-1}{X_{j-1}}^T\mathbf{y}\]</span></p>
 </div>
 <div id="b" class="section level1">
 <h1>b</h1>
 <blockquote>
 <p>Show the fitted values (written in terms of true coefficients and errors) from the full regression can be re-written using the fitted values from Part 2a. and the matrix of residuals <span class="math inline">\(\bar{R}_j\)</span> obtained from regressing each column of <span class="math inline">\(\bar{X}_j\)</span> on <span class="math inline">\(X_{j-1}\)</span>.</p>
 </blockquote>
+<p><span class="math display">\[\bar{X_j} \sim X_{j-1} \quad \text{so} \quad \bar{R_j}=(I-H_{j-1})\bar{X_j}\]</span></p>
+<p><span class="math display">\[\begin{align}
+H\mathbf{y}
+&amp;=
+H[H_{j-1}\mathbf{y}+(I-H_{j-1})\mathbf{y}]\\
+&amp;=
+H[H_{j-1}\mathbf{y}+(I-H_{j-1})(X_{j-1}\beta_{j-1}+\bar{X_j}\bar{\beta_j}+\epsilon)]\\
+&amp;=
+H[H_{j-1}\mathbf{y}+(I-H_{j-1})X_{j-1}\beta_{j-1}+(I-H_{j-1})\bar{X_j}\bar{\beta_j}+(I-H_{j-1})\epsilon]\\
+&amp;=
+HH_{j-1}\mathbf{y}+H\cdot 0\beta_{j-1}+H(I-H_{j-1})\bar{X_j}\bar{\beta_j}+H(I-H_{j-1})\epsilon\\
+&amp;=
+H_{j-1}\mathbf{y}+\bar{R_j}\bar{X_j}+(H-H_{j-1})\epsilon
+\end{align}\]</span></p>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>
 <blockquote>
 <p>Show that the sums of squares <span class="math inline">\(\mathbf y^T(H-H_{j-1})\mathbf y\)</span> for <span class="math inline">\(\bar{X}_j|X_{j-1}\)</span> is the same if you replace <span class="math inline">\(\bar{X}_j\)</span> with <span class="math inline">\(\bar{R}_j\)</span> (Why must <span class="math inline">\(H\mathbf y\)</span> be the same in both cases?)</p>
 </blockquote>
+<p>Let <span class="math inline">\(X^*=[X_{j-1},\bar{R_j}]\)</span>.</p>
+<p><span class="math inline">\(H_{j-1}\)</span> would not change due to the change of <span class="math inline">\(X\)</span> to <span class="math inline">\(X^*\)</span>.</p>
+<p>Therefore we just need to show that <span class="math inline">\(H\mathbf{y}=H^*\mathbf{y}\)</span>.</p>
+<p><span class="math display">\[\begin{align}
+H^*\mathbf{y}
+&amp;=
+H^*[H_{j-1}\mathbf{y}+(I-H_{j-1})\mathbf{y}]\\
+&amp;=
+H^*[H_{j-1}\mathbf{y}+(I-H_{j-1})(X_{j-1}\beta_{j-1}+\bar{X_j}\bar{\beta_j}+\epsilon)]\\
+&amp;=
+H^*[H_{j-1}\mathbf{y}+(I-H_{j-1})X_{j-1}\beta_{j-1}+(I-H_{j-1})\bar{X_j}\bar{\beta_j}+(I-H_{j-1})\epsilon]\\
+&amp;=
+H^*H_{j-1}\mathbf{y}+H^*\cdot 0\beta_{j-1}+H^*(I-H_{j-1})\bar{X_j}\bar{\beta_j}+H^*(I-H_{j-1})\epsilon\\
+&amp;=
+H_{j-1}\mathbf{y}+\bar{R_j}\bar{X_j}+(H^*-H_{j-1})\epsilon
+\end{align}\]</span></p>
 </div>
 <div id="d" class="section level1">
 <h1>d</h1>
 <blockquote>
 <p>Within the sequential test for <span class="math inline">\(\mathbf x_j|X_{j-1}\)</span> show that the sum of squares <span class="math inline">\(\mathbf y^T(H_j-H_{j-1})\mathbf y\)</span> the the same whether you use the original <span class="math inline">\(X\)</span> or <span class="math inline">\(X^* = [X_{j-1}, (I-H_{j-1})\mathbf x_j,(I-H_j)\bar{X}_{j+1}]\)</span>.</p>
 </blockquote>
+<p><span class="math display">\[(H_j-H_{j-1})(I-H_{j-1})=H_j-H_{j-1}\]</span></p>
+<p><span class="math display">\[(H_j-H_{j-1})(I-H_j)=0\]</span></p>
+<p><span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[\begin{align}
+(H_j-H_{j-1})\mathbf{y}
+&amp;=
+(H_j-H_{j-1})(X_{j-1}\beta_{j-1}+\bar{X_j}\bar{\beta_j}+\epsilon)\\
+&amp;=
+(H_j-H_{j-1})X_{j-1}\beta_{j-1}+(H_j-H_{j-1})\bar{X_j}\bar{\beta_j}+(H_j-H_{j-1})\epsilon\\
+&amp;=
+(H_j-H_{j-1})(\bar{X_j}\bar{\beta_j}+\epsilon)
+\end{align}\]</span></p>
 </div>
 <div id="e" class="section level1">
 <h1>e</h1>
 <blockquote>
 <p>Show that, when using <span class="math inline">\(X^*\)</span> (with corresponding coefficients <span class="math inline">\(\mathbf \beta^*\)</span>, the sum of squares <span class="math inline">\(\mathbf y^T(H_j-H_{j-1})\mathbf y\)</span> is only affected by the true value of <span class="math inline">\(\beta_j\)</span>.</p>
 </blockquote>
+<p><span class="math inline">\(X^*\)</span>:</p>
+<p><span class="math display">\[\begin{align}
+(H_j-H_{j-1})\mathbf{y}
+&amp;=
+(H_j-H_{j-1})(X_{j-1}\beta^*_{j-1}+(I-H_{j-1})\mathbf{x_j}\beta^*_j+(I-H_j)\bar{X_{j+1}}\bar{\beta^*_{j+1}}+\epsilon)\\
+&amp;=
+(H_j-H_{j-1})X_{j-1}\beta^*_{j-1}+(H_j-H_{j-1})\mathbf{x_j}\beta^*_j+0\cdot \bar{X_{j+1}}\bar{\beta^*_{j+1}}+(H_j-H_{j-1})\epsilon\\
+&amp;=
+(H_j-H_{j-1})(\mathbf{x_j}\beta^*_j+\epsilon)
+\end{align}\]</span></p>
+<p>From the result, it is easy to see that the only changed term is <span class="math inline">\(\beta^*_j\)</span>, so the given statement is only affected by the true value of <span class="math inline">\(\beta_j\)</span>.</p>
 </div>
 <div id="f" class="section level1">
 <h1>f</h1>
 <blockquote>
 <p>Hence give a detailed interpretation of the meaning of rejecting the <span class="math inline">\(j\)</span>th sequential test.</p>
 </blockquote>
+<p>The <span class="math inline">\(j\)</span>-th variable is statistical significant (this term would affect <span class="math inline">\(y\)</span>) so that we should reject <span class="math inline">\(H_0\)</span> (<span class="math inline">\(\beta_0=\cdots=\beta_p\)</span>) and accept <span class="math inline">\(H_1\)</span>.</p>
 </div>
 
 
