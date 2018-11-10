@@ -215,12 +215,40 @@ l_logBetaPlasma_c$coefficients[3:4]</code></pre>
 <blockquote>
 <p>Test this hypothesis using the formulae you derived in Question 3. Why does this not change the <span class="math inline">\(F\)</span> statistic that you get from the <code>Anova</code> function?</p>
 </blockquote>
+<p><span class="math display">\[F=\frac{(L\hat\beta)^T[\text{Var}(L\hat\beta)]^{-1}L\hat\beta/2}{\text{SSE}/\sigma^2(N-p-1)} \sim F^2_{N-p-1}\]</span></p>
 <pre class="r"><code>car::Anova(l_logBetaPlasma)</code></pre>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Sum Sq"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Df"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["F value"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Pr(>F)"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"12.484887","2":"1","3":"27.337066","4":"3.166546e-07","_rn_":"Quetelet"},{"1":"6.032871","2":"2","3":"6.604826","4":"1.554381e-03","_rn_":"Vitamin"},{"1":"3.457726","2":"1","3":"7.571081","4":"6.283724e-03","_rn_":"NumSmoke"},{"1":"2.181223","2":"1","3":"4.776033","4":"2.961400e-02","_rn_":"Fiber"},{"1":"1.244847","2":"1","3":"2.725732","4":"9.976537e-02","_rn_":"BetaDiet"},{"1":"140.207445","2":"307","3":"NA","4":"NA","_rn_":"Residuals"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
+<pre class="r"><code>cm</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    0  0.0
+## [2,]    0  0.0
+## [3,]    1 -0.5
+## [4,]    0  1.0
+## [5,]    0  0.0
+## [6,]    0  0.0
+## [7,]    0  0.0</code></pre>
+<pre class="r"><code>beta</code></pre>
+<pre><code>##               [,1]
+## [1,]  5.6893427520
+## [2,] -0.0337581342
+## [3,] -0.0524479935
+## [4,] -0.3133916625
+## [5,] -0.0511685393
+## [6,]  0.0181093644
+## [7,]  0.0000490663</code></pre>
+<pre class="r"><code>VarLbeta=t(cm)%*%matrix(diag(diag(vcov(l_logBetaPlasma))),nrow=7,ncol=7)%*%cm
+Lbeta=t(cm)%*%beta
+SSE=car::Anova(l_logBetaPlasma)[6,1]
+n=314
+sigmasquare=summary(l_logBetaPlasma)$sigma^2
+F=(t(Lbeta)%*%solve(VarLbeta)%*%Lbeta/2)/(SSE/(sigmasquare*(n-7-1)))
+F</code></pre>
+<pre><code>##          [,1]
+## [1,] 6.071284</code></pre>
 </div>
 
 
