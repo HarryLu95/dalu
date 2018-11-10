@@ -203,6 +203,18 @@ H_{j-1}\mathbf{y}+\bar{R_j}\bar{X_j}+(H^*-H_{j-1})\epsilon
 <blockquote>
 <p>Within the sequential test for <span class="math inline">\(\mathbf x_j|X_{j-1}\)</span> show that the sum of squares <span class="math inline">\(\mathbf y^T(H_j-H_{j-1})\mathbf y\)</span> the the same whether you use the original <span class="math inline">\(X\)</span> or <span class="math inline">\(X^* = [X_{j-1}, (I-H_{j-1})\mathbf x_j,(I-H_j)\bar{X}_{j+1}]\)</span>.</p>
 </blockquote>
+<p>To prove <span class="math inline">\(H=H^*\)</span>, we could just find an invertible matrix <span class="math inline">\(A\)</span> that <span class="math inline">\(X^*=XA\)</span>.</p>
+<p><span class="math display">\[X^*=[X_{j-1},(1-H_{j-1})\mathbf{x_j},(1-H_j)\bar{X_{j+1}}]\]</span></p>
+<p><span class="math display">\[X=[X_{j-1},\mathbf{x_j},\bar{X_{j+1}}]\]</span></p>
+<p><span class="math display">\[X^*=X\left(\begin{array}{c}I&amp;0&amp;0\\0&amp;I-H_{j-1}&amp;0\\0&amp;0&amp;I-H_j\end{array}\right)=XA\]</span></p>
+<p><span class="math display">\[\text{det}(A)=I-H_j\neq0\]</span></p>
+<p>The determinant of <span class="math inline">\(A\)</span> is non-zero, so <span class="math inline">\(H=H^*\)</span>, which mean that <span class="math inline">\(\mathbf{y}^T(H_j-H_{j-1})\mathbf{y}=\mathbf{y}^T(H^*_j-H^*_{j-1})\mathbf{y}\)</span>.</p>
+</div>
+<div id="e" class="section level1">
+<h1>e</h1>
+<blockquote>
+<p>Show that, when using <span class="math inline">\(X^*\)</span> (with corresponding coefficients <span class="math inline">\(\mathbf \beta^*\)</span>, the sum of squares <span class="math inline">\(\mathbf y^T(H_j-H_{j-1})\mathbf y\)</span> is only affected by the true value of <span class="math inline">\(\beta_j\)</span>.</p>
+</blockquote>
 <p><span class="math display">\[(H_j-H_{j-1})(I-H_{j-1})=H_j-H_{j-1}\]</span></p>
 <p><span class="math display">\[(H_j-H_{j-1})(I-H_j)=0\]</span></p>
 <p><span class="math inline">\(X\)</span>:</p>
@@ -215,12 +227,6 @@ H_{j-1}\mathbf{y}+\bar{R_j}\bar{X_j}+(H^*-H_{j-1})\epsilon
 &amp;=
 (H_j-H_{j-1})(\bar{X_j}\bar{\beta_j}+\epsilon)
 \end{align}\]</span></p>
-</div>
-<div id="e" class="section level1">
-<h1>e</h1>
-<blockquote>
-<p>Show that, when using <span class="math inline">\(X^*\)</span> (with corresponding coefficients <span class="math inline">\(\mathbf \beta^*\)</span>, the sum of squares <span class="math inline">\(\mathbf y^T(H_j-H_{j-1})\mathbf y\)</span> is only affected by the true value of <span class="math inline">\(\beta_j\)</span>.</p>
-</blockquote>
 <p><span class="math inline">\(X^*\)</span>:</p>
 <p><span class="math display">\[\begin{align}
 (H_j-H_{j-1})\mathbf{y}
