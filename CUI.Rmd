@@ -174,6 +174,7 @@ ul {font-size: 16px; color: black;}
 7. [Chapter 7 - Advanced SQL](CU/5060/Lec7.pdf)
 8. [PROC SQL 1](CU/5060/ProcSQL1.pdf)
 9. [PROC SQL 2](CU/5060/ProcSQL2.pdf)
+10. [PROC SQL 3](CU/5060/ProcSQL3.pdf)
 
 ##Data Files
 - [customer](CU/5060/customer.sas7bdat) (.sas7bdat)
