@@ -22,6 +22,7 @@ Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/) provides all the downl
 - [歌に形はないけれど(花たん)](Music Sheets/歌に形はないけれど(花たん).pdf)
 - [Canon in D](Music Sheets/Canon in D.pdf)
 - [致青春(鸠玖)](Music Sheets/致青春(鸠玖).pdf)
+- [Ave Maria (Harp & Oboe)](Music Sheets/Ave Maria(Harp & Oboe).pdf)
 
 #Playlist{.tabset}
 
