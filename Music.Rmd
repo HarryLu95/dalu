@@ -11,6 +11,7 @@ bdi {font-size: 12px;}
 }
 @media screen and (max-width:699px) {
   img {}
+  ul {font-size: 20px;}
 }
 </style>
 
@@ -24,6 +25,11 @@ Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/) provides all the downl
 - [Variations on the Kanon by Pachelbel](Music Sheets/Variations on the Kanon by Pachelbel(伊den).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/8331.htm)
 - [致青春(鸠玖)](Music Sheets/致青春(鸠玖).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/20942.htm)
 - [Ave Maria (Harp & Oboe)](Music Sheets/Ave Maria(Harp & Oboe).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/17669.htm)
+- [愛的供養(鋼琴長笛)](Music Sheets/愛的供養(鋼琴長笛).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/14922.htm)
+- [理查德克萊德曼 - 梁祝](Music Sheets/理查德克萊德曼-梁祝.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/49.htm)
+- [理查德克萊德曼 - 夢中的婚禮](Music Sheets/理查德克萊德曼-夢中的婚禮.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/87.htm)
+- [理查德克萊德曼 - 秋日私語](Music Sheets/理查德克萊德曼-秋日私語.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/136.htm)
+- [理查德克萊德曼 - 柔如彩虹](Music Sheets/理查德克萊德曼-柔如彩虹.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/229.htm)
 
 #Playlist{.tabset}
 
