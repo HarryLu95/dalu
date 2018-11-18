@@ -18,15 +18,6 @@ bdi {font-size: 12px; color: black;}
 #Music Sheets
 Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/) provides all the downloads.
 
-- [歌に形はないけれど(Piano Re-arrange Ver.)](Music Sheets/歌に形はないけれど(Piano Re-arrange Ver.).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/31925.htm)
-- [歌に形はないけれど(Orchestral)](Music Sheets/歌に形はないけれど(Orchestral).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/35022.htm)
-- [歌に形はないけれど(doriko)](Music Sheets/歌に形はないけれど(doriko).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/14208.htm)
-- [歌に形はないけれど(花たん)](Music Sheets/歌に形はないけれど(花たん).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/35183.htm)
-- [Variations on the Kanon by Pachelbel](Music Sheets/Variations on the Kanon by Pachelbel(伊den).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/8331.htm)
-- [致青春(鸠玖)](Music Sheets/致青春(鸠玖).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/20942.htm)
-- [Ave Maria (Harp & Oboe)](Music Sheets/Ave Maria(Harp & Oboe).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/17669.htm)
-- [愛的供養(鋼琴長笛)](Music Sheets/愛的供養(鋼琴長笛).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/14922.htm)
-- [理查德克萊德曼 - 梁祝](Music Sheets/理查德克萊德曼-梁祝.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/49.htm)
 - [理查德克萊德曼 - 夢中的婚禮 Mariage d'Amour](Music Sheets/理查德克萊德曼-夢中的婚禮.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/87.htm)
 - [理查德克萊德曼 - 秋日私語 A Comme Amour](Music Sheets/理查德克萊德曼-秋日私語.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/136.htm)
 - [理查德克萊德曼 - 柔如彩虹 Couleur Tendresse](Music Sheets/理查德克萊德曼-柔如彩虹.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/229.htm)
@@ -42,9 +33,19 @@ Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/) provides all the downl
 - [理查德克萊德曼 - 鄉愁(思鄉曲) Nostalgy](Music Sheets/理查德克萊德曼-鄉愁(思鄉曲).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/454.htm)
 - [理查德克萊德曼 - 綠袖子 Greensleeves](Music Sheets/理查德克萊德曼-綠袖子.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/510.htm)
 - [理查德克萊德曼 - 藍色的愛 Love is Blue](Music Sheets/理查德克萊德曼-藍色的愛.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/528.htm)
+- [理查德克萊德曼 - 梁祝](Music Sheets/理查德克萊德曼-梁祝.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/49.htm)
 - [理查德克萊德曼 - 水邊的阿狄麗娜(致愛德琳的詩) Ballade pour Adeline](Music Sheets/理查德克萊德曼-水邊的阿狄麗娜.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/33642.htm)
 - [理查德克萊德曼 - 羅密歐與朱麗葉 Romeo and Juliet](Music Sheets/理查德克萊德曼-羅密歐與朱麗葉.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/1964.htm)
-
+- [柴可夫斯基 - 那不勒斯舞曲 Napoli Dance (Piano & Violin)](Music Sheets/柴可夫斯基-那不勒斯舞曲(鋼琴小提琴).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/9061.htm)
+- [柴可夫斯基 - 那不勒斯舞曲 Napoli Dance (Piano)](Music Sheets/柴可夫斯基-那不勒斯舞曲(鋼琴).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/7971.htm)
+- [歌に形はないけれど(Piano Re-arrange Ver.)](Music Sheets/歌に形はないけれど(Piano Re-arrange Ver.).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/31925.htm)
+- [歌に形はないけれど(Orchestral)](Music Sheets/歌に形はないけれど(Orchestral).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/35022.htm)
+- [歌に形はないけれど(doriko)](Music Sheets/歌に形はないけれど(doriko).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/14208.htm)
+- [歌に形はないけれど(花たん)](Music Sheets/歌に形はないけれど(花たん).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/35183.htm)
+- [Variations on the Kanon by Pachelbel](Music Sheets/Variations on the Kanon by Pachelbel(伊den).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/8331.htm)
+- [致青春(鸠玖)](Music Sheets/致青春(鸠玖).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/20942.htm)
+- [Ave Maria (Harp & Oboe)](Music Sheets/Ave Maria(Harp & Oboe).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/17669.htm)
+- [愛的供養 (Piano & Flute)](Music Sheets/愛的供養(鋼琴長笛).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/14922.htm)
 
 
 
