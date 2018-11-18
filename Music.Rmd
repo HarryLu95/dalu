@@ -5,7 +5,7 @@ output: html_document
 <style>
 ul {font-family: Times New Roman; font-size: 24px;}
 img {display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px;}
-bdi {font-size: 12px;}
+bdi {font-size: 12px; color: black;}
 @media screen and (min-width:700px) {
   img {width: 50%;}
 }
@@ -27,9 +27,29 @@ Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/) provides all the downl
 - [Ave Maria (Harp & Oboe)](Music Sheets/Ave Maria(Harp & Oboe).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/17669.htm)
 - [愛的供養(鋼琴長笛)](Music Sheets/愛的供養(鋼琴長笛).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/14922.htm)
 - [理查德克萊德曼 - 梁祝](Music Sheets/理查德克萊德曼-梁祝.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/49.htm)
-- [理查德克萊德曼 - 夢中的婚禮](Music Sheets/理查德克萊德曼-夢中的婚禮.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/87.htm)
-- [理查德克萊德曼 - 秋日私語](Music Sheets/理查德克萊德曼-秋日私語.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/136.htm)
-- [理查德克萊德曼 - 柔如彩虹](Music Sheets/理查德克萊德曼-柔如彩虹.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/229.htm)
+- [理查德克萊德曼 - 夢中的婚禮 Mariage d'Amour](Music Sheets/理查德克萊德曼-夢中的婚禮.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/87.htm)
+- [理查德克萊德曼 - 秋日私語 A Comme Amour](Music Sheets/理查德克萊德曼-秋日私語.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/136.htm)
+- [理查德克萊德曼 - 柔如彩虹 Couleur Tendresse](Music Sheets/理查德克萊德曼-柔如彩虹.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/229.htm)
+- [理查德克萊德曼 - 愛的協奏曲 A Lover's Concerto](Music Sheets/理查德克萊德曼-愛的協奏曲.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/138.htm)
+- [理查德克萊德曼 - 玫瑰色的人生 La Vie En Rose](Music Sheets/理查德克萊德曼-玫瑰色的人生.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/137.htm)
+- [理查德克萊德曼 - 天鵝 The Swan](Music Sheets/理查德克萊德曼-天鵝.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/52.htm)
+- [理查德克萊德曼 - 星空 Lyphard Melodie](Music Sheets/理查德克萊德曼-星空.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/48.htm)
+- [理查德克萊德曼 - 愛的克麗絲汀娜(童年的回憶) Souvenir D'enfance](Music Sheets/理查德克萊德曼-愛的克麗絲汀娜.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/156.htm)
+- [理查德克萊德曼 - 愛之夢 Leberstraum](Music Sheets/理查德克萊德曼-愛之夢.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/225.htm)
+- [理查德克萊德曼 - 給母親的信 Lettre A Ma Mere](Music Sheets/理查德克萊德曼-給母親的信.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/224.htm)
+- [理查德克萊德曼 - 愛的旋律 La Vraie Musique de L'Amour](Music Sheets/理查德克萊德曼-愛的旋律.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/227.htm)
+- [理查德克萊德曼 - 出埃及記 Exodus](Music Sheets/理查德克萊德曼-出埃及記.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/270.htm)
+- [理查德克萊德曼 - 鄉愁(思鄉曲) Nostalgy](Music Sheets/理查德克萊德曼-鄉愁(思鄉曲).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/454.htm)
+- [理查德克萊德曼 - 綠袖子 Greensleeves](Music Sheets/理查德克萊德曼-綠袖子.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/510.htm)
+- [理查德克萊德曼 - 藍色的愛 Love is Blue](Music Sheets/理查德克萊德曼-藍色的愛.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/528.htm)
+- [理查德克萊德曼 - 水邊的阿狄麗娜(致愛德琳的詩) Ballade pour Adeline](Music Sheets/理查德克萊德曼-水邊的阿狄麗娜.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/33642.htm)
+- [理查德克萊德曼 - 羅密歐與朱麗葉 Romeo and Juliet](Music Sheets/理查德克萊德曼-羅密歐與朱麗葉.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/1964.htm)
+
+
+
+
+
+
 
 #Playlist{.tabset}
 
