@@ -139,19 +139,27 @@ p {font-size: 18px;}
 <p>Within a group, we can express this as <span class="math display">\[y_{ij}=\beta_0+\beta_{1}t_{ij}+b_{i0}+b_{i1}t_{ij}+\epsilon_{ij}\]</span> for the measurement of the <span class="math inline">\(i\)</span>-th rat at time <span class="math inline">\(t_{ij}\)</span> with random intercept <span class="math inline">\(b_{i0}\)</span> and random slope <span class="math inline">\(b_{i1}\)</span> where we specify <span class="math inline">\(\epsilon_{ij} \sim N(0,\sigma^2_e)\)</span>, <span class="math inline">\(b_{i0} \sim N(0,\sigma^2_{b_0})\)</span> and <span class="math inline">\(b_{i1} \sim N(0,\sigma^2_{b_1})\)</span>.</p>
 <div id="a" class="section level1">
 <h1>a</h1>
+<blockquote>
 <p>Write down a model for <span class="math inline">\(y_{ijk}\)</span> to cover rat <span class="math inline">\(i\)</span> in group <span class="math inline">\(k\)</span> at observation time <span class="math inline">\(j\)</span> in which the <strong><em>average</em></strong> growth rate in each group is different between rats.</p>
+</blockquote>
 </div>
 <div id="b" class="section level1">
 <h1>b</h1>
+<blockquote>
 <p>Fit this model in <code>lme4</code>, can you conclude that the growth rate is different between different groups?</p>
+</blockquote>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>
+<blockquote>
 <p>Why does it not make sense to compare <span class="math inline">\(\sigma^2_e\)</span> and <span class="math inline">\(\sigma^2_{b_1}\)</span> when looking at how much variation is due to what source? If you did want to compare sources of variation, suggest a way to do it.</p>
+</blockquote>
 </div>
 <div id="d" class="section level1">
 <h1>d</h1>
+<blockquote>
 <p>Produce a scatter plot of the random intercepts versus random slopes for each rat (You can get this from <code>ranef</code>). Do these appear related?</p>
+</blockquote>
 </div>
 
 
