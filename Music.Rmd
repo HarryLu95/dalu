@@ -5,6 +5,7 @@ output: html_document
 <style>
 ul {font-family: Times New Roman; font-size: 24px;}
 img {display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px;}
+bdi {font-size: 12px;}
 @media screen and (min-width:700px) {
   img {width: 50%;}
 }
@@ -16,13 +17,13 @@ img {display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px;
 #Music Sheets
 Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/) provides all the downloads.
 
-- [歌に形はないけれど(Piano Re-arrange Ver.)](Music Sheets/歌に形はないけれど(Piano Re-arrange Ver.).pdf)
-- [歌に形はないけれど(Orchestral)](Music Sheets/歌に形はないけれど(Orchestral).pdf)
-- [歌に形はないけれど(doriko)](Music Sheets/歌に形はないけれど(doriko).pdf)
-- [歌に形はないけれど(花たん)](Music Sheets/歌に形はないけれど(花たん).pdf)
-- [Canon in D](Music Sheets/Canon in D.pdf)
-- [致青春(鸠玖)](Music Sheets/致青春(鸠玖).pdf)
-- [Ave Maria (Harp & Oboe)](Music Sheets/Ave Maria(Harp & Oboe).pdf)
+- [歌に形はないけれど(Piano Re-arrange Ver.)](Music Sheets/歌に形はないけれど(Piano Re-arrange Ver.).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/31925.htm)
+- [歌に形はないけれど(Orchestral)](Music Sheets/歌に形はないけれど(Orchestral).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/35022.htm)
+- [歌に形はないけれど(doriko)](Music Sheets/歌に形はないけれど(doriko).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/14208.htm)
+- [歌に形はないけれど(花たん)](Music Sheets/歌に形はないけれど(花たん).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/35183.htm)
+- [Variations on the Kanon by Pachelbel](Music Sheets/Variations on the Kanon by Pachelbel(伊den).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/8331.htm)
+- [致青春(鸠玖)](Music Sheets/致青春(鸠玖).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/20942.htm)
+- [Ave Maria (Harp & Oboe)](Music Sheets/Ave Maria(Harp & Oboe).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/17669.htm)
 
 #Playlist{.tabset}
 
