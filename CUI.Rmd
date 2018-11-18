@@ -130,6 +130,13 @@ ul {font-size: 16px; color: black;}
     - [Question 4](CU/5030/HW4-Q4.html)
     - Data: [airpollution](CU/5030/airpollution.csv) (.csv)
     - Data: [NutritionStdy](CU/5030/NutritionStdy.csv) (.csv)
+5. Homework 5
+    - [Question 1](CU/5030/HW5-Q1.html)
+    - [Question 2](CU/5030/HW5-Q2.html)
+    - [Question 3](CU/5030/HW5-Q3.html)
+    - [Question 4](CU/5030/HW5-Q4.html)
+    - Data: [airpollution](CU/5030/airpollution.csv) (.csv)
+    - Data: [rats](CU/5030/rats.csv) (.csv)
 
 ##Labs
 1. Lab 1
