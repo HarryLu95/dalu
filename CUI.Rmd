@@ -59,6 +59,8 @@ ul {font-size: 16px; color: black;}
     - data 1: [expenses](CU/5010/expenses.sas7bdat) (.sas7bdat)
     - data 2: [company](CU/5010/company.sas7bdat) (.sas7bdat)
     - Due: Nov/8/2018 at 11:59PM
+4. [HW 4](CU/5010/HW4.pdf)
+    - Due: Nov/27/2018 at 3:18PM
 
 ##Labs
 1. [Lab 1](CU/5010/Lab1.pdf)
