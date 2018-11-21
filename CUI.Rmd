@@ -279,7 +279,7 @@ ul {font-size: 16px; color: black;}
 19. [Lecture 19: Maximal Likelihood Estimation](CU/5080/Lec19.pdf)
 20. [Lecture 20: Maximal Likelihood Estimation (cont.)](CU/5080/Lec20.pdf)
 21. [Lecture 21: MLE and Confidence Intervals](CU/5080/Lec21.pdf)
-22. [Lecture 22: Confidence Intervals](CU/5080/Lec22.pdf) (draft)
+22. [Lecture 22: Confidence Intervals](CU/5080/Lec22.pdf)
 
 ##Homeworks
 1. [Homework 1](CU/5080/HW1.pdf)
@@ -291,6 +291,7 @@ ul {font-size: 16px; color: black;}
 4. [Homework 4](CU/5080/HW4.pdf)
     - [Solutions](CU/5080/HW4_S.pdf)
 5. [Homework 5](CU/5080/HW5.pdf)
+    - [Solutions](CU/5080/HW5_S.pdf)
 
 ##Discussions
 1. [Discussion 1 with Solutions](CU/5080/Dis1.pdf)
@@ -301,6 +302,9 @@ ul {font-size: 16px; color: black;}
 6. [Discussion 6 with Solutions](CU/5080/Dis6.pdf)
 7. [Discussion 7 with Solutions](CU/5080/Dis7.pdf)
 8. [Discussion 8 with Solutions](CU/5080/Dis8.pdf)
+9. [Discussion 9 with Solutions](CU/5080/Dis9.pdf)
+10. [Discussion 10 with Solutions](CU/5080/Dis10.pdf)
+11. [Discussion 11 with Solutions](CU/5080/Dis11.pdf)
 
 ##Supplementary Materials
 1. [Some standard distributions](CU/5080/Sup1.pdf)
@@ -309,6 +313,8 @@ ul {font-size: 16px; color: black;}
 4. [CHF and MGF](CU/5080/Sup4.pdf)
 5. [LeCam1986](CU/5080/Sup5.pdf)
 6. [Portnoy2013](CU/5080/Sup6.pdf)
+7. [Independence of sample mean and variance](CU/5080/Sup7.pdf)
+8. [Brown_Cai_DasGupta_(2001,Stat.Sci.)](CU/5080/Sup8.pdf)
 - [Formula](CU/5080/Formula.html)
 
 ##Practice Exams
@@ -319,6 +325,8 @@ ul {font-size: 16px; color: black;}
 
 ##Exams
 1. [Midterm 1 with Solutions](CU/5080/M1_S.pdf)
+2. [Midterm 2 with Solutions](CU/5080/M2_S.pdf)
+    - [Formula Sheet](CU/5080/M2_Formula_Sheet.pdf)
 
 ---
 
