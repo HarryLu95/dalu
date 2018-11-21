@@ -16,32 +16,41 @@ ul {font-size: 16px; color: black;}
 
 **To do 申請:**
 
-1. RELX Group - [Data Scientist](https://4re.referrals.selectminds.com/jobs/data-scientist-18276)
-2. RELX Group - [Associate Statistical Modeler](https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18286)
-3. RELX Group - [Associate Statistical Modeler](https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18070)
+1. Indeed - [Product Scientist](https://cornell.joinhandshake.com/jobs/1913799)
+    - **Nov/24** 11:59pm
+2. Wayfair - [Data Analytics Analyst](https://cornell.joinhandshake.com/jobs/1848536)
+    - **Nov/29** 11:59pm
+3. Bed Bath & Beyond - [Web Analyst](https://cornell.joinhandshake.com/jobs/1890065)
+    - **Nov/29** 11:59pm
+4. Enterprise Business Solutions Inc - [Entry level Business Analyst](https://cornell.joinhandshake.com/jobs/2026679)
+    - **Nov/29** 11:59pm
+- RELX Group - [Associate Statistical Modeler](https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18286)
+- RELX Group - [Associate Statistical Modeler](https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18070)
 
 ---
 
 **To do:**
 
-- 5080
-    - 19\. [Lecture 19: Maximal Likelihood Estimation](CU/5080/Lec19.pdf)
-    - 20\. [Lecture 20: Maximal Likelihood Estimation (cont.)](CU/5080/Lec20.pdf)
-- 5030
-    - HW4 - [Question 1](CU/5030/HW4-Q1.html)
-    - HW4 - [Question 2](CU/5030/HW4-Q2.html)
-    - HW4 - [Question 3](CU/5030/HW4-Q3.html)
-    - HW4 - [Question 4](CU/5030/HW4-Q4.html)
-- 5010
-    - 16\. [Reading Raw Data in Fixed Fields](CU/5010/Lec16.pdf)
-    - 17\. [Reading Free-Format Data](CU/5010/Lec17.pdf)
-    - 18\. [Reading Date and Time Values](CU/5010/Lec18.pdf)
-    - 19\. [Creating a Single Observation from Multiple Records](CU/5010/Lec19.pdf)
-    - 20\. [Creating Multiple Observations From a Single Record](CU/5010/Lec20.pdf)
-    - 21\. [Reading Hierarchical Files](CU/5010/Lec21.pdf)
-- 5060
-    - 6\. [Chapter 6 - Introduction to SQL](CU/5060/Lec6.pdf)
-    - 7\. [Chapter 7 - Advanced SQL](CU/5060/Lec7.pdf)
+*--- 查郵件!!!*
+
+*--- 5080*
+
+*--- 5030*
+
+- HW5 - [Question 1](CU/5030/HW5-Q1.html)
+- HW5 - [Question 2](CU/5030/HW5-Q2.html)
+- HW5 - [Question 3](CU/5030/HW5-Q3.html)
+- HW5 - [Question 4](CU/5030/HW5-Q4.html)
+
+*--- 5010*
+
+- [HW 4](CU/5010/HW4.pdf)
+    - Due: Nov/27/2018 at 3:18PM
+
+*--- 5060*
+
+- [HW 3](CU/5060/HW3.pdf)
+    - Due: Nov/28/2018 at 11:59PM
 
 ---
 
@@ -51,100 +60,3 @@ ul {font-size: 16px; color: black;}
 
 ---
 
-**1. RELX Group - Data Scientist**
-
-*Link:* https://4re.referrals.selectminds.com/jobs/data-scientist-18276
-
-*Location:* Norwalk, Connecticut, United States
-
-*Data Research & Analytics | Reed Exhibitions | REE00A4J*
-
-Reed Exhibitions (RX) is one of the largest trade show organizers in the world and is one of the four group companies within RELX (formerly Reed Elsevier), which is a FTSE 100 company. As part of a set of C-suite supported strategic programs that aim to use data to deliver the best of face-to-face and digital services around trade shows, a number of projects have been identified under the 'Data & Analytics' program. The first of these projects is to globally rollout a single lead/badge scanning capability across 100s of RX 500+ shows over the next two years.
-
-The opportunity here is to provide a consistent data platform for this data, so exhibitors and visitors can easily access who they have met, but additionally underlying business networks can be identified and understood to improve business outcomes for RX's 7 million annual customers through the development of world-class products and services in the B2B and B2C trade show space.
-
-*The role*
-
-RX is putting together a project team for this and subsequent projects under the Data & Analytics program. An important member of the team will be a Data Scientist who with a Data Engineer and Product Manager will make up the central team who will work with local show teams and business units around the world. Additional project resources will come from Central IT and 3rd party agencies as required.
-
-The ideal candidate will be a 'true' multi-skilled data scientist with a business leaning: a genuine hybrid of computing, statistical, communication skills and business acumen. Combined with the imagination to see what and how data is currently or can be collected and then developed into new customer valued services.
-
-Due to the semi-decentralized nature of RX the following list of skills and personal attributes would be prized. If these skills can be evidenced by past projects that would be ideal.
-
-- Statistical modelling, e.g., general linear model, survival models (Cox regression)
-- Hypothesis testing, ideally for product development A/B testing, e.g., ANOVA, t-tests, Chi-Squared, McNemar, non-parametric methods
-- R or Python script writing
-- Understands data pipelines and can support strategic decisions on technology choices
-- RESTful APIs (usage, ability to write them is desirable, but not required)
-- SQL, both DDL, indexing when and why, DML
-- Experience in design and enhancing data models that have been used in production code
-- Visualisation experience to include dashboards, management or customer reports (e.g., Excel, ggplot, Matplotlib, Shiny, D3)
-- \#LI-LP1
-
-Reed Exhibitions is an equal opportunity employer: qualified applicants are considered for and treated during employment without regard to race, color, religion, sex, national origin, disability status, protected veteran status or any other characteristic protected by law. If a qualified individual with a disability or disabled veteran needs a reasonable accommodation to use or access our online system, that individual should please contact 1-877-734-1938.
-
----
-
-**2. RELX Group - Associate Statistical Modeler**
-
-*Link:* https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18286
-
-*Location:* Minneapolis, Minnesota, United States
-
-*Data Research & Analytics | Risk Solutions | LNR006YJ*
-
-Basic Job Function: Entry level statistical modeler position that exists to conduct statistical analysis and build predictive models for a variety of performance outcomes such as risk, fraud, and collections for one or more markets including (but not limited to) insurance, credit, telecommunication, retail, and government. The incumbent will have a firm understanding of data mining, statistical methods, and multiple modeling/scoring techniques
-
-*Accountabilities:*
-
-1. Conduct analysis and performance reports in support of existing and new product development, and/or customer sales.
-2. With direction, develop analytic models, create and provide analysis code, and work with internal or external stakeholders to validate accuracy of production scoring code.
-3. Follow established best practices in statistical work.
-4. Assemble, merge, and parse large amounts of data to detect meaningful trends and patterns.
-5. Provide support for client inquiries regarding score calculations or other analytic output.
-6. Understand analytic plans and follow these plans by identifying and executing the appropriate statistical or modeling technique.
-7. Clearly document and communicate analytic work and/or results.
-8. Other duties as assigned.
-
-*Qualifications:*
-
-- Bachelors Degree in computer science, mathematics, statistics or quantitative methods (or equivalent year?s experience)
-- 0-3 years experience in building predictive models using SAS or similar software package.
-- Knowledge of statistical analysis methodologies and exposure to SAS or similar software package.
-- Ability to learn quickly and communicate effectively.
-- Fluency with Excel, PowerPoint and Word.
-
-At LexisNexis Risk Solutions, we believe in the power of data and advanced analytics for better risk management. With over 40 years of expertise, we are the trusted data analytics provider for organizations seeking actionable insights to manage risks and improve results while upholding the highest standards for security and privacy. Headquartered in metro Atlanta, LexisNexis Risk Solutions serves customers in more than 100 countries and is part of RELX Group plc, a world-leading provider of information and analytics for professional and business customers across industries. For more information, please visit www.lexisnexisrisk.com. LexisNexis Risk Solutions is an equal opportunity employer: qualified applicants are considered for and treated during employment without regard to race, color, creed, religion, sex, national origin, citizenship status, disability status, protected veteran status, age, marital status, sexual orientation, gender identity, genetic information, or any other characteristic protected by law. If a qualified individual with a disability or disabled veteran needs a reasonable accommodation to use or access our online system, that individual should please contact 1.877.734.1938 or accommodations@relx.com.
-
----
-
-**3. RELX Group - Associate Statistical Modeler**
-
-*Link:* https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18070
-
-*Location:* Minneapolis, Minnesota, United States
-
-*Data Research & Analytics | Risk Solutions | LNR006VF*
-
-Basic Job Function: Entry level statistical modeler position that exists to conduct statistical analysis and build predictive models for a variety of performance outcomes such as risk, fraud, and collections for one or more markets including (but not limited to) insurance, credit, telecommunication, retail, and government. The incumbent will have a firm understanding of data mining, statistical methods, and multiple modeling/scoring techniques
-
-*Accountabilities:*
-
-1. Conduct analysis and performance reports in support of existing and new product development, and/or customer sales.
-2. With direction, develop analytic models, create and provide analysis code, and work with internal or external stakeholders to validate accuracy of production scoring code.
-3. Follow established best practices in statistical work.
-4. Assemble, merge, and parse large amounts of data to detect meaningful trends and patterns.
-5. Provide support for client inquiries regarding score calculations or other analytic output.
-6. Understand analytic plans and follow these plans by identifying and executing the appropriate statistical or modeling technique.
-7. Clearly document and communicate analytic work and/or results.
-8. Other duties as assigned.
-
-*Qualifications:*
-
-- Bachelors Degree in computer science, mathematics, statistics or quantitative methods (or equivalent year?s experience)
-- 0-3 years experience in building predictive models using SAS or similar software package.
-- Knowledge of statistical analysis methodologies and exposure to SAS or similar software package.
-- Ability to learn quickly and communicate effectively.
-- Fluency with Excel, PowerPoint and Word.
-
-At LexisNexis Risk Solutions, we believe in the power of data and advanced analytics for better risk management. With over 40 years of expertise, we are the trusted data analytics provider for organizations seeking actionable insights to manage risks and improve results while upholding the highest standards for security and privacy. Headquartered in metro Atlanta, LexisNexis Risk Solutions serves customers in more than 100 countries and is part of RELX Group plc, a world-leading provider of information and analytics for professional and business customers across industries. For more information, please visit www.lexisnexisrisk.com. LexisNexis Risk Solutions is an equal opportunity employer: qualified applicants are considered for and treated during employment without regard to race, color, creed, religion, sex, national origin, citizenship status, disability status, protected veteran status, age, marital status, sexual orientation, gender identity, genetic information, or any other characteristic protected by law. If a qualified individual with a disability or disabled veteran needs a reasonable accommodation to use or access our online system, that individual should please contact 1.877.734.1938 or accommodations@relx.com.
