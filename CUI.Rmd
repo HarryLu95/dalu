@@ -197,6 +197,7 @@ ul {font-size: 16px; color: black;}
 11. [PROC SQL 4](CU/5060/ProcSQL4.pdf)
 12. [PROC SQL 5](CU/5060/ProcSQL5.pdf)
 13. [PROC SQL 6](CU/5060/ProcSQL6.pdf)
+14. [PROC SQL 7](CU/5060/ProcSQL7.pdf)
 
 ##Data Files
 1. [customer](CU/5060/customer.sas7bdat) (.sas7bdat)
