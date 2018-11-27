@@ -1,0 +1,100 @@
+---
+title: "temp"
+output: html_document
+---
+
+```{SAS}
+/* Fall 2018 STSCI 5060 HW3 */
+/* Student Name: Da Lu      */
+/*        NetID: dl947      */
+
+/*  */
+
+/* Question 1 */
+/* Details of two tables */
+Title1 "Details of order_fact";
+PROC CONTENTS Data = ST60HW3.order_fact;
+   Ods Select Variables;
+RUN;
+Title1 "Details of sales";
+PROC CONTENTS Data = ST60HW3.sales;
+   Ods Select Variables;
+RUN;
+/* Find the key dates */
+Title1 "Key Dates";
+DATA Date;
+	First2004 = mdy(1,1,2004);
+	Last2004 = mdy(12,31,2004);
+	Last2005 = mdy(12,31,2005);
+RUN;
+PROC PRINT Data = Date Label Noobs;
+	Label
+		First2004 = "First Day of 2004"
+		Last2004 = "Last Day of 2004"
+		Last2005 = "Last Day of 2005";
+RUN;
+/* PROC SQL */
+Title1 "Question 1";
+PROC SQL;
+	Select Employee_ID, Order_Date
+		From ST60HW3.order_fact
+		Where Order_Date <= 16801 And Employee_ID In
+			(Select Employee_ID
+				From ST60HW3.sales
+				Where Hire_Date >= 16071 And Hire_Date <= 16436 And Job_Title In ("Sales Rep. III","Sales Rep. IV"));
+QUIT;
+
+
+
+/*
+PROC PRINT data=ST60HW3.sales;
+	format Hire_Date MMDDYY10.;
+RUN;
+PROC SQL;
+	Select Employee_ID
+		From ST60HW3.sales
+		Where Hire_Date >= 16071 And Hire_Date <= 16436;
+RUN;
+PROC SQL;
+	Select Employee_ID, Order_Date
+		From ST60HW3.order_fact
+		Where Employee_ID In (120179,121019,121024,121033,121072);
+RUN;
+*/
+
+
+
+/* Question 2 */
+/* Details of three tables */
+Title1 "Details of mechanicslevel1";
+PROC CONTENTS Data = ST60HW3.mechanicslevel1;
+   Ods Select Variables;
+RUN;
+Title1 "Details of mechanicslevel2";
+PROC CONTENTS Data = ST60HW3.mechanicslevel2;
+   Ods Select Variables;
+RUN;
+Title1 "Details of mechanicslevel13";
+PROC CONTENTS Data = ST60HW3.mechanicslevel3;
+   Ods Select Variables;
+RUN;
+/* PROC SQL */
+Title1 "Question 2";
+PROC SQL;
+	Select *
+		From ST60HW3.mechanicslevel1
+	Union
+	Select *
+		From ST60HW3.mechanicslevel2
+	Union
+	Select *
+		From ST60HW3.mechanicslevel3;
+QUIT;
+
+
+
+/* Question 3 */
+/* Details of the table */
+
+```
+
