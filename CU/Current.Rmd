@@ -16,22 +16,18 @@ ul {font-size: 16px; color: black;}
 
 [5060hw3](CU/t.html)
 
-**To do 申請:**
+#1. To do 申請:
 
-1. Indeed - [Product Scientist](https://cornell.joinhandshake.com/jobs/1913799)
-    - **Nov/24** 11:59pm
-2. Wayfair - [Data Analytics Analyst](https://cornell.joinhandshake.com/jobs/1848536)
+1. Bed Bath & Beyond - [Web Analyst](https://cornell.joinhandshake.com/jobs/1890065)
     - **Nov/29** 11:59pm
-3. Bed Bath & Beyond - [Web Analyst](https://cornell.joinhandshake.com/jobs/1890065)
-    - **Nov/29** 11:59pm
-4. Enterprise Business Solutions Inc - [Entry level Business Analyst](https://cornell.joinhandshake.com/jobs/2026679)
+2. Enterprise Business Solutions Inc - [Entry level Business Analyst](https://cornell.joinhandshake.com/jobs/2026679)
     - **Nov/29** 11:59pm
 - RELX Group - [Associate Statistical Modeler](https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18286)
 - RELX Group - [Associate Statistical Modeler](https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18070)
 
 ---
 
-**To do:**
+#2. To do:
 
 *--- 查郵件!!!*
 
@@ -56,9 +52,61 @@ ul {font-size: 16px; color: black;}
 
 ---
 
-**購物:**
+#3. 購物:
 
 - None
 
 ---
 
+#4. Job Details
+##Bed Bath & Beyond - Web Analyst
+**Responsibilities:**
+
+- Engage with business leaders and stakeholders to uncover needs, challenges, and/or goals while guiding the discovery and understanding of data and analytic opportunities to meet expectations
+- Map out project scope, objectives and deliverables including methodology and design recommendations along with setting timelines for completion
+- Leverage BBBY and 3rd party data assets to measure & analyze program performance and return-on-investment across several key marketing and business initiatives (e.g., Direct Mail, E-mail, etc) to aid in the development of future strategies
+- Perform and manage all end-to-end steps required for analyses including requirements gathering, methodology development, data pulling, data processing, analysis, insight formulation and results communication
+- Create final deliverables in a variety of formats (formal papers, PowerPoint, etc.) to summarize completed analysis, best practices or recommendations, and present all findings directly to senior leaders and business stakeholders
+- Work with cross-functional teams on the day-to-day execution of analytics projects & initiatives
+- Execute appropriate quality control procedures for analysis, reporting & scoring and audit statistical analysis for accuracy
+- Support the building of analytical capabilities and solutions (e.g., exploratory data analysis, segmentation, modeling, campaign evaluations, etc) that enable analytics to support the strategic goals of the Company
+- Ensure quality and timeliness of deliverables that meet expectations while balancing business needs with the appropriate level of analytical rigor
+- Leverage story-telling skills to deliver insights that are clear, concise and actionable
+- Experience & Personal Qualities:
+- Strong oral and written communication skills that enable personal impact with technical & non-technical stakeholders plus senior-level decision makers
+- Organizational, planning and project management skills and ability to effectively manage cross-functional projects
+- Positive and Energetic attitude
+- Ability to work independently in a dynamic fast paced environment, with minimal supervision
+- Always looking to self-develop and improve both business and technical acumen
+- Able to receive and provide feedback constructively
+- Prior retail analytics experience strongly preferred
+- Experience in project management preferred
+
+**Education/Certification:**
+
+- Bachelor's degree in Operations Research, Management Science, Data Science, Statistics, Econometrics, or related field with strong focus on applied statistics and research methodology
+
+**Required Knowledge:**
+
+- Proficiency with SAS, SQL, R, and/or Python
+- Experience with data visualization tools like Tableau and Microstrategy Visual Insights a plus
+- Knowledge of industry best practices with respect to marketing measurement, data-mining, experimental design, and other statistical techniques
+- Advanced Microsoft Excel skills including pivot tables, macros and v-lookups
+- Experience in presenting analytics research and insights
+
+**Experience Required:**
+
+- 3-5 years of experience in marketing analytics preferably within the retail industry
+
+##Enterprise Business Solutions Inc - Entry level Business Analyst
+**Responsibilities:**
+
+- Define project requirements by identifying project milestones, phases and elements; forming project team; establishing project budget
+- Monitor project progress by tracking activity; resolving problems; publishing progress reports; recommending actions
+- Maintain user confidence and protect operations by keeping information confidential
+- Prepare technical reports by collecting, analyzing and summarizing information and trends
+- Contribute to team effort by accomplishing related results as needed
+- Validate resource requirements and develop cost estimate models
+- Perform daily, weekly and monthly reviews and analyses of current processes using operational metrics and reports
+- Create informative, actionable and repeatable reporting that highlights relevant business trends and opportunities for improvement
+- Conduct insightful, adhoc analyses to investigate ongoing or one-time operational issues
