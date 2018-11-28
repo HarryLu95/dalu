@@ -198,6 +198,11 @@ ul {font-size: 16px; color: black;}
 12. [PROC SQL 5](CU/5060/ProcSQL5.pdf)
 13. [PROC SQL 6](CU/5060/ProcSQL6.pdf)
 14. [PROC SQL 7](CU/5060/ProcSQL7.pdf)
+15. [SAS HPC with DBMS_1](CU/5060/HPC1.pdf)
+16. [SAS HPC with DBMS_2](CU/5060/HPC2.pdf)
+17. [SAS HPC with DBMS_3](CU/5060/HPC3.pdf)
+18. [SAS HPC with DBMS_4](CU/5060/HPC4.pdf)
+19. [SAS HPC with DBMS_5](CU/5060/HPC5.pdf)
 
 ##Data Files
 1. [customer](CU/5060/customer.sas7bdat) (.sas7bdat)
