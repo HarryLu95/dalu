@@ -302,6 +302,7 @@ ul {font-size: 16px; color: black;}
     - [Solutions](CU/5080/HW4_S.pdf)
 5. [Homework 5](CU/5080/HW5.pdf)
     - [Solutions](CU/5080/HW5_S.pdf)
+6. [Homework 6](CU/5080/HW6.pdf)
 
 ##Discussions
 1. [Discussion 1 with Solutions](CU/5080/Dis1.pdf)
