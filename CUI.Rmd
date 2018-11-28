@@ -52,6 +52,7 @@ ul {font-size: 16px; color: black;}
 
 22. [Introduction to SAS Enterprise Miner (EM) and Data Visualization](CU/5010/Lec22.pdf)
 23. [Cluster Analysis with SAS](CU/5010/Lec23.pdf)
+24. [Preparation for Clustering](CU/5010/Lec24.pdf)
 
 ##Homeworks
 1. [HW 1](CU/5010/HW1.pdf)
