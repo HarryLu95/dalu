@@ -288,7 +288,8 @@ ul {font-size: 16px; color: black;}
 20. [Lecture 20: Maximal Likelihood Estimation (cont.)](CU/5080/Lec20.pdf)
 21. [Lecture 21: MLE and Confidence Intervals](CU/5080/Lec21.pdf)
 22. [Lecture 22: Confidence Intervals](CU/5080/Lec22.pdf)
-23. [Lecture 23: Testing](CU/5080/Lec23.pdf) (draft)
+23. [Lecture 23: Testing](CU/5080/Lec23.pdf)
+24. [Lecture 24: Testing (cont.)](CU/5080/Lec24.pdf) (draft)
 
 ##Homeworks
 1. [Homework 1](CU/5080/HW1.pdf)
