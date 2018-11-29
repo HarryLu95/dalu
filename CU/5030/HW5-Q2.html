@@ -136,6 +136,39 @@ p {font-size: 18px;}
 </style>
 <hr />
 <p>Here we will illustrate the results from <strong><em>Question 1</em></strong> with a real world data set. We will use the study of mortality in 55 US cities as it is influenced by pollutants <code>NOX</code> (nitrous oxide) and <code>SO2</code> (sulfur dioxide), while controlling weather (<code>PRECIP</code>) and sociological variables (<code>EDUC</code> and <code>NONWHITE</code>) that appeared on <strong><em>Homework 4</em></strong>.</p>
+<pre class="r"><code>ap=read.csv(file=&quot;https://www.harrylu.net/CU/5030/airpollution.csv&quot;,header=TRUE)
+#===---===---===---===---===---===---===---===---===---===
+ap_1=ap[-1,]
+l_ap_1_mort=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap_1)
+X_ap_1_mort=matrix(1,nrow=54,ncol=6)
+X_ap_1_mort[,2]=ap_1[,3]
+X_ap_1_mort[,3]=ap_1[,4]
+X_ap_1_mort[,4]=ap_1[,5]
+X_ap_1_mort[,5]=ap_1[,6]
+X_ap_1_mort[,6]=ap_1[,7]
+H_ap_1_mort=X_ap_1_mort%*%solve(t(X_ap_1_mort)%*%X_ap_1_mort)%*%t(X_ap_1_mort)
+H_ap_1_mort_ii=diag(H_ap_1_mort)
+e_ap_1_mort=l_ap_1_mort$residuals
+sum_ap_1_mort=sum(e_ap_1_mort^2/(1-H_ap_1_mort_ii)^2)
+#===---===---===---===---===---===---===---===---===---===
+ap_2=ap[-2,]
+l_ap_2_mort=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap_2)
+X_ap_2_mort=matrix(1,nrow=54,ncol=6)
+X_ap_2_mort[,2]=ap_2[,3]
+X_ap_2_mort[,3]=ap_2[,4]
+X_ap_2_mort[,4]=ap_2[,5]
+X_ap_2_mort[,5]=ap_2[,6]
+X_ap_2_mort[,6]=ap_2[,7]
+H_ap_2_mort=X_ap_2_mort%*%solve(t(X_ap_2_mort)%*%X_ap_2_mort)%*%t(X_ap_2_mort)
+H_ap_2_mort_ii=diag(H_ap_2_mort)
+e_ap_2_mort=l_ap_2_mort$residuals
+sum_ap_2_mort=sum(e_ap_2_mort^2/(1-H_ap_2_mort_ii)^2)
+#===---===---===---===---===---===---===---===---===---===
+ap_3=ap[-3,]
+l_ap_3_mort=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap_3)
+#===---===---===---===---===---===---===---===---===---===
+ap_4=ap[-4,]
+l_ap_4_mort=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap_4)</code></pre>
 <div id="a" class="section level1">
 <h1>a</h1>
 <blockquote>

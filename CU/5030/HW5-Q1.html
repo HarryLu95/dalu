@@ -149,8 +149,17 @@ ol {font-size: 18px;}
 <div id="a" class="section level1">
 <h1>a</h1>
 <blockquote>
-<p>We will start by considering a separate test-set. As in the midterm, imagine that we have <span class="math inline">\(X_2=X_1\)</span>, but that the errors that produce <span class="math inline">\(\mathbf{y_2}\)</span> are independent of those that produce <span class="math inline">\(\mathbf{y_1}\)</span>. We estimate <span class="math inline">\(\hat{\beta}\)</span> using <span class="math inline">\((X_1,\mathbf{y_1})\)</span>: <span class="math inline">\(\hat{\beta}=(X_1^TX_1)^{-1}X_1^T\mathbf{y}\)</span>. Show that the in-sample average squared error, <span class="math inline">\((\mathbf{y_1}-X_1\hat\beta)^T(\mathbf{y_1}-X_1\hat\beta)/n\)</span>, is biased downwards as an estimate of <span class="math inline">\(\sigma\)</span>, but the test-set average squared error, <span class="math inline">\((\mathbf{y_2}-X_2\hat\beta)^T(\mathbf{y_2}-X_2\hat\beta)/n\)</span>, is biassed upwards. (You may find the midterm solutions helpful.)</p>
+<p>We will start by considering a separate test-set. As in the midterm, imagine that we have <span class="math inline">\(X_2=X_1\)</span>, but that the errors that produce <span class="math inline">\(\mathbf{y}_2\)</span> are independent of those that produce <span class="math inline">\(\mathbf{y}_1\)</span>. We estimate <span class="math inline">\(\hat{\beta}\)</span> using <span class="math inline">\((X_1,\mathbf{y}_1)\)</span>: <span class="math inline">\(\hat{\beta}=(X_1^TX_1)^{-1}X_1^T\mathbf{y}\)</span>. Show that the in-sample average squared error, <span class="math inline">\((\mathbf{y}_1-X_1\hat\beta)^T(\mathbf{y}_1-X_1\hat\beta)/n\)</span>, is biased downwards as an estimate of <span class="math inline">\(\sigma\)</span>, but the test-set average squared error, <span class="math inline">\((\mathbf{y}_2-X_2\hat\beta)^T(\mathbf{y}_2-X_2\hat\beta)/n\)</span>, is biassed upwards. (You may find the midterm solutions helpful.)</p>
 </blockquote>
+<p><span class="math display">\[\text{SSE}=(\mathbf{y}-X\hat\beta)^T(\mathbf{y}-X\hat\beta)\]</span></p>
+<p>In-sample, <span class="math inline">\(\sigma^2\)</span>:</p>
+<p><span class="math display">\[\sigma^2=\frac{\text{SSE}}{n-p-1}\]</span></p>
+<p><span class="math display">\[\frac{\text{SSE}}{n-p-1}&gt;\frac{(\mathbf{y}_1-X_1\hat\beta)^T(\mathbf{y}_1-X_1\hat\beta)}{n}\]</span></p>
+<p>So <span class="math inline">\(\frac{(\mathbf{y}_1-X_1\hat\beta)^T(\mathbf{y}_1-X_1\hat\beta)}{n}\)</span> is biased downloads.</p>
+<p>Unbiased estimator, <span class="math inline">\(\widehat{\sigma^2}\)</span>:</p>
+<p><span class="math display">\[\widehat{\sigma^2}=\frac{\text{SSE}}{\text{tr}(I+H)}=\frac{\text{SSE}}{n+p+1}\]</span></p>
+<p><span class="math display">\[\frac{\text{SSE}}{n+p+1}&lt;\frac{(\mathbf{y}_2-X_2\hat\beta)^T(\mathbf{y}_2-X_2\hat\beta)}{n}\]</span></p>
+<p>So <span class="math inline">\(\frac{(\mathbf{y}_2-X_2\hat\beta)^T(\mathbf{y}_2-X_2\hat\beta)}{n}\)</span> is biased upwards.</p>
 </div>
 <div id="b" class="section level1">
 <h1>b</h1>
@@ -162,14 +171,14 @@ ol {font-size: 18px;}
 <h1>c</h1>
 <blockquote>
 <p>Now we will turn to cross validation. Using the identity</p>
-<p><span class="math display">\[\hat{\mathbf\beta}_{(i)}=\hat{\mathbf\beta}-\frac{1}{1-h_{ii}}(X^TX)^{-1}\mathbf{x_i}\hat{e_i}\]</span></p>
-<p>from class, to obtain an expression for the <strong><em>out of sample</em></strong> prediction <span class="math inline">\(\mathbf{x_i}^T\hat{\mathbf\beta}_{(i)}\)</span> in terms of <span class="math inline">\(\mathbf{x_i}\)</span>, <span class="math inline">\(y_i\)</span>, <span class="math inline">\(\hat{\mathbf\beta}\)</span> and <span class="math inline">\(h_{ii}\)</span> only.</p>
+<p><span class="math display">\[\hat{\mathbf\beta}_{(i)}=\hat{\mathbf\beta}-\frac{1}{1-h_{ii}}(X^TX)^{-1}\mathbf{x}_i\hat{e_i}\]</span></p>
+<p>from class, to obtain an expression for the <strong><em>out of sample</em></strong> prediction <span class="math inline">\(\mathbf{x}_i^T\hat{\mathbf\beta}_{(i)}\)</span> in terms of <span class="math inline">\(\mathbf{x}_i\)</span>, <span class="math inline">\(y_i\)</span>, <span class="math inline">\(\hat{\mathbf\beta}\)</span> and <span class="math inline">\(h_{ii}\)</span> only.</p>
 </blockquote>
 </div>
 <div id="d" class="section level1">
 <h1>d</h1>
 <blockquote>
-<p>Hence obtain an expression for the prediction error <span class="math inline">\(y_i-\mathbf{x_i}^T\hat{\mathbf\beta}_{(i)}\)</span> using only <span class="math inline">\(y_i\)</span>, <span class="math inline">\(\hat{y_i}\)</span> and <span class="math inline">\(h_{ii}\)</span>. You may want to check this empirically using the first few entries of the data used in Question 2.</p>
+<p>Hence obtain an expression for the prediction error <span class="math inline">\(y_i-\mathbf{x}_i^T\hat{\mathbf\beta}_{(i)}\)</span> using only <span class="math inline">\(y_i\)</span>, <span class="math inline">\(\hat{y_i}\)</span> and <span class="math inline">\(h_{ii}\)</span>. You may want to check this empirically using the first few entries of the data used in Question 2.</p>
 </blockquote>
 </div>
 <div id="e" class="section level1">
