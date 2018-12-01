@@ -53,6 +53,8 @@ ul {font-size: 16px; color: black;}
 22. [Introduction to SAS Enterprise Miner (EM) and Data Visualization](CU/5010/Lec22.pdf)
 23. [Cluster Analysis with SAS](CU/5010/Lec23.pdf)
 24. [Preparation for Clustering](CU/5010/Lec24.pdf)
+25. [Hierarchical Clustering](CU/5010/Lec25.pdf)
+26. [Optimization Clustering](CU/5010/Lec26.pdf)
 
 ##Homeworks
 1. [HW 1](CU/5010/HW1.pdf)
@@ -68,7 +70,10 @@ ul {font-size: 16px; color: black;}
     - data 2: [company](CU/5010/company.sas7bdat) (.sas7bdat)
     - Due: Nov/8/2018 at 11:59PM
 4. [HW 4](CU/5010/HW4.pdf)
-    - Due: Nov/27/2018 at 3:18PM
+    - Due: Nov/27/2018 at 11:59PM
+5. [HW 5](CU/5010/HW5.pdf)
+    - data: [flowers](CU/5010/flowers.sas7bdat) (.sas7bdat)
+    - Due: Dec/5/2018 at 11:59PM
 
 ##Labs
 1. [Lab 1](CU/5010/Lab1.pdf)
