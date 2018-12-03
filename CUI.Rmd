@@ -176,7 +176,7 @@ ul {font-size: 16px; color: black;}
     - [Solution (PDF)](CU/5030/Lab4_S.pdf)
 
 ##Exams
-- [Practice Midterm 1](CU/5030/Midterm1_1_Fall2017.pdf), Fall 2017 Midterm - 1
+- [Practice Midterm 1](CU/5030/Midterm1_Fall2017.pdf), Fall 2017 Midterm - 1
     - [Solution](CU/5030/Midterm1_Fall2017_S.pdf)
     - [Summary](CU/5030/Midterm1_Fall2017_Summary.html)
 - [Practice Midterm 2](CU/5030/Midterm2_Fall2017.pdf), Fall 2017 Midterm - 2
@@ -185,7 +185,7 @@ ul {font-size: 16px; color: black;}
 - [Midterm Solution](CU/5030/Midterm_S.pdf)
 - [Practice Final](CU/5030/Final_Fall2017.pdf)
 - [Fianl Review](CU/5030/Final_Review.pdf)
-    - [Solution](CU/5030/Final_Review_2.pdf)
+    - [Solution](CU/5030/Final_Review_S.pdf)
 
 ---
 
