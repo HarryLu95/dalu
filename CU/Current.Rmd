@@ -61,6 +61,9 @@ ul {font-size: 16px; color: black;}
 
 *--- 5030*
 
+- [Practice Final](CU/5030/Final_Fall2017.pdf)
+- [Fianl Review](CU/5030/Final_Review.pdf)
+    - [Solution](CU/5030/Final_Review_S.pdf)
 - HW5 - [Question 1](CU/5030/HW5-Q1.html)
 - HW5 - [Question 2](CU/5030/HW5-Q2.html)
 - HW5 - [Question 3](CU/5030/HW5-Q3.html)
