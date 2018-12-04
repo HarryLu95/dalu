@@ -136,50 +136,95 @@ p {font-size: 18px;}
 </style>
 <hr />
 <p>Here we will illustrate the results from <strong><em>Question 1</em></strong> with a real world data set. We will use the study of mortality in 55 US cities as it is influenced by pollutants <code>NOX</code> (nitrous oxide) and <code>SO2</code> (sulfur dioxide), while controlling weather (<code>PRECIP</code>) and sociological variables (<code>EDUC</code> and <code>NONWHITE</code>) that appeared on <strong><em>Homework 4</em></strong>.</p>
-<pre class="r"><code>ap=read.csv(file=&quot;https://www.harrylu.net/CU/5030/airpollution.csv&quot;,header=TRUE)
-l_ap_mort=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap)
-X_ap_mort=matrix(1,nrow=55,ncol=6)
-X_ap_mort[,2]=ap[,3]
-X_ap_mort[,3]=ap[,4]
-X_ap_mort[,4]=ap[,5]
-X_ap_mort[,5]=ap[,6]
-X_ap_mort[,6]=ap[,7]
-H_ap_mort=X_ap_mort%*%solve(t(X_ap_mort)%*%X_ap_mort)%*%t(X_ap_mort)
-H_ap_mort_ii=diag(H_ap_mort)
-beta_ap_mort=as.matrix(l_ap_mort$coefficients[1:6])
-#===---===---===---===---===---===---===---===---===---===
-ap_1=ap[-1,]
-l_ap_1_mort=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap_1)
-x_ap_1_mort=as.matrix(cbind(1,ap[1,3:7]))
-beta_ap_1_mort=as.matrix(l_ap_1_mort$coefficients[1:6])
-y_ap_1_mort=ap[1,2]
-y_ap_1_mort-x_ap_1_mort%*%beta_ap_1_mort</code></pre>
-<pre><code>##        [,1]
-## 1 -71.37101</code></pre>
-<pre class="r"><code>(y_ap_1_mort-x_ap_1_mort%*%beta_ap_mort)/(1-H_ap_mort_ii[1])</code></pre>
-<pre><code>##        [,1]
-## 1 -71.37101</code></pre>
-<pre class="r"><code>#===---===---===---===---===---===---===---===---===---===
-ap_2=ap[-2,]
-l_ap_2_mort=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap_2)
-
-#===---===---===---===---===---===---===---===---===---===
-ap_3=ap[-3,]
-l_ap_3_mort=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap_3)
-#===---===---===---===---===---===---===---===---===---===
-ap_4=ap[-4,]
-l_ap_4_mort=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap_4)</code></pre>
+<pre class="r"><code>ap=read.csv(file=&quot;https://www.harrylu.net/CU/5030/airpollution.csv&quot;,header=TRUE)</code></pre>
 <div id="a" class="section level1">
 <h1>a</h1>
 <blockquote>
 <p>Delete each of the first four observation in turn, fit a model with the remaining observations (i.e. each model should be fit based on <span class="math inline">\(n-1\)</span> observations) and use this to predict <code>MORT</code> in the left-out sample. Verfiy that your answer in <strong><em>Question 1d</em></strong> returns the same error.</p>
 </blockquote>
+<p>Linear model (<code>l</code>) (full data set)</p>
+<pre class="r"><code>l=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap)</code></pre>
+<p>Create the hat matrix (<code>H</code>), and get <span class="math inline">\(h_{ii}\)</span> (<code>H_ii</code>)</p>
+<pre class="r"><code>X=matrix(1,nrow=55,ncol=6)
+X[,2]=ap[,3]
+X[,3]=ap[,4]
+X[,4]=ap[,5]
+X[,5]=ap[,6]
+X[,6]=ap[,7]
+H=X%*%solve(t(X)%*%X)%*%t(X)
+H_ii=diag(H)</code></pre>
+<p>Beta value of linear model <code>l</code> (<code>l_beta</code>)</p>
+<pre class="r"><code>l_beta=as.matrix(l$coefficients[1:6])</code></pre>
+<p>We want to show that <span class="math inline">\(\mathbf{y}_i-\mathbf{x}_i\beta_{-i}=\frac{\mathbf{y}_i-\mathbf{x}_i\beta}{1-h_{ii}}\)</span>.</p>
+<p><strong>Remove 1-st row</strong></p>
+<p>Linear model <code>l_1</code></p>
+<pre class="r"><code>ap_1=ap[-1,]
+l_1=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap_1)
+x_1=as.matrix(cbind(1,ap[1,3:7]))
+l_beta_1=as.matrix(l_1$coefficients[1:6])
+y_1=ap[1,2]</code></pre>
+<p><span class="math inline">\(\mathbf{y}_1-\mathbf{x}_1\beta_{-1}\)</span></p>
+<pre class="r"><code>y_1-x_1%*%l_beta_1</code></pre>
+<pre><code>##        [,1]
+## 1 -71.37101</code></pre>
+<p><span class="math inline">\(\frac{\mathbf{y}_1-\mathbf{x}_1\beta}{1-h_{11}}\)</span></p>
+<pre class="r"><code>(y_1-x_1%*%l_beta)/(1-H_ii[1])</code></pre>
+<pre><code>##        [,1]
+## 1 -71.37101</code></pre>
+<p><strong>Remove 2-nd row</strong></p>
+<p>Linear model <code>l_2</code></p>
+<pre class="r"><code>ap_2=ap[-2,]
+l_2=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap_2)
+x_2=as.matrix(cbind(1,ap[2,3:7]))
+l_beta_2=as.matrix(l_2$coefficients[1:6])
+y_2=ap[2,2]</code></pre>
+<p><span class="math inline">\(\mathbf{y}_2-\mathbf{x}_2\beta_{-2}\)</span></p>
+<pre class="r"><code>y_2-x_2%*%l_beta_2</code></pre>
+<pre><code>##        [,1]
+## 2 -101.6068</code></pre>
+<p><span class="math inline">\(\frac{\mathbf{y}_2-\mathbf{x}_2\beta}{1-h_{22}}\)</span></p>
+<pre class="r"><code>(y_2-x_2%*%l_beta)/(1-H_ii[2])</code></pre>
+<pre><code>##        [,1]
+## 2 -101.6068</code></pre>
+<p><strong>Remove 3-rd row</strong></p>
+<p>Linear model <code>l_3</code></p>
+<pre class="r"><code>ap_3=ap[-3,]
+l_3=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap_3)
+x_3=as.matrix(cbind(1,ap[3,3:7]))
+l_beta_3=as.matrix(l_3$coefficients[1:6])
+y_3=ap[3,2]</code></pre>
+<p><span class="math inline">\(\mathbf{y}_3-\mathbf{x}_3\beta_{-3}\)</span></p>
+<pre class="r"><code>y_3-x_3%*%l_beta_3</code></pre>
+<pre><code>##        [,1]
+## 3 -28.84556</code></pre>
+<p><span class="math inline">\(\frac{\mathbf{y}_3-\mathbf{x}_3\beta}{1-h_{33}}\)</span></p>
+<pre class="r"><code>(y_3-x_3%*%l_beta)/(1-H_ii[3])</code></pre>
+<pre><code>##        [,1]
+## 3 -28.84556</code></pre>
+<p><strong>Remove 4-th row</strong></p>
+<p>Linear model <code>l_4</code></p>
+<pre class="r"><code>ap_4=ap[-4,]
+l_4=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap_4)
+x_4=as.matrix(cbind(1,ap[4,3:7]))
+l_beta_4=as.matrix(l_4$coefficients[1:6])
+y_4=ap[4,2]</code></pre>
+<p><span class="math inline">\(\mathbf{y}_4-\mathbf{x}_4\beta_{-4}\)</span></p>
+<pre class="r"><code>y_4-x_4%*%l_beta_4</code></pre>
+<pre><code>##        [,1]
+## 4 -61.08108</code></pre>
+<p><span class="math inline">\(\frac{\mathbf{y}_4-\mathbf{x}_4\beta}{1-h_{44}}\)</span></p>
+<pre class="r"><code>(y_4-x_4%*%l_beta)/(1-H_ii[4])</code></pre>
+<pre><code>##        [,1]
+## 4 -61.08108</code></pre>
 </div>
 <div id="b" class="section level1">
 <h1>b</h1>
 <blockquote>
 <p>Using your identity in <strong><em>Question 1e</em></strong>, compute the cross-validation score for a model using all covariates.</p>
 </blockquote>
+<pre class="r"><code>epsilon=l$residuals
+sum((epsilon)^2/(1-H_ii)^2)</code></pre>
+<pre><code>## [1] 77110.55</code></pre>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>
