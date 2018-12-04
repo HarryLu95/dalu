@@ -194,6 +194,7 @@ p+1
 &amp;=
 p
 \end{align}\]</span></p>
+<p>Since <span class="math inline">\(p&lt;p+1\)</span>, so that <span class="math inline">\(\sigma^2(n+p)&lt;\sigma^2(n+p+1)\)</span>, then <span class="math inline">\(\sigma^2(n+\text{tr}(H_{-p}))&lt;\sigma^2(n+\text{tr}(H))\)</span>.</p>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>
@@ -217,13 +218,13 @@ p
 <p>Hence obtain an expression for the prediction error <span class="math inline">\(\mathbf{y}_i-\mathbf{x}_i^T\hat{\mathbf\beta}_{(i)}\)</span> using only <span class="math inline">\(\mathbf{y}_i\)</span>, <span class="math inline">\(\hat{\mathbf{y}_i}\)</span> and <span class="math inline">\(h_{ii}\)</span>. You may want to check this empirically using the first few entries of the data used in Question 2.</p>
 </blockquote>
 <p><span class="math display">\[\begin{align}
-y_i-\mathbf{x}_i^T\hat{\mathbf\beta}_{(i)}
+\mathbf{y}_i-\mathbf{x}_i^T\hat{\mathbf\beta}_{(i)}
 &amp;=
-y_i-(\mathbf{x}_i^T\hat{\mathbf\beta}-\frac{h_{ii}}{1-h_{ii}}(\mathbf{y}_i-\mathbf{x}_i^T\hat{\mathbf\beta}))\\
+\mathbf{y}_i-(\mathbf{x}_i^T\hat{\mathbf\beta}-\frac{h_{ii}}{1-h_{ii}}(\mathbf{y}_i-\mathbf{x}_i^T\hat{\mathbf\beta}))\\
 &amp;=
-(y_i-\mathbf{x}_i^T\hat{\mathbf\beta})+\frac{h_{ii}}{1-h_{ii}}(\mathbf{y}_i-\mathbf{x}_i^T\hat{\mathbf\beta})\\
+(\mathbf{y}_i-\mathbf{x}_i^T\hat{\mathbf\beta})+\frac{h_{ii}}{1-h_{ii}}(\mathbf{y}_i-\mathbf{x}_i^T\hat{\mathbf\beta})\\
 &amp;=
-\frac{y_i-\mathbf{x}_i^T\hat{\mathbf\beta}}{1-h_{ii}}
+\frac{\mathbf{y}_i-\mathbf{x}_i^T\hat{\mathbf\beta}}{1-h_{ii}}
 \end{align}\]</span></p>
 </div>
 <div id="e" class="section level1">
