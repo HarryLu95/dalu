@@ -155,7 +155,7 @@ H=X%*%solve(t(X)%*%X)%*%t(X)
 H_ii=diag(H)</code></pre>
 <p>Beta value of linear model <code>l</code> (<code>l_beta</code>)</p>
 <pre class="r"><code>l_beta=as.matrix(l$coefficients[1:6])</code></pre>
-<p>We want to show that <span class="math inline">\(\mathbf{y}_i-\mathbf{x}_i\beta_{-i}=\frac{\mathbf{y}_i-\mathbf{x}_i\beta}{1-h_{ii}}\)</span>.</p>
+<p>We want to show that <span class="math inline">\(\mathbf{y}_i-\mathbf{x}_i\beta_{-i}=\cfrac{\mathbf{y}_i-\mathbf{x}_i\beta}{1-h_{ii}}\)</span>.</p>
 <p><strong>Remove 1-st row</strong></p>
 <p>Linear model <code>l_1</code></p>
 <pre class="r"><code>ap_1=ap[-1,]
@@ -167,7 +167,7 @@ y_1=ap[1,2]</code></pre>
 <pre class="r"><code>y_1-x_1%*%l_beta_1</code></pre>
 <pre><code>##        [,1]
 ## 1 -71.37101</code></pre>
-<p><span class="math inline">\(\frac{\mathbf{y}_1-\mathbf{x}_1\beta}{1-h_{11}}\)</span></p>
+<p><span class="math inline">\(\cfrac{\mathbf{y}_1-\mathbf{x}_1\beta}{1-h_{11}}\)</span></p>
 <pre class="r"><code>(y_1-x_1%*%l_beta)/(1-H_ii[1])</code></pre>
 <pre><code>##        [,1]
 ## 1 -71.37101</code></pre>
@@ -182,7 +182,7 @@ y_2=ap[2,2]</code></pre>
 <pre class="r"><code>y_2-x_2%*%l_beta_2</code></pre>
 <pre><code>##        [,1]
 ## 2 -101.6068</code></pre>
-<p><span class="math inline">\(\frac{\mathbf{y}_2-\mathbf{x}_2\beta}{1-h_{22}}\)</span></p>
+<p><span class="math inline">\(\cfrac{\mathbf{y}_2-\mathbf{x}_2\beta}{1-h_{22}}\)</span></p>
 <pre class="r"><code>(y_2-x_2%*%l_beta)/(1-H_ii[2])</code></pre>
 <pre><code>##        [,1]
 ## 2 -101.6068</code></pre>
@@ -197,7 +197,7 @@ y_3=ap[3,2]</code></pre>
 <pre class="r"><code>y_3-x_3%*%l_beta_3</code></pre>
 <pre><code>##        [,1]
 ## 3 -28.84556</code></pre>
-<p><span class="math inline">\(\frac{\mathbf{y}_3-\mathbf{x}_3\beta}{1-h_{33}}\)</span></p>
+<p><span class="math inline">\(\cfrac{\mathbf{y}_3-\mathbf{x}_3\beta}{1-h_{33}}\)</span></p>
 <pre class="r"><code>(y_3-x_3%*%l_beta)/(1-H_ii[3])</code></pre>
 <pre><code>##        [,1]
 ## 3 -28.84556</code></pre>
@@ -212,7 +212,7 @@ y_4=ap[4,2]</code></pre>
 <pre class="r"><code>y_4-x_4%*%l_beta_4</code></pre>
 <pre><code>##        [,1]
 ## 4 -61.08108</code></pre>
-<p><span class="math inline">\(\frac{\mathbf{y}_4-\mathbf{x}_4\beta}{1-h_{44}}\)</span></p>
+<p><span class="math inline">\(\cfrac{\mathbf{y}_4-\mathbf{x}_4\beta}{1-h_{44}}\)</span></p>
 <pre class="r"><code>(y_4-x_4%*%l_beta)/(1-H_ii[4])</code></pre>
 <pre><code>##        [,1]
 ## 4 -61.08108</code></pre>
@@ -231,6 +231,55 @@ sum((epsilon)^2/(1-H_ii)^2)</code></pre>
 <blockquote>
 <p>Calculate the cross-validation score in the sequence of models obtained by starting from the intercept and adding each column in the order given in the data (so every model should have one more covariate than the previous one). Which model has the lowest score?</p>
 </blockquote>
+<p><strong>Linear model c0</strong> (<code>l_c0</code>): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span></p>
+<pre class="r"><code>c0=as.data.frame(ap[,2])
+colnames(c0)=&quot;MORT&quot;
+l_c0=lm(MORT~1,data=c0)</code></pre>
+<p>Cross-validation of <code>l_c0</code></p>
+<pre class="r"><code>c0_e=l_c0$residuals
+c0_Hii=hatvalues(l_c0)
+sum((c0_e)^2/(1-c0_Hii)^2)</code></pre>
+<pre><code>## [1] 164241.2</code></pre>
+<p><strong>Linear model c1</strong> (<code>l_c1</code>): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_1\)</span> <code>PRECIP</code></p>
+<pre class="r"><code>c1=ap[,2:3]
+l_c1=lm(MORT~PRECIP,data=c1)</code></pre>
+<p>Cross-validation of <code>l_c1</code></p>
+<pre class="r"><code>c1_e=l_c1$residuals
+c1_Hii=hatvalues(l_c1)
+sum((c1_e)^2/(1-c1_Hii)^2)</code></pre>
+<pre><code>## [1] 160742.6</code></pre>
+<p><strong>Linear mode c2</strong> (<code>l_c2</code>): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_1\)</span> <code>PRECIP</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code></p>
+<pre class="r"><code>c2=ap[,2:4]
+l_c2=lm(MORT~PRECIP+EDUC,data=c2)</code></pre>
+<p>Cross-validation of <code>l_c2</code></p>
+<pre class="r"><code>c2_e=l_c2$residuals
+c2_Hii=hatvalues(l_c2)
+sum((c2_e)^2/(1-c2_Hii)^2)</code></pre>
+<pre><code>## [1] 148834.4</code></pre>
+<p><strong>Linear model c3</strong> (<code>l_c3</code>): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_1\)</span> <code>PRECIP</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code></p>
+<pre class="r"><code>c3=ap[,2:5]
+l_c3=lm(MORT~PRECIP+EDUC+NONWHITE,data=c3)</code></pre>
+<p>Cross-validation of <code>l_c3</code></p>
+<pre class="r"><code>c3_e=l_c3$residuals
+c3_Hii=hatvalues(l_c3)
+sum((c3_e)^2/(1-c3_Hii)^2)</code></pre>
+<pre><code>## [1] 99514.27</code></pre>
+<p><strong>Linear model c4</strong> (<code>l_c4</code>): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_1\)</span> <code>PRECIP</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code></p>
+<pre class="r"><code>c4=ap[,2:6]
+l_c4=lm(MORT~PRECIP+EDUC+NONWHITE+NOX,data=c4)</code></pre>
+<p>Cross-validation of <code>l_c4</code></p>
+<pre class="r"><code>c4_e=l_c4$residuals
+c4_Hii=hatvalues(l_c4)
+sum((c4_e)^2/(1-c4_Hii)^2)</code></pre>
+<pre><code>## [1] 75063.52</code></pre>
+<p><strong>Linear model c5</strong> (<code>l_c5</code>): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_1\)</span> <code>PRECIP</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code> + <span class="math inline">\(\beta_5\)</span> <code>SO2</code></p>
+<pre class="r"><code>c5=ap[,2:7]
+l_c5=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=c5)</code></pre>
+<p>Cross-validation of <code>l_c5</code></p>
+<pre class="r"><code>c5_e=l_c5$residuals
+c5_Hii=hatvalues(l_c5)
+sum((c5_e)^2/(1-c5_Hii)^2)</code></pre>
+<pre><code>## [1] 77110.55</code></pre>
 </div>
 <div id="d" class="section level1">
 <h1>d</h1>
