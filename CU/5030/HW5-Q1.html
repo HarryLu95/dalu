@@ -136,14 +136,14 @@ p {font-size: 18px;}
 ol {font-size: 18px;}
 </style>
 <hr />
-<p>Here we will add one more deletion diagnostic to our arsenal. When comparing two possible models, we often want to ask “Does one predict <strong><em>future data</em></strong> better than the other?” One way to do this is to divide your data into two collections of observations <span class="math inline">\((X_1,\mathbf{y_1})\)</span> and <span class="math inline">\((X_2,\mathbf{y_2})\)</span>, say. We use <span class="math inline">\((X_1,\mathbf{y_1})\)</span> to obtain a linear regression model, with parameters <span class="math inline">\(\hat{\mathbf\beta}\)</span> and look at the <strong><em>prediction error</em></strong> <span class="math inline">\((\mathbf{y_2}-X_2\hat{\mathbf\beta})^T(\mathbf{y_2}-X_2\hat{\mathbf\beta})\)</span>.</p>
-<p>This is a bit wasteful - you could use <span class="math inline">\((X_2,\mathbf{y_2})\)</span> to improve your estimate of <span class="math inline">\(\hat{\mathbf \beta}\)</span>. However, we can assess how well this <strong><em>type</em></strong> of model does (for these data) as follows:</p>
+<p>Here we will add one more deletion diagnostic to our arsenal. When comparing two possible models, we often want to ask “Does one predict <strong><em>future data</em></strong> better than the other?” One way to do this is to divide your data into two collections of observations <span class="math inline">\((X_1,\mathbf{y}_1)\)</span> and <span class="math inline">\((X_2,\mathbf{y}_2)\)</span>, say. We use <span class="math inline">\((X_1,\mathbf{y}_1)\)</span> to obtain a linear regression model, with parameters <span class="math inline">\(\hat{\mathbf\beta}\)</span> and look at the <strong><em>prediction error</em></strong> <span class="math inline">\((\mathbf{y}_2-X_2\hat{\mathbf\beta})^T(\mathbf{y}_2-X_2\hat{\mathbf\beta})\)</span>.</p>
+<p>This is a bit wasteful - you could use <span class="math inline">\((X_2,\mathbf{y}_2)\)</span> to improve your estimate of <span class="math inline">\(\hat{\mathbf\beta}\)</span>. However, we can assess how well this <strong><em>type</em></strong> of model does (for these data) as follows:</p>
 <p>For each observation <span class="math inline">\(i\)</span></p>
 <ol style="list-style-type: lower-roman">
 <li>Remove <span class="math inline">\((\mathbf x_i,y_i)\)</span> from the data and obtain <span class="math inline">\(\hat{\mathbf\beta}_{(i)}\)</span> from the remaining <span class="math inline">\(n-1\)</span> data points.</li>
-<li>Use this to make a prediction <span class="math inline">\(\hat{y}_{(i)i}=\mathbf{x_i}^T\hat{\mathbf\beta}_{(i)}\)</span>.</li>
+<li>Use this to make a prediction <span class="math inline">\(\hat{y}_{(i)i}=\mathbf{x}_i^T\hat{\mathbf\beta}_{(i)}\)</span>.</li>
 </ol>
-<p>Return the <strong><em>cross validation</em></strong> error <span class="math inline">\(CV=\sum_{i=1}^n(y_i-\hat{y}_{(i)i})^2\)</span></p>
+<p>Return the <strong><em>cross validation</em></strong> error <span class="math inline">\(\text{CV}=\sum_{i=1}^n(y_i-\hat{y}_{(i)i})^2\)</span></p>
 <p>This can be used to compare a models that use different covariates, for example; particularly when the models are not nested. We will see an example of this in Question 2.</p>
 <p>Here, we will find a way to calculate <span class="math inline">\(CV\)</span> without having to manually go through removing observations one by one.</p>
 <div id="a" class="section level1">
@@ -166,6 +166,34 @@ ol {font-size: 18px;}
 <blockquote>
 <p>Suppose that <span class="math inline">\(\beta_p=0\)</span>, that is the final column of <span class="math inline">\(X_1\)</span> has no impact on prediction. Show that the <strong>test set</strong> error is smaller if we remove the final column from each of <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> than if we don’t. (This makes using a test set a reasonable means of choosing what covariates to include.)</p>
 </blockquote>
+<p><span class="math display">\[\text{SSE}=(\mathbf{y}-X\hat\beta)^T(\mathbf{y}-X\hat\beta)=\sum_{i=1}^{n}{(\mathbf{y}_i-\mathbf{x}_i\beta)^2}\]</span></p>
+<p><span class="math display">\[E\left[\sum_{i=1}^{n}{(\mathbf{y}_i-\mathbf{x}_i\beta)^2}\right]=\sigma^2[n+\text{tr}(H)]\]</span></p>
+<p><span class="math display">\[X=[\mathbf{1},\mathbf{x}_1,\cdots,\mathbf{x}_p]\]</span></p>
+<p><span class="math display">\[H=X(X^TX)^{-1}X^T\]</span></p>
+<p><span class="math display">\[\begin{align}
+\text{tr}(H)
+&amp;=
+\text{tr}(X(X^TX)^{-1}X^T)\\
+&amp;=
+\text{tr}((X^TX)^{-1}X^TX)\\
+&amp;=
+\text{tr}(I_{p+1})\\
+&amp;=
+p+1
+\end{align}\]</span></p>
+<p><span class="math display">\[X_{-p}=[\mathbf{1},\mathbf{x}_1,\cdots,\mathbf{x}_{p-1}]\]</span></p>
+<p><span class="math display">\[H_{-p}=X_{-p}(X_{-p}^TX_{-p})^{-1}X_{-p}^T\]</span></p>
+<p><span class="math display">\[\begin{align}
+\text{tr}(H_{-p})
+&amp;=
+\text{tr}(X_{-p}(X_{-p}^TX_{-p})^{-1}X_{-p}^T)\\
+&amp;=
+\text{tr}((X_{-p}^TX_{-p})^{-1}X_{-p}^TX_{-p})\\
+&amp;=
+\text{tr}(I_{p})\\
+&amp;=
+p
+\end{align}\]</span></p>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>
@@ -174,12 +202,29 @@ ol {font-size: 18px;}
 <p><span class="math display">\[\hat{\mathbf\beta}_{(i)}=\hat{\mathbf\beta}-\frac{1}{1-h_{ii}}(X^TX)^{-1}\mathbf{x}_i\hat{e_i}\]</span></p>
 <p>from class, to obtain an expression for the <strong><em>out of sample</em></strong> prediction <span class="math inline">\(\mathbf{x}_i^T\hat{\mathbf\beta}_{(i)}\)</span> in terms of <span class="math inline">\(\mathbf{x}_i\)</span>, <span class="math inline">\(y_i\)</span>, <span class="math inline">\(\hat{\mathbf\beta}\)</span> and <span class="math inline">\(h_{ii}\)</span> only.</p>
 </blockquote>
+<p><span class="math display">\[\begin{align}
+\mathbf{x}_i^T\hat{\mathbf\beta}_{(i)}
+&amp;=\mathbf{x}_i^T\hat{\mathbf\beta}-\frac{1}{1-h_{ii}}\mathbf{x}_i^T(X^TX)^{-1}\mathbf{x}_i\hat{e_i}\\
+&amp;=
+\mathbf{x}_i^T\hat{\mathbf\beta}-\frac{h_{ii}}{1-h_{ii}}\hat{e_i}\\
+&amp;=
+\mathbf{x}_i^T\hat{\mathbf\beta}-\frac{h_{ii}}{1-h_{ii}}(\mathbf{y}_i-\mathbf{x}_i^T\hat{\mathbf\beta})
+\end{align}\]</span></p>
 </div>
 <div id="d" class="section level1">
 <h1>d</h1>
 <blockquote>
-<p>Hence obtain an expression for the prediction error <span class="math inline">\(y_i-\mathbf{x}_i^T\hat{\mathbf\beta}_{(i)}\)</span> using only <span class="math inline">\(y_i\)</span>, <span class="math inline">\(\hat{y_i}\)</span> and <span class="math inline">\(h_{ii}\)</span>. You may want to check this empirically using the first few entries of the data used in Question 2.</p>
+<p>Hence obtain an expression for the prediction error <span class="math inline">\(\mathbf{y}_i-\mathbf{x}_i^T\hat{\mathbf\beta}_{(i)}\)</span> using only <span class="math inline">\(\mathbf{y}_i\)</span>, <span class="math inline">\(\hat{\mathbf{y}_i}\)</span> and <span class="math inline">\(h_{ii}\)</span>. You may want to check this empirically using the first few entries of the data used in Question 2.</p>
 </blockquote>
+<p><span class="math display">\[\begin{align}
+y_i-\mathbf{x}_i^T\hat{\mathbf\beta}_{(i)}
+&amp;=
+y_i-(\mathbf{x}_i^T\hat{\mathbf\beta}-\frac{h_{ii}}{1-h_{ii}}(\mathbf{y}_i-\mathbf{x}_i^T\hat{\mathbf\beta}))\\
+&amp;=
+(y_i-\mathbf{x}_i^T\hat{\mathbf\beta})+\frac{h_{ii}}{1-h_{ii}}(\mathbf{y}_i-\mathbf{x}_i^T\hat{\mathbf\beta})\\
+&amp;=
+\frac{y_i-\mathbf{x}_i^T\hat{\mathbf\beta}}{1-h_{ii}}
+\end{align}\]</span></p>
 </div>
 <div id="e" class="section level1">
 <h1>e</h1>
@@ -188,6 +233,17 @@ ol {font-size: 18px;}
 <p><span class="math display">\[\sum_{i=1}^n\frac{\hat{e_i}^2}{(1-h_{ii})^2}\]</span></p>
 <p>that is, <strong><em>without</em></strong> deleting observations, and only requiring the leverages <span class="math inline">\(h_{ii}\)</span>.</p>
 </blockquote>
+<p><span class="math display">\[\begin{align}
+\text{CV}
+&amp;=
+\sum_{i=1}^{n}(y_i-\hat{y}_{(i)i})^2\\
+&amp;=
+\sum_{i=1}^{n}(\frac{y_i-\mathbf{x}_i^T\hat{\mathbf\beta}}{1-h_{ii}})^2\\
+&amp;=
+\sum_{i=1}^{n}(\frac{\hat{e_i}}{1-h_{ii}})^2\\
+&amp;=
+\sum_{i=1}^{n}{\frac{\hat{e_i}^2}{(1-h_{ii})^2}}
+\end{align}\]</span></p>
 </div>
 
 
