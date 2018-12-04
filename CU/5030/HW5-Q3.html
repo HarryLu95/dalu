@@ -136,7 +136,7 @@ p {font-size: 18px;}
 </style>
 <hr />
 <p>This question will consider a random effect model for data longitudinal data. In <strong><em>Question 4</em></strong>, we will examine the effect of different diets on the growth rate of rats. Here we will look at a simplfied version of this where we simply measure the size of rats (given by the width between their temples) as the grow over 5 weeks. There will be <span class="math inline">\(n\)</span> rats in total.</p>
-<p>A simple model for a given rat is <span class="math display">\[\mathbf{y_i}=\beta_0+b_{i0}+\beta_1\mathbf{t}+\epsilon_i\]</span> where <span class="math inline">\(\mathbf{t}\)</span> is coded as <span class="math inline">\((-2,-1,0,1,2)^T\)</span> so it is orthogonal to the intercept and <span class="math inline">\(\mathbf{y_i}\)</span> is the set of five measurements for the <span class="math inline">\(i\)</span>-th rat.</p>
+<p>A simple model for a given rat is <span class="math display">\[\mathbf{y}_i=\beta_0+b_{i0}+\beta_1\mathbf{t}+\epsilon_i\]</span> where <span class="math inline">\(\mathbf{t}\)</span> is coded as <span class="math inline">\((-2,-1,0,1,2)^T\)</span> so it is orthogonal to the intercept and <span class="math inline">\(\mathbf{y_i}\)</span> is the set of five measurements for the <span class="math inline">\(i\)</span>-th rat.</p>
 <p>We will treat <span class="math inline">\(\epsilon_i \sim N(0,\sigma^2I_5)\)</span> and we will also let each rat start with it’s own size offset <span class="math inline">\(b_{i0}\)</span> and model differences between rats by saying that <span class="math inline">\(b_{i0} \sim N(0,\tau^2)\)</span> independent of all other quantities.</p>
 <p>Note that this means that <span class="math inline">\(\beta_0\)</span> is the size of the average rate at 3 weeks (corresponding to <span class="math inline">\(t_3=0\)</span>).</p>
 <p>We will also use <span class="math inline">\(X=[\mathbf{1}_5,\mathbf{t}]\)</span> as the “design matrix” for a single rat.</p>
@@ -144,15 +144,65 @@ p {font-size: 18px;}
 <h1>a</h1>
 <blockquote>
 <p>We’ll first start by considering an estimate for each rat separately</p>
-<p><span class="math display">\[\hat{\beta_i}=(X^TX)^{-1}X^T\mathbf{y_i}\]</span></p>
+<p><span class="math display">\[\hat{\beta_i}=(X^TX)^{-1}X^T\mathbf{y}_i\]</span></p>
 <p>What is the mean vector and variance matrix of <span class="math inline">\(\hat{\beta_i}\)</span> (accounting for the variance in <span class="math inline">\(b_{i0}\)</span>)? You should use the values in <span class="math inline">\(\mathbf{t}\)</span> to express this explicitly.</p>
 </blockquote>
+<p><span class="math display">\[X=\left(\begin{array}{c}1 &amp; -2\\1 &amp; -1\\1 &amp; 0\\1 &amp; 1\\1 &amp; 2\end{array}\right)\]</span></p>
+<p>Let <span class="math inline">\(\Sigma=(X^TX)^{-1}X^T\)</span>.</p>
+<p><span class="math display">\[\Sigma=\left(\begin{array}{c}\frac{1}{5} &amp; \frac{1}{5} &amp; \frac{1}{5} &amp; \frac{1}{5} &amp; \frac{1}{5}\\-\frac{1}{10} &amp; \frac{1}{5} &amp; 0 &amp; \frac{1}{5} &amp; \frac{1}{10}\end{array}\right)\]</span></p>
+<p><span class="math display">\[E(\mathbf{y}_i)=\beta_0+\beta_1\mathbf{t}=\left(\begin{array}{c}\beta_0-2\beta_1\\\beta_0-\beta_1\\\beta_0\\\beta_0+\beta_1\\\beta_0+2\beta_1\end{array}\right)\]</span></p>
+<p><span class="math display">\[\begin{align}
+E(\hat{\beta_i})
+&amp;=
+E(\Sigma \cdot \mathbf{y}_i)\\
+&amp;=
+\Sigma \cdot E(\mathbf{y}_i)\\
+&amp;=
+\left(\begin{array}{c}
+  \frac{1}{5} &amp; \frac{1}{5} &amp; \frac{1}{5} &amp; \frac{1}{5} &amp; \frac{1}{5}\\
+  -\frac{1}{10} &amp; \frac{1}{5} &amp; 0 &amp; \frac{1}{5} &amp; \frac{1}{10}
+\end{array}\right)
+\left(\begin{array}{c}
+  \beta_0-2\beta_1\\
+  \beta_0-\beta_1\\
+  \beta_0\\
+  \beta_0+\beta_1\\
+  \beta_0+2\beta_1
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}\beta_0\\\beta_1\end{array}\right)
+\end{align}\]</span></p>
+<p><span class="math display">\[Var(Y)=
+\left(\begin{array}{c}
+  \tau^2+\sigma^2 &amp; \tau^2 &amp; \tau^2 &amp; \tau^2 &amp; \tau^2\\
+  \tau^2 &amp; \tau^2+\sigma^2 &amp; \tau^2 &amp; \tau^2 &amp; \tau^2\\
+  \tau^2 &amp; \tau^2 &amp; \tau^2+\sigma^2 &amp; \tau^2 &amp; \tau^2\\
+  \tau^2 &amp; \tau^2 &amp; \tau^2 &amp; \tau^2+\sigma^2 &amp; \tau^2\\
+  \tau^2 &amp; \tau^2 &amp; \tau^2 &amp; \tau^2 &amp; \tau^2+\sigma^2
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[\begin{align}
+Var(\hat{\beta_i})
+&amp;=
+Var(\Sigma \cdot \mathbf{y}_i)\\
+&amp;=
+\Sigma \cdot Var(\mathbf{y}_i) \cdot \Sigma^T\\
+&amp;=
+\left(\begin{array}{c}
+  \frac{\sigma^2}{5}+\tau^2 &amp; 0\\
+  0 &amp; \frac{\sigma^2}{10}
+\end{array}\right)
+\end{align}\]</span></p>
 </div>
 <div id="b" class="section level1">
 <h1>b</h1>
 <blockquote>
 <p>We can estimate a global <span class="math inline">\(\hat{\beta_1}\)</span> (which applies to all rats) from averating the <span class="math inline">\(n\)</span> <span class="math inline">\(\hat{\beta_{i1}}\)</span> values. What is the variance of this estimate?</p>
 </blockquote>
+<p><span class="math display">\[Var(n\hat{\beta_{i1}})=n^2Var(\hat{\beta_{i1}})=
+\left(\begin{array}{c}
+  n^2\cdot(\frac{\sigma^2}{5}+\tau^2) &amp; 0\\
+  0 &amp; n^2\cdot\frac{\sigma^2}{10}
+\end{array}\right)\]</span></p>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>

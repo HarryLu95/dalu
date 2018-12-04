@@ -133,6 +133,7 @@ h1.title {text-align: center;}
 h4.author {text-align: center;}
 h4.date {text-align: center;}
 p {font-size: 18px;}
+ul {font-size: 18px;}
 </style>
 <hr />
 <p>Here we will illustrate the results from <strong><em>Question 1</em></strong> with a real world data set. We will use the study of mortality in 55 US cities as it is influenced by pollutants <code>NOX</code> (nitrous oxide) and <code>SO2</code> (sulfur dioxide), while controlling weather (<code>PRECIP</code>) and sociological variables (<code>EDUC</code> and <code>NONWHITE</code>) that appeared on <strong><em>Homework 4</em></strong>.</p>
@@ -280,19 +281,74 @@ l_c5=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=c5)</code></pre>
 c5_Hii=hatvalues(l_c5)
 sum((c5_e)^2/(1-c5_Hii)^2)</code></pre>
 <pre><code>## [1] 77110.55</code></pre>
+<ul>
+<li>The model c4 (<code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_1\)</span> <code>PRECIP</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code>) has the lowest score.</li>
+</ul>
 </div>
 <div id="d" class="section level1">
 <h1>d</h1>
 <blockquote>
 <p>What happens if you add them in reverse order? Plot both sequences of scores versus the number of covariates in the model.</p>
 </blockquote>
+<p><strong>Linear model d0</strong> (l_d0): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> (actually same as c0)</p>
+<pre class="r"><code>d0=as.data.frame(ap[,2])
+colnames(d0)=&quot;MORT&quot;
+l_d0=lm(MORT~1,data=d0)</code></pre>
+<p>Cross-validation of <code>l_d0</code></p>
+<pre class="r"><code>d0_e=l_d0$residuals
+d0_Hii=hatvalues(l_d0)
+sum((d0_e)^2/(1-d0_Hii)^2)</code></pre>
+<pre><code>## [1] 164241.2</code></pre>
+<p><strong>Linear model d1</strong> (l_d1): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_5\)</span> <code>SO2</code></p>
+<pre class="r"><code>d1=ap[,c(2,7)]
+l_d1=lm(MORT~SO2,data=d1)</code></pre>
+<p>Cross-validation of <code>l_d1</code></p>
+<pre class="r"><code>d1_e=l_d1$residuals
+d1_Hii=hatvalues(l_d1)
+sum((d1_e)^2/(1-d1_Hii)^2)</code></pre>
+<pre><code>## [1] 117976.2</code></pre>
+<p><strong>Linear model d2</strong> (l_d2): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_5\)</span> <code>SO2</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code></p>
+<pre class="r"><code>d2=ap[,c(2,7:6)]
+l_d2=lm(MORT~SO2+NOX,data=d2)</code></pre>
+<p>Cross-validation of <code>l_d2</code></p>
+<pre class="r"><code>d2_e=l_d2$residuals
+d2_Hii=hatvalues(l_d2)
+sum((d2_e)^2/(1-d2_Hii)^2)</code></pre>
+<pre><code>## [1] 121570.2</code></pre>
+<p><strong>Linear model d3</strong> (l_d3): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_5\)</span> <code>SO2</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code></p>
+<pre class="r"><code>d3=ap[,c(2,7:5)]
+l_d3=lm(MORT~SO2+NOX+NONWHITE,data=d3)</code></pre>
+<p>Cross-validation of <code>l_d3</code></p>
+<pre class="r"><code>d3_e=l_d3$residuals
+d3_Hii=hatvalues(l_d3)
+sum((d3_e)^2/(1-d3_Hii)^2)</code></pre>
+<pre><code>## [1] 76742</code></pre>
+<p><strong>Linear model d4</strong> (l_d4): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_5\)</span> <code>SO2</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code></p>
+<pre class="r"><code>d4=ap[,c(2,7:4)]
+l_d4=lm(MORT~SO2+NOX+NONWHITE+EDUC,data=d4)</code></pre>
+<p>Cross-validation of <code>l_d4</code></p>
+<pre class="r"><code>d4_e=l_d4$residuals
+d4_Hii=hatvalues(l_d4)
+sum((d4_e)^2/(1-d4_Hii)^2)</code></pre>
+<pre><code>## [1] 73065.13</code></pre>
+<p><strong>Linear model d5</strong> (l_d5): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_5\)</span> <code>SO2</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code> + <span class="math inline">\(\beta_1\)</span> <code>PRECIP</code> (actually same as c5)</p>
+<pre class="r"><code>d5=ap[,c(2,7:3)]
+l_d5=lm(MORT~SO2+NOX+NONWHITE+EDUC+PRECIP,data=d5)</code></pre>
+<p>Cross-validation of <code>l_d5</code></p>
+<pre class="r"><code>d5_e=l_d5$residuals
+d5_Hii=hatvalues(l_d5)
+sum((d5_e)^2/(1-d5_Hii)^2)</code></pre>
+<pre><code>## [1] 77110.55</code></pre>
+<ul>
+<li>The model d4 (<code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_5\)</span> <code>SO2</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code>) has the lowest score.</li>
+</ul>
 </div>
 <div id="e" class="section level1">
 <h1>e</h1>
 <blockquote>
 <p>An alternative (fairly classical) means of selecting models in linear regression in Mallows <span class="math inline">\(C_p\)</span> score. This can be expressed as</p>
-<p><span class="math display">\[C_j=\frac{\mathbf{y^T}(I-H_j)\mathbf{y}}{\mathbf{y^T}(I-H)\mathbf{y}/(n-p-1)}-2j\]</span></p>
-<p>often also written as <span class="math inline">\(SSE_j/\hat{\sigma^2} - 2j\)</span>, where <span class="math inline">\(SSE_j\)</span> is the SSE for a model with <span class="math inline">\(j\)</span> covariates, and <span class="math inline">\(\hat{\sigma^2}\)</span> is calculated from a model with all covariates.</p>
+<p><span class="math display">\[C_j=\frac{\mathbf{y^T}(I-H_j)\mathbf{y}}{\mathbf{y^T}(I-H)\mathbf{y}/(n-p-1)}+2j\]</span></p>
+<p>often also written as <span class="math inline">\(SSE_j/\hat{\sigma^2}+2j\)</span>, where <span class="math inline">\(SSE_j\)</span> is the SSE for a model with <span class="math inline">\(j\)</span> covariates, and <span class="math inline">\(\hat{\sigma^2}\)</span> is calculated from a model with all covariates.</p>
 <p>Obtain <span class="math inline">\(C_j\)</span> for each of your models in <strong><em>part c</em></strong>, how does this compare with cross validation?</p>
 </blockquote>
 </div>
