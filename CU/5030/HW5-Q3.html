@@ -136,7 +136,7 @@ p {font-size: 18px;}
 </style>
 <hr />
 <p>This question will consider a random effect model for data longitudinal data. In <strong><em>Question 4</em></strong>, we will examine the effect of different diets on the growth rate of rats. Here we will look at a simplfied version of this where we simply measure the size of rats (given by the width between their temples) as the grow over 5 weeks. There will be <span class="math inline">\(n\)</span> rats in total.</p>
-<p>A simple model for a given rat is <span class="math display">\[\mathbf{y}_i=\beta_0+b_{i0}+\beta_1\mathbf{t}+\epsilon_i\]</span> where <span class="math inline">\(\mathbf{t}\)</span> is coded as <span class="math inline">\((-2,-1,0,1,2)^T\)</span> so it is orthogonal to the intercept and <span class="math inline">\(\mathbf{y_i}\)</span> is the set of five measurements for the <span class="math inline">\(i\)</span>-th rat.</p>
+<p>A simple model for a given rat is <span class="math display">\[\mathbf{y}_i=\beta_0+\mathbf{b}_{i0}+\beta_1\mathbf{t}+\epsilon_i\]</span> where <span class="math inline">\(\mathbf{t}\)</span> is coded as <span class="math inline">\((-2,-1,0,1,2)^T\)</span> so it is orthogonal to the intercept and <span class="math inline">\(\mathbf{y_i}\)</span> is the set of five measurements for the <span class="math inline">\(i\)</span>-th rat.</p>
 <p>We will treat <span class="math inline">\(\epsilon_i \sim N(0,\sigma^2I_5)\)</span> and we will also let each rat start with it’s own size offset <span class="math inline">\(b_{i0}\)</span> and model differences between rats by saying that <span class="math inline">\(b_{i0} \sim N(0,\tau^2)\)</span> independent of all other quantities.</p>
 <p>Note that this means that <span class="math inline">\(\beta_0\)</span> is the size of the average rate at 3 weeks (corresponding to <span class="math inline">\(t_3=0\)</span>).</p>
 <p>We will also use <span class="math inline">\(X=[\mathbf{1}_5,\mathbf{t}]\)</span> as the “design matrix” for a single rat.</p>
@@ -198,11 +198,17 @@ Var(\Sigma \cdot \mathbf{y}_i)\\
 <blockquote>
 <p>We can estimate a global <span class="math inline">\(\hat{\beta_1}\)</span> (which applies to all rats) from averating the <span class="math inline">\(n\)</span> <span class="math inline">\(\hat{\beta_{i1}}\)</span> values. What is the variance of this estimate?</p>
 </blockquote>
-<p><span class="math display">\[Var(n\hat{\beta_{i1}})=n^2Var(\hat{\beta_{i1}})=
-\left(\begin{array}{c}
-  n^2\cdot(\frac{\sigma^2}{5}+\tau^2) &amp; 0\\
-  0 &amp; n^2\cdot\frac{\sigma^2}{10}
-\end{array}\right)\]</span></p>
+<p><span class="math display">\[\begin{align}
+Var(\frac{1}{n}\sum_{i=1}^{n}\hat{\beta_{i1}})
+&amp;=
+\frac{1}{n^2}Var(\sum_{i=1}^{n}\hat{\beta_{i1}})\\
+&amp;=
+\frac{1}{n^2}\sum_{i=1}^{n}Var(\hat{\beta_{i1}})\\
+&amp;=
+\frac{1}{n^2}\sum_{i=1}^{n}{\frac{\sigma^2}{10}}\\
+&amp;=
+\frac{\sigma^2}{10n}
+\end{align}\]</span></p>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>
@@ -227,7 +233,7 @@ Var(\Sigma \cdot \mathbf{y}_i)\\
 <div id="f" class="section level1">
 <h1>f</h1>
 <blockquote>
-<p>Give an estimate of the conditional expectation of <span class="math inline">\(b_{i0}\)</span> given the data and our estimates above.</p>
+<p>Give an estimate of the conditional expectation of <span class="math inline">\(\mathbf{b}_{i0}\)</span> given the data and our estimates above.</p>
 </blockquote>
 </div>
 <div id="bonus-1" class="section level1">
