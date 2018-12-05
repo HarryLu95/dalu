@@ -1,0 +1,292 @@
+---
+title: "Lab 7 - Random Effects and Least Significant Differences"
+output:
+  pdf_document: default
+html_document:
+  highlight: pygments
+theme: cerulean
+word_document: default
+---
+  -----
+  
+# Lab Goals
+
+1. Derive the distribution of conditional normal random vectors; and simulate these. 
+
+2. Provide optimal predictions of random effects in a Randomized Block design via a conditional argument. 
+
+3. Implement random effects models in R using the `lme4` package. 
+
+4. Explore blocked and longitudinal designs. 
+
+
+# Conditional Normal Random Vectors
+
+Here we will examine the distribution of a normal random vector, when you know part of the vector. That is, we we have
+$$
+\left(\begin{array}{c} y_1 \\ y_2 \end{array} \right) \sim N \left( \left( \begin{array}{c} \mu_1 \\ \mu_2 \end{array} \right), \left( \begin{array}{cc} \Sigma_{11} & \Sigma_{12} \\ \Sigma_{21} & \Sigma_{22} \end{array} \right) \right)
+$$
+and we see $y_1$, what does that tell us about $y_2$?
+
+This can be done directly by looking at the joint density of $y_1$ and $y_2$ and treating $y_1$ as fixed, but there is a simpler argument looking at $z = y_2 - Ay_1$ for a specific choice
+$$
+A = \Sigma_{21} \Sigma_{11}^{-1}
+$$
+
+1. Show that $cov(z,y_1) = 0$ and hence that $z$ is independent of $y_1$. What is $E(z)$?
+
+2. By expressing $y_2 = z + Ay_1$ and using the independence above, find $E(y_2|y_1)$.
+
+3. Taking the same approach show that $var(y_2|y_1) = var(z)$.
+
+4. Find $var(z)$
+
+5. The code below conducts a simulation study. First, we generate 1000 bivariate normal random variables, with variance 2 and covariance 1:
+```{r}
+eta = rnorm(1000)   # This is a common effect to both y's
+y1 = rnorm(1000) + eta
+y2 = rnorm(1000)+eta
+```
+Now we'll look at taking the $y_2$ that correspond to $y_1$ close to the value 1. We can illustrate this with the following plot
+```{r}
+plot(y1,y2)
+abline(v = c(0.5,1.5))
+
+#Take only those y2 near y1=1
+
+cy2 = y2[ (y1>0.5) & (y1<1.5) ]
+
+# Plot these in red
+points(  y1[ (y1>0.5) & (y1<1.5) ], cy2, col='red')
+```
+According to our conditional variance formula, these should be Normal with mean 1/2 and variance (2 - 1/2)  = 3/2
+```{r}
+mean(cy2)
+var(cy2)
+```
+Of course, these will be a bit distorted because we used `y1`'s that were only close to 1.  If we look at the histogram, in comparison to the expected density. 
+```{r}
+hist(cy2,20,prob=TRUE)
+
+xpts = seq(-4,4,len=1001)
+lines(xpts, dnorm(xpts,mean=0.5,sd=sqrt(3/2)))
+```
+
+# Best Linear Unbiassed Predictors in a Randomized Block Design
+
+Here we will use the result in a Randomized Blocks Design in which we have
+$$
+y_{ij} = \mu + \alpha_i + \beta_j + e_{ij}
+$$ 
+with $e_{ij} \sim N(0,\sigma^2_e)$ and $\alpha_i \sim N(0,\sigma^2_a)$. 
+
+1. We consider estimating $\alpha_i$ by $\hat{\alpha}_i = \bar{y}_{i\cdot}-\mu$. Give an expression for the error, $\hat{\alpha}_i - \alpha_i$ in terms of $\mu$, $\alpha$, $\beta$ and $e$. 
+
+2.  Hence find the expected squared error $E (\hat{\alpha}_i-\alpha_i)^2$. 
+
+3. The BLUP estimates for $\alpha_i$ is 
+$$
+\tilde{\alpha}_i = \frac{\sigma^2_a}{\sigma^2_a+\sigma^2_e/r}(\bar{y}_{i\cdot}-\mu )
+$$
+Derive the espected squared error $E (\tilde{\alpha}_i-\alpha_i)^2$
+
+4. Show that the error for $\tilde{\alpha}_i$ is smaller than for $\hat{\alpha}_i$. 
+
+5. *bonus* We have assumed we know $\mu$ in the calculations above. What if we replace it by $\bar{y}_{\cdot\cdot}$?
+
+
+# A Randomized Blocks Analysis
+
+In Lab 6, we analyzed the distance that 4 different brands of golfballs travelled when hit. In fact, there were 10 different golfers in this study, given by the first column. We'll first load in these data
+```{r}
+golf = read.table('golfballs.dat')
+names(golf) = c('golfer','brand','dist')
+golf$golfer = as.factor(golf$golfer)
+```
+1. We can express the mean-model framework for this design by kronecker products:
+```{r}
+# Golfer design matrix
+Xg = diag(10)%x%matrix(1,4,1)
+
+# Check this
+Xg[1:12,1:4]
+
+# Design for golf ball brands
+Xb = matrix(1,10,1)%x%diag(4)
+
+# Check
+Xb[1:12,]
+```
+To be able to estiamate a model, we have to use a reference category for each factor, and then add an intercept.
+```{r}
+X = cbind( rep(1,40), Xg[,-1], Xb[,-1])
+```
+
+2. To get parameters for each golfer and each brand, we can simply do linear regression
+```{r}
+betahat = solve( t(X)%*%X)%*%t(X)%*%golf$dist
+```
+We can compare this to a simple linear regression model
+```{r}
+mod1 = lm(dist~golfer+brand,data=golf)
+mod1$coefficients
+t(betahat)
+```
+
+3. We can also express this in terms of averages for each group.  To do this, we need to
+
+a. Extract the over-all mean
+```{r}
+ydd = mean(golf$dist)
+ydd
+```
+b. Average for each golfer
+```{r}
+yid = t(Xg)%*%golf$dist/4
+t(yid)
+```
+c. Average each brand
+```{r}
+ydj = t(Xb)%*%golf$dist/10
+t(ydj)
+```
+Notice that if we predict the first element of the data set by
+```{r}
+yid[1] + ydj[1] - ydd
+```
+We get the same thing as
+```{r}
+mod1$fit[1]
+```
+*bonus* How do you map the coefficients of the linear model onto these averages? (Note that this isn't completely straightforward).
+
+
+d. We can now estimate variances
+```{r}
+# For errors
+sig2e = sum( (golf$dist - Xg%*%yid - Xb%*%ydj + ydd)^2)/(3*9)
+
+# For golfers
+sig2g = sum( (yid - ydd)^2 )/9 - sig2e/4
+```
+
+e. And look at BLUPS for golfers
+```{r}
+gblup = sig2g/(sig2g+sig2e/4)*(yid-ydd)
+t(gblup)
+```
+We can plot these, too
+```{r}
+plot(yid-ydd,gblup)
+abline(c(0,1))
+```
+Here the shrinkage is very slight because between-golfer variance is much larger than the error variance. 
+
+4. To perform a mixed effects analysis in R, we use the package `lme4`
+```{r}
+library(lme4)
+
+mod2 = lmer(dist~brand + (1|golfer),data=golf)
+summary(mod2)
+```
+Notice that we estimate variances between golfers and hits within golfers as we obtained manually. 
+
+We can also get the BLUPs for each golfer 
+```{r}
+ranef(mod2)
+```
+These are not the least squares estimates, but they are the same as the blups we calculated. 
+
+
+
+# A Simulation Exercize
+
+If you get time. Simulate a one-way random effects model with 5 levels and 2 observations per level and set $\mu = 0$, $\sigma^2_a = \sigma^2_e = 1$. 
+
+For example
+```{r}
+Xa = diag(5)%x%matrix(1,2,1)
+levs = as.factor( (1:5)%x%rep(1,2) )
+
+# Random effects
+alpha = rnorm(5)
+
+# Create data
+y = Xa%*%alpha + rnorm(10)
+
+# Let's run a model
+mod3 = lmer(y~1+(1|levs))
+
+# See what this looks like
+summary(mod3)
+
+# And check estimation of random effects
+plot(alpha,ranef(mod3)$levs[[1]])
+```
+Simulate this 1000 times. Show that the estimate of $\mu$ that we would find is more variable than we would have if we modeled this with fixed effects. Show that the blups for this model have smaller squared error (over different $\alpha$s) than using the un-shrunken estimates. 
+
+# A Longitudinal Data Analysis
+
+First, let's look at an interraction between categorical and continuous covariates. 
+
+1. Suppose that $X^S$ is a matrix coding the indicator for different levels of a (fixed) factor $S$. So that $X^S_1$ is an indicator that $S = 1$ and so forth.  We will also take $t$ to be a continuous covariate -- say, the time at which a measurement is taken. 
+
+Writing
+$$
+y = X^S \beta_x + t X^S \beta_t + e
+$$
+Show that this gives each level of $S$ its own slope an intercept. 
+
+2. In a fixed effects setting in which $X^S$ is given with reference coding, write down a model that extracts a reference linear regression and interpret the interraction effects. 
+
+
+3. For random effects, we don't use reference level coding since each level of $S$ is random. Specify $X$ and $Z$ in the model 
+$$
+y = X \beta + Z b + e
+$$ 
+with $e \sim N(0,\sigma^2_e)$ and $b \sim N(0,G)$ so that each level of $S$ has its own random slope and intercept. 
+
+4. This model applies to data on reaction times in the data `sleepstudy` from the package `lme4`. 
+```{r}
+library(lme4)
+data(sleepstudy)
+```
+Here we have 18 subjects coded in `Subject`, they were each restricted to 3 hours sleep per night for 10 nights and their reaction time (`Reaction`) measured on each of 10 days (`Day`). Here we assume that each suject's reaction time increases with longer sleep deprivation (ie, each has their own linear regression) but that this relationship is random between subjects. 
+
+  a. We can see this more clearly by plotting the data. Connecting the values for each sbuject with lines
+```{r}
+plot(sleepstudy$Days,sleepstudy$Reaction,col=sleepstudy$Subject)
+for(j in levels(sleepstudy$Subject)){
+  which.obs = (sleepstudy$Subject == j)   # These rows correspond to subject j
+  lines(sleepstudy[which.obs,c(2,1)],col=j,lty=2)       # Plot day against time for these rows
+}
+```
+  b. This model can be fit in `lme4` as follows
+```{r}
+longmod = lmer(Reaction~Days+(Days|Subject),data=sleepstudy)
+summary(longmod)
+```
+Notice that specifying `(Days|Subject)` provides both an intercept and a slope for each subject. 
+
+ c. We can extract and plot the random effects with
+```{r}
+rand.effects = ranef(longmod)
+plot(rand.effects$Subject)
+```
+  d. By the default, the model allows there to be a correlation between each subjects slope and intercept. The (very small) positive correlation estimated here says that a subject with a longer starting reaction time is also affected more by sleep deprivation. 
+  
+  That correlation is pretty small, though. We can tell `lme4` not to allow it with the following
+```{r}
+longmod2 = lmer(Reaction~Days + (1|Subject)+(0+Days|Subject),data=sleepstudy)
+summary(longmod2)
+```
+Here we have to specify `(0+Days|Subject)` so that the second random term doesn't include an intercept. You can see that we no longer have an estimated correlation. 
+
+  e. (Beyond course material). Are these models different? We can compare their likelihoods in a formal test (see BTRY/STSCI 4090) using
+```{r}
+anova(longmod,longmod2)
+```
+
+5. In the fully study, there was a group that got 6 hours sleep instead of 3. How would you set up a model to test whether the *average* slope in the second group was lower than that in the first?
+
+

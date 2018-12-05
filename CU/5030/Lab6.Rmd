@@ -1,0 +1,245 @@
+---
+title: "Lab 6 - Regression Diagnostics"
+output:
+  pdf_document: default
+html_document:
+  highlight: pygments
+theme: cerulean
+word_document: default
+---
+  -----
+  
+# Lab Goals
+
+1. Establish some matrix identities for regression diagnostics and check some of these in R. 
+
+2. Use R function to perform these diagnostics in practical data sets. 
+
+3. Review DFBETA's in `R` and demonstrate that their fomula gives what it says it does. 
+
+4. Review effect/reference coding and their relationships with contrasts. 
+5. Test contrasts in linear models. 
+
+
+# Some matrix identities
+
+
+
+1. Show that 
+$$
+(X_{(i)}^TX_{(i)})^{-1} = (X^TX)^{-1} + \frac{(X^TX)^{-1} x_i x_i^T (X^TX)^{-1} }{1-h_{ii}}
+$$
+
+2. Check Cook's distance in `R`:
+
+Read in cherry tree data from text file with no header variables are D=diameter, H=height, and  V=volume 31 cherry trees
+```{r}
+data=read.table("cherry.txt",sep="",header=FALSE)
+colnames(data)=c("D","H","V")
+attach(data)
+summary(data)
+n=length(D)
+```
+fit MLR model to logged variables
+```{r}
+LD=log(D); LH=log(H); LV=log(V)
+```
+We'll create an $X$ matrix to predict volume from height and diameter
+```{r}
+X = cbind(rep(1,31),LD,LH)
+```
+and the corresponding hat matrix
+```{r}
+H = X%*%solve(t(X)%*%X)%*%t(X)
+```
+The "classic" calculation of Cook's distance for observation 1 is to first obtain the standardized residuals 
+```{r}
+yhat = H%*%LV
+resid = LV - yhat
+sigest2 = t(resid)%*%resid/28
+rstd = resid/sqrt(sigest2*(1-diag(H)))
+CooksD = rstd^2/3 * diag(H)/(1-diag(H))
+```
+*Note that we have used element-wise multiplication to calculate all Cook's distances at once*. 
+
+The other way we could do this would be to just look at the first observation and remove it from the data set (note that `X[-1,]` is `x` without its first row)
+```{r}
+yhatm1 = X%*%solve(t(X[-1,])%*%X[-1,])%*%t(X[-1,])%*%LV[-1]
+CooksD1 = t(yhat-yhatm1)%*%(yhat-yhatm1)/(3*sigest2)
+```
+And we can check that these are the same
+```{r}
+c(CooksD[1],CooksD1)
+```
+
+# Regression Diagnostics in R
+
+Here we will provide diagnostics for the cherry tree data manually. First fit a linear model
+```{r}
+logfit1=lm(LV~LD+LH)
+summary(logfit1) 
+betahat = logfit1$coefficients
+```
+And look at the sequential `anova` table
+```{r}
+anova(logfit1)
+```
+To perform diagnostics we can look at leverage
+```{r}
+h=hatvalues(logfit1)
+dotchart(h)
+p=logfit1$rank # rank of X-matrix (including intercept column)
+abline(v=p/n)   # average leverage value
+abline(v=2*p/n)
+```
+Or Cook's distance
+```{r}
+d=cooks.distance(logfit1)
+dotchart(d)
+data[(1:n)[d>0.10],]
+data[d>0.10,]  # equivalent
+```
+And standardized residuals
+```{r}
+r=rstandard(logfit1)
+f=logfit1$fitted
+plot(r~f,xlab="fitted values",ylab="",main="Standardized Residual Plot")
+abline(h=-2:2,lty=2)
+data[(1:n)[abs(r)>2],]
+```
+We can identify influential points using
+```{r,eval=FALSE}
+identify(f,r,n=2) # identify 2 points in the plot by clicking on them
+```
+or
+```{r,eval=FALSE}
+identify(f,r) # identify any number of points. Esc to exit.
+```
+There are generic built in plots
+```{r}
+plot(logfit1) # produces four diagnostic plots
+```
+Or we can manually look at standard diagnostic measures:
+```{r}
+im=influence.measures(logfit1) # computes standard diagnostic measures 
+im # how to print only flagged cases?
+# a case is flagged if: 
+# - any of its absolute dfbetas values are larger than 1, or 
+# - its absolute dffits value is larger than 3*sqrt(p/(n-p)), or 
+# - abs(1 - covratio) is larger than 3*p/(n-p), or 
+# - its Cook's distance is larger than the 50% percentile of 
+#   an F-distribution with p and n-p degrees of freedom, or 
+# - its hatvalue is larger than 3*p/n, 
+names(im) # is.inf = is influential
+i=(1:n)[apply(im$is.inf,1,sum)>0]; i
+im$infmat[i,]
+```
+There is also an added variable plot to visualize the association of one variable after controling for the other
+```{r}
+library(car)
+avPlots(logfit1) # added variable plots for LD and LH
+```
+Let's construct these manually:
+```{r}
+LDH=lm(LD~LH)$resid # extract residuals from regression of LD on LH
+LHD=lm(LH~LD)$resid
+LVH=lm(LV~LH)$resid
+LVD=lm(LV~LD)$resid
+par(mfrow=c(1,2),oma=c(0,0,3,0)) # multi-frame row-wise, side by side plots
+plot(LVH~LDH); abline(lm(LVH~LDH),col="red",lwd=2)
+plot(LVD~LHD); abline(lm(LVD~LHD),col="red",lwd=2)
+mtext("Added-Variable Plots",outer=TRUE,cex=1.2)
+```
+We can also put multiple graphics in one window
+```{r}
+dev.new() # new graphics window
+avPlots(logfit1)
+dev.set(which=4) # switch to another graphics window
+dev.off() # switch off graphics window
+```
+Or print them out as a hard copy
+```{r}
+pdf("AVPlots.pdf"); avPlots(logfit1); dev.off() # save plot as PDF
+```
+Finally, we could consider making model more complex and
+fit an MLR model to logged variables with interaction
+```{r}
+logfit2=lm(LV~LD+LH+LD:LH) # LD:LH produces interaction term only
+summary(logfit2)
+```
+This is the same as
+```{r}
+logfit2=lm(LV~LD*LH) # LD*LH produces main effects and interactions
+summary(logfit2) # compare with summary of logfit1
+anova(logfit2) # compare with anova table for logfit1
+cor(cbind(LD,LH,LV,LD*LH)) # LD and LD*LH are highly correlated
+```
+
+
+# Deletion diagnostics by hand
+
+We will use the cherry tree data from the previous lab to calculate the influence of $x_i$ on $\beta$ by hand. That is, we will find $\hat{\beta} - \hat{\beta}_{(i)}$. This is the first step to calculating DFBETAs. 
+From class we have the formula
+$$
+\hat{\beta} - \hat{\beta}_{(i)} = \frac{ (X^TX)^{-1} x_i \hat{e}_i}{1 - h_{ii}}
+$$
+which we can calculate for all values at once with
+```{r}
+dfbeta.quick = t( solve(t(X)%*%X)%*%t(X)%*%diag( as.vector(resid/(1-diag(H)))) )
+```
+(why is this right?)
+
+Alternatively, we can do this manually:
+```{r}
+dfbeta.loop = matrix(NA,31,3)
+for(i in 1:31){
+  t.mod = lm(log(V)~log(D)+log(H),data=data[-i,])
+  t.betahat = t.mod$coef
+  
+  dfbeta.loop[i,] = (betahat - t.betahat)
+}
+colnames(dfbeta.loop) = colnames(dfbeta.quick)
+```
+And we can test this with
+```{r}
+all.equal(dfbeta.quick, dfbeta.loop, tolerance=1e-4)
+```
+(note that setting the columnames for `dfbeta.quick` was needed to ensure that `R` decided it *could* compare the two).
+
+_Bonus_: The other component we need for DFBETAs is $\sigma^2_{(i)}$; calculate this without emplying a `for` loop. 
+
+
+# On Contrasts and Coding
+
+This section looks at how different covdings of categorical covariates changes the contrast matrix. Here we consider a hypothetical 4-category factor, with means in each level $\mu_1,\ldots,\mu_4$. We will also consider the hypothesis
+$$
+H_0: \mu_4 = \frac{1}{3}(\mu_1 + \mu_2 + \mu_3)
+$$
+That $\mu_4$ is the same as the average response in the other levels. 
+
+a. If $X$ gives the design matrix in reference coding (with level 1 as the reference), what contrast do you need to test $H_0$?
+
+b. If $X$ gives the design matrix in effect coding, what contrast do you need to test $H_0$?
+
+Now let's suppose that these are actually the combinations of two 2-level factors, $A$ and $B$; $\mu_1$ corresponds to $A_1 B_1$, $\mu_2$ to $A_1 B_2$, $\mu_3$ to $A_2 B_1$ and $\mu_4$ to $A_2 B_2$. 
+
+c. If $X$ is coded in reference coding, how would you test for a difference in $A$, averaged over $B$?
+
+d. In effect coding, how would you test for the interraction of $A$ and $B$?
+
+
+# Contrasts in `R`
+
+Let's look at contrasts in a real-world setting. The data in `golfballs.dat` provides the distance traveled of each of 4 brands of golf balls over 5 hits. 
+
+a. Load in these data and provide an analysis through the `lm` function (notice that `R` automatically ccounts for the brand being a factor and accounts for this). 
+
+b. What are the average distances in each brand?
+
+c. How would you contrast brand A against the average of the other 3? Write out a contrast to do this. 
+
+d. Extract the covariance of the estimated coefficients from the `summary` function for `lm` and use this to test your contrast. 
+
+e. What happens if you add the argument `contrasts=list(brand="contr.sum")` to your your `lm` statement? (Try `help(contr.sum)`). What if you set `contrasts=contr.helmert`?
+
+
