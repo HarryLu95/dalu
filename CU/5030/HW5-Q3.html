@@ -172,7 +172,7 @@ E(\Sigma \cdot \mathbf{y})\\
 &amp;=
 \left(\begin{array}{c}\beta_0\\\beta_1\end{array}\right)
 \end{align}\]</span></p>
-<p><span class="math display">\[Var(\mathbf{y})=
+<p><span class="math display">\[\text{Var}(\mathbf{y})=
 \left(\begin{array}{c}
   \tau^2+\sigma^2 &amp; \tau^2 &amp; \tau^2 &amp; \tau^2 &amp; \tau^2\\
   \tau^2 &amp; \tau^2+\sigma^2 &amp; \tau^2 &amp; \tau^2 &amp; \tau^2\\
@@ -181,11 +181,11 @@ E(\Sigma \cdot \mathbf{y})\\
   \tau^2 &amp; \tau^2 &amp; \tau^2 &amp; \tau^2 &amp; \tau^2+\sigma^2
 \end{array}\right)\]</span></p>
 <p><span class="math display">\[\begin{align}
-Var(\hat\beta)
+\text{Var}(\hat\beta)
 &amp;=
-Var(\Sigma \cdot \mathbf{y})\\
+\text{Var}(\Sigma \cdot \mathbf{y})\\
 &amp;=
-\Sigma \cdot Var(\mathbf{y}) \cdot \Sigma^T\\
+\Sigma \cdot \text{Var}(\mathbf{y}) \cdot \Sigma^T\\
 &amp;=
 \left(\begin{array}{c}
   \frac{\sigma^2}{5}+\tau^2 &amp; 0\\
@@ -199,11 +199,11 @@ Var(\Sigma \cdot \mathbf{y})\\
 <p>We can estimate a global <span class="math inline">\(\hat{\beta_1}\)</span> (which applies to all rats) from averating the <span class="math inline">\(n\)</span> <span class="math inline">\(\hat{\beta_{1i}}\)</span> values. What is the variance of this estimate?</p>
 </blockquote>
 <p><span class="math display">\[\begin{align}
-Var(\frac{1}{n}\sum_{i=1}^{n}\hat{\beta_{1i}})
+\text{Var}(\frac{1}{n}\sum_{i=1}^{n}\hat{\beta_{1i}})
 &amp;=
-\frac{1}{n^2}Var(\sum_{i=1}^{n}\hat{\beta_{1i}})\\
+\frac{1}{n^2}\text{Var}(\sum_{i=1}^{n}\hat{\beta_{1i}})\\
 &amp;=
-\frac{1}{n^2}\sum_{i=1}^{n}Var(\hat{\beta_{1i}})\\
+\frac{1}{n^2}\sum_{i=1}^{n}\text{Var}(\hat{\beta_{1i}})\\
 &amp;=
 \frac{1}{n^2}\sum_{i=1}^{n}{\frac{\sigma^2}{10}}\\
 &amp;=
@@ -293,21 +293,54 @@ E(\overline{MSE})
 <h1>d</h1>
 <blockquote>
 <p>If we estimate <span class="math inline">\(\widehat{\beta_0}\)</span> by the average of the <span class="math inline">\(\widehat{\beta_{0i}}\)</span>, what is its variance? Show that the estimate</p>
-<p><span class="math display">\[\frac{1}{n-1}\sum(\widehat{\beta_{0i}}-\widehat{\beta_0})^2\]</span></p>
+<p><span class="math display">\[\frac{1}{n-1}\sum_{i=1}^{n}(\widehat{\beta_{0i}}-\widehat{\beta_0})^2\]</span></p>
 <p>can be used to provide an estimate of this. Hence obtain a <span class="math inline">\(t\)</span>-statistic for estimate <span class="math inline">\(\beta_0\)</span>.</p>
 </blockquote>
+<p><span class="math display">\[\begin{align}
+\text{Var}(\widehat{\beta_0})
+&amp;=
+\text{Var}\left(\frac{1}{n}\sum_{i=1}^{n}\widehat{\beta_{0i}}\right)\\
+&amp;=
+\frac{1}{n^2}\text{Var}\left(\sum_{i=1}^{n}\widehat{\beta_{0i}}\right)\\
+&amp;=
+\frac{1}{n^2}\sum_{i=1}^{n}\text{Var}(\widehat{\beta_{0i}})\\
+&amp;=
+\frac{1}{n}\left(\frac{\sigma^2}{5}+\tau^2\right)
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align}
+E\left[\frac{1}{n-1}\sum_{i=1}^{n}\left(\widehat{\beta_{0i}}-\widehat{\beta_{0}}\right)^2\right]
+&amp;=
+\frac{1}{n-1}\sum_{i=1}^{n}E\left[\left(\widehat{\beta_{0i}}-\widehat{\beta_{0}}\right)^2\right]\\
+&amp;=
+\frac{1}{n-1}\sum_{i=1}^{n}\left[\text{Var}\left(\widehat{\beta_{0i}}-\widehat{\beta_{0}}\right)+E^2\left(\widehat{\beta_{0i}}-\widehat{\beta_{0}}\right)\right]\\
+&amp;=
+\frac{1}{n-1}\sum_{i=1}^{n}\left[\text{Var}\left(\widehat{\beta_{0i}}\right)+\text{Var}\left(\widehat{\beta_{0}}\right)-2\text{Cov}\left(\widehat{\beta_{0i}},\widehat{\beta_{0}}\right)+\mathbf{0}\right]\\
+&amp;=
+\frac{1}{n-1}\sum_{i=1}^{n}\left[\left(\frac{\sigma^2}{5}+\tau^2\right)+\frac{1}{n}\left(\frac{\sigma^2}{5}+\tau^2\right)-\frac{2}{n}\left(\frac{\sigma^2}{5}+\tau^2\right)\right]\\
+&amp;=
+\frac{\sigma^2}{5}+\tau^2
+\end{align}\]</span></p>
+<p>So <span class="math inline">\(\frac{1}{n-1}\sum_{i=1}^{n}\left(\widehat{\beta_{0i}}-\widehat{\beta_{0}}\right)^2\)</span> is the unbiased estimator of <span class="math inline">\(\text{Var}(\widehat{\beta_0})\)</span>.</p>
+<p><span class="math display">\[t=\frac{\widehat{\beta_0}-\beta_0}{\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}\left(\widehat{\beta_{0i}}-\widehat{\beta_{0}}\right)^2}}\]</span></p>
 </div>
 <div id="e" class="section level1">
 <h1>e</h1>
 <blockquote>
 <p>Given your answers above, how would you estimate <span class="math inline">\(\tau^2\)</span>?</p>
 </blockquote>
+<p><span class="math display">\[\text{Var}(\widehat{\beta_0})=\frac{1}{n}\left(\frac{\sigma^2}{5}+\tau^2\right)\]</span></p>
+<p><span class="math display">\[\widehat{\tau^2}=n \cdot \text{Var}(\widehat{\beta_0})-\frac{\widehat{\sigma^2}}{5}\]</span></p>
 </div>
 <div id="f" class="section level1">
 <h1>f</h1>
 <blockquote>
-<p>Give an estimate of the conditional expectation of <span class="math inline">\(\mathbf{b}_{i0}\)</span> given the data and our estimates above.</p>
+<p>Give an estimate of the conditional expectation of <span class="math inline">\(\mathbf{b}_0\)</span> (<span class="math inline">\(b_{0i}\)</span>) given the data and our estimates above.</p>
 </blockquote>
+<p><span class="math display">\[\mathbf{b}_0 \sim N(0,\tau^2) \quad\quad \epsilon \sim N(0,\sigma^2)\]</span></p>
+<p><span class="math display">\[\left(\begin{array}{c}\mathbf{y}\\\mathbf{b}_0\end{array}\right) \sim N\left(\left(\begin{array}{c}\beta_0\\0\end{array}\right),\left(\begin{array}{c}\frac{\sigma^2}{5}+\tau^2 &amp; \tau^2\\\tau^2 &amp; \tau^2\end{array}\right)\right)\]</span></p>
+<p><span class="math display">\[\mathbf{b}_0|\mathbf{y} \sim N\left(\frac{\tau^2}{\frac{\sigma^2}{5}+\tau^2}(\mathbf{y}-\beta_0),\tau^2-\frac{\tau^2}{\frac{\sigma^2}{5}+\tau^2}\right)\]</span></p>
+<p><span class="math display">\[\widehat{\mathbf{b}_0}|\mathbf{y}=\frac{\tau^2}{\frac{\sigma^2}{5}+\tau^2}(\mathbf{y}-\beta_0)\]</span></p>
+<p>In other words, <span class="math inline">\(\widehat{b_{0i}}|y_i=\frac{\tau^2}{\frac{\sigma^2}{5}+\tau^2}(y_i-\beta_{0i})\)</span>.</p>
 </div>
 <div id="bonus-1" class="section level1">
 <h1>Bonus 1</h1>
