@@ -239,7 +239,8 @@ l_c0=lm(MORT~1,data=c0)</code></pre>
 <p>Cross-validation of <code>l_c0</code></p>
 <pre class="r"><code>c0_e=l_c0$residuals
 c0_Hii=hatvalues(l_c0)
-sum((c0_e)^2/(1-c0_Hii)^2)</code></pre>
+cv_c0=sum((c0_e)^2/(1-c0_Hii)^2)
+cv_c0</code></pre>
 <pre><code>## [1] 164241.2</code></pre>
 <p><strong>Linear model c1</strong> (<code>l_c1</code>): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_1\)</span> <code>PRECIP</code></p>
 <pre class="r"><code>c1=ap[,2:3]
@@ -247,7 +248,8 @@ l_c1=lm(MORT~PRECIP,data=c1)</code></pre>
 <p>Cross-validation of <code>l_c1</code></p>
 <pre class="r"><code>c1_e=l_c1$residuals
 c1_Hii=hatvalues(l_c1)
-sum((c1_e)^2/(1-c1_Hii)^2)</code></pre>
+cv_c1=sum((c1_e)^2/(1-c1_Hii)^2)
+cv_c1</code></pre>
 <pre><code>## [1] 160742.6</code></pre>
 <p><strong>Linear mode c2</strong> (<code>l_c2</code>): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_1\)</span> <code>PRECIP</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code></p>
 <pre class="r"><code>c2=ap[,2:4]
@@ -255,7 +257,8 @@ l_c2=lm(MORT~PRECIP+EDUC,data=c2)</code></pre>
 <p>Cross-validation of <code>l_c2</code></p>
 <pre class="r"><code>c2_e=l_c2$residuals
 c2_Hii=hatvalues(l_c2)
-sum((c2_e)^2/(1-c2_Hii)^2)</code></pre>
+cv_c2=sum((c2_e)^2/(1-c2_Hii)^2)
+cv_c2</code></pre>
 <pre><code>## [1] 148834.4</code></pre>
 <p><strong>Linear model c3</strong> (<code>l_c3</code>): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_1\)</span> <code>PRECIP</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code></p>
 <pre class="r"><code>c3=ap[,2:5]
@@ -263,7 +266,8 @@ l_c3=lm(MORT~PRECIP+EDUC+NONWHITE,data=c3)</code></pre>
 <p>Cross-validation of <code>l_c3</code></p>
 <pre class="r"><code>c3_e=l_c3$residuals
 c3_Hii=hatvalues(l_c3)
-sum((c3_e)^2/(1-c3_Hii)^2)</code></pre>
+cv_c3=sum((c3_e)^2/(1-c3_Hii)^2)
+cv_c3</code></pre>
 <pre><code>## [1] 99514.27</code></pre>
 <p><strong>Linear model c4</strong> (<code>l_c4</code>): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_1\)</span> <code>PRECIP</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code></p>
 <pre class="r"><code>c4=ap[,2:6]
@@ -271,7 +275,8 @@ l_c4=lm(MORT~PRECIP+EDUC+NONWHITE+NOX,data=c4)</code></pre>
 <p>Cross-validation of <code>l_c4</code></p>
 <pre class="r"><code>c4_e=l_c4$residuals
 c4_Hii=hatvalues(l_c4)
-sum((c4_e)^2/(1-c4_Hii)^2)</code></pre>
+cv_c4=sum((c4_e)^2/(1-c4_Hii)^2)
+cv_c4</code></pre>
 <pre><code>## [1] 75063.52</code></pre>
 <p><strong>Linear model c5</strong> (<code>l_c5</code>): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_1\)</span> <code>PRECIP</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code> + <span class="math inline">\(\beta_5\)</span> <code>SO2</code></p>
 <pre class="r"><code>c5=ap[,2:7]
@@ -279,8 +284,12 @@ l_c5=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=c5)</code></pre>
 <p>Cross-validation of <code>l_c5</code></p>
 <pre class="r"><code>c5_e=l_c5$residuals
 c5_Hii=hatvalues(l_c5)
-sum((c5_e)^2/(1-c5_Hii)^2)</code></pre>
+cv_c5=sum((c5_e)^2/(1-c5_Hii)^2)
+cv_c5</code></pre>
 <pre><code>## [1] 77110.55</code></pre>
+<pre class="r"><code>cv_c=c(cv_c0,cv_c1,cv_c2,cv_c3,cv_c4,cv_c5)
+which(cv_c==min(cv_c))</code></pre>
+<pre><code>## [1] 5</code></pre>
 <ul>
 <li>The model c4 (<code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_1\)</span> <code>PRECIP</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code>) has the lowest score.</li>
 </ul>
@@ -297,7 +306,8 @@ l_d0=lm(MORT~1,data=d0)</code></pre>
 <p>Cross-validation of <code>l_d0</code></p>
 <pre class="r"><code>d0_e=l_d0$residuals
 d0_Hii=hatvalues(l_d0)
-sum((d0_e)^2/(1-d0_Hii)^2)</code></pre>
+cv_d0=sum((d0_e)^2/(1-d0_Hii)^2)
+cv_d0</code></pre>
 <pre><code>## [1] 164241.2</code></pre>
 <p><strong>Linear model d1</strong> (l_d1): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_5\)</span> <code>SO2</code></p>
 <pre class="r"><code>d1=ap[,c(2,7)]
@@ -305,7 +315,8 @@ l_d1=lm(MORT~SO2,data=d1)</code></pre>
 <p>Cross-validation of <code>l_d1</code></p>
 <pre class="r"><code>d1_e=l_d1$residuals
 d1_Hii=hatvalues(l_d1)
-sum((d1_e)^2/(1-d1_Hii)^2)</code></pre>
+cv_d1=sum((d1_e)^2/(1-d1_Hii)^2)
+cv_d1</code></pre>
 <pre><code>## [1] 117976.2</code></pre>
 <p><strong>Linear model d2</strong> (l_d2): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_5\)</span> <code>SO2</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code></p>
 <pre class="r"><code>d2=ap[,c(2,7:6)]
@@ -313,7 +324,8 @@ l_d2=lm(MORT~SO2+NOX,data=d2)</code></pre>
 <p>Cross-validation of <code>l_d2</code></p>
 <pre class="r"><code>d2_e=l_d2$residuals
 d2_Hii=hatvalues(l_d2)
-sum((d2_e)^2/(1-d2_Hii)^2)</code></pre>
+cv_d2=sum((d2_e)^2/(1-d2_Hii)^2)
+cv_d2</code></pre>
 <pre><code>## [1] 121570.2</code></pre>
 <p><strong>Linear model d3</strong> (l_d3): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_5\)</span> <code>SO2</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code></p>
 <pre class="r"><code>d3=ap[,c(2,7:5)]
@@ -321,7 +333,8 @@ l_d3=lm(MORT~SO2+NOX+NONWHITE,data=d3)</code></pre>
 <p>Cross-validation of <code>l_d3</code></p>
 <pre class="r"><code>d3_e=l_d3$residuals
 d3_Hii=hatvalues(l_d3)
-sum((d3_e)^2/(1-d3_Hii)^2)</code></pre>
+cv_d3=sum((d3_e)^2/(1-d3_Hii)^2)
+cv_d3</code></pre>
 <pre><code>## [1] 76742</code></pre>
 <p><strong>Linear model d4</strong> (l_d4): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_5\)</span> <code>SO2</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code></p>
 <pre class="r"><code>d4=ap[,c(2,7:4)]
@@ -329,7 +342,8 @@ l_d4=lm(MORT~SO2+NOX+NONWHITE+EDUC,data=d4)</code></pre>
 <p>Cross-validation of <code>l_d4</code></p>
 <pre class="r"><code>d4_e=l_d4$residuals
 d4_Hii=hatvalues(l_d4)
-sum((d4_e)^2/(1-d4_Hii)^2)</code></pre>
+cv_d4=sum((d4_e)^2/(1-d4_Hii)^2)
+cv_d4</code></pre>
 <pre><code>## [1] 73065.13</code></pre>
 <p><strong>Linear model d5</strong> (l_d5): <code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_5\)</span> <code>SO2</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code> + <span class="math inline">\(\beta_1\)</span> <code>PRECIP</code> (actually same as c5)</p>
 <pre class="r"><code>d5=ap[,c(2,7:3)]
@@ -337,8 +351,13 @@ l_d5=lm(MORT~SO2+NOX+NONWHITE+EDUC+PRECIP,data=d5)</code></pre>
 <p>Cross-validation of <code>l_d5</code></p>
 <pre class="r"><code>d5_e=l_d5$residuals
 d5_Hii=hatvalues(l_d5)
-sum((d5_e)^2/(1-d5_Hii)^2)</code></pre>
+cv_d5=sum((d5_e)^2/(1-d5_Hii)^2)
+cv_d5</code></pre>
 <pre><code>## [1] 77110.55</code></pre>
+<pre class="r"><code>cv_d=c(cv_d0,cv_d1,cv_d2,cv_d3,cv_d4,cv_d5)</code></pre>
+<pre class="r"><code>cv_d=c(cv_d0,cv_d1,cv_d2,cv_d3,cv_d4,cv_d5)
+which(cv_d==min(cv_d))</code></pre>
+<pre><code>## [1] 5</code></pre>
 <ul>
 <li>The model d4 (<code>MORT</code> ~ <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_5\)</span> <code>SO2</code> + <span class="math inline">\(\beta_4\)</span> <code>NOX</code> + <span class="math inline">\(\beta_3\)</span> <code>NONWHITE</code> + <span class="math inline">\(\beta_2\)</span> <code>EDUC</code>) has the lowest score.</li>
 </ul>
@@ -351,6 +370,30 @@ sum((d5_e)^2/(1-d5_Hii)^2)</code></pre>
 <p>often also written as <span class="math inline">\(SSE_j/\hat{\sigma^2}+2j\)</span>, where <span class="math inline">\(SSE_j\)</span> is the SSE for a model with <span class="math inline">\(j\)</span> covariates, and <span class="math inline">\(\hat{\sigma^2}\)</span> is calculated from a model with all covariates.</p>
 <p>Obtain <span class="math inline">\(C_j\)</span> for each of your models in <strong><em>part c</em></strong>, how does this compare with cross validation?</p>
 </blockquote>
+<pre class="r"><code>n=dim(ap)[1]
+p=5
+#let sigma square hat = ssh
+ssh=sum(l$residuals^2)/(n-p-1)
+Cp=rep(NA,6)
+SSEj_0=sum(l_c0$residuals^2)
+Cp[1]=SSEj_0/ssh+2*1
+SSEj_1=sum(l_c1$residuals^2)
+Cp[2]=SSEj_1/ssh+2*2
+SSEj_2=sum(l_c2$residuals^2)
+Cp[3]=SSEj_2/ssh+2*3
+SSEj_3=sum(l_c3$residuals^2)
+Cp[4]=SSEj_3/ssh+2*4
+SSEj_4=sum(l_c4$residuals^2)
+Cp[5]=SSEj_4/ssh+2*5
+SSEj_5=sum(l_c5$residuals^2)
+Cp[6]=SSEj_5/ssh+2*6
+Cp</code></pre>
+<pre><code>## [1] 129.0696 120.0385 108.9658  75.3712  59.5191  61.0000</code></pre>
+<pre class="r"><code>which(Cp==min(Cp))</code></pre>
+<pre><code>## [1] 5</code></pre>
+<ul>
+<li>From the results of Mallows <span class="math inline">\(C_p\)</span> score above, we can see that the model c4 still has the lowest score, which verify the conclusion from <strong>part c</strong>.</li>
+</ul>
 </div>
 <div id="bonus-1" class="section level1">
 <h1>Bonus 1</h1>
