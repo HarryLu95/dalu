@@ -290,6 +290,13 @@ ul {font-size: 16px; color: black;}
 - [Oracle Schema Object Names and Qualifiers](CU/5060/Sup2.pdf)
 - [Download and Install Oracle XE 11g](CU/5060/Sup3.pdf)
 
+##Final Project
+- [Instruction](CU/5060/FP.pdf)
+- Data 1: [school_finance_2010](CU/5060/school_finance_2010.sas7bdat) (.sas7bdat)
+- Data 2: [school_finance_2014](CU/5060/school_finance_2014.sas7bdat) (.sas7bdat)
+- Description of Data 1 and Data 2: [Column Description](CU/5060/FP_CD.pdf)
+- Data 3: [state_code](CU/5060/state_code.csv) (.csv)
+
 ---
 
 #STSCI 5080 - Probability Models and Inference
