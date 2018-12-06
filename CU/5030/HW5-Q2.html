@@ -134,6 +134,7 @@ h4.author {text-align: center;}
 h4.date {text-align: center;}
 p {font-size: 18px;}
 ul {font-size: 18px;}
+ol {font-size: 18px;}
 </style>
 <hr />
 <p>Here we will illustrate the results from <strong><em>Question 1</em></strong> with a real world data set. We will use the study of mortality in 55 US cities as it is influenced by pollutants <code>NOX</code> (nitrous oxide) and <code>SO2</code> (sulfur dioxide), while controlling weather (<code>PRECIP</code>) and sociological variables (<code>EDUC</code> and <code>NONWHITE</code>) that appeared on <strong><em>Homework 4</em></strong>.</p>
@@ -400,6 +401,98 @@ Cp</code></pre>
 <blockquote>
 <p>When there is no natural ordering of the covariates, one way to create one is to first choose the covariate that produces the smallest SSE among all models in 1 covariate. Then, keeping that in the model look for the best covariate to add to it. Continue this process until all covariates are in the model. If you do this, what ordering do you get? What is your optimal model?</p>
 </blockquote>
+<pre class="r"><code>l_empty=lm(MORT~1,data=ap)
+l_full=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap)
+step(l_empty,scope=list(lower=l_empty,upper=l_full),direction=&quot;forward&quot;)</code></pre>
+<pre><code>## Start:  AIC=440.08
+## MORT ~ 1
+## 
+##            Df Sum of Sq    RSS    AIC
+## + NONWHITE  1     57596 100727 417.21
+## + NOX       1     49622 108701 421.40
+## + SO2       1     48368 109955 422.03
+## + EDUC      1     25041 133282 432.61
+## + PRECIP    1     13744 144579 437.08
+## &lt;none&gt;                  158323 440.08
+## 
+## Step:  AIC=417.21
+## MORT ~ NONWHITE
+## 
+##          Df Sum of Sq    RSS    AIC
+## + SO2     1   31198.9  69528 398.82
+## + NOX     1   26613.0  74114 402.33
+## + EDUC    1   16621.0  84106 409.29
+## &lt;none&gt;                100727 417.21
+## + PRECIP  1     655.2 100072 418.85
+## 
+## Step:  AIC=398.82
+## MORT ~ NONWHITE + SO2
+## 
+##          Df Sum of Sq   RSS    AIC
+## + EDUC    1    6824.2 62704 395.14
+## + PRECIP  1    3803.9 65724 397.72
+## &lt;none&gt;                69528 398.82
+## + NOX     1      84.5 69443 400.75
+## 
+## Step:  AIC=395.14
+## MORT ~ NONWHITE + SO2 + EDUC
+## 
+##          Df Sum of Sq   RSS    AIC
+## &lt;none&gt;                62704 395.14
+## + PRECIP  1   1116.21 61588 396.15
+## + NOX     1    761.96 61942 396.46</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = MORT ~ NONWHITE + SO2 + EDUC, data = ap)
+## 
+## Coefficients:
+## (Intercept)     NONWHITE          SO2         EDUC  
+##   1050.0746       3.0749       0.3286     -14.7154</code></pre>
+<p>Order:</p>
+<ol style="list-style-type: decimal">
+<li><code>NONWHITE</code></li>
+<li><code>SO2</code></li>
+<li><code>EDUC</code></li>
+<li><code>PRECIP</code></li>
+<li><code>NOX</code></li>
+</ol>
+<p><strong>Another method:</strong> Use correlation function to remove the most significant variable each time. However, the order is slightly different.</p>
+<p>Data set <code>ap5</code> contains <span class="math inline">\(y\)</span> value (<code>MORT</code>) and 5 <span class="math inline">\(x\)</span> values (<code>SO2</code>, <code>NOX</code>, <code>NONWHITE</code>, <code>EDUC</code>, <code>PRECIP</code>)</p>
+<pre class="r"><code>ap5=ap[,-1]</code></pre>
+<p>Model <code>l5</code> has all five variables, and the most significant variable within it is <code>NONWHITE</code>. Remove <code>NONWHITE</code> by subtracting the product of <code>NONWHITE</code> and its corresponding beta value from <code>MORT</code> (update <code>MORT</code>). Then removing the <code>NONWHITE</code> column.</p>
+<pre class="r"><code>l5=lm(MORT~PRECIP+EDUC+NONWHITE+NOX+SO2,data=ap5)
+cor(ap5)[1,]</code></pre>
+<pre><code>##       MORT     PRECIP       EDUC   NONWHITE        NOX        SO2 
+##  1.0000000  0.2946374 -0.3977007  0.6031493  0.5598412  0.5527204</code></pre>
+<pre class="r"><code>ap5$MORT=ap5$MORT-ap5$NONWHITE*l5$coefficients[&quot;NONWHITE&quot;]
+ap4=ap5[,-which(colnames(ap5)==&quot;NONWHITE&quot;)]</code></pre>
+<p>By same method, remove <code>SO2</code>.</p>
+<pre class="r"><code>l4=lm(MORT~PRECIP+EDUC+NOX+SO2,data=ap4)
+cor(ap4)[1,]</code></pre>
+<pre><code>##       MORT     PRECIP       EDUC        NOX        SO2 
+##  1.0000000  0.1498830 -0.4199982  0.5387523  0.5735692</code></pre>
+<pre class="r"><code>ap4$MORT=ap4$MORT-ap4$SO2*l4$coefficients[&quot;SO2&quot;]
+ap3=ap4[,-which(colnames(ap4)==&quot;SO2&quot;)]</code></pre>
+<p>By same method, remove <code>EDUC</code>.</p>
+<pre class="r"><code>l3=lm(MORT~PRECIP+EDUC+NOX,data=ap3)
+cor(ap3)[1,]</code></pre>
+<pre><code>##       MORT     PRECIP       EDUC        NOX 
+##  1.0000000  0.2044896 -0.3874230  0.3196796</code></pre>
+<pre class="r"><code>ap3$MORT=ap3$MORT-ap3$EDUC*l3$coefficients[&quot;EDUC&quot;]
+ap2=ap3[,-which(colnames(ap3)==&quot;EDUC&quot;)]</code></pre>
+<p>By same method, the fourth significant variable is <code>NOX</code>.</p>
+<pre class="r"><code>l2=lm(MORT~PRECIP+NOX,data=ap2)
+cor(ap2)[1,]</code></pre>
+<pre><code>##      MORT    PRECIP       NOX 
+## 1.0000000 0.1171316 0.2934797</code></pre>
+<p>Order:</p>
+<ol style="list-style-type: decimal">
+<li><code>NONWHITE</code></li>
+<li><code>SO2</code></li>
+<li><code>EDUC</code></li>
+<li><code>NOX</code></li>
+<li><code>PRECIP</code></li>
+</ol>
 </div>
 <div id="bonus-2" class="section level1">
 <h1>Bonus 2</h1>
