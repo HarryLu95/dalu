@@ -137,12 +137,13 @@ p {font-size: 18px;}
 <hr />
 <p>The data in <code>rats.csv</code> contain the results of an longitudinal study of rat growth. Rats were given three different diets and their size (calipers around their heads) were recorded at a number of different times. Each rat grows approximately linearly, but they all start from different sizes and grow at different rates, even in the same group.</p>
 <p>Within a group, we can express this as <span class="math display">\[y_{ij}=\beta_0+\beta_{1}t_{ij}+b_{i0}+b_{i1}t_{ij}+\epsilon_{ij}\]</span> for the measurement of the <span class="math inline">\(i\)</span>-th rat at time <span class="math inline">\(t_{ij}\)</span> with random intercept <span class="math inline">\(b_{i0}\)</span> and random slope <span class="math inline">\(b_{i1}\)</span> where we specify <span class="math inline">\(\epsilon_{ij} \sim N(0,\sigma^2_e)\)</span>, <span class="math inline">\(b_{i0} \sim N(0,\sigma^2_{b_0})\)</span> and <span class="math inline">\(b_{i1} \sim N(0,\sigma^2_{b_1})\)</span>.</p>
+<pre class="r"><code>rat=read.csv(file=&quot;https://www.harrylu.net/CU/5030/rats.csv&quot;,header=TRUE)</code></pre>
 <div id="a" class="section level1">
 <h1>a</h1>
 <blockquote>
 <p>Write down a model for <span class="math inline">\(y_{ijk}\)</span> to cover rat <span class="math inline">\(i\)</span> in group <span class="math inline">\(k\)</span> at observation time <span class="math inline">\(j\)</span> in which the <strong><em>average</em></strong> growth rate in each group is different between rats.</p>
 </blockquote>
-<pre class="r"><code>rat=read.csv(file=&quot;https://www.harrylu.net/CU/5030/rats.csv&quot;,header=TRUE)</code></pre>
+<p><span class="math display">\[y_{ijk}=\beta_{0k}+\beta_{1k}t_{ij}+b_{0ik}+b_{1ik}t_{ij}+\epsilon_{ijk}\]</span></p>
 </div>
 <div id="b" class="section level1">
 <h1>b</h1>
