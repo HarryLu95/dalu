@@ -343,6 +343,7 @@ ul {font-size: 16px; color: black;}
 5. [Homework 5](CU/5080/HW5.pdf)
     - [Solutions](CU/5080/HW5_S.pdf)
 6. [Homework 6](CU/5080/HW6.pdf)
+    - [Solutions](CU/5080/HW6_S.pdf)
 
 ##Discussions
 1. [Discussion 1 with Solutions](CU/5080/Dis1.pdf)
@@ -356,6 +357,7 @@ ul {font-size: 16px; color: black;}
 9. [Discussion 9 with Solutions](CU/5080/Dis9.pdf)
 10. [Discussion 10 with Solutions](CU/5080/Dis10.pdf)
 11. [Discussion 11 with Solutions](CU/5080/Dis11.pdf)
+12. [Discussion 12 with Solutions](CU/5080/Dis12.pdf)
 
 ##Supplementary Materials
 1. [Some standard distributions](CU/5080/Sup1.pdf)
