@@ -375,6 +375,8 @@ ul {font-size: 16px; color: black;}
     - [Solutions](CU/5080/PM1_S.pdf)
 2. [Practice Midterm 2](CU/5080/PM2.pdf)
     - [Solutions](CU/5080/PM2_S.pdf)
+3. [Practice Final](CU/5080/PF.pdf)
+    - [Solutions](CU/5080/PF_S.pdf)
 
 ##Exams
 1. [Midterm 1 with Solutions](CU/5080/M1_S.pdf)
