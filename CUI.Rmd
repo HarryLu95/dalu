@@ -129,11 +129,13 @@ ul {font-size: 16px; color: black;}
     - [Question 2](CU/5030/HW1-Q2.html)
     - [Question 3](CU/5030/HW1-Q3.html)
     - Data: [BrainWeight](CU/5030/BrainWeight.txt) (.txt)
+    - [Solutions](CU/5030/HW1_S.pdf)
 2. Homework 2
     - [Question 1](CU/5030/HW2-Q1.html)
     - [Question 2](CU/5030/HW2-Q2.html)
     - [Question 3](CU/5030/HW2-Q3.html)
     - Data: [BrainWeight](CU/5030/BrainWeight.txt) (.txt)
+    - [Solutions](CU/5030/HW2_S.pdf)
 3. Homework 3
     - [Question 1](CU/5030/HW3-Q1.html)
     - [Question 2](CU/5030/HW3-Q2.html)
@@ -141,6 +143,7 @@ ul {font-size: 16px; color: black;}
     - [Question 4](CU/5030/HW3-Q4.html)
     - Data: [BrainWeight](CU/5030/BrainWeight.txt) (.txt)
     - Data: [precipitation](CU/5030/precipitation.csv) (.csv)
+    - [Solutions](CU/5030/HW3_S.pdf)
 4. Homework 4
     - [Question 1](CU/5030/HW4-Q1.html)
     - [Question 2](CU/5030/HW4-Q2.html)
@@ -148,6 +151,7 @@ ul {font-size: 16px; color: black;}
     - [Question 4](CU/5030/HW4-Q4.html)
     - Data: [airpollution](CU/5030/airpollution.csv) (.csv)
     - Data: [NutritionStdy](CU/5030/NutritionStdy.csv) (.csv)
+    - [Solutions](CU/5030/HW4_S.pdf)
 5. Homework 5
     - [Question 1](CU/5030/HW5-Q1.html)
     - [Question 2](CU/5030/HW5-Q2.html)
@@ -155,6 +159,7 @@ ul {font-size: 16px; color: black;}
     - [Question 4](CU/5030/HW5-Q4.html)
     - Data: [airpollution](CU/5030/airpollution.csv) (.csv)
     - Data: [rats](CU/5030/rats.csv) (.csv)
+    - [Solutions](CU/5030/HW5_S.pdf)
 
 ##Labs
 1. Lab 1 (Aug/27 - Aug/30)
@@ -204,6 +209,7 @@ ul {font-size: 16px; color: black;}
 - [Practice Final](CU/5030/Final_Fall2017.pdf)
 - [Fianl Review](CU/5030/Final_Review.pdf)
     - [Solution](CU/5030/Final_Review_S.pdf)
+- [Final Formulae](CU/5030/Formulae2.pdf)
 
 ---
 
