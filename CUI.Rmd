@@ -207,6 +207,7 @@ ul {font-size: 16px; color: black;}
 - [Midterm Formulae](CU/5030/Formulae.pdf)
 - [Midterm Solution](CU/5030/Midterm_S.pdf)
 - [Practice Final](CU/5030/Final_Fall2017.pdf)
+    - [Solution](CU/5030/Final_Fall2017_S.pdf)
 - [Fianl Review](CU/5030/Final_Review.pdf)
     - [Solution](CU/5030/Final_Review_S.pdf)
 - [Final Formulae](CU/5030/Formulae2.pdf)
