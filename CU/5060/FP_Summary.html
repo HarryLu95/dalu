@@ -569,7 +569,28 @@ SELECT *
 <div id="step-19" class="section level1">
 <h1>Step 19</h1>
 <p><strong><em>SQL Developer</em></strong></p>
-<pre><code></code></pre>
+<pre><code>/* Create the view fsl_Contribution_V. */
+CREATE VIEW fsl_Contribution_V AS
+    SELECT Fed_Contribution_V.IDCensus,
+            to_char(Fed_Contribution_V.StCode,'999999') AS StCode,
+            Fed_Contribution_V.Sd_Name,
+            to_char((Fed_pcnt + St_pcnt + Loc_pcnt),'9999.9999') AS fsl_pcnt
+    FROM Fed_Contribution_V, St_Contribution_V, Loc_Contribution_V
+    WHERE Fed_Contribution_V.IDCensus = St_Contribution_V.IDCensus AND
+            St_Contribution_V.IDCensus = Loc_Contribution_V.IDCensus AND
+            Loc_Contribution_V.IDCensus = Fed_Contribution_V.IDCensus;
+
+/* Display the school districts that received total revenues over 3 times of the total amount they spent. */
+SELECT *
+    FROM fsl_Contribution_V
+    WHERE fsl_pcnt &gt; 3
+    ORDER BY fsl_pcnt DESC;
+
+/* Display the school districts that received total revenues up to 0.3 times of the total amount they spent. */
+SELECT *
+    FROM fsl_Contribution_V
+    WHERE fsl_pcnt &lt; 0.3
+    ORDER BY fsl_pcnt DESC;</code></pre>
 </div>
 <div id="step-20" class="section level1">
 <h1>Step 20</h1>
