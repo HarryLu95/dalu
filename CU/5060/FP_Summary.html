@@ -168,6 +168,16 @@ SELECT * FROM State_t
 </div>
 <div id="step-4" class="section level1">
 <h1>Step 4</h1>
+<p><strong><em>SAS</em></strong></p>
+<pre><code>Libname Final &quot;C:\Users\Harry Lu's X1\Documents\Cornell\STSCI 5060\Final Project&quot;;
+
+Libname myoracle Oracle User = &quot;Lu_Da_STSCI5060FP&quot; Password = &quot;950511&quot; Path = &quot;xe&quot;;
+RUN;
+
+PROC SQL;
+    Create Table myoracle.School_Finance_2010_t As
+        Select * From Final.School_Finance_2010;
+QUIT;</code></pre>
 <p><strong><em>SQL Developer</em></strong></p>
 <pre><code>/* Describe the table School_Finance_2010_t. */
 DESCRIBE School_Finance_2010_t;
@@ -247,6 +257,168 @@ ALTER TABLE Locrev_t
 ALTER TABLE School_t
     ADD CONSTRAINT School_FK FOREIGN KEY (StCode)
         REFERENCES State_t (StCode);</code></pre>
+</div>
+<div id="step-9" class="section level1">
+<h1>Step 9</h1>
+</div>
+<div id="step-10" class="section level1">
+<h1>Step 10</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code>/* Display the federal revenue which larger than 1,000,000. */
+SELECT IDCensus, StCode, to_char(Fed_Rev,'999999999.9') AS Fed_Revenue FROM Fedrev_T
+    WHERE Fed_Rev &gt;= 1000000;
+
+/* Display the state revenue which larger than 1,000,000. */
+SELECT IDCensus, StCode, to_char(St_Rev,'999999999.9') AS St_Revenue FROM Strev_T
+    WHERE St_Rev &gt;= 1000000;
+
+/* Display the local revenue which larger than 1,000,000. */
+SELECT IDCensus, StCode, to_char(Loc_Rev,'999999999.9') AS Loc_Revenue FROM Locrev_T
+    WHERE Loc_Rev &gt;= 1000000;</code></pre>
+</div>
+<div id="step-11" class="section level1">
+<h1>Step 11</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code>/* Create view called SD#_V. */
+CREATE VIEW SD#_V AS
+    SELECT COUNT(SD_Name) AS SD#, StCode
+    FROM School_T
+    GROUP BY StCode;
+
+/* Display the states which have the most number of schools. */
+SELECT State_T.StCode, StName, SD#
+    FROM SD#_V, State_T
+    WHERE SD#_V.StCode = State_T.StCode
+        AND SD# = (SELECT MAX(SD#) FROM SD#_V);
+
+/* Display the states which have the least number of schools. */
+SELECT State_T.StCode, StName, SD#
+    FROM SD#_V, State_T
+    WHERE SD#_V.StCode = State_T.StCode
+        AND SD# = (SELECT MIN(SD#) FROM SD#_V);</code></pre>
+</div>
+<div id="step-12" class="section level1">
+<h1>Step 12</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code>/* Create views called mfr_V, msr_V, mlr_V respectively. */
+CREATE VIEW mfr_V AS
+    SELECT StCode, MAX(Fed_Rev) AS Max_Fed_Rev
+    FROM Fedrev_T
+    GROUP BY StCode
+    ORDER BY StCode;
+CREATE VIEW msr_V AS
+    SELECT StCode, MAX(St_Rev) AS Max_St_Rev
+    FROM Strev_T
+    GROUP BY StCode
+    ORDER BY StCode;
+CREATE VIEW mlr_V AS
+    SELECT StCode, MAX(Loc_Rev) AS Max_Loc_Rev
+    FROM Locrev_T
+    GROUP BY StCode
+    ORDER BY StCode;</code></pre>
+<p><strong><em>SAS</em></strong></p>
+<pre><code>DATA myoracle.mfslr_t;
+    Merge myoracle.mfr_v myoracle.msr_v myoracle.mlr_v;
+    By StCode;
+RUN;</code></pre>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code>/* Display the combined table. */
+SELECT to_char(mfslr_T.StCode,'999999999') AS StCode,
+        to_char(Max_Fed_Rev,'999999999.9') AS Max_Fed_Rev,
+        to_char(Max_St_Rev,'999999999.9') As Max_St_Rev,
+        to_char(Max_Loc_Rev,'999999999.9') As Max_Loc_Rev,
+        StName
+    FROM mfslr_T, State_T
+    WHERE mfslr_T.StCode = State_T.StCode;</code></pre>
+</div>
+<div id="step-13" class="section level1">
+<h1>Step 13</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code>/* Add an extra column. */
+SELECT to_char(mfslr_T.StCode,'999999999') AS State_Code,
+        to_char(Max_Fed_Rev,'999999999.9') AS Max_Fed_Rev,
+        StName AS State_Name,
+        Sd_Name AS State_District_Name
+    FROM mfslr_T, State_T, School_T, FedRev_T
+    WHERE mfslr_T.StCode = State_T.StCode AND
+            State_T.StCode = School_T.StCode AND
+            School_T.StCode = mfslr_T.StCode AND
+            School_T.IDCensus = FedRev_T.IDCensus AND
+            School_T.IDCensus = (SELECT IDCensus FROM FedRev_T WHERE Fed_Rev = Max_Fed_Rev)
+    ORDER BY Max_Fed_Rev DESC;</code></pre>
+</div>
+<div id="step-14" class="section level1">
+<h1>Step 14</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code>/* Create a view: Total_Rev_V. */
+CREATE VIEW Total_Rev_V AS
+    SELECT FedRev_T.IDCensus, FedRev_T.StCode, Fed_Rev AS TFedRev, St_Rev AS TStRev, Loc_Rev AS TLocRev
+    FROM FedRev_T, StRev_T, LocRev_T
+    WHERE FedRev_T.IDCensus = StRev_T.IDCensus AND
+            StRev_T.IDCensus = LocRev_T.IDCensus AND
+            LocRev_T.IDCensus = FedRev_T.IDCensus;</code></pre>
+</div>
+<div id="step-15" class="section level1">
+<h1>Step 15</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code>/* Display the Total_Revenue for each school district.*/
+SELECT to_char(Total_Rev_V.StCode,'999999999') AS StCode,
+        StName,
+        Total_Rev_V.IDCensus,
+        to_char(TFedRev + TStRev + TLocRev,'99999999999.9') AS Total_Revenue,
+        Sd_Name
+    FROM Total_Rev_V, School_T, State_T
+    WHERE Total_Rev_V.IDCensus = School_T.IDCensus AND
+            Total_Rev_V.StCode = School_T.StCode AND
+            School_T.StCode = State_T.StCode AND
+            State_T.StCode = Total_Rev_V.StCode AND
+            ROWNUM &lt;= 100
+    ORDER BY Total_Revenue DESC;</code></pre>
+</div>
+<div id="step-16" class="section level1">
+<h1>Step 16</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code></code></pre>
+</div>
+<div id="step-17" class="section level1">
+<h1>Step 17</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code></code></pre>
+</div>
+<div id="step-18" class="section level1">
+<h1>Step 18</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code></code></pre>
+</div>
+<div id="step-19" class="section level1">
+<h1>Step 19</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code></code></pre>
+</div>
+<div id="step-20" class="section level1">
+<h1>Step 20</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code></code></pre>
+</div>
+<div id="step-21" class="section level1">
+<h1>Step 21</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code></code></pre>
+</div>
+<div id="step-22" class="section level1">
+<h1>Step 22</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code></code></pre>
+</div>
+<div id="step-23" class="section level1">
+<h1>Step 23</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code></code></pre>
+</div>
+<div id="step-24" class="section level1">
+<h1>Step 24</h1>
+<p><strong><em>SQL Developer</em></strong></p>
+<pre><code></code></pre>
 </div>
 
 
