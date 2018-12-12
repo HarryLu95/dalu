@@ -521,7 +521,50 @@ SET HEADING ON;</code></pre>
 <div id="step-18" class="section level1">
 <h1>Step 18</h1>
 <p><strong><em>SQL Developer</em></strong></p>
-<pre><code></code></pre>
+<pre><code>/* Create the view Fed_Contribution_V. */
+CREATE VIEW Fed_Contribution_V AS
+    SELECT FedRev_T.IDCensus,
+            to_char(FedRev_T.StCode,'999999') AS StCode,
+            Sd_Name,
+            to_char(Fed_Rev/TotalExp,'9999.9999') AS Fed_pcnt
+    FROM FedRev_T, School_Finance_2010_T
+    WHERE FedRev_T.IDCensus = School_Finance_2010_T.IDCensus AND
+            TotalExp &gt; 0;
+/* Display rows which have the ratio greater than 1. */
+SELECT *
+    FROM Fed_Contribution_V
+    WHERE Fed_pcnt &gt; 1
+    ORDER BY Fed_pcnt DESC;
+
+/* Create the view St_Contribution_V. */
+CREATE VIEW St_Contribution_V AS
+    SELECT StRev_T.IDCensus,
+            to_char(StRev_T.StCode,'999999') AS StCode,
+            Sd_Name,
+            to_char(St_Rev/TotalExp,'9999.9999') AS St_pcnt
+    FROM StRev_T, School_Finance_2010_T
+    WHERE StRev_T.IDCensus = School_Finance_2010_T.IDCensus AND
+            TotalExp &gt; 0;
+/* Display rows which have the ratio greater than 1. */
+SELECT *
+    FROM St_Contribution_V
+    WHERE St_pcnt &gt; 1
+    ORDER BY St_pcnt DESC;
+
+/* Create the view Loc_Contribution_V. */
+CREATE VIEW Loc_Contribution_V AS
+    SELECT LocRev_T.IDCensus,
+            to_char(LocRev_T.StCode,'999999') AS StCode,
+            Sd_Name,
+            to_char(Loc_Rev/TotalExp,'9999.9999') AS Loc_pcnt
+    FROM LocRev_T, School_Finance_2010_T
+    WHERE LocRev_T.IDCensus = School_Finance_2010_T.IDCensus AND
+            TotalExp &gt; 0;
+/* Display rows which have the ratio greater than 1. */
+SELECT *
+    FROM Loc_Contribution_V
+    WHERE Loc_pcnt &gt; 1
+    ORDER BY Loc_pcnt DESC;</code></pre>
 </div>
 <div id="step-19" class="section level1">
 <h1>Step 19</h1>
