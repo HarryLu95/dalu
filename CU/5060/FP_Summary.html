@@ -362,18 +362,19 @@ CREATE VIEW Total_Rev_V AS
 <h1>Step 15</h1>
 <p><strong><em>SQL Developer</em></strong></p>
 <pre><code>/* Display the Total_Revenue for each school district.*/
-SELECT to_char(Total_Rev_V.StCode,'999999999') AS StCode,
-        StName,
-        Total_Rev_V.IDCensus,
-        to_char(TFedRev + TStRev + TLocRev,'99999999999.9') AS Total_Revenue,
-        Sd_Name
-    FROM Total_Rev_V, School_T, State_T
-    WHERE Total_Rev_V.IDCensus = School_T.IDCensus AND
-            Total_Rev_V.StCode = School_T.StCode AND
-            School_T.StCode = State_T.StCode AND
-            State_T.StCode = Total_Rev_V.StCode AND
-            ROWNUM &lt;= 100
-    ORDER BY Total_Revenue DESC;</code></pre>
+SELECT * FROM
+    (SELECT to_char(Total_Rev_V.StCode,'999999999') AS StCode,
+            StName,
+            Total_Rev_V.IDCensus,
+            to_char(TFedRev + TStRev + TLocRev,'99999999999.9') AS Total_Revenue,
+            Sd_Name
+        FROM Total_Rev_V, School_T, State_T
+        WHERE Total_Rev_V.IDCensus = School_T.IDCensus AND
+                Total_Rev_V.StCode = School_T.StCode AND
+                School_T.StCode = State_T.StCode AND
+                State_T.StCode = Total_Rev_V.StCode
+        ORDER BY Total_Revenue DESC)
+    WHERE ROWNUM &lt;= 100;</code></pre>
 </div>
 <div id="step-16" class="section level1">
 <h1>Step 16</h1>
