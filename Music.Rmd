@@ -45,6 +45,7 @@ Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/) provides all the downl
 - [維塔斯 - 星星](Music Sheets/維塔斯-星星.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/17086.htm)
 - [周傑倫 - 最長的電影](Music Sheets/周傑倫-最長的電影.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/4425.htm)
 - [周傑倫 - 最長的電影 (Piano & Other)](Music Sheets/周傑倫-最長的電影(鋼琴+其它).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/6253.htm)
+- [周傑倫 - 菊花臺](Music Sheets/周傑倫-菊花臺.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/35377.htm)
 - [歌に形はないけれど(Piano Re-arrange Ver.)](Music Sheets/歌に形はないけれど(Piano Re-arrange Ver.).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/31925.htm)
 - [歌に形はないけれど(Orchestral)](Music Sheets/歌に形はないけれど(Orchestral).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/35022.htm)
 - [歌に形はないけれど(doriko)](Music Sheets/歌に形はないけれど(doriko).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/14208.htm)
@@ -62,6 +63,14 @@ Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/) provides all the downl
 - [王菲 - 紅豆](Music Sheets/王菲-紅豆.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/1037.htm)
 - [F4 - 流星雨](Music Sheets/F4-流星雨.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/31727.htm)
 - [寂靜之聲](Music Sheets/寂靜之聲.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/2502.htm)
+- [玉置浩二 - 冰點](Music Sheets/玉置浩二-冰點.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/35667.htm)
+- [但願人長久](Music Sheets/但願人長久.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/16950.htm)
+- [名偵探柯南 - 只要有你](Music Sheets/名偵探柯南-只要有你.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/3749.htm)
+- [恩雅 - Amarantine](Music Sheets/恩雅-Amarantine.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/12668.htm)
+- [美麗的神話 (A♭)](Music Sheets/美麗的神話(降A).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/10406.htm)
+- [美麗的神話 (A)](Music Sheets/美麗的神話(A).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/639.htm)
+
+
 
 #Playlist{.tabset}
 
