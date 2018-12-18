@@ -74,8 +74,10 @@ Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/) provides all the downl
 - [巴達爾切夫斯卡 - 少女的祈禱](Music Sheets/巴達爾切夫斯卡-少女的祈禱.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/11819.htm)
 - [那些年](Music Sheets/那些年.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/16375.htm)
 - [月半小夜曲](Music Sheets/月半小夜曲.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/20803.htm)
-
-
+- [五月天 - 突然好想你 (易)](Music Sheets/五月天-突然好想你1.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/26791.htm)
+- [五月天 - 突然好想你 (中)](Music Sheets/五月天-突然好想你2.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/20482.htm)
+- [五月天 - 突然好想你 (難)](Music Sheets/五月天-突然好想你3.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/31404.htm)
+- [五月天 - 突然好想你 (Piano + Other)](Music Sheets/五月天-突然好想你(鋼琴+其它).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/10809.htm)
 
 
 #Playlist{.tabset}
