@@ -19,6 +19,32 @@ ul {font-size: 16px; color: black;}
 
 ---
 
+#CS 5786 - Machine Learning for Data Science
+##Lecture Slides
+1. 
+2. 
+3. 
+
+##Homeworks
+1. 
+2. 
+3. 
+4. 
+
+##Exams
+- [Placement Exam](CU/5786/PlacementExam.pdf)
+    - Due: Jan/31/2019
+- Midterm
+    - Mar/28/2019 at STL185
+- Final
+    - May/14/2019 at 7:00PM
+
+---
+
+---
+
+---
+
 #STSCI 5010 - Applied Statistical Computation with SAS
 ##Syllabus
 - Fall 2018 Syllabus
@@ -397,21 +423,3 @@ ul {font-size: 16px; color: black;}
 1. 
 2. 
 3. 
-
----
-
-#Tutor in Linear Algebra
-##Textbook
-- [Linear Algebra and Its Applications](CU/Tutor/Linear_Algebra_and_Its_Applications_5th.pdf)
-
-##Past Exams
-1. Midterm 1
-    - [Fall 2013](CU/Tutor/Midterm1-Fall2013.pdf)
-    - [Fall 2014](CU/Tutor/Midterm1-Fall2014.pdf)
-    - [Fall 2015](CU/Tutor/Midterm1-Fall2015.pdf)
-    - [Spring 2014](CU/Tutor/Midterm1-Spring2014.pdf)
-    - [Spring 2015](CU/Tutor/Midterm1-Spring2015.pdf)
-    - [Spring 2017](CU/Tutor/Midterm1-Spring2017.pdf)
-    - [Spring 2018](CU/Tutor/Midterm1-Spring2018.pdf)
-2. Midterm 2
-3. Final
