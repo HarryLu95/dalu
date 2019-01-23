@@ -34,10 +34,37 @@ ul {font-size: 16px; color: black;}
 ##Exams
 - [Placement Exam](CU/5786/PlacementExam.pdf)
     - Due: Jan/31/2019
+    - [Summary](CU/5786/Placement_Exam.html)
 - Midterm
     - Mar/28/2019 at STL185
 - Final
     - May/14/2019 at 7:00PM
+
+---
+
+#STSCI 5065 - Big Data Management and Analysis
+##Lecture Slides
+1. 
+2. 
+3. 
+
+##Homeworks
+1. 
+2. 
+3. 
+
+---
+
+#STSCI 4060 - Python Programming and its Applications in Statistics
+##Lecture Slides
+1. 
+2. 
+3. 
+
+##Homeworks
+1. 
+2. 
+3. 
 
 ---
 
