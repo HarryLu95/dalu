@@ -328,6 +328,33 @@ H(x)
 <h1>III. Optimization</h1>
 <div id="section-5" class="section level2">
 <h2>1</h2>
+<p><span class="math display">\[\mathbf{x}=
+\left(\begin{array}{c}
+x_1\\\vdots\\x_d
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[f(x)=\sum_{i=1}^{d}s_i \cdot \log(x_i)\]</span></p>
+<p><span class="math display">\[g(x)=\left(\sum_{i=1}^{d}x_i\right)-1\]</span></p>
+<p><span class="math display">\[\begin{align}
+\mathcal{L}(x_1,\cdots,x_d,\lambda)
+&amp;=
+f(x)+\lambda \cdot g(x)\\
+&amp;=
+\left(\sum_{i=1}^{d}s_i \cdot \log(x_i)\right)+\lambda\left(\left(\sum_{i=1}^{d}x_i\right)-1\right)
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align}
+\nabla_{x_1,\cdots,x_d,\lambda}\mathcal{L}(x_1,\cdots,x_d,\lambda)
+&amp;=
+\left(\frac{\partial\mathcal{L}}{\partial{x_1}},\cdots,\frac{\partial\mathcal{L}}{\partial{x_d}},\frac{\partial\mathcal{L}}{\partial\lambda}\right)\\
+&amp;=
+\left(\frac{s_1}{x_1}+\lambda,\cdots,\frac{s_d}{x_d}+\lambda,\left(\sum_{i=1}^{d}x_i\right)-1\right)\\
+&amp;=
+0
+\end{align}\]</span></p>
+<p><span class="math display">\[\frac{s_i}{x_i}+\lambda=0 \quad\Rightarrow\quad x_i=-\frac{s_i}{\lambda}\]</span></p>
+<p>The condition of <span class="math inline">\(x_i\)</span> is <span class="math inline">\(\sum_{i=1}^{d}x_i=1\)</span>. Then</p>
+<p><span class="math display">\[\lambda=-\sum_{i=1}^{d}s_i\]</span></p>
+<p>and</p>
+<p><span class="math display">\[x_i=\frac{s_i}{\sum_{i=1}^{d}s_i}\]</span></p>
 </div>
 <div id="section-6" class="section level2">
 <h2>2</h2>
