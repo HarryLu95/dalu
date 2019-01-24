@@ -21,9 +21,9 @@ ul {font-size: 16px; color: black;}
 
 #CS 5786 - Machine Learning for Data Science
 ##Lecture Slides
-1. [Course introduction, Logistics, Dimensionality reduction](CU/5786/Lec01.pdf)
-2. [Dimensionality Reduction, Principal Component Analysis](CU/5786/Lec02.pdf)
-3. 
+- Lecture 1: [Course introduction, Logistics, Dimensionality reduction](CU/5786/Lec01.pdf)
+- Lecture 2: [Dimensionality Reduction, Principal Component Analysis](CU/5786/Lec02.pdf)
+- Lecture Note: 2 & 3 [Principal Component Analysis](CU/5786/LecNote2-3.pdf)
 
 ##Homeworks
 1. 
