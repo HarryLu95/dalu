@@ -21,8 +21,8 @@ ul {font-size: 16px; color: black;}
 
 #CS 5786 - Machine Learning for Data Science
 ##Lecture Slides
-1. 
-2. 
+1. [Course introduction, Logistics, Dimensionality reduction](CU/5786/Lec01.pdf)
+2. [Dimensionality Reduction, Principal Component Analysis](CU/5786/Lec02.pdf)
 3. 
 
 ##Homeworks
@@ -65,6 +65,21 @@ ul {font-size: 16px; color: black;}
 1. 
 2. 
 3. 
+
+---
+
+#STSCI 4630 - Operations Research Tools for Financial Engineering
+##Lecture Slides
+1. 
+2. 
+3. 
+
+##Homeworks
+1. 
+2. 
+3. 
+
+
 
 ---
 
