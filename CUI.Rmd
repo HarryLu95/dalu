@@ -23,6 +23,7 @@ ul {font-size: 16px; color: black;}
 ##Lecture Slides
 - Lecture 1: [Course introduction, Logistics, Dimensionality reduction](CU/5786/Lec01.pdf)
 - Lecture 2: [Dimensionality Reduction, Principal Component Analysis](CU/5786/Lec02.pdf)
+    - [PCA demo](CU/5786/PCA_demo.html)
 - Lecture Note: 2 & 3 [Principal Component Analysis](CU/5786/LecNote2-3.pdf)
 
 ##Homeworks
