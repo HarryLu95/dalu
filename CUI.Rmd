@@ -69,14 +69,17 @@ ul {font-size: 16px; color: black;}
 
 ---
 
-#STSCI 4630 - Operations Research Tools for Financial Engineering
+#STSCI/ORIE 4630 - Operations Research Tools for Financial Engineering
 ##Lecture Slides
-1. 
-2. 
-3. 
+- [Jan/24](CU/4630/Lec02.html)
+-  
+-  
 
 ##Homeworks
-1. 
+1. [Homework 1](CU/4630/HW1.pdf)
+    - data: [returns](CU/4630/returns.csv) (.csv)
+    - Due: Jan/31/2019, Thursday
+    - [HW1](CU/4630/HW1.html)
 2. 
 3. 
 
