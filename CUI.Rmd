@@ -58,7 +58,7 @@ ul {font-size: 16px; color: black;}
 
 #STSCI 4060 - Python Programming and its Applications in Statistics
 ##Lecture Slides
-1. 
+1. [Lecture 1](CU/4060/Lec01.pdf)
 2. 
 3. 
 
@@ -66,6 +66,16 @@ ul {font-size: 16px; color: black;}
 1. 
 2. 
 3. 
+
+##Data Files
+- [points_scatplot1](CU/4060/points_scatplot1.txt) (.txt)
+- [ring](CU/4060/ring.txt) (.txt)
+- [bee_proteins](CU/4060/bee_proteins.txt) (.txt)
+
+##Books and References
+
+
+##Software
 
 ---
 
