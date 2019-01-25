@@ -45,7 +45,7 @@ ul {font-size: 16px; color: black;}
 
 #STSCI 5065 - Big Data Management and Analysis
 ##Lecture Slides
-1. 
+1. [Concepts of Big Data and Hadoop](CU/5065/Lec01.pdf)
 2. 
 3. 
 
