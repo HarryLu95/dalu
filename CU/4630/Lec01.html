@@ -146,14 +146,94 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p>Consider discrete time periods indexed by <span class="math inline">\(t, t=1,2,3,\cdots\)</span></p>
 <p>Let <span class="math inline">\(P_t\)</span> be the price of own asset at time <span class="math inline">\(t\)</span></p>
 <p>“Returns” measure revenue relative to the amount of the initial investment</p>
-<ul>
-<li>one-period net return at time <span class="math inline">\(t\)</span></li>
-</ul>
+<hr />
+<p><strong>1. one-period net return at time <span class="math inline">\(t\)</span></strong></p>
 <p><span class="math display">\[R_t=\frac{P_t-P_{t-1}}{P_{t-1}}=\frac{P_t}{P_{t-1}}-1\]</span></p>
 <p><span class="math inline">\(P_t-P_{t-1}\)</span> is the one-step revenue at time <span class="math inline">\(t\)</span>, which can be either positive or negative</p>
 <p>note: <span class="math inline">\(P_t-P_{t-1}=P_{t-1}\times R_t\)</span></p>
 <p>since <span class="math inline">\(P_t\geq0\)</span>, we have <span class="math inline">\(R_t\geq-1\)</span></p>
-<p>e.g. if</p>
+<p>e.g. if <span class="math inline">\(P_{t-1}=\$10,000\)</span> and <span class="math inline">\(R_t=6\%\)</span>, then the <span class="math inline">\(P_t-P_{t-1}=\$10,000\times 6\%=\$600\)</span>, then <span class="math inline">\(P_t=\$10,600\)</span></p>
+<hr />
+<p><strong>2. one-period gross return at time <span class="math inline">\(t\)</span></strong></p>
+<p><span class="math display">\[\frac{P_t}{P_{t-1}}=1+R_t\]</span></p>
+<p>note: <span class="math inline">\(P_t=P_{t-1}(1+R_t)\)</span></p>
+<p>since <span class="math inline">\(R_t\geq-1\)</span>, we have <span class="math inline">\(1+R_t\geq0\)</span></p>
+<p><strong>Extension: to <span class="math inline">\(k\)</span> periods</strong></p>
+<p>the <span class="math inline">\(k\)</span> periods gross return is the product of one-period gross return</p>
+<p><span class="math display">\[\begin{align}
+\underbrace{\frac{P_t}{P_{t-k}}}_{1+R_t(k)}
+&amp;=
+\underbrace{\left(\frac{P_t}{P_{t-1}}\right)}_{1+R_t}\cdot\underbrace{\left(\frac{P_{t-1}}{P_{t-2}}\right)}_{1+R_{t-1}}\cdot\underbrace{\left(\frac{P_{t-2}}{P_{t-3}}\right)}_{1+R_{t-2}}\cdots\underbrace{\left(\frac{P_{t-k+2}}{P_{t-k+1}}\right)}_{1+R_{t-k+2}}\cdot\underbrace{\left(\frac{P_{t-k+1}}{P_{t-k}}\right)}_{1+R_{t-k+1}}\\
+&amp;=
+(1+R_{t-k+1})\cdot(1+R_{t-k+2})\cdots(1+R_{t-1})\cdot(1+R_t)
+\end{align}\]</span></p>
+<p>Thus, the <span class="math inline">\(k\)</span> period net return is</p>
+<p><span class="math display">\[\begin{align}
+R_t(k)
+&amp;=
+\frac{P_t-P_{t-k}}{P_{t-k}}\\
+&amp;=
+\frac{P_t}{P_{t-k}}-1\\
+&amp;=
+(1+R_{t-k+1})\cdot(1+R_{t-k+2})\cdots(1+R_{t-1})\cdot(1+R_t)-1
+\end{align}\]</span></p>
+<p>e.g. <span class="math inline">\(R_t=0.08\)</span> and <span class="math inline">\(R_{t-1}=-0.03\)</span>, an initial investment <span class="math inline">\(P_{t-2}=\$1,000\)</span>, then <span class="math inline">\(R_t(2)=1.08\times0.97-1=0.0476\)</span>, and gross revenue <span class="math inline">\(P_t-P_{t-2}=\$1,000\times0.0476=\$47.60\)</span></p>
+<hr />
+<p><strong>3. the one-period log gross return is</strong></p>
+<p><span class="math display">\[r_t=\ln(1+R_t)=\ln\left(\frac{P_t}{P_{t-1}}\right)=p_t=p_{t-1}\]</span></p>
+<p>where <span class="math inline">\(p_t=\ln(P_t)\)</span> (log price)</p>
+<p>when <span class="math inline">\(R_t\)</span> is close to 0, we have <span class="math inline">\(r_t\approx R_t\)</span></p>
+<p>note: <span class="math inline">\(\frac{1}{1-x}=1+x+x^2+\cdots,|x|&lt;1\)</span>, then</p>
+<ul>
+<li><span class="math inline">\(-\ln(1-x)=x+\frac{1}{2}x^2+\frac{1}{3}x^3+\cdots\approx x\)</span> for <span class="math inline">\(x\)</span> near 0</li>
+<li><span class="math inline">\(\ln(1-x)=-x-\frac{1}{2}x^2-\frac{1}{3}x^3-\cdots\)</span></li>
+<li><span class="math inline">\(\ln(1+x)=x-\frac{1}{2}x^2+\frac{1}{3}x^3-\cdots\approx x\)</span></li>
+</ul>
+<p>e.g. if <span class="math inline">\(R_t=6\%\)</span>, then <span class="math inline">\(r_t=\ln(1.06)=0.058269\)</span></p>
+<p>e.g. if <span class="math inline">\(R_t=-4\%\)</span>, then <span class="math inline">\(r_t=\ln(0.96)=-0.040822\)</span></p>
+<p><strong>Extension: the <span class="math inline">\(k\)</span> period log gorss return</strong></p>
+<p><span class="math display">\[r_t(k)=\ln(1+R_t(k))=p_t-p_{t-k}\]</span></p>
+<p>Thus <span class="math inline">\(r_t(k)=\ln((1+R_{t-k+1})\cdot(1+R_{t-k+2})\cdots(1+R_t))=r_{t-k+1}+r_{t-k+2}+\cdots+r_t\)</span></p>
+<p>If <span class="math inline">\(R_{t-k+1},R_{t-k+2},\cdots,R_t\)</span> are all close to 0, then</p>
+<p><span class="math display">\[\begin{align}
+r_t(k)
+&amp;=
+\ln(1+R_{t-k+1})+\ln(1+R_{t-k+2})+\cdots+\ln(1+R_t)\\
+&amp;=
+R_{t-k+1}+R_{t-k+2}+\cdots+R_t
+\end{align}\]</span></p>
+<p>e.g. <span class="math inline">\(R_t=0.05, R_{t-1}=0.04\)</span>, then <span class="math inline">\(r_t(2)=\ln(1.04\times1.05)=\ln(1.092)=0.08801\approx0.04+0.05\)</span></p>
+<hr />
+<p><strong>4. stochastic models for returns</strong></p>
+<p>The log-normal model assume that <span class="math inline">\(r_1,r_2,\cdots\)</span> are <span class="math inline">\(i.i.d.\)</span> where <span class="math inline">\(r_i \sim N(\mu,\sigma^2)\)</span></p>
+<p><strong>ASIDE on the log-normal distribution</strong></p>
+<p>Suppose that <span class="math inline">\(X \sim N(\mu,\sigma^2)\)</span>, then <span class="math inline">\(Y=e^x\)</span> has the log-normal distribution:</p>
+<p>we write <span class="math inline">\(Y \sim \text{log normal }(\mu,\sigma^2)\)</span></p>
+<p><span class="math display">\[\begin{align}
+\text{E}(Y)&amp;=e^{\mu+\frac{\sigma^2}{2}}\\
+\text{Var}(Y)&amp;=(e^{\sigma^2}-1)e^{2\mu+\sigma^2}
+\end{align}\]</span></p>
+<p>Because <span class="math inline">\(\text{MGF}_x(t)=\text{E}(e^{tx})=e^{\mu t+\frac{\sigma^2 t^2}{2}}=\text{E}(Y^t)\)</span></p>
+<p><span class="math display">\[\begin{align}
+\text{E}(Y)&amp;=\text{MGF}_x(t=1)\\
+\text{Var}(Y)&amp;=\text{MGF}_x(t=2)-[\text{MGF}_x(t=1)]^2
+\end{align}\]</span></p>
+<p>under the log-normal model, the gross return <span class="math inline">\(\frac{P_t}{P_{t-1}}=1+R_t=e^{rt}\)</span> has the log-normal distribution</p>
+<p>i.e. <span class="math inline">\(1+R_t \sim \text{log normal }(\mu,\sigma^2)\)</span></p>
+<p>e.g. Suppose the log gross returns have <span class="math inline">\(r_t \sim N(0.02, 0.2^2)\)</span>, then <span class="math inline">\(1+R_t \sim \text{log normal }(0.02,0.2^2)\)</span>. So, <span class="math inline">\(\text{E}(1+R_t)=e^{0.02+\frac{0.2^2}{2}}=e^{0.04}=1.04081=\text{E}(R_t)+1\)</span>, and <span class="math inline">\(\text{Var}(1+R_t)=(e^{0.2^2}-1)\cdot e^{0.02\times2+0.2^2}=0.044210=\text{Var}(R_t)\)</span></p>
+<p><span class="math display">\[\begin{align}
+P(1+R_t\leq0.8)
+&amp;=
+P(r_t\leq\ln(0.8))\\
+&amp;=
+P\left(\underbrace{\frac{r_t-0.02}{0.2}}_{Z,\text{standard normal}}\leq\frac{\ln(0.8)-0.02}{0.2}\right)\\
+&amp;=
+\Phi\left(\frac{\ln(0.8)-0.02}{0.2}\right)\\
+&amp;=
+\Phi(-1.2157)\\
+&amp;=
+11.20\%
+\end{align}\]</span></p>
 <hr />
 <p>Thanks to <em>Wanxin Lyu</em> for help with the notes.</p>
 
