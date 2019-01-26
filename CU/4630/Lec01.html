@@ -155,7 +155,7 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p>e.g. if <span class="math inline">\(P_{t-1}=\$10,000\)</span> and <span class="math inline">\(R_t=6\%\)</span>, then the <span class="math inline">\(P_t-P_{t-1}=\$10,000\times 6\%=\$600\)</span>, then <span class="math inline">\(P_t=\$10,600\)</span></p>
 <hr />
 <p><strong>2. one-period gross return at time <span class="math inline">\(t\)</span></strong></p>
-<p><span class="math display">\[\frac{P_t}{P_{t-1}}=1+R_t\]</span></p>
+<p><span class="math display">\[\frac{P_t}{P_{t-1}}=\underbrace{1+R_t}_{\text{gross return}}\]</span></p>
 <p>note: <span class="math inline">\(P_t=P_{t-1}(1+R_t)\)</span></p>
 <p>since <span class="math inline">\(R_t\geq-1\)</span>, we have <span class="math inline">\(1+R_t\geq0\)</span></p>
 <p><strong>Extension: to <span class="math inline">\(k\)</span> periods</strong></p>
@@ -180,7 +180,7 @@ R_t(k)
 <p>e.g. <span class="math inline">\(R_t=0.08\)</span> and <span class="math inline">\(R_{t-1}=-0.03\)</span>, an initial investment <span class="math inline">\(P_{t-2}=\$1,000\)</span>, then <span class="math inline">\(R_t(2)=1.08\times0.97-1=0.0476\)</span>, and gross revenue <span class="math inline">\(P_t-P_{t-2}=\$1,000\times0.0476=\$47.60\)</span></p>
 <hr />
 <p><strong>3. the one-period log gross return is</strong></p>
-<p><span class="math display">\[r_t=\ln(1+R_t)=\ln\left(\frac{P_t}{P_{t-1}}\right)=p_t=p_{t-1}\]</span></p>
+<p><span class="math display">\[r_t=\ln(1+R_t)=\ln\left(\frac{P_t}{P_{t-1}}\right)=p_t-p_{t-1}\]</span></p>
 <p>where <span class="math inline">\(p_t=\ln(P_t)\)</span> (log price)</p>
 <p>when <span class="math inline">\(R_t\)</span> is close to 0, we have <span class="math inline">\(r_t\approx R_t\)</span></p>
 <p>note: <span class="math inline">\(\frac{1}{1-x}=1+x+x^2+\cdots,|x|&lt;1\)</span>, then</p>
@@ -191,7 +191,7 @@ R_t(k)
 </ul>
 <p>e.g. if <span class="math inline">\(R_t=6\%\)</span>, then <span class="math inline">\(r_t=\ln(1.06)=0.058269\)</span></p>
 <p>e.g. if <span class="math inline">\(R_t=-4\%\)</span>, then <span class="math inline">\(r_t=\ln(0.96)=-0.040822\)</span></p>
-<p><strong>Extension: the <span class="math inline">\(k\)</span> period log gorss return</strong></p>
+<p><strong>Extension: the <span class="math inline">\(k\)</span> period log gross return</strong></p>
 <p><span class="math display">\[r_t(k)=\ln(1+R_t(k))=p_t-p_{t-k}\]</span></p>
 <p>Thus <span class="math inline">\(r_t(k)=\ln((1+R_{t-k+1})\cdot(1+R_{t-k+2})\cdots(1+R_t))=r_{t-k+1}+r_{t-k+2}+\cdots+r_t\)</span></p>
 <p>If <span class="math inline">\(R_{t-k+1},R_{t-k+2},\cdots,R_t\)</span> are all close to 0, then</p>
