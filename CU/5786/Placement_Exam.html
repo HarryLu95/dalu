@@ -360,7 +360,19 @@ f(x)+\lambda \cdot g(x)\\
 <div id="section-6" class="section level2">
 <h2>2</h2>
 <p>Condition: <span class="math inline">\(\sum_{i=1}^{d}x_i^2=1\)</span>.</p>
+<p><span class="math display">\[\mathbf{x}=\left(\begin{array}{c}x_1\\\vdots\\x_n\end{array}\right)\quad\text{and}\quad\mathbf{x}^T=\left(\begin{array}{c}x_1&amp;\cdots&amp;x_n\end{array}\right)\]</span></p>
 <p>We want to maximize <span class="math inline">\(\mathbf{x}^TM\mathbf{x}\)</span>.</p>
+<p><strong>Case 1:</strong></p>
+<p><span class="math inline">\(M\)</span> is a symmetric matrix, then <span class="math inline">\(M\)</span> can be decomposited to <span class="math inline">\(ADA^T\)</span> where</p>
+<p><span class="math display">\[A=\left(\begin{array}{c}\vdots&amp;&amp;\vdots\\\mathbf{a}_1&amp;\cdots&amp;\mathbf{a}_n\\\vdots&amp;&amp;\vdots\end{array}\right)\quad\text{and}\quad D=\left(\begin{array}{c}d_1&amp;0&amp;\cdots&amp;0\\0&amp;\ddots&amp;\ddots&amp;\vdots\\\vdots&amp;\ddots&amp;\ddots&amp;0\\0&amp;\cdots&amp;0&amp;d_n\end{array}\right)\]</span></p>
+<p>Then</p>
+<p><span class="math display">\[\begin{align}
+\mathbf{x}^TM\mathbf{x}
+&amp;=
+\mathbf{x}^TADA^T\mathbf{x}\\
+&amp;=
+\sum_{i=1}^{n}d_i(\mathbf{a}_i^T\mathbf{x})^2
+\end{align}\]</span></p>
 </div>
 </div>
 
