@@ -159,9 +159,8 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 </ul>
 <p><strong>Redundancy</strong> in Hadoop</p>
 <ul>
-<li></li>
-<li></li>
-<li></li>
+<li>Data redundancy – Programming model redundancy</li>
+<li>Failures are resolved automatically</li>
 </ul>
 <p><strong>Hadoop (1.0) Architecture</strong></p>
 <pre><code>|     |       Pig      |       Hive       |
@@ -184,7 +183,30 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p><strong>Hadoop Cluster</strong></p>
 <pre><code>HDFS Client --- NameNode (--- Secondary NameNode)
                  | | |
-            DataNodes (Cluster)</code></pre>
+            DataNodes (Cluster)
+                   |
+                   | Data Serving
+                   |
+        Nodes write to local disk
+                   </code></pre>
+<p><strong>Parallel Processing</strong> in Hadoop</p>
+<p><strong>Important Features</strong> of Hadoop</p>
+<ul>
+<li>Redundant, fault-tolerant data storage</li>
+<li>Parallel computation framework</li>
+<li>Job coordination</li>
+<li>It frees the developers from having to worry about the parallel mechanism. The Hadoop system deals with these automatically</li>
+<li>One operator can take care of a cluster of thousands of nodes</li>
+</ul>
+<p><strong>Deficiency</strong> using Hadoop</p>
+<ul>
+<li>When processing small data files</li>
+<li>When work cannot be parallelized</li>
+<li>Low latency data access</li>
+<li>Intensive calculations with little data</li>
+<li>Real-time warehousing, or blazing transactional speeds</li>
+<li>Online transaction processing where data are randomly accessed on structured data, often a relational database</li>
+</ul>
 
 
 
