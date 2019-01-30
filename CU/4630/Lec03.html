@@ -170,8 +170,8 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <li><span class="math inline">\(X_{(2)}=\mu+\sigma\cdot\Phi^{-1}\left(\frac{2}{3+1}\right)=\mu+\sigma\cdot\Phi^{-1}(0.50)=\mu\)</span></li>
 <li><span class="math inline">\(X_{(3)}=\mu+\sigma\cdot\Phi^{-1}\left(\frac{3}{3+1}\right)=\mu+\sigma\cdot\Phi^{-1}(0.75)\)</span></li>
 </ul>
-<p><font color="red">插圖</font></p>
-<p><font color="red">補筆記</font></p>
+<p><font color="red"><strong>插圖</strong></font></p>
+<p><font color="red"><strong>補筆記</strong></font></p>
 <hr />
 <p><strong>Time Series Model</strong></p>
 <p>A time series is a collection of observed random values indexed by time</p>
@@ -181,9 +181,11 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p>e.g. <span class="math inline">\(X_0,X_1,X_2,\cdots\)</span></p>
 <p>e.g. <span class="math inline">\(X_{-2},X_{-1},X_0,X_1,X_2,\cdots\)</span></p>
 <p>Assume the time series is “systematic” to have a small collection of parameters to be estimated</p>
+<hr />
 <p><strong>(I) Strictly Stationary</strong></p>
 <p>Assume <span class="math inline">\(X_1,\cdots,X_n\)</span> has the same distribution as <span class="math inline">\(X_{1+k},\cdots,X_{n+k}\)</span> for all <span class="math inline">\(k\)</span></p>
 <p>e.g. <span class="math inline">\((X_2,X_7,X_{20})\)</span> has the same distribution as <span class="math inline">\((X_{45},X_{50},X_{63})\)</span>. Also, <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> and <span class="math inline">\(X_3\)</span>, etc. all have the same distribution</p>
+<hr />
 <p><strong>(II) Weakly Stationary</strong></p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\text{E}(X_t)=\mu\)</span> for all <span class="math inline">\(t\)</span></li>
@@ -204,8 +206,26 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <hr />
 <p><strong>Time Series Plot</strong> (v.s. Time)</p>
 <p>Weakly Stationary</p>
+<p><font color="red"><strong>插圖</strong></font></p>
 <p>Increasing Mean</p>
+<p><font color="red"><strong>插圖</strong></font></p>
 <p>Increasing Variance</p>
+<p><font color="red"><strong>插圖</strong></font></p>
+<p>strictly stationary –&gt; weakly stationary</p>
+<p>Suppose <span class="math inline">\(X_1,X_2,\cdots\)</span> independent. <span class="math inline">\(X_i\sim N(0,1)\)</span>, where <span class="math inline">\(i\)</span> is odder number. <span class="math inline">\(X_j\sim \sqrt{\frac{\text{df}-2}{\text{df}}}\cdot t_{(\text{df})}\)</span>, where <span class="math inline">\(j\)</span> is even number (<span class="math inline">\(\text{df}&gt;2\)</span>).</p>
+<hr />
+<p><strong>(III) Weak White Noise</strong></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\text{E}(X_t)=\mu\)</span> for all <span class="math inline">\(t\)</span></li>
+<li><span class="math inline">\(\text{Var}(X_t)=\sigma^2\)</span> for all <span class="math inline">\(t\)</span></li>
+<li><span class="math inline">\(\text{Cov}(X_t,X_u)=0\)</span> for <span class="math inline">\(t\neq u\)</span></li>
+</ol>
+<p>So <span class="math inline">\(\gamma(0)=\sigma^2\)</span>, <span class="math inline">\(\gamma(h)=0,h\neq0\)</span></p>
+<p>and <span class="math inline">\(\rho(0)=1\)</span>, <span class="math inline">\(\rho(h)=0, h\neq0\)</span></p>
+<p>weak white noise –&gt; weakly stationary</p>
+<hr />
+<p><strong>(IV)</strong> <span class="math inline">\(i.i.d.\)</span> White Noise</p>
+<p><font color="red"><strong>補筆記</strong></font></p>
 
 
 
