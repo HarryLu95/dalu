@@ -373,6 +373,21 @@ f(x)+\lambda \cdot g(x)\\
 &amp;=
 \sum_{i=1}^{n}d_i(\mathbf{a}_i^T\mathbf{x})^2
 \end{align}\]</span></p>
+<p>Also</p>
+<p><span class="math display">\[M\mathbf{x}_i=d_i\mathbf{x}_i\]</span></p>
+<p>So</p>
+<p><span class="math display">\[\begin{align}
+\mathbf{x}_i^TM\mathbf{x}_i
+&amp;=
+\mathbf{x}_i^Td_i\mathbf{x}_i\\
+&amp;=
+d_i\mathbf{x}_i^T\mathbf{x}_i\\
+&amp;=
+d_i||\mathbf{x}_i||_2^2\\
+&amp;=
+d_i
+\end{align}\]</span></p>
+<p>In order to maximize the value of <span class="math inline">\(\mathbf{x}^TM\mathbf{x}\)</span>, we just need to maximize the eigenvalue <span class="math inline">\(d\)</span>. The maximum value would be the greatest <span class="math inline">\(d\)</span>, which is <span class="math inline">\(d_{(1)}\)</span>.</p>
 </div>
 </div>
 
