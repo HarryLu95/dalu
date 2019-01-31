@@ -146,15 +146,52 @@ p {font-size: 18px;}
 <p><strong>Question 1:</strong> Show that,</p>
 <p><span class="math display">\[\text{dist}^2(\hat{\mathbf{x}_t},\mathbf{x}_t)=||\hat{\mathbf{x}_t}-\mathbf{x}_t||_2^2=\sum_{j=K+1}^{d}\mathbf{y}_t[j]^2\]</span></p>
 </blockquote>
-<p>balabala</p>
+<p><span class="math display">\[\begin{align}
+\text{dist}^2(\hat{\mathbf{x}_t},\mathbf{x}_t)
+&amp;=
+||\hat{\mathbf{x}_t}-\mathbf{x}_t||_2^2\\
+&amp;=
+\left|\left|\boldsymbol{\mu}+\sum_{j=1}^{K}\mathbf{y}_t[j]\mathbf{w}_j-\boldsymbol{\mu}-\sum_{j=1}^{d}\mathbf{y}_t[j]\mathbf{w}_j\right|\right|_2^2\\
+&amp;=
+\left|\left|\sum_{j=K+1}^{d}\mathbf{y}_t[j]\mathbf{w}_j\right|\right|_2^2\\
+&amp;=
+\sum_{j=K+1}^{d}\mathbf{y}_t[j]^2\underbrace{||\mathbf{w}_j||_2^2}_{1}+2\sum_{j=K+1}^{d}\sum_{i=j+1}^{d}\mathbf{y}_t[j]\mathbf{y}_t[i]\underbrace{\mathbf{w}_j^T\mathbf{w}_i}_{0}\\
+&amp;=
+\sum_{j=K+1}^{d}\mathbf{y}_t[j]^2
+\end{align}\]</span></p>
 <hr />
 <blockquote>
 <p><strong>Question 2:</strong> Say for any <span class="math inline">\(K\)</span>, we can show that:</p>
 <p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}||\hat{\mathbf{x}_t}-\mathbf{x}_t||_2^2=\sum_{j=K+1}^{d}\mathbf{w}_j^T\Sigma\mathbf{w}_j\]</span></p>
 <p>Then show that</p>
-<p><span class="math display">\[\sum_{j=1}^{d}\mathbf{w}_j^T\Sigma\mathbf{w}_j=\frac{1}{n}\sum_{t=1}^{n}||\mathbf{x}_t-\boldsymbol{\mu}||_2^2\]</span></p>
+<p><span class="math display">\[\sum_{j=1}^{K}\mathbf{w}_j^T\Sigma\mathbf{w}_j=\frac{1}{n}\sum_{t=1}^{n}||\mathbf{x}_t-\boldsymbol{\mu}||_2^2\]</span></p>
 </blockquote>
-<p>balabala</p>
+<p><span class="math display">\[\begin{align}
+\frac{1}{n}\sum_{t=1}^{n}||\hat{\mathbf{x}_t}-\mathbf{x}_t||_2^2
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\sum_{j=K+1}^{d}\mathbf{y}_t[j]^2\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\sum_{j=K+1}^{d}\left(\mathbf{w}_j^T(\mathbf{x}_t-\boldsymbol{\mu})\right)^2\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\sum_{j=K+1}^{d}\mathbf{w}_j^T(\mathbf{x}_t-\boldsymbol{\mu})(\mathbf{x}_t-\boldsymbol{\mu})^T\mathbf{w}_j\\
+&amp;=
+\sum_{j=K+1}^{d}\mathbf{w}_j^T\left(\frac{1}{n}\sum_{t=1}^{n}(\mathbf{x}_t-\boldsymbol{\mu})(\mathbf{x}_t-\boldsymbol{\mu})^T\right)\mathbf{w}_j\\
+&amp;=
+\sum_{j=K+1}^{d}\mathbf{w}_j^T\Sigma\mathbf{w}_j
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align}
+\frac{1}{n}\sum_{t=1}^{n}||\mathbf{x}_t-\boldsymbol{\mu}||_2^2
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\left|\left|\sum_{j=1}^{K}\mathbf{y}_t[j]\mathbf{w}_j\right|\right|_2^2\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\left|\left|\sum_{j=1}^{K}\mathbf{w}_j^T(\mathbf{x}_t-\boldsymbol{\mu})\mathbf{w}_j\right|\right|_2^2\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\sum_{j=1}^{K}\mathbf{w}_j^T(\mathbf{x}_t-\boldsymbol{\mu})\underbrace{\mathbf{w}_j\mathbf{w}_j^T}_{1}(\mathbf{x}_t-\boldsymbol{\mu})^T\mathbf{w}_j\\
+&amp;=
+\sum_{j=1}^{K}\mathbf{w}_j^T\left(\frac{1}{n}\sum_{t=1}^{n}(\mathbf{x}_t-\boldsymbol{\mu})(\mathbf{x}_t-\boldsymbol{\mu})^T\right)\mathbf{w}_j\\
+&amp;=
+\sum_{j=1}^{K}\mathbf{w}_j^T\Sigma\mathbf{w}_j
+\end{align}\]</span></p>
 
 
 
