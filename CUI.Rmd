@@ -91,7 +91,7 @@ ul {font-size: 16px; color: black;}
     - Th: [Jan/24](CU/4630/Lec02.html) 
 - Week 2
     - Tu: [Jan/29](CU/4630/Lec03.html)
-    - Th: [Jan/30](CU/4630/Lec04.html)
+    - Th: [Jan/31](CU/4630/Lec04.html)
 
 ##Homeworks
 1. [Homework 1](CU/4630/HW1.pdf)

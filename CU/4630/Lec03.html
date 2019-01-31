@@ -150,37 +150,39 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p>t distribution with degree of freedom <span class="math inline">\(\text{df}\)</span>: <span class="math inline">\(\text{sk}=0\)</span> and <span class="math inline">\(\text{kur}=3+\frac{6}{\text{df}-4}\)</span></p>
 <p><span class="math display">\[\hat{\text{sk}}=\frac{1}{n}\sum_{i=1}^{n}\left(\frac{x_i-\bar{x}}{s}\right)^3\]</span></p>
 <p><span class="math display">\[\hat{\text{kur}}=\frac{1}{n}\sum_{i=1}^{n}\left(\frac{x_i-\bar{x}}{s}\right)^4\]</span></p>
-<p>e.g. Dow Jones INDEX: <span class="math inline">\(\hat{\text{sk}}\approx0\)</span>, <span class="math inline">\(\hat{\text{kur}}\approx14\)</span>, so <span class="math inline">\(14=3+\frac{6}{\text{df}-4}\)</span>, guess <span class="math inline">\(\hat{\text{df}}\approx4.5\)</span></p>
+<p>e.g. Dow Jones INDEX: <span class="math inline">\(\hat{\text{sk}}\approx0\)</span>, <span class="math inline">\(\hat{\text{kur}}\approx14\)</span>, so <span class="math inline">\(14=3+\frac{6}{\text{df}-4}\)</span>, gives <span class="math inline">\(\hat{\text{df}}\approx4.5\)</span></p>
 <hr />
 <p>Formal Test for Normality</p>
 <p><span class="math display">\[\text{JB}=n\left[\frac{(\hat{\text{sk}})^2}{6}+\frac{(\hat{\text{kur}}-3)^2}{24}\right] \xrightarrow{d} \chi^2_2\]</span></p>
 <p>Shapiro-Wilk test: based on the correlation between <span class="math inline">\(X_{(i)}\)</span> and <span class="math inline">\(\text{E}(X_{(i)})\)</span></p>
 <p><span class="math inline">\(\text{E}(X_{(i)}) \leftrightarrow \Phi^{-1}\left(\frac{i}{n+1}\right),\Phi^{-1}\left(\frac{i-\frac{1}{2}}{n}\right)\)</span></p>
-<p>Checking for t-distributed returns</p>
-<p>Student’s model: <span class="math inline">\(y\sim a+bt_{(\text{df})}\)</span>, where <span class="math inline">\(a\)</span> is location parameter and <span class="math inline">\(b\)</span> is scale parameter</p>
-<p>When <span class="math inline">\(\text{df}=\infty\)</span>, <span class="math inline">\(t_{(\infty)}=N(a,b^2)\)</span></p>
+<hr />
+<p>Checking for t-distributed Returns</p>
+<p>Location-scale Student’s t-model: <span class="math inline">\(y\sim a+bt_{(\text{df})}\)</span>, where <span class="math inline">\(a\)</span> is location parameter and <span class="math inline">\(b\)</span> is scale parameter</p>
+<p>When <span class="math inline">\(\text{df}=\infty\)</span>, <span class="math inline">\(t_{(\infty)}=N(0,1)\)</span>, <span class="math inline">\(y\sim N(a,b^2)\)</span></p>
 <p>When <span class="math inline">\(\text{df}&gt;1\)</span>, <span class="math inline">\(y\)</span> has mean <span class="math inline">\(a\)</span></p>
-<p>When <span class="math inline">\(\text{df}&gt;2\)</span>, <span class="math inline">\(y\)</span> has standard deviation <span class="math inline">\(\frac{b\cdot\text{df}}{\text{df}-2}\)</span></p>
+<p>When <span class="math inline">\(\text{df}&gt;2\)</span>, <span class="math inline">\(y\)</span> has standard deviation <span class="math inline">\(b\cdot\frac{\text{df}}{\text{df}-2}\)</span></p>
 <p>Let <span class="math inline">\(F_{\text{df}}(t)\)</span> be the cdf of <span class="math inline">\(t_{(\text{df})}\)</span></p>
-<p>Compare <span class="math inline">\(X_{(i)}\)</span> with <span class="math inline">\(F_{\text{df}}\left(\frac{i}{n+1}\right)\)</span>, if the model holds <span class="math inline">\(X_{(i)}\approx a+b\cdot F_{\text{df}}\left(\frac{i}{n+1}\right)\)</span></p>
-<p>Let <span class="math inline">\(\text{df}\)</span> to <font color="red">use??? by</font> <span class="math inline">\(\hat{\text{df}}\)</span> where <span class="math inline">\(\left(\hat{a},\hat{b},\hat{\text{df}}\right)\)</span> is the maximum likelihood estimate of <span class="math inline">\((a,b,\text{df})\)</span></p>
-<p><span class="math inline">\(n=3\)</span>, <span class="math inline">\(\frac{i}{n+1}=0.25,0.50,0.75\)</span> as <span class="math inline">\(i=1,2,3\)</span></p>
+<p>Compare <span class="math inline">\(X_{(i)}\)</span> with <span class="math inline">\(F_{\text{df}}^{-1}\left(\frac{i}{n+1}\right)\)</span>, if the model holds <span class="math inline">\(X_{(i)}\approx a+b\cdot F_{\text{df}}^{-1}\left(\frac{i}{n+1}\right)\)</span></p>
+<p>Get <span class="math inline">\(\text{df}\)</span> to use by <span class="math inline">\(\hat{\text{df}}\)</span> where <span class="math inline">\(\left(\hat{a},\hat{b},\hat{\text{df}}\right)\)</span> is the maximum likelihood estimate of <span class="math inline">\((a,b,\text{df})\)</span></p>
+<p>e.g. <span class="math inline">\(n=3\)</span>, <span class="math inline">\(\frac{i}{n+1}=0.25,0.50,0.75\)</span> as <span class="math inline">\(i=1,2,3\)</span></p>
 <ul>
 <li><span class="math inline">\(X_{(1)}=\mu+\sigma\cdot\Phi^{-1}\left(\frac{1}{3+1}\right)=\mu+\sigma\cdot\Phi^{-1}(0.25)\)</span></li>
 <li><span class="math inline">\(X_{(2)}=\mu+\sigma\cdot\Phi^{-1}\left(\frac{2}{3+1}\right)=\mu+\sigma\cdot\Phi^{-1}(0.50)=\mu\)</span></li>
 <li><span class="math inline">\(X_{(3)}=\mu+\sigma\cdot\Phi^{-1}\left(\frac{3}{3+1}\right)=\mu+\sigma\cdot\Phi^{-1}(0.75)\)</span></li>
 </ul>
 <p><font color="red"><strong>插圖</strong></font></p>
-<p><font color="red"><strong>補筆記</strong></font></p>
+<p><span class="math inline">\(X_{(i)}\)</span> should be approximately the <span class="math inline">\(\frac{i}{n+1}\)</span> - quantile of the distribution. Or <span class="math inline">\(\text{E}[y_{(i)}]\approx\mu+\sigma\cdot\Phi^{-1}\left(\frac{i-\frac{1}{2}}{n}\right)\)</span></p>
 <hr />
 <p><strong>Time Series Model</strong></p>
-<p>A time series is a collection of observed random values indexed by time</p>
-<p>A stochastic process is a model for a time series</p>
+<p>A time series is a collection of observed random variables indexed by time. A stochastic process is a model for a time series.</p>
 <p>Discrete time series: <span class="math inline">\(X_t\)</span> is the variable at time <span class="math inline">\(t\)</span></p>
-<p>e.g. <span class="math inline">\(X_1,X_2,X_3,\cdots\)</span></p>
-<p>e.g. <span class="math inline">\(X_0,X_1,X_2,\cdots\)</span></p>
-<p>e.g. <span class="math inline">\(X_{-2},X_{-1},X_0,X_1,X_2,\cdots\)</span></p>
-<p>Assume the time series is “systematic” to have a small collection of parameters to be estimated</p>
+<ul>
+<li>e.g. <span class="math inline">\(X_1,X_2,X_3,\cdots\)</span></li>
+<li>e.g. <span class="math inline">\(X_0,X_1,X_2,\cdots\)</span></li>
+<li>e.g. <span class="math inline">\(X_{-2},X_{-1},X_0,X_1,X_2,\cdots\)</span></li>
+</ul>
+<p>Assume the time series is “systematic” to have a small collection of parameters to be estimated.</p>
 <hr />
 <p><strong>(I) Strictly Stationary</strong></p>
 <p>Assume <span class="math inline">\(X_1,\cdots,X_n\)</span> has the same distribution as <span class="math inline">\(X_{1+k},\cdots,X_{n+k}\)</span> for all <span class="math inline">\(k\)</span></p>
@@ -188,18 +190,20 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <hr />
 <p><strong>(II) Weakly Stationary</strong></p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(\text{E}(X_t)=\mu\)</span> for all <span class="math inline">\(t\)</span></li>
+<li><span class="math inline">\(\text{E}(X_t)=\mu\)</span> for all <span class="math inline">\(t\)</span>
+<ul>
+<li>e.g. <span class="math inline">\(\text{E}(X_8)=\text{E}(X_{20})\)</span></li>
+</ul></li>
+<li><span class="math inline">\(\text{Var}(X_t)=\sigma^2\)</span> for all <span class="math inline">\(t\)</span>
+<ul>
+<li>e.g. <span class="math inline">\(\text{Var}(X_8)=\text{Var}(X_{20})\)</span></li>
+</ul></li>
+<li><span class="math inline">\(\text{Cov}(X_t,X_u)=\gamma(|t-u|)\)</span>
+<ul>
+<li>e.g. <span class="math inline">\(\text{Cov}(X_8)=\text{Cov}(X_{20})\)</span></li>
+</ul></li>
 </ol>
-<p>e.g. <span class="math inline">\(\text{E}(X_8)=\text{E}(X_{20})\)</span></p>
-<ol start="2" style="list-style-type: decimal">
-<li><span class="math inline">\(\text{Var}(X_t)=\sigma^2\)</span> for all <span class="math inline">\(t\)</span></li>
-</ol>
-<p>e.g. <span class="math inline">\(\text{Var}(X_8)=\text{Var}(X_{20})\)</span></p>
-<ol start="3" style="list-style-type: decimal">
-<li><span class="math inline">\(\text{Cov}(X_t,X_u)=\gamma(|t-u|)\)</span></li>
-</ol>
-<p>e.g. <span class="math inline">\(\text{Cov}(X_8)=\text{Cov}(X_{20})\)</span></p>
-<p><span class="math inline">\(\gamma(h)\)</span> is called the auto-covarance function</p>
+<p><span class="math inline">\(\gamma(h)\)</span> is called the auto-covariance function</p>
 <p><span class="math inline">\(\gamma(0)=\text{Cov}(X_t,X_t)=\text{Var}(X_t)=\sigma^2\)</span></p>
 <p>The auto-correlation function <span class="math inline">\(\rho(h)\)</span> gives <span class="math inline">\(\text{Corr}(X_t,X_u)=\rho(|t-u|)\)</span></p>
 <p><span class="math display">\[\rho(h)=\frac{\gamma(h)}{\sigma^2}=\frac{\gamma(h)}{\gamma(0)}\]</span></p>
@@ -211,7 +215,7 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p><font color="red"><strong>插圖</strong></font></p>
 <p>Increasing Variance</p>
 <p><font color="red"><strong>插圖</strong></font></p>
-<p>strictly stationary –&gt; weakly stationary</p>
+<p>Strictly Stationary –&gt; Weakly Stationary</p>
 <p>Suppose <span class="math inline">\(X_1,X_2,\cdots\)</span> independent. <span class="math inline">\(X_i\sim N(0,1)\)</span>, where <span class="math inline">\(i\)</span> is odder number. <span class="math inline">\(X_j\sim \sqrt{\frac{\text{df}-2}{\text{df}}}\cdot t_{(\text{df})}\)</span>, where <span class="math inline">\(j\)</span> is even number (<span class="math inline">\(\text{df}&gt;2\)</span>).</p>
 <hr />
 <p><strong>(III) Weak White Noise</strong></p>
@@ -220,12 +224,16 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <li><span class="math inline">\(\text{Var}(X_t)=\sigma^2\)</span> for all <span class="math inline">\(t\)</span></li>
 <li><span class="math inline">\(\text{Cov}(X_t,X_u)=0\)</span> for <span class="math inline">\(t\neq u\)</span></li>
 </ol>
-<p>So <span class="math inline">\(\gamma(0)=\sigma^2\)</span>, <span class="math inline">\(\gamma(h)=0,h\neq0\)</span></p>
-<p>and <span class="math inline">\(\rho(0)=1\)</span>, <span class="math inline">\(\rho(h)=0, h\neq0\)</span></p>
-<p>weak white noise –&gt; weakly stationary</p>
+<p>So <span class="math inline">\(\gamma(0)=\sigma^2\)</span>, <span class="math inline">\(\gamma(h)=0\)</span> for <span class="math inline">\(h\neq0\)</span></p>
+<p>and <span class="math inline">\(\rho(0)=1\)</span>, <span class="math inline">\(\rho(h)=0\)</span> for <span class="math inline">\(h\neq0\)</span></p>
+<p>Weak White Noise –&gt; Weakly Stationary</p>
 <hr />
 <p><strong>(IV)</strong> <span class="math inline">\(i.i.d.\)</span> White Noise</p>
-<p><font color="red"><strong>補筆記</strong></font></p>
+<p>Weak white noise where variables are <span class="math inline">\(i.i.d.\)</span></p>
+<p>–&gt; Strictly stationary</p>
+<p>–&gt; Weak White Noise</p>
+<hr />
+<p>Thanks to <em>Zhenjie Shen</em> and <em>Wanxin Lyu</em> for help with the notes.</p>
 
 
 
