@@ -28,6 +28,10 @@ ul {font-size: 16px; color: black;}
 - Lecture Note: 2 & 3 [Principal Component Analysis](CU/5786/LecNote2-3.pdf)
 - Lecture 3: [Principal Component Analysis](CU/5786/Lec03.pdf)
     - [PCA Handout 2](CU/5786/Handout02.html)
+- Lecture 4: [PCA and Random Projections](CU/5786/Lec04.pdf)
+- Lecture 5: [Random Projections](CU/5786/Lec05.pdf) (pending)
+    - [Random Projections Handout](CU/5786/Handout03.html) (pending)
+- Lecture Note: 5 [Random Projections](CU/5786/LecNote5.pdf)
 
 ##Homeworks
 1. 
