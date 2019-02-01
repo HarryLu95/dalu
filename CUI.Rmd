@@ -69,6 +69,7 @@ ul {font-size: 16px; color: black;}
 ##Lecture Slides
 1. [Lecture 1](CU/4060/Lec01.pdf)
     - [Demo 1](CU/4060/Lecture 01 Demo.html)
+    - [Demo 2](CU/4060/Lecture 02 Demo.html)
 2. 
 3. 
 
