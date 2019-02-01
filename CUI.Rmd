@@ -101,9 +101,12 @@ ul {font-size: 16px; color: black;}
 ##Homeworks
 1. [Homework 1](CU/4630/HW1.pdf)
     - data: [returns](CU/4630/returns.csv) (.csv)
-    - Due: Jan/31/2019, Thursday
+    - Due: Feb/5/2019, Tuesday
     - [HW1](CU/4630/HW1.html)
-2. 
+2. [Homework 2](CU/4630/HW2.pdf)
+    - data: [returns](CU/4630/returns.csv) (.csv)
+    - Due: Feb/12/2019, Tuesday
+    - [HW2](CU/4630/HW2.html)
 3. 
 
 
