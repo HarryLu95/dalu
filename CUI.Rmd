@@ -56,6 +56,7 @@ ul {font-size: 16px; color: black;}
     - [Summary 01](CU/5065/Summary01.html)
     - [Install CentOS in VirtualBox](CU/5065/Lec01.1.pdf)
 2. [Basic Linux Commands](CU/5065/Lec02.pdf)
+    - [Summary 02](CU/5065/Summary02.html)
 3. 
 
 ##Homeworks
