@@ -79,6 +79,7 @@ Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/) provides all the downl
 - [五月天 - 突然好想你 (中)](Music Sheets/五月天-突然好想你2.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/20482.htm)
 - [五月天 - 突然好想你 (難)](Music Sheets/五月天-突然好想你3.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/31404.htm)
 - [五月天 - 突然好想你 (Piano + Other)](Music Sheets/五月天-突然好想你(鋼琴+其它).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/10809.htm)
+- [五月天 - 突然好想你 (歌詞)](Music Sheets/五月天-突然好想你(歌詞).pdf) [<bdi>original</bdi>](https://www.hqgq.com/pu/show/27455)
 - [蘇苪 - 是否 (Piano + Other)](Music Sheets/蘇苪-是否(鋼琴+其它).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/14776.htm)
 - [鄧紫棋 - 光年之外](Music Sheets/鄧紫棋-光年之外.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/30219.htm)
 - [鄧紫棋 - 後會無期](Music Sheets/鄧紫棋-後會無期.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/24120.htm)
@@ -89,16 +90,17 @@ Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/) provides all the downl
 - [鄧紫棋 - 烟熏妆](Music Sheets/鄧紫棋-烟熏妆.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/16342.htm)
 - [鄧紫棋 - 睡公主](Music Sheets/鄧紫棋-睡公主.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/10731.htm)
 - [鄧紫棋 - 你把我灌醉 (Piano + Other)](Music Sheets/鄧紫棋-你把我灌醉(鋼琴+其它).pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/24552.htm)
-- 鄧紫棋 - 回憶的沙漏
-- 鄧紫棋 - A.I.N.Y.
-- 鄧紫棋 - 喜歡你
-- 鄧紫棋 - 手心的薔薇
-- 鄧紫棋 - 多遠都要在一起
-- [](Music Sheets/.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/.htm)
-- [](Music Sheets/.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/.htm)
-- [](Music Sheets/.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/.htm)
-- [](Music Sheets/.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/.htm)
-- [](Music Sheets/.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/.htm)
+- [鄧紫棋 - 回憶的沙漏](Music Sheets/.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/.htm)
+- [鄧紫棋 - A.I.N.Y.](Music Sheets/.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/.htm)
+- [鄧紫棋 - 喜歡你](Music Sheets/.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/.htm)
+- [鄧紫棋 - 手心的薔薇](Music Sheets/.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/.htm)
+- [鄧紫棋 - 多遠都要在一起](Music Sheets/.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/.htm)
+- [光良 - 童話](Music Sheets/光良-童話.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/29568.htm)
+- [李翊君 - 雨蝶](Music Sheets/雨蝶.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/33912.htm)
+- [沙寶亮 - 暗香](Music Sheets/暗香.pdf) [<bdi>original</bdi>]()
+
+
+- [](Music Sheets/.pdf) [<bdi>original</bdi>]()
 
 
 
