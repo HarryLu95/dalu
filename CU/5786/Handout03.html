@@ -142,13 +142,47 @@ p {font-size: 18px;}
 <li><span class="math inline">\(\text{E}[y_t-y_s]\)</span>?</li>
 </ol>
 </blockquote>
-<p><font color="red">balabala</font></p>
+<p><span class="math display">\[\begin{align}
+y_t-y_s
+&amp;=
+\mathbf{x}_t^T\mathbf{u}-\mathbf{x}_s^T\mathbf{u}\\
+&amp;=
+\left(\mathbf{x}_t^T-\mathbf{x}_s^T\right)\mathbf{u}\\
+&amp;=
+(\mathbf{x}_t[1]-\mathbf{x}_s[1])\mathbf{u}[1]+\cdots+(\mathbf{x}_t[d]-\mathbf{x}_s[d])\mathbf{u}[d]\\
+&amp;=
+\sum_{i=1}^{d}\left(\mathbf{x}_t[i]-\mathbf{x}_s[i]\right)\mathbf{u}[i]\\
+\text{E}(y_t-y_s)
+&amp;=
+\sum_{i=1}^{d}\left(\mathbf{x}_t[i]-\mathbf{x}_s[i]\right)\underbrace{\text{E}(\mathbf{u}[i])}_{\,0}\\
+&amp;=
+0
+\end{align}\]</span></p>
 <blockquote>
 <ol start="2" style="list-style-type: decimal">
 <li><span class="math inline">\(\text{E}\left[(y_t-y_s)^2\right]\)</span>?</li>
 </ol>
 </blockquote>
-<p><font color="red">balabala</font></p>
+<p><span class="math display">\[\begin{align}
+(y_t-y_s)^2
+&amp;=
+\left(\mathbf{x}_t^T\mathbf{u}-\mathbf{x}_s^T\mathbf{u}\right)^2\\
+&amp;=
+\left(\left(\mathbf{x}_t^T-\mathbf{x}_s^T\right)\mathbf{u}\right)^2\\
+&amp;=
+((\mathbf{x}_t[1]-\mathbf{x}_s[1])\mathbf{u}[1]+\cdots+(\mathbf{x}_t[d]-\mathbf{x}_s[d])\mathbf{u}[d])^2\\
+&amp;=
+\sum_{i=1}^{d}\sum_{j=1}^{d}\left(\mathbf{x}_t[i]-\mathbf{x}_s[i]\right)\left(\mathbf{x}_t[j]-\mathbf{x}_s[j]\right)\mathbf{u}[i]\mathbf{u}[j]\\
+&amp;=
+\sum_{i=1}^{d}\left(\mathbf{x}_t[i]-\mathbf{x}_s[i]\right)^2\mathbf{u}[i]^2+2\sum_{i=j+1}^{d}\sum_{j=1}^{d}\left(\mathbf{x}_t[i]-\mathbf{x}_s[i]\right)\left(\mathbf{x}_t[j]-\mathbf{x}_s[j]\right)\mathbf{u}[i]\mathbf{u}[j]\\
+\text{E}\left[(y_t-y_s)^2\right]
+&amp;=
+\sum_{i=1}^{d}\left(\mathbf{x}_t[i]-\mathbf{x}_s[i]\right)^2\underbrace{\text{E}(\mathbf{u}[i]^2)}_{\,1}+2\sum_{i=j+1}^{d}\sum_{j=1}^{d}\left(\mathbf{x}_t[i]-\mathbf{x}_s[i]\right)\left(\mathbf{x}_t[j]-\mathbf{x}_s[j]\right)\underbrace{\text{E}(\mathbf{u}[i]\mathbf{u}[j])}_{\,0}\\
+&amp;=
+\sum_{i=1}^{d}\left(\mathbf{x}_t[i]-\mathbf{x}_s[i]\right)^2\\
+&amp;=
+||\mathbf{x}_t-\mathbf{x}_s||_2^2
+\end{align}\]</span></p>
 
 
 
