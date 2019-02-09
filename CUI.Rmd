@@ -40,10 +40,12 @@ ul {font-size: 16px; color: black;}
     - Lecture Note: 6 [Canonical Correlation Analysis](CU/5786/LecNote6.pdf)
 
 ##Homeworks
-1. 
-2. 
-3. 
-4. 
+- [Vocareum Link](https://labs.vocareum.com/home/login.php?email=dl947%40cornell.edu)
+- [Homework 1](CU/5786/HW1.html)
+    - Due: Feb/20/2019 23:59:59 EST
+-  
+-  
+-  
 
 ##Exams
 - [Placement Exam](CU/5786/PlacementExam.pdf)
