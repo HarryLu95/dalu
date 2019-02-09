@@ -21,17 +21,23 @@ ul {font-size: 16px; color: black;}
 
 #CS 5786 - Machine Learning for Data Science
 ##Lecture Slides
-- Lecture 1: [Course introduction, Logistics, Dimensionality reduction](CU/5786/Lec01.pdf)
-- Lecture 2: [Dimensionality Reduction, Principal Component Analysis](CU/5786/Lec02.pdf)
-    - [PCA demo](CU/5786/PCA_demo.html)
-    - [PCA Handout 1](CU/5786/Handout01.html)
-- Lecture Note: 2 & 3 [Principal Component Analysis](CU/5786/LecNote2-3.pdf)
-- Lecture 3: [Principal Component Analysis](CU/5786/Lec03.pdf)
-    - [PCA Handout 2](CU/5786/Handout02.html)
-- Lecture 4: [PCA and Random Projections](CU/5786/Lec04.pdf)
-- Lecture 5: [Random Projections](CU/5786/Lec05.pdf) (pending)
-    - [Random Projections Handout](CU/5786/Handout03.html) (pending)
-- Lecture Note: 5 [Random Projections](CU/5786/LecNote5.pdf)
+- Week 1
+    - Lecture 1: [Course introduction, Logistics, Dimensionality reduction](CU/5786/Lec01.pdf)
+    - Lecture 2: [Dimensionality Reduction, Principal Component Analysis](CU/5786/Lec02.pdf)
+    - Demo: [PCA demo](CU/5786/PCA_demo.html)
+    - Handout: [PCA Handout 1](CU/5786/Handout01.html)
+    - Lecture Note: 2 & 3 [Principal Component Analysis](CU/5786/LecNote2-3.pdf)
+- Week 2
+    - Lecture 3: [Principal Component Analysis](CU/5786/Lec03.pdf)
+    - Handout: [PCA Handout 2](CU/5786/Handout02.html)
+    - Lecture 4: [PCA and Random Projections](CU/5786/Lec04.pdf)
+- Week 3
+    - Lecture 5: [Random Projections & Canonical Correlation Analysis](CU/5786/Lec05.pdf)
+    - Handout: [Random Projections Handout](CU/5786/Handout03.html)
+    - Lecture Note: 5 [Random Projections](CU/5786/LecNote5.pdf)
+    - Lecture 6: [Random Projections & Canonical Correlation Analysis](CU/5786/Lec06.pdf) (pending, still 5)
+    - Handout: [Canonical Correlations Analysis Handout](CU/5786/Handout04.html)
+    - Lecture Note: 6 [Canonical Correlation Analysis](CU/5786/LecNote6.pdf)
 
 ##Homeworks
 1. 
