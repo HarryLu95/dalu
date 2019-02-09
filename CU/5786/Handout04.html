@@ -140,11 +140,11 @@ p {font-size: 18px;}
 <blockquote>
 <p><strong>Question 1</strong></p>
 <p>You want to find directions <span class="math inline">\(\mathbf{w}_1\)</span> and <span class="math inline">\(\mathbf{v}_1\)</span> that maximize the correlation coefficient given by:</p>
-<p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}\frac{(y_t-\frac{1}{n}y_t)\cdot(y'_t-\frac{1}{n}y'_t)}{\sqrt{\frac{1}{n}\sum_{t=1}^{n}(y_t-\frac{1}{n}y_t)^2}\cdot\sqrt{\frac{1}{n}\sum_{t=1}^{n}(y'_t-\frac{1}{n}y'_t)^2}}\]</span></p>
+<p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}\frac{(y_t-\frac{1}{n}\sum_{t=1}^{n}y_t)\cdot(y'_t-\frac{1}{n}\sum_{t=1}^{n}y'_t)}{\sqrt{\frac{1}{n}\sum_{t=1}^{n}(y_t-\frac{1}{n}\sum_{t=1}^{n}y_t)^2}\cdot\sqrt{\frac{1}{n}\sum_{t=1}^{n}(y'_t-\frac{1}{n}\sum_{t=1}^{n}y'_t)^2}}\]</span></p>
 <p>Why is this problem equivalent to finding directions <span class="math inline">\(\mathbf{w}_1\)</span> and <span class="math inline">\(\mathbf{v}_1\)</span> that maximize</p>
-<p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}\left(y_t-\frac{1}{n}y_t\right)\cdot\left(y'_t-\frac{1}{n}y'_t\right)\]</span></p>
+<p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}\left(y_t-\frac{1}{n}\sum_{t=1}^{n}y_t\right)\cdot\left(y'_t-\frac{1}{n}\sum_{t=1}^{n}y'_t\right)\]</span></p>
 <p>subject to condition:</p>
-<p><span class="math display">\[\sqrt{\frac{1}{n}\sum_{t=1}^{n}\left(y_t-\frac{1}{n}y_t\right)^2}=\sqrt{\frac{1}{n}\sum_{t=1}^{n}\left(y'_t-\frac{1}{n}y'_t\right)^2}=1\]</span></p>
+<p><span class="math display">\[\sqrt{\frac{1}{n}\sum_{t=1}^{n}\left(y_t-\frac{1}{n}\sum_{t=1}^{n}y_t\right)^2}=\sqrt{\frac{1}{n}\sum_{t=1}^{n}\left(y'_t-\frac{1}{n}\sum_{t=1}^{n}y'_t\right)^2}=1\]</span></p>
 </blockquote>
 <p><font color="red">balabala</font></p>
 <hr />
@@ -158,14 +158,14 @@ p {font-size: 18px;}
 <hr />
 <blockquote>
 <p><strong>Question 2.1:</strong> Show that</p>
-<p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}\left(y_t-\frac{1}{n}y_t\right)\cdot\left(y'_t-\frac{1}{n}y'_t\right)=\mathbf{w}_1^T\Sigma_{1,2}\mathbf{v}_1\]</span></p>
+<p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}\left(y_t-\frac{1}{n}\sum_{t=1}^{n}y_t\right)\cdot\left(y'_t-\frac{1}{n}\sum_{t=1}^{n}y'_t\right)=\mathbf{w}_1^T\Sigma_{1,2}\mathbf{v}_1\]</span></p>
 </blockquote>
 <p><font color="red">balabala</font></p>
 <blockquote>
 <p><strong>Question 2.2:</strong> Show that</p>
-<p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}\left(y_t-\frac{1}{n}y_t\right)^2=\mathbf{w}_1^T\Sigma_{1,1}\mathbf{w}_1\]</span></p>
+<p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}\left(y_t-\frac{1}{n}\sum_{t=1}^{n}y_t\right)^2=\mathbf{w}_1^T\Sigma_{1,1}\mathbf{w}_1\]</span></p>
 <p>and</p>
-<p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}\left(y'_t-\frac{1}{n}y'_t\right)^2=\mathbf{v}_1^T\Sigma_{2,2}\mathbf{v}_1\]</span></p>
+<p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}\left(y'_t-\frac{1}{n}\sum_{t=1}^{n}y'_t\right)^2=\mathbf{v}_1^T\Sigma_{2,2}\mathbf{v}_1\]</span></p>
 </blockquote>
 <p><font color="red">balabala</font></p>
 
