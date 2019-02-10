@@ -85,6 +85,7 @@ ul {font-size: 16px; color: black;}
 
 ##Homeworks
 1. [Homework 1](CU/4060/HW1.pdf)
+    - Due: Feb/15/2019 at 11:59PM
 2. 
 3. 
 
