@@ -124,7 +124,10 @@ ul {font-size: 16px; color: black;}
     - data: [returns](CU/4630/returns.csv) (.csv)
     - Due: Feb/12/2019, Tuesday
     - [HW2](CU/4630/HW2.html)
-3. 
+3. [Homework 3](CU/4630/HW3.pdf)
+    - data: [returns](CU/4630/returns.csv) (.csv)
+    - Due: Feb/19/2019, Tuesday
+    - [HW3](CU/4630/HW3.html)
 
 
 
