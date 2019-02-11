@@ -24,7 +24,8 @@ ul {font-size: 16px; color: black;}
 - Week 1
     - Lecture 1: [Course introduction, Logistics, Dimensionality reduction](CU/5786/Lec01.pdf)
     - Lecture 2: [Dimensionality Reduction, Principal Component Analysis](CU/5786/Lec02.pdf)
-    - Demo: [PCA demo](CU/5786/PCA_demo.html)
+    - Demo: [PCA demo - Classroom](CU/5786/classroom_demo.html)
+    - Demo: [PCA demo - Smile](CU/5786/smile_demo.html)
     - Handout (Jan/24): [PCA Handout 1](CU/5786/Handout01.html)
     - Lecture Note: 2 & 3 [Principal Component Analysis](CU/5786/LecNote2-3.pdf)
 - Week 2
