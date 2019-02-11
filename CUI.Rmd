@@ -78,9 +78,10 @@ ul {font-size: 16px; color: black;}
 #STSCI 4060 - Python Programming and its Applications in Statistics
 ##Lecture Slides
 1. [Lecture 1](CU/4060/Lec01.pdf)
-    - [Demo 1](CU/4060/Lecture 01 Demo.html)
+    - [Demo 1](CU/4060/Lecture 01 Demo 1.html)
     - [Demo 2](CU/4060/Lecture 01 Demo 2.html)
     - [Demo 3](CU/4060/Lecture 01 Demo 3.html)
+    - [Demo 4](CU/4060/Lecture 01 Demo 4.html)
 2. [Lecture 2](CU/4060/Lec02.pdf)
 3. 
 
