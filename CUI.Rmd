@@ -75,7 +75,8 @@ ul {font-size: 16px; color: black;}
     - [Install CentOS in VirtualBox](CU/5065/Lec01.1.pdf)
 2. [Basic Linux Commands](CU/5065/Lec02.pdf)
     - [Summary 02](CU/5065/Summary02.html)
-3. 
+3. [Basic Vi Commands](CU/5065/Lec03.pdf)
+4. [The Hadoop Distributed Filesystem (HDFS)](CU/5065/Lec04.pdf)
 
 ##Homeworks
 1. [Homework 1](CU/5065/HW1.pdf)
