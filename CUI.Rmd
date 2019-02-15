@@ -40,6 +40,14 @@ ul {font-size: 16px; color: black;}
     - Lecture 6: [Canonical Correlation Analysis](CU/5786/Lec06.pdf)
     - Handout (Feb/7): [Canonical Correlations Analysis Handout](CU/5786/Handout04.html)
     - Lecture Note: 6 [Canonical Correlation Analysis](CU/5786/LecNote6.pdf)
+- Week 4
+    - Lecture 7: [Canonical Correlation Analysis & Kernel PCA](CU/5786/Lec07.pdf)
+    - Lecture Note: 7 [Kernel PCA](CU/5786/LecNote7.pdf)
+    - Lecture 8: [Kernel PCA & Isomap & TSNE](CU/5786/Lec08.pdf)
+    - Handout (Feb/14): [Kernel Methods & t-SNE](CU/5786/Handout05.html)
+
+
+
 
 ##Homeworks
 - [Vocareum Link](https://labs.vocareum.com/home/login.php?email=dl947%40cornell.edu)
