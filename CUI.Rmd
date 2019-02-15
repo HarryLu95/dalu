@@ -76,7 +76,9 @@ ul {font-size: 16px; color: black;}
 2. [Basic Linux Commands](CU/5065/Lec02.pdf)
     - [Lecture 2 Note](CU/5065/Summary02.html)
 3. [Basic Vi Commands](CU/5065/Lec03.pdf)
+    - [Lecture 3 Note](CU/5065/Summary03.html)
 4. [The Hadoop Distributed Filesystem (HDFS)](CU/5065/Lec04.pdf)
+    - [Lecture 4 Note](CU/5065/Summary04.html)
 
 ##Homeworks
 1. [Homework 1](CU/5065/HW1.pdf)
