@@ -13123,7 +13123,30 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="1.-Set-Operations">1. Set Operations<a class="anchor-link" href="#1.-Set-Operations">&#182;</a></h1>
+<h1 id="1.-Python-Sets">1. Python Sets<a class="anchor-link" href="#1.-Python-Sets">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Definition:</strong></p>
+<p>A set is an unordered collection of unique elements. Curly braces or the <code>set()</code> function can be used to create sets. For example:</p>
+<ul>
+<li><code>s1 = {"SAS", "SPSS", "R", "JMP", "MINITAB"}</code></li>
+<li><code>basket = ["apple", "orange", "apple", "pear", "orange", "banana"]</code></li>
+<li><code>fruit = set(basket)</code></li>
+<li><code>emptySet = set()</code> (it's not {})</li>
+</ul>
+<p><strong>Features of sets:</strong></p>
+<ul>
+<li>Ability to test membership (<code>"SAS" in s1</code> → <code>True</code>)</li>
+<li>Ability to eliminate duplicate entries (see above)</li>
+<li>Ability to support set operations, including union (<code>|</code>), intersection (<code>&amp;</code>), difference (<code>-</code>), and symmetric difference (<code>^</code>)</li>
+<li>It is mutable</li>
+<li>It can contain numbers, strings and tuples but not a list, dictionary and set</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -13132,57 +13155,405 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fib</span> <span class="o">=</span> <span class="nb">set</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">13</span><span class="p">))</span>
-<span class="n">prime</span> <span class="o">=</span> <span class="nb">set</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;SAS&quot;</span><span class="p">,</span> <span class="s2">&quot;SPSS&quot;</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;JMP&quot;</span><span class="p">,</span> <span class="s2">&quot;MINITAB&quot;</span><span class="p">}</span>
+<span class="n">basket</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;pear&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">]</span>
+<span class="n">fruit</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">basket</span><span class="p">)</span>
+<span class="n">emptySet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">basket</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">emptySet</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="2.-Set-Operations">2. Set Operations<a class="anchor-link" href="#2.-Set-Operations">&#182;</a></h1>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="o">|</span><span class="n">prime</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="o">&amp;</span><span class="n">prime</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="o">-</span><span class="n">prime</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">prime</span><span class="o">-</span><span class="n">fib</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="o">^</span><span class="n">prime</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">engineers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span> <span class="s2">&quot;Jack&quot;</span><span class="p">,</span> <span class="s2">&quot;Janice&quot;</span><span class="p">])</span>
+<span class="n">programmers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;Jack&quot;</span><span class="p">,</span> <span class="s2">&quot;Sam&quot;</span><span class="p">,</span> <span class="s2">&quot;Susan&quot;</span><span class="p">,</span> <span class="s2">&quot;Janice&quot;</span><span class="p">])</span>
+<span class="n">managers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;Jane&quot;</span><span class="p">,</span> <span class="s2">&quot;Jack&quot;</span><span class="p">,</span> <span class="s2">&quot;Susan&quot;</span><span class="p">,</span> <span class="s2">&quot;Zack&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">engineers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">programmers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">managers</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.1-Union:-|">2.1 Union: <code>|</code><a class="anchor-link" href="#2.1-Union:-|">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">employees</span> <span class="o">=</span> <span class="n">engineers</span> <span class="o">|</span> <span class="n">programmers</span> <span class="o">|</span> <span class="n">managers</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">employees</span><span class="p">)</span>
+</pre></div>
 
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{1, 2, 3, 5, 7, 8, 11, 13}
-{13, 2, 3, 5}
-{8, 1}
-{11, 7}
-{1, 7, 8, 11}
-</pre>
+    </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.2-Intersection:-&amp;">2.2 Intersection: <code>&amp;</code><a class="anchor-link" href="#2.2-Intersection:-&amp;">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">engineering_management</span> <span class="o">=</span> <span class="n">engineers</span> <span class="o">&amp;</span> <span class="n">managers</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">engineering_management</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.3-Difference:--">2.3 Difference: <code>-</code><a class="anchor-link" href="#2.3-Difference:--">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fulltime_management</span> <span class="o">=</span> <span class="n">managers</span> <span class="o">-</span> <span class="n">engineers</span> <span class="o">-</span> <span class="n">programmers</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fulltime_management</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.4-Another-Example">2.4 Another Example<a class="anchor-link" href="#2.4-Another-Example">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fib</span> <span class="o">=</span> <span class="nb">set</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">13</span><span class="p">))</span>
+<span class="n">prime</span> <span class="o">=</span> <span class="nb">set</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span> <span class="o">|</span> <span class="n">prime</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span> <span class="o">&amp;</span> <span class="n">prime</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span> <span class="o">-</span> <span class="n">prime</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">prime</span> <span class="o">-</span> <span class="n">fib</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span> <span class="o">^</span> <span class="n">prime</span><span class="p">)</span> <span class="c1">#symmetric difference</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="3.-Python-Set-Methods-and-Functions">3. Python Set Methods and Functions<a class="anchor-link" href="#3.-Python-Set-Methods-and-Functions">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>set.clear()</code></li>
+<li><code>set.pop()</code> → object</li>
+<li><code>set.add(new)</code></li>
+<li><code>set.remove(old)</code></li>
+<li><code>set.discard()</code> (the same as <code>set.remove()</code>)</li>
+<li><code>set.update(new)</code></li>
+<li><code>set.intersection_update(new)</code></li>
+<li><code>set.difference_update(new)</code></li>
+<li><code>set.symmetric_difference_update(new)</code></li>
+<li><code>set.copy()</code> → set</li>
+<li><code>set.union(new)</code> → set</li>
+<li><code>set.intersection(new)</code> → set</li>
+<li><code>set.difference(new)</code> → set</li>
+<li><code>set.symmetric_difference(new)</code> → set</li>
+<li><code>set.issubset(other)</code> → boolean</li>
+<li><code>set.issuperset(other)</code> → boolean</li>
+<li><code>len(set)</code></li>
+<li><code>max(set)</code></li>
+<li><code>min(set)</code></li>
+<li><code>sum(set)</code></li>
+<li><code>any(set)</code></li>
+<li><code>all(set)</code></li>
+<li><code>sorted(set)</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fib</span> <span class="o">=</span> <span class="nb">set</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">13</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.1-add(new)">3.1 <code>add(new)</code><a class="anchor-link" href="#3.1-add(new)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fib</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.2-remove(old)">3.2 <code>remove(old)</code><a class="anchor-link" href="#3.2-remove(old)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fib</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.3-intersection_update(new)">3.3 <code>intersection_update(new)</code><a class="anchor-link" href="#3.3-intersection_update(new)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">new</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span>
+<span class="n">fib</span><span class="o">.</span><span class="n">intersection_update</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.4-len()">3.4 <code>len()</code><a class="anchor-link" href="#3.4-len()">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fib</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.5-max()">3.5 <code>max()</code><a class="anchor-link" href="#3.5-max()">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">fib</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.6-sum()">3.6 <code>sum()</code><a class="anchor-link" href="#3.6-sum()">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">fib</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.7-sort()">3.7 <code>sort()</code><a class="anchor-link" href="#3.7-sort()">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">employees</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">employees</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.8-clear()">3.8 <code>clear()</code><a class="anchor-link" href="#3.8-clear()">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fib</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">employees</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">employees</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.9-any()-and-all()">3.9 <code>any()</code> and <code>all()</code><a class="anchor-link" href="#3.9-any()-and-all()">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">s1</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">44</span><span class="p">}</span>
@@ -13229,20 +13600,50 @@ False
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="2.-Python-Operators">2. Python Operators<a class="anchor-link" href="#2.-Python-Operators">&#182;</a></h1>
+<h1 id="4.-A-comparison-of-Some-Different-Types-of-Collections-in-Python-and-Their-Characteristics">4. A comparison of Some Different Types of Collections in Python and Their Characteristics<a class="anchor-link" href="#4.-A-comparison-of-Some-Different-Types-of-Collections-in-Python-and-Their-Characteristics">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.1.-Basic-Arithmetic-Operators">2.1. Basic Arithmetic Operators<a class="anchor-link" href="#2.1.-Basic-Arithmetic-Operators">&#182;</a></h2>
+<ul>
+<li><strong>String:</strong> ordered, characters, immutable</li>
+<li><strong>List:</strong> ordered, heterogeneous, mutable</li>
+<li><strong>Tuple:</strong> ordered, heterogeneous, immutable</li>
+<li><strong>Dictionary:</strong> unordered, key/values pairs, mutable</li>
+<li><strong>Set:</strong> unordered, heterogeneous, mutable, unique values</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="5.-Python-Operators">5. Python Operators<a class="anchor-link" href="#5.-Python-Operators">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.1-Basic-Arithmetic-Operators">5.1 Basic Arithmetic Operators<a class="anchor-link" href="#5.1-Basic-Arithmetic-Operators">&#182;</a></h2><ul>
+<li><code>+</code> (addition)</li>
+<li><code>-</code> (subtraction)</li>
+<li><code>*</code> (multiplication)</li>
+<li><code>**</code> (exponentiation)</li>
+<li><code>/</code> (division)</li>
+<li><code>//</code> (floor division)</li>
+<li><code>%</code> (modulus)</li>
+</ul>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">21</span>
@@ -13284,7 +13685,7 @@ False
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
@@ -13317,7 +13718,7 @@ False
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
@@ -13351,13 +13752,124 @@ False
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.2.-Comparison-Operators">2.2. Comparison Operators<a class="anchor-link" href="#2.2.-Comparison-Operators">&#182;</a></h2>
+<h2 id="5.2-Assignment-Operators">5.2 Assignment Operators<a class="anchor-link" href="#5.2-Assignment-Operators">&#182;</a></h2><ul>
+<li><code>=</code> (simple assignment)</li>
+<li><code>+=</code> (add AND assignment)</li>
+<li><code>-=</code> (subtract AND assignment)</li>
+<li><code>*=</code> (multiply AND assignment)</li>
+<li><code>**=</code> (exponent AND assignment)</li>
+<li><code>/=</code> (divide AND assignment)</li>
+<li><code>//=</code> (floor division AND assignment)</li>
+<li><code>%=</code> (modulus AND assignment)</li>
+</ul>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#p56</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.3-Logical-Operators">5.3 Logical Operators<a class="anchor-link" href="#5.3-Logical-Operators">&#182;</a></h2><ul>
+<li><code>and</code></li>
+<li><code>or</code></li>
+<li><code>not</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#p57</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.4-Membership-Operators">5.4 Membership Operators<a class="anchor-link" href="#5.4-Membership-Operators">&#182;</a></h2><ul>
+<li><code>in</code></li>
+<li><code>not in</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#p58</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.5-Identity-Operators">5.5 Identity Operators<a class="anchor-link" href="#5.5-Identity-Operators">&#182;</a></h2><ul>
+<li><code>is</code></li>
+<li><code>is not</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#p59</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.6-Comparison-Operators">5.6 Comparison Operators<a class="anchor-link" href="#5.6-Comparison-Operators">&#182;</a></h2><ul>
+<li><code>&lt;</code>: less than</li>
+<li><code>&gt;</code>: greater than</li>
+<li><code>&lt;=</code>: less than or equal</li>
+<li><code>&gt;=</code>: greater than or equal</li>
+<li><code>==</code>: equal</li>
+<li><code>!=</code> or <code>&lt;&gt;</code>: not equal</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">21</span>
@@ -13418,7 +13930,7 @@ a is greater than to b
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
@@ -13459,12 +13971,30 @@ b is either greater than or equal to a
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.7-Operator-Precedence-(Highest-ro-Lowest)">5.7 Operator Precedence (Highest ro Lowest)<a class="anchor-link" href="#5.7-Operator-Precedence-(Highest-ro-Lowest)">&#182;</a></h2><ul>
+<li><code>**</code></li>
+<li><code>*</code>, <code>/</code>, <code>%</code>, <code>//</code></li>
+<li><code>+</code>, <code>-</code></li>
+<li><code>&lt;=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&gt;=</code></li>
+<li><code>&lt;&gt;</code>, <code>==</code>, <code>!=</code></li>
+<li><code>=</code>, <code>%=</code>, <code>/=</code>, <code>//%</code>, <code>-=</code>, <code>+=</code>, <code>*=</code>, <code>**=</code></li>
+<li><code>is</code>, <code>is not</code></li>
+<li><code>in</code>, <code>not in</code></li>
+<li><code>not</code>, <code>or</code>, <code>and</code></li>
+</ul>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#60</span>
 </pre></div>
 
     </div>
