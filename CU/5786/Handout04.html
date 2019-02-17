@@ -96,6 +96,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -103,14 +106,74 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -146,7 +209,12 @@ p {font-size: 18px;}
 <p>subject to condition:</p>
 <p><span class="math display">\[\sqrt{\frac{1}{n}\sum_{t=1}^{n}\left(y_t-\frac{1}{n}\sum_{t=1}^{n}y_t\right)^2}=\sqrt{\frac{1}{n}\sum_{t=1}^{n}\left(y'_t-\frac{1}{n}\sum_{t=1}^{n}y'_t\right)^2}=1\]</span></p>
 </blockquote>
-<p><font color="red">balabala</font></p>
+<p><span class="math inline">\(y_t\)</span>’s and <span class="math inline">\(y_t'\)</span>’s scale linearly with <span class="math inline">\(\mathbf{w}_1\)</span> and <span class="math inline">\(\mathbf{v}_1\)</span> respectively</p>
+<p>i.e. if we scale <span class="math inline">\(\mathbf{w}_1\)</span> to <span class="math inline">\(\alpha\mathbf{w}_1\)</span> then <span class="math inline">\(y_t\)</span> scales by <span class="math inline">\(\alpha\)</span> too</p>
+<p>Also, <span class="math inline">\(\text{Corr}(Y,Y')\)</span> does not change if we scale all <span class="math inline">\(y_t\)</span> and <span class="math inline">\(y_t'\)</span></p>
+<p>Hence we can always scale <span class="math inline">\(\mathbf{w}_1\)</span> and <span class="math inline">\(\mathbf{v}_1\)</span> appropriately so that</p>
+<p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}\left(y_t'-\frac{1}{n}\sum_{t=1}^{n}y_t'\right)^2=\frac{1}{n}\sum_{t=1}^{n}\left(y_t-\frac{1}{n}\sum_{t=1}^{n}y_t\right)^2=1\]</span></p>
+<p>Therefore, the two problems are equivalent</p>
 <hr />
 <p><strong>Question 2</strong></p>
 <p>Let</p>
@@ -160,14 +228,57 @@ p {font-size: 18px;}
 <p><strong>Question 2.1:</strong> Show that</p>
 <p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}\left(y_t-\frac{1}{n}\sum_{t=1}^{n}y_t\right)\cdot\left(y'_t-\frac{1}{n}\sum_{t=1}^{n}y'_t\right)=\mathbf{w}_1^T\Sigma_{1,2}\mathbf{v}_1\]</span></p>
 </blockquote>
-<p><font color="red">balabala</font></p>
+<p><span class="math display">\[\begin{align}
+&amp;\quad\,\,\frac{1}{n}\sum_{t=1}^{n}\left(y_t-\frac{1}{n}\sum_{t=1}^{n}y_t\right)\cdot\left(y'_t-\frac{1}{n}\sum_{t=1}^{n}y'_t\right)\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\left(\mathbf{w}_1^T\mathbf{x}_t-\frac{1}{n}\sum_{t=1}^{n}\mathbf{w}_1^T\mathbf{x}_t\right)\cdot\left(\mathbf{v}_1^T\mathbf{x}'_t-\frac{1}{n}\sum_{t=1}^{n}\mathbf{v}_1^T\mathbf{x}'_t\right)\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\left(\mathbf{w}_1^T\mathbf{x}_t-\mathbf{w}_1^T\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t\right)\cdot\left(\mathbf{v}_1^T\mathbf{x}'_t-\mathbf{v}_1^T\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}'_t\right)\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\mathbf{w}_1^T\left(\mathbf{x}_t-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t\right)\cdot\mathbf{v}_1^T\left(\mathbf{x}'_t-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}'_t\right)\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\left[\mathbf{w}_1^T\left(\mathbf{x}_t-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t\right)\cdot\left(\mathbf{x}'_t-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}'_t\right)^T\mathbf{v}_1\right]\\
+&amp;=
+\mathbf{w}_1^T\left[\frac{1}{n}\sum_{t=1}^{n}\left(\mathbf{x}_t-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t\right)\cdot\left(\mathbf{x}'_t-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}'_t\right)^T\right]\mathbf{v}_1\\
+&amp;=
+\mathbf{w}_1^T\Sigma_{1,2}\mathbf{v}_1
+\end{align}\]</span></p>
 <blockquote>
 <p><strong>Question 2.2:</strong> Show that</p>
 <p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}\left(y_t-\frac{1}{n}\sum_{t=1}^{n}y_t\right)^2=\mathbf{w}_1^T\Sigma_{1,1}\mathbf{w}_1\]</span></p>
 <p>and</p>
 <p><span class="math display">\[\frac{1}{n}\sum_{t=1}^{n}\left(y'_t-\frac{1}{n}\sum_{t=1}^{n}y'_t\right)^2=\mathbf{v}_1^T\Sigma_{2,2}\mathbf{v}_1\]</span></p>
 </blockquote>
-<p><font color="red">balabala</font></p>
+<p><span class="math display">\[\begin{align}
+&amp;\quad\,\,\frac{1}{n}\sum_{t=1}^{n}\left(y_t-\frac{1}{n}\sum_{t=1}^{n}y_t\right)^2\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\left(\mathbf{w}_1^T\mathbf{x}_t-\frac{1}{n}\sum_{t=1}^{n}\mathbf{w}_1^T\mathbf{x}_t\right)^2\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\left(\mathbf{w}_1^T\mathbf{x}_t-\mathbf{w}_1^T\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t\right)^2\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\left[\mathbf{w}_1^T\left(\mathbf{x}_t-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t\right)\right]^2\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\left[\mathbf{w}_1^T\left(\mathbf{x}_t-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t\right)\cdot\left(\mathbf{x}_t-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t\right)^T\mathbf{w}_1\right]\\
+&amp;=
+\mathbf{w}_1^T\left[\frac{1}{n}\sum_{t=1}^{n}\left(\mathbf{x}_t-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t\right)\cdot\left(\mathbf{x}_t-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t\right)^T\right]\mathbf{w}_1\\
+&amp;=
+\mathbf{w}_1^T\Sigma_{1,1}\mathbf{w}_1
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align}
+&amp;\quad\,\,\frac{1}{n}\sum_{t=1}^{n}\left(y_t'-\frac{1}{n}\sum_{t=1}^{n}y_t'\right)^2\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\left(\mathbf{v}_1^T\mathbf{x}_t'-\frac{1}{n}\sum_{t=1}^{n}\mathbf{v}_1^T\mathbf{x}_t'\right)^2\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\left(\mathbf{v}_1^T\mathbf{x}_t'-\mathbf{v}_1^T\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t'\right)^2\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\left[\mathbf{v}_1^T\left(\mathbf{x}_t'-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t'\right)\right]^2\\
+&amp;=
+\frac{1}{n}\sum_{t=1}^{n}\left[\mathbf{v}_1^T\left(\mathbf{x}_t'-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t'\right)\cdot\left(\mathbf{x}_t'-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t'\right)^T\mathbf{v}_1\right]\\
+&amp;=
+\mathbf{v}_1^T\left[\frac{1}{n}\sum_{t=1}^{n}\left(\mathbf{x}_t'-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t'\right)\cdot\left(\mathbf{x}_t'-\frac{1}{n}\sum_{t=1}^{n}\mathbf{x}_t'\right)^T\right]\mathbf{v}_1\\
+&amp;=
+\mathbf{v}_1^T\Sigma_{2,2}\mathbf{v}_1
+\end{align}\]</span></p>
 
 
 
