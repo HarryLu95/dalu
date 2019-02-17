@@ -31,7 +31,7 @@ ul {font-size: 16px; color: black;}
 - Week 2
     - Lecture 3: [Principal Component Analysis](CU/5786/Lec03.pdf)
     - Handout (Jan/29): [PCA Handout 2](CU/5786/Handout02.html)
-    - Algorithm: [**PCA Algorithm**](CU/5786/Algorithm01.html) (need updating)
+    - Algorithm: [**PCA Algorithm**](CU/5786/Algorithm01.html)
     - Lecture 4: [PCA and Random Projections](CU/5786/Lec04.pdf)
     - Handout (Jan/31): [Random Projections Handout](CU/5786/Handout03.html)
 - Week 3

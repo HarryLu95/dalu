@@ -96,6 +96,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -103,14 +106,74 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -141,14 +204,16 @@ p {font-size: 18px;}
 <p><span class="math display">\[\mu_j=\frac{1}{n}\sum_{i=1}^{n}x_{ij}\quad\text{where }i\in1,\cdots,n\text{ and }j\in1,\cdots,d\]</span></p>
 <p>Define the <span class="math inline">\(d\times d\)</span> covariance matrix <span class="math inline">\(\Sigma\)</span> where</p>
 <p><span class="math display">\[\Sigma=\frac{1}{n}\sum_{i=1}^{n}(\mathbf{x}_i-\boldsymbol{\mu})(\mathbf{x}_i-\boldsymbol{\mu})^T\]</span></p>
+<p>or</p>
+<p><span class="math display">\[\Sigma=\left(X-\mathbf{1}_n\boldsymbol{\mu}^T\right)^T\left(X-\mathbf{1}_n\boldsymbol{\mu}^T\right)\]</span></p>
 <p>Perform the eigen decomposition and take the first <span class="math inline">\(K\)</span> eigenvectors to make the <span class="math inline">\(d\times K\)</span> matrix <span class="math inline">\(W\)</span>:</p>
 <p><span class="math display">\[\Sigma=PDP^{-1}\]</span></p>
 <p><span class="math display">\[P=\left(\begin{array}{c}\vdots&amp;\cdots&amp;\vdots\\\mathbf{e}_1&amp;\cdots&amp;\mathbf{e}_d\\\vdots&amp;\cdots&amp;\vdots\end{array}\right)\]</span></p>
 <p><span class="math display">\[W=\left(\begin{array}{c}\vdots&amp;\cdots&amp;\vdots\\\mathbf{e}_1&amp;\cdots&amp;\mathbf{e}_K\\\vdots&amp;\cdots&amp;\vdots\end{array}\right)\quad\text{where }K&lt;d\]</span></p>
 <p>Project <span class="math inline">\(X\)</span> (<span class="math inline">\(n\times d\)</span>) to a lower dimensional matrix <span class="math inline">\(Y\)</span> (<span class="math inline">\(n\times K\)</span>):</p>
-<p><span class="math display">\[\mathbf{y}_i=(\mathbf{x}_i-\boldsymbol{\mu})^TW\]</span></p>
+<p><span class="math display">\[\mathbf{y}_i=W^T(\mathbf{x}_i-\boldsymbol{\mu})\]</span></p>
 <p>Reconstruct <span class="math inline">\(\hat X\)</span> based on the lower dimensional matrix <span class="math inline">\(Y\)</span>:</p>
-<p><span class="math display">\[\hat{\mathbf{x}_i}=\mathbf{y}_i^TW^T+\boldsymbol{\mu}\]</span></p>
+<p><span class="math display">\[\hat{\mathbf{x}_i}=W\mathbf{y}_i+\boldsymbol{\mu}\]</span></p>
 
 
 
