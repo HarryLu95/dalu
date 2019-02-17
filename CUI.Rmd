@@ -31,20 +31,20 @@ ul {font-size: 16px; color: black;}
 - Week 2
     - Lecture 3: [Principal Component Analysis](CU/5786/Lec03.pdf)
     - Handout (Jan/29): [PCA Handout 2](CU/5786/Handout02.html)
-    - Algorithm: [**PCA Algorithm**](CU/5786/Algorithm01.html)
+    - Algorithm: [**PCA Algorithm**](CU/5786/Algorithm01.html) (need updating)
     - Lecture 4: [PCA and Random Projections](CU/5786/Lec04.pdf)
     - Handout (Jan/31): [Random Projections Handout](CU/5786/Handout03.html)
 - Week 3
     - Lecture 5: [Random Projections & Canonical Correlation Analysis](CU/5786/Lec05.pdf)
     - Lecture Note: 5 [Random Projections](CU/5786/LecNote5.pdf)
     - Lecture 6: [Canonical Correlation Analysis](CU/5786/Lec06.pdf)
-    - Handout (Feb/7): [Canonical Correlations Analysis Handout](CU/5786/Handout04.html)
+    - Handout (Feb/7): [Canonical Correlations Analysis Handout](CU/5786/Handout04.html) (pending)
     - Lecture Note: 6 [Canonical Correlation Analysis](CU/5786/LecNote6.pdf)
 - Week 4
     - Lecture 7: [Canonical Correlation Analysis & Kernel PCA](CU/5786/Lec07.pdf)
     - Lecture Note: 7 [Kernel PCA](CU/5786/LecNote7.pdf)
     - Lecture 8: [Kernel PCA & Isomap & TSNE](CU/5786/Lec08.pdf)
-    - Handout (Feb/14): [Kernel Methods & t-SNE](CU/5786/Handout05.html)
+    - Handout (Feb/14): [Kernel Methods & t-SNE](CU/5786/Handout05.html) (pending)
 
 
 
@@ -78,7 +78,7 @@ ul {font-size: 16px; color: black;}
 3. [Basic Vi Commands](CU/5065/Lec03.pdf)
     - [Lecture 3 Note](CU/5065/Summary03.html)
 4. [The Hadoop Distributed Filesystem (HDFS)](CU/5065/Lec04.pdf)
-    - [Lecture 4 Note](CU/5065/Summary04.html)
+    - [Lecture 4 Note](CU/5065/Summary04.html) (pending)
 
 ##Homeworks
 1. [Homework 1](CU/5065/HW1.pdf)
@@ -100,8 +100,8 @@ ul {font-size: 16px; color: black;}
     - [Note 1-3](CU/4060/LectureNote1-3.html): List Functions, Matrixes, Tuples, Dictionaries, Dictionary Functions
     - [Note 1-4](CU/4060/LectureNote1-4.html): Sets, Set Operations, Set Functions, Data Type Comparison, Operators
 2. [Lecture 2](CU/4060/Lec02.pdf)
-    - [Note 2-1](CU/4060/LectureNote2-1.html)
-    - [Note 2-2](CU/4060/LectureNote2-2.html)
+    - [Note 2-1](CU/4060/LectureNote2-1.html) (pending)
+    - [Note 2-2](CU/4060/LectureNote2-2.html) (pending)
 3. 
 
 ##Homeworks
@@ -136,7 +136,7 @@ ul {font-size: 16px; color: black;}
     - Th: [Feb/7](CU/4630/Lec06.html)
 - Week 4
     - Tu: [Feb/12](CU/4630/Lec07.html)
-    - Th: [Feb/14](CU/4630/Lec08.html) pending
+    - Th: [Feb/14](CU/4630/Lec08.html) (pending)
 
 ##Homeworks
 1. [Homework 1](CU/4630/HW1.pdf)
@@ -150,7 +150,7 @@ ul {font-size: 16px; color: black;}
 3. [Homework 3](CU/4630/HW3.pdf)
     - data: [returns](CU/4630/returns.csv) (.csv)
     - Due: Feb/19/2019, Tuesday
-    - [HW3](CU/4630/HW3.html)
+    - [HW3](CU/4630/HW3.html) (pending)
 
 
 
