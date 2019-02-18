@@ -97,7 +97,7 @@ ul {font-size: 16px; color: black;}
 1. [Lecture 1](CU/4060/Lec01.pdf)
     - [Note 1-1](CU/4060/LectureNote1-1.html): Calculator, Basic Data Types
     - [Note 1-2](CU/4060/LectureNote1-2.html): String Functions, Lists
-    - [Note 1-3](CU/4060/LectureNote1-3.html): List Functions, Matrixes, Tuples, Dictionaries, Dictionary Functions
+    - [Note 1-3](CU/4060/LectureNote1-3.html): List Functions, Matrices, Tuples, Dictionaries, Dictionary Functions
     - [Note 1-4](CU/4060/LectureNote1-4.html): Sets, Set Operations, Set Functions, Data Type Comparison, Operators
 2. [Lecture 2](CU/4060/Lec02.pdf)
     - [Note 2-1](CU/4060/LectureNote2-1.html) (pending)
@@ -153,7 +153,11 @@ ul {font-size: 16px; color: black;}
     - data: [returns](CU/4630/returns.csv) (.csv)
     - Due: Feb/19/2019, Tuesday
     - [HW3](CU/4630/HW3.html)
-
+4. [Homework 4](CU/4630/HW4.pdf)
+    - data: [returns](CU/4630/returns.csv) (.csv)
+    - data: [prices](CU/4630/prices.csv) (.csv)
+    - Due: Feb/28/2019, Thursday
+    - [HW4](CU/4630/HW4.html)
 
 
 ---
@@ -351,7 +355,7 @@ ul {font-size: 16px; color: black;}
 - [Midterm Solution](CU/5030/Midterm_S.pdf)
 - [Practice Final](CU/5030/Final_Fall2017.pdf)
     - [Solution](CU/5030/Final_Fall2017_S.pdf)
-- [Fianl Review](CU/5030/Final_Review.pdf)
+- [Final Review](CU/5030/Final_Review.pdf)
     - [Solution](CU/5030/Final_Review_S.pdf)
 - [Final Formulae](CU/5030/Formulae2.pdf)
 
