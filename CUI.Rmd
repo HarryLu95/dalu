@@ -138,7 +138,7 @@ ul {font-size: 16px; color: black;}
     - Th: [Feb/7](CU/4630/Lec06.html)
 - Week 4
     - Tu: [Feb/12](CU/4630/Lec07.html)
-    - Th: [Feb/14](CU/4630/Lec08.html) (pending)
+    - Th: [Feb/14](CU/4630/Lec08.html)
 
 ##Homeworks
 1. [Homework 1](CU/4630/HW1.pdf)
@@ -152,7 +152,7 @@ ul {font-size: 16px; color: black;}
 3. [Homework 3](CU/4630/HW3.pdf)
     - data: [returns](CU/4630/returns.csv) (.csv)
     - Due: Feb/19/2019, Tuesday
-    - [HW3](CU/4630/HW3.html) (pending)
+    - [HW3](CU/4630/HW3.html)
 
 
 
