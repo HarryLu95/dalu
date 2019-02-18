@@ -22,9 +22,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
-<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -100,6 +99,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -114,7 +116,6 @@ body {
   padding-top: 57px;
   margin-top: -57px;
 }
-
 .section h2 {
   padding-top: 57px;
   margin-top: -57px;
@@ -134,6 +135,43 @@ body {
 .section h6 {
   padding-top: 57px;
   margin-top: -57px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -155,18 +193,77 @@ $(document).ready(function () {
 });
 </script>
 
-
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -276,6 +373,7 @@ bdi {font-size: 12px; color: black;}
 <li><a href="Music%20Sheets/柴可夫斯基-那不勒斯舞曲(鋼琴小提琴).pdf">柴可夫斯基 - 那不勒斯舞曲 Napoli Dance (Piano &amp; Violin)</a> <a href="http://www.gangqinpu.com/html/9061.htm"><bdi>original</bdi></a></li>
 <li><a href="Music%20Sheets/柴可夫斯基-那不勒斯舞曲(鋼琴).pdf">柴可夫斯基 - 那不勒斯舞曲 Napoli Dance (Piano)</a> <a href="http://www.gangqinpu.com/html/7971.htm"><bdi>original</bdi></a></li>
 <li><a href="Music%20Sheets/貝多芬-月光.pdf">貝多芬 - 月光</a> <a href="http://www.gangqinpu.com/html/127.htm"><bdi>original</bdi></a></li>
+<li><a href="Music%20Sheets/舒伯特-小夜曲.pdf">舒伯特 - 小夜曲</a> <a href="http://www.gangqinpu.com/html/22600.htm"><bdi>original</bdi></a></li>
 <li><a href="Music%20Sheets/維塔斯-星星.pdf">維塔斯 - 星星</a> <a href="http://www.gangqinpu.com/html/17086.htm"><bdi>original</bdi></a></li>
 <li><a href="Music%20Sheets/周傑倫-最長的電影.pdf">周傑倫 - 最長的電影</a> <a href="http://www.gangqinpu.com/html/4425.htm"><bdi>original</bdi></a></li>
 <li><a href="Music%20Sheets/周傑倫-最長的電影(鋼琴+其它).pdf">周傑倫 - 最長的電影 (Piano &amp; Other)</a> <a href="http://www.gangqinpu.com/html/6253.htm"><bdi>original</bdi></a></li>
@@ -331,7 +429,7 @@ bdi {font-size: 12px; color: black;}
 <li><a href="Music%20Sheets/.pdf">鄧紫棋 - 多遠都要在一起</a> <a href="http://www.gangqinpu.com/html/.htm"><bdi>original</bdi></a></li>
 <li><a href="Music%20Sheets/光良-童話.pdf">光良 - 童話</a> <a href="http://www.gangqinpu.com/html/29568.htm"><bdi>original</bdi></a></li>
 <li><a href="Music%20Sheets/雨蝶.pdf">李翊君 - 雨蝶</a> <a href="http://www.gangqinpu.com/html/33912.htm"><bdi>original</bdi></a></li>
-<li><p><a href="Music%20Sheets/暗香.pdf">沙寶亮 - 暗香</a> <a href=""><bdi>original</bdi></a></p></li>
+<li><p><a href="Music%20Sheets/暗香.pdf">沙寶亮 - 暗香</a> <a href="http://www.gangqinpu.com/html/5005.htm"><bdi>original</bdi></a></p></li>
 <li><p><a href="Music%20Sheets/.pdf"></a> <a href=""><bdi>original</bdi></a></p></li>
 </ul>
 </div>
