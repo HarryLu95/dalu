@@ -38,7 +38,7 @@ ul {font-size: 16px; color: black;}
     - Lecture 5: [Random Projections & Canonical Correlation Analysis](CU/5786/Lec05.pdf)
     - Lecture Note: 5 [Random Projections](CU/5786/LecNote5.pdf)
     - Lecture 6: [Canonical Correlation Analysis](CU/5786/Lec06.pdf)
-    - Handout (Feb/7): [Canonical Correlations Analysis Handout](CU/5786/Handout04.html) (pending)
+    - Handout (Feb/7): [Canonical Correlations Analysis Handout](CU/5786/Handout04.html)
     - Lecture Note: 6 [Canonical Correlation Analysis](CU/5786/LecNote6.pdf)
 - Week 4
     - Lecture 7: [Canonical Correlation Analysis & Kernel PCA](CU/5786/Lec07.pdf)
@@ -104,9 +104,9 @@ ul {font-size: 16px; color: black;}
     - [Note 1-3](CU/4060/LectureNote1-3.html): List Functions, Matrices, Tuples, Dictionaries, Dictionary Functions
     - [Note 1-4](CU/4060/LectureNote1-4.html): Sets, Set Operations, Set Functions, Data Type Comparison, Operators
 2. [Lecture 2](CU/4060/Lec02.pdf)
-    - [Note 2-1](CU/4060/LectureNote2-1.html) (pending)
-    - [Note 2-2](CU/4060/LectureNote2-2.html) (pending)
-    - [Note 2-3](CU/4060/LectureNote2-3.html) (pending)
+    - [Note 2-1](CU/4060/LectureNote2-1.html): Built-in Functions, More on Creating Dictionaries
+    - [Note 2-2](CU/4060/LectureNote2-2.html): Importable Functions, User-Defined Functions, Polymorphism, Variable Scopes, Starred-Argument Syntax
+    - [Note 2-3](CU/4060/LectureNote2-3.html): Files, Class and Objects
 3. [Lecture 3](CU/4060/Lec03.pdf)
     - [Note 3-1](CU/4060/LectureNote3-1.html) (pending)
 
