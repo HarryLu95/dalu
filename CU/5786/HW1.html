@@ -14828,7 +14828,7 @@ task in this problem is to create the two data sets, one in which PCA beats rand
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -14861,7 +14861,7 @@ task in this problem is to create the two data sets, one in which PCA beats rand
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#&lt;GRADED&gt;</span>
@@ -14869,6 +14869,72 @@ task in this problem is to create the two data sets, one in which PCA beats rand
 
 <span class="k">def</span> <span class="nf">Q21_solution</span><span class="p">():</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span>
+    
+    <span class="c1"># 1**2 + 2**3 + 3**4 + 4**5 + 5**6 + 7**8 + 8**9 + 9**10</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">5</span> == 0:
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 0:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">**</span><span class="mi">2</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 1:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span><span class="o">**</span><span class="mi">2</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 2:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">27</span><span class="o">**</span><span class="mi">5</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 3:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span><span class="o">**</span><span class="mi">23</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 4:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">**</span><span class="mi">2</span>
+            <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">5</span> == 1:
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 0:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">3</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 1:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="o">**</span><span class="mi">4</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 2:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span><span class="o">**</span><span class="mi">5</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 3:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="o">**</span><span class="mi">6</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 4:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span><span class="o">**</span><span class="mi">7</span>
+            <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">5</span> == 2:
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 0:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="o">**</span><span class="mi">4</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 1:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">4</span><span class="o">**</span><span class="mi">5</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 2:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">4</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">5</span><span class="o">**</span><span class="mi">6</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 3:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">4</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">5</span><span class="o">**</span><span class="mi">6</span> <span class="o">+</span> <span class="mi">6</span><span class="o">**</span><span class="mi">7</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 4:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">4</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">5</span><span class="o">**</span><span class="mi">6</span> <span class="o">+</span> <span class="mi">6</span><span class="o">**</span><span class="mi">7</span> <span class="o">+</span> <span class="mi">7</span><span class="o">**</span><span class="mi">8</span>
+            <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">5</span> == 3:
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 0:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 1:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5000</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 2:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 3:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 4:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">5</span> == 4:
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 0:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">75</span><span class="o">**</span><span class="mi">13</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 1:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span><span class="o">**</span><span class="mi">20</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 2:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span><span class="o">**</span><span class="mi">20</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 3:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span><span class="o">**</span><span class="mi">20</span>
+                <span class="k">if</span> <span class="n">j</span><span class="o">%</span><span class="k">5</span> == 4:
+                    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span><span class="o">**</span><span class="mi">20</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">/</span> <span class="n">s</span><span class="o">**</span><span class="mf">0.5</span>
+    
     <span class="k">return</span> <span class="n">X</span>
 <span class="c1">#&lt;/GRADED&gt;</span>
 </pre></div>
@@ -14889,7 +14955,7 @@ task in this problem is to create the two data sets, one in which PCA beats rand
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#&lt;GRADED&gt;</span>
@@ -14897,6 +14963,10 @@ task in this problem is to create the two data sets, one in which PCA beats rand
 
 <span class="k">def</span> <span class="nf">Q22_solution</span><span class="p">():</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    
     <span class="k">return</span> <span class="n">X</span>
 <span class="c1">#&lt;/GRADED&gt;</span>
 </pre></div>
@@ -14915,7 +14985,7 @@ task in this problem is to create the two data sets, one in which PCA beats rand
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">XrBp</span> <span class="o">=</span> <span class="n">Q22_solution</span><span class="p">()</span>
@@ -14949,7 +15019,7 @@ task in this problem is to create the two data sets, one in which PCA beats rand
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">K</span> <span class="o">=</span> <span class="mi">20</span>
@@ -14961,7 +15031,7 @@ task in this problem is to create the two data sets, one in which PCA beats rand
 <span class="n">WpcarBp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">WpcarBp</span><span class="p">)</span>
 
 
-<span class="n">SigmapBr</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">XrBp</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
+<span class="n">SigmapBr</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">XpBr</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
 
 <span class="n">E</span><span class="p">,</span><span class="n">WpcapBr</span> <span class="o">=</span> <span class="n">eigs</span><span class="p">(</span><span class="n">SigmapBr</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="n">K</span><span class="p">,</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;LM&#39;</span><span class="p">)</span>
 
@@ -15017,6 +15087,27 @@ task in this problem is to create the two data sets, one in which PCA beats rand
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>For &#34;PCA beats RP&#34; ERR_RP - ERR_PCA = 0.11557671398019959
+For &#34;RP beats PCA&#34; ERR_PCA - ERR_RP = 0.7075739748033135
+ 
+Larger the above differences in errors the better. 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -15040,7 +15131,7 @@ first $500$ points and last $500$ points should be well-separated.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#&lt;GRADED&gt;</span>
@@ -15050,6 +15141,39 @@ first $500$ points and last $500$ points should be well-separated.</p>
 
 <span class="k">def</span> <span class="nf">Q3_solution</span><span class="p">():</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1000</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+    
+    
+    <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,(</span><span class="mi">500</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
+    <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="mi">50</span><span class="p">:</span><span class="mi">100</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span>
+    <span class="n">X</span><span class="p">[</span><span class="mi">500</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">,(</span><span class="mi">500</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
+    <span class="n">X</span><span class="p">[</span><span class="mi">500</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="mi">50</span><span class="p">:</span><span class="mi">100</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">500</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span>
+    
+    <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="c1">#    X[:,49] = np.random.normal(5000,20,1000)</span>
+<span class="c1">#    X[:,50] = np.random.normal(50,10,1000)</span>
+    <span class="n">X</span><span class="p">[:,</span><span class="mi">99</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+    
+<span class="c1">#     for i in range(1000):</span>
+<span class="c1">#         for j in range(50):</span>
+<span class="c1">#             if i%500 == 0 &amp; i%3 == 0:</span>
+<span class="c1">#                 X[i, j] = 1</span>
+<span class="c1">#                 X[i, j+50] = 1</span>
+<span class="c1">#             if i%500 == 0 &amp; i%3 == 1:</span>
+<span class="c1">#                 X[i, j] = 2</span>
+<span class="c1">#                 X[i, j+50] = 2</span>
+<span class="c1">#             if i%500 == 0 &amp; i%3 == 2:</span>
+<span class="c1">#                 X[i, j] = 3</span>
+<span class="c1">#                 X[i, j+50] = 3</span>
+<span class="c1">#             if i%500 == 1 &amp; i%3 == 0:</span>
+<span class="c1">#                 X[i, j] = 100</span>
+<span class="c1">#                 X[i, j+50] = 100</span>
+<span class="c1">#             if i%500 == 1 &amp; i%3 == 1:</span>
+<span class="c1">#                 X[i, j] = 200</span>
+<span class="c1">#                 X[i, j+50] = 200</span>
+<span class="c1">#             if i%500 == 1 &amp; i%3 == 2:</span>
+<span class="c1">#                 X[i, j] = 300</span>
+<span class="c1">#                 X[i, j+50] = 300</span>
+    
     <span class="k">return</span> <span class="n">X</span>
 
 <span class="c1">#&lt;/GRADED&gt;</span>
@@ -15070,7 +15194,7 @@ first $500$ points and last $500$ points should be well-separated.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="k">import</span> <span class="n">scatter</span>
@@ -15109,6 +15233,28 @@ first $500$ points and last $500$ points should be well-separated.</p>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -15121,15 +15267,22 @@ first $500$ points and last $500$ points should be well-separated.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">K</span> <span class="o">=</span> <span class="mi">49</span>
+<span class="n">Sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 <span class="n">E1</span><span class="p">,</span> <span class="n">W1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">Sigma</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">])</span>
-<span class="n">E2</span><span class="p">,</span> <span class="n">W2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">Sigma</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">])</span>
+<span class="n">E2</span><span class="p">,</span> <span class="n">W2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">Sigma</span><span class="p">[</span><span class="mi">50</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="mi">50</span><span class="p">:</span><span class="mi">100</span><span class="p">])</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">E1</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">E1</span> <span class="o">=</span> <span class="n">E1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+<span class="n">W1</span> <span class="o">=</span> <span class="n">W1</span><span class="p">[:,</span><span class="n">idx</span><span class="p">]</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">E2</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">E2</span> <span class="o">=</span> <span class="n">E2</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+<span class="n">W2</span> <span class="o">=</span> <span class="n">W2</span><span class="p">[:,</span><span class="n">idx</span><span class="p">]</span>
 
-<span class="n">W1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">W1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">50</span><span class="p">])</span>
-<span class="n">W2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">W2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">50</span><span class="p">])</span>
+<span class="n">W1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">W1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">49</span><span class="p">])</span>
+<span class="n">W2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">W2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">49</span><span class="p">])</span>
 
 <span class="n">XX1</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W1</span><span class="p">)</span>
 <span class="n">XX2</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">50</span><span class="p">:</span><span class="mi">100</span><span class="p">]</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W2</span><span class="p">)</span>
@@ -15163,6 +15316,28 @@ first $500$ points and last $500$ points should be well-separated.</p>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAD8CAYAAABkbJM/AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDIuMi4zLCBodHRwOi8vbWF0cGxvdGxpYi5vcmcvIxREBQAAFShJREFUeJzt3W2snOV95/Hvz+dgEtKGBdskFGMbivcBdqVsGJGk0VbsEogTrWKqpaqz3cSRqLyBZPNitS9AUZeIbHdDpFWkLLSVA7Qk0EJKlY1TJXV5CFpVagjHqxAeuhSHEHwKCyZGbFypSWz/98Xcxx1OZs5cPnPs40O/H+nS3Pc113XN38PM/M7MPXOTqkKSpHFWLXcBkqSVwcCQJDUxMCRJTQwMSVITA0OS1MTAkCQ1MTAkSU2WJDCSbEnyVJK9Sa4bcv2pSe7prn84yaauf02SbyY5mOTmeXMe6tb8TtfOWopaJUmLMz3pAkmmgFuAy4FZ4JEku6rqyYFhVwOvVNUFSbYBNwG/Bvwt8JvAP+3afL9eVTOT1ihJmtzEgQFcAuytqmcAktwNbAUGA2Mr8Klu+17g5iSpqr8B/jzJBUtQB2vXrq1NmzYtxVKS9PfGnj17Xq6qdePGLUVgnAPsG9ifBd4xakxVHUryKrAGeHnM2r+X5DDwx8B/qTHnMdm0aRMzM74hkaRjkeQHLeOW4hhGhvTNf2FvGTPfr1fVPwP+Rdc+NPTGkx1JZpLM7N+/f2yxkqTFWYrAmAXOHdhfDzw/akySaeB04MBCi1bVX3eXPwL+gP5HX8PG7ayqXlX11q0b+45KkrRISxEYjwCbk5yXZDWwDdg1b8wuYHu3fRXw4EIfLyWZTrK22z4F+NfA40tQqyRpkSY+htEdk/g4sBuYAm6vqieS3AjMVNUu4DbgS0n20n9nsW1ufpJngTcDq5NcCVwB/ADY3YXFFHA/8IVJa5UkLV5eT/8/jF6vVx70lqRjk2RPVfXGjfOX3pKkJgaGJKmJgSFJamJgSJKaGBiSpCYGhiSpiYEhSWpiYEiSmhgYkqQmBoYkqYmBIUlqYmBIkpoYGJKkJgaGJKmJgSFJamJgSJKaGBiSpCYGhiSpiYEhSWpiYEiSmhgYkqQmBoYkqYmBIUlqYmBIkpoYGJKkJgaGJKmJgSFJarIkgZFkS5KnkuxNct2Q609Nck93/cNJNnX9a5J8M8nBJDfPm3Nxkse6OZ9PkqWoVZK0OBMHRpIp4BbgfcCFwAeTXDhv2NXAK1V1AfA54Kau/2+B3wT+05ClfwfYAWzu2pZJa5UkLd5SvMO4BNhbVc9U1U+Au4Gt88ZsBe7otu8FLkuSqvqbqvpz+sFxVJKzgTdX1V9UVQFfBK5cglolSYu0FIFxDrBvYH+26xs6pqoOAa8Ca8asOTtmTQCS7Egyk2Rm//79x1i6JKnVUgTGsGMLtYgxixpfVTurqldVvXXr1i2wpCRpEksRGLPAuQP764HnR41JMg2cDhwYs+b6MWtKkk6gpQiMR4DNSc5LshrYBuyaN2YXsL3bvgp4sDs2MVRVvQD8KMk7u29HfRj46hLUKklapOlJF6iqQ0k+DuwGpoDbq+qJJDcCM1W1C7gN+FKSvfTfWWybm5/kWeDNwOokVwJXVNWTwDXA7wNvBL7RNUnSMskCf+ivOL1er2ZmZpa7DElaUZLsqareuHH+0luS1MTAkCQ1MTAkSU0MDElSEwNDktTEwJAkNTEwJElNDAxJUhMDQ5LUxMCQJDUxMCRJTQwMSVITA0OS1MTAkCQ1MTAkSU0MDElSEwNDktTEwJAkNTEwJElNDAxJUhMDQ5LUxMCQJDUxMCRJTQwMSVITA0OS1MTAkCQ1MTAkSU2WJDCSbEnyVJK9Sa4bcv2pSe7prn84yaaB667v+p9K8t6B/meTPJbkO0lmlqJOSdLiTU+6QJIp4BbgcmAWeCTJrqp6cmDY1cArVXVBkm3ATcCvJbkQ2AZcBPwCcH+Sf1hVh7t5/7KqXp60RknS5JbiHcYlwN6qeqaqfgLcDWydN2YrcEe3fS9wWZJ0/XdX1Y+r6vvA3m49SdJJZikC4xxg38D+bNc3dExVHQJeBdaMmVvAnyXZk2THqBtPsiPJTJKZ/fv3T/QPkSSNthSBkSF91Thmobnvrqq3A+8DPpbkl4fdeFXtrKpeVfXWrVvXWrMk6RgtRWDMAucO7K8Hnh81Jsk0cDpwYKG5VTV3+RLwFfyoSpKW1VIExiPA5iTnJVlN/yD2rnljdgHbu+2rgAerqrr+bd23qM4DNgPfTvKmJD8PkORNwBXA40tQqyRpkSb+llRVHUrycWA3MAXcXlVPJLkRmKmqXcBtwJeS7KX/zmJbN/eJJF8GngQOAR+rqsNJ3gJ8pX9cnGngD6rqTyetVZK0eOn/of/60Ov1ambGn2xI0rFIsqeqeuPG+UtvSVITA0OS1MTAkCQ1MTAkSU0MDElSEwNDktTEwJAkNTEwJElNDAxJUhMDQ5LUxMCQJDUxMCRJTQwMSVITA0OS1MTAkCQ1MTAkSU0MDElSEwNDktTEwJAkNTEwJElNDAxJUhMDQ5LUxMCQJDUxMCRJTQwMSVITA0OS1GRJAiPJliRPJdmb5Loh15+a5J7u+oeTbBq47vqu/6kk721dU5J0Yk0cGEmmgFuA9wEXAh9McuG8YVcDr1TVBcDngJu6uRcC24CLgC3AbyeZalxz6d11F2zaBKtW9S/vumv8mGuvXXjOqDXvuouDazdRCYcyTSUcWTUFCZXww1VruSXXMjvdH8N0f8y+qU3829xFAreeei1HMkV1c0Y15trUFPzcz/VrWbsWTjll7NzXzG8YO6wdXuQ82+unHRnSdyjTPJqLODziMTx/zuFMcSTh2Wzi5lzLs/m7589g/4tvnPd8655rR7Lq6Jh9U5uoDHnOds/Xyipmp/vPtenp/sN/YDk+sfYunk1/zYNrR7xWLOHLzvGYuyhVNVED3gXsHti/Hrh+3pjdwLu67WngZSDzx86Na1lzWLv44otr0e68s+q006rg79ppp/X7Fxozvw3OGbXmNdfUT1ePWQfqyIj+g5xWf8plI6+32VZKW+xjeNS8n+lfvboOTZ2y8Ji55+yQ5+tBTqsPcufRrlNOqfrQ1J11kNeO++nqea8VS/iyczzmzgfMVDW83rcMWnABuAq4dWD/Q8DN88Y8Dqwf2P8esBa4Gfh3A/23deuNXXNYmygwNm4c/uDcuHH8mFFzRo2fmlq2J5rNZhvSNm4c+Xz9Phtf0/V9Gl4rlvBl53jMna81MKaX4E1KhvRV45hR/cM+Kpu/Zn/hZAewA2DDhg2jqxznuefG948aM2rOqPGHD7fXJen4W+C5vYHnFtxvWeNYb7ZlqUnmLtZSHPSeBc4d2F8PPD9qTJJp4HTgwAJzW9YEoKp2VlWvqnrr1q1b/L9iVNgM9rcG0ty4UeOnptrrknT8bdgw8vn6HBsW3H/NGou42cUuNcncRWt5G7JQo39M4hngPGA18Chw0bwxHwN+t9veBny5276oG39qN/8ZYKplzWHNYxg228pqHsP4e3YMo39bvB/4K/rHJj7Z9d0IfKDbfgPwR8Be4NvA+QNzP9nNewp430JrjmsTBUZV/57euLEq6V8Ou+fnj7nmmoXnjFrzzjvrR2s21hGonzJVR6AOZ9XRB/TLWVM3c03tm+qPqan+mOdWbTz6AP7C6mvqMKvqSDdnVDv6aFq1qupNb+rXsmZN1fT02Lnzn1wt4+e3Q4ucZ3v9tMND+n7KVH2HC+vQiMfw/DmHWFWH6R9T+B9cU99nYx3u1hns/79vmPd8655rh8nRMc+t2lhHGPKc7Z6vR0jtm+o/1+YOOQ4sV/9hzZ3d7ad+tGbEa8USvuwcj7mDWgMj/bGvD71er2ZmZpa7DElaUZLsqareuHH+0luS1MTAkCQ1MTAkSU0MDElSEwNDktTEwJAkNTEwJElNDAxJUhMDQ5LUxMCQJDUxMCRJTQwMSVITA0OS1MTAkCQ1MTAkSU0MDElSEwNDktTEwJAkNTEwJElNDAxJUhMDQ5LUxMCQJDUxMCRJTQwMSVITA0OS1MTAkCQ1MTAkSU0mCowkZya5L8nT3eUZI8Zt78Y8nWT7QP/FSR5LsjfJ55Ok6/9Ukr9O8p2uvX+SOiVJk5v0HcZ1wANVtRl4oNt/jSRnAjcA7wAuAW4YCJbfAXYAm7u2ZWDq56rqbV37+oR1SpImNGlgbAXu6LbvAK4cMua9wH1VdaCqXgHuA7YkORt4c1X9RVUV8MUR8yVJJ4FJA+MtVfUCQHd51pAx5wD7BvZnu75zuu35/XM+nuS7SW4f9VGXJOnEGRsYSe5P8viQtrXxNjKkrxboh/5HVb8IvA14AfjvC9S3I8lMkpn9+/c3liRJOlbT4wZU1XtGXZfkxSRnV9UL3UdMLw0ZNgtcOrC/Hnio618/r//57jZfHLiNLwB/skB9O4GdAL1er0aNkyRNZtKPpHYBc9962g58dciY3cAVSc7oPlq6AtjdfYT1oyTv7L4d9eG5+V34zPkV4PEJ65QkTWjsO4wxPgN8OcnVwHPArwIk6QEfrarfqKoDST4NPNLNubGqDnTb1wC/D7wR+EbXAD6b5G30P6J6Fvj3E9YpSZpQ+l9Qen3o9Xo1MzOz3GVI0oqSZE9V9caN85fekqQmBoYkqYmBIUlqYmBIkpoYGJKkJgaGJKmJgSFJamJgSJKaGBiSpCYGhiSpiYEhSWpiYEiSmhgYkqQmBoYkqYmBIUlqYmBIkpoYGJKkJgaGJKmJgSFJamJgSJKaGBiSpCYGhiSpiYEhSWpiYEiSmhgYkqQmBoYkqYmBIUlqMlFgJDkzyX1Jnu4uzxgxbns35ukk2wf6fyvJviQH540/Nck9SfYmeTjJpknqlCRNbtJ3GNcBD1TVZuCBbv81kpwJ3AC8A7gEuGEgWL7W9c13NfBKVV0AfA64acI6JUkTmjQwtgJ3dNt3AFcOGfNe4L6qOlBVrwD3AVsAqupbVfXCmHXvBS5LkglrlSRNYNLAeMvcC353edaQMecA+wb2Z7u+hRydU1WHgFeBNRPWKkmawPS4AUnuB9465KpPNt7GsHcGtVRzkuwAdgBs2LChsSRJ0rEaGxhV9Z5R1yV5McnZVfVCkrOBl4YMmwUuHdhfDzw05mZngXOB2STTwOnAgRH17QR2AvR6vXFBJElapEk/ktoFzH3raTvw1SFjdgNXJDmjO9h9RdfXuu5VwINVZRhI0jKaNDA+A1ye5Gng8m6fJL0ktwJU1QHg08AjXbux6yPJZ5PMAqclmU3yqW7d24A1SfYC/5Eh376SJJ1YeT394d7r9WpmZma5y5CkFSXJnqrqjRvnL70lSU0MDElSEwNDktTEwJAkNTEwJElNDAxJUhMDQ5LUxMCQJDUxMCRJTQwMSVITA0OS1MTAkCQ1MTAkSU0MDElSEwNDktTEwJAkNTEwJElNDAxJUhMDQ5LUxMCQJDUxMCRJTQwMSVITA0OS1MTAkCQ1MTAkSU0MDElSEwNDktRkosBIcmaS+5I83V2eMWLc9m7M00m2D/T/VpJ9SQ7OG/+RJPuTfKdrvzFJnZKkyU36DuM64IGq2gw80O2/RpIzgRuAdwCXADcMBMvXur5h7qmqt3Xt1gnrlCRNaNLA2Arc0W3fAVw5ZMx7gfuq6kBVvQLcB2wBqKpvVdULE9YgSToBJg2Mt8y94HeXZw0Zcw6wb2B/tusb598k+W6Se5OcO2GdkqQJTY8bkOR+4K1Drvpk421kSF+NmfM14A+r6sdJPkr/3cu/GlHfDmAHwIYNGxpLkiQdq7GBUVXvGXVdkheTnF1VLyQ5G3hpyLBZ4NKB/fXAQ2Nu84cDu18Ablpg7E5gZ1fP/iQ/WGjt42wt8PIy3v5irMSaYWXWvRJrhpVZtzUfm40tg8YGxhi7gO3AZ7rLrw4Zsxv4rwMHuq8Arl9o0bkQ6nY/APxlSzFVta5l3PGSZKaqestZw7FaiTXDyqx7JdYMK7Nuaz4+Jj2G8Rng8iRPA5d3+yTpJbkVoKoOAJ8GHunajV0fST6bZBY4Lclskk91634iyRNJHgU+AXxkwjolSRNK1bjDCWq1Ev5CmG8l1gwrs+6VWDOszLqt+fjwl95La+dyF7AIK7FmWJl1r8SaYWXWbc3Hge8wJElNfIchSWpiYEwgya92B+ePJBn52WOSZ5M81p0Xa+ZE1jikltaatyR5KsneJD9zypcT7RjOW3Z44Bxku050nV0NC953SU5Nck93/cNJNp34Kn+mpnE1n3Tnd0tye5KXkjw+4vok+Xz3b/pukref6BqH1DSu5kuTvDpwP//nE13jgqrKtsgG/BPgH9H/XUlvgXHPAmuXu97WmoEp4HvA+cBq4FHgwmWu+7PAdd32dcBNI8YdXOY6x953wLXA73bb2+ifN+1kr/kjwM3LWeeQun8ZeDvw+Ijr3w98g/6Ph98JPLwCar4U+JPlrnNU8x3GBKrqL6vqqeWu41g01nwJsLeqnqmqnwB30z9v2HJqOW/ZyaDlvhv8t9wLXJZk2BkRTpST8b/3WFX1v4ADCwzZCnyx+r4F/IPuB8bLpqHmk5qBcWIU8GdJ9nSnMjnZLfb8X8dTy3nLAN6QZCbJt5IsR6i03HdHx1TVIeBVYM0JqW641v/eK+38bifj47jFu5I8muQbSS5a7mIGTfpL79e9hc6lVVXDftk+zLur6vkkZwH3Jfk/3V8ax8US1LyY839NbAnOWwawobuvzwceTPJYVX1vaSps0nLfLcv9u4CWeprP73YSOdnu5xb/G9hYVQeTvB/4n8DmZa7pKANjjFrgXFrHsMbz3eVLSb5C/yOA4xYYS1DzLDD4F+R64PkJ1xxrobobz1s2eF8/k+Qh4J/T/3z+RGm57+bGzCaZBk5neT+mGFtzHcP53U4iy/I4nkRV/b+B7a8n+e0ka6vqpDgvlh9JHWdJ3pTk5+e26Z9La+g3JE4ijwCbk5yXZDX9A7PL8o2jAXPnLYMR5y1LckaSU7vttcC7gSdPWIV9Lffd4L/lKuDB6o54LpOxNc/77L/5/G7LbBfw4e7bUu8EXq2T/P+/k+Stc8ezklxC/zX6hwvPOoGW+6j7Sm7Ar9D/K+bHwIvA7q7/F4Cvd9vn0//WyaPAE/Q/Fjqpa+723w/8Ff2/zpe15q6eNfT/r45Pd5dndv094NZu+5eAx7r7+jHg6mWq9WfuO+BG4APd9huAPwL2At8Gzj8J7t9xNf+37vH7KPBN4B+fBDX/IfAC8NPuMX018FHgo931AW7p/k2PscA3GU+imj8+cD9/C/il5a55sPlLb0lSEz+SkiQ1MTAkSU0MDElSEwNDktTEwJAkNTEwJElNDAxJUhMDQ5LU5P8DGPJQtyvCzlgAAAAASUVORK5CYII=
+"
+>
+</div>
+
+</div>
+
 </div>
 </div>
 
