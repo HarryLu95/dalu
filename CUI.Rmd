@@ -45,13 +45,17 @@ ul {font-size: 16px; color: black;}
     - Lecture Note: 7 [Kernel PCA](CU/5786/LecNote7.pdf)
     - Lecture 8: [Kernel PCA & Isomap & TSNE](CU/5786/Lec08.pdf)
     - Handout (Feb/14): [Kernel Methods & t-SNE](CU/5786/Handout05.html) (pending)
-
+    - Demo: ??? (pending)
+    - Demo: ??? (pending)
+- Week 5
+    - Lecture 9 (pending)
+    - Lecture 10 (pending)
 
 
 
 ##Homeworks
 - [Vocareum Link](https://labs.vocareum.com/home/login.php?email=dl947%40cornell.edu)
-- [Homework 1](CU/5786/HW1.html)
+- [Homework 1](CU/5786/HW1.html) (pending)
     - Due: Feb/20/2019 23:59:59 EST
 -  
 -  
@@ -139,6 +143,10 @@ ul {font-size: 16px; color: black;}
 - Week 4
     - Tu: [Feb/12](CU/4630/Lec07.html)
     - Th: [Feb/14](CU/4630/Lec08.html)
+- Week 5
+    - Tu: [Feb/19](CU/4630/Lec09.html) (pending)
+    - Th: [Feb/21](CU/4630/Lec10.html) (pending)
+
 
 ##Homeworks
 1. [Homework 1](CU/4630/HW1.pdf)
@@ -157,7 +165,7 @@ ul {font-size: 16px; color: black;}
     - data: [returns](CU/4630/returns.csv) (.csv)
     - data: [prices](CU/4630/prices.csv) (.csv)
     - Due: Feb/28/2019, Thursday
-    - [HW4](CU/4630/HW4.html)
+    - [HW4](CU/4630/HW4.html) (pending)
 
 
 ---

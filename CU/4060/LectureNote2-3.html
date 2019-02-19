@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>LectureNote2-2</title>
+<title>LectureNote2-3</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13116,31 +13116,34 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Lecture-02---Note-(2/3)">Lecture 02 - Note (2/3)<a class="anchor-link" href="#Lecture-02---Note-(2/3)">&#182;</a></h1>
+<h1 id="Lecture-02---Note-(3/3)">Lecture 02 - Note (3/3)<a class="anchor-link" href="#Lecture-02---Note-(3/3)">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="1.-Importable-Python-Functions">1. Importable Python Functions<a class="anchor-link" href="#1.-Importable-Python-Functions">&#182;</a></h1>
+<h1 id="1.-Python-Files">1. Python Files<a class="anchor-link" href="#1.-Python-Files">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.1-Math-Functions">1.1 Math Functions<a class="anchor-link" href="#1.1-Math-Functions">&#182;</a></h2>
+<p>A file is a Python object that gives us access to a file on the storage (e.g., disk) system</p>
+<p>A file object can be created for reading ("r" mode), for writing ("w“ mode), or for appending ("a" mode) to a file</p>
+<p>Opening a file for writing erases an existing file with that path/name</p>
+<p>Opening a file for append does not. The <code>file()</code> function can be used to create a file object</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The Python <strong>math</strong> module contains many useful non-built-in math functions</p>
-<p>They are defined by C standard</p>
-<p>To use, you need to import the math module. Here are some examples:</p>
-<p>(Refer to the Python docs for details)</p>
+<p><strong>Note:</strong></p>
+<p>In Python3 there is no <code>file()</code></p>
+<p>Use <code>open()</code> instead</p>
 
 </div>
 </div>
@@ -13150,67 +13153,40 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">outFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Harry Lu&#39;s X1\Documents\Cornell\STSCI 4060 - Python\pfile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Line 1 written&quot;</span><span class="p">)</span>
+<span class="n">outFile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.1-math.factorial(x)">1.1.1 <code>math.factorial(x)</code><a class="anchor-link" href="#1.1.1-math.factorial(x)">&#182;</a></h3><p>Returns x factorial</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">appendFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Harry Lu&#39;s X1\Documents\Cornell\STSCI 4060 - Python\pfile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="n">appendFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Line 2 appended</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">appendFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Line 3 appended</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">appendFile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>120
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.2-math.fsum(iterable)">1.1.2 <code>math.fsum(iterable)</code><a class="anchor-link" href="#1.1.2-math.fsum(iterable)">&#182;</a></h3><p>Returns an accurate sum of values in the iterable</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">fsum</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Harry Lu&#39;s X1\Documents\Cornell\STSCI 4060 - Python\pfile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">contents</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13227,38 +13203,10 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.8
-</pre>
-</div>
-</div>
+<pre>Line 1 written
+Line 2 appended
+Line 3 appended
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>0.7999999999999999
 </pre>
 </div>
 </div>
@@ -13270,804 +13218,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.3-math.log(x[,-base])">1.1.3 <code>math.log(x[, base])</code><a class="anchor-link" href="#1.1.3-math.log(x[,-base])">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>0.6931471805599453
-0.30102999566398114
-2.9999999999999996
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.4-math.log10(x)">1.1.4 <code>math.log10(x)</code><a class="anchor-link" href="#1.1.4-math.log10(x)">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># often more accurate than math.log(2, 10)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>0.3010299956639812
-0.30102999566398114
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.5-math.degrees(x)">1.1.5 <code>math.degrees(x)</code><a class="anchor-link" href="#1.1.5-math.degrees(x)">&#182;</a></h3><p>Convert radians x to degree</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>180.0
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.6-math.radians(x)">1.1.6 <code>math.radians(x)</code><a class="anchor-link" href="#1.1.6-math.radians(x)">&#182;</a></h3><p>Convert degrees x to radians</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mf">180.0</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>3.141592653589793
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.7-math.gamma(x)">1.1.7 <code>math.gamma(x)</code><a class="anchor-link" href="#1.1.7-math.gamma(x)">&#182;</a></h3><p>Returns the Gamma function at x</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>24.0
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.2-Random-Number-Functions">1.2 Random Number Functions<a class="anchor-link" href="#1.2-Random-Number-Functions">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The Python <strong>random</strong> module contains many useful non-built-in functions to generate random numbers</p>
-<p>To use, you need to import the random module</p>
-<p>Here are some examples:</p>
-<p>(Refer to the Python docs for details)</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.2.1-random.randrange(start,-stop[,-step])">1.2.1 <code>random.randrange(start, stop[, step])</code><a class="anchor-link" href="#1.2.1-random.randrange(start,-stop[,-step])">&#182;</a></h3><p>Return a randomly selected element from <code>range(start, stop, step</code></p>
-<p><strong>Note:</strong> <code>stop</code> is excluded from the range</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">80</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">800</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">800</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>26
-350
-420
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.2.2-random.randint(a,-b)">1.2.2 <code>random.randint(a, b)</code><a class="anchor-link" href="#1.2.2-random.randint(a,-b)">&#182;</a></h3><p>Return a random integer N such that a &lt;= N &lt;= b</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>3
-2
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.2.3-random.choice(seq)">1.2.3 <code>random.choice(seq)</code><a class="anchor-link" href="#1.2.3-random.choice(seq)">&#182;</a></h3><p>Return a random element from the non-empty sequence seq</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">45</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;he&quot;</span><span class="p">,</span> <span class="s2">&quot;she&quot;</span><span class="p">,</span> <span class="s2">&quot;we&quot;</span><span class="p">,</span> <span class="s2">&quot;they&quot;</span><span class="p">,</span> <span class="s2">&quot;you&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>2
-she
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.2.4-random.sample(population,-k)">1.2.4 <code>random.sample(population, k)</code><a class="anchor-link" href="#1.2.4-random.sample(population,-k)">&#182;</a></h3><p>Return a <code>k</code> length list of unique elements chosen from the population sequence</p>
-<p>Used for random sampling without replacement</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">45</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;he&quot;</span><span class="p">,</span> <span class="s2">&quot;she&quot;</span><span class="p">,</span> <span class="s2">&quot;we&quot;</span><span class="p">,</span> <span class="s2">&quot;they&quot;</span><span class="p">,</span> <span class="s2">&quot;you&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[78, 6, 5]
-[&#39;he&#39;, &#39;we&#39;]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.2.5-random.random()">1.2.5 <code>random.random()</code><a class="anchor-link" href="#1.2.5-random.random()">&#182;</a></h3><p>Return the next random floating point number in the range [0.0, 1.0)</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>0.9303552054091001
-0.5898171725951286
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="2.-User-Defined-Functions-(UDFs)">2. User-Defined Functions (UDFs)<a class="anchor-link" href="#2.-User-Defined-Functions-(UDFs)">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>General syntax:</p>
-<p><code>def function_name([parameter(s)]):
-    statements</code></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.1-Happy-Birthday-Song">2.1 Happy Birthday Song<a class="anchor-link" href="#2.1-Happy-Birthday-Song">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">happyBirthday</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Happy Birthday to you!&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Happy Birthday to you!&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Happy Birthday to dear &quot;</span> <span class="o">+</span> <span class="n">person</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Happy Birthday to you!&quot;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">happyBirthday</span><span class="p">(</span><span class="s2">&quot;Harry&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-    <span class="n">happyBirthday</span><span class="p">(</span><span class="s2">&quot;Harry2&quot;</span><span class="p">)</span>
-
-<span class="n">main</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Happy Birthday to you!
-Happy Birthday to you!
-Happy Birthday to dear Harry!
-Happy Birthday to you!
-
-Happy Birthday to you!
-Happy Birthday to you!
-Happy Birthday to dear Harry2!
-Happy Birthday to you!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.2-Some-Functions-of-Simple-Math">2.2 Some Functions of Simple Math<a class="anchor-link" href="#2.2-Some-Functions-of-Simple-Math">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.2.1-Addition">2.2.1 Addition<a class="anchor-link" href="#2.2.1-Addition">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">3.3</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>4.4
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.2.2-Substraction">2.2.2 Substraction<a class="anchor-link" href="#2.2.2-Substraction">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sub</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>2.0
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.2.3-Multiplication">2.2.3 Multiplication<a class="anchor-link" href="#2.2.3-Multiplication">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mult</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mult</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>144.0
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.2.4-Factorial">2.2.4 Factorial<a class="anchor-link" href="#2.2.4-Factorial">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">myFact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">):</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="n">myFact</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">myFact</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">myFact</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">myFact</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">myFact</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">myFact</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>1
-2
-6
-24
-120
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.3-Function-of-Volumn-Calculation">2.3 Function of Volumn Calculation<a class="anchor-link" href="#2.3-Function-of-Volumn-Calculation">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ballVolumn</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">math</span>
-    <span class="n">volumn</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">radius</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span>
-    <span class="k">return</span> <span class="n">volumn</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please input the radius of the ball: &quot;</span><span class="p">)</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">ballVolumn</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The volumn of a ball of radius </span><span class="si">%s</span><span class="s2"> is </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
-
-<span class="n">main</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Please input the radius of the ball: 3.5
-The volumn of a ball of radius 3.5 is 179.5943800302165.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="3.-Function-Polymorphism">3. Function Polymorphism<a class="anchor-link" href="#3.-Function-Polymorphism">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Python polymorphism is the ability to leverage the same name for different underlying forms such as data types, which permits functions to use entities of different types at different times</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>3
-ab
-[1, 2, 3, 4, 5, 6, 7, 8]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="4.-Function-Variable-Scopes">4. Function Variable Scopes<a class="anchor-link" href="#4.-Function-Variable-Scopes">&#182;</a></h1>
+<h1 id="2.-Python-Class-and-Objects">2. Python Class and Objects<a class="anchor-link" href="#2.-Python-Class-and-Objects">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14075,8 +13226,10 @@ ab
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><strong>Global variables:</strong> accessible inside and outside of functions</li>
-<li><strong>Local variables:</strong> only accessible inside the function</li>
+<li>A Python class is often a <strong>user-defined data type</strong>, e.g., <strong>MyClass</strong></li>
+<li>An instance of the class is called an object, e.g., <code>f</code>. However, in Python any value is an object</li>
+<li>Creating a new instance of a class is called <strong>instantiation</strong></li>
+<li>To instantiate an object you need to call <strong>a function with the same name as the class you defined</strong>, which is called a <strong>constructor</strong>, for example, <code>f = MyClass()</code>, where f is an object or an instance of MyClass, and <code>MyClass()</code> is a constructor</li>
 </ul>
 
 </div>
@@ -14084,28 +13237,27 @@ ab
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ballNum</span> <span class="o">=</span> <span class="mi">10</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Fruit</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">edible</span><span class="p">):</span> <span class="c1"># class constructor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">upper</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="c1"># instance variable</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edible</span> <span class="o">=</span> <span class="n">edible</span> <span class="c1"># instance variable</span>
+    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fruit name (upper case): </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">edible</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s edible.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s not edible.&quot;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">ballVolumn</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">math</span>
-    <span class="c1">#global volumn</span>
-    <span class="n">volumn</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">radius</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span>
-    <span class="k">return</span> <span class="n">volumn</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">Fruit</span><span class="p">(</span><span class="s2">&quot;Rotten Peach&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">obj</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="c1">#global ballNum</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please input the radius of the ball: &quot;</span><span class="p">)</span>
-    <span class="n">ballNum</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please input the number of ball(s): &quot;</span><span class="p">)</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">ballVolumn</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
-    <span class="n">vTotal</span> <span class="o">=</span> <span class="n">v</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">ballNum</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The volumn of a ball of radius </span><span class="si">%s</span><span class="s2"> is </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number of the balls is </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">ballNum</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The volumn of all the balls of radius </span><span class="si">%s</span><span class="s2"> is </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">vTotal</span><span class="p">))</span>
-
-<span class="n">main</span><span class="p">()</span>
+<span class="n">test</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14122,11 +13274,10 @@ ab
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Please input the radius of the ball: 2.5
-Please input the number of ball(s): 3
-The volumn of a ball of radius 2.5 is 65.44984694978736.
-The number of the balls is 3.
-The volumn of all the balls of radius 2.5 is 196.34954084936209.
+<pre>**************************************************
+==================================================
+Fruit name (upper case): ROTTEN PEACH.
+It&#39;s not edible.
 </pre>
 </div>
 </div>
@@ -14137,23 +13288,25 @@ The volumn of all the balls of radius 2.5 is 196.34954084936209.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
-<span class="k">def</span> <span class="nf">ff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">1</span>
-    <span class="n">lst</span> <span class="o">=</span> <span class="n">L</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">a</span>
-    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">num</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Fruit</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">edible</span><span class="p">):</span> <span class="c1"># class constructor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">upper</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="c1"># instance variable</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edible</span> <span class="o">=</span> <span class="n">edible</span> <span class="c1"># instance variable</span>
+    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fruit name (upper case): </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">edible</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s edible.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s not edible.&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">ff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-<span class="c1">#print(num)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;name &#39;num&#39; is not defined&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a fruit name: &quot;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Is it edible? Enter </span><span class="se">\&quot;</span><span class="s2">1</span><span class="se">\&quot;</span><span class="s2"> if edible; otherwise, </span><span class="se">\&quot;</span><span class="s2">0</span><span class="se">\&quot;</span><span class="s2">: &quot;</span><span class="p">))</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Fruit</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14170,10 +13323,11 @@ The volumn of all the balls of radius 2.5 is 196.34954084936209.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>22
-10
-[1, 2, 3, 4, 22]
-name &#39;num&#39; is not defined
+<pre>Enter a fruit name: rotten tomato
+Is it edible? Enter &#34;1&#34; if edible; otherwise, &#34;0&#34;: 0
+==================================================
+Fruit name (upper case): ROTTEN TOMATO.
+It&#39;s not edible.
 </pre>
 </div>
 </div>
@@ -14184,24 +13338,31 @@ name &#39;num&#39; is not defined
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
-<span class="k">def</span> <span class="nf">ff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">1</span>
-    <span class="n">lst</span> <span class="o">=</span> <span class="n">L</span>
-    <span class="k">global</span> <span class="n">num</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">a</span>
-    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">num</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Fruit</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">edible</span><span class="p">):</span> <span class="c1"># class constructor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">upper</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="c1"># instance variable</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edible</span> <span class="o">=</span> <span class="n">edible</span> <span class="c1"># instance variable</span>
+    <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fruit name (upper case): </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">edible</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s edible.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s not edible.&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">accounting</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">quantity</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many </span><span class="si">%s</span><span class="s2">S do you want? &quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">upper</span><span class="p">))</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What is the price? &quot;</span><span class="p">))</span>
+        <span class="n">amount</span> <span class="o">=</span> <span class="n">quantity</span><span class="o">*</span><span class="n">price</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please pay $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">ff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-<span class="c1">#print(lst)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;name &#39;lst&#39; is not defined&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a fruit name: &quot;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Is it edible? Enter </span><span class="se">\&quot;</span><span class="s2">1</span><span class="se">\&quot;</span><span class="s2"> if edible; otherwise, </span><span class="se">\&quot;</span><span class="s2">0</span><span class="se">\&quot;</span><span class="s2">: &quot;</span><span class="p">))</span>
+<span class="n">fruitObj</span> <span class="o">=</span> <span class="n">Fruit</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">fruitObj</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+<span class="n">fruitObj</span><span class="o">.</span><span class="n">accounting</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14218,119 +13379,14 @@ name &#39;num&#39; is not defined
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>22
-22
-[1, 2, 3, 4, 22]
-name &#39;lst&#39; is not defined
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="5.-Starred-Argument-Syntax-for-Arbitrary-Arguments">5. Starred-Argument Syntax for Arbitrary Arguments<a class="anchor-link" href="#5.-Starred-Argument-Syntax-for-Arbitrary-Arguments">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Python functions can be designed to take any arbitrary number of arguments using <code>*args</code> or <code>**kwargs</code></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="5.1-Usage-of-*args">5.1 Usage of <code>*args</code><a class="anchor-link" href="#5.1-Usage-of-*args">&#182;</a></h2><p>Passing a variable length of argument list</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">nmlarg</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The first normal argument:&quot;</span><span class="p">,</span> <span class="n">nmlarg</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">oneArg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An argument through starred arg:&quot;</span><span class="p">,</span> <span class="n">oneArg</span><span class="p">)</span>
-
-<span class="n">f</span><span class="p">(</span><span class="s2">&quot;Apple&quot;</span><span class="p">,</span> <span class="s2">&quot;Egg&quot;</span><span class="p">,</span> <span class="s2">&quot;Pork&quot;</span><span class="p">,</span> <span class="s2">&quot;Beef&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The first normal argument: Apple
-An argument through starred arg: Egg
-An argument through starred arg: Pork
-An argument through starred arg: Beef
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="5.2-Usage-of-**kwargs">5.2 Usage of <code>**kwargs</code><a class="anchor-link" href="#5.2-Usage-of-**kwargs">&#182;</a></h2><p>Passing a variable length of keyworded arguments</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">kwargs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A key-value pair is </span><span class="si">%s</span><span class="s2">:</span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
-
-<span class="n">f</span><span class="p">(</span><span class="n">Apple</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">Egg</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">Pork</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">Beef</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>A key-value pair is Apple:10.
-A key-value pair is Egg:5.
-A key-value pair is Pork:20.
-A key-value pair is Beef:30.
+<pre>Enter a fruit name: fuji apple
+Is it edible? Enter &#34;1&#34; if edible; otherwise, &#34;0&#34;: 1
+============================================================
+Fruit name (upper case): FUJI APPLE.
+It&#39;s edible.
+How many FUJI APPLES do you want? 3
+What is the price? 2.99
+Please pay $8.97.
 </pre>
 </div>
 </div>
