@@ -45,11 +45,12 @@ ul {font-size: 16px; color: black;}
     - Lecture Note: 7 [Kernel PCA](CU/5786/LecNote7.pdf)
     - Lecture 8: [Kernel PCA & Isomap & TSNE](CU/5786/Lec08.pdf)
     - Handout (Feb/14): [Kernel Methods & t-SNE](CU/5786/Handout05.html) (pending)
-    - Demo: ??? (pending)
-    - Demo: ??? (pending)
+    - Demo: [KPCA demo - Circle](CU/5786/circle_demo.html)
+    - Demo: [KPCA demo - Concentric Circles](CU/5786/concentric_circles_demo.html)
 - Week 5
-    - Lecture 9 (pending)
-    - Lecture 10 (pending)
+    - Lecture 9: [TSNE + Spectral Embedding](CU/5786/Lec09.pdf)
+    - Handout (Feb/19): [t-SNE & Spectral Embedding](CU/5786/Handout06.html) (pending)
+    - Lecture 10: (pending)
 
 
 
