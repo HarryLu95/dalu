@@ -119,7 +119,11 @@ ul {font-size: 16px; color: black;}
 1. [Homework 1](CU/4060/HW1.pdf)
     - Due: Feb/15/2019 at 11:59PM
     - [Summary](CU/4060/STSCI 4060 - HW 1.html)
-2. 
+2. [Homework 2](CU/4060/HW2.pdf)
+    - Due: Mar/2/2019 at 11:59PM
+    - Data: [AboutCornell](CU/4060/AboutCornell.txt) (.txt)
+    - Data: [stock](CU/4060/stock.txt) (.txt)
+    - [Summary](CU/4060/STSCI 4060 - HW 2.html)
 3. 
 
 ##Data Files
