@@ -13191,7 +13191,7 @@ div#notebook {
 
 Your PowerBall Game result is:
 
- 15 36 19 51 13 11
+ 29 26 50 34 55 20
 
 </pre>
 </div>
@@ -13546,7 +13546,7 @@ Matrix C = AB is:
 <span class="k">print</span> <span class="n">closePrices</span>
 <span class="k">print</span> <span class="s2">&quot;&quot;</span>
 
-<span class="n">myDict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">}</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">((</span><span class="s2">&quot;stockNames&quot;</span><span class="p">,</span> <span class="s2">&quot;dates&quot;</span><span class="p">,</span> <span class="s2">&quot;openPrices&quot;</span><span class="p">,</span> <span class="s2">&quot;closePrices&quot;</span><span class="p">))</span>
+<span class="n">myDict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="s2">&quot;stockNames&quot;</span><span class="p">,</span> <span class="s2">&quot;dates&quot;</span><span class="p">,</span> <span class="s2">&quot;openPrices&quot;</span><span class="p">,</span> <span class="s2">&quot;closePrices&quot;</span><span class="p">],</span> <span class="p">[</span><span class="n">stockNames</span><span class="p">,</span> <span class="n">dates</span><span class="p">,</span> <span class="n">openPrices</span><span class="p">,</span> <span class="n">closePrices</span><span class="p">]))</span>
 <span class="k">print</span> <span class="s2">&quot;The myDict is:&quot;</span>
 <span class="k">print</span> <span class="n">myDict</span>
 <span class="k">print</span> <span class="s2">&quot;&quot;</span>
@@ -13597,7 +13597,7 @@ The closePrices are:
 [&#39;12.8&#39;, &#39;18.31&#39;, &#39;15.23&#39;, &#39;15.06&#39;, &#39;39.2&#39;, &#39;24.0&#39;, &#39;30.02&#39;, &#39;45.39&#39;, &#39;43.21&#39;, &#39;16.01&#39;, &#39;18.87&#39;, &#39;41.62&#39;, &#39;62.06&#39;, &#39;8.9&#39;, &#39;44.0&#39;, &#39;9.07&#39;, &#39;48.02&#39;, &#39;13.55&#39;, &#39;71.86&#39;, &#39;25.1&#39;, &#39;30.56&#39;]
 
 The myDict is:
-{&#39;openPrices&#39;: None, &#39;dates&#39;: None, &#39;stockNames&#39;: None, &#39;closePrices&#39;: None}
+{&#39;openPrices&#39;: [&#39;12.55&#39;, &#39;19.0&#39;, &#39;15.49&#39;, &#39;15.45&#39;, &#39;39.52&#39;, &#39;23.35&#39;, &#39;29.44&#39;, &#39;45.37&#39;, &#39;44.5&#39;, &#39;15.5&#39;, &#39;19.06&#39;, &#39;42.06&#39;, &#39;61.5&#39;, &#39;8.9&#39;, &#39;43.75&#39;, &#39;9.03&#39;, &#39;47.85&#39;, &#39;13.8&#39;, &#39;69.99&#39;, &#39;25.85&#39;, &#39;30.87&#39;], &#39;dates&#39;: [&#39;2001-12-31&#39;, &#39;2000-10-12&#39;, &#39;2001-04-30&#39;, &#39;2001-12-20&#39;, &#39;2001-05-02&#39;, &#39;2001-10-05&#39;, &#39;2001-07-11&#39;, &#39;2001-11-28&#39;, &#39;2001-02-26&#39;, &#39;2001-11-14&#39;, &#39;2000-08-21&#39;, &#39;2000-06-15&#39;, &#39;2001-05-04&#39;, &#39;2001-04-23&#39;, &#39;2001-12-07&#39;, &#39;2001-05-03&#39;, &#39;2001-06-28&#39;, &#39;2001-11-23&#39;, &#39;2001-05-30&#39;, &#39;2001-04-23&#39;, &#39;2000-07-12&#39;], &#39;stockNames&#39;: [&#39;ASP&#39;, &#39;AVA&#39;, &#39;ATU&#39;, &#39;ARG&#39;, &#39;AEO&#39;, &#39;APL&#39;, &#39;AFG&#39;, &#39;APD&#39;, &#39;ADI&#39;, &#39;ARM&#39;, &#39;AM&#39;, &#39;AZN&#39;, &#39;APC&#39;, &#39;AWF&#39;, &#39;AAP&#39;, &#39;AOI&#39;, &#39;AIV&#39;, &#39;ASR&#39;, &#39;ACS&#39;, &#39;ARW&#39;, &#39;ACV&#39;], &#39;closePrices&#39;: [&#39;12.8&#39;, &#39;18.31&#39;, &#39;15.23&#39;, &#39;15.06&#39;, &#39;39.2&#39;, &#39;24.0&#39;, &#39;30.02&#39;, &#39;45.39&#39;, &#39;43.21&#39;, &#39;16.01&#39;, &#39;18.87&#39;, &#39;41.62&#39;, &#39;62.06&#39;, &#39;8.9&#39;, &#39;44.0&#39;, &#39;9.07&#39;, &#39;48.02&#39;, &#39;13.55&#39;, &#39;71.86&#39;, &#39;25.1&#39;, &#39;30.56&#39;]}
 
 The stocks that increased their prices are ASP, APL, AFG, APD, ARM, APC, AAP, AOI, AIV, ACS.
 </pre>
