@@ -114,7 +114,7 @@ ul {font-size: 16px; color: black;}
     - [Note 2-2](CU/4060/LectureNote2-2.html): Importable Functions, User-Defined Functions, Polymorphism, Variable Scopes, Starred-Argument Syntax
     - [Note 2-3](CU/4060/LectureNote2-3.html): Files, Class and Objects
 3. [Lecture 3](CU/4060/Lec03.pdf)
-    - [Note 3](CU/4060/LectureNote3-1.html): `import`, `assert`, `if`, `for`, `while`, `try: ... except`, User-Defined Exceptions (pending)
+    - [Note 3](CU/4060/LectureNote3-1.html): `import`, `assert`, `if`, `for`, `while`, `try: ... except`, User-Defined Exceptions
 4. [Lecture 4](CU/4060/Lec04.pdf)
     - [Note 4](CU/4060/LectureNote4-1.html): Stack, Queue, Linked List, Tree (pending)
 
