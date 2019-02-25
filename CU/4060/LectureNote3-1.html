@@ -13123,14 +13123,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="1.-Python-Statements">1. Python Statements<a class="anchor-link" href="#1.-Python-Statements">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A <strong>statement</strong> is a section of Python code that represents a command or an action, which is actually an instruction that the Python interpreter can execute</p>
+<h1 id="Python-Statements">Python Statements<a class="anchor-link" href="#Python-Statements">&#182;</a></h1><p>A <strong>statement</strong> is a section of Python code that represents a command or an action, which is actually an instruction that the Python interpreter can execute</p>
 <p><strong>Simple statements</strong> (those that do not contain a nested block)</p>
 <ul>
 <li>print statement (e.g., <code>print("My name is %s." % name)</code>)</li>
@@ -13152,14 +13145,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.1-import-Statement">1.1 <code>import</code> Statement<a class="anchor-link" href="#1.1-import-Statement">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h1 id="1.-import-Statement">1. <code>import</code> Statement<a class="anchor-link" href="#1.-import-Statement">&#182;</a></h1><ul>
 <li>The import statement makes a module and its contents available for use</li>
 <li>The import statement evaluates the code in a module, but only the first time when any given module is imported into an application</li>
 <li>The import statement has many forms:<ul>
@@ -13180,7 +13166,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.1-import-module_name">1.1.1 <code>import module_name</code><a class="anchor-link" href="#1.1.1-import-module_name">&#182;</a></h3><p>Import all the functions from the module but have to prefix the module name every time you use a function</p>
+<h2 id="1.1-import-module_name">1.1 <code>import module_name</code><a class="anchor-link" href="#1.1-import-module_name">&#182;</a></h2><p>Import all the functions from the module but have to prefix the module name every time you use a function</p>
 
 </div>
 </div>
@@ -13269,7 +13255,7 @@ name &#39;sqrt&#39; is not defined
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.2-from-module_name-import-x">1.1.2 <code>from module_name import x</code><a class="anchor-link" href="#1.1.2-from-module_name-import-x">&#182;</a></h3><p>Import only one function x from the module but do not prefix the module name when you use the function</p>
+<h2 id="1.2-from-module_name-import-x">1.2 <code>from module_name import x</code><a class="anchor-link" href="#1.2-from-module_name-import-x">&#182;</a></h2><p>Import only one function x from the module but do not prefix the module name when you use the function</p>
 
 </div>
 </div>
@@ -13310,8 +13296,8 @@ name &#39;sqrt&#39; is not defined
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>36
-66
+<pre>54
+34
 </pre>
 </div>
 </div>
@@ -13320,13 +13306,20 @@ name &#39;sqrt&#39; is not defined
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Prefixing the function:</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#prefixing the function</span>
-<span class="c1">#print(random.randrang(10, 100))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#print(random.randrang(10, 100))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;name &#39;random&#39; is not defined&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -13353,13 +13346,20 @@ name &#39;sqrt&#39; is not defined
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using another function in the random module:</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#using another function in the random module</span>
-<span class="c1">#print(randint(1, 10))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#print(randint(1, 10))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;name &#39;randint&#39; is not defined&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -13389,7 +13389,7 @@ name &#39;sqrt&#39; is not defined
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.3-from-module_name-import-x,-y">1.1.3 <code>from module_name import x, y</code><a class="anchor-link" href="#1.1.3-from-module_name-import-x,-y">&#182;</a></h3><p>Import only functions x and y from the module but do not prefix the module name when you use the functions</p>
+<h2 id="1.3-from-module_name-import-x,-y">1.3 <code>from module_name import x, y</code><a class="anchor-link" href="#1.3-from-module_name-import-x,-y">&#182;</a></h2><p>Import only functions x and y from the module but do not prefix the module name when you use the functions</p>
 
 </div>
 </div>
@@ -13430,8 +13430,8 @@ name &#39;sqrt&#39; is not defined
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>16
-10
+<pre>59
+8
 </pre>
 </div>
 </div>
@@ -13511,7 +13511,7 @@ name &#39;sqrt&#39; is not defined
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.4-from-module_name-import-*-(wildcard-import)">1.1.4 <code>from module_name import *</code> (wildcard import)<a class="anchor-link" href="#1.1.4-from-module_name-import-*-(wildcard-import)">&#182;</a></h3><p>Import all the attributes of the module but should use this form of the import statement with caution</p>
+<h2 id="1.4-from-module_name-import-*-(wildcard-import)">1.4 <code>from module_name import *</code> (wildcard import)<a class="anchor-link" href="#1.4-from-module_name-import-*-(wildcard-import)">&#182;</a></h2><p>Import all the attributes of the module but should use this form of the import statement with caution</p>
 <p>It may cause confusions of what names exist in the namespace</p>
 <p>If same named variables already exist, they are replace by the new ones just imported. However, the advantage is, again, that you do not prefix the module name when you use a function</p>
 
@@ -13614,7 +13614,7 @@ name &#39;math&#39; is not defined
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.5-import-module_name-as-new_-module_name">1.1.5 <code>import module_name as new_ module_name</code><a class="anchor-link" href="#1.1.5-import-module_name-as-new_-module_name">&#182;</a></h3><p>You can rename an imported module to a different name you prefer</p>
+<h2 id="1.5-import-module_name-as-new_-module_name">1.5 <code>import module_name as new_ module_name</code><a class="anchor-link" href="#1.5-import-module_name-as-new_-module_name">&#182;</a></h2><p>You can rename an imported module to a different name you prefer</p>
 
 </div>
 </div>
@@ -13669,7 +13669,7 @@ name &#39;math&#39; is not defined
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.6-from-module_name-import-x-as-new_-x">1.1.6 <code>from module_name import x as new_ x</code><a class="anchor-link" href="#1.1.6-from-module_name-import-x-as-new_-x">&#182;</a></h3><p>You can rename a function (x) imported from a module to a different name, <code>new_x</code>, which you prefer</p>
+<h2 id="1.6-from-module_name-import-x-as-new_-x">1.6 <code>from module_name import x as new_ x</code><a class="anchor-link" href="#1.6-from-module_name-import-x-as-new_-x">&#182;</a></h2><p>You can rename a function (x) imported from a module to a different name, <code>new_x</code>, which you prefer</p>
 
 </div>
 </div>
@@ -13724,7 +13724,14 @@ name &#39;randrange&#39; is not defined
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.7-Create-a-User-defined-Module-for-Importing">1.1.7 Create a User-defined Module for Importing<a class="anchor-link" href="#1.1.7-Create-a-User-defined-Module-for-Importing">&#182;</a></h3>
+<h2 id="1.7-Create-a-User-defined-Module-for-Importing">1.7 Create a User-defined Module for Importing<a class="anchor-link" href="#1.7-Create-a-User-defined-Module-for-Importing">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.7.1-fruit_module.py">1.7.1 <code>fruit_module.py</code><a class="anchor-link" href="#1.7.1-fruit_module.py">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13738,12 +13745,12 @@ name &#39;randrange&#39; is not defined
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This program displays fruit info and does simple accounting</span>
-<span class="k">def</span> <span class="nf">fruit</span> <span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">edible</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">fruit</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">edible</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fruit name (upper case): </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">fname</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
     <span class="k">if</span> <span class="n">edible</span><span class="p">:</span>
@@ -13771,7 +13778,7 @@ name &#39;randrange&#39; is not defined
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">fruit_module</span> <span class="k">as</span> <span class="nn">fm</span> 
@@ -13792,13 +13799,12 @@ name &#39;randrange&#39; is not defined
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>
-**************************************************
+<pre>**************************************************
 Fruit name (upper case): APPLE.
 It&#39;s edible.
-How many APPLES do you want? 5
-what is the price? 3.99
-Please pay $19.950000000000003.
+How many APPLES do you want? 10
+what is the price? 2.99
+Please pay $29.900000000000002.
 </pre>
 </div>
 </div>
@@ -13809,7 +13815,7 @@ Please pay $19.950000000000003.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">fruit_module</span> <span class="k">as</span> <span class="nn">fm</span> 
@@ -13830,8 +13836,7 @@ Please pay $19.950000000000003.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>
-**************************************************
+<pre>**************************************************
 Fruit name (upper case): SPOILED APPLE.
 It&#39;s not edible. Probably you do not want it.
 </pre>
@@ -13845,20 +13850,15 @@ It&#39;s not edible. Probably you do not want it.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Modify the module to Achieve the Following:</p>
-<ul>
-<li>?</li>
-<li>?</li>
-<li>?</li>
-</ul>
-
+<h3 id="1.7.2-fruit_module_2.py">1.7.2 <code>fruit_module_2.py</code><a class="anchor-link" href="#1.7.2-fruit_module_2.py">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.8-Importing-a-Module-with-Wildcard-Import">1.1.8 Importing a Module with Wildcard Import<a class="anchor-link" href="#1.1.8-Importing-a-Module-with-Wildcard-Import">&#182;</a></h3>
+<p>==== Below is <code>fruit_module_2.py</code> ====</p>
+
 </div>
 </div>
 </div>
@@ -13867,7 +13867,23 @@ It&#39;s not edible. Probably you do not want it.
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This program displays fruit info and does simple accounting</span>
+
+<span class="k">def</span> <span class="nf">fruit</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">edible</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fruit name (upper case): </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">fname</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">edible</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s edible.&quot;</span><span class="p">)</span>
+        <span class="n">quantity</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many </span><span class="si">%s</span><span class="s2">S do you want? &quot;</span> <span class="o">%</span> <span class="n">fname</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;what is the price? &quot;</span><span class="p">)</span>
+        <span class="n">amount</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">quantity</span><span class="p">)</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please pay $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;It&#39;s not edible. Do you still want to buy it? Y(es)/N(o)? &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;YES&quot;</span> <span class="ow">or</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, these cannot be sold any more. Goodbye!&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;NO&quot;</span> <span class="ow">or</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;N&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thank you. Goodbye!&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13878,7 +13894,627 @@ It&#39;s not edible. Probably you do not want it.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.2-assert-Statement">1.2 <code>assert</code> Statement<a class="anchor-link" href="#1.2-assert-Statement">&#182;</a></h2>
+<p>==== Test ====</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">fruit_module_2</span> <span class="k">as</span> <span class="nn">fm2</span>
+<span class="n">fm2</span><span class="o">.</span><span class="n">fruit</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>**************************************************
+Fruit name (upper case): APPLE.
+It&#39;s edible.
+How many APPLES do you want? 10
+what is the price? 2.99
+Please pay $29.900000000000002.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">fruit_module_2</span> <span class="k">as</span> <span class="nn">fm2</span>
+<span class="n">fm2</span><span class="o">.</span><span class="n">fruit</span><span class="p">(</span><span class="s2">&quot;rotten apple&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>**************************************************
+Fruit name (upper case): ROTTEN APPLE.
+It&#39;s not edible. Do you still want to buy it? Y(es)/N(o)? Yes
+Sorry, these cannot be sold any more. Goodbye!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">fruit_module_2</span> <span class="k">as</span> <span class="nn">fm2</span>
+<span class="n">fm2</span><span class="o">.</span><span class="n">fruit</span><span class="p">(</span><span class="s2">&quot;rotten apple&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>**************************************************
+Fruit name (upper case): ROTTEN APPLE.
+It&#39;s not edible. Do you still want to buy it? Y(es)/N(o)? y
+Sorry, these cannot be sold any more. Goodbye!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">fruit_module_2</span> <span class="k">as</span> <span class="nn">fm2</span>
+<span class="n">fm2</span><span class="o">.</span><span class="n">fruit</span><span class="p">(</span><span class="s2">&quot;rotten apple&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>**************************************************
+Fruit name (upper case): ROTTEN APPLE.
+It&#39;s not edible. Do you still want to buy it? Y(es)/N(o)? No
+Thank you. Goodbye!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">fruit_module_2</span> <span class="k">as</span> <span class="nn">fm2</span>
+<span class="n">fm2</span><span class="o">.</span><span class="n">fruit</span><span class="p">(</span><span class="s2">&quot;rotten apple&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>**************************************************
+Fruit name (upper case): ROTTEN APPLE.
+It&#39;s not edible. Do you still want to buy it? Y(es)/N(o)? n
+Thank you. Goodbye!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.7.3-fruit_module_3.py">1.7.3 <code>fruit_module_3.py</code><a class="anchor-link" href="#1.7.3-fruit_module_3.py">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>==== Below is <code>fruit_module_3.py</code> ====</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This program displays fruit info and does simple accounting</span>
+
+<span class="k">def</span> <span class="nf">fruit</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">edible</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fruit name (upper case): </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">fname</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">edible</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s edible.&quot;</span><span class="p">)</span>
+        <span class="n">quantity</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many </span><span class="si">%s</span><span class="s2">S do you want? &quot;</span> <span class="o">%</span> <span class="n">fname</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;what is the price? &quot;</span><span class="p">)</span>
+        <span class="n">amount</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">quantity</span><span class="p">)</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please pay $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;It&#39;s not edible. Do you still want to buy it? Y(es)/N(o)? &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;YES&quot;</span> <span class="ow">or</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, these cannot be sold any more. Goodbye!&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;NO&quot;</span> <span class="ow">or</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;N&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thank you. Goodbye!&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ifno</span><span class="p">(</span><span class="n">answer</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;YES&quot;</span> <span class="ow">or</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, these cannot be sold any more. Goodbye!&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;NO&quot;</span> <span class="ow">or</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;N&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thank you. Goodbye!&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>==== Test ====</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">fruit_module_3</span> <span class="k">as</span> <span class="nn">fm3</span>
+<span class="n">fm3</span><span class="o">.</span><span class="n">ifno</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Thank you. Goodbye!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">fruit_module_3</span> <span class="k">as</span> <span class="nn">fm3</span>
+<span class="n">fm3</span><span class="o">.</span><span class="n">ifno</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Sorry, these cannot be sold any more. Goodbye!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.8-Importing-a-Module-with-Wildcard-Import">1.8 Importing a Module with Wildcard Import<a class="anchor-link" href="#1.8-Importing-a-Module-with-Wildcard-Import">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.8.1-fruit_module_4.py">1.8.1 <code>fruit_module_4.py</code><a class="anchor-link" href="#1.8.1-fruit_module_4.py">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>==== Below is <code>fruit_module_4.py</code> ====</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This program displays fruit info and does simple accounting</span>
+
+<span class="n">applePrice</span> <span class="o">=</span> <span class="mf">1.28</span>
+<span class="n">orangePrice</span> <span class="o">=</span> <span class="mf">0.99</span>
+
+<span class="k">def</span> <span class="nf">fruit</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">edible</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fruit name (upper case): </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">fname</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">edible</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s edible.&quot;</span><span class="p">)</span>
+        <span class="n">quantity</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many </span><span class="si">%s</span><span class="s2">S do you want? &quot;</span> <span class="o">%</span> <span class="n">fname</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">fname</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;APPLE&quot;</span><span class="p">:</span>
+            <span class="n">amount</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">quantity</span><span class="p">)</span><span class="o">*</span><span class="n">applePrice</span>
+        <span class="k">elif</span> <span class="n">fname</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ORANGE&quot;</span><span class="p">:</span>
+            <span class="n">amount</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">quantity</span><span class="p">)</span><span class="o">*</span><span class="n">orangePrice</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">price</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;what is the price? &quot;</span><span class="p">)</span>
+            <span class="n">amount</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">quantity</span><span class="p">)</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please pay $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;It&#39;s not edible. Do you still want to buy it? Y(es)/N(o)? &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;YES&quot;</span> <span class="ow">or</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, these cannot be sold any more. Goodbye!&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;NO&quot;</span> <span class="ow">or</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;N&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thank you. Goodbye!&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ifno</span><span class="p">(</span><span class="n">answer</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;YES&quot;</span> <span class="ow">or</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, these cannot be sold any more. Goodbye!&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;NO&quot;</span> <span class="ow">or</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;N&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thank you. Goodbye!&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>==== Test ====</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">applePrice</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">orangePrice</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="kn">from</span> <span class="nn">fruit_module_4</span> <span class="k">import</span> <span class="o">*</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;applePrice:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">applePrice</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;orangePrice:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">orangePrice</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>applePrice:
+ 1.28
+orangePrice:
+ 0.99
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fruit</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>**************************************************
+Fruit name (upper case): APPLE.
+It&#39;s edible.
+How many APPLES do you want? 10
+Please pay $12.8.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fruit</span><span class="p">(</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>**************************************************
+Fruit name (upper case): ORANGE.
+It&#39;s edible.
+How many ORANGES do you want? 10
+Please pay $9.9.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fruit</span><span class="p">(</span><span class="s2">&quot;peach&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>**************************************************
+Fruit name (upper case): PEACH.
+It&#39;s edible.
+How many PEACHS do you want? 10
+what is the price? 3.99
+Please pay $39.900000000000006.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fruit</span><span class="p">(</span><span class="s2">&quot;rotten apple&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>**************************************************
+Fruit name (upper case): ROTTEN APPLE.
+It&#39;s not edible. Do you still want to buy it? Y(es)/N(o)? n
+Thank you. Goodbye!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ifno</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Sorry, these cannot be sold any more. Goodbye!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ifno</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Thank you. Goodbye!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="2.-assert-Statement">2. <code>assert</code> Statement<a class="anchor-link" href="#2.-assert-Statement">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13894,7 +14530,7 @@ It&#39;s not edible. Probably you do not want it.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">):</span>
@@ -13912,7 +14548,7 @@ It&#39;s not edible. Probably you do not want it.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -13943,7 +14579,7 @@ It&#39;s not edible. Probably you do not want it.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#test(11,0)</span>
@@ -13976,7 +14612,7 @@ It&#39;s not edible. Probably you do not want it.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.3-Compound-Python-Statements">1.3 Compound Python Statements<a class="anchor-link" href="#1.3-Compound-Python-Statements">&#182;</a></h2>
+<h1 id="3.-Compound-Python-Statements">3. Compound Python Statements<a class="anchor-link" href="#3.-Compound-Python-Statements">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13996,7 +14632,7 @@ It&#39;s not edible. Probably you do not want it.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.3.1-if-Statement">1.3.1 <code>if</code> Statement<a class="anchor-link" href="#1.3.1-if-Statement">&#182;</a></h3><p>This is to formally introduce the <code>if</code> statement</p>
+<h2 id="3.1-if-Statement">3.1 <code>if</code> Statement<a class="anchor-link" href="#3.1-if-Statement">&#182;</a></h2><p>This is to formally introduce the <code>if</code> statement</p>
 <p>It enables us to execute code (or not) depending on a condition(s)</p>
 <blockquote><p><code>if condition:
     statement_block #condition is true</code></p>
@@ -14029,7 +14665,7 @@ else:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">letterGrade</span><span class="p">(</span><span class="n">score</span><span class="p">):</span>
@@ -14064,7 +14700,7 @@ else:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">letterGrade</span><span class="p">(</span><span class="n">score</span><span class="p">):</span>
@@ -14089,7 +14725,7 @@ else:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.3.2-for-Statement">1.3.2 <code>for</code> Statement<a class="anchor-link" href="#1.3.2-for-Statement">&#182;</a></h3><p>The <code>for</code> statement enables us to iterate over <strong>collections</strong> (strings, lists, tuples, and dictionaries) so that we can repeat the same block of code once for each element of the collection or repeat the block of code for certain number of times (<strong>for loop</strong>)</p>
+<h2 id="3.2-for-Statement">3.2 <code>for</code> Statement<a class="anchor-link" href="#3.2-for-Statement">&#182;</a></h2><p>The <code>for</code> statement enables us to iterate over <strong>collections</strong> (strings, lists, tuples, and dictionaries) so that we can repeat the same block of code once for each element of the collection or repeat the block of code for certain number of times (<strong>for loop</strong>)</p>
 
 </div>
 </div>
@@ -14104,7 +14740,7 @@ else:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span> <span class="c1">#a list</span>
@@ -14147,7 +14783,7 @@ item: 300
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">myDict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;cat&quot;</span><span class="p">:</span> <span class="s2">&quot;furry and cute&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">:</span> <span class="s2">&quot;friendly and smart&quot;</span><span class="p">}</span> <span class="c1">#a dictionary</span>
@@ -14189,7 +14825,7 @@ A dog is friendly and smart.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">myDict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;cat&quot;</span><span class="p">:</span> <span class="s2">&quot;furry and cute&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">:</span> <span class="s2">&quot;friendly and smart&quot;</span><span class="p">}</span>
@@ -14231,7 +14867,7 @@ A dog is friendly and smart.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">outFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Harry Lu&#39;s X1\Documents\Cornell\STSCI 4060 - Python\colors1.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
@@ -14249,7 +14885,7 @@ A dog is friendly and smart.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">aFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Harry Lu&#39;s X1\Documents\Cornell\STSCI 4060 - Python\colors1.txt&quot;</span><span class="p">)</span>
@@ -14296,7 +14932,7 @@ green
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;yellow&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;kiwi&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">)]</span>
@@ -14331,7 +14967,7 @@ Kiwi is green.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">c2</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Spring&quot;</span><span class="p">,</span> <span class="s2">&quot;Beautiful&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Summer&quot;</span><span class="p">,</span> <span class="s2">&quot;Hot&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Fall&quot;</span><span class="p">,</span> <span class="s2">&quot;Cool&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Winter&quot;</span><span class="p">,</span> <span class="s2">&quot;Cold&quot;</span><span class="p">)]</span>
@@ -14375,7 +15011,7 @@ Winter is Cold.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">]</span>
@@ -14411,7 +15047,7 @@ Winter is Cold.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">]</span>
@@ -14459,7 +15095,7 @@ Winter is Cold.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">]</span>
@@ -14504,7 +15140,7 @@ Winter is Cold.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
@@ -14587,7 +15223,7 @@ Winter is Cold.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.3.3-while-Statement">1.3.3 <code>while</code> Statement<a class="anchor-link" href="#1.3.3-while-Statement">&#182;</a></h3><p>The <code>while</code> statement is another repeating statement (<strong>while loop</strong>)</p>
+<h2 id="3.3-while-Statement">3.3 <code>while</code> Statement<a class="anchor-link" href="#3.3-while-Statement">&#182;</a></h2><p>The <code>while</code> statement is another repeating statement (<strong>while loop</strong>)</p>
 <p>It executes a block of code until a condition is false</p>
 
 </div>
@@ -14595,7 +15231,7 @@ Winter is Cold.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">teaTemp</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please input the temperature of your tea: &quot;</span><span class="p">))</span>
@@ -14642,7 +15278,7 @@ The temperature of your tea is 112. Now your tea is cool enough; you may drink i
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># initialization</span>
@@ -14676,16 +15312,16 @@ The temperature of your tea is 112. Now your tea is cool enough; you may drink i
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Enter a score: 15
-Enter a score: 17
+Enter a score: 16
+Enter a score: 19
+Enter a score: 20
+Enter a score: 14.5
 Enter a score: 12
 Enter a score: 10
-Enter a score: 14
+Enter a score: 13
 Enter a score: 17
-Enter a score: 14
-Enter a score: 20
-Enter a score: 20
-Enter a score: 15
-The class average is 15.4
+Enter a score: 18.5
+The class average is 15.5
 </pre>
 </div>
 </div>
@@ -14697,7 +15333,7 @@ The class average is 15.4
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.3.4-try:-...-except:-Statements">1.3.4 <code>try: ... except:</code> Statements<a class="anchor-link" href="#1.3.4-try:-...-except:-Statements">&#182;</a></h3><p>This pair of statements is to catch exceptions, errors detected during program execution</p>
+<h2 id="3.4-try:-...-except:-Statements">3.4 <code>try: ... except:</code> Statements<a class="anchor-link" href="#3.4-try:-...-except:-Statements">&#182;</a></h2><p>This pair of statements is to catch exceptions, errors detected during program execution</p>
 <p>See the examples below:</p>
 
 </div>
@@ -14705,10 +15341,11 @@ The class average is 15.4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span><span class="o">/</span><span class="mi">0</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#print(20 * (10/0))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ZeroDivisionError: division by zero&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14724,14 +15361,9 @@ The class average is 15.4
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">ZeroDivisionError</span>                         Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-40-6e940bf811d9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>print<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">20</span> <span class="ansi-yellow-intense-fg ansi-bold">*</span> <span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">10</span><span class="ansi-yellow-intense-fg ansi-bold">/</span><span class="ansi-cyan-intense-fg ansi-bold">0</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-red-intense-fg ansi-bold">ZeroDivisionError</span>: division by zero</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ZeroDivisionError: division by zero
+</pre>
 </div>
 </div>
 
@@ -14741,10 +15373,11 @@ The class average is 15.4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="n">Cornell</span><span class="o">*</span><span class="mi">3</span> <span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#print(5 + Cornell*3)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NameError: name &#39;Cornell&#39; is not defined&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14760,14 +15393,9 @@ The class average is 15.4
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-41-f8ecc1b036f7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>print<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">5</span> <span class="ansi-yellow-intense-fg ansi-bold">+</span> Cornell<span class="ansi-yellow-intense-fg ansi-bold">*</span><span class="ansi-cyan-intense-fg ansi-bold">3</span> <span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;Cornell&#39; is not defined</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>NameError: name &#39;Cornell&#39; is not defined
+</pre>
 </div>
 </div>
 
@@ -14777,10 +15405,11 @@ The class average is 15.4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5&quot;</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#print(&quot;5&quot; + 2)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TypeError: can only concatenate str (not &#39;int&#39;) to str&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14796,14 +15425,9 @@ The class average is 15.4
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-42-f0821e5422fb&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>print<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#34;5&#34;</span> <span class="ansi-yellow-intense-fg ansi-bold">+</span> <span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-red-intense-fg ansi-bold">TypeError</span>: can only concatenate str (not &#34;int&#34;) to str</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>TypeError: can only concatenate str (not &#39;int&#39;) to str
+</pre>
 </div>
 </div>
 
@@ -14831,7 +15455,7 @@ The class average is 15.4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -14858,7 +15482,9 @@ The class average is 15.4
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Please enter a number: a
 Oops! That was no valid number. Try again... 
-Please enter a number: 123
+Please enter a number: b
+Oops! That was no valid number. Try again... 
+Please enter a number: 1
 </pre>
 </div>
 </div>
@@ -14877,7 +15503,7 @@ Please enter a number: 123
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">number1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter numerator: &quot;</span><span class="p">)</span>
@@ -14921,7 +15547,7 @@ You must enter two numbers.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">number1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter numerator: &quot;</span><span class="p">)</span>
@@ -14965,7 +15591,7 @@ Attempt to divide by zero.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">number1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter numerator: &quot;</span><span class="p">)</span>
@@ -15018,7 +15644,7 @@ Enter denominator: 11
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.4-Python-User-Defined-Exceptions">1.4 Python User-Defined Exceptions<a class="anchor-link" href="#1.4-Python-User-Defined-Exceptions">&#182;</a></h2>
+<h1 id="4.-Python-User-Defined-Exceptions">4. Python User-Defined Exceptions<a class="anchor-link" href="#4.-Python-User-Defined-Exceptions">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -15033,7 +15659,7 @@ Enter denominator: 11
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Error</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span> <span class="c1"># the base class</span>
