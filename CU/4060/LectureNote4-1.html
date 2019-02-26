@@ -13185,7 +13185,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This stack class is implemented with a list using the end of the list as the top of the stack</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This stack class is implemented with a list using</span>
+<span class="c1"># the end of the list as the top of the stack</span>
 
 <span class="k">class</span> <span class="nc">Stack</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -13387,55 +13388,468 @@ shwoStack():
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This queue class is implemented with a list using</span>
+<span class="c1"># the end of the list as the head of the queue and</span>
+<span class="c1"># the begining of the list as the tail of the queue</span>
+
+<span class="k">class</span> <span class="nc">Queue</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">qu</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># To find out if the queue is empty or not</span>
+    <span class="k">def</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">qu</span> <span class="o">==</span> <span class="p">[]</span>
+    
+    <span class="c1"># To add a new element to the tail of the queue</span>
+    <span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">qu</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span>
+    
+    <span class="c1"># To remove and return the head element of the queue</span>
+    <span class="k">def</span> <span class="nf">dequeue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">qu</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    
+    <span class="c1"># To return the number of elements on the queue</span>
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">qu</span><span class="p">)</span>
+    
+    <span class="c1"># To return the head element of the queue but not remove it</span>
+    <span class="k">def</span> <span class="nf">peekHead</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">qu</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="c1"># To return the tail element of the queue but not remove it</span>
+    <span class="k">def</span> <span class="nf">peekTail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">qu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="c1"># To display the whole stack</span>
+    <span class="k">def</span> <span class="nf">showQueue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">qu</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.3-Use-the-Queue-Class-Just-Created">2.3 Use the Queue Class Just Created<a class="anchor-link" href="#2.3-Use-the-Queue-Class-Just-Created">&#182;</a></h2><p>If the class is not used in the same program, you need to run the Python file, <code>queue.py</code>, containing the Queue class definition in order to use it to instantiate a queue object</p>
+<p>Or, use the import statement to import the class</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;isEmpty():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">())</span>
+<span class="n">q</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;size():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;peekHead():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">peekHead</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;peekTail():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">peekTail</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;showQueue():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">showQueue</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dequeue():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">dequeue</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;showQueue():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">showQueue</span><span class="p">())</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>isEmpty():
+ True
+size():
+ 5
+peekHead():
+ 10
+peekTail():
+ 50
+showQueue():
+ [50, 40, 30, 20, 10]
+dequeue():
+ 10
+showQueue():
+ [50, 40, 30, 20]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The build-in module <code>queue</code> has following functions:</p>
+<ul>
+<li><code>empty()</code></li>
+<li><code>put()</code></li>
+<li><code>get()</code></li>
+<li><code>qsize()</code></li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">queue</span>
+<span class="n">qq</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;empty():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">qq</span><span class="o">.</span><span class="n">empty</span><span class="p">())</span>
+<span class="n">qq</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">qq</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">qq</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">qq</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">qq</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;empty():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">qq</span><span class="o">.</span><span class="n">empty</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;qsize():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">qq</span><span class="o">.</span><span class="n">qsize</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;qq.get():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">qq</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;qq.qsize():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">qq</span><span class="o">.</span><span class="n">qsize</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;qq.get():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">qq</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;qq.qsize():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">qq</span><span class="o">.</span><span class="n">qsize</span><span class="p">())</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>empty():
+ True
+empty():
+ False
+qsize():
+ 5
+qq.get():
+ 100
+qq.qsize():
+ 4
+qq.get():
+ 200
+qq.qsize():
+ 3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="3.-Linked-List">3. Linked List<a class="anchor-link" href="#3.-Linked-List">&#182;</a></h1><ul>
+<li>A linked list is constructed as an unordered collection of elements, where each element holds a relative position with respect to the others</li>
+<li>It is important to maintain the locations of the list elements, especially that of the next element in the list, then the relative position of each item can be expressed by simply following the link from one item to the next</li>
+<li>We use nodes as the basic building blocks for the linked list. Each node object must hold two pieces of information: the list item itself (<strong>data field</strong>) and a <strong>reference</strong> to the next node</li>
+</ul>
+<blockquote><p><code>head     data next                data  next      data</code><br>
+<code>[ -]---&gt;[V(1)|  --]---&gt; ... ---&gt;[V(n-1)|  --]---&gt;[V(n)|\]</code><br>
+<code>...........A node....................A node</code></p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.1-Implementing-a-Linked-List">3.1 Implementing a Linked List<a class="anchor-link" href="#3.1-Implementing-a-Linked-List">&#182;</a></h2><p>We need to create two classes:</p>
+<ol>
+<li><code>Node</code> class</li>
+<li><code>LinkedList</code> class</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.1.1-Implementing-the-Node-Class:-node.py">3.1.1 Implementing the Node Class: <code>node.py</code><a class="anchor-link" href="#3.1.1-Implementing-the-Node-Class:-node.py">&#182;</a></h3><p>To construct a node, an initial data value for the node must be provided</p>
+<p>The Node class includes some methods to access and modify the data that the node contains and the reference to the next node, called <strong>next</strong></p>
+<ul>
+<li><code>getData()</code> to return the data of the current node</li>
+<li><code>getNext()</code> to return the reference to the next node</li>
+<li><code>setData()</code> to assign a new data value to the current node</li>
+<li><code>setNext()</code> to assign a new reference pointing to the next node</li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Implement the Node class for the linked list</span>
+
+<span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initdata</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">initdata</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="c1"># return the data of a node</span>
+    <span class="k">def</span> <span class="nf">getData</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+    
+    <span class="c1"># return the reference to next node</span>
+    <span class="k">def</span> <span class="nf">getNext</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">next</span>
+    
+    <span class="c1"># assign a new data value to the current node</span>
+    <span class="k">def</span> <span class="nf">setData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newdata</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">newdata</span>
+    
+    <span class="c1"># assign a new reference pointing to next node</span>
+    <span class="k">def</span> <span class="nf">setNext</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newnext</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">newnext</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.1.2-Implementing-the-LinkedList-Class:-linkedlist.py">3.1.2 Implementing the LinkedList Class: <code>linkedlist.py</code><a class="anchor-link" href="#3.1.2-Implementing-the-LinkedList-Class:-linkedlist.py">&#182;</a></h3><p>A linked is built from a collection of nodes, each linked to the next node by an explicit reference</p>
+<p>The LinkedList class must maintain a reference to the first node</p>
+<p>The following operations may be included:</p>
+<ul>
+<li><code>isEmpty()</code>: tests if the list is empty.</li>
+<li><code>add(e)</code>: adds a new element e to the list as the first element.</li>
+<li><code>remove(e)</code>: removes an element e from the list.</li>
+<li><code>search(e)</code>: to see if element e is in the list.</li>
+<li><code>size()</code>: returns the number of elements in the list.</li>
+<li><code>insert(p, e)</code>: inserts a new element e at position p.</li>
+<li><code>append(e)</code>: adds a new element e to the end of the list.</li>
+<li><code>pop()</code>: removes and returns the last element of the list.</li>
+<li><code>pop(p)</code>: removes and returns the element at position p.</li>
+<li><code>index(e)</code>: returns the position of element e in the list.</li>
+<li><code>printList()</code>: print the values of the list.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">node</span> <span class="k">import</span> <span class="n">Node</span>
+
+<span class="k">class</span> <span class="nc">LinkedList</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="k">def</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">==</span> <span class="kc">None</span>
+    
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="n">temp</span><span class="o">.</span><span class="n">setNext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">temp</span>
+    
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">current</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">getNext</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">count</span>
+    
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">while</span> <span class="n">current</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">current</span><span class="o">.</span><span class="n">getData</span><span class="p">()</span> <span class="o">==</span> <span class="n">element</span><span class="p">:</span>
+                <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">getNext</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">found</span>
+    
+    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="n">previous</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">current</span><span class="o">.</span><span class="n">getData</span><span class="p">()</span> <span class="o">==</span> <span class="n">element</span><span class="p">:</span>
+                <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">previous</span> <span class="o">=</span> <span class="n">current</span>
+                <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">getNext</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">previous</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">getNext</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">previous</span><span class="o">.</span><span class="n">setNext</span><span class="p">(</span><span class="n">current</span><span class="o">.</span><span class="n">getNext</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.2-Using-the-Linked-List">3.2 Using the Linked List<a class="anchor-link" href="#3.2-Using-the-Linked-List">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.2.1-Using-the-Node-Class">3.2.1 Using the Node Class<a class="anchor-link" href="#3.2.1-Using-the-Node-Class">&#182;</a></h3><blockquote><p><code>..n       data next</code><br>
+<code>[  -]---&gt;[ 50 | \ ]</code></p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;getData():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">getData</span><span class="p">())</span>
+<span class="n">n</span><span class="o">.</span><span class="n">getNext</span><span class="p">()</span>
+<span class="n">n</span><span class="o">.</span><span class="n">setData</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;getData():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">getData</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>getData():
+ 50
+getData():
+ 100
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.2.2-Using-the-LinkedList-Class">3.2.2 Using the LinkedList Class<a class="anchor-link" href="#3.2.2-Using-the-LinkedList-Class">&#182;</a></h3><blockquote><p><code>.head      data  next</code><br>
+<code>[   -]---&gt;[ 600 | --]---&gt; ... ---&gt;[ 200 | --]---&gt;[ 100 | \ ]</code></p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">LL</span> <span class="o">=</span> <span class="n">LinkedList</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;isEmpty():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">LL</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">())</span>
+<span class="n">LL</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">LL</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">LL</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">LL</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">LL</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">LL</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">600</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;size():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">LL</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;search(300):</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">LL</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="mi">300</span><span class="p">))</span>
+<span class="n">LL</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;size():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">LL</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>isEmpty():
+ True
+size():
+ 6
+search(300):
+ True
+size():
+ 5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="4.-Tree">4. Tree<a class="anchor-link" href="#4.-Tree">&#182;</a></h1><p>A tree is a nonlinear data structure, having a root, branches, and leaves, normally presented as an upside-down "tree" (compared to its botanical cousins), consisted of a set of nodes and edges, with its root at the top and its leaves on the bottom</p>
+<p>Normally it has different levels</p>
+<p>A tree can be viewed as a recursive structure: it is either empty or consists of a root and zero or more subtrees, each of which is also a tree; the root of each subtree is connected to the root of the parent tree</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
