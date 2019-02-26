@@ -52,7 +52,7 @@ ul {font-size: 16px; color: black;}
     - Handout (Feb/19): [t-SNE & Spectral Embedding](CU/5786/Handout06.html) (pending)
     - Lecture 10: [Spectral Embedding](CU/5786/Lec10.pdf)
     - Handout (Feb/21): [Spectral Embedding](CU/5786/Handout07.html) (pending)
-- Week 5
+- Week 6
     - Lecture 11: (pending)
 
 ##Homeworks
