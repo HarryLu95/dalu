@@ -13579,7 +13579,7 @@ qq.qsize():
 </ul>
 <blockquote><p><code>head     data next                data  next      data</code><br>
 <code>[ -]---&gt;[V(1)|  --]---&gt; ... ---&gt;[V(n-1)|  --]---&gt;[V(n)|\]</code><br>
-<code>...........A node....................A node</code></p>
+<code>.          A node                    A node</code></p>
 </blockquote>
 
 </div>
@@ -13737,7 +13737,7 @@ qq.qsize():
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.2.1-Using-the-Node-Class">3.2.1 Using the Node Class<a class="anchor-link" href="#3.2.1-Using-the-Node-Class">&#182;</a></h3><blockquote><p><code>..n       data next</code><br>
+<h3 id="3.2.1-Using-the-Node-Class">3.2.1 Using the Node Class<a class="anchor-link" href="#3.2.1-Using-the-Node-Class">&#182;</a></h3><blockquote><p><code>. n       data next</code><br>
 <code>[  -]---&gt;[ 50 | \ ]</code></p>
 </blockquote>
 
@@ -13851,15 +13851,376 @@ size():
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.1-A-Tree-Diagram">4.1 A Tree Diagram<a class="anchor-link" href="#4.1-A-Tree-Diagram">&#182;</a></h2><p><code>level 0               root</code><br>
+<code>.                 /          \</code><br>
+<code>level 1       node           node</code><br>
+<code>.           /     \          /  \</code><br>
+<code>level 2   node   node      leaf node</code><br>
+<code>.         /      /  \             \</code><br>
+<code>level 3 leaf   leaf node         leaf</code><br>
+<code>.                   /  \</code><br>
+<code>level 4           leaf leaf</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.2-Some-Terms-Related-to-Trees">4.2 Some Terms Related to Trees<a class="anchor-link" href="#4.2-Some-Terms-Related-to-Trees">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Root:</strong> the topmost node of the tree</li>
+<li><strong>Node:</strong> building blocks of a tree</li>
+<li><strong>Edge:</strong> a connection that connects two nodes. Every node (except the root) is connected by exactly one incoming edge from another node. Each node may have more than one outgoing edge</li>
+<li><strong>Path:</strong> an ordered list of nodes that are connected by edge(s)</li>
+<li><strong>Child:</strong> a node that has an incoming edge from another node</li>
+<li><strong>Parent:</strong> a node that has an outgoing edge(s)</li>
+<li><strong>Sibling:</strong> nodes in the tree that are children of the same parent</li>
+<li><strong>Leaf (node):</strong> a node that has no child(ren)</li>
+<li><strong>Subtree:</strong> a set of nodes and edges comprised of a parent and all the descendants of that parent</li>
+<li><strong>Level:</strong> the number of edges on the path from the root node to the node of interest</li>
+<li><strong>Height:</strong> the maximum level of any node in the tree</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.3-Tree-Properties">4.3 Tree Properties<a class="anchor-link" href="#4.3-Tree-Properties">&#182;</a></h2><ul>
+<li>Every node, except the root node, is connected by an edge from exactly one parent node</li>
+<li>All of the children of one node are independent of the children of another node</li>
+<li>There is a unique path that traverses from the root to each node</li>
+<li>Trees are hierarchical, structured in layers with the more general things near the top and the more specific things near the bottom</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.4-A-Simple-Binary-Tree">4.4 A Simple Binary Tree<a class="anchor-link" href="#4.4-A-Simple-Binary-Tree">&#182;</a></h2><p>(A tree whose nodes have a maximum of two children)</p>
+<p><code>.            [   Food   ]                        [   Food   ]</code><br>
+<code>.            [Left|Right]                        [Left|Right]</code><br>
+<code>.             /        \                           /      \</code><br>
+<code>.     [   Milk   ]  [   Apple  ]   ----&gt;   [   Milk   ] [   Apple   ]</code><br>
+<code>.     [Left|Right]  [Left|Right]           [Left|Right] [  -  |  -  ]</code><br>
+<code>.       /      \                             /      \</code><br>
+<code>[  No Fat  ] [  2% Fat  ]            [  No Fat  ] [  2% Fat  ]</code><br>
+<code>[Left|Right] [Left|Right]            [  -  |  - ] [  -  |  - ]</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.5-Implementing-a-Tree-as-a-List-of-Lists">4.5 Implementing a Tree as a List of Lists<a class="anchor-link" href="#4.5-Implementing-a-Tree-as-a-List-of-Lists">&#182;</a></h2><ul>
+<li>The root node is the first element of the list</li>
+<li>The second element of the list is a list representing the left subtree</li>
+<li>The third element of the list is another list representing the right subtree</li>
+<li>...</li>
+<li>A subtree that has a root value and two empty lists is a leaf node</li>
+</ul>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">aTree</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Food&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Milk&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;No Fat&quot;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]],</span> <span class="p">[</span><span class="s2">&quot;2</span><span class="si">% F</span><span class="s2">at&quot;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]]],</span> <span class="p">[</span><span class="s2">&quot;Apple&quot;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;aTree:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">aTree</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Left Subtree:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">aTree</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Root:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">aTree</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Right Subtree:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">aTree</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>aTree:
+ [&#39;Food&#39;, [&#39;Milk&#39;, [&#39;No Fat&#39;, [], []], [&#39;2% Fat&#39;, [], []]], [&#39;Apple&#39;, [], []]]
+
+Left Subtree:
+ [&#39;Milk&#39;, [&#39;No Fat&#39;, [], []], [&#39;2% Fat&#39;, [], []]]
+
+Root:
+ Food
+
+Right Subtree:
+ [&#39;Apple&#39;, [], []]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.6-Implementing-a-Tree-as-a-List-of-Lists">4.6 Implementing a Tree as a List of Lists<a class="anchor-link" href="#4.6-Implementing-a-Tree-as-a-List-of-Lists">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">BinaryTree</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">r</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]]</span>
+
+<span class="k">def</span> <span class="nf">insertLeft</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">newBranch</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="n">newBranch</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="p">[]])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="n">newBranch</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]])</span>
+    <span class="k">return</span> <span class="n">root</span>
+
+<span class="k">def</span> <span class="nf">insertRight</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">newBranch</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="n">newBranch</span><span class="p">,</span> <span class="p">[],</span> <span class="n">t</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="n">newBranch</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]])</span>
+    <span class="k">return</span> <span class="n">root</span>
+
+<span class="k">def</span> <span class="nf">getRootVal</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">root</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">setRootVal</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">newVal</span><span class="p">):</span>
+    <span class="n">root</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">newVal</span>
+
+<span class="k">def</span> <span class="nf">getLeftChild</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">root</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">getRightChild</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">root</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.7-Create,-Change-and-Traverse-a-Tree">4.7 Create, Change and Traverse a Tree<a class="anchor-link" href="#4.7-Create,-Change-and-Traverse-a-Tree">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">aTree</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="s2">&quot;Food&quot;</span><span class="p">)</span>
+<span class="n">insertLeft</span><span class="p">(</span><span class="n">aTree</span><span class="p">,</span> <span class="s2">&quot;Milk&quot;</span><span class="p">)</span>
+<span class="n">insertLeft</span><span class="p">(</span><span class="n">getLeftChild</span><span class="p">(</span><span class="n">aTree</span><span class="p">),</span> <span class="s2">&quot;No Fat&quot;</span><span class="p">)</span>
+<span class="n">insertRight</span><span class="p">(</span><span class="n">getLeftChild</span><span class="p">(</span><span class="n">aTree</span><span class="p">),</span> <span class="s2">&quot;2</span><span class="si">% F</span><span class="s2">at&quot;</span><span class="p">)</span>
+<span class="n">insertRight</span><span class="p">(</span><span class="n">aTree</span><span class="p">,</span> <span class="s2">&quot;Apple&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The tree created is:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">aTree</span><span class="p">)</span>
+<span class="n">setRootVal</span><span class="p">(</span><span class="n">getRightChild</span><span class="p">(</span><span class="n">aTree</span><span class="p">),</span> <span class="s2">&quot;Fruit&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The tree is:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">aTree</span><span class="p">)</span>
+<span class="n">insertLeft</span><span class="p">(</span><span class="n">getRightChild</span><span class="p">(</span><span class="n">aTree</span><span class="p">),</span> <span class="s2">&quot;Peach&quot;</span><span class="p">)</span>
+<span class="n">insertRight</span><span class="p">(</span><span class="n">getRightChild</span><span class="p">(</span><span class="n">aTree</span><span class="p">),</span> <span class="s2">&quot;Orange&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The tree after insertion is:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">aTree</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Left-Right-Root:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">getRootVal</span><span class="p">(</span><span class="n">getRightChild</span><span class="p">(</span><span class="n">getLeftChild</span><span class="p">(</span><span class="n">aTree</span><span class="p">))))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The tree created is:
+ [&#39;Food&#39;, [&#39;Milk&#39;, [&#39;No Fat&#39;, [], []], [&#39;2% Fat&#39;, [], []]], [&#39;Apple&#39;, [], []]]
+
+The tree is:
+ [&#39;Food&#39;, [&#39;Milk&#39;, [&#39;No Fat&#39;, [], []], [&#39;2% Fat&#39;, [], []]], [&#39;Fruit&#39;, [], []]]
+
+The tree after insertion is:
+ [&#39;Food&#39;, [&#39;Milk&#39;, [&#39;No Fat&#39;, [], []], [&#39;2% Fat&#39;, [], []]], [&#39;Fruit&#39;, [&#39;Peach&#39;, [], []], [&#39;Orange&#39;, [], []]]]
+
+Left-Right-Root:
+ 2% Fat
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.8-Implementing-a-Binary-Tree-Recursively">4.8 Implementing a Binary Tree Recursively<a class="anchor-link" href="#4.8-Implementing-a-Binary-Tree-Recursively">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Build a simple binary tree</span>
+
+<span class="k">class</span> <span class="nc">BinaryTree</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">leftChild</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rightChild</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="k">def</span> <span class="nf">insertLeft</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newNode</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">leftChild</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">leftChild</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="n">newNode</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="n">newNode</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">leftChild</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">leftChild</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">leftChild</span> <span class="o">=</span> <span class="n">t</span>
+    
+    <span class="k">def</span> <span class="nf">insertRight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newNode</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rightChild</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rightChild</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="n">newNode</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="n">newNode</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">rightChild</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rightChild</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rightChild</span> <span class="o">=</span> <span class="n">t</span>
+    
+    <span class="k">def</span> <span class="nf">getRightChild</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rightChild</span>
+    
+    <span class="k">def</span> <span class="nf">getLeftChild</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">leftChild</span>
+    
+    <span class="k">def</span> <span class="nf">setRootVal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newValue</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">newValue</span>
+    
+    <span class="k">def</span> <span class="nf">getRootVal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.9-Create,-Change-and-Traverse-a-Binary-Tree-Using-the-BinaryTree-Class">4.9 Create, Change and Traverse a Binary Tree Using the BinaryTree Class<a class="anchor-link" href="#4.9-Create,-Change-and-Traverse-a-Binary-Tree-Using-the-BinaryTree-Class">&#182;</a></h2><p><code>.            [   Food   ]                                 [   Food   ]</code><br>
+<code>.            [Left|Right]                                 [Left|Right]</code><br>
+<code>.             /        \                               /                \</code><br>
+<code>.     [   Milk   ]  [   Apple   ]   ----&gt;   [   Milk   ]                [   Fruit  ]</code><br>
+<code>.     [Left|Right]  [  -  |  -  ]           [Left|Right]                [Left|Right]</code><br>
+<code>.       /      \                              /      \                   /       \</code><br>
+<code>[  No Fat  ] [  2% Fat  ]             [  No Fat  ] [  2% Fat  ] [   Peach   ] [   Apple   ]</code><br>
+<code>[  -  |  - ] [  -  |  - ]             [  -  |  - ] [  -  |  - ] [  -  |  -  ] [  -  |  -  ]</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="s2">&quot;Food&quot;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">insertLeft</span><span class="p">(</span><span class="s2">&quot;Milk&quot;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">insertRight</span><span class="p">(</span><span class="s2">&quot;Apple&quot;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">getLeftChild</span><span class="p">()</span><span class="o">.</span><span class="n">insertLeft</span><span class="p">(</span><span class="s2">&quot;No Fat&quot;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">getLeftChild</span><span class="p">()</span><span class="o">.</span><span class="n">insertRight</span><span class="p">(</span><span class="s2">&quot;2</span><span class="si">% F</span><span class="s2">at&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Original Tree]&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Root:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">getRootVal</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Left-Root:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">getLeftChild</span><span class="p">()</span><span class="o">.</span><span class="n">getRootVal</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Right-Root:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">getRightChild</span><span class="p">()</span><span class="o">.</span><span class="n">getRootVal</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Left-Right-Root:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">getLeftChild</span><span class="p">()</span><span class="o">.</span><span class="n">getRightChild</span><span class="p">()</span><span class="o">.</span><span class="n">getRootVal</span><span class="p">())</span>
+<span class="n">r</span><span class="o">.</span><span class="n">getRightChild</span><span class="p">()</span><span class="o">.</span><span class="n">setRootVal</span><span class="p">(</span><span class="s2">&quot;Fruit&quot;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">getRightChild</span><span class="p">()</span><span class="o">.</span><span class="n">insertLeft</span><span class="p">(</span><span class="s2">&quot;Peach&quot;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">getRightChild</span><span class="p">()</span><span class="o">.</span><span class="n">insertRight</span><span class="p">(</span><span class="s2">&quot;Apple&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">[New Tree]&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Right-Root:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">getRightChild</span><span class="p">()</span><span class="o">.</span><span class="n">getRootVal</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Right-Right-Root:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">getRightChild</span><span class="p">()</span><span class="o">.</span><span class="n">getRightChild</span><span class="p">()</span><span class="o">.</span><span class="n">getRootVal</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[Original Tree]
+Root:
+ Food
+Left-Root:
+ Milk
+Right-Root:
+ Apple
+Left-Right-Root:
+ 2% Fat
+
+[New Tree]
+Right-Root:
+ Fruit
+Right-Right-Root:
+ Apple
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
