@@ -13176,7 +13176,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.2-Implementation-of-the-Stack-Class:-stack.py">1.2 Implementation of the Stack Class: <code>stack.py</code><a class="anchor-link" href="#1.2-Implementation-of-the-Stack-Class:-stack.py">&#182;</a></h2>
+<h2 id="1.2-Implementation-of-the-Stack-Class:-My_Stack.py">1.2 Implementation of the Stack Class: <code>My_Stack.py</code><a class="anchor-link" href="#1.2-Implementation-of-the-Stack-Class:-My_Stack.py">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13225,7 +13225,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.3-Use-the-Stack-Class-Just-Created">1.3 Use the Stack Class Just Created<a class="anchor-link" href="#1.3-Use-the-Stack-Class-Just-Created">&#182;</a></h2><p>If the class is not used in the same program, you need to run the Python file, <code>stack.py</code>, containing the Stack class definition so that you can use it to instantiate a Stack object</p>
+<h2 id="1.3-Use-the-Stack-Class-Just-Created">1.3 Use the Stack Class Just Created<a class="anchor-link" href="#1.3-Use-the-Stack-Class-Just-Created">&#182;</a></h2><p>If the class is not used in the same program, you need to run the Python file, <code>My_Stack.py</code>, containing the Stack class definition so that you can use it to instantiate a Stack object</p>
 <p>Or, use the import statement to import the class</p>
 
 </div>
@@ -13289,8 +13289,8 @@ showStack():
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">stack</span>
-<span class="n">k</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">Stack</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">My_Stack</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">My_Stack</span><span class="o">.</span><span class="n">Stack</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;isEmpty():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">k</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">())</span>
 <span class="n">k</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">k</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
@@ -13382,7 +13382,7 @@ showStack():
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.2-Implementation-of-the-Queue-Class:-queue.py">2.2 Implementation of the Queue Class: <code>queue.py</code><a class="anchor-link" href="#2.2-Implementation-of-the-Queue-Class:-queue.py">&#182;</a></h2>
+<h2 id="2.2-Implementation-of-the-Queue-Class:-My_Queue.py">2.2 Implementation of the Queue Class: <code>My_Queue.py</code><a class="anchor-link" href="#2.2-Implementation-of-the-Queue-Class:-My_Queue.py">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13436,7 +13436,7 @@ showStack():
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.3-Use-the-Queue-Class-Just-Created">2.3 Use the Queue Class Just Created<a class="anchor-link" href="#2.3-Use-the-Queue-Class-Just-Created">&#182;</a></h2><p>If the class is not used in the same program, you need to run the Python file, <code>queue.py</code>, containing the Queue class definition in order to use it to instantiate a queue object</p>
+<h2 id="2.3-Use-the-Queue-Class-Just-Created">2.3 Use the Queue Class Just Created<a class="anchor-link" href="#2.3-Use-the-Queue-Class-Just-Created">&#182;</a></h2><p>If the class is not used in the same program, you need to run the Python file, <code>My_Queue.py</code>, containing the Queue class definition in order to use it to instantiate a queue object</p>
 <p>Or, use the import statement to import the class</p>
 
 </div>
@@ -13498,6 +13498,63 @@ showQueue():
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">My_Queue</span>
+<span class="n">mq</span> <span class="o">=</span> <span class="n">My_Queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;isEmpty():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">mq</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">())</span>
+<span class="n">mq</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">mq</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">mq</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">mq</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">mq</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;size():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">mq</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;peekHead():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">mq</span><span class="o">.</span><span class="n">peekHead</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;peekTail():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">mq</span><span class="o">.</span><span class="n">peekTail</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;showQueue():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">mq</span><span class="o">.</span><span class="n">showQueue</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dequeue():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">mq</span><span class="o">.</span><span class="n">dequeue</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;showQueue():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">mq</span><span class="o">.</span><span class="n">showQueue</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>isEmpty():
+ True
+size():
+ 5
+peekHead():
+ 100
+peekTail():
+ 500
+showQueue():
+ [500, 400, 300, 200, 100]
+dequeue():
+ 100
+showQueue():
+ [500, 400, 300, 200]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13514,7 +13571,7 @@ showQueue():
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">queue</span>
@@ -13600,7 +13657,7 @@ qq.qsize():
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.1.1-Implementing-the-Node-Class:-node.py">3.1.1 Implementing the Node Class: <code>node.py</code><a class="anchor-link" href="#3.1.1-Implementing-the-Node-Class:-node.py">&#182;</a></h3><p>To construct a node, an initial data value for the node must be provided</p>
+<h3 id="3.1.1-Implementing-the-Node-Class:-My_Node.py">3.1.1 Implementing the Node Class: <code>My_Node.py</code><a class="anchor-link" href="#3.1.1-Implementing-the-Node-Class:-My_Node.py">&#182;</a></h3><p>To construct a node, an initial data value for the node must be provided</p>
 <p>The Node class includes some methods to access and modify the data that the node contains and the reference to the next node, called <strong>next</strong></p>
 <ul>
 <li><code>getData()</code> to return the data of the current node</li>
@@ -13614,7 +13671,7 @@ qq.qsize():
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Implement the Node class for the linked list</span>
@@ -13649,7 +13706,7 @@ qq.qsize():
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.1.2-Implementing-the-LinkedList-Class:-linkedlist.py">3.1.2 Implementing the LinkedList Class: <code>linkedlist.py</code><a class="anchor-link" href="#3.1.2-Implementing-the-LinkedList-Class:-linkedlist.py">&#182;</a></h3><p>A linked is built from a collection of nodes, each linked to the next node by an explicit reference</p>
+<h3 id="3.1.2-Implementing-the-LinkedList-Class:-My_LinkedList.py">3.1.2 Implementing the LinkedList Class: <code>My_LinkedList.py</code><a class="anchor-link" href="#3.1.2-Implementing-the-LinkedList-Class:-My_LinkedList.py">&#182;</a></h3><p>A linked is built from a collection of nodes, each linked to the next node by an explicit reference</p>
 <p>The LinkedList class must maintain a reference to the first node</p>
 <p>The following operations may be included:</p>
 <ul>
@@ -13671,10 +13728,10 @@ qq.qsize():
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">node</span> <span class="k">import</span> <span class="n">Node</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">My_Node</span> <span class="k">import</span> <span class="n">Node</span>
 
 <span class="k">class</span> <span class="nc">LinkedList</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -13746,12 +13803,12 @@ qq.qsize():
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;getData():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">getData</span><span class="p">())</span>
-<span class="n">n</span><span class="o">.</span><span class="n">getNext</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;getNext():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">getNext</span><span class="p">())</span>
 <span class="n">n</span><span class="o">.</span><span class="n">setData</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;getData():</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">getData</span><span class="p">())</span>
 </pre></div>
@@ -13772,6 +13829,8 @@ qq.qsize():
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>getData():
  50
+getNext():
+ None
 getData():
  100
 </pre>
@@ -13794,7 +13853,7 @@ getData():
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">LL</span> <span class="o">=</span> <span class="n">LinkedList</span><span class="p">()</span>
@@ -13939,7 +13998,7 @@ size():
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">aTree</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Food&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Milk&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;No Fat&quot;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]],</span> <span class="p">[</span><span class="s2">&quot;2</span><span class="si">% F</span><span class="s2">at&quot;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]]],</span> <span class="p">[</span><span class="s2">&quot;Apple&quot;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]]]</span>
@@ -13994,7 +14053,7 @@ Right Subtree:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">BinaryTree</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
@@ -14043,7 +14102,7 @@ Right Subtree:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">aTree</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="s2">&quot;Food&quot;</span><span class="p">)</span>
@@ -14105,7 +14164,7 @@ Left-Right-Root:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Build a simple binary tree</span>
@@ -14167,7 +14226,7 @@ Left-Right-Root:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="s2">&quot;Food&quot;</span><span class="p">)</span>
