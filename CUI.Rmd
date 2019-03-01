@@ -89,6 +89,8 @@ ul {font-size: 16px; color: black;}
     - [Lecture 5 Note](CU/5065/Summary05.html) (pending)
 6. [MapReduce (M/R) Part 1](CU/5065/Lec06.pdf)
     - [Lecture 6 Note](CU/5065/Summary06.html) (pending)
+7. [MapReduce (M/R) Part 2](CU/5065/Lec07.pdf)
+    - Lecture 7 Note
 
 ##Homeworks
 1. [Homework 1](CU/5065/HW1.pdf)
