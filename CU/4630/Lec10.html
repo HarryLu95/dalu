@@ -216,7 +216,7 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p>For given <span class="math inline">\(\mu_L\)</span>: <span class="math inline">\(w=\frac{\mu_L-\mu_f}{\mu_p-\mu_f}\)</span></p>
 <p>Slope of the line is <span class="math inline">\(\frac{\mu_p-\mu_f}{\sigma_p}\)</span>, which is called “Sharpe Ratio”</p>
 <p><font color="red">圖</font></p>
-<p>For given <span class="math inline">\(\mu_p\)</span>: <span class="math inline">\(w=\frac{\mu_p-\mu_1}{\mu_1-\mu_2}\)</span></p>
+<p>For given <span class="math inline">\(\mu_p\)</span>: <span class="math inline">\(w=\frac{\mu_p-\mu_2}{\mu_1-\mu_2}\)</span></p>
 <p>Use the line with the largest slope, i.e. the highest Sharpe Ratio. This yields the “optimal portfolio” where this line touches the efficient frontier is called the “tangency portfolio”.</p>
 <hr />
 <p><strong>Properties of the “Optimal Portfolio”</strong></p>
@@ -232,12 +232,12 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p><strong>How to Find the Tangency Portfolio</strong></p>
 <p><span class="math inline">\(R_T=w_T\cdot R_1+(1-w_T)\cdot R_2=R_2+w_T\cdot (R_1-R_2)\)</span></p>
 <p><span class="math inline">\(w_T=\frac{v_1\sigma_2^2-v_2\rho_{12}\sigma_1\sigma_2}{v_1\sigma_2^2+v_2\sigma_1^2-(v_1+v_2)\rho_{12}\sigma_1\sigma_2}\)</span> where <span class="math inline">\(v_1=\mu_1-\mu_f\)</span> and <span class="math inline">\(v_2=\mu_2-\mu_f\)</span></p>
-<p><span class="math inline">\(\mu_t=\mu_2+w_1\cdot(\mu_1-\mu_2)\)</span></p>
+<p><span class="math inline">\(\mu_T=\mu_2+w_T\cdot(\mu_1-\mu_2)\)</span></p>
 <p><span class="math inline">\(\sigma_T^2=w_T^2\cdot\sigma_1^2+(1-w_T)^2\cdot\sigma_2^2+2w_T\cdot(1-w_T)\rho_{12}\sigma_1\sigma_2\)</span></p>
 <p><span class="math inline">\(R_0=w\cdot R_T+(1-w)\cdot\mu_f=\mu_f+w\cdot(R_T-\mu_f)\)</span></p>
 <p><span class="math inline">\(\mu_0=\mu_f+w\cdot(\mu_T-\mu_f)\)</span></p>
 <p><span class="math inline">\(\sigma_0=w\cdot\sigma_T\)</span></p>
-<p>For given <span class="math inline">\(\mu_0\)</span>: <span class="math inline">\(w=\frac{\mu_0-\mu_f}{\mu_T=\mu_f}\)</span></p>
+<p>For given <span class="math inline">\(\mu_0\)</span>: <span class="math inline">\(w=\frac{\mu_0-\mu_f}{\mu_T-\mu_f}\)</span></p>
 <hr />
 <p><strong>CAPM: Capital Asset Pricing Model</strong></p>
 <p>Assume some universe of assets and that the market is in equilibrium since investors are rational, everyone holds a mixture of the Tangency (Market) Portfolio and a risk-free asset.</p>
@@ -247,10 +247,10 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p><span class="math inline">\(\sigma_m=\text{Sd}(R_m)\)</span></p>
 <hr />
 <p><strong>CML: Capital Market Line</strong></p>
-<p>Any portfolio is a max of the market portfolio and the risk-free asset</p>
+<p>Any portfolio is a mix of the market portfolio and the risk-free asset</p>
 <p><span class="math inline">\(R_p=w\cdot R_m+(1-w)\cdot\mu_f=\mu_f+w\cdot(R_m-\mu_f)\)</span></p>
 <p><span class="math inline">\(\mu_p=\mu_f+w\cdot(\mu_m-\mu_f)\)</span></p>
-<p><span class="math inline">\(\sigma_p=w\cdot\sigma_m\Rightarrow w=\frac{\sigma_p}{\sigma_m}\Rightarrow\mu_p=\frac{\sigma_p}{\sigma_m}\cdot(\mu_m-\mu_f)\)</span></p>
+<p><span class="math inline">\(\sigma_p=w\cdot\sigma_m\Rightarrow w=\frac{\sigma_p}{\sigma_m}\Rightarrow\mu_p=\mu_f+\frac{\sigma_p}{\sigma_m}\cdot(\mu_m-\mu_f)\)</span></p>
 <p><font color="red">圖</font></p>
 <p><span class="math inline">\(\mu_p-\mu_f=\sigma_p\cdot\frac{\mu_m-\mu_f}{\sigma_m}\)</span></p>
 <p>Reward-to-risk ratio for any portfolio is <span class="math inline">\(\frac{\mu_p-\mu_f}{\sigma_p}=\frac{\mu_m-\mu_f}{\sigma_m}\)</span></p>
