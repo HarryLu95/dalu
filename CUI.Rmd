@@ -87,9 +87,9 @@ ul {font-size: 16px; color: black;}
     - [Lecture 4 Note](CU/5065/Summary04.html)
 5. [Introduction to Hortonworks Sandbox](CU/5065/Lec05.pdf)
 6. [MapReduce (M/R) Part 1](CU/5065/Lec06.pdf)
-    - [Lecture 6 Note](CU/5065/Summary06.html) (pending)
+    - [Lecture 6 Note](CU/5065/Summary06.html)
 7. [MapReduce (M/R) Part 2](CU/5065/Lec07.pdf)
-    - [Lecture 7 Note](CU/5065/Summary07.html) (pending)
+    - [Lecture 7 Note](CU/5065/Summary07.html)
 
 ##Homeworks
 1. [Homework 1](CU/5065/HW1.pdf)
