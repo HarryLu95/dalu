@@ -118,6 +118,7 @@ ul {font-size: 16px; color: black;}
     - [Note 3](CU/4060/LectureNote3-1.html): `import`, `assert`, `if`, `for`, `while`, `try: ... except`, User-Defined Exceptions
 4. [Lecture 4](CU/4060/Lec04.pdf)
     - [Note 4](CU/4060/LectureNote4-1.html): Stack, Queue, Linked List, Tree
+    - [LinkedList實現](CU/4060/LectureNote4-2.html)
 
 ##Homeworks
 1. [Homework 1](CU/4060/HW1.pdf)
