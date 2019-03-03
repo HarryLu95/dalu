@@ -13970,14 +13970,14 @@ size():
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="4.4-A-Simple-Binary-Tree">4.4 A Simple Binary Tree<a class="anchor-link" href="#4.4-A-Simple-Binary-Tree">&#182;</a></h2><p>(A tree whose nodes have a maximum of two children)</p>
-<p><code>.            [   Food   ]                        [   Food   ]</code><br>
-<code>.            [Left|Right]                        [Left|Right]</code><br>
-<code>.             /        \                           /      \</code><br>
-<code>.     [   Milk   ]  [   Apple  ]   ----&gt;   [   Milk   ] [   Apple   ]</code><br>
-<code>.     [Left|Right]  [Left|Right]           [Left|Right] [  -  |  -  ]</code><br>
-<code>.       /      \                             /      \</code><br>
-<code>[  No Fat  ] [  2% Fat  ]            [  No Fat  ] [  2% Fat  ]</code><br>
-<code>[Left|Right] [Left|Right]            [  -  |  - ] [  -  |  - ]</code></p>
+<p><code>.           [  Food  ]                        [  Food  ]</code><br>
+<code>.           [ L || R ]                        [ L || R ]</code><br>
+<code>.           /        \                         /      \</code><br>
+<code>.     [  Milk  ]  [ Apple ]   ----&gt;     [  Milk  ]  [ Apple ]</code><br>
+<code>.     [ L || R ]  [ L | R ]             [ L || R ]  [ - | - ]</code><br>
+<code>.      /      \                         /       \</code><br>
+<code>[ No Fat ]  [ 2% Fat ]            [ No Fat ]  [ 2% Fat ]</code><br>
+<code>[ - || - ]  [ - || - ]            [ - || - ]  [ - || - ]</code></p>
 
 </div>
 </div>
@@ -14212,14 +14212,14 @@ Left-Right-Root:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.9-Create,-Change-and-Traverse-a-Binary-Tree-Using-the-BinaryTree-Class">4.9 Create, Change and Traverse a Binary Tree Using the BinaryTree Class<a class="anchor-link" href="#4.9-Create,-Change-and-Traverse-a-Binary-Tree-Using-the-BinaryTree-Class">&#182;</a></h2><p><code>.            [   Food   ]                                [   Food   ]</code><br>
-<code>.            [Left|Right]                                [Left|Right]</code><br>
-<code>.             /        \                              /                \</code><br>
-<code>.     [   Milk   ]  [   Apple   ]   ---&gt;   [   Milk   ]                [   Fruit  ]</code><br>
-<code>.     [Left|Right]  [  -  |  -  ]          [Left|Right]                [Left|Right]</code><br>
-<code>.       /      \                             /      \                   /       \</code><br>
-<code>[  No Fat  ] [  2% Fat  ]            [  No Fat  ] [  2% Fat  ] [   Peach   ] [   Apple   ]</code><br>
-<code>[  -  |  - ] [  -  |  - ]            [  -  |  - ] [  -  |  - ] [  -  |  -  ] [  -  |  -  ]</code></p>
+<h2 id="4.9-Create,-Change-and-Traverse-a-Binary-Tree-Using-the-BinaryTree-Class">4.9 Create, Change and Traverse a Binary Tree Using the BinaryTree Class<a class="anchor-link" href="#4.9-Create,-Change-and-Traverse-a-Binary-Tree-Using-the-BinaryTree-Class">&#182;</a></h2><p><code>.           [  Food  ]                           [  Food  ]</code><br>
+<code>.           [ L || R ]                           [ L || R ]</code><br>
+<code>.           /        \                      /                  \</code><br>
+<code>.     [  Milk  ]  [ Apple ]   ---&gt;   [  Milk  ]             [ Fruit ]</code><br>
+<code>.     [ L || R ]  [ L | R ]          [ L || R ]             [ L | R ]</code><br>
+<code>.      /      \                       /      \              /       \</code><br>
+<code>[ No Fat ]  [ 2% Fat ]         [ No Fat ]  [ 2% Fat ]  [ Peach ] [ Apple ]</code><br>
+<code>[ - || - ]  [ - || - ]         [ - || - ]  [ - || - ]  [ - | - ] [ - | - ]</code></p>
 
 </div>
 </div>
