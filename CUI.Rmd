@@ -163,7 +163,9 @@ ul {font-size: 16px; color: black;}
 - Week 6
     - Tu: Feb/26, Holiday
     - Th: [Feb/28](CU/4630/Lec10.html) (pending pictures and revision)
-
+- Week 7
+    - Tu: [Mar/5](CU/4630/Lec11.html) (pending)
+    - Th: [Mar/7](CU/4630/Lec12.html) (pending)
 
 ##Homeworks
 1. [Homework 1](CU/4630/HW1.pdf)
@@ -183,9 +185,9 @@ ul {font-size: 16px; color: black;}
     - data: [prices](CU/4630/prices.csv) (.csv)
     - Due: Feb/28/2019, Thursday
     - [HW4](CU/4630/HW4.html)
-5. [Homework 5](CU/4630/HW5.pdf) (pending)
-    - data: 
-    - Due: 
+5. [Homework 5](CU/4630/HW5.pdf)
+    - data: [returns](CU/4630/returns.csv) (.csv)
+    - Due: Mar/12/2019, Tuesday
     - [HW5](CU/4630/HW5.html) (pending)
 
 ---
