@@ -53,7 +53,12 @@ ul {font-size: 16px; color: black;}
     - Lecture 10: [Spectral Embedding](CU/5786/Lec10.pdf)
     - Handout (Feb/21): [Spectral Embedding](CU/5786/Handout07.html) (pending)
 - Week 6
-    - Lecture 11: (pending)
+    - Lecture 11: [Spectral Embedding & Clustering](CU/5786/Lec11.pdf)
+- Week 7
+    - Lecture 12: [???](CU/5786/Lec12.pdf) (pending)
+    - Lecture 13: [???](CU/5786/Lec13.pdf) (pending)
+
+
 
 ##Homeworks
 - [Vocareum Link](https://labs.vocareum.com/home/login.php?email=dl947%40cornell.edu)
