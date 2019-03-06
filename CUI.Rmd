@@ -129,9 +129,7 @@ ul {font-size: 16px; color: black;}
     - [LinkedList實現](CU/4060/LectureNote4-2.html)
     - [BinaryTree實現&相關](CU/4060/LectureNote4-3.html)
 5. [Lecture 5](CU/4060/Lec05.pdf)
-    - [Note 5-1](CU/4060/LectureNote5-1.html): Python lambda function/operator (pending)
-    - [Note 5-2](CU/4060/LectureNote5-2.html): Regular expression (pending)
-    - [Note 5-3](CU/4060/LectureNote5-3.html): Graphics (pending)
+    - [Note 5](CU/4060/LectureNote5-1.html): Python lambda, Regular expression, Graphics (pending)
 
 ##Homeworks
 1. [Homework 1](CU/4060/HW1.pdf)
