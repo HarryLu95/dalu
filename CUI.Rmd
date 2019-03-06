@@ -138,7 +138,8 @@ ul {font-size: 16px; color: black;}
     - Data: [AboutCornell](CU/4060/AboutCornell.txt) (.txt)
     - Data: [stock](CU/4060/stock.txt) (.txt)
     - [Summary](CU/4060/STSCI 4060 - HW 2.html)
-3. 
+3. [Homework 3](CU/4060/HW3.pdf)
+    - [Summary](CU/4060/STSCI 4060 - HW 3.html)
 
 ##Data Files
 - [points_scatplot1](CU/4060/points_scatplot1.txt) (.txt)
