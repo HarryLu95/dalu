@@ -111,6 +111,12 @@ ul {font-size: 16px; color: black;}
 1. [Quiz 1 with solutions](CU/5065/Quiz1_S.pdf)
 2. [Quiz 2 with solutions](CU/5065/Quiz2_S.pdf)
 
+##Data Files
+- [1901-1](CU/5065/1901-1)
+- [1901](CU/5065/1901)
+- [1902](CU/5065/1902)
+- [1901-1902](CU/5065/1901-1902)
+
 ---
 
 #STSCI 4060 - Python Programming and its Applications in Statistics
