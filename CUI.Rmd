@@ -230,7 +230,10 @@ ul {font-size: 16px; color: black;}
     - data: [returns](CU/4630/returns.csv) (.csv)
     - data: [3m_treasury_bill_rate](CU/4630/3m_treasury_bill_rate.csv) (.csv)
     - Due: Mar/19/2019, Tuesday
-    - [HW6](CU/4630/HW6.html)
+    - [HW6](CU/4630/HW6.html) (pending)
+
+##Exams
+- [Midterm 1 Solution](CU/4630/Midterm1_S.pdf)
 
 ---
 
