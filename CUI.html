@@ -280,7 +280,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1",
+      selectors: "h1,h2",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
@@ -289,7 +289,7 @@ $(document).ready(function ()  {
       ignoreSelector: ".toc-ignore",
       scrollTo: 0
     };
-    options.showAndHide = true;
+    options.showAndHide = false;
     options.smoothScroll = true;
 
     // tocify
@@ -352,6 +352,12 @@ div.tocify {
   border-radius: 0px;
 }
 
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
 
 </style>
 
@@ -561,6 +567,10 @@ ul {font-size: 16px; color: black;}
 <ul>
 <li><a href="CU/5065/Summary07.html">Lecture 7 Note</a></li>
 </ul></li>
+<li><a href="CU/5065/Lec08.pdf">Introduction to Apache Hive</a>
+<ul>
+<li><a href="CU/5065/Summary08.html">Lecture 8 Note</a> (pending)</li>
+</ul></li>
 </ol>
 </div>
 <div id="homeworks-1" class="section level2">
@@ -577,13 +587,13 @@ ul {font-size: 16px; color: black;}
 <li>Data: <a href="CU/5065/shakespeare.txt">shakespeare</a> (.txt)</li>
 <li><a href="CU/5065/HW2_Summary.html">Summary</a> (pending)</li>
 </ul></li>
-<li></li>
 </ol>
 </div>
 <div id="quizzes" class="section level2">
 <h2>Quizzes</h2>
 <ol style="list-style-type: decimal">
-<li><a href="CU/5065/Quiz1.pdf">Quiz 1</a></li>
+<li><a href="CU/5065/Quiz1_S.pdf">Quiz 1 with solutions</a></li>
+<li><a href="CU/5065/Quiz2_S.pdf">Quiz 2 with solutions</a></li>
 </ol>
 <hr />
 </div>

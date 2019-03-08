@@ -4,8 +4,8 @@ output:
   html_document:
     toc: TRUE
     toc_float: 
-      collapsed: TRUE
-    toc_depth: 1
+      collapsed: FALSE
+    toc_depth: 2
 ---
 
 <style>
@@ -95,6 +95,8 @@ ul {font-size: 16px; color: black;}
     - [Lecture 6 Note](CU/5065/Summary06.html)
 7. [MapReduce (M/R) Part 2](CU/5065/Lec07.pdf)
     - [Lecture 7 Note](CU/5065/Summary07.html)
+8. [Introduction to Apache Hive](CU/5065/Lec08.pdf)
+    - [Lecture 8 Note](CU/5065/Summary08.html) (pending)
 
 ##Homeworks
 1. [Homework 1](CU/5065/HW1.pdf)
@@ -104,10 +106,10 @@ ul {font-size: 16px; color: black;}
     - Due: Mar/11/2019 at 11:59PM
     - Data: [shakespeare](CU/5065/shakespeare.txt) (.txt)
     - [Summary](CU/5065/HW2_Summary.html) (pending)
-3. 
 
 ##Quizzes
-1. [Quiz 1](CU/5065/Quiz1.pdf)
+1. [Quiz 1 with solutions](CU/5065/Quiz1_S.pdf)
+2. [Quiz 2 with solutions](CU/5065/Quiz2_S.pdf)
 
 ---
 
