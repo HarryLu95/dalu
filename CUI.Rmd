@@ -156,6 +156,10 @@ ul {font-size: 16px; color: black;}
 - [ring](CU/4060/ring.txt) (.txt)
 - [bee_proteins](CU/4060/bee_proteins.txt) (.txt)
 
+##Quizzes
+1. [Quiz 1 with solutions](CU/4060/Quiz1_S.pdf)
+2. [Quiz 2 with solutions](CU/4060/Quiz2_S.pdf)
+
 ##Books and References
 - [Hands-on Python](CU/4060/Books and References/Hands-on Python.pdf)
 - [Python Tutorial](CU/4060/Books and References/Python Tutorial.pdf)
@@ -173,7 +177,6 @@ ul {font-size: 16px; color: black;}
 - [findMaxLength](CU/4060/Software/findMaxLength.py) (.py)
 - [localCGIServer](CU/4060/Software/localCGIServer.py) (.py)
 - [graphics](CU/4060/Software/graphics.pyc) (.pyc)
-
 
 ---
 
