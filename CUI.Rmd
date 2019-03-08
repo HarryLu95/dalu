@@ -112,10 +112,10 @@ ul {font-size: 16px; color: black;}
 2. [Quiz 2 with solutions](CU/5065/Quiz2_S.pdf)
 
 ##Data Files
-- [1901-1](CU/5065/1901-1)
-- [1901](CU/5065/1901)
-- [1902](CU/5065/1902)
-- [1901-1902](CU/5065/1901-1902)
+- [1901-1](CU/5065/1901-1) (.File)
+- [1901](CU/5065/1901) (.File)
+- [1902](CU/5065/1902) (.File)
+- [1901-1902](CU/5065/1901-1902) (.File)
 
 ---
 
@@ -157,9 +157,23 @@ ul {font-size: 16px; color: black;}
 - [bee_proteins](CU/4060/bee_proteins.txt) (.txt)
 
 ##Books and References
-
+- [Hands-on Python](CU/4060/Books and References/Hands-on Python.pdf)
+- [Python Tutorial](CU/4060/Books and References/Python Tutorial.pdf)
+- [Graphics Library Quick Reference](CU/4060/Books and References/Graphics Library Quick Reference.pdf)
+- [Graphics Module Reference](CU/4060/Books and References/Graphics Module Reference.pdf)
+- [python_reg_expressions](CU/4060/Books and References/python_reg_expressions.pdf)
+- [numpy-reference](CU/4060/Books and References/numpy-reference.pdf)
+- [HTML_Tag_List](CU/4060/Books and References/HTML_Tag_List.pdf)
+- [The Lorenz System](CU/4060/Books and References/The Lorenz System.pdf)
 
 ##Software
+- [kompozer-0.8b3.en-US.win32](CU/4060/Software/kompozer-0.8b3.en-US.win32.exe) (.exe)
+- [kompozer-0.8b3.en-US.mac-universal](CU/4060/Software/kompozer-0.8b3.en-US.mac-universal.dmg) (.dmg)
+- [commonFormFields](CU/4060/Software/commonFormFields.html)
+- [findMaxLength](CU/4060/Software/findMaxLength.py) (.py)
+- [localCGIServer](CU/4060/Software/localCGIServer.py) (.py)
+- [graphics](CU/4060/Software/graphics.pyc) (.pyc)
+
 
 ---
 
