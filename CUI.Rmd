@@ -91,6 +91,7 @@ ul {font-size: 16px; color: black;}
 4. [The Hadoop Distributed Filesystem (HDFS)](CU/5065/Lec04.pdf)
     - [Lecture 4 Note](CU/5065/Summary04.html)
 5. [Introduction to Hortonworks Sandbox](CU/5065/Lec05.pdf)
+    - [Lecture 5 Note](CU/5065/Summary05.html) (pending)
 6. [MapReduce (M/R) Part 1](CU/5065/Lec06.pdf)
     - [Lecture 6 Note](CU/5065/Summary06.html)
 7. [MapReduce (M/R) Part 2](CU/5065/Lec07.pdf)
@@ -103,7 +104,7 @@ ul {font-size: 16px; color: black;}
     - Due: Feb/18/2019 at 11:59PM
     - [Summary](CU/5065/HW1_Summary.html)
 2. [Homework 2](CU/5065/HW2.pdf)
-    - Due: Mar/11/2019 at 11:59PM
+    - Due: Mar/12/2019 at 11:59PM
     - Data: [shakespeare](CU/5065/shakespeare.txt) (.txt)
     - [Summary](CU/5065/HW2_Summary.html) (pending)
 
