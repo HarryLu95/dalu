@@ -55,9 +55,15 @@ ul {font-size: 16px; color: black;}
 - Week 6
     - Lecture 11: [Spectral Embedding & Clustering](CU/5786/Lec11.pdf)
 - Week 7
-    - Lecture 12: [???](CU/5786/Lec12.pdf) (pending)
-    - Lecture 13: [???](CU/5786/Lec13.pdf) (pending)
-
+    - Lecture 12: [Clustering & Linkage Clustering](CU/5786/Lec12.pdf) (pending)
+    - Handout (Mar/5): [Clustering: Linkage Clustering](CU/5786/Handout08.html) (pending)
+    - Demo: [???]() (pending)
+    - Lecture 13: [K-Means Clustering](CU/5786/Lec13.pdf) (pending)
+    - Lecture Note: 12 & 13 [Clustering, Single-link algorithm, K-means Algorithm](CU/5786/LecNote12-13.pdf)
+- Week 8
+    - Lecture 14: [Gaussian Mixture Model](CU/5786/Lec14.pdf) (pending)
+    - Lecture Note: 14 [EM Algorithm for Gaussian Mixture Models and Why EM works](CU/5786/LecNote14.pdf)
+    - Demo: [???]() (pending)
 
 
 ##Homeworks
