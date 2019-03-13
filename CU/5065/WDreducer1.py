@@ -54,4 +54,4 @@ for i in range(100):
 print ""
 print "There are %d words in the text." % count_words
 print ""
-print "The are %d unique words in the text." % len(d)
+print "There are %d unique words in the text." % len(d)

@@ -56,4 +56,4 @@ for i in range(100):
 print ""
 print "There are %d words in the text." % count_words
 print ""
-print "If the case difference is ignored, the are %d unique words in the text." % len(d)
+print "If the case difference is ignored, there are %d unique words in the text." % len(d)
