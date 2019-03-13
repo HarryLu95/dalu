@@ -104,7 +104,7 @@ ul {font-size: 16px; color: black;}
 7. [MapReduce (M/R) Part 2](CU/5065/Lec07.pdf)
     - [Lecture 7 Note](CU/5065/Summary07.html)
 8. [Introduction to Apache Hive 1](CU/5065/Lec08.pdf)
-    - [Lecture 8 Note](CU/5065/Summary08.html) (pending)
+    - [Lecture 8 Note](CU/5065/Summary08.html)
 9. [Introduction to Apache Hive 2](CU/5065/Lec09.pdf)
     - [Lecture 9 Note](CU/5065/Summary09.html) (pending)
 
