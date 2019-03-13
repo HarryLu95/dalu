@@ -44,7 +44,7 @@ for i in range(len(words)):
     c = counts[i]
     pairs = pairs + [(words[i], counts[i])]
 
-print "There are %d lines in the text." % count_lines
+print "There are %d lines in the text." % int(count_lines)
 print ""
 print "The 100 most frequently used words are:"
 print ""
@@ -53,3 +53,5 @@ for i in range(100):
     print str(pairs[i])
 print ""
 print "There are %d words in the text." % count_words
+print ""
+print "The are %d unique words in the text." % len(d)
