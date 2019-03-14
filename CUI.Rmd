@@ -106,7 +106,7 @@ ul {font-size: 16px; color: black;}
 8. [Introduction to Apache Hive 1](CU/5065/Lec08.pdf)
     - [Lecture 8 Note](CU/5065/Summary08.html)
 9. [Introduction to Apache Hive 2](CU/5065/Lec09.pdf)
-    - [Lecture 9 Note](CU/5065/Summary09.html) (pending)
+    - [Lecture 9 Note](CU/5065/Summary09.html)
 
 ##Homeworks
 1. [Homework 1](CU/5065/HW1.pdf)
