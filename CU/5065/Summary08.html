@@ -418,7 +418,7 @@ hive&gt;</code></pre></li>
 </div>
 <div id="an-example-of-using-hive-data-types" class="section level1">
 <h1><span class="header-section-number">11</span> An Example of Using Hive Data Types</h1>
-<pre><code>CREATE TABLE employees (
+<pre class="hive"><code>CREATE TABLE employees (
   name STRING,
   salary FLOAT,
   subordinates ARRAY&lt;STRING&gt;,
@@ -488,7 +488,7 @@ Bill King^A60000.0^AFederal Taxes^C.15^BState Taxes^C.03^BInsurance^C. 1^A300 Ob
 </div>
 <div id="table-declaration-with-formats-explicitly-specified" class="section level2">
 <h2><span class="header-section-number">13.2</span> Table Declaration with Formats Explicitly Specified</h2>
-<pre><code>CREATE TABLE employees (
+<pre class="hive"><code>CREATE TABLE employees (
   name STRING,
   salary FLOAT,
   subordinates ARRAY&lt;STRING&gt;,
@@ -506,7 +506,7 @@ Bill King^A60000.0^AFederal Taxes^C.15^BState Taxes^C.03^BInsurance^C. 1^A300 Ob
 <div id="override-the-default-delimiters" class="section level2">
 <h2><span class="header-section-number">13.3</span> Override the Default Delimiters</h2>
 <p>You can override these default delimiters. This might be necessary if another application writes the data using a different convention. Here is a table definition where the data contain comma-delimited fields</p>
-<pre><code>CREATE TABLE some_data (
+<pre class="hive"><code>CREATE TABLE some_data (
   first FLOAT,
   second FLOAT,
   third FLOAT
@@ -517,7 +517,7 @@ FIELDS TERMINATED BY ',';</code></pre>
 <div id="table-declaration-with-formats-explicitly-specified-1" class="section level2">
 <h2><span class="header-section-number">13.4</span> Table Declaration with Formats Explicitly Specified</h2>
 <p>– Override the default delimiters</p>
-<pre><code>CREATE TABLE employees (
+<pre class="hive"><code>CREATE TABLE employees (
   name STRING,
   salary FLOAT ,
   subordinates ARRAY&lt;STRING&gt;,
@@ -564,7 +564,7 @@ FIELDS TERMINATED BY ',';</code></pre>
 <div id="describe-database-command" class="section level1">
 <h1><span class="header-section-number">17</span> <code>DESCRIBE DATABASE</code> Command</h1>
 <p>You can use the DESCRIBE DATABASE statement to show the directory location of your databases:</p>
-<pre><code>DESCRIBE DATABASE jason;
+<pre class="hive"><code>DESCRIBE DATABASE jason;
 DESCRIBE DATABASE financials;
 DESCRIBE DATABASE default;</code></pre>
 <div class="figure">
@@ -577,7 +577,7 @@ DESCRIBE DATABASE default;</code></pre>
 <ul>
 <li>Use the <code>SHOW DATABASES</code> command to see all your databases that already exist</li>
 </ul>
-<pre><code>hive&gt; show databases;
+<pre class="hive"><code>hive&gt; show databases;
 OK
 default
 financials
@@ -587,7 +587,7 @@ Time taken: 0.023 seconds, Fetched: 4 row(s)</code></pre>
 <ul>
 <li>Or use the <code>LIKE</code> keyword and the <code>.*</code> wildcard to show some specific databases</li>
 </ul>
-<pre><code>hive&gt; create database john;
+<pre class="hive"><code>hive&gt; create database john;
 OK
 Time taken: 0.032 seconds
 hive&gt; show databases like 'j.*';
@@ -601,13 +601,13 @@ Time taken: 0.028 seconds, Fetched: 2 row(s)</code></pre>
 <ul>
 <li>The <code>USE</code> command sets a database as your working database, analogous to changing working directories in a filesystem:</li>
 </ul>
-<pre><code>USE financials;
+<pre class="hive"><code>USE financials;
 USE default;</code></pre>
 <ul>
 <li>The <code>SHOW TABLES</code> command lists all the tables in your working database:</li>
 </ul>
-<pre><code>SHOW TABLES;</code></pre>
-<pre><code>hive&gt; show tables;
+<pre class="hive"><code>SHOW TABLES;</code></pre>
+<pre class="hive"><code>hive&gt; show tables;
 OK
 geolocation
 sample_07
@@ -620,7 +620,7 @@ Time taken: 0.286 seconds, Fetched: 4 row(s)</code></pre>
 <ul>
 <li>Use one of the following commands to drop financials database:</li>
 </ul>
-<pre><code>DROP DATABASE financials;
+<pre class="hive"><code>DROP DATABASE financials;
 DROP DATABASE IF EXISTS financials;
 DROP DATABASE IF EXISTS financials CASCADE;</code></pre>
 <ul>
@@ -647,7 +647,7 @@ DROP DATABASE IF EXISTS financials CASCADE;</code></pre>
 </div>
 <div id="creating-tables-create-table-statement" class="section level1">
 <h1><span class="header-section-number">22</span> Creating Tables: <code>CREATE TABLE</code> Statement</h1>
-<pre><code>CREATE TABLE IF NOT EXISTS financials.employees (
+<pre class="hive"><code>CREATE TABLE IF NOT EXISTS financials.employees (
   name STRING COMMENT 'Employee name',
   salary FLOAT COMMENT 'Employee salary',
   subordinates ARRAY&lt;STRING&gt; COMMENT 'Names of subordinates',
@@ -660,10 +660,10 @@ TBLPROPERTIES ('creator'='xy', 'created_at'='2019-03-06 09:05:00');</code></pre>
 </div>
 <div id="create-a-table-from-an-existing-table" class="section level1">
 <h1><span class="header-section-number">23</span> Create a Table From an Existing Table</h1>
-<pre><code>CREATE TABLE IF NOT EXISTS financials.employees2
+<pre class="hive"><code>CREATE TABLE IF NOT EXISTS financials.employees2
 LIKE financials.employees;</code></pre>
 <p>(Copy the schema but not the data)</p>
-<pre><code>CREATE TABLE t3 AS
+<pre class="hive"><code>CREATE TABLE t3 AS
 SELECT * FROM trucks;</code></pre>
 <p>(Create the same table, including the schema and the data)</p>
 </div>
@@ -691,7 +691,7 @@ SELECT * FROM trucks;</code></pre>
 </div>
 <div id="external-tables-an-example" class="section level1">
 <h1><span class="header-section-number">27</span> External Tables: An Example</h1>
-<pre><code>CREATE EXTERNAL TABLE IF NOT EXISTS stocks (
+<pre class="hive"><code>CREATE EXTERNAL TABLE IF NOT EXISTS stocks (
   exchange         STRING,
   symbol           STRING,
   ymd              STRING,
@@ -706,7 +706,7 @@ LOCATION '/data/stocks';</code></pre>
 </div>
 <div id="partitioned-managed-tables" class="section level1">
 <h1><span class="header-section-number">28</span> Partitioned, Managed Tables</h1>
-<pre><code>CREATE TABLE employees (
+<pre class="hive"><code>CREATE TABLE employees (
   name          STRING,
   salary        FLOAT,
   subordinates  ARRAY&lt;STRING&gt;,
@@ -730,12 +730,12 @@ PARTITIONED BY (country STRING, state STRING);</code></pre>
 <ul>
 <li>Once created, the partition keys (country and state, in this case) behave like regular columns</li>
 </ul>
-<pre><code>SELECT * FROM employees
+<pre class="hive"><code>SELECT * FROM employees
 WHERE country = 'US' AND state = 'IL';</code></pre>
 </div>
 <div id="show-partitions-command" class="section level1">
 <h1><span class="header-section-number">30</span> <code>SHOW PARTITIONS</code> Command</h1>
-<pre><code>hive&gt; SHOW PARTITIONS employees;
+<pre class="hive"><code>hive&gt; SHOW PARTITIONS employees;
 ...
 country=CA/state=AB
 country=CA/state=BC
@@ -743,14 +743,14 @@ country=CA/state=BC
 country=US/state=AL
 country=US/state=AK
 ...</code></pre>
-<pre><code>hive&gt; SHOW PARTITIONS employees PARTITION(country='US');
+<pre class="hive"><code>hive&gt; SHOW PARTITIONS employees PARTITION(country='US');
 country=US/state=AL
 country=US/state=AK
 ...</code></pre>
 </div>
 <div id="external-partitioned-tables" class="section level1">
 <h1><span class="header-section-number">31</span> External Partitioned Tables</h1>
-<pre><code>CREATE EXTERNAL TABLE IF NOT EXISTS log_messages (
+<pre class="hive"><code>CREATE EXTERNAL TABLE IF NOT EXISTS log_messages (
   hms        INT,
   severity   STRING,
   server     STRING,
@@ -758,7 +758,7 @@ country=US/state=AK
   message    STRING)
 PARTITIONED BY (year INT, month INT, day INT)
 ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';</code></pre>
-<pre><code>hive&gt; SHOW PARTITIONS log_messages;
+<pre class="hive"><code>hive&gt; SHOW PARTITIONS log_messages;
 ...
 year=2011/month=12/day=31
 year=2012/month=1/day=1
@@ -767,7 +767,7 @@ year=2012/month=1/day=2
 </div>
 <div id="dropping-tables" class="section level1">
 <h1><span class="header-section-number">32</span> Dropping Tables</h1>
-<pre><code>DROP TABLE IF EXISTS employees;</code></pre>
+<pre class="hive"><code>DROP TABLE IF EXISTS employees;</code></pre>
 <ul>
 <li>For managed tables, the table metadata and data are deleted</li>
 <li>Use with caution</li>
@@ -785,11 +785,11 @@ year=2012/month=1/day=2
 <ul>
 <li><strong>Renaming a Table</strong></li>
 </ul>
-<pre><code>ALTER TABLE log_messages RENAME TO logmsgs;</code></pre>
+<pre class="hive"><code>ALTER TABLE log_messages RENAME TO logmsgs;</code></pre>
 <ul>
 <li><strong>Adding, Modifying, and Dropping a Table Partition</strong></li>
 </ul>
-<pre><code>ALTER TABLE log_messages ADD IF NOT EXISTS
+<pre class="hive"><code>ALTER TABLE log_messages ADD IF NOT EXISTS
 PARTITION (year = 2011, month = 1, day = 1) LOCATION '/logs/2011/01/01'
 PARTITION (year = 2011, month = 1, day = 2) LOCATION '/logs/2011/01/02'
 PARTITION (year = 2011, month = 1, day = 3) LOCATION '/logs/2011/01/03';
@@ -802,45 +802,45 @@ DROP IF EXISTS PARTITION(year = 2011, month = 12, day = 2);</code></pre>
 <ul>
 <li><strong>Changing Columns</strong></li>
 </ul>
-<pre><code>ALTER TABLE log_messages
+<pre class="hive"><code>ALTER TABLE log_messages
 CHANGE COLUMN hms hours_minutes_seconds INT
 COMMENT 'The hours, minutes, and seconds part of the timestamp'
 AFTER severity;</code></pre>
 <ul>
 <li><strong>Adding Columns</strong></li>
 </ul>
-<pre><code>ALTER TABLE log_messages ADD COLUMNS (
+<pre class="hive"><code>ALTER TABLE log_messages ADD COLUMNS (
 app_name STRING COMMENT 'Application name',
 session_id LONG COMMENT 'The current session id');</code></pre>
 <ul>
 <li><strong>Deleting or Replacing Columns:</strong> removes all the existing columns and replaces them with the new columns specified</li>
 </ul>
-<pre><code>ALTER TABLE log_messages REPLACE COLUMNS (
+<pre class="hive"><code>ALTER TABLE log_messages REPLACE COLUMNS (
 hours_mins_secs INT COMMENT 'hour, minute, seconds from timestamp',
 severity STRING COMMENT 'The message severity'
 message STRING COMMENT 'The rest of the message');</code></pre>
 <ul>
 <li><strong>Alter Table Properties</strong></li>
 </ul>
-<pre><code>ALTER TABLE log_messages SET TBLPROPERTIES (
+<pre class="hive"><code>ALTER TABLE log_messages SET TBLPROPERTIES (
 'notes' = 'The process id is no longer captured; this column is always NULL');</code></pre>
 <ul>
 <li><strong>Alter Storage Properties</strong></li>
 </ul>
-<pre><code>ALTER TABLE log_messages
+<pre class="hive"><code>ALTER TABLE log_messages
 PARTITION(year = 2012, month = 1, day = 1)
 SET FILEFORMAT SEQUENCEFILE;</code></pre>
 <ul>
 <li><strong>Prevent the partition from being dropped and queried:</strong></li>
 </ul>
-<pre><code>ALTER TABLE log_messages
+<pre class="hive"><code>ALTER TABLE log_messages
 PARTITION(year = 2012, month = 1, day = 1) ENABLE NO_DROP;
 ALTER TABLE log_messages
 PARTITION(year = 2012, month = 1, day = 1) ENABLE OFFLINE;</code></pre>
 <ul>
 <li><strong>To reverse:</strong></li>
 </ul>
-<pre><code>ALTER TABLE log_messages
+<pre class="hive"><code>ALTER TABLE log_messages
 PARTITION(year = 2012, month = 1, day = 1) DISABLE NO_DROP;
 ALTER TABLE log_messages
 PARTITION(year = 2012, month = 1, day = 1) DISABLE OFFLINE; </code></pre>
