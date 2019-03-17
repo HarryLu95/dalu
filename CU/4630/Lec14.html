@@ -216,7 +216,17 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p>What is the fair market price <span class="math inline">\(P\)</span>?</p>
 </blockquote>
 <p>Seller:</p>
-<p>Borrows $100 then buy one share. Sells the share in a year</p>
+<p>Borrows $100 then buy one share. Sells the share in a year for <span class="math inline">\(\$P\)</span>. Seller’s net profit is <span class="math inline">\(P-100(1.06)=P-106\)</span>. No arbitrage says net profit should be zero, which implies <span class="math inline">\(P=106\)</span>. If <span class="math inline">\(P&gt;106\)</span>, seller has arbitrage opportunity.</p>
+<p>Buyer:</p>
+<p>Sells one share short now to raise $100. Buys one share in a year for <span class="math inline">\(\$P\)</span> to replace the share. Buyer’s net profit now is <span class="math inline">\(100-\frac{P}{1.06}\)</span>. No arbitrage implies <span class="math inline">\(P=106\)</span>. If <span class="math inline">\(P&lt;106\)</span>, buyer has arbitrage opportunity.</p>
+<hr />
+<p><strong>Option Pricing</strong></p>
+<p>Ex: Net profit at time of expiry is <span class="math inline">\(100(S_T-120)_+-300e^{0.0125}\)</span></p>
+<p>Binomial Model: “one-step version”</p>
+<hr />
+<blockquote>
+<p>Example: Suppose a stock currently sells for $100. At the end of one-step (one time period), the stock price goes up to $115 with probability <span class="math inline">\(p\)</span>, and down to $90 with probability <span class="math inline">\(1-p\)</span></p>
+</blockquote>
 <hr />
 <p>Thanks to <em>Zhenjie Shen</em> for help with the notes.</p>
 
