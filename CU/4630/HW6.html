@@ -297,258 +297,310 @@ h1.title {text-align: center;}
 h4.author {text-align: center;}
 h4.date {text-align: center;}
 p {font-size: 16px;}
+ol {font-size: 16px;}
+ul {font-size: 16px;}
+.w {font-family: Baskerville Old Face; font-style: normal; color: blue;}
+pre {color: blue;}
 img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; width: 400px;}
 </style>
 <hr />
 <div id="question-1" class="section level1">
 <h1>Question 1</h1>
-<blockquote>
 <p>[5 points] Adapt and run lines 1 to 19 for the stocks Apple Inc (AAPL), Goldman Sachs Group Inc (GS), McDonald’s Corp (MCD), Nike Inc (NKE), Walmart Inc (WMT), and Exxon Mobile Corp (XOM).</p>
-</blockquote>
-<blockquote>
-<ol style="list-style-type: lower-roman">
-<li>Report the net return for Goldman Sachs Group Inc (GS) on August 24, 2011.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2" style="list-style-type: lower-roman">
-<li>Report the risk-free rate, expressed as a decimal daily rate, on August 24, 2011.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3" style="list-style-type: lower-roman">
-<li>Report the excess return for Goldman Sachs Group Inc (GS) on August 24, 2011.</li>
-</ol>
-</blockquote>
+<p>i) Report the net return for Goldman Sachs Group Inc (GS) on August 24, 2011.</p>
+<pre class="r"><code>netRet$GS[which(Returns$Date==&quot;8/24/2011&quot;)]</code></pre>
+<pre><code>## [1] 0.03228526</code></pre>
+<div class="w">
+<p>The net return for GS on August 24, 2011 is 0.0322853.</p>
+</div>
+<p>ii) Report the risk-free rate, expressed as a decimal daily rate, on August 24, 2011.</p>
+<pre class="r"><code>mu_f[which(Returns$Date==&quot;8/24/2011&quot;)]</code></pre>
+<pre><code>## [1] 0.0000007936508</code></pre>
+<div class="w">
+<p>The risk-free rate on August 24, 2011 is 0.0000008.</p>
+</div>
+<p>iii) Report the excess return for Goldman Sachs Group Inc (GS) on August 24, 2011.</p>
+<pre class="r"><code>exRet$GS[which(Returns$Date==&quot;8/24/2011&quot;)]</code></pre>
+<pre><code>## [1] 0.03228447</code></pre>
+<div class="w">
+<p>The excess return for GS on August 24, 2011 is 0.0322845.</p>
+</div>
 </div>
 <div id="question-2" class="section level1">
 <h1>Question 2</h1>
-<blockquote>
 <p>[10 points] Adapt and run lines 20 and 21 for the 6 stocks listed in Question 1. Submit the output.</p>
-</blockquote>
-<blockquote>
-<ol style="list-style-type: lower-roman">
-<li>Report the estimate <span class="math inline">\(\hat\beta_{\text{XOM}}\)</span> for Exxon Mobile Corp (XOM).</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2" style="list-style-type: lower-roman">
-<li>For which of the eight stocks is the estimate of <span class="math inline">\(\beta\)</span> largest? What is the value of <span class="math inline">\(\hat\beta\)</span> for that stock?</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3" style="list-style-type: lower-roman">
-<li>For which of the eight stocks is the estimate of <span class="math inline">\(\beta\)</span> smallest? What is the value of <span class="math inline">\(\hat\beta\)</span> for that stock?</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="4" style="list-style-type: lower-roman">
-<li>What is the average of the eight estimates of <span class="math inline">\(\beta\)</span>?</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="22" style="list-style-type: lower-alpha">
-<li>Which of the eight stocks is “most aggressive”? Justify your answer briefly.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="6" style="list-style-type: lower-roman">
-<li>Which of the eight stocks is “least aggressive”? Justify your answer briefly.</li>
-</ol>
-</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">AAPL</th>
+<th align="right">GS</th>
+<th align="right">MCD</th>
+<th align="right">NKE</th>
+<th align="right">WMT</th>
+<th align="right">XOM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(Intercept)</td>
+<td align="right">0.00088</td>
+<td align="right">0.00009</td>
+<td align="right">0.00054</td>
+<td align="right">0.00049</td>
+<td align="right">0.00019</td>
+<td align="right">0.00003</td>
+</tr>
+<tr class="even">
+<td>market_netRet</td>
+<td align="right">0.97573</td>
+<td align="right">1.43971</td>
+<td align="right">0.58027</td>
+<td align="right">0.89699</td>
+<td align="right">0.53363</td>
+<td align="right">0.95024</td>
+</tr>
+</tbody>
+</table>
+<p>i) Report the estimate <span class="math inline">\(\hat\beta_{\text{XOM}}\)</span> for Exxon Mobile Corp (XOM).</p>
+<div class="w">
+<p>The estimate <span class="math inline">\(\hat\beta_{\text{XOM}}\)</span> is 0.95024.</p>
+</div>
+<p>ii) For which of the 6 stocks is the estimate of <span class="math inline">\(\beta\)</span> largest? What is the value of <span class="math inline">\(\hat\beta\)</span> for that stock?</p>
+<div class="w">
+<p>GS has the largest estimate of <span class="math inline">\(\beta\)</span>, and the value is 1.43971.</p>
+</div>
+<p>iii) For which of the 6 stocks is the estimate of <span class="math inline">\(\beta\)</span> smallest? What is the value of <span class="math inline">\(\hat\beta\)</span> for that stock?</p>
+<div class="w">
+<p>WMT has the smallest estimate of <span class="math inline">\(\beta\)</span>, and the value is 0.53363.</p>
+</div>
+<p>iv) What is the average of the 6 estimates of <span class="math inline">\(\beta\)</span>?</p>
+<div class="w">
+<p>The average of the 6 estimates of <span class="math inline">\(\beta\)</span> is 0.8960944.</p>
+</div>
+<p>v) Which of the 6 stocks is “most aggressive”? Justify your answer briefly.</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>vi) Which of the 6 stocks is “least aggressive”? Justify your answer briefly.</p>
+<div class="w">
+<p>xxx</p>
+</div>
 </div>
 <div id="question-3" class="section level1">
 <h1>Question 3</h1>
-<blockquote>
 <p>[5 points] Adapt and run lines 22 and 23 for the 6 stocks listed in Question 1. Submit the output.</p>
-</blockquote>
-<blockquote>
-<ol style="list-style-type: lower-roman">
-<li>Report the estimate <span class="math inline">\(\hat\beta_{\text{XOM}}\)</span> for Exxon Mobile Corp (XOM). What is the numerical difference between this estimate and the previous one from Question 2 i)?</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2" style="list-style-type: lower-roman">
-<li>What is the average of the eight estimates of <span class="math inline">\(\beta\)</span>?</li>
-</ol>
-</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">AAPL</th>
+<th align="right">GS</th>
+<th align="right">MCD</th>
+<th align="right">NKE</th>
+<th align="right">WMT</th>
+<th align="right">XOM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>market_exRet</td>
+<td align="right">0.97709</td>
+<td align="right">1.43975</td>
+<td align="right">0.58107</td>
+<td align="right">0.89781</td>
+<td align="right">0.53394</td>
+<td align="right">0.95013</td>
+</tr>
+</tbody>
+</table>
+<p>i) Report the estimate <span class="math inline">\(\hat\beta_{\text{XOM}}\)</span> for Exxon Mobile Corp (XOM). What is the numerical difference between this estimate and the previous one from Question 2 i)?</p>
+<div class="w">
+<p>The estimate <span class="math inline">\(\hat\beta_{\text{XOM}}\)</span> is 0.95013. The difference of them is -0.00011.</p>
+</div>
+<p>ii) What is the average of the 6 estimates of <span class="math inline">\(\beta\)</span>?</p>
+<div class="w">
+<p>The average of the 6 estimates of <span class="math inline">\(\beta\)</span> is 0.8966328.</p>
+</div>
 </div>
 <div id="question-4" class="section level1">
 <h1>Question 4</h1>
-<blockquote>
 <p>[15 points] Adapt and run lines 24 and 25 for the 6 stocks listed in Question 1. Submit the output for the regression for Exxon Mobile Corp (XOM).</p>
-</blockquote>
-<blockquote>
-<ol style="list-style-type: lower-roman">
-<li>Report the estimate <span class="math inline">\(\hat\alpha_{\text{XOM}}\)</span>.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2" style="list-style-type: lower-roman">
-<li>What proportion of the variability in the excess returns for Exxon Mobile Corp (XOM) is explained by the excess returns of the market?</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3" style="list-style-type: lower-roman">
-<li>Report the <span class="math inline">\(p\)</span>-value for testing the null hypothesis <span class="math inline">\(H_0:\alpha_{\text{XOM}}=0\)</span> against the alternative hypothesis <span class="math inline">\(H_A:\alpha_{\text{XOM}}\neq0\)</span>.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="4" style="list-style-type: lower-roman">
-<li>Is there evidence against the null hypothesis in part ii)? Use the 5% level of significance. Is there evidence against the suitability of the CAPM for Exxon Mobile Corp (XOM)? Justify your answer briefly.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="22" style="list-style-type: lower-alpha">
-<li>For which of the other five stocks is there evidence that <span class="math inline">\(\alpha\)</span> is not 0? Use the 5% level of significance.</li>
-</ol>
-</blockquote>
+<pre><code>## 
+## Call:
+## lm(formula = XOM ~ market_exRet)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.071797 -0.004867 -0.000133  0.004839  0.078102 
+## 
+## Coefficients:
+##                Estimate Std. Error t value            Pr(&gt;|t|)    
+## (Intercept)  0.00002761 0.00018018   0.153               0.878    
+## market_exRet 0.95008431 0.01452401  65.415 &lt;0.0000000000000002 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.009746 on 2925 degrees of freedom
+## Multiple R-squared:  0.594,  Adjusted R-squared:  0.5938 
+## F-statistic:  4279 on 1 and 2925 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<p>i) Report the estimate <span class="math inline">\(\hat\alpha_{\text{XOM}}\)</span>.</p>
+<div class="w">
+<p>The estimate <span class="math inline">\(\hat\alpha_{\text{XOM}}\)</span> is 0.0000276.</p>
+</div>
+<p>ii) What proportion of the variability in the excess returns for Exxon Mobile Corp (XOM) is explained by the excess returns of the market?</p>
+<div class="w">
+<p>The proportion of the variability (R-squared) is 0.5939805.</p>
+</div>
+<p>iii) Report the <span class="math inline">\(p\)</span>-value for testing the null hypothesis <span class="math inline">\(H_0:\alpha_{\text{XOM}}=0\)</span> against the alternative hypothesis <span class="math inline">\(H_A:\alpha_{\text{XOM}}\neq0\)</span>.</p>
+<div class="w">
+<p>The <span class="math inline">\(p\)</span>-value is 0.8782217.</p>
+</div>
+<p>iv) Is there evidence against the null hypothesis in part iii)? Use the 5% level of significance. Is there evidence against the suitability of the CAPM for Exxon Mobile Corp (XOM)? Justify your answer briefly.</p>
+<div class="w">
+<p>There is no evidence to reject <span class="math inline">\(H_0\)</span> since the <span class="math inline">\(p\)</span>-value is much greater than 0.05, which means <span class="math inline">\(\alpha=0\)</span>. Under the CAPM, <span class="math inline">\(\alpha\)</span> should be 0, by the same reason, there is no evidence to reject the suitability of the CAPM.</p>
+</div>
+<p>v) For which of the other five stocks is there evidence that <span class="math inline">\(\alpha\)</span> is not 0? Use the 5% level of significance.</p>
+<pre class="r"><code>summary(fit_exRet)[[which(stocknames==&quot;AAPL&quot;)]]$coefficients[1,4]&lt;=0.05</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>summary(fit_exRet)[[which(stocknames==&quot;GS&quot;)]]$coefficients[1,4]&lt;=0.05</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>summary(fit_exRet)[[which(stocknames==&quot;MCD&quot;)]]$coefficients[1,4]&lt;=0.05</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>summary(fit_exRet)[[which(stocknames==&quot;NKE&quot;)]]$coefficients[1,4]&lt;=0.05</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>summary(fit_exRet)[[which(stocknames==&quot;WMT&quot;)]]$coefficients[1,4]&lt;=0.05</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<div class="w">
+<p>There are three stocks that <span class="math inline">\(\alpha\)</span> is not 0. They are AAPL (<span class="math inline">\(p\)</span>-value is 0.0045986), MCD (<span class="math inline">\(p\)</span>-value is 0.0021478), NKE (<span class="math inline">\(p\)</span>-value is 0.0457618).</p>
+</div>
 </div>
 <div id="question-5" class="section level1">
 <h1>Question 5</h1>
-<blockquote>
 <p>[10 points] Adapt and run lines 26 to 30 for the 6 stocks listed in Question 1. Submit the output from lines 28, 29, and 30.</p>
-</blockquote>
-<blockquote>
-<ol style="list-style-type: lower-roman">
-<li>Report the value of the sample mean excess return for Exxon Mobile Corp (XOM).</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2" style="list-style-type: lower-roman">
-<li>Report the estimate of the mean excess return for Exxon Mobile Corp (XOM) based on the security characteristic line.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3" style="list-style-type: lower-roman">
-<li>For which stocks is the difference between the two estimates of the mean excess return most extreme? Compare with your answer to Question 4 v). Speculate why the security characteristic line might provide a less satisfactory estimate for these stocks than it provides for the other stocks.</li>
-</ol>
-</blockquote>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>i) Report the value of the sample mean excess return for Exxon Mobile Corp (XOM).</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>ii) Report the estimate of the mean excess return for Exxon Mobile Corp (XOM) based on the security characteristic line.</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>iii) For which stocks is the difference between the two estimates of the mean excess return most extreme? Compare with your answer to Question 4 v). Speculate why the security characteristic line might provide a less satisfactory estimate for these stocks than it provides for the other stocks.</p>
+<div class="w">
+<p>xxx</p>
+</div>
 </div>
 <div id="question-6" class="section level1">
 <h1>Question 6</h1>
-<blockquote>
 <p>[10 points] Adapt and run line 31 for the 6 stocks listed in Question 1 under the assumption that the forecast excess return for the market is 0.009. Submit the output.</p>
-</blockquote>
-<blockquote>
-<ol style="list-style-type: lower-roman">
-<li>Report the predicted excess return for McDonald’s Corp (MCD).</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2" style="list-style-type: lower-roman">
-<li>Would you expect your prediction in part i) to be a satisfactory forecast in light of your answer to Question 4 iv)?</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3" style="list-style-type: lower-roman">
-<li>Obtain a forecast based on Question 4. Would you prefer one forecast over the other?</li>
-</ol>
-</blockquote>
+<p>i) Report the predicted excess return for McDonald’s Corp (MCD).</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>ii) Would you expect your prediction in part i) to be a satisfactory forecast in light of your answer to Question 4 iv)?</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>iii) Obtain a forecast based on Question 4. Would you prefer one forecast over the other?</p>
+<div class="w">
+<p>xxx</p>
+</div>
 </div>
 <div id="question-7" class="section level1">
 <h1>Question 7</h1>
-<blockquote>
 <p>[10 points] Adapt and run lines 32 to 35 for the 6 stocks listed in Question 1 so that you perform the test for Goldman Sachs Group Inc (GS) and Nike Inc (NKE).</p>
-</blockquote>
-<blockquote>
-<ol style="list-style-type: lower-roman">
-<li>Submit the output from line 34.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2" style="list-style-type: lower-roman">
-<li>Submit the results of the test you perform.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3" style="list-style-type: lower-roman">
-<li>Is there evidence that the assumptions of the security characteristic line are violated for Goldman Sachs Group Inc (GS) and Nike Inc (NKE)? Use the 5% level of significance.</li>
-</ol>
-</blockquote>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>i) Submit the output from line 34.</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>ii) Submit the results of the test you perform.</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>iii) Is there evidence that the assumptions of the security characteristic line are violated for Goldman Sachs Group Inc (GS) and Nike Inc (NKE)? Use the 5% level of significance.</p>
+<div class="w">
+<p>xxx</p>
+</div>
 </div>
 <div id="question-8" class="section level1">
 <h1>Question 8</h1>
-<blockquote>
 <p>[5 points] Adapt and run lines 36 to 40 for the 6 stocks listed in Question 1. Submit the output from lines 37, 39, and 40.</p>
-</blockquote>
-<blockquote>
-<ol style="list-style-type: lower-roman">
-<li>Report the sample covariance between the excess returns for Goldman Sachs Group Inc (GS) and Nike Inc (NKE).</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2" style="list-style-type: lower-roman">
-<li>Report the estimate of the covariance between the excess returns for Goldman Sachs Group Inc (GS) and Nike Inc (NKE) based on the security characteristic line.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3" style="list-style-type: lower-roman">
-<li>Report the ratio between your answer in part i) to your answer in part ii).</li>
-</ol>
-</blockquote>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>i) Report the sample covariance between the excess returns for Goldman Sachs Group Inc (GS) and Nike Inc (NKE).</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>ii) Report the estimate of the covariance between the excess returns for Goldman Sachs Group Inc (GS) and Nike Inc (NKE) based on the security characteristic line.</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>iii) Report the ratio between your answer in part i) to your answer in part ii).</p>
+<div class="w">
+<p>xxx</p>
+</div>
 </div>
 <div id="question-9" class="section level1">
 <h1>Question 9</h1>
-<blockquote>
 <p>[15 points] Adapt and run lines 41 to 51 for the 6 stocks listed in Question 1.</p>
-</blockquote>
-<blockquote>
-<ol style="list-style-type: lower-roman">
-<li>Report <span class="math inline">\(\hat\beta_P\)</span> for the portfolio.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2" style="list-style-type: lower-roman">
-<li>Report estimate of the systematic component of risk for the portfolio.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3" style="list-style-type: lower-roman">
-<li>Report the estimate of the unique compent of risk for the portfolio.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="4" style="list-style-type: lower-roman">
-<li>Is the estimate of the unique component of risk for the portfolio less than the estimates of the unique components of risk for each of the stocks? Does diversification appear to reduce the unique component of risk?</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="22" style="list-style-type: lower-alpha">
-<li>Is the estimate of the risk for the portfolio less than the estimates of the risks of the stocks?</li>
-</ol>
-</blockquote>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>i) Report <span class="math inline">\(\hat\beta_P\)</span> for the portfolio.</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>ii) Report estimate of the systematic component of risk for the portfolio.</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>iii) Report the estimate of the unique compent of risk for the portfolio.</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>iv) Is the estimate of the unique component of risk for the portfolio less than the estimates of the unique components of risk for each of the stocks? Does diversification appear to reduce the unique component of risk?</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>v) Is the estimate of the risk for the portfolio less than the estimates of the risks of the stocks?</p>
+<div class="w">
+<p>xxx</p>
+</div>
 </div>
 <div id="question-10" class="section level1">
 <h1>Question 10</h1>
-<blockquote>
 <p>[15 points] Adapt and run lines 52 to 81 for the 6 stocks listed in Question 1 to handle the case that the weights are constrained to satisfy <span class="math inline">\(-1\leq w_j\leq2\,(j=1,\cdots,8)\)</span>.</p>
-</blockquote>
-<blockquote>
-<ol style="list-style-type: lower-roman">
-<li>Submit the output of the weights for the portfolio. Which stocks are shorted in the portfolio?</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2" style="list-style-type: lower-roman">
-<li>Report the estimate of <span class="math inline">\(\alpha_P\)</span>. Is the estimate of <span class="math inline">\(\alpha_P\)</span> larger than the estimates of the <span class="math inline">\(\alpha\)</span>s for the stocks?</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3" style="list-style-type: lower-roman">
-<li>Report the estimate of <span class="math inline">\(\beta_P\)</span> for the portfolio.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="4" style="list-style-type: lower-roman">
-<li>Report the estimate of risk for the portfolio. Is the estimate of the risk of the portfolio larger than the estimates of the risk for each of the stocks?</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="22" style="list-style-type: lower-alpha">
-<li>Compare the estimate of risk for the market neutral portfolio to the estimate of risk for the portfolio based on equal weights investigated in Question 9. Does maximizing <span class="math inline">\(\alpha\)</span> come at a cost? Does maximizing <span class="math inline">\(\alpha\)</span> in a market neutral portfolio offer an arbitrage opportunity?</li>
-</ol>
-</blockquote>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>i) Submit the output of the weights for the portfolio. Which stocks are shorted in the portfolio?</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>ii) Report the estimate of <span class="math inline">\(\alpha_P\)</span>. Is the estimate of <span class="math inline">\(\alpha_P\)</span> larger than the estimates of the <span class="math inline">\(\alpha\)</span>s for the stocks?</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>iii) Report the estimate of <span class="math inline">\(\beta_P\)</span> for the portfolio.</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>iv) Report the estimate of risk for the portfolio. Is the estimate of the risk of the portfolio larger than the estimates of the risk for each of the stocks?</p>
+<div class="w">
+<p>xxx</p>
+</div>
+<p>v) Compare the estimate of risk for the market neutral portfolio to the estimate of risk for the portfolio based on equal weights investigated in Question 9. Does maximizing <span class="math inline">\(\alpha\)</span> come at a cost? Does maximizing <span class="math inline">\(\alpha\)</span> in a market neutral portfolio offer an arbitrage opportunity?</p>
+<div class="w">
+<p>xxx</p>
+</div>
 </div>
 
 
