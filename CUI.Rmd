@@ -202,26 +202,32 @@ ul {font-size: 16px; color: black;}
 #STSCI/ORIE 4630 - Operations Research Tools for Financial Engineering
 ##Lecture Slides
 - Week 1
-    - Tu: [Jan/22](CU/4630/Lec01.html)
-    - Th: [Jan/24](CU/4630/Lec02.html) 
+    1. Tu: [Jan/22](CU/4630/Lec01.html)
+    2. Th: [Jan/24](CU/4630/Lec02.html) 
 - Week 2
-    - Tu: [Jan/29](CU/4630/Lec03.html)
-    - Th: [Jan/31](CU/4630/Lec04.html)
+    3. Tu: [Jan/29](CU/4630/Lec03.html)
+    4. Th: [Jan/31](CU/4630/Lec04.html)
 - Week 3
-    - Tu: [Feb/5](CU/4630/Lec05.html)
-    - Th: [Feb/7](CU/4630/Lec06.html)
+    5. Tu: [Feb/5](CU/4630/Lec05.html)
+    6. Th: [Feb/7](CU/4630/Lec06.html)
 - Week 4
-    - Tu: [Feb/12](CU/4630/Lec07.html)
-    - Th: [Feb/14](CU/4630/Lec08.html)
+    7. Tu: [Feb/12](CU/4630/Lec07.html)
+    8. Th: [Feb/14](CU/4630/Lec08.html)
 - Week 5
-    - Tu: [Feb/19](CU/4630/Lec09.html) (pending pictures)
+    9. Tu: [Feb/19](CU/4630/Lec09.html) (pending pictures)
     - Th: Feb/21, Midterm 1
 - Week 6
     - Tu: Feb/26, Holiday
-    - Th: [Feb/28](CU/4630/Lec10.html) (pending pictures and revision)
+    10. Th: [Feb/28](CU/4630/Lec10.html) (pending pictures and revision)
 - Week 7
-    - Tu: [Mar/5](CU/4630/Lec11.html) (pending)
-    - Th: [Mar/7](CU/4630/Lec12.html) (pending)
+    11. Tu: [Mar/5](CU/4630/Lec11.html) (pending revision)
+    12. Th: [Mar/7](CU/4630/Lec12.html) (pending revision)
+- Week 8
+    13. Tu: [Mar/12](CU/4630/Lec13.html) (pending revision)
+    14. Th: [Mar/14](CU/4630/Lec14.html) (pending revision)
+- Week 9
+    15. Tu: [Mar/19](CU/4630/Lec15.html) (pending)
+    16. Th: [Mar/21](CU/4630/Lec16.html) (pending)
 
 ##Homeworks
 1. [Homework 1](CU/4630/HW1.pdf)
