@@ -1,0 +1,16 @@
+Joann Fraser	100000.0	["Mary Smith","David Wells"]	{"Federal Taxes":0.2,"State Taxes":0.05,"Insurance":0.1}	{"street":"100 Bay Ave.","city":"Long Beach","state":"CA","zip":90814}	US	CA
+Elise Smith	80000.0	["Bill King"]	{"Federal Taxes":0.2,"State Taxes":0.05,"Insurance":0.1}	{"street":"100 Beach St.","city":"Long Beach","state":"CA","zip":90815}	US	CA
+Jason Yang	150000.0	["Diana Foster","Kelli Doe","Kevin Hoover"]	{"Federal Taxes":0.2,"State Taxes":0.05,"Insurance":0.1}	{"street":"101 Uptown Rd.","city":"San Diego","state":"CA","zip":92106}	US	CA
+Ted Wang	190000.0	["Diana Johnson","Kelli Li","Dan Jones"]	{"Federal Taxes":0.2,"State Taxes":0.05,"Insurance":0.1}	{"street":"1 Kerrick Rd.","city":"San Diego","state":"CA","zip":92106}	US	CA
+Tom McPheron	210000.0	["Marvin Xu","Elise Lee"]	{"Federal Taxes":0.02,"State Taxes":0.05,"Insurance":0.1}	{"street":"12 Bush Lane.","city":"San Diego","state":"CA","zip":92106}	US	CA
+
+John Smith	100000.0	["Mary Smith","David Wells"]	{"Federal Taxes":0.2,"State Taxes":0.05,"Insurance":0.1}	{"street":"1 Michigan Ave.","city":"Chicago","state":"IL","zip":60600}	US	IL
+Mary Smith	80000.0	["Bill King"]	{"Federal Taxes":0.2,"State Taxes":0.05,"Insurance":0.1}	{"street":"100 Ontario St.","city":"Chicago","state":"IL","zip":60601}	US	IL
+Jason Jones	150000.0	["Diana Foster","Kelli Doe","Kevin Hoover"]	{"Federal Taxes":0.2,"State Taxes":0.05,"Insurance":0.1}	{"street":"101 Uptown Rd.","city":"Ithaca","state":"IL","zip":60666}	US	IL
+Bob McPheron	150000.0	["Marvin Xu","Elise Lee"]	{"Federal Taxes":0.02,"State Taxes":0.05,"Insurance":0.1}	{"street":"12 Bush Ave.","city":"Chicago","state":"IL","zip":60606}	US	IL
+
+Sam Johnson	100000.0	["Mary Smith","David Wells"]	{"Federal Taxes":0.2,"State Taxes":0.05,"Insurance":0.1}	{"street":"1 Square Ave.","city":"New York","state":"NY","zip":10060}	US	NY
+Elise Smith	80000.0	["Bill King"]	{"Federal Taxes":0.2,"State Taxes":0.05,"Insurance":0.1}	{"street":"100 Ontario St.","city":"New York","state":"NY","zip":10001}	US	NY
+Jason Yang	150000.0	["Diana Foster","Kelli Doe","Kevin Hoover"]	{"Federal Taxes":0.2,"State Taxes":0.05,"Insurance":0.1}	{"street":"101 Uptown Rd.","city":"Ithaca","state":"NY","zip":14850}	US	NY
+Ted Wang	120000.0	["Diana Johnson","Kelli Li","Dan Jones"]	{"Federal Taxes":0.2,"State Taxes":0.05,"Insurance":0.1}	{"street":"21 Farm Rd.","city":"Ithaca","state":"NY","zip":14850}	US	NY
+Tom McPheron	150000.0	["Marvin Xu","Elise Lee"]	{"Federal Taxes":0.02,"State Taxes":0.05,"Insurance":0.1}	{"street":"12 Bush Ave.","city":"New York","state":"NY","zip":10002}	US	NY
