@@ -201,7 +201,7 @@ h4.author {text-align: center;}
 p {font-size: 18px; color: black;}
 ol {font-size: 18px; color: black;}
 ul {font-size: 18px; color: black;}
-.img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; width: 500px;}
+img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; width: 500px;}
 </style>
 <hr />
 <div id="what-does-hive-dml-do" class="section level1">
@@ -604,10 +604,10 @@ WHERE se.cnty = 'US';</code></pre>
 </div>
 <div id="set-the-desired-properties-just-before-use" class="section level1">
 <h1><span class="header-section-number">14</span> Set the Desired Properties Just Before Use</h1>
-<pre class="hive"><code>hive&gt; set hive.exec.dynamic.partition=true;
+<pre><code>hive&gt; set hive.exec.dynamic.partition=true;
 hive&gt; set hive.exec.dynamic.partition.mode=nonstrict;
 hive&gt; set hive.exec.max.dynamic.partitions.pernode=1000;</code></pre>
-<pre class="hive"><code>hive&gt; INSERT OVERWRITE TABLE employees
+<pre><code>hive&gt; INSERT OVERWRITE TABLE employees
     &gt; PARTITION (country, state)
     &gt; SELECT ..., se.cty, se.st
     &gt; FROM staged_employees se;</code></pre>
@@ -630,7 +630,7 @@ SELECT name, salary, address
 FROM employees
 WHERE state = 'CA';</code></pre>
 <p>Independent of how the data is actually stored in the source table, it is written to files with all fields serialized as strings</p>
-<pre class="hive"><code>hive&gt; ! ls /tmp/ca_employees;
+<pre><code>hive&gt; ! ls /tmp/ca_employees;
 000000_0
 hive&gt; ! cat /tmp/ca_employees/000000_0
 John Doe100000.0201 San Antonio CircleMountain ViewCA94040
