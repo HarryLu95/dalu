@@ -1,0 +1,7 @@
+John Smith,100000.0,.2,.05,.1,1 Michigan Ave. Chicago IL 60600
+Mary Smith,80000.0,.2,.05,.1,100 Ontario St. Chicago IL 60601
+Todd Jones,70000.0,.15,.03,.1,108 Oak Park Chicago IL 60700
+Bill King,60000.0,.15,.03,.1,10 Ontario St. Chicago IL 60700
+Sam Kim,110000.0,.2,.05,.1,101 Uptown Rd. Ithaca NY 14850
+Maria Booth,60000.0,.15,.03,.1,46 South Gate Dr. State College PA 16801
+Joe Howe,75000.0,.2,.5,.1,24 Garden Ave. Ithaca NY 14853

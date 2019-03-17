@@ -1,0 +1,4 @@
+John Smith^100000.0^Mary Smith#David Wells^Federal Taxes@0.2#State Taxes@0.05#Insurance@0.1^1 Michigan Ave.#Chicago#IL#60600
+Mary Smith^80000.0^Bill King^Federal Taxes@0.2#State Taxes@0.05#Insurance@0.1^100 Ontario St.#Chicago#IL#60601
+Jason Jones^150000.0^Diana Foster#Kelli Doe#Kevin Hoover^Federal Taxes@0.2#State Taxes@0.05#Insurance@0.1^101 Uptown Rd.#Ithaca#IL#60666
+Bob McPheron^150000.0^Marvin Xu#Elise Lee^Federal Taxes@0.02#State Taxes@0.05#Insurance@0.1^12 Bush Ave.#Chicago#IL#60606
