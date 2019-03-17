@@ -115,7 +115,7 @@ ul {font-size: 16px; color: black;}
 2. [Homework 2](CU/5065/HW2.pdf)
     - Due: Mar/12/2019 at 11:59PM
     - Data: [shakespeare](CU/5065/shakespeare.txt) (.txt)
-    - [Summary](CU/5065/HW2_Summary.html) (pending)
+    - [Summary](CU/5065/HW2_Summary.html)
 
 ##Quizzes
 1. [Quiz 1 with solutions](CU/5065/Quiz1_S.pdf)
