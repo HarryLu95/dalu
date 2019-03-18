@@ -19,73 +19,6 @@ ul {font-size: 16px; color: black;}
 
 ---
 
-#CS 5786 - Machine Learning for Data Science
-##Lecture Slides
-- Week 1
-    - Lecture 1: [Course introduction, Logistics, Dimensionality reduction](CU/5786/Lec01.pdf)
-    - Lecture 2: [Dimensionality Reduction, Principal Component Analysis](CU/5786/Lec02.pdf)
-    - Demo: [PCA demo - Classroom](CU/5786/classroom_demo.html)
-    - Demo: [PCA demo - Smile](CU/5786/smile_demo.html)
-    - Handout (Jan/24): [PCA Handout 1](CU/5786/Handout01.html)
-    - Lecture Note: 2 & 3 [Principal Component Analysis](CU/5786/LecNote2-3.pdf)
-- Week 2
-    - Lecture 3: [Principal Component Analysis](CU/5786/Lec03.pdf)
-    - Handout (Jan/29): [PCA Handout 2](CU/5786/Handout02.html)
-    - Algorithm: [**PCA Algorithm**](CU/5786/Algorithm01.html)
-    - Lecture 4: [PCA and Random Projections](CU/5786/Lec04.pdf)
-    - Handout (Jan/31): [Random Projections Handout](CU/5786/Handout03.html)
-- Week 3
-    - Lecture 5: [Random Projections & Canonical Correlation Analysis](CU/5786/Lec05.pdf)
-    - Lecture Note: 5 [Random Projections](CU/5786/LecNote5.pdf)
-    - Lecture 6: [Canonical Correlation Analysis](CU/5786/Lec06.pdf)
-    - Handout (Feb/7): [Canonical Correlations Analysis Handout](CU/5786/Handout04.html)
-    - Lecture Note: 6 [Canonical Correlation Analysis](CU/5786/LecNote6.pdf)
-- Week 4
-    - Lecture 7: [Canonical Correlation Analysis & Kernel PCA](CU/5786/Lec07.pdf)
-    - Lecture Note: 7 [Kernel PCA](CU/5786/LecNote7.pdf)
-    - Lecture 8: [Kernel PCA & Isomap](CU/5786/Lec08.pdf)
-    - Handout (Feb/14): [Kernel Methods & t-SNE](CU/5786/Handout05.html) (pending)
-    - Demo: [KPCA demo - Circle](CU/5786/circle_demo.html)
-    - Demo: [KPCA demo - Concentric Circles](CU/5786/concentric_circles_demo.html)
-- Week 5
-    - Lecture 9: [Isomap & t-SNE](CU/5786/Lec09.pdf)
-    - Handout (Feb/19): [t-SNE & Spectral Embedding](CU/5786/Handout06.html) (pending)
-    - Lecture 10: [Spectral Embedding](CU/5786/Lec10.pdf)
-    - Handout (Feb/21): [Spectral Embedding](CU/5786/Handout07.html) (pending)
-- Week 6
-    - Lecture 11: [Spectral Embedding & Clustering](CU/5786/Lec11.pdf)
-- Week 7
-    - Lecture 12: [Clustering & Linkage Clustering](CU/5786/Lec12.pdf)
-    - Handout (Mar/5): [Clustering: Linkage Clustering](CU/5786/Handout08.html) (pending)
-    - Demo: [???]() (pending)
-    - Lecture 13: [K-Means Clustering](CU/5786/Lec13.pdf)
-    - Lecture Note: 12 & 13 [Clustering, Single-link algorithm, K-means Algorithm](CU/5786/LecNote12-13.pdf)
-- Week 8
-    - Lecture 14: [Gaussian Mixture Model](CU/5786/Lec14.pdf)
-    - Lecture Note: 14 [EM Algorithm for Gaussian Mixture Models and Why EM works](CU/5786/LecNote14.pdf)
-    - Demo: [???]() (pending)
-
-
-##Homeworks
-- [Vocareum Link](https://labs.vocareum.com/home/login.php?email=dl947%40cornell.edu)
-- [Homework 1](CU/5786/HW1.html)
-    - Due: Feb/20/2019 23:59:59 EST
-- [Homework 2](CU/5786/HW2.html) (pending)
-    - Due: Mar/15/2019 23:59:59 EST
--  
--  
-
-##Exams
-- [Placement Exam](CU/5786/PlacementExam.pdf)
-    - Due: Jan/31/2019
-    - [Summary](CU/5786/Placement_Exam.html)
-- Midterm
-    - Mar/28/2019 at STL185
-- Final
-    - May/14/2019 at 7:00PM
-
----
-
 #STSCI 5065 - Big Data Management and Analysis
 ##Lecture Slides
 1. [Concepts of Big Data and Hadoop](CU/5065/Lec01.pdf)
@@ -107,6 +40,8 @@ ul {font-size: 16px; color: black;}
     - [Lecture 8 Note](CU/5065/Summary08.html)
 9. [Introduction to Apache Hive 2](CU/5065/Lec09.pdf)
     - [Lecture 9 Note](CU/5065/Summary09.html)
+10. [Introduction to Apache Hive 3](CU/5065/Lec10.pdf)
+    - [Lecture 10 Note](CU/5065/Summary10.html) (pending)
 
 ##Homeworks
 1. [Homework 1](CU/5065/HW1.pdf)
@@ -120,6 +55,7 @@ ul {font-size: 16px; color: black;}
 ##Quizzes
 1. [Quiz 1 with solutions](CU/5065/Quiz1_S.pdf)
 2. [Quiz 2 with solutions](CU/5065/Quiz2_S.pdf)
+3. [Quiz 3 with solutions](CU/5065/Quiz3_S.pdf)
 
 ##Data Files
 - [1901-1](CU/5065/1901-1) (.File)
@@ -259,6 +195,74 @@ ul {font-size: 16px; color: black;}
 
 ##Exams
 - [Midterm 1 Solution](CU/4630/Midterm1_S.pdf)
+
+#CS 5786 - Machine Learning for Data Science
+##Lecture Slides
+- Week 1
+    - Lecture 1: [Course introduction, Logistics, Dimensionality reduction](CU/5786/Lec01.pdf)
+    - Lecture 2: [Dimensionality Reduction, Principal Component Analysis](CU/5786/Lec02.pdf)
+    - Demo: [PCA demo - Classroom](CU/5786/classroom_demo.html)
+    - Demo: [PCA demo - Smile](CU/5786/smile_demo.html)
+    - Handout (Jan/24): [PCA Handout 1](CU/5786/Handout01.html)
+    - Lecture Note: 2 & 3 [Principal Component Analysis](CU/5786/LecNote2-3.pdf)
+- Week 2
+    - Lecture 3: [Principal Component Analysis](CU/5786/Lec03.pdf)
+    - Handout (Jan/29): [PCA Handout 2](CU/5786/Handout02.html)
+    - Algorithm: [**PCA Algorithm**](CU/5786/Algorithm01.html)
+    - Lecture 4: [PCA and Random Projections](CU/5786/Lec04.pdf)
+    - Handout (Jan/31): [Random Projections Handout](CU/5786/Handout03.html)
+- Week 3
+    - Lecture 5: [Random Projections & Canonical Correlation Analysis](CU/5786/Lec05.pdf)
+    - Lecture Note: 5 [Random Projections](CU/5786/LecNote5.pdf)
+    - Lecture 6: [Canonical Correlation Analysis](CU/5786/Lec06.pdf)
+    - Handout (Feb/7): [Canonical Correlations Analysis Handout](CU/5786/Handout04.html)
+    - Lecture Note: 6 [Canonical Correlation Analysis](CU/5786/LecNote6.pdf)
+- Week 4
+    - Lecture 7: [Canonical Correlation Analysis & Kernel PCA](CU/5786/Lec07.pdf)
+    - Lecture Note: 7 [Kernel PCA](CU/5786/LecNote7.pdf)
+    - Lecture 8: [Kernel PCA & Isomap](CU/5786/Lec08.pdf)
+    - Handout (Feb/14): [Kernel Methods & t-SNE](CU/5786/Handout05.html) (pending)
+    - Demo: [KPCA demo - Circle](CU/5786/circle_demo.html)
+    - Demo: [KPCA demo - Concentric Circles](CU/5786/concentric_circles_demo.html)
+- Week 5
+    - Lecture 9: [Isomap & t-SNE](CU/5786/Lec09.pdf)
+    - Handout (Feb/19): [t-SNE & Spectral Embedding](CU/5786/Handout06.html) (pending)
+    - Lecture 10: [Spectral Embedding](CU/5786/Lec10.pdf)
+    - Handout (Feb/21): [Spectral Embedding](CU/5786/Handout07.html) (pending)
+- Week 6
+    - Lecture 11: [Spectral Embedding & Clustering](CU/5786/Lec11.pdf)
+- Week 7
+    - Lecture 12: [Clustering & Linkage Clustering](CU/5786/Lec12.pdf)
+    - Handout (Mar/5): [Clustering: Linkage Clustering](CU/5786/Handout08.html) (pending)
+    - Demo: [???]() (pending)
+    - Lecture 13: [K-Means Clustering](CU/5786/Lec13.pdf)
+    - Lecture Note: 12 & 13 [Clustering, Single-link algorithm, K-means Algorithm](CU/5786/LecNote12-13.pdf)
+- Week 8
+    - Lecture 14: [Gaussian Mixture Model](CU/5786/Lec14.pdf)
+    - Lecture Note: 14 [EM Algorithm for Gaussian Mixture Models and Why EM works](CU/5786/LecNote14.pdf)
+    - Demo: [???]() (pending)
+
+
+##Homeworks
+- [Vocareum Link](https://labs.vocareum.com/home/login.php?email=dl947%40cornell.edu)
+- [Homework 1](CU/5786/HW1.html)
+    - Due: Feb/20/2019 23:59:59 EST
+- [Homework 2](CU/5786/HW2.html) (pending)
+    - Due: Mar/15/2019 23:59:59 EST
+-  
+-  
+
+##Exams
+- [Placement Exam](CU/5786/PlacementExam.pdf)
+    - Due: Jan/31/2019
+    - [Summary](CU/5786/Placement_Exam.html)
+- Midterm
+    - Mar/28/2019 at STL185
+- Final
+    - May/14/2019 at 7:00PM
+
+---
+
 
 ---
 
