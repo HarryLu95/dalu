@@ -222,11 +222,46 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <hr />
 <p><strong>Option Pricing</strong></p>
 <p>Ex: Net profit at time of expiry is <span class="math inline">\(100(S_T-120)_+-300e^{0.0125}\)</span></p>
-<p>Binomial Model: “one-step version”</p>
-<hr />
+<p><strong>Binomial Model: “one-step version”</strong></p>
 <blockquote>
 <p>Example: Suppose a stock currently sells for $100. At the end of one-step (one time period), the stock price goes up to $115 with probability <span class="math inline">\(p\)</span>, and down to $90 with probability <span class="math inline">\(1-p\)</span></p>
 </blockquote>
+<p>STOCK:</p>
+<p><span class="math display">\[100\rightarrow\left\{\begin{array}{cl}115&amp;p\\90&amp;1-p\end{array}\right.\]</span></p>
+<p>OPTION:</p>
+<p><span class="math display">\[?\rightarrow\left\{\begin{array}{c}10\\0\end{array}\right.\]</span></p>
+<p>Consider a call option that expires at the end of the period with strike price $105. What should the option cost?</p>
+<p>Create a “synthetic portfolio” of the stock and a risk-free asset that replicates the option</p>
+<p>Start with the Hedge Ratio:</p>
+<p><span class="math display">\[\frac{\text{Volatility of the option}}{\text{Volatility of the stock}}=\frac{10-0}{115-90}=0.4\]</span></p>
+<p>Consider purchase 0.4 of the share</p>
+<p>Suppose for now the risk-free rate is 0%, borrow $36</p>
+<p><span class="math display">\[40\rightarrow\left\{\begin{array}{l}46-36=10\\36-36=0\end{array}\right.\]</span></p>
+<p>So the price of the option is <span class="math inline">\(40-36=4\)</span></p>
+<p>Suppose that the risk-free rate is 7% over the period</p>
+<p>We want to borrowed money to be worth $36 at expiry, so we borrow <span class="math inline">\(\frac{36}{1.07}\)</span> now</p>
+<p>The price of the option is <span class="math inline">\(40-\frac{36}{1.07}=6.3551\)</span></p>
+<hr />
+<p><strong>General Formulation</strong></p>
+<p>STOCK:</p>
+<p><span class="math display">\[s_1\rightarrow\left\{\begin{array}{cl}s_3&amp;p\\s_2&amp;1-p\end{array}\right.\]</span></p>
+<p>OPTION (Strike Price <span class="math inline">\(K\)</span>, <span class="math inline">\(s_2&lt;K&lt;s_3\)</span>)</p>
+<p><span class="math display">\[?\rightarrow\left\{\begin{array}{c}s_3-K\\0\end{array}\right.\]</span></p>
+<p>Hedge Ratio <span class="math inline">\(\delta=\frac{s_3-K}{s_3-s_2}\)</span>, we have this amount of stock in the synthetic portfolio</p>
+<p><span class="math inline">\(\delta\)</span>stock</p>
+<p><span class="math display">\[\delta s_1\rightarrow\left\{\begin{array}{l}\delta s_3=\frac{(s_2-K)s_3}{s_3-s_2}\\\delta s_2=\frac{(s_3-K)s_2}{s_3-s_2}\end{array}\right.\quad\text{where}\quad\left\{\begin{array}{l}\delta s_3-\delta s_2=s_3-K\\\delta s_2-\delta s_2=0\end{array}\right.\]</span></p>
+<p>Borrow an amount of money that is <span class="math inline">\(\delta s_2=\frac{(s_3-K)s_2}{s_3-s_2}\)</span> at expiration</p>
+<p>Suppose the risk-free rate over the period is <span class="math inline">\(r\)</span>, the borrowed money is worth <span class="math inline">\(\frac{\delta s_2}{1+r}\)</span> now</p>
+<p>The price of the option is <span class="math inline">\(\delta s_1-\frac{\delta s_2}{1+r}=\frac{s_3-K}{s_3-s_2}\left(s_1-\frac{s_2}{1+r}\right)\)</span></p>
+<hr />
+<p><strong>Binomial Model: “two-step version”</strong></p>
+<p>STOCK:</p>
+<p><span class="math display">\[80\rightarrow\left\{\begin{array}{l}95\rightarrow\left\{\begin{array}{c}115\\90\end{array}\right.\\70\rightarrow\left\{\begin{array}{c}85\\60\end{array}\right.\end{array}\right.\]</span></p>
+<p>OPTION (Strike Price 80)</p>
+<p><span class="math display">\[A\rightarrow\left\{\begin{array}{l}B\rightarrow\left\{\begin{array}{c}35\\10\end{array}\right.\\C\rightarrow\left\{\begin{array}{c}5\\0\end{array}\right.\end{array}\right.\]</span></p>
+<p>Assume risk-free rate is 0%. What are the values of the option at Nodes <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span>?</p>
+<p><span class="math inline">\(B\)</span>: Hedge Ratio is <span class="math inline">\(\frac{35-10}{115-90}=1\)</span>, buy one share at $95, borrow $80. Option value at <span class="math inline">\(B\)</span> is <span class="math inline">\(95-80=15\)</span></p>
+<p><span class="math inline">\(C\)</span>: Hedge Ratio is <span class="math inline">\(\frac{5-0}{85-60}=0.2\)</span>, buy 0.2 share at $70 per share, borrow $12. Option value at <span class="math inline">\(C\)</span> is <span class="math inline">\(0.2\times70-12=2\)</span></p>
 <hr />
 <p>Thanks to <em>Zhenjie Shen</em> for help with the notes.</p>
 
