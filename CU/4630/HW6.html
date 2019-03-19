@@ -329,6 +329,7 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <div id="question-2" class="section level1">
 <h1>Question 2</h1>
 <p>[10 points] Adapt and run lines 20 and 21 for the 6 stocks listed in Question 1. Submit the output.</p>
+<div class="w">
 <table>
 <thead>
 <tr class="header">
@@ -362,6 +363,7 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 </tr>
 </tbody>
 </table>
+</div>
 <p>i) Report the estimate <span class="math inline">\(\hat\beta_{\text{XOM}}\)</span> for Exxon Mobile Corp (XOM).</p>
 <div class="w">
 <p>The estimate <span class="math inline">\(\hat\beta_{\text{XOM}}\)</span> is 0.95024.</p>
@@ -380,16 +382,17 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 </div>
 <p>v) Which of the 6 stocks is “most aggressive”? Justify your answer briefly.</p>
 <div class="w">
-<p>xxx</p>
+<p>The most aggressive stock is GS, because it has the largest slope.</p>
 </div>
 <p>vi) Which of the 6 stocks is “least aggressive”? Justify your answer briefly.</p>
 <div class="w">
-<p>xxx</p>
+<p>The least aggressive stock is WMT, because it has the smallest slope.</p>
 </div>
 </div>
 <div id="question-3" class="section level1">
 <h1>Question 3</h1>
 <p>[5 points] Adapt and run lines 22 and 23 for the 6 stocks listed in Question 1. Submit the output.</p>
+<div class="w">
 <table>
 <thead>
 <tr class="header">
@@ -414,6 +417,7 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 </tr>
 </tbody>
 </table>
+</div>
 <p>i) Report the estimate <span class="math inline">\(\hat\beta_{\text{XOM}}\)</span> for Exxon Mobile Corp (XOM). What is the numerical difference between this estimate and the previous one from Question 2 i)?</p>
 <div class="w">
 <p>The estimate <span class="math inline">\(\hat\beta_{\text{XOM}}\)</span> is 0.95013. The difference of them is -0.00011.</p>
@@ -479,127 +483,566 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <h1>Question 5</h1>
 <p>[10 points] Adapt and run lines 26 to 30 for the 6 stocks listed in Question 1. Submit the output from lines 28, 29, and 30.</p>
 <div class="w">
-<p>xxx</p>
+<pre><code>##     AAPL       GS      MCD      NKE      WMT      XOM 
+## 0.001129 0.000482 0.000678 0.000717 0.000311 0.000273</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">AAPL</th>
+<th align="right">GS</th>
+<th align="right">MCD</th>
+<th align="right">NKE</th>
+<th align="right">WMT</th>
+<th align="right">XOM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>market_exRet</td>
+<td align="right">0.000252</td>
+<td align="right">0.000372</td>
+<td align="right">0.00015</td>
+<td align="right">0.000232</td>
+<td align="right">0.000138</td>
+<td align="right">0.000245</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">AAPL</th>
+<th align="right">GS</th>
+<th align="right">MCD</th>
+<th align="right">NKE</th>
+<th align="right">WMT</th>
+<th align="right">XOM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>market_exRet</td>
+<td align="right">0.000877</td>
+<td align="right">0.000111</td>
+<td align="right">0.000528</td>
+<td align="right">0.000485</td>
+<td align="right">0.000173</td>
+<td align="right">0.000028</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p>i) Report the value of the sample mean excess return for Exxon Mobile Corp (XOM).</p>
 <div class="w">
-<p>xxx</p>
+<p>The sample mean excess return for XOM is 0.0002729.</p>
 </div>
 <p>ii) Report the estimate of the mean excess return for Exxon Mobile Corp (XOM) based on the security characteristic line.</p>
 <div class="w">
-<p>xxx</p>
+<p>The estimate of the mean excess return for XOM is 0.0002453.</p>
 </div>
 <p>iii) For which stocks is the difference between the two estimates of the mean excess return most extreme? Compare with your answer to Question 4 v). Speculate why the security characteristic line might provide a less satisfactory estimate for these stocks than it provides for the other stocks.</p>
 <div class="w">
-<p>xxx</p>
+<p>AAPL, MCD, and NKE are the three stocks which have the most extreme difference. In the SCL model, <span class="math inline">\(\mu_{j,t}=\mu_{f,t}+\beta_j\cdot(\mu_{m,t}-\mu_{f,t})\)</span>, there is only beta value on the right hand side, which could cause the estimate not very precise.</p>
 </div>
 </div>
 <div id="question-6" class="section level1">
 <h1>Question 6</h1>
 <p>[10 points] Adapt and run line 31 for the 6 stocks listed in Question 1 under the assumption that the forecast excess return for the market is 0.009. Submit the output.</p>
+<div class="w">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">AAPL</th>
+<th align="right">GS</th>
+<th align="right">MCD</th>
+<th align="right">NKE</th>
+<th align="right">WMT</th>
+<th align="right">XOM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>market_exRet</td>
+<td align="right">0.008794</td>
+<td align="right">0.012958</td>
+<td align="right">0.00523</td>
+<td align="right">0.00808</td>
+<td align="right">0.004805</td>
+<td align="right">0.008551</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>i) Report the predicted excess return for McDonald’s Corp (MCD).</p>
 <div class="w">
-<p>xxx</p>
+<p>The predicted excess return for MCD is 0.0052297.</p>
 </div>
 <p>ii) Would you expect your prediction in part i) to be a satisfactory forecast in light of your answer to Question 4 iv)?</p>
 <div class="w">
-<p>xxx</p>
+<p>No, because the alpha value of MCD is not zero, the forecast is not satisfactory.</p>
 </div>
 <p>iii) Obtain a forecast based on Question 4. Would you prefer one forecast over the other?</p>
 <div class="w">
-<p>xxx</p>
+<p>The forecast based on Question 4 for MCD is better, because it considers the alpha value (intercept).</p>
 </div>
 </div>
 <div id="question-7" class="section level1">
 <h1>Question 7</h1>
 <p>[10 points] Adapt and run lines 32 to 35 for the 6 stocks listed in Question 1 so that you perform the test for Goldman Sachs Group Inc (GS) and Nike Inc (NKE).</p>
 <div class="w">
-<p>xxx</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">AAPL</th>
+<th align="right">GS</th>
+<th align="right">MCD</th>
+<th align="right">NKE</th>
+<th align="right">WMT</th>
+<th align="right">XOM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">-0.0006491</td>
+<td align="right">-0.0190289</td>
+<td align="right">0.0067478</td>
+<td align="right">-0.0079679</td>
+<td align="right">-0.0000897</td>
+<td align="right">-0.0017872</td>
+</tr>
+<tr class="even">
+<td align="right">-0.0078891</td>
+<td align="right">-0.0003441</td>
+<td align="right">0.0011055</td>
+<td align="right">0.0060476</td>
+<td align="right">-0.0136854</td>
+<td align="right">-0.0049744</td>
+</tr>
+<tr class="odd">
+<td align="right">0.0166258</td>
+<td align="right">0.0007076</td>
+<td align="right">0.0003759</td>
+<td align="right">-0.0115925</td>
+<td align="right">-0.0009360</td>
+<td align="right">0.0107938</td>
+</tr>
+<tr class="even">
+<td align="right">-0.0068532</td>
+<td align="right">0.0068389</td>
+<td align="right">0.0168908</td>
+<td align="right">0.0106867</td>
+<td align="right">-0.0057345</td>
+<td align="right">-0.0039872</td>
+</tr>
+<tr class="odd">
+<td align="right">0.0635928</td>
+<td align="right">0.0131638</td>
+<td align="right">0.0010021</td>
+<td align="right">0.0023721</td>
+<td align="right">0.0033944</td>
+<td align="right">0.0080745</td>
+</tr>
+<tr class="even">
+<td align="right">0.0341903</td>
+<td align="right">-0.0053938</td>
+<td align="right">0.0151782</td>
+<td align="right">-0.0017667</td>
+<td align="right">0.0135454</td>
+<td align="right">0.0035331</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p>i) Submit the output from line 34.</p>
 <div class="w">
-<p>xxx</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">AAPL</th>
+<th align="right">GS</th>
+<th align="right">MCD</th>
+<th align="right">NKE</th>
+<th align="right">WMT</th>
+<th align="right">XOM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AAPL</td>
+<td align="right">1.00000</td>
+<td align="right">-0.01529</td>
+<td align="right">0.00087</td>
+<td align="right">0.00724</td>
+<td align="right">-0.04209</td>
+<td align="right">-0.13686</td>
+</tr>
+<tr class="even">
+<td>GS</td>
+<td align="right">-0.01529</td>
+<td align="right">1.00000</td>
+<td align="right">-0.13550</td>
+<td align="right">-0.07764</td>
+<td align="right">-0.09538</td>
+<td align="right">-0.17395</td>
+</tr>
+<tr class="odd">
+<td>MCD</td>
+<td align="right">0.00087</td>
+<td align="right">-0.13550</td>
+<td align="right">1.00000</td>
+<td align="right">0.11933</td>
+<td align="right">0.14116</td>
+<td align="right">-0.00209</td>
+</tr>
+<tr class="even">
+<td>NKE</td>
+<td align="right">0.00724</td>
+<td align="right">-0.07764</td>
+<td align="right">0.11933</td>
+<td align="right">1.00000</td>
+<td align="right">0.08575</td>
+<td align="right">-0.12125</td>
+</tr>
+<tr class="odd">
+<td>WMT</td>
+<td align="right">-0.04209</td>
+<td align="right">-0.09538</td>
+<td align="right">0.14116</td>
+<td align="right">0.08575</td>
+<td align="right">1.00000</td>
+<td align="right">-0.02906</td>
+</tr>
+<tr class="even">
+<td>XOM</td>
+<td align="right">-0.13686</td>
+<td align="right">-0.17395</td>
+<td align="right">-0.00209</td>
+<td align="right">-0.12125</td>
+<td align="right">-0.02906</td>
+<td align="right">1.00000</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p>ii) Submit the results of the test you perform.</p>
 <div class="w">
-<p>xxx</p>
+<pre><code>## 
+##  Pearson's product-moment correlation
+## 
+## data:  res[, 2] and res[, 4]
+## t = -4.2118, df = 2925, p-value = 0.0000261
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.11355149 -0.04152756
+## sample estimates:
+##         cor 
+## -0.07764083</code></pre>
 </div>
 <p>iii) Is there evidence that the assumptions of the security characteristic line are violated for Goldman Sachs Group Inc (GS) and Nike Inc (NKE)? Use the 5% level of significance.</p>
 <div class="w">
-<p>xxx</p>
+<p>Yes, because the <span class="math inline">\(p\)</span>-value, 0.0000261, is much smaller than 0.05.</p>
 </div>
 </div>
 <div id="question-8" class="section level1">
 <h1>Question 8</h1>
 <p>[5 points] Adapt and run lines 36 to 40 for the 6 stocks listed in Question 1. Submit the output from lines 37, 39, and 40.</p>
 <div class="w">
-<p>xxx</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">AAPL</th>
+<th align="right">GS</th>
+<th align="right">MCD</th>
+<th align="right">NKE</th>
+<th align="right">WMT</th>
+<th align="right">XOM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AAPL</td>
+<td align="right">0.000426</td>
+<td align="right">0.000212</td>
+<td align="right">0.000087</td>
+<td align="right">0.000136</td>
+<td align="right">0.000073</td>
+<td align="right">0.000120</td>
+</tr>
+<tr class="even">
+<td>GS</td>
+<td align="right">0.000212</td>
+<td align="right">0.000588</td>
+<td align="right">0.000108</td>
+<td align="right">0.000182</td>
+<td align="right">0.000102</td>
+<td align="right">0.000183</td>
+</tr>
+<tr class="odd">
+<td>MCD</td>
+<td align="right">0.000087</td>
+<td align="right">0.000108</td>
+<td align="right">0.000138</td>
+<td align="right">0.000095</td>
+<td align="right">0.000061</td>
+<td align="right">0.000085</td>
+</tr>
+<tr class="even">
+<td>NKE</td>
+<td align="right">0.000136</td>
+<td align="right">0.000182</td>
+<td align="right">0.000095</td>
+<td align="right">0.000297</td>
+<td align="right">0.000085</td>
+<td align="right">0.000116</td>
+</tr>
+<tr class="odd">
+<td>WMT</td>
+<td align="right">0.000073</td>
+<td align="right">0.000102</td>
+<td align="right">0.000061</td>
+<td align="right">0.000085</td>
+<td align="right">0.000147</td>
+<td align="right">0.000075</td>
+</tr>
+<tr class="even">
+<td>XOM</td>
+<td align="right">0.000120</td>
+<td align="right">0.000183</td>
+<td align="right">0.000085</td>
+<td align="right">0.000116</td>
+<td align="right">0.000075</td>
+<td align="right">0.000234</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">AAPL</th>
+<th align="right">GS</th>
+<th align="right">MCD</th>
+<th align="right">NKE</th>
+<th align="right">WMT</th>
+<th align="right">XOM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AAPL</td>
+<td align="right">0.000427</td>
+<td align="right">0.000216</td>
+<td align="right">0.000087</td>
+<td align="right">0.000135</td>
+<td align="right">0.000080</td>
+<td align="right">0.000143</td>
+</tr>
+<tr class="even">
+<td>GS</td>
+<td align="right">0.000216</td>
+<td align="right">0.000588</td>
+<td align="right">0.000129</td>
+<td align="right">0.000199</td>
+<td align="right">0.000118</td>
+<td align="right">0.000211</td>
+</tr>
+<tr class="odd">
+<td>MCD</td>
+<td align="right">0.000087</td>
+<td align="right">0.000129</td>
+<td align="right">0.000138</td>
+<td align="right">0.000080</td>
+<td align="right">0.000048</td>
+<td align="right">0.000085</td>
+</tr>
+<tr class="even">
+<td>NKE</td>
+<td align="right">0.000135</td>
+<td align="right">0.000199</td>
+<td align="right">0.000080</td>
+<td align="right">0.000297</td>
+<td align="right">0.000074</td>
+<td align="right">0.000131</td>
+</tr>
+<tr class="odd">
+<td>WMT</td>
+<td align="right">0.000080</td>
+<td align="right">0.000118</td>
+<td align="right">0.000048</td>
+<td align="right">0.000074</td>
+<td align="right">0.000147</td>
+<td align="right">0.000078</td>
+</tr>
+<tr class="even">
+<td>XOM</td>
+<td align="right">0.000143</td>
+<td align="right">0.000211</td>
+<td align="right">0.000085</td>
+<td align="right">0.000131</td>
+<td align="right">0.000078</td>
+<td align="right">0.000234</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">AAPL</th>
+<th align="right">GS</th>
+<th align="right">MCD</th>
+<th align="right">NKE</th>
+<th align="right">WMT</th>
+<th align="right">XOM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AAPL</td>
+<td align="right">0.9990</td>
+<td align="right">0.9790</td>
+<td align="right">0.9985</td>
+<td align="right">1.0094</td>
+<td align="right">0.9088</td>
+<td align="right">0.8423</td>
+</tr>
+<tr class="even">
+<td>GS</td>
+<td align="right">0.9790</td>
+<td align="right">0.9999</td>
+<td align="right">0.8379</td>
+<td align="right">0.9149</td>
+<td align="right">0.8649</td>
+<td align="right">0.8678</td>
+</tr>
+<tr class="odd">
+<td>MCD</td>
+<td align="right">0.9985</td>
+<td align="right">0.8379</td>
+<td align="right">0.9989</td>
+<td align="right">1.1792</td>
+<td align="right">1.2774</td>
+<td align="right">0.9962</td>
+</tr>
+<tr class="even">
+<td>NKE</td>
+<td align="right">1.0094</td>
+<td align="right">0.9149</td>
+<td align="right">1.1792</td>
+<td align="right">0.9992</td>
+<td align="right">1.1539</td>
+<td align="right">0.8807</td>
+</tr>
+<tr class="odd">
+<td>WMT</td>
+<td align="right">0.9088</td>
+<td align="right">0.8649</td>
+<td align="right">1.2774</td>
+<td align="right">1.1539</td>
+<td align="right">0.9997</td>
+<td align="right">0.9625</td>
+</tr>
+<tr class="even">
+<td>XOM</td>
+<td align="right">0.8423</td>
+<td align="right">0.8678</td>
+<td align="right">0.9962</td>
+<td align="right">0.8807</td>
+<td align="right">0.9625</td>
+<td align="right">0.9999</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p>i) Report the sample covariance between the excess returns for Goldman Sachs Group Inc (GS) and Nike Inc (NKE).</p>
 <div class="w">
-<p>xxx</p>
+<p>The sample covariance between GS and NKE is 0.000182.</p>
 </div>
 <p>ii) Report the estimate of the covariance between the excess returns for Goldman Sachs Group Inc (GS) and Nike Inc (NKE) based on the security characteristic line.</p>
 <div class="w">
-<p>xxx</p>
+<p>The estimate covariance between excess returns for GS and NKE is 0.0001989.</p>
 </div>
 <p>iii) Report the ratio between your answer in part i) to your answer in part ii).</p>
 <div class="w">
-<p>xxx</p>
+<p>The ratio is 0.9148556.</p>
 </div>
 </div>
 <div id="question-9" class="section level1">
 <h1>Question 9</h1>
 <p>[15 points] Adapt and run lines 41 to 51 for the 6 stocks listed in Question 1.</p>
-<div class="w">
-<p>xxx</p>
-</div>
 <p>i) Report <span class="math inline">\(\hat\beta_P\)</span> for the portfolio.</p>
 <div class="w">
-<p>xxx</p>
+<p>The <span class="math inline">\(\hat\beta_P\)</span> value is 0.8966328.</p>
 </div>
 <p>ii) Report estimate of the systematic component of risk for the portfolio.</p>
 <div class="w">
-<p>xxx</p>
+<p>The estimate is 0.0001237.</p>
 </div>
 <p>iii) Report the estimate of the unique compent of risk for the portfolio.</p>
 <div class="w">
-<p>xxx</p>
+<p>The estimate is 0.0000279.</p>
 </div>
 <p>iv) Is the estimate of the unique component of risk for the portfolio less than the estimates of the unique components of risk for each of the stocks? Does diversification appear to reduce the unique component of risk?</p>
+<pre class="r"><code>rep(unique_component_P,6) &lt; diag(cov(res))</code></pre>
+<pre><code>## AAPL   GS  MCD  NKE  WMT  XOM 
+## TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
 <div class="w">
-<p>xxx</p>
+<p>Yes, the estimate of the unique component of risk for the portfolio is less than the estimates of the unique components of risk for each of the stocks, so the diversification appears to reduce the unique component of risk.</p>
 </div>
 <p>v) Is the estimate of the risk for the portfolio less than the estimates of the risks of the stocks?</p>
+<pre class="r"><code>rep(sigma_P,6) &lt; sqrt(diag(cov_est2))</code></pre>
+<pre><code>##  AAPL    GS   MCD   NKE   WMT   XOM 
+##  TRUE  TRUE FALSE  TRUE FALSE  TRUE</code></pre>
 <div class="w">
-<p>xxx</p>
+<p>No, because the risks for MCD and WMT are greater than the risk for the portfolio.</p>
 </div>
 </div>
 <div id="question-10" class="section level1">
 <h1>Question 10</h1>
 <p>[15 points] Adapt and run lines 52 to 81 for the 6 stocks listed in Question 1 to handle the case that the weights are constrained to satisfy <span class="math inline">\(-1\leq w_j\leq2\,(j=1,\cdots,8)\)</span>.</p>
-<div class="w">
-<p>xxx</p>
-</div>
 <p>i) Submit the output of the weights for the portfolio. Which stocks are shorted in the portfolio?</p>
+<pre><code>##       AAPL         GS        MCD        NKE        WMT        XOM 
+##  1.0000000 -1.0000000  1.0000000  0.8262025  0.1737975 -1.0000000</code></pre>
+<pre class="r"><code>which(w &lt; 0)</code></pre>
+<pre><code>##  GS XOM 
+##   2   6</code></pre>
 <div class="w">
-<p>xxx</p>
+<p>GS and XOM are shorted in the portfolio because their weights are negative.</p>
 </div>
 <p>ii) Report the estimate of <span class="math inline">\(\alpha_P\)</span>. Is the estimate of <span class="math inline">\(\alpha_P\)</span> larger than the estimates of the <span class="math inline">\(\alpha\)</span>s for the stocks?</p>
 <div class="w">
-<p>xxx</p>
+<p>The estimate of <span class="math inline">\(\alpha_P\)</span> is 0.0016982.</p>
+</div>
+<pre class="r"><code>rep(alpha_P,6) &gt; alpha</code></pre>
+<pre><code>## AAPL   GS  MCD  NKE  WMT  XOM 
+## TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+<div class="w">
+<p>The estimate of <span class="math inline">\(\alpha_P\)</span> is larger than the estimates of the <span class="math inline">\(\alpha\)</span>s for the stocks.</p>
 </div>
 <p>iii) Report the estimate of <span class="math inline">\(\beta_P\)</span> for the portfolio.</p>
 <div class="w">
-<p>xxx</p>
+<p>The estimate of <span class="math inline">\(\beta_P\)</span> is 0.</p>
 </div>
 <p>iv) Report the estimate of risk for the portfolio. Is the estimate of the risk of the portfolio larger than the estimates of the risk for each of the stocks?</p>
 <div class="w">
-<p>xxx</p>
+<p>The estimate of risk for the portfolio is 0.0291721.</p>
+</div>
+<pre class="r"><code>rep(portfolio_risk,6) &gt; stocks_risk</code></pre>
+<pre><code>##             AAPL   GS  MCD  NKE  WMT  XOM
+## stocks_risk TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+<div class="w">
+<p>The estimate of the risk of the portfolio is larger than the estimates of the risk for each of the stocks</p>
 </div>
 <p>v) Compare the estimate of risk for the market neutral portfolio to the estimate of risk for the portfolio based on equal weights investigated in Question 9. Does maximizing <span class="math inline">\(\alpha\)</span> come at a cost? Does maximizing <span class="math inline">\(\alpha\)</span> in a market neutral portfolio offer an arbitrage opportunity?</p>
 <div class="w">
-<p>xxx</p>
+<p>The estimate of risk for the market neutral portfolio is 0.0291721, and the estimate of risk for the portfolio based on equal weights is 0.0123151. The estimate of risk for the market neutral portfolio is larger.</p>
+<p>Since the risk in the market neutral portfolio is larger, there is a cost to maximize <span class="math inline">\(\alpha\)</span>.</p>
+<p>Yes, there is an arbitrage opportunity.</p>
 </div>
 </div>
 
