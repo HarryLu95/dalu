@@ -42,6 +42,9 @@ ul {font-size: 16px; color: black;}
     - [Lecture 9 Note](CU/5065/Summary09.html)
 10. [Introduction to Apache Hive 3](CU/5065/Lec10.pdf)
     - [Lecture 10 Note](CU/5065/Summary10.html)
+11. [Introduction to Apache Hive 4](CU/5065/Lec11.pdf)
+    - [Lecture 11 Note](CU/5065/Summary11.html) (pending)
+
 
 ##Homeworks
 1. [Homework 1](CU/5065/HW1.pdf)
