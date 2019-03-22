@@ -117,6 +117,7 @@ ul {font-size: 16px; color: black;}
 ##Quizzes
 1. [Quiz 1 with solutions](CU/4060/Quiz1_S.pdf)
 2. [Quiz 2 with solutions](CU/4060/Quiz2_S.pdf)
+3. [Quiz 3 with solutions](CU/4060/Quiz3_S.pdf)
 
 ##Books and References
 - [Hands-on Python](CU/4060/Books and References/Hands-on Python.pdf)
