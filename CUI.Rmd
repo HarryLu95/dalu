@@ -91,8 +91,11 @@ ul {font-size: 16px; color: black;}
     - [BinaryTree實現&相關](CU/4060/LectureNote4-3.html)
 5. [Lecture 5](CU/4060/Lec05.pdf)
     - [Note 5](CU/4060/LectureNote5-1.html): Lambda function, Regular expression, Graphics
-6. [Lecture 6](CU/4060/Lec06.pdf) (pending)
-    - [Note 6-1](CU/4060/LectureNote6-1.html) (pending)
+6. [Lecture 6](CU/4060/Lec06.pdf)
+    - [Note 6-1](CU/4060/LectureNote6-1.html)
+7. [Lecture 7](CU/4060/Lec07.pdf)
+8. [Lecture 8](CU/4060/Lec08.pdf)
+
 
 ##Homeworks
 1. [Homework 1](CU/4060/HW1.pdf)
