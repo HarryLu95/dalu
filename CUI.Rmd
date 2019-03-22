@@ -95,7 +95,7 @@ ul {font-size: 16px; color: black;}
 5. [Lecture 5](CU/4060/Lec05.pdf)
     - [Note 5](CU/4060/LectureNote5-1.html): Lambda function, Regular expression, Graphics
 6. [Lecture 6](CU/4060/Lec06.pdf)
-    - [Note 6-1](CU/4060/LectureNote6-1.html)
+    - [Note 6-1](CU/4060/LectureNote6-1.html): Plotting, Bar Chart, Graphical user interface (GUI), Linear regression plot, 3-D plotting with plotting modules
 7. [Lecture 7](CU/4060/Lec07.pdf)
 8. [Lecture 8](CU/4060/Lec08.pdf)
 
