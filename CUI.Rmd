@@ -104,13 +104,23 @@ ul {font-size: 16px; color: black;}
 1. [Homework 1](CU/4060/HW1.pdf)
     - Due: Feb/15/2019 at 11:59PM
     - [Summary](CU/4060/STSCI 4060 - HW 1.html)
+    - [Solutions](CU/4060/HW1_S.7z) (.7z)
 2. [Homework 2](CU/4060/HW2.pdf)
     - Due: Mar/2/2019 at 11:59PM
     - Data: [AboutCornell](CU/4060/AboutCornell.txt) (.txt)
     - Data: [stock](CU/4060/stock.txt) (.txt)
     - [Summary](CU/4060/STSCI 4060 - HW 2.html)
+    - [Solutions](CU/4060/HW2_S.7z) (.7z)
 3. [Homework 3](CU/4060/HW3.pdf)
+    - Due: Mar/12/2019 at 11:59PM
     - [Summary](CU/4060/STSCI 4060 - HW 3.html)
+    - [Solutions](CU/4060/HW3_S.7z) (.7z)
+4. [Homework 4](CU/4060/HW4.pdf)
+    - Due: Mar/26/2019 at 11:59PM
+    - Data: [unequal](CU/4060/unequal.txt) (.txt)
+    - [Summary](CU/4060/STSCI 4060 - HW 4.html)
+
+
 
 ##Data Files
 - [points_scatplot1](CU/4060/points_scatplot1.txt) (.txt)
