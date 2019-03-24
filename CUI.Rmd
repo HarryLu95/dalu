@@ -222,6 +222,7 @@ ul {font-size: 16px; color: black;}
 
 #STSCI 5999 - Applied Statistics MPS Data Analysis Project
 ##Project Progress
+- [Forecasting](CU/5999/Forecasting.html)
 - [Forecasting Function](CU/5999/Forecasting_Function.html)
 
 ---
