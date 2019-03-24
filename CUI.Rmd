@@ -215,9 +215,16 @@ ul {font-size: 16px; color: black;}
 
 
 
-
 ##Exams
 - [Midterm 1 Solution](CU/4630/Midterm1_S.pdf)
+
+---
+
+#STSCI 5999 - Applied Statistics MPS Data Analysis Project
+##Project Progress
+- [Forecasting Function](CU/5999/Forecasting_Function.html)
+
+---
 
 #CS 5786 - Machine Learning for Data Science
 ##Lecture Slides
@@ -283,9 +290,6 @@ ul {font-size: 16px; color: black;}
     - Mar/28/2019 at STL185
 - Final
     - May/14/2019 at 7:00PM
-
----
-
 
 ---
 
