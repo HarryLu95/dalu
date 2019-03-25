@@ -44,6 +44,8 @@ ul {font-size: 16px; color: black;}
     - [Lecture 10 Note](CU/5065/Summary10.html)
 11. [Introduction to Apache Hive 4](CU/5065/Lec11.pdf)
     - [Lecture 11 Note](CU/5065/Summary11.html) (pending)
+12. [Introduction to Apache Hive 5](CU/5065/Lec12.pdf)
+    - [Lecture 12 Note](CU/5065/Summary12.html) (pending)
 
 
 ##Homeworks
@@ -54,6 +56,13 @@ ul {font-size: 16px; color: black;}
     - Due: Mar/12/2019 at 11:59PM
     - Data: [shakespeare](CU/5065/shakespeare.txt) (.txt)
     - [Summary](CU/5065/HW2_Summary.html)
+3. [Homework 3](CU/5065/HW3.pdf)
+    - Due: Mar/29/2019 at 11:59PM
+    - Data: [flight12](CU/5065/flight12.csv) (.csv)
+    - Data: [NYSE_daily_prices](CU/5065/NYSE_daily_prices.csv) (.csv)
+    - Data: [NYSE_dividends](CU/5065/NYSE_dividends.csv) (.csv)
+    - Data: [stock](CU/5065/stock.zip) (.zip)
+    - [Summary](CU/5065/HW3_Summary.html) (pending)
 
 ##Quizzes
 1. [Quiz 1 with solutions](CU/5065/Quiz1_S.pdf)
