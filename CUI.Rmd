@@ -671,8 +671,8 @@ ul {font-size: 16px; color: black;}
 
 ---
 
-#STSCI 5953 - MPS Professional Development
-##Lecture Slides
-1. 
-2. 
-3. 
+<center>
+
+Copyright © 2019 Harry Lu. All rights reserved.
+
+</center>
