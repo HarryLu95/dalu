@@ -231,11 +231,43 @@ $(document).ready(function () {
   splitted_file = list(meta_data, data)
 }</code></pre>
 </div>
+<div id="convert_data_type-function" class="section level1">
+<h1><span class="header-section-number">3</span> <code>convert_data_type</code> function</h1>
+<p>Convert the data type from “factor” to “character” after splitting the file. Only <strong><code>meta_data</code></strong> has “factor” column(s).</p>
+<pre class="r"><code>convert_data_type = function(splitted_file) {
+  data = splitted_file[[2]]
+  meta_data = splitted_file[[1]]
+  meta_data_length = length(meta_data)
+  for (i in 1:meta_data_length) {
+    if (class(meta_data[,i]) == &quot;factor&quot;) {
+      meta_data[,i] = as.character(meta_data[,i])
+    }
+  }
+  converted_data = list(meta_data, data)
+}</code></pre>
+</div>
+<div id="possible_regionname-function" class="section level1">
+<h1><span class="header-section-number">4</span> <code>possible_RegionName</code> function</h1>
+<p>Give user all the Region Names that could be used for analysis.</p>
+<pre class="r"><code>possible_RegionName = function(converted_file) {
+  meta_data = converted_file[[1]]
+  RegionName_position = which(colnames(meta_data) == &quot;RegionName&quot;)
+  possible_names = meta_data[,RegionName_position]
+}</code></pre>
+</div>
+<div id="logarithmization-function" class="section level1">
+<h1><span class="header-section-number">5</span> <code>logarithmization</code> function</h1>
+<p>Convert the HPI values to HPI log return values.</p>
+<p><span class="math display">\[r_t=\ln\left(\frac{\text{HPI}_t}{\text{HPI}_{t-1}}\right)\]</span></p>
+<pre class="r"><code>logarithmization = function(input_data) {
+  log_data = log(input_data[2:length(input_data)/input_data[1:(length(input_data)-1)]])
+}</code></pre>
+</div>
 <div id="backtesting-function" class="section level1">
-<h1><span class="header-section-number">3</span> <code>backtesting</code> function</h1>
+<h1><span class="header-section-number">6</span> <code>backtesting</code> function</h1>
 </div>
 <div id="test" class="section level1">
-<h1><span class="header-section-number">4</span> Test</h1>
+<h1><span class="header-section-number">7</span> Test</h1>
 <ul>
 <li>The first 3 columns of <strong><code>State</code></strong> are <strong><code>RegionID</code></strong>, <strong><code>RegionName</code></strong>, <strong><code>SizeRank</code></strong>.</li>
 <li>The first 3 columns of <strong><code>Metro</code></strong> are <strong><code>RegionID</code></strong>, <strong><code>RegionName</code></strong>, <strong><code>SizeRank</code></strong>.</li>
@@ -244,40 +276,736 @@ $(document).ready(function () {
 <li>The first 7 columns of <strong><code>Zip</code></strong> are <strong><code>RegionID</code></strong>, <strong><code>RegionName</code></strong>, <strong><code>City</code></strong>, <strong><code>State</code></strong>, <strong><code>Metro</code></strong>, <strong><code>CountyName</code></strong>, <strong><code>SizeRank</code></strong>.</li>
 </ul>
 <pre class="r"><code>library(dplyr)
-a = &quot;State&quot; %&gt;% download_data() %&gt;% split_data()
+a = &quot;Metro&quot; %&gt;% download_data() %&gt;% split_data() %&gt;% convert_data_type()
 a1 = a[[1]]
 a2 = a[[2]]
 a1[1:5,]</code></pre>
-<pre><code>##   RegionID RegionName SizeRank
-## 1        9 California        1
-## 2       54      Texas        2
-## 3       43   New York        3
-## 4       14    Florida        4
-## 5       21   Illinois        5</code></pre>
-<pre class="r"><code>a2[1:5,1:7]</code></pre>
-<pre><code>##   X1996.04 X1996.05 X1996.06 X1996.07 X1996.08 X1996.09 X1996.10
-## 1   162300   162200   162100   162000   161800   161700   161700
-## 2    92800    92800    93000    93200    93300    93400    93500
-## 3   122500   122600   122700   122800   122900   123000   123100
-## 4    84400    84500    84500    84600    84600    84700    84900
-## 5   115100   115700   116100   116300   116200   115900   115300</code></pre>
-<pre class="r"><code>b = &quot;Metro&quot; %&gt;% download_data() %&gt;% split_data()
-b1 = b[[1]]
-b2 = b[[2]]
-b1[1:5,]</code></pre>
 <pre><code>##   RegionID                         RegionName SizeRank
 ## 1   102001                      United States        0
 ## 2   394913                       New York, NY        1
 ## 3   753899 Los Angeles-Long Beach-Anaheim, CA        2
 ## 4   394463                        Chicago, IL        3
 ## 5   394514              Dallas-Fort Worth, TX        4</code></pre>
-<pre class="r"><code>b2[1:5,1:7]</code></pre>
+<pre class="r"><code>a2[1:5,1:7]</code></pre>
 <pre><code>##   X1996.04 X1996.05 X1996.06 X1996.07 X1996.08 X1996.09 X1996.10
 ## 1   100000   100100   100300   100500   100800   101000   101300
 ## 2   164400   164400   164300   164100   164000   163900   163800
 ## 3   170300   170100   169900   169700   169600   169400   169300
 ## 4   138300   138900   139300   139400   139300   138800   138000
 ## 5   115300   115400   115500   115700   115900   116100   116400</code></pre>
+<pre class="r"><code>a_names = a %&gt;% possible_RegionName()
+a_names</code></pre>
+<pre><code>##   [1] &quot;United States&quot;                         
+##   [2] &quot;New York, NY&quot;                          
+##   [3] &quot;Los Angeles-Long Beach-Anaheim, CA&quot;    
+##   [4] &quot;Chicago, IL&quot;                           
+##   [5] &quot;Dallas-Fort Worth, TX&quot;                 
+##   [6] &quot;Philadelphia, PA&quot;                      
+##   [7] &quot;Washington, DC&quot;                        
+##   [8] &quot;Miami-Fort Lauderdale, FL&quot;             
+##   [9] &quot;Atlanta, GA&quot;                           
+##  [10] &quot;Boston, MA&quot;                            
+##  [11] &quot;San Francisco, CA&quot;                     
+##  [12] &quot;Detroit, MI&quot;                           
+##  [13] &quot;Riverside, CA&quot;                         
+##  [14] &quot;Phoenix, AZ&quot;                           
+##  [15] &quot;Seattle, WA&quot;                           
+##  [16] &quot;Minneapolis-St Paul, MN&quot;               
+##  [17] &quot;San Diego, CA&quot;                         
+##  [18] &quot;St. Louis, MO&quot;                         
+##  [19] &quot;Tampa, FL&quot;                             
+##  [20] &quot;Baltimore, MD&quot;                         
+##  [21] &quot;Denver, CO&quot;                            
+##  [22] &quot;Pittsburgh, PA&quot;                        
+##  [23] &quot;Charlotte, NC&quot;                         
+##  [24] &quot;Sacramento, CA&quot;                        
+##  [25] &quot;Orlando, FL&quot;                           
+##  [26] &quot;Cincinnati, OH&quot;                        
+##  [27] &quot;Cleveland, OH&quot;                         
+##  [28] &quot;Kansas City, MO&quot;                       
+##  [29] &quot;Las Vegas, NV&quot;                         
+##  [30] &quot;Columbus, OH&quot;                          
+##  [31] &quot;Indianapolis, IN&quot;                      
+##  [32] &quot;San Jose, CA&quot;                          
+##  [33] &quot;Virginia Beach, VA&quot;                    
+##  [34] &quot;Nashville, TN&quot;                         
+##  [35] &quot;Providence, RI&quot;                        
+##  [36] &quot;Milwaukee, WI&quot;                         
+##  [37] &quot;Jacksonville, FL&quot;                      
+##  [38] &quot;Memphis, TN&quot;                           
+##  [39] &quot;Oklahoma City, OK&quot;                     
+##  [40] &quot;Louisville-Jefferson County, KY&quot;       
+##  [41] &quot;Hartford, CT&quot;                          
+##  [42] &quot;Richmond, VA&quot;                          
+##  [43] &quot;New Orleans, LA&quot;                       
+##  [44] &quot;Buffalo, NY&quot;                           
+##  [45] &quot;Raleigh, NC&quot;                           
+##  [46] &quot;Birmingham, AL&quot;                        
+##  [47] &quot;Salt Lake City, UT&quot;                    
+##  [48] &quot;Rochester, NY&quot;                         
+##  [49] &quot;Grand Rapids, MI&quot;                      
+##  [50] &quot;Tucson, AZ&quot;                            
+##  [51] &quot;Urban Honolulu, HI&quot;                    
+##  [52] &quot;Tulsa, OK&quot;                             
+##  [53] &quot;Fresno, CA&quot;                            
+##  [54] &quot;Worcester, MA&quot;                         
+##  [55] &quot;Stamford, CT&quot;                          
+##  [56] &quot;Albuquerque, NM&quot;                       
+##  [57] &quot;Albany, NY&quot;                            
+##  [58] &quot;Omaha, NE&quot;                             
+##  [59] &quot;New Haven, CT&quot;                         
+##  [60] &quot;Bakersfield, CA&quot;                       
+##  [61] &quot;Knoxville, TN&quot;                         
+##  [62] &quot;Greenville, SC&quot;                        
+##  [63] &quot;Ventura, CA&quot;                           
+##  [64] &quot;Allentown, PA&quot;                         
+##  [65] &quot;El Paso, TX&quot;                           
+##  [66] &quot;Baton Rouge, LA&quot;                       
+##  [67] &quot;Dayton, OH&quot;                            
+##  [68] &quot;McAllen, TX&quot;                           
+##  [69] &quot;Columbia, SC&quot;                          
+##  [70] &quot;Greensboro, NC&quot;                        
+##  [71] &quot;Akron, OH&quot;                             
+##  [72] &quot;North Port-Sarasota-Bradenton, FL&quot;     
+##  [73] &quot;Little Rock, AR&quot;                       
+##  [74] &quot;Stockton, CA&quot;                          
+##  [75] &quot;Charleston, SC&quot;                        
+##  [76] &quot;Syracuse, NY&quot;                          
+##  [77] &quot;Colorado Springs, CO&quot;                  
+##  [78] &quot;Winston-Salem, NC&quot;                     
+##  [79] &quot;Wichita, KS&quot;                           
+##  [80] &quot;Springfield, MA&quot;                       
+##  [81] &quot;Fort Myers, FL&quot;                        
+##  [82] &quot;Boise City, ID&quot;                        
+##  [83] &quot;Toledo, OH&quot;                            
+##  [84] &quot;Madison, WI&quot;                           
+##  [85] &quot;Lakeland, FL&quot;                          
+##  [86] &quot;Ogden, UT&quot;                             
+##  [87] &quot;Daytona Beach, FL&quot;                     
+##  [88] &quot;Des Moines, IA&quot;                        
+##  [89] &quot;Jackson, MS&quot;                           
+##  [90] &quot;Youngstown, OH&quot;                        
+##  [91] &quot;Augusta, GA&quot;                           
+##  [92] &quot;Scranton, PA&quot;                          
+##  [93] &quot;Harrisburg, PA&quot;                        
+##  [94] &quot;Melbourne, FL&quot;                         
+##  [95] &quot;Chattanooga, TN&quot;                       
+##  [96] &quot;Spokane, WA&quot;                           
+##  [97] &quot;Provo, UT&quot;                             
+##  [98] &quot;Lancaster, PA&quot;                         
+##  [99] &quot;Modesto, CA&quot;                           
+## [100] &quot;Portland, ME&quot;                          
+## [101] &quot;Durham, NC&quot;                            
+## [102] &quot;Santa Rosa, CA&quot;                        
+## [103] &quot;Lexington, KY&quot;                         
+## [104] &quot;Lafayette, LA&quot;                         
+## [105] &quot;Lansing, MI&quot;                           
+## [106] &quot;Fayetteville, AR&quot;                      
+## [107] &quot;Pensacola, FL&quot;                         
+## [108] &quot;Visalia, CA&quot;                           
+## [109] &quot;Springfield, MO&quot;                       
+## [110] &quot;York, PA&quot;                              
+## [111] &quot;Corpus Christi, TX&quot;                    
+## [112] &quot;Flint, MI&quot;                             
+## [113] &quot;Reno, NV&quot;                              
+## [114] &quot;Asheville, NC&quot;                         
+## [115] &quot;Port St. Lucie, FL&quot;                    
+## [116] &quot;Santa Maria-Santa Barbara, CA&quot;         
+## [117] &quot;Fort Wayne, IN&quot;                        
+## [118] &quot;Salinas, CA&quot;                           
+## [119] &quot;Vallejo, CA&quot;                           
+## [120] &quot;Mobile, AL&quot;                            
+## [121] &quot;Reading, PA&quot;                           
+## [122] &quot;Brownsville, TX&quot;                       
+## [123] &quot;Killeen, TX&quot;                           
+## [124] &quot;Canton, OH&quot;                            
+## [125] &quot;Beaumont, TX&quot;                          
+## [126] &quot;Manchester, NH&quot;                        
+## [127] &quot;Salem, OR&quot;                             
+## [128] &quot;Anchorage, AK&quot;                         
+## [129] &quot;Davenport, IL&quot;                         
+## [130] &quot;Peoria, IL&quot;                            
+## [131] &quot;Myrtle Beach, SC&quot;                      
+## [132] &quot;Montgomery, AL&quot;                        
+## [133] &quot;Salisbury, MD&quot;                         
+## [134] &quot;Gulfport, MS&quot;                          
+## [135] &quot;Tallahassee, FL&quot;                       
+## [136] &quot;Trenton, NJ&quot;                           
+## [137] &quot;Fayetteville, NC&quot;                      
+## [138] &quot;Hickory, NC&quot;                           
+## [139] &quot;Huntington, WV&quot;                        
+## [140] &quot;Eugene, OR&quot;                            
+## [141] &quot;Rockford, IL&quot;                          
+## [142] &quot;Savannah, GA&quot;                          
+## [143] &quot;Ann Arbor, MI&quot;                         
+## [144] &quot;Ocala, FL&quot;                             
+## [145] &quot;Kalamazoo, MI&quot;                         
+## [146] &quot;Naples, FL&quot;                            
+## [147] &quot;South Bend, IN&quot;                        
+## [148] &quot;Spartanburg, SC&quot;                       
+## [149] &quot;Evansville, IN&quot;                        
+## [150] &quot;Kingsport, TN&quot;                         
+## [151] &quot;Roanoke, VA&quot;                           
+## [152] &quot;Green Bay, WI&quot;                         
+## [153] &quot;Lincoln, NE&quot;                           
+## [154] &quot;Fort Collins, CO&quot;                      
+## [155] &quot;Utica, NY&quot;                             
+## [156] &quot;Columbus, GA&quot;                          
+## [157] &quot;Boulder, CO&quot;                           
+## [158] &quot;Lubbock, TX&quot;                           
+## [159] &quot;Erie, PA&quot;                              
+## [160] &quot;Fort Smith, AR&quot;                        
+## [161] &quot;Duluth, MN&quot;                            
+## [162] &quot;Atlantic City, NJ&quot;                     
+## [163] &quot;New London, CT&quot;                        
+## [164] &quot;San Luis Obispo, CA&quot;                   
+## [165] &quot;Gainesville, FL&quot;                       
+## [166] &quot;Santa Cruz, CA&quot;                        
+## [167] &quot;Clarksville, TN&quot;                       
+## [168] &quot;Cedar Rapids, IA&quot;                      
+## [169] &quot;Merced, CA&quot;                            
+## [170] &quot;Wilmington, NC&quot;                        
+## [171] &quot;Kennewick, WA&quot;                         
+## [172] &quot;Greeley, CO&quot;                           
+## [173] &quot;Waco, TX&quot;                              
+## [174] &quot;Olympia, WA&quot;                           
+## [175] &quot;Amarillo, TX&quot;                          
+## [176] &quot;Binghamton, NY&quot;                        
+## [177] &quot;Hagerstown, WV&quot;                        
+## [178] &quot;Bremerton, WA&quot;                         
+## [179] &quot;Laredo, TX&quot;                            
+## [180] &quot;Lynchburg, VA&quot;                         
+## [181] &quot;Yakima, WA&quot;                            
+## [182] &quot;Crestview-Fort Walton Beach-Destin, FL&quot;
+## [183] &quot;Topeka, KS&quot;                            
+## [184] &quot;Macon-Bibb County, GA&quot;                 
+## [185] &quot;Champaign-Urbana, IL&quot;                  
+## [186] &quot;Tuscaloosa, AL&quot;                        
+## [187] &quot;College Station, TX&quot;                   
+## [188] &quot;Sioux Falls, SD&quot;                       
+## [189] &quot;Charleston, WV&quot;                        
+## [190] &quot;Appleton, WI&quot;                          
+## [191] &quot;Chico, CA&quot;                             
+## [192] &quot;Claremont, NH&quot;                         
+## [193] &quot;Barnstable Town, MA&quot;                   
+## [194] &quot;Longview, TX&quot;                          
+## [195] &quot;Burlington, VT&quot;                        
+## [196] &quot;Prescott, AZ&quot;                          
+## [197] &quot;Springfield, IL&quot;                       
+## [198] &quot;Tyler, TX&quot;                             
+## [199] &quot;Las Cruces, NM&quot;                        
+## [200] &quot;Fargo, ND&quot;                             
+## [201] &quot;Houma, LA&quot;                             
+## [202] &quot;Rochester, MN&quot;                         
+## [203] &quot;Florence, SC&quot;                          
+## [204] &quot;Medford, OR&quot;                           
+## [205] &quot;Lafayette-West Lafayette, IN&quot;          
+## [206] &quot;Bellingham, WA&quot;                        
+## [207] &quot;Lake Havasu City, AZ&quot;                  
+## [208] &quot;Saginaw, MI&quot;                           
+## [209] &quot;Lake Charles, LA&quot;                      
+## [210] &quot;Johnson City, TN&quot;                      
+## [211] &quot;Elkhart, IN&quot;                           
+## [212] &quot;Yuma, AZ&quot;                              
+## [213] &quot;Racine, WI&quot;                            
+## [214] &quot;Athens, GA&quot;                            
+## [215] &quot;Torrington, CT&quot;                        
+## [216] &quot;Hilton Head Island, SC&quot;                
+## [217] &quot;Bloomington, IL&quot;                       
+## [218] &quot;Hilo, HI&quot;                              
+## [219] &quot;Panama City, FL&quot;                       
+## [220] &quot;Kingston, NY&quot;                          
+## [221] &quot;Daphne, AL&quot;                            
+## [222] &quot;Gainesville, GA&quot;                       
+## [223] &quot;Warner Robins, GA&quot;                     
+## [224] &quot;Blacksburg, VA&quot;                        
+## [225] &quot;Jacksonville, NC&quot;                      
+## [226] &quot;Redding, CA&quot;                           
+## [227] &quot;Monroe, LA&quot;                            
+## [228] &quot;El Centro, CA&quot;                         
+## [229] &quot;Terre Haute, IN&quot;                       
+## [230] &quot;Muskegon, MI&quot;                          
+## [231] &quot;East Stroudsburg, PA&quot;                  
+## [232] &quot;Sioux City, IA&quot;                        
+## [233] &quot;Waterloo, IA&quot;                          
+## [234] &quot;Oshkosh, WI&quot;                           
+## [235] &quot;Yuba City, CA&quot;                         
+## [236] &quot;Abilene, TX&quot;                           
+## [237] &quot;Columbia, MO&quot;                          
+## [238] &quot;Eau Claire, WI&quot;                        
+## [239] &quot;Jackson, MI&quot;                           
+## [240] &quot;Punta Gorda, FL&quot;                       
+## [241] &quot;Bloomington, IN&quot;                       
+## [242] &quot;Pueblo, CO&quot;                            
+## [243] &quot;Billings, MT&quot;                          
+## [244] &quot;Bowling Green, KY&quot;                     
+## [245] &quot;Bend, OR&quot;                              
+## [246] &quot;Albany, GA&quot;                            
+## [247] &quot;Vineland, NJ&quot;                          
+## [248] &quot;Niles, MI&quot;                             
+## [249] &quot;Ottawa, IL&quot;                            
+## [250] &quot;Bangor, ME&quot;                            
+## [251] &quot;Alexandria, LA&quot;                        
+## [252] &quot;Hanford, CA&quot;                           
+## [253] &quot;Iowa City, IA&quot;                         
+## [254] &quot;Monroe, MI&quot;                            
+## [255] &quot;Wichita Falls, TX&quot;                     
+## [256] &quot;Burlington, NC&quot;                        
+## [257] &quot;Madera, CA&quot;                            
+## [258] &quot;Jefferson City, MO&quot;                    
+## [259] &quot;Chambersburg, PA&quot;                      
+## [260] &quot;Texarkana, TX&quot;                         
+## [261] &quot;Elizabethtown, KY&quot;                     
+## [262] &quot;Pottsville, PA&quot;                        
+## [263] &quot;Florence, AL&quot;                          
+## [264] &quot;Grand Junction, CO&quot;                    
+## [265] &quot;Concord, NH&quot;                           
+## [266] &quot;Dothan, AL&quot;                            
+## [267] &quot;Santa Fe, NM&quot;                          
+## [268] &quot;Johnstown, PA&quot;                         
+## [269] &quot;Hattiesburg, MS&quot;                       
+## [270] &quot;Dalton, GA&quot;                            
+## [271] &quot;Midland, TX&quot;                           
+## [272] &quot;Homosassa Springs, FL&quot;                 
+## [273] &quot;Auburn, AL&quot;                            
+## [274] &quot;Valdosta, GA&quot;                          
+## [275] &quot;Coeur d'Alene, ID&quot;                     
+## [276] &quot;Springfield, OH&quot;                       
+## [277] &quot;St. George, UT&quot;                        
+## [278] &quot;Vero Beach, FL&quot;                        
+## [279] &quot;Odessa, TX&quot;                            
+## [280] &quot;Napa, CA&quot;                              
+## [281] &quot;Battle Creek, MI&quot;                      
+## [282] &quot;Jamestown, NY&quot;                         
+## [283] &quot;Eureka, CA&quot;                            
+## [284] &quot;Rapid City, SD&quot;                        
+## [285] &quot;Flagstaff, AZ&quot;                         
+## [286] &quot;Lumberton, NC&quot;                         
+## [287] &quot;Wausau, WI&quot;                            
+## [288] &quot;La Crosse, WI&quot;                         
+## [289] &quot;Lebanon, PA&quot;                           
+## [290] &quot;Idaho Falls, ID&quot;                       
+## [291] &quot;Sierra Vista, AZ&quot;                      
+## [292] &quot;Pittsfield, MA&quot;                        
+## [293] &quot;Lawton, OK&quot;                            
+## [294] &quot;Jackson, TN&quot;                           
+## [295] &quot;Morgantown, WV&quot;                        
+## [296] &quot;Glens Falls, NY&quot;                       
+## [297] &quot;Winchester, VA&quot;                        
+## [298] &quot;St. Joseph, MO&quot;                        
+## [299] &quot;Altoona, PA&quot;                           
+## [300] &quot;New Bern, NC&quot;                          
+## [301] &quot;Carbondale, IL&quot;                        
+## [302] &quot;London, KY&quot;                            
+## [303] &quot;Logan, ID&quot;                             
+## [304] &quot;Harrisonburg, VA&quot;                      
+## [305] &quot;Beckley, WV&quot;                           
+## [306] &quot;Mansfield, OH&quot;                         
+## [307] &quot;Goldsboro, NC&quot;                         
+## [308] &quot;Augusta, ME&quot;                           
+## [309] &quot;Hammond, LA&quot;                           
+## [310] &quot;Jonesboro, AR&quot;                         
+## [311] &quot;Staunton, VA&quot;                          
+## [312] &quot;Muncie, IN&quot;                            
+## [313] &quot;Mount Vernon, WA&quot;                      
+## [314] &quot;Albany, OR&quot;                            
+## [315] &quot;Watertown, NY&quot;                         
+## [316] &quot;Williamsport, PA&quot;                      
+## [317] &quot;Cleveland, TN&quot;                         
+## [318] &quot;Owensboro, KY&quot;                         
+## [319] &quot;Dunn, NC&quot;                              
+## [320] &quot;Wooster, OH&quot;                           
+## [321] &quot;Morristown, TN&quot;                        
+## [322] &quot;Kankakee, IL&quot;                          
+## [323] &quot;Ogdensburg, NY&quot;                        
+## [324] &quot;San Angelo, TX&quot;                        
+## [325] &quot;Michigan City, IN&quot;                     
+## [326] &quot;Holland, MI&quot;                           
+## [327] &quot;Wenatchee, WA&quot;                         
+## [328] &quot;Lawrence, KS&quot;                          
+## [329] &quot;Decatur, IL&quot;                           
+## [330] &quot;Missoula, MT&quot;                          
+## [331] &quot;Salem, OH&quot;                             
+## [332] &quot;Lewiston, ME&quot;                          
+## [333] &quot;Roseburg, OR&quot;                          
+## [334] &quot;Sumter, SC&quot;                            
+## [335] &quot;Show Low, AZ&quot;                          
+## [336] &quot;Bluefield, WV&quot;                         
+## [337] &quot;Lima, OH&quot;                              
+## [338] &quot;Cookeville, TN&quot;                        
+## [339] &quot;California-Lexington Park, MD&quot;         
+## [340] &quot;Gadsden, AL&quot;                           
+## [341] &quot;Cumberland, MD&quot;                        
+## [342] &quot;Longview, WA&quot;                          
+## [343] &quot;Whitewater, WI&quot;                        
+## [344] &quot;Fond du Lac, WI&quot;                       
+## [345] &quot;Ithaca, NY&quot;                            
+## [346] &quot;Ashtabula, OH&quot;                         
+## [347] &quot;Gettysburg, PA&quot;                        
+## [348] &quot;Tullahoma, TN&quot;                         
+## [349] &quot;Richmond, KY&quot;                          
+## [350] &quot;Twin Falls, ID&quot;                        
+## [351] &quot;Corning, NY&quot;                           
+## [352] &quot;Sebring, FL&quot;                           
+## [353] &quot;Truckee, CA&quot;                           
+## [354] &quot;Paducah, KY&quot;                           
+## [355] &quot;Grand Forks, ND&quot;                       
+## [356] &quot;Shelby, NC&quot;                            
+## [357] &quot;Fairbanks, AK&quot;                         
+## [358] &quot;Ocean City, NJ&quot;                        
+## [359] &quot;Mankato, MN&quot;                           
+## [360] &quot;Rome, GA&quot;                              
+## [361] &quot;Cape Girardeau, MO&quot;                    
+## [362] &quot;Hot Springs, AR&quot;                       
+## [363] &quot;Greenwood, SC&quot;                         
+## [364] &quot;Sunbury, PA&quot;                           
+## [365] &quot;Victoria, TX&quot;                          
+## [366] &quot;Talladega, AL&quot;                         
+## [367] &quot;Dubuque, IA&quot;                           
+## [368] &quot;The Villages, FL&quot;                      
+## [369] &quot;Manhattan, KS&quot;                         
+## [370] &quot;Parkersburg, WV&quot;                       
+## [371] &quot;Orangeburg, SC&quot;                        
+## [372] &quot;Cheyenne, WY&quot;                          
+## [373] &quot;New Castle, PA&quot;                        
+## [374] &quot;Brainerd, MN&quot;                          
+## [375] &quot;Kalispell, MT&quot;                         
+## [376] &quot;Sevierville, TN&quot;                       
+## [377] &quot;Ames, IA&quot;                              
+## [378] &quot;Bozeman, MT&quot;                           
+## [379] &quot;Moses Lake, WA&quot;                        
+## [380] &quot;Elmira, NY&quot;                            
+## [381] &quot;Meadville, PA&quot;                         
+## [382] &quot;Beaver Dam, WI&quot;                        
+## [383] &quot;Pinehurst-Southern Pines, NC&quot;          
+## [384] &quot;Ukiah, CA&quot;                             
+## [385] &quot;Hermiston-Pendleton, OR&quot;               
+## [386] &quot;Zanesville, OH&quot;                        
+## [387] &quot;Corvallis, OR&quot;                         
+## [388] &quot;Bloomsburg, PA&quot;                        
+## [389] &quot;Russellville, AR&quot;                      
+## [390] &quot;Branson, MO&quot;                           
+## [391] &quot;Watertown, WI&quot;                         
+## [392] &quot;Midland, MI&quot;                           
+## [393] &quot;Pocatello, ID&quot;                         
+## [394] &quot;Kokomo, IN&quot;                            
+## [395] &quot;Grants Pass, OR&quot;                       
+## [396] &quot;Huntsville, TX&quot;                        
+## [397] &quot;Plattsburgh, NY&quot;                       
+## [398] &quot;Grand Island, NE&quot;                      
+## [399] &quot;DuBois, PA&quot;                            
+## [400] &quot;Danville, IL&quot;                          
+## [401] &quot;Wilson, NC&quot;                            
+## [402] &quot;Olean, NY&quot;                             
+## [403] &quot;Auburn, NY&quot;                            
+## [404] &quot;Portsmouth, OH&quot;                        
+## [405] &quot;Athens, TX&quot;                            
+## [406] &quot;Oak Harbor, WA&quot;                        
+## [407] &quot;Chillicothe, OH&quot;                       
+## [408] &quot;Somerset, PA&quot;                          
+## [409] &quot;Warsaw, IN&quot;                            
+## [410] &quot;Stillwater, OK&quot;                        
+## [411] &quot;Quincy, IL&quot;                            
+## [412] &quot;Keene, NH&quot;                             
+## [413] &quot;Sandusky, OH&quot;                          
+## [414] &quot;Searcy, AR&quot;                            
+## [415] &quot;Columbus, IN&quot;                          
+## [416] &quot;Roanoke Rapids, NC&quot;                    
+## [417] &quot;Centralia, WA&quot;                         
+## [418] &quot;Casper, WY&quot;                            
+## [419] &quot;Helena, MT&quot;                            
+## [420] &quot;Findlay, OH&quot;                           
+## [421] &quot;Wisconsin Rapids-Marshfield, WI&quot;       
+## [422] &quot;Palatka, FL&quot;                           
+## [423] &quot;Mount Airy, NC&quot;                        
+## [424] &quot;Glenwood Springs, CO&quot;                  
+## [425] &quot;Key West, FL&quot;                          
+## [426] &quot;Aberdeen, WA&quot;                          
+## [427] &quot;Gallup, NM&quot;                            
+## [428] &quot;Port Angeles, WA&quot;                      
+## [429] &quot;Greenfield Town, MA&quot;                   
+## [430] &quot;Muskogee, OK&quot;                          
+## [431] &quot;Frankfort, KY&quot;                         
+## [432] &quot;Statesboro, GA&quot;                        
+## [433] &quot;Marion, IN&quot;                            
+## [434] &quot;Stevens Point, WI&quot;                     
+## [435] &quot;Shawnee, OK&quot;                           
+## [436] &quot;Richmond, IN&quot;                          
+## [437] &quot;Greeneville, TN&quot;                       
+## [438] &quot;Martinsville, VA&quot;                      
+## [439] &quot;Forest City, NC&quot;                       
+## [440] &quot;Lake City, FL&quot;                         
+## [441] &quot;Kapaa, HI&quot;                             
+## [442] &quot;Marquette, MI&quot;                         
+## [443] &quot;LaGrange, GA&quot;                          
+## [444] &quot;Morehead City, NC&quot;                     
+## [445] &quot;Klamath Falls, OR&quot;                     
+## [446] &quot;Marinette, WI&quot;                         
+## [447] &quot;Farmington, MO&quot;                        
+## [448] &quot;Charleston, IL&quot;                        
+## [449] &quot;Athens, OH&quot;                            
+## [450] &quot;Hutchinson, KS&quot;                        
+## [451] &quot;Faribault, MN&quot;                         
+## [452] &quot;Ionia, MI&quot;                             
+## [453] &quot;Hudson, NY&quot;                            
+## [454] &quot;Coos Bay, OR&quot;                          
+## [455] &quot;Walla Walla, WA&quot;                       
+## [456] &quot;Sayre, PA&quot;                             
+## [457] &quot;Oneonta, NY&quot;                           
+## [458] &quot;Fort Madison, IA&quot;                      
+## [459] &quot;Baraboo, WI&quot;                           
+## [460] &quot;Marietta, OH&quot;                          
+## [461] &quot;Salina, KS&quot;                            
+## [462] &quot;Rutland, VT&quot;                           
+## [463] &quot;Rio Grande City, TX&quot;                   
+## [464] &quot;Fremont, OH&quot;                           
+## [465] &quot;Mount Vernon, OH&quot;                      
+## [466] &quot;Lewiston, ID&quot;                          
+## [467] &quot;Shelton, WA&quot;                           
+## [468] &quot;Albemarle, NC&quot;                         
+## [469] &quot;Enid, OK&quot;                              
+## [470] &quot;Jefferson, GA&quot;                         
+## [471] &quot;Georgetown, SC&quot;                        
+## [472] &quot;Laconia, NH&quot;                           
+## [473] &quot;Batavia, NY&quot;                           
+## [474] &quot;Oxford, NC&quot;                            
+## [475] &quot;Columbus, MS&quot;                          
+## [476] &quot;Barre, VT&quot;                             
+## [477] &quot;Kinston, NC&quot;                           
+## [478] &quot;Sterling, IL&quot;                          
+## [479] &quot;Palestine, TX&quot;                         
+## [480] &quot;Dublin, GA&quot;                            
+## [481] &quot;Point Pleasant, WV&quot;                    
+## [482] &quot;Sanford, NC&quot;                           
+## [483] &quot;Tiffin, OH&quot;                            
+## [484] &quot;Fairmont, WV&quot;                          
+## [485] &quot;Crossville, TN&quot;                        
+## [486] &quot;Picayune, MS&quot;                          
+## [487] &quot;Gloversville, NY&quot;                      
+## [488] &quot;Gaffney, SC&quot;                           
+## [489] &quot;Carson City, NV&quot;                       
+## [490] &quot;Calhoun, GA&quot;                           
+## [491] &quot;Waycross, GA&quot;                          
+## [492] &quot;Oil City, PA&quot;                          
+## [493] &quot;Jasper, IN&quot;                            
+## [494] &quot;Eagle Pass, TX&quot;                        
+## [495] &quot;Ontario, OR&quot;                           
+## [496] &quot;McComb, MS&quot;                            
+## [497] &quot;Rochelle, IL&quot;                          
+## [498] &quot;Danville, KY&quot;                          
+## [499] &quot;Ashland, OH&quot;                           
+## [500] &quot;Natchez, MS&quot;                           
+## [501] &quot;Galesburg, IL&quot;                         
+## [502] &quot;Warrensburg, MO&quot;                       
+## [503] &quot;Kearney, NE&quot;                           
+## [504] &quot;Fort Polk South, LA&quot;                   
+## [505] &quot;Fort Leonard Wood, MO&quot;                 
+## [506] &quot;Glasgow, KY&quot;                           
+## [507] &quot;Athens, TN&quot;                            
+## [508] &quot;Edwards, CO&quot;                           
+## [509] &quot;Malone, NY&quot;                            
+## [510] &quot;Winona, MN&quot;                            
+## [511] &quot;Durango, CO&quot;                           
+## [512] &quot;Platteville, WI&quot;                       
+## [513] &quot;Boone, NC&quot;                             
+## [514] &quot;Bartlesville, OK&quot;                      
+## [515] &quot;Jacksonville, TX&quot;                      
+## [516] &quot;Rexburg, ID&quot;                           
+## [517] &quot;St. Marys, GA&quot;                         
+## [518] &quot;Amsterdam, NY&quot;                         
+## [519] &quot;Enterprise, AL&quot;                        
+## [520] &quot;Kerrville, TX&quot;                         
+## [521] &quot;New Castle, IN&quot;                        
+## [522] &quot;Sidney, OH&quot;                            
+## [523] &quot;Cortland, NY&quot;                          
+## [524] &quot;Clinton, IA&quot;                           
+## [525] &quot;Norfolk, NE&quot;                           
+## [526] &quot;Corsicana, TX&quot;                         
+## [527] &quot;Starkville, MS&quot;                        
+## [528] &quot;Burlington, IA&quot;                        
+## [529] &quot;Ardmore, OK&quot;                           
+## [530] &quot;Kendallville, IN&quot;                      
+## [531] &quot;Oxford, MS&quot;                            
+## [532] &quot;Bogalusa, LA&quot;                          
+## [533] &quot;Plymouth, IN&quot;                          
+## [534] &quot;Gardnerville Ranchos, NV&quot;              
+## [535] &quot;Tahlequah, OK&quot;                         
+## [536] &quot;Madisonville, KY&quot;                      
+## [537] &quot;Ruston, LA&quot;                            
+## [538] &quot;Hillsdale, MI&quot;                         
+## [539] &quot;Ponca City, OK&quot;                        
+## [540] &quot;Red Wing, MN&quot;                          
+## [541] &quot;Shawano, WI&quot;                           
+## [542] &quot;Cedar City, UT&quot;                        
+## [543] &quot;Bedford, IN&quot;                           
+## [544] &quot;Gillette, WY&quot;                          
+## [545] &quot;Newport, OR&quot;                           
+## [546] &quot;Huntingdon, PA&quot;                        
+## [547] &quot;Bellefontaine, OH&quot;                     
+## [548] &quot;McAlester, OK&quot;                         
+## [549] &quot;Blackfoot, ID&quot;                         
+## [550] &quot;Moultrie, GA&quot;                          
+## [551] &quot;Henderson, NC&quot;                         
+## [552] &quot;Coldwater, MI&quot;                         
+## [553] &quot;Harrison, AR&quot;                          
+## [554] &quot;Shelbyville, TN&quot;                       
+## [555] &quot;Duncan, OK&quot;                            
+## [556] &quot;Bemidji, MN&quot;                           
+## [557] &quot;Mount Sterling, KY&quot;                    
+## [558] &quot;Ottumwa, IA&quot;                           
+## [559] &quot;Menomonie, WI&quot;                         
+## [560] &quot;Rock Springs, WY&quot;                      
+## [561] &quot;Bradford, PA&quot;                          
+## [562] &quot;Bardstown, KY&quot;                         
+## [563] &quot;Cornelia, GA&quot;                          
+## [564] &quot;Burley, ID&quot;                            
+## [565] &quot;Big Rapids, MI&quot;                        
+## [566] &quot;Poplar Bluff, MO&quot;                      
+## [567] &quot;Muscatine, IA&quot;                         
+## [568] &quot;Alma, MI&quot;                              
+## [569] &quot;Durant, OK&quot;                            
+## [570] &quot;Seymour, IN&quot;                           
+## [571] &quot;Douglas, GA&quot;                           
+## [572] &quot;Willmar, MN&quot;                           
+## [573] &quot;Paragould, AR&quot;                         
+## [574] &quot;Wilmington, OH&quot;                        
+## [575] &quot;Lawrenceburg, TN&quot;                      
+## [576] &quot;Mountain Home, AR&quot;                     
+## [577] &quot;Port Clinton, OH&quot;                      
+## [578] &quot;El Campo, TX&quot;                          
+## [579] &quot;Montrose, CO&quot;                          
+## [580] &quot;Ellensburg, WA&quot;                        
+## [581] &quot;Jacksonville, IL&quot;                      
+## [582] &quot;Sandpoint, ID&quot;                         
+## [583] &quot;Alice, TX&quot;                             
+## [584] &quot;Garden City, KS&quot;                       
+## [585] &quot;Marshalltown, IA&quot;                      
+## [586] &quot;West Plains, MO&quot;                       
+## [587] &quot;Cullowhee, NC&quot;                         
+## [588] &quot;Riverton, WY&quot;                          
+## [589] &quot;Tifton, GA&quot;                            
+## [590] &quot;Cambridge, OH&quot;                         
+## [591] &quot;Okeechobee, FL&quot;                        
+## [592] &quot;McMinnville, TN&quot;                       
+## [593] &quot;Natchitoches, LA&quot;                      
+## [594] &quot;Berlin, NH&quot;                            
+## [595] &quot;Lock Haven, PA&quot;                        
+## [596] &quot;Austin, MN&quot;                            
+## [597] &quot;Clewiston, FL&quot;                         
+## [598] &quot;Pittsburg, KS&quot;                         
+## [599] &quot;Pontiac, IL&quot;                           
+## [600] &quot;Hannibal, MO&quot;                          
+## [601] &quot;Mount Vernon, IL&quot;                      
+## [602] &quot;Union City, TN&quot;                        
+## [603] &quot;Sault Ste. Marie, MI&quot;                  
+## [604] &quot;Vincennes, IN&quot;                         
+## [605] &quot;Gainesville, TX&quot;                       
+## [606] &quot;Dyersburg, TN&quot;                         
+## [607] &quot;Crawfordsville, IN&quot;                    
+## [608] &quot;Brownwood, TX&quot;                         
+## [609] &quot;Fort Dodge, IA&quot;                        
+## [610] &quot;Stephenville, TX&quot;                      
+## [611] &quot;Americus, GA&quot;                          
+## [612] &quot;Easton, MD&quot;                            
+## [613] &quot;North Platte, NE&quot;                      
+## [614] &quot;Newberry, SC&quot;                          
+## [615] &quot;Ada, OK&quot;                               
+## [616] &quot;Safford, AZ&quot;                           
+## [617] &quot;Murray, KY&quot;                            
+## [618] &quot;Huntington, IN&quot;                        
+## [619] &quot;Escanaba, MI&quot;                          
+## [620] &quot;Astoria, OR&quot;                           
+## [621] &quot;Peru, IN&quot;                              
+## [622] &quot;Coshocton, OH&quot;                         
+## [623] &quot;Newton, IA&quot;                            
+## [624] &quot;Bay City, TX&quot;                          
+## [625] &quot;Fremont, NE&quot;                           
+## [626] &quot;Batesville, AR&quot;                        
+## [627] &quot;Owatonna, MN&quot;                          
+## [628] &quot;Vidalia, GA&quot;                           
+## [629] &quot;Summit Park, UT&quot;                       
+## [630] &quot;Arkansas City-Winfield, KS&quot;            
+## [631] &quot;Laramie, WY&quot;                           
+## [632] &quot;Plainview, TX&quot;                         
+## [633] &quot;Laurinburg, NC&quot;                        
+## [634] &quot;Alexandria, MN&quot;                        
+## [635] &quot;Newport, TN&quot;                           
+## [636] &quot;Lebanon, MO&quot;                           
+## [637] &quot;Seneca Falls, NY&quot;                      
+## [638] &quot;Brookhaven, MS&quot;                        
+## [639] &quot;Arcadia, FL&quot;                           
+## [640] &quot;Taylorville, IL&quot;                       
+## [641] &quot;Decatur, IN&quot;                           
+## [642] &quot;Junction City, KS&quot;                     
+## [643] &quot;Angola, IN&quot;                            
+## [644] &quot;Brenham, TX&quot;                           
+## [645] &quot;Emporia, KS&quot;                           
+## [646] &quot;Frankfort, IN&quot;                         
+## [647] &quot;Brevard, NC&quot;                           
+## [648] &quot;Troy, AL&quot;                              
+## [649] &quot;Wabash, IN&quot;                            
+## [650] &quot;Cambridge, MD&quot;                         
+## [651] &quot;Vernal, UT&quot;                            
+## [652] &quot;Kingsville, TX&quot;                        
+## [653] &quot;Madison, IN&quot;                           
+## [654] &quot;Mount Pleasant, TX&quot;                    
+## [655] &quot;Paris, TN&quot;                             
+## [656] &quot;Columbus, NE&quot;                          
+## [657] &quot;Beeville, TX&quot;                          
+## [658] &quot;Miami, OK&quot;                             
+## [659] &quot;Dayton, TN&quot;                            
+## [660] &quot;Jackson, WY&quot;                           
+## [661] &quot;Juneau, AK&quot;                            
+## [662] &quot;Lewisburg, TN&quot;                         
+## [663] &quot;Lincoln, IL&quot;                           
+## [664] &quot;Alpena, MI&quot;                            
+## [665] &quot;McPherson, KS&quot;                         
+## [666] &quot;Washington Court House, OH&quot;            
+## [667] &quot;Merrill, WI&quot;                           
+## [668] &quot;Ludington, MI&quot;                         
+## [669] &quot;North Vernon, IN&quot;                      
+## [670] &quot;Mineral Wells, TX&quot;                     
+## [671] &quot;Bastrop, LA&quot;                           
+## [672] &quot;Bainbridge, GA&quot;                        
+## [673] &quot;Weatherford, OK&quot;                       
+## [674] &quot;Mountain Home, ID&quot;                     
+## [675] &quot;Altus, OK&quot;                             
+## [676] &quot;Uvalde, TX&quot;                            
+## [677] &quot;Boone, IA&quot;                             
+## [678] &quot;Toccoa, GA&quot;                            
+## [679] &quot;Summerville, GA&quot;                       
+## [680] &quot;Ottawa, KS&quot;                            
+## [681] &quot;La Grande, OR&quot;                         
+## [682] &quot;Mexico, MO&quot;                            
+## [683] &quot;Moberly, MO&quot;                           
+## [684] &quot;The Dalles, OR&quot;                        
+## [685] &quot;Fredericksburg, TX&quot;                    
+## [686] &quot;Campbellsville, KY&quot;                    
+## [687] &quot;Connersville, IN&quot;                      
+## [688] &quot;Heber, UT&quot;                             
+## [689] &quot;Steamboat Springs, CO&quot;                 
+## [690] &quot;Liberal, KS&quot;                           
+## [691] &quot;Levelland, TX&quot;                         
+## [692] &quot;Wahpeton, ND&quot;                          
+## [693] &quot;Pampa, TX&quot;                             
+## [694] &quot;Brookings, OR&quot;                         
+## [695] &quot;Hood River, OR&quot;                        
+## [696] &quot;Beatrice, NE&quot;                          
+## [697] &quot;Elk City, OK&quot;                          
+## [698] &quot;Port Lavaca, TX&quot;                       
+## [699] &quot;Evanston, WY&quot;                          
+## [700] &quot;Prineville, OR&quot;                        
+## [701] &quot;Storm Lake, IA&quot;                        
+## [702] &quot;Woodward, OK&quot;                          
+## [703] &quot;Othello, WA&quot;                           
+## [704] &quot;Los Alamos, NM&quot;                        
+## [705] &quot;Spencer, IA&quot;                           
+## [706] &quot;Spirit Lake, IA&quot;                       
+## [707] &quot;Vineyard Haven, MA&quot;                    
+## [708] &quot;Sweetwater, TX&quot;                        
+## [709] &quot;Lamesa, TX&quot;                            
+## [710] &quot;Vernon, TX&quot;                            
+## [711] &quot;Ketchikan, AK&quot;</code></pre>
 <hr />
 <center>
 <p>Copyright © 2019 Harry Lu. All rights reserved.</p>
