@@ -71,9 +71,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type="text/css">
 .main-container {
@@ -104,8 +102,6 @@ summary {
 </style>
 
 
-
-<div class="container-fluid main-container">
 
 <!-- tabsets -->
 
@@ -180,14 +176,23 @@ $(document).ready(function () {
 
 
 
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
 
 <div class="fluid-row" id="header">
 
 
 
 <h1 class="title toc-ignore">STSCI 4630 - Lec 13</h1>
-<h4 class="author"><em>Harry Lu</em></h4>
-<h4 class="date"><em>March 12, 2019</em></h4>
+<h4 class="author">Harry Lu</h4>
+<h4 class="date">March 12, 2019</h4>
 
 </div>
 
@@ -211,7 +216,7 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p>If <span class="math inline">\(\text{Cov}(\epsilon_{j,t},\epsilon_{j',t})\neq0\)</span>, then the portfolio calculations are invalid</p>
 <p>To remedy this correlation, multi-factor models are considered</p>
 <p><span class="math display">\[R_{j,t}^*=\alpha_j+\beta_jR_{m,t}^*+\beta_{1,j}F_{1,t}+\cdots+\beta_{k,j}F_{k,t}+\epsilon_{j,t}\]</span></p>
-<p><span class="math inline">\(F_1,\cdot,F_k\)</span> are factors that summarize market and economic conditions</p>
+<p><span class="math inline">\(F_1,\cdots,F_k\)</span> are factors that summarize market and economic conditions</p>
 <p>Idea: By including enough factors, the factors “explain” the correlations between the returns on assets so <span class="math inline">\(\text{Cov}(\epsilon_{j,t},\epsilon_{j',t})=0\)</span></p>
 <hr />
 <p><strong>Options</strong></p>
@@ -270,7 +275,7 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 </tr>
 </tbody>
 </table>
-<p>Aderivative is a financial instrument whose value is derived from the value of an underlying asset</p>
+<p>A derivative is a financial instrument whose value is derived from the value of an underlying asset</p>
 <p>A call option (put option) gives the holder the right to buy (to sell) a specified number of shares of a certain asset at the “exercise” price or “strike” price</p>
 <p>Options have an “exercise” date or an “expiration” data</p>
 <ul>
@@ -285,7 +290,6 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p>The option would not be excised, it would expire worth less</p>
 <p>Suppose the price of the stock at expiration is <span class="math inline">\(&gt;120\)</span>, i.e. <span class="math inline">\(S_T&gt;120\)</span></p>
 <p>The value of the option at expiry is <span class="math inline">\(S_T-120\)</span> oer share (e.g. if <span class="math inline">\(S_T=125\)</span>, then the value per share is 5)</p>
-<hr />
 <p>Generally, the value of the call option is <span class="math inline">\((S_T-K)_+\)</span> per share at expiration, where <span class="math inline">\(S_T\)</span> is the price of the stock at expity, and <span class="math inline">\(K\)</span> is the strike price</p>
 <p><span class="math display">\[x_+=\left\{\begin{array}{}x&amp;\text{if }x&gt;0\\0&amp;\text{if }x\leq0\end{array}\right.\]</span></p>
 <p>Suppose the annual risk-free rate is 5% compounded continuously</p>

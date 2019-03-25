@@ -167,17 +167,17 @@ ul {font-size: 16px; color: black;}
     7. Tu: [Feb/12](CU/4630/Lec07.html)
     8. Th: [Feb/14](CU/4630/Lec08.html)
 - Week 5
-    9. Tu: [Feb/19](CU/4630/Lec09.html) (pending pictures)
+    9. Tu: [Feb/19](CU/4630/Lec09.html)
     - Th: Feb/21, Midterm 1
 - Week 6
     - Tu: Feb/26, Holiday
-    10. Th: [Feb/28](CU/4630/Lec10.html) (pending pictures and revision)
+    10. Th: [Feb/28](CU/4630/Lec10.html) (pending pictures)
 - Week 7
-    11. Tu: [Mar/5](CU/4630/Lec11.html) (pending revision)
-    12. Th: [Mar/7](CU/4630/Lec12.html) (pending revision)
+    11. Tu: [Mar/5](CU/4630/Lec11.html) (pending pictures)
+    12. Th: [Mar/7](CU/4630/Lec12.html)
 - Week 8
-    13. Tu: [Mar/12](CU/4630/Lec13.html) (pending revision)
-    14. Th: [Mar/14](CU/4630/Lec14.html) (pending revision)
+    13. Tu: [Mar/12](CU/4630/Lec13.html)
+    14. Th: [Mar/14](CU/4630/Lec14.html)
 - Week 9
     15. Tu: [Mar/19](CU/4630/Lec15.html) (pending)
     16. Th: [Mar/21](CU/4630/Lec16.html) (pending)

@@ -70,9 +70,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type="text/css">
 .main-container {
@@ -103,8 +101,6 @@ summary {
 </style>
 
 
-
-<div class="container-fluid main-container">
 
 <!-- tabsets -->
 
@@ -179,14 +175,23 @@ $(document).ready(function () {
 
 
 
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
 
 <div class="fluid-row" id="header">
 
 
 
 <h1 class="title toc-ignore">STSCI 4630 - Lec 11</h1>
-<h4 class="author"><em>Harry Lu</em></h4>
-<h4 class="date"><em>March 5, 2019</em></h4>
+<h4 class="author">Harry Lu</h4>
+<h4 class="date">March 5, 2019</h4>
 
 </div>
 
@@ -233,8 +238,8 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p><strong>Why does SML hold?</strong></p>
 <p>Consider a portfolio <span class="math inline">\(P_j\)</span> that is a combination of the market portfolio <span class="math inline">\(M\)</span> and asset <span class="math inline">\(j\)</span></p>
 <p><span class="math inline">\(R_{P_j}=w\cdot R_j+(1-w)\cdot R_m\)</span></p>
-<p><span class="math inline">\(\mu_{P_j}=w\cdot\mu_j+(1-w)\mu_m\)</span></p>
-<p><span class="math inline">\(\sigma_{P_j}=w^2\sigma_j^2+(1-w)^2\sigma_m^2+2w(1-w)\sigma_{jm}\)</span></p>
+<p><span class="math inline">\(\mu_{P_j}=w\cdot\mu_j+(1-w)\cdot\mu_m\)</span></p>
+<p><span class="math inline">\(\sigma_{P_j}^2=w^2\sigma_j^2+(1-w)^2\sigma_m^2+2w(1-w)\sigma_{jm}\)</span></p>
 <p><font color="red">圖</font></p>
 <p>Consider the Sharpe Ratio (SR) of portfolio <span class="math inline">\(P_j\)</span>: <span class="math inline">\(\frac{\mu_{P_j}-\mu_f}{\sigma_{P_j}}=\text{SR}(w)\)</span></p>
 <p>Because of the relationship of the efficient frontier, <span class="math inline">\(\text{SR}(w)\)</span> is maximized when <span class="math inline">\(w=0\)</span></p>
