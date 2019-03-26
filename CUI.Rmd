@@ -188,8 +188,14 @@ ul {font-size: 16px; color: black;}
     13. Tu: [Mar/12](CU/4630/Lec13.html)
     14. Th: [Mar/14](CU/4630/Lec14.html)
 - Week 9
-    15. Tu: [Mar/19](CU/4630/Lec15.html) (pending)
-    16. Th: [Mar/21](CU/4630/Lec16.html) (pending)
+    15. Tu: [Mar/19](CU/4630/Lec15.html) (pending revision)
+    16. Th: [Mar/21](CU/4630/Lec16.html) (pending revision)
+- Week 10
+    - Tu: Mar/26, Midterm 2
+    17. Th: [Mar/28](CU/4630/Lec17.html) (pending)
+
+
+
 
 ##Homeworks
 1. [Homework 1](CU/4630/HW1.pdf)
