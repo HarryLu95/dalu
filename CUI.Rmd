@@ -3,7 +3,7 @@ title: "Course Material"
 output:
   html_document:
     toc: TRUE
-    toc_float: 
+    toc_float:
       collapsed: FALSE
     toc_depth: 2
 ---
@@ -43,9 +43,9 @@ ul {font-size: 16px; color: black;}
 10. [Introduction to Apache Hive 3](CU/5065/Lec10.pdf)
     - [Lecture 10 Note](CU/5065/Summary10.html)
 11. [Introduction to Apache Hive 4](CU/5065/Lec11.pdf)
-    - [Lecture 11 Note](CU/5065/Summary11.html) (pending)
+    - [Lecture 11 Note](CU/5065/Summary11.html)
 12. [Introduction to Apache Hive 5](CU/5065/Lec12.pdf)
-    - [Lecture 12 Note](CU/5065/Summary12.html) (pending)
+    - [Lecture 12 Note](CU/5065/Summary12.html) (pending csv files)
 
 
 ##Homeworks

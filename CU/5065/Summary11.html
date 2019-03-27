@@ -360,9 +360,18 @@ hive&gt; select transform(carrier_delay,weather_delay,nas_delay,security_delay,l
 Query ID = root_20160325152222_0076f0c8-822e-4099-87fa-a6af444ebd22
 Total jobs = 1
 Launching Job 1 out of 1
-xxx
-xxx
-xxx</code></pre>
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1458917667801_0004, Tracking URL = http://sandbox.hortonworks.com:8088/proxy/applica...
+Kill Command = /usr/hdp/2.2.0.0-2041/hadoop/bin/hadoop job  -kill job_1458917667801_0004
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2016-03-25 15:23:06,100 Stage-1 map = 0%,  reduce = 0%
+2016-03-25 15:23:11,467 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.62 sec
+MapReduce Total cumulative CPU time: 1 seconds 620 msec
+Ended Job = job_1458917667801_0004
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1   Cumulative CPU: 1.62 sec   HDFS Read: 1881147 HDFS Write: 126 SUCCESS
+Total MapReduce CPU Time Spent: 1 seconds 620 msec
+OK</code></pre>
 <pre><code>{'weather': 2772, 'nas': 32366, 'security': 188, 'carrier': 26258, 'late_aircraft': 26626}
 The most common delay type is  nas</code></pre>
 <pre><code>Time taken: 13.204 seconds, Fetched: 2 row(s)</code></pre>
@@ -370,9 +379,26 @@ The most common delay type is  nas</code></pre>
 <div id="the-new-result-2" class="section level1">
 <h1><span class="header-section-number">12</span> The New Result (2)</h1>
 <p>(omitting alias)</p>
-<pre><code>xxx
-xxx
-xxx</code></pre>
+<pre><code>hive&gt; add file /stsci5065/FindMaxDelayType1.py;
+Added resources: [/stsci5065/FindMaxDelayType1.py]
+hive&gt; select transform(carrier_delay,weather_delay,nas_delay,security_delay,late_aircraft_delay)
+    &gt; using 'python FindMaxDelayType1.py'
+    &gt; from flight_delays_2013_1_1;
+Query ID = root_20160325152525_9c14636a-dda3-4c5f-8406-038b208c7a41
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1458917667801_0005, Tracking URL = http://sandbox.hortonworks.com:8088/proxy/applica...
+Kill Command = /usr/hdp/2.2.0.0-2041/hadoop/bin/hadoop job  -kill job_1458917667801_0005
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2016-03-25 15:25:38,845 Stage-1 map = 0%,  reduce = 0%
+2016-03-25 15:25:45,103 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.73 sec
+MapReduce Total cumulative CPU time: 1 seconds 730 msec
+Ended Job = job_1458917667801_0005
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1   Cumulative CPU: 1.73 sec   HDFS Read: 1881147 HDFS Write: 132 SUCCESS
+Total MapReduce CPU Time Spent: 1 seconds 730 msec
+OK</code></pre>
 <pre><code>{'weather': 2772, 'nas': 32366, 'security': 188, 'carrier': 26258, 'late_aircraft': 26626}
 The most common delay type is  nas      NULL</code></pre>
 <pre><code>Time taken: 12.613 seconds, Fetched: 2 row(s)</code></pre>
