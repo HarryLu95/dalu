@@ -16,7 +16,7 @@ bdi {font-size: 12px; color: black;}
 </style>
 
 #Music Sheets
-Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/), [kuroto2000](http://kuroto2000.com/), and [MuseScore](https://musescore.com/dashboard) provides all the downloads.
+Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/), [kuroto2000](http://kuroto2000.com/), [MuseScore](https://musescore.com/dashboard), and [Scribd](https://www.scribd.com/) provides all the downloads.
 
 - [理查德克萊德曼 - 夢中的婚禮 Mariage d'Amour](Music Sheets/理查德克萊德曼-夢中的婚禮.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/87.htm)
 - [理查德克萊德曼 - 秋日私語 A Comme Amour](Music Sheets/理查德克萊德曼-秋日私語.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/136.htm)
@@ -104,10 +104,9 @@ Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/), [kuroto2000](http://k
 - [UM - Take Me Higher](Music Sheets/Take Me Higher.pdf) [<bdi>original</bdi>](http://kuroto2000.com/archives/922/)
 - [UM - Brave Love, TIGA](Music Sheets/Brave Love, TIGA.pdf) [<bdi>original</bdi>](http://kuroto2000.com/archives/922/)
 - [Piano Man](Music Sheets/Piano Man.pdf) [<bdi>original</bdi>](https://musescore.com/user/2136241/scores/4650781)
+- [Time to Say Goodbye](Music Sheets/Time to Say Goodbye.pdf) [<bdi>original</bdi>](https://www.scribd.com/doc/15247636/Con-Te-Partiro-Time-to-Say-Goodbye-Original)
 
 - [](Music Sheets/.pdf) [<bdi>original</bdi>]()
-
-
 
 
 #Playlist{.tabset}
