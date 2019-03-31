@@ -455,24 +455,192 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 </div>
 <div id="pig-complex-data-types" class="section level1">
 <h1><span class="header-section-number">10</span> Pig Complex Data Types</h1>
+<ul>
+<li><p><strong>Map:</strong> a collection of key value pairs:</p>
+<pre><code>['firstName'#'John', 'lastName'#'Smith', 'id'#1234567]</code></pre></li>
+<li><p><strong>Tuple:</strong> a fixed-length, ordered collection of Pig data elements. Tuples are divided into fields, with each field containing one data element. These elements can be of any type-they do not all need to be the same type:</p>
+<pre><code>('2019-03-27', 'Error' , 404, 'Page not found')</code></pre></li>
+<li><p><strong>Bag:</strong> an unordered collection of tuples:</p>
+<pre><code>{
+  ('2019-3-27', 'Error' , 404, 'Page not found'),
+  ('2019-3-27', 'Info' , 200, 'OK')
+}</code></pre></li>
+</ul>
+<p>Note: All these complex types can contain data of any types, including other complex data types. Bag is the one type in Pig that is not required to fit into memory.</p>
 </div>
 <div id="pig-nulls" class="section level1">
 <h1><span class="header-section-number">11</span> Pig Nulls</h1>
+<ul>
+<li>In Pig Latin nulls are implemented using the SQL definition of null. A null data element means the value is <strong>unknown</strong> or <strong>non-existent</strong>. This might be because the data is <strong>missing</strong>, <strong>an error</strong> occurred in processing it, etc.</li>
+<li>Nulls can be used as <strong>constant expressions</strong> in place of expressions of any type, but Null values are viral for all arithmetic operators, e.g., <code>x + null = null</code> for all values of x.</li>
+</ul>
 </div>
 <div id="pig-schemas" class="section level1">
 <h1><span class="header-section-number">12</span> Pig Schemas</h1>
+<ul>
+<li>If a schema is available (e.g., HCatalog, JSON), Pig will make use of it, but if not, Pig will still process the data, making the best guesses it can, based on how the script treats the data.</li>
+<li><p>The easiest way is to explicitly specify the data types when you load the data:</p>
+<pre><code>dividends = load 'dividends' as (exchange:chararray, symbol:chararray, date:chararray, dividend:float);</code></pre>
+Pig now expects four fields. If it has more, Pig will truncate the extra ones. If it has less, it will pad the end of the record with nulls. This makes Pig load operation flexible.</li>
+<li><p>If you specify a schema without giving explicit data types, then <strong>bytearray</strong> is assumed:</p>
+<pre><code>dividends = load 'dividends' as (exchange, symbol, date, dividend); </code></pre></li>
+</ul>
 </div>
 <div id="declare-the-schema-of-complex-types" class="section level1">
 <h1><span class="header-section-number">13</span> Declare the Schema of Complex Types</h1>
+<p>You do not have to declare the schema of complex types, but you can if you want to.</p>
+<p>For example:</p>
+<ul>
+<li>If your data has a tuple in it, you can declare that field to be a tuple without specifying the fields it contains.</li>
+<li>You can also declare that field to be a tuple that has three columns, all of which are integers.</li>
+</ul>
 </div>
 <div id="specify-each-data-type-inside-a-schema-declaration" class="section level1">
 <h1><span class="header-section-number">14</span> Specify Each Data Type Inside a Schema Declaration</h1>
+<table style="width:97%;">
+<colgroup>
+<col width="25%"></col>
+<col width="47%"></col>
+<col width="25%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Data Type</th>
+<th align="left">Syntax</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">int</td>
+<td align="left">int</td>
+<td align="left">as (a:int)</td>
+</tr>
+<tr class="even">
+<td align="left">long</td>
+<td align="left">long</td>
+<td align="left">as (a:long)</td>
+</tr>
+<tr class="odd">
+<td align="left">float</td>
+<td align="left">float</td>
+<td align="left">as (a:float)</td>
+</tr>
+<tr class="even">
+<td align="left">double</td>
+<td align="left">double</td>
+<td align="left">as (a:double)</td>
+</tr>
+<tr class="odd">
+<td align="left">chararray</td>
+<td align="left">chararray</td>
+<td align="left">as (a:chararray)</td>
+</tr>
+<tr class="even">
+<td align="left">bytearray</td>
+<td align="left">bytearray</td>
+<td align="left">as (a:bytearray)</td>
+</tr>
+<tr class="odd">
+<td align="left">map</td>
+<td align="left">map[] or map[type], where type is any valid type, declaring all values in the map to be of this type.</td>
+<td align="left">(a:map[], b:map[int])</td>
+</tr>
+<tr class="even">
+<td align="left">tuple</td>
+<td align="left">tuple() or tuple(list_of_fields), where list_of_fields is a comma-separated list of field declarations.</td>
+<td align="left">as (a:tuple(), b:tuple(x:int, y:int))</td>
+</tr>
+<tr class="odd">
+<td align="left">bag</td>
+<td align="left">bag{} or bag{t:(list_of_fields)}, where list_of_fields is a comma-separated list of field declarations. Note that <strong>the tuple inside the bag must have a name</strong> (here t), even though you will never be able to access that tuple t directly.</td>
+<td align="left">as (a:bag{}, b:bag{t:(x:int, y:int)})</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="data-type-casts" class="section level1">
 <h1><span class="header-section-number">15</span> Data Type Casts</h1>
+<ul>
+<li><p>Pig can <strong>explicitly</strong> convert one data type to another one based on the cast specification. The syntax for casts in Pig is the same as in Java-the type name in parentheses before the value:</p>
+<pre><code>(int)bat#'baseOnBalls' - (int)bat#'ibbs' </code></pre></li>
+<li><p>Pig can also insert casts <strong>implicitly</strong>. For example:</p>
+<pre><code>daily = load 'NYSE_daily' as (..., close:float, volume:int, ...);
+rough = foreach daily generate volume*close;</code></pre>
+Pig changes <code>volume*close</code> to <code>(float)volume*close</code> to do the calculation without losing precision.</li>
+<li>In general, Pig always <strong>widens</strong> types to fit when it needs to insert these implicit casts. Thus,
+<ul>
+<li>int and long -&gt; long</li>
+<li>int or long and float -&gt; float</li>
+<li>int, long, or float and double -&gt; double</li>
+</ul></li>
+<li><p>However, there are no <strong>implicit</strong> casts between numeric types and chararrays or other types.</p></li>
+</ul>
 </div>
 <div id="pig-supports-the-following-type-casts" class="section level1">
 <h1><span class="header-section-number">16</span> Pig Supports the Following Type Casts</h1>
+<table style="width:100%;">
+<colgroup>
+<col width="16%"></col>
+<col width="16%"></col>
+<col width="16%"></col>
+<col width="16%"></col>
+<col width="16%"></col>
+<col width="16%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">.</th>
+<th align="left">To int</th>
+<th align="left">To long</th>
+<th align="left">To float</th>
+<th align="left">To double</th>
+<th align="left">To chararray</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>From int</strong></td>
+<td align="left">.</td>
+<td align="left">Yes.</td>
+<td align="left">Yes.</td>
+<td align="left">Yes.</td>
+<td align="left">Yes.</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>From long</strong></td>
+<td align="left">Yes. Any values greater than 2^31 or less than -2^31 will be truncated.</td>
+<td align="left">.</td>
+<td align="left">Yes.</td>
+<td align="left">Yes.</td>
+<td align="left">Yes.</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>From float</strong></td>
+<td align="left">xxx</td>
+<td align="left">xxx</td>
+<td align="left">.</td>
+<td align="left">Yes.</td>
+<td align="left">Yes.</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>From double</strong></td>
+<td align="left">xxx</td>
+<td align="left">xxx</td>
+<td align="left">xxx</td>
+<td align="left">.</td>
+<td align="left">Yes.</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>From chararray</strong></td>
+<td align="left">xxx</td>
+<td align="left">xxx</td>
+<td align="left">xxx</td>
+<td align="left">xxx</td>
+<td align="left">.</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="introduction-to-pig-latin" class="section level1">
 <h1><span class="header-section-number">17</span> Introduction to Pig Latin</h1>
