@@ -1,7 +1,11 @@
 ---
-title: <center><font face="Baskerville Old Face">**About Me**</font></center>
+title: "About Me"
 output: html_document
 ---
+<style>
+
+</style>
+
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
 
 <div class="about-contact">
@@ -19,7 +23,7 @@ output: html_document
 
 <div class="about-content">
 
-#<font face="Baskerville Old Face" color=black size=6>(I) Educational Background</font>
+#(I) Educational Background
 <font face="Times New Roman" color=black size=4>
 
 - **Graduate**
@@ -43,7 +47,7 @@ output: html_document
 
 </font>
 
-#<font face="Baskerville Old Face" color=black size=6>(II) Professional Background</font>
+#(II) Professional Background
 <font face="Times New Roman" color=black size=4>
 
 - **Crane Management Service, Inc.**
@@ -83,7 +87,7 @@ output: html_document
 
 </font>
 
-#<font face="Baskerville Old Face" color=black size=6>(III) Skills</font>
+#(III) Skills
 <font face="Times New Roman" color=black size=4>
 
 - **Languages**: Mandarin, English
@@ -93,7 +97,7 @@ output: html_document
 
 </font>
 
-#<font face="Baskerville Old Face" color=black size=6>(IV) Hobby</font>
+#(IV) Hobby
 <font face="Times New Roman" color=black size=4>
 
 - Sports: Swimming, Running, Cycling, Skating, Volleyball, Ping Pong, Billiards, Chess, Yoga, etc.

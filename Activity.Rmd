@@ -1,15 +1,25 @@
 ---
-title: <center><font face="Baskerville Old Face">**Activities**</font></center>
+title: "Activities"
 output: html_document
 ---
+<style>
+ul {font-family: Times New Roman; font-size: 24px;}
+img {display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px;}
+@media screen and (min-width:700px) {
+  img {width: 50%;}
+}
+@media screen and (max-width:699px) {
+  img {}
+}
+</style>
+
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
 
-#<font face="Baskerville Old Face">Extra-curricular Activities</font>
-<font face="Times New Roman" size=5>
-
+#Extra-curricular Activities
 - Guest Speaker at *EducationUSA*, Beijing, China.
-- Student Ambassador of *Massachusetts Education International (MEI)* at UMass Amherst.
 
-</font>
+![](Gallery/EducationUSA_2014.jpg)
+
+- Student Ambassador of *Massachusetts Education International (MEI)* at UMass Amherst.
 
 Still under constructions.
