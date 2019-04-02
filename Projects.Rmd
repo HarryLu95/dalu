@@ -1,5 +1,5 @@
 ---
-title: <center><font face="Baskerville Old Face">**Academic Research & Projects**</font></center>
+title: "Academic Research & Projects"
 output: 
   html_document:
     toc: false
@@ -7,10 +7,14 @@ output:
       collapsed: true
     toc_depth: 2
 ---
+<style>
+ul {font-family: Times New Roman; font-size: 24px;}
+</style>
+
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
 
-#<font face="Baskerville Old Face">At UMass Amherst</font>
-<font face="Times New Roman" size=5>
+#At UMass Amherst
+
 
 - <i class="fa fa-book" aria-hidden="true"></i> Research: [Forecasting Stock Value](Forecasting_Stock_Value.html)
 - <i class="fa fa-book" aria-hidden="true"></i> Research: [Study on Measurement Method of Arsenic in Rice](Arsenic_Measurement.html)
@@ -19,9 +23,9 @@ output:
 - <i class="fa fa-calendar-check-o" aria-hidden="true"></i> Project: [Information Retrieval on the web and Data Wrangling](Web_Data_Wrangling.html)
 - <i class="fa fa-calendar-check-o" aria-hidden="true"></i> Project: [Statistical Analysis of Bird Breeding Pairs](Bird_Breeding_Pairs.html) (F-test, ANOVA, ggplot2, etc.)
 
-</font>
 
-#<font face="Baskerville Old Face">After Graduation</font>
+
+#After Graduation
 <font face="Times New Roman" size=5>
 
 - <i class="fa fa-book" aria-hidden="true"></i> Research: [Are Customer Review Scores Influencing Sale Rankings? A Study on Amazon Best Sellers](Amazon_s_Secret.html)

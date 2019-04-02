@@ -153,6 +153,27 @@ h4.date {text-align: center;}
 <p>and <span class="math inline">\(b=(-2.7,4.5)^T\)</span>.</p>
 <p><em>You may do these calculations in R if you wish</em>.</p>
 </blockquote>
+<p><span class="math display">\[\bar{\mathbf{x}}=A\bar{\mathbf{y}}+\mathbf{b}\]</span></p>
+<pre class="r"><code>y_mean=c(4.2,3.9,-2.5)
+y_mean=matrix(y_mean,nrow=3,ncol=1)
+A=c(1/3,1/3,1/3,1/2,1/2,-1)
+A=matrix(A,nrow=2,ncol=3,byrow=TRUE)
+b=c(-2.7,4.5)
+b=matrix(b,nrow=2,ncol=1)
+x_mean=A%*%y_mean+b
+x_mean</code></pre>
+<pre><code>##            [,1]
+## [1,] -0.8333333
+## [2,] 11.0500000</code></pre>
+<p><span class="math inline">\(x\)</span> has mean equals to <span class="math inline">\(\left(\begin{array}{c}-0.833\\11.050\end{array}\right)\)</span>.</p>
+<p><span class="math display">\[\text{Var}(\mathbf{y})=A \Sigma A^T\]</span></p>
+<pre class="r"><code>Sigma=c(9.1,1.2,-4.3,1.2,25.7,-2.4,-4.3,-2.4,13.6)
+Sigma=matrix(Sigma,nrow=3,ncol=3,byrow=TRUE)
+A%*%Sigma%*%t(A)</code></pre>
+<pre><code>##          [,1]      [,2]
+## [1,] 4.155556  2.783333
+## [2,] 2.783333 29.600000</code></pre>
+<p><span class="math inline">\(x\)</span> has variance equals to <span class="math inline">\(\left(\begin{array}{c}4.156 &amp; 2.783\\2.783 &amp; 29.600\end{array}\right)\)</span>.</p>
 </div>
 <div id="b" class="section level1">
 <h1>b</h1>
@@ -165,24 +186,127 @@ cov( a_1 x_1 + a_2 x_2, b_1 x_1 + b_2 x_2) &amp; = E[ a_1 x_1 + a_2 x_2 - E(a_1 
 &amp; = a_1 b_1 var(x_1) + a_2 b_2 var(x_2) + a_1 b_2 cov(x_1,x_2) + a_2 b_1 cov(x_2,x_1)
 \end{align}\]</span></p>
 </blockquote>
+<p>Assume <span class="math inline">\(A\)</span> is a <span class="math inline">\(m \times n\)</span> matrix, and <span class="math inline">\(\Sigma\)</span> is a <span class="math inline">\(n \times n\)</span> matrix.</p>
+<p><span class="math display">\[A=
+\left(\begin{array}{c}
+  a_{11} &amp; \cdots &amp; a_{1n}\\
+  \vdots &amp;  &amp; \vdots\\
+  a_{m1} &amp; \cdots &amp; a_{mn}
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[\Sigma=
+\left(\begin{array}{c}
+  s_{11} &amp; \cdots &amp; s_{1n}\\
+  \vdots &amp;  &amp; \vdots\\
+  s_{n1} &amp; \cdots &amp; s_{nn}
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[A^T=
+\left(\begin{array}{c}
+  a_{11} &amp; \cdots &amp; a_{m1}\\
+  \vdots &amp;  &amp; \vdots\\
+  a_{1n} &amp; \cdots &amp; a_{mn}
+\end{array}\right)\]</span></p>
+<p><span class="math display">\[\begin{align}
+A\Sigma
+&amp;=
+\left(\begin{array}{c}
+  a_{11} &amp; \cdots &amp; a_{1n}\\
+  \vdots &amp;  &amp; \vdots\\
+  a_{m1} &amp; \cdots &amp; a_{mn}
+\end{array}\right)
+\left(\begin{array}{c}
+  s_{11} &amp; \cdots &amp; s_{1n}\\
+  \vdots &amp;  &amp; \vdots\\
+  s_{n1} &amp; \cdots &amp; s_{nn}
+\end{array}\right)\\
+&amp;=
+\left(\begin{array}{c}
+  a_{11}s_{11}+a_{12}s_{21}+\cdots+a_{1n}s_{n1} &amp; \cdots &amp; a_{11}s_{1n}+a_{12}s_{2n}+\cdots+a_{1n}s_{nn}\\
+  \vdots &amp;  &amp; \vdots\\
+  a_{n1}s_{11}+a_{n2}s_{21}+\cdots+a_{nn}s_{n1} &amp; \cdots &amp; a_{n1}s_{1n}+a_{n2}s_{2n}+\cdots+a_{nn}s_{nn}
+\end{array}\right)
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align}
+A \Sigma A^T
+&amp;=
+\left(\begin{array}{c}
+  a_{11}s_{11}+a_{12}s_{21}+\cdots+a_{1n}s_{n1} &amp; \cdots &amp; a_{11}s_{1n}+a_{12}s_{2n}+\cdots+a_{1n}s_{nn}\\
+  \vdots &amp;  &amp; \vdots\\
+  a_{n1}s_{11}+a_{n2}s_{21}+\cdots+a_{nn}s_{n1} &amp; \cdots &amp; a_{n1}s_{1n}+a_{n2}s_{2n}+\cdots+a_{nn}s_{nn}
+\end{array}\right)
+\left(\begin{array}{c}
+  a_{11} &amp; \cdots &amp; a_{m1}\\
+  \vdots &amp;  &amp; \vdots\\
+  a_{1n} &amp; \cdots &amp; a_{mn}
+\end{array}\right)
+\end{align}\]</span></p>
+<p><span class="math display">\[(A\Sigma A^T)_{ij}=
+\sum_{p=1}^{n}\sum_{q=1}^{n}a_{ip}a_{jq}\text{Cov}(a_p,a_q)\]</span></p>
+<p><span class="math display">\[\begin{align}
+\text{Cov}[(Ax)_i,(Ax)_j]
+&amp;=
+\text{Cov}(a_{i1}x_1+a_{i2}x_2+\cdots+a_{in}x_n,a_{j1}x_1+a_{j2}x_2+\cdots+a_{jn}x_n)\\
+&amp;=
+\text{E}\{[a_{i1}x_1+a_{i2}x_2+\cdots+a_{in}x_n-\text{E}(a_{i1}x_1+a_{i2}x_2+\cdots+a_{in}x_n)][a_{j1}x_1+a_{j2}x_2+\cdots+a_{jn}x_n-\text{E}(a_{j1}x_1+a_{j2}x_2+\cdots+a_{jn}x_n)]\}\\
+&amp;=
+\text{E}\{[a_{i1}(x_1-\text{E}(x_1))+a_{i2}(x_2-\text{E}(x_2))+\cdots+a_{in}(x_n-\text{E}(x_n))][a_{j1}(x_1-\text{E}(x_1))+a_{j2}(x_2-\text{E}(x_2))+\cdots+a_{jn}(x_n-\text{E}(x_n))]\}\\
+&amp;=
+a_{i1}a_{j1}\text{E}[(x_1-\text{E}(x_1))^2]+\cdots+a_{in}a_{jn}\text{E}[(x_n-\text{E}(x_n))^2]\\
+&amp;=
+a_{i1}a_{j1}[\text{E}({x_1}^2)-(\text{E}(x_1))^2]+\cdots+a_{in}a_{jn}[\text{E}({x_n}^2)-(\text{E}(x_n))^2]\\
+&amp;=
+\sum_{p=1}^{n}\sum_{q=1}^{n}a_{ip}a_{jq}\text{Cov}(a_p,a_q)
+\end{align}\]</span></p>
 </div>
 <div id="c" class="section level1">
 <h1>c</h1>
 <blockquote>
-<p>We have seen that our residuals <span class="math inline">\(\hat{e}\)</span> is orthogonal the predicted values <span class="math inline">\(\hat{y}\)</span>; show that <span class="math inline">\(\hat{e}\)</span> is also uncorrelated with each column of <span class="math inline">\(X\)</span>.</p>
+<p>We have seen that our residuals <span class="math inline">\(\hat{e}\)</span> is orthogonal the predicted values <span class="math inline">\(\hat{y}\)</span>; show that <span class="math inline">\(\hat{e}\)</span> is also orthogonal <span class="math inline">\(\hat{\beta}\)</span>.</p>
 </blockquote>
+<p><strong>Method 1:</strong></p>
+<p><span class="math display">\[\begin{align}
+\hat{\mathbf{e}}\hat{\mathbf{y}}^T&amp;=0\\
+\hat{\mathbf{e}}(X\hat{\mathbf{\beta}})^T&amp;=0\\
+\hat{\mathbf{e}}\hat{\mathbf{\beta}}^TX^T&amp;=0
+\end{align}\]</span></p>
+<p>Since <span class="math inline">\(X\)</span> is non-zero, <span class="math inline">\(\hat{\mathbf{e}}\hat{\mathbf{\beta}}^T=\mathbf{0}\)</span>.</p>
+<p><strong>Method 2:</strong></p>
+<p><span class="math display">\[\begin{align}
+\hat{\mathbf{e}}\hat{\mathbf{\beta}}^T
+&amp;=
+\hat{\mathbf{e}}((X^TX)^{-1}X^T\mathbf{y})\\
+&amp;=
+\hat{\mathbf{e}}\mathbf{y}^T((X^TX)^{-1}X^T)^T\\
+&amp;=
+\mathbf{0}((X^TX)^{-1}X^T)^T\\
+&amp;=
+\mathbf{0}
+\end{align}\]</span></p>
 </div>
 <div id="d" class="section level1">
 <h1>d</h1>
 <blockquote>
 <p>Hence show that our estimate of the variance <span class="math inline">\(\hat{\sigma}^2\)</span> is uncorrelated with <span class="math inline">\(\hat{\beta}\)</span>, confirming the plots in Question 3.</p>
 </blockquote>
+<p><span class="math display">\[\hat{\mathbf{e}}=(I-H)\mathbf{y}=A\mathbf{y}\]</span></p>
+<p><span class="math display">\[\hat{\mathbf{\beta}}=(X^TX)^{-1}X^T\mathbf{y}=B\mathbf{y}\]</span></p>
+<p>Both <span class="math inline">\(\hat{\mathbf{e}}\)</span> and <span class="math inline">\(\hat{\mathbf{\beta}}\)</span> are related to <span class="math inline">\(\mathbf{y}\)</span>, and <span class="math inline">\(\hat{\sigma}^2\)</span> is a function of <span class="math inline">\(\hat{\mathbf{e}}\)</span>, so in order to show <span class="math inline">\(\text{Cov}(\hat{\sigma}^2,\hat{\mathbf{\beta}})=0\)</span>, we just need to show <span class="math inline">\(A\text{Var}(\mathbf{y})B^T=0\)</span>.</p>
+<p><span class="math display">\[(I-H)(\sigma^2I)[(X^TX)^{-1}X^T]^T=\sigma^2[(I-H)X][(X^TX)^{-1}]^T=0\]</span></p>
+<p><span class="math inline">\(\hat{\sigma}^2\)</span> is uncorrelated with <span class="math inline">\(\hat{\mathbf{\beta}}\)</span>, and from Question 3c, both plots for <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are uncorrelated with <span class="math inline">\(\sigma\)</span>.</p>
 </div>
 <div id="e" class="section level1">
 <h1>e</h1>
 <blockquote>
 <p>In linear regression, we generally assume <span class="math inline">\(\mathbf \epsilon \sim N(0,\sigma^2 I)\)</span> but in spacial statistics and time series we sometimes allow the errors to be correlated: <span class="math inline">\(\mathbf \epsilon \sim N(0,\Sigma)\)</span> instead. When this is the case, what is the variance of the least squares estimate <span class="math inline">\(\hat{\mathbf\beta}\)</span>?</p>
 </blockquote>
+<p>In linear regression, <span class="math inline">\(\text{Var}(\hat\beta)=[(X^TX)^{-1}X^T](\sigma^2I)[(X^TX)^{-1}X^T]^T=\sigma^2(X^TX)^{-1}\)</span>, where <span class="math inline">\(\text{Cov}(e_i,e_j)=0\)</span>.</p>
+<p>In spacial statistics and time series, <span class="math inline">\(\text{Var}(\hat\beta)=[(X^TX)^{-1}X^T]\Sigma[(X^TX)^{-1}X^T]^T\)</span>, where <span class="math inline">\(\text{Cov}(e_i,e_j)\neq0\)</span>.</p>
+<p><span class="math display">\[\begin{align}
+\text{Var}(\hat\beta)
+&amp;=
+[(X^TX)^{-1}X^T]\Sigma[(X^TX)^{-1}X^T]^T\\
+&amp;=
+(X^TX)^{-1}X^T\Sigma X(X^TX)^{-1}
+\end{align}\]</span></p>
 </div>
 
 

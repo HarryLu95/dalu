@@ -1,0 +1,5 @@
+Sam Johnson^100000.0^Mary Smith#David Wells^Federal Taxes@0.2#State Taxes@0.05#Insurance@0.1^1 Square Ave.#New York#NY#10060
+Elise Smith^80000.0^Bill King^Federal Taxes@0.2#State Taxes@0.05#Insurance@0.1^100 Ontario St.#New York#NY#10001
+Jason Yang^150000.0^Diana Foster#Kelli Doe#Kevin Hoover^Federal Taxes@0.2#State Taxes@0.05#Insurance@0.1^101 Uptown Rd.#Ithaca#NY#14850
+Ted Wang^120000.0^Diana Johnson#Kelli Li#Dan Jones^Federal Taxes@0.2#State Taxes@0.05#Insurance@0.1^21 Farm Rd.#Ithaca#NY#14850
+Tom McPheron^150000.0^Marvin Xu#Elise Lee^Federal Taxes@0.02#State Taxes@0.05#Insurance@0.1^12 Bush Ave.#New York#NY#10002

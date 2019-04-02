@@ -1,0 +1,5 @@
+Joann Fraser^100000.0^Mary Smith#David Wells^Federal Taxes@0.2#State Taxes@0.05#Insurance@0.1^100 Bay Ave.#Long Beach#CA#90814
+Elise Smith^80000.0^Bill King^Federal Taxes@0.2#State Taxes@0.05#Insurance@0.1^100 Beach St.#Long Beach#CA#90815
+Jason Yang^150000.0^Diana Foster#Kelli Doe#Kevin Hoover^Federal Taxes@0.2#State Taxes@0.05#Insurance@0.1^101 Uptown Rd.#San Diego#CA#92106
+Ted Wang^190000.0^Diana Johnson#Kelli Li#Dan Jones^Federal Taxes@0.2#State Taxes@0.05#Insurance@0.1^1 Kerrick Rd.#San Diego#CA#92106
+Tom McPheron^210000.0^Marvin Xu#Elise Lee^Federal Taxes@0.02#State Taxes@0.05#Insurance@0.1^12 Bush Lane.#San Diego#CA#92106
