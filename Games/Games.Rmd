@@ -28,7 +28,7 @@ ul {font-size: 16px; color: black;}
 - [Advance Wars](Advance Wars.gba) (.gba)
 - [Advance Wars 2 - Black Hole Rising](Advance Wars 2 - Black Hole Rising.gba) (.gba)
 - [Yoshi's Island - Super Mario Advance 3](Yoshi's Island - Super Mario Advance 3.gba) (.gba)
-- [Castlevania - Aria of Sorrow (曉夜圓舞曲)](Castlevania - Aria of Sorrow.gba) (.gba)
+- [Castlevania - Aria of Sorrow (曉月圓舞曲)](Castlevania - Aria of Sorrow.gba) (.gba)
 - [Castlevania - Circle of the Moon (月下輪舞曲)](Castlevania - Circle of the Moon.gba) (.gba)
 - [Castlevania - Harmony of Dissonance (白夜協奏曲)](Castlevania - Harmony of Dissonance.gba) (.gba)
 
