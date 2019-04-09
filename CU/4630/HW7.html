@@ -292,7 +292,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">STSCI 4630 - Spring 2019 - HW7</h1>
 <h4 class="author">Da (Harry) Lu, dl947</h4>
-<h4 class="date">Due Tuesday, Mar/28/2019</h4>
+<h4 class="date">Due Tuesday, Apr/9/2019</h4>
 
 </div>
 
@@ -378,60 +378,254 @@ pre {color: blue;}
 <p>Buy <span class="math inline">\(0.8\)</span> share at <span class="math inline">\(\$100\)</span>, borrow <span class="math inline">\(\$63.55\)</span>.</p>
 </div>
 <p>v) What is the fair price, i.e., the arbitrage-free price, of the option?</p>
+<pre class="r"><code>0.8*100-0.8*(85-0)/(1+0.07)</code></pre>
+<pre><code>## [1] 16.4486</code></pre>
 <div class="w">
-<p>x</p>
+<p>The arbitrage-free price of the option is <span class="math inline">\(\$16.45\)</span>.</p>
+<p><span class="math display">\[16.45\rightarrow\left\{\begin{array}{c}20\\0\end{array}\right.\]</span></p>
 </div>
 <p>vi) Derive the risk-neutral probability <span class="math inline">\(q\)</span> that the stock price increases to <span class="math inline">\(\$110\)</span> at the end of the period.</p>
 <div class="w">
-<p>x</p>
+<p><span class="math display">\[\begin{align}
+q=\frac{(1+0.07)\times100-85}{110-85}
+\end{align}\]</span></p>
+<pre class="r"><code>((1+0.07)*100-85)/(110-85)</code></pre>
+<pre><code>## [1] 0.88</code></pre>
+<p>The risk-neutral probability <span class="math inline">\(q\)</span> is <span class="math inline">\(0.88\)</span>.</p>
 </div>
 <p>vii) What is the expected value of the option at the end of the period under the risk-neutral probability?</p>
+<pre class="r"><code>20*0.88</code></pre>
+<pre><code>## [1] 17.6</code></pre>
 <div class="w">
-<p>x</p>
+<p>The expected value of the option at the end of the period under the risk-neutral probability is <span class="math inline">\(\$17.60\)</span>.</p>
 </div>
 <p>viii) Show that the expected value of the option at the end of the period when discounted to the beginning to the period is the same as the fair price you derived from the synthetic portfolio in part v).</p>
+<pre class="r"><code>17.6/(1+0.07)</code></pre>
+<pre><code>## [1] 16.4486</code></pre>
 <div class="w">
-<p>x</p>
+<p>The expected value is still <span class="math inline">\(\$16.45\)</span>, which is same as the result of part v).</p>
 </div>
 </div>
 <div id="question-5" class="section level1">
 <h1>Question 5</h1>
 <p>[15 points] Consider a one-period binomial tree model with nodes <span class="math inline">\(1,2,3\)</span>. Suppose that the stock price at the start of the period is <span class="math inline">\(s_1=\$50\)</span>; at the end of the period the stock price either decreases to <span class="math inline">\(s_2=\$40\)</span> or increases to <span class="math inline">\(s_3=\$60\)</span>. Consider a put option with strike price <span class="math inline">\(K=\$48\)</span> on one share of stock that expires at the end of the period. Recall that a put option gives the holder the right to sell the stock for the strike price at expiry. Assume that the risk-free interest rate over the period is <span class="math inline">\(4\%\)</span>.</p>
 <p>i) What is <span class="math inline">\(f(2)\)</span>, the value of the option at node <span class="math inline">\(2\)</span>?</p>
+<pre class="r"><code>max(48-40,0)</code></pre>
+<pre><code>## [1] 8</code></pre>
+<div class="w">
+<p><span class="math display">\[(48-40,0)_+=8\]</span></p>
+</div>
 <p>ii) What is <span class="math inline">\(f(3)\)</span>, the value of the option at node <span class="math inline">\(3\)</span>?</p>
+<pre class="r"><code>max(48-60,0)</code></pre>
+<pre><code>## [1] 0</code></pre>
+<div class="w">
+<p><span class="math display">\[(48-60,0)_+=0\]</span></p>
+</div>
 <p>iii) What is the hedge ratio?</p>
+<div class="w">
+<p>Stock:</p>
+<p><span class="math display">\[50\rightarrow\left\{\begin{array}{c}60\\40\end{array}\right.\]</span></p>
+<p>Option:</p>
+<p><span class="math display">\[?\rightarrow\left\{\begin{array}{c}0\\8\end{array}\right.\]</span></p>
+<pre class="r"><code>(0-8)/(60-40)</code></pre>
+<pre><code>## [1] -0.4</code></pre>
+<p><span class="math display">\[\frac{0-8}{60-40}=-0.4\]</span></p>
+</div>
 <p>iv) Describe a synthetic portfolio that replicates the put option.</p>
+<pre class="r"><code>-0.4*(60-0)/(1+0.04)</code></pre>
+<pre><code>## [1] -23.07692</code></pre>
+<div class="w">
+<p><span class="math display">\[-0.4\times(60-0)\times(1+0.04)^{-1}=-23.08\]</span></p>
+<p>Borrow <span class="math inline">\(0.4\)</span> share at <span class="math inline">\(\$50\)</span>, hold <span class="math inline">\(\$23.08\)</span>.</p>
+</div>
 <p>v) What is the price of the option?</p>
+<pre class="r"><code>0.4*(60-0)/(1+0.04)-0.4*50</code></pre>
+<pre><code>## [1] 3.076923</code></pre>
+<div class="w">
+<p>The price of the option is <span class="math inline">\(\$3.08\)</span>.</p>
+</div>
 <p>vi) Derive the risk-neutral probability <span class="math inline">\(q\)</span> that the stock price moves to <span class="math inline">\(\$60\)</span> at the end of the period.</p>
+<div class="w">
+<p><span class="math display">\[q=\frac{(1+0.04)\times50-40}{60-40}\]</span></p>
+<pre class="r"><code>((1+0.04)*50-40)/(60-40)</code></pre>
+<pre><code>## [1] 0.6</code></pre>
+<p>The risk-neutral probability <span class="math inline">\(q\)</span> is <span class="math inline">\(0.6\)</span>.</p>
+</div>
 <p>vii) What is the expected value of the option at the end of the period under the risk-neutral probability?</p>
+<pre class="r"><code>8*0.4</code></pre>
+<pre><code>## [1] 3.2</code></pre>
+<div class="w">
+<p>The expected value of the option at the end of the period under the risk-neutral probability is <span class="math inline">\(\$3.2\)</span>.</p>
+</div>
 <p>viii) Show that the expected value of the option at the end of the period when discounted to the beginning to the period is the same as the fair price you derived from the synthetic portfolio in part v).</p>
+<pre class="r"><code>3.2/(1+0.04)</code></pre>
+<pre><code>## [1] 3.076923</code></pre>
+<div class="w">
+<p>The expected value is still <span class="math inline">\(\$3.08\)</span>, which is same as the result of part v).</p>
+</div>
 </div>
 <div id="question-6" class="section level1">
 <h1>Question 6</h1>
 <p>[15 points] Consider a two-period binomial tree model so that the binomial tree has nodes <span class="math inline">\(1,2,\cdots,7\)</span>. The price of the stock at the seven nodes are <span class="math inline">\(s_1=100\)</span>, <span class="math inline">\(s_2=90\)</span>, <span class="math inline">\(s_3=110\)</span>, <span class="math inline">\(s_4=70\)</span>, <span class="math inline">\(s_5=95\)</span>, <span class="math inline">\(s_6=100\)</span>, and <span class="math inline">\(s_7=125\)</span>. Suppose, for convenience, that the risk-free rate per period is <span class="math inline">\(0\%\)</span>.</p>
+<div class="w">
+<p><span class="math display">\[100\rightarrow\left\{\begin{array}{c}110\rightarrow\left\{\begin{array}{l}125\\100\end{array}\right.\\90\rightarrow\left\{\begin{array}{l}95\\70\end{array}\right.\end{array}\right.\]</span></p>
+</div>
 <p>i) Find the risk-neutral probabilities <span class="math inline">\(q_1,q_2,q_3\)</span> for nodes <span class="math inline">\(1,2,3\)</span>.</p>
+<div class="w">
+<p><span class="math display">\[\begin{align}
+q_1&amp;=\frac{100-90}{110-90}=0.5\\
+q_2&amp;=\frac{90-70}{95-70}=0.8\\
+q_3&amp;=\frac{110-100}{125-100}=0.4
+\end{align}\]</span></p>
+</div>
 <p>ii) Consider a European call option with strike price <span class="math inline">\(\$90\)</span> on one share of stock that expires at the end of the two periods. Find the value of the option at nodes <span class="math inline">\(1,2,\cdots,7\)</span>. What is the price of the option at the start of the two periods?</p>
+<div class="w">
+<p><span class="math display">\[K=90\]</span></p>
+<p><span class="math display">\[f_{(1)}\rightarrow\left\{\begin{array}{l}f_{(3)}\rightarrow\left\{\begin{array}{l}35\\10\end{array}\right.\\f_{(2)}\rightarrow\left\{\begin{array}{l}5\\0\end{array}\right.\end{array}\right.\]</span></p>
+<p><span class="math display">\[\begin{align}
+f_{(3)}&amp;=35\times0.4+10\times0.6=20\\
+f_{(2)}&amp;=5\times0.8+0\times0.2=4\\
+f_{(1)}&amp;=20\times0.5+4\times0.5=12
+\end{align}\]</span></p>
+<p><span class="math display">\[12\rightarrow\left\{\begin{array}{c}20\rightarrow\left\{\begin{array}{l}35\\10\end{array}\right.\\4\rightarrow\left\{\begin{array}{l}5\\0\end{array}\right.\end{array}\right.\]</span></p>
+</div>
 <p>iii) Consider a European call option with strike price <span class="math inline">\(\$97\)</span> on one share of stock that expires at the end of the two periods. What is the price of the option at the start of the two periods?</p>
+<div class="w">
+<p><span class="math display">\[K=97\]</span></p>
+<p><span class="math display">\[f_{(1)}\rightarrow\left\{\begin{array}{l}f_{(3)}\rightarrow\left\{\begin{array}{l}28\\3\end{array}\right.\\f_{(2)}\rightarrow\left\{\begin{array}{l}0\\0\end{array}\right.\end{array}\right.\]</span></p>
+<p><span class="math display">\[\begin{align}
+f_{(3)}&amp;=28\times0.4+3\times0.6=13\\
+f_{(2)}&amp;=0\times0.8+0\times0.2=0\\
+f_{(1)}&amp;=13\times0.5+0\times0.5=6.5
+\end{align}\]</span></p>
+<p><span class="math display">\[6.5\rightarrow\left\{\begin{array}{c}13\rightarrow\left\{\begin{array}{l}28\\3\end{array}\right.\\0\rightarrow\left\{\begin{array}{l}0\\0\end{array}\right.\end{array}\right.\]</span></p>
+</div>
 <p>iv) Consider a European call option with strike price <span class="math inline">\(\$114\)</span> on one share of stock that expires at the end of the two periods. What is the price of the option at the start of the two periods?</p>
+<div class="w">
+<p><span class="math display">\[K=114\]</span></p>
+<p><span class="math display">\[f_{(1)}\rightarrow\left\{\begin{array}{l}f_{(3)}\rightarrow\left\{\begin{array}{l}11\\0\end{array}\right.\\f_{(2)}\rightarrow\left\{\begin{array}{l}0\\0\end{array}\right.\end{array}\right.\]</span></p>
+<p><span class="math display">\[\begin{align}
+f_{(3)}&amp;=11\times0.4+0\times0.6=4.4\\
+f_{(2)}&amp;=0\times0.8+0\times0.2=0\\
+f_{(1)}&amp;=4.4\times0.5+0\times0.5=2.2
+\end{align}\]</span></p>
+<p><span class="math display">\[2.2\rightarrow\left\{\begin{array}{c}4.4\rightarrow\left\{\begin{array}{l}11\\0\end{array}\right.\\0\rightarrow\left\{\begin{array}{l}0\\0\end{array}\right.\end{array}\right.\]</span></p>
+</div>
 </div>
 <div id="question-7" class="section level1">
 <h1>Question 7</h1>
 <p>[15 points] Consider the same two-period binomial tree model described in Question 6.</p>
 <p>i) Consider a European put option with strike price <span class="math inline">\(\$114\)</span> on one share of stock that expires at the end of the two periods. Find the value of the option at nodes <span class="math inline">\(1,2,\cdots,7\)</span>. What is the price of the option at the start of the two periods?</p>
+<div class="w">
+<p><span class="math display">\[K=114\]</span></p>
+<p><span class="math display">\[f_{(1)}\rightarrow\left\{\begin{array}{l}f_{(3)}\rightarrow\left\{\begin{array}{l}0\\14\end{array}\right.\\f_{(2)}\rightarrow\left\{\begin{array}{l}19\\44\end{array}\right.\end{array}\right.\]</span></p>
+<p><span class="math display">\[\begin{align}
+f_{(3)}&amp;=0\times0.4+14\times0.6=8.4\\
+f_{(2)}&amp;=19\times0.8+44\times0.2=24\\
+f_{(1)}&amp;=8.4\times0.5+24\times0.5=16.2
+\end{align}\]</span></p>
+<p><span class="math display">\[16.2\rightarrow\left\{\begin{array}{l}8.4\rightarrow\left\{\begin{array}{l}0\\14\end{array}\right.\\24\rightarrow\left\{\begin{array}{l}19\\44\end{array}\right.\end{array}\right.\]</span></p>
+</div>
 <p>ii) Consider a European put option with strike price <span class="math inline">\(\$97\)</span> on one share of stock that expires at the end of the two periods. What is the price of the option at the start of the two periods?</p>
+<div class="w">
+<p><span class="math display">\[K=97\]</span></p>
+<p><span class="math display">\[f_{(1)}\rightarrow\left\{\begin{array}{l}f_{(3)}\rightarrow\left\{\begin{array}{l}0\\0\end{array}\right.\\f_{(2)}\rightarrow\left\{\begin{array}{l}2\\27\end{array}\right.\end{array}\right.\]</span></p>
+<p><span class="math display">\[\begin{align}
+f_{(3)}&amp;=0\times0.4+0\times0.6=0\\
+f_{(2)}&amp;=2\times0.8+27\times0.2=7\\
+f_{(1)}&amp;=0\times0.5+7\times0.5=3.5
+\end{align}\]</span></p>
+<p><span class="math display">\[3.5\rightarrow\left\{\begin{array}{l}0\rightarrow\left\{\begin{array}{l}0\\0\end{array}\right.\\7\rightarrow\left\{\begin{array}{l}2\\27\end{array}\right.\end{array}\right.\]</span></p>
+</div>
 <p>iii) Consider a European put option with strike price <span class="math inline">\(\$90\)</span> on one share of stock that expires at the end of the two periods. What is the price of the option at the start of the two periods?</p>
+<div class="w">
+<p><span class="math display">\[K=90\]</span></p>
+<p><span class="math display">\[f_{(1)}\rightarrow\left\{\begin{array}{l}f_{(3)}\rightarrow\left\{\begin{array}{l}0\\0\end{array}\right.\\f_{(2)}\rightarrow\left\{\begin{array}{l}0\\20\end{array}\right.\end{array}\right.\]</span></p>
+<p><span class="math display">\[\begin{align}
+f_{(3)}&amp;=0\times0.4+0\times0.6=0\\
+f_{(2)}&amp;=0\times0.8+20\times0.2=4\\
+f_{(1)}&amp;=0\times0.5+4\times0.5=2
+\end{align}\]</span></p>
+<p><span class="math display">\[2\rightarrow\left\{\begin{array}{l}0\rightarrow\left\{\begin{array}{l}0\\0\end{array}\right.\\4\rightarrow\left\{\begin{array}{l}0\\20\end{array}\right.\end{array}\right.\]</span></p>
+</div>
 <p>iv) Show that, in each of the cases i), ii), and iii), <span class="math inline">\(P=C+K−s_1\)</span>, where <span class="math inline">\(P\)</span> is the price of the European put option with strike price <span class="math inline">\(K\)</span> at the start of the two periods, <span class="math inline">\(C\)</span> is the price of the European call option with strike price <span class="math inline">\(K\)</span> at the start of the two periods, and <span class="math inline">\(s_1\)</span> is the price of the stock at the beginning of the two periods.</p>
+<div class="w">
+<p><span class="math inline">\(s_1=100\)</span></p>
+<ul>
+<li>When <span class="math inline">\(K=90\)</span>, <span class="math inline">\(C=12\)</span> and <span class="math inline">\(P=2\)</span>
+<ul>
+<li><span class="math inline">\(2=12+90-100\)</span></li>
+</ul></li>
+<li>When <span class="math inline">\(K=97\)</span>, <span class="math inline">\(C=6.5\)</span> and <span class="math inline">\(P=3.5\)</span>
+<ul>
+<li><span class="math inline">\(3.5=6.5+97-100\)</span></li>
+</ul></li>
+<li>When <span class="math inline">\(K=114\)</span>, <span class="math inline">\(C=2.2\)</span> and <span class="math inline">\(P=16.2\)</span>
+<ul>
+<li><span class="math inline">\(16.2=2.2+114-100\)</span></li>
+</ul></li>
+</ul>
+</div>
 </div>
 <div id="question-8" class="section level1">
 <h1>Question 8</h1>
 <p>[15 points] Consider a two-period binomial tree model where the stock prices starts at <span class="math inline">\(\$100\)</span>, and at each node, the price either moves up by <span class="math inline">\(15\%\)</span> or moves down by <span class="math inline">\(10\%\)</span>. Suppose that the risk-free interest rate is <span class="math inline">\(5\%\)</span> per period. Consider a put option with strike price <span class="math inline">\(\$105\)</span> on one share of stock that expires at the end of the two periods.</p>
 <p>i) Describe the risk-neutral probabilities for the binomial tree.</p>
+<div class="w">
+<p><span class="math display">\[\begin{align}
+q_1&amp;=\frac{(1+0.05)\times100-90}{115-90}=0.6\\
+q_2&amp;=\frac{(1+0.05)\times115-103.5}{132.25-103.5}=0.6\\
+q_3&amp;=\frac{(1+0.05)\times90-81}{103.5-81}=0.6
+\end{align}\]</span></p>
+</div>
 <p>ii) Suppose the put option is a European option. What is the price of the option at the start of the two periods?</p>
+<div class="w">
+<p><span class="math display">\[100\rightarrow\left\{\begin{array}{c}115\rightarrow\left\{\begin{array}{l}132.25\\103.5\end{array}\right.\\90\rightarrow\left\{\begin{array}{l}103.5\\81\end{array}\right.\end{array}\right.\]</span></p>
+<p><span class="math display">\[f_{(1)}\rightarrow\left\{\begin{array}{l}f_{(3)}\rightarrow\left\{\begin{array}{l}0\\1.5\end{array}\right.\\f_{(2)}\rightarrow\left\{\begin{array}{l}1.5\\24\end{array}\right.\end{array}\right.\]</span></p>
+<p><span class="math display">\[\begin{align}
+f_{(3)}&amp;=\frac{0\times0.6+1.5\times0.4}{1+0.05}=\frac{0.6}{1.05}=\frac{4}{7}\approx0.57\\
+f_{(2)}&amp;=\frac{1.5\times0.6+24\times0.4}{1+0.05}=\frac{10.5}{1.05}=10\\
+f_{(1)}&amp;=\frac{\frac{4}{7}\times0.6+10\times0.4}{1+0.05}=\frac{608}{147}\approx4.14
+\end{align}\]</span></p>
+<pre class="r"><code>4/7</code></pre>
+<pre><code>## [1] 0.5714286</code></pre>
+<pre class="r"><code>608/147</code></pre>
+<pre><code>## [1] 4.136054</code></pre>
+<p><span class="math display">\[4.14\rightarrow\left\{\begin{array}{r}0.57\rightarrow\left\{\begin{array}{l}0\\1.5\end{array}\right.\\10\rightarrow\left\{\begin{array}{l}1.5\\24\end{array}\right.\end{array}\right.\]</span></p>
+</div>
 <p>iii) Suppose that the put option is an American option. What is the price of the option at the start of the two periods?</p>
+<div class="w">
+<p><span class="math display">\[100\rightarrow\left\{\begin{array}{l}115\rightarrow\left\{\begin{array}{l}132.25\\103.5\end{array}\right.\\90\end{array}\right.\]</span></p>
+<p><span class="math display">\[f_{(1)}\rightarrow\left\{\begin{array}{l}f_{(3)}\rightarrow\left\{\begin{array}{l}0\\1.5\end{array}\right.\\15\end{array}\right.\]</span></p>
+<p><span class="math display">\[\begin{align}
+f_{(3)}&amp;=\frac{0\times0.6+1.5\times0.4}{1+0.05}=\frac{0.6}{1.05}=\frac{4}{7}\approx0.57\\
+f_{(1)}&amp;=\frac{\frac{4}{7}\times0.6+15\times0.4}{1+0.05}=\frac{296}{49}\approx6.04
+\end{align}\]</span></p>
+<pre class="r"><code>4/7</code></pre>
+<pre><code>## [1] 0.5714286</code></pre>
+<pre class="r"><code>296/49</code></pre>
+<pre><code>## [1] 6.040816</code></pre>
+<p><span class="math display">\[6.04\rightarrow\left\{\begin{array}{l}0.57\rightarrow\left\{\begin{array}{l}0\\1.5\end{array}\right.\\15\end{array}\right.\]</span></p>
+</div>
 </div>
 <div id="question-9" class="section level1">
 <h1>Question 9</h1>
-<p>[10 points] Consider an American call option on one share of stock in a binomial tree model where the risk-free interest rate per period is <span class="math inline">\(r\)</span>. Recall that node <span class="math inline">\(j\)</span> leads to nodes <span class="math inline">\(2j\)</span> and <span class="math inline">\(2j+1\)</span> and that the risk-neutral probability <span class="math inline">\(q_j\)</span> for node <span class="math inline">\(j\)</span> is given by <span class="math inline">\(q_j=\frac{(1+r)s_j−s_{2j}}{s_{2j+1}−s_{2j}}\)</span>. Suppose that the option is not exercised at node <span class="math inline">\(2j+1\)</span> or at node <span class="math inline">\(2j\)</span>, i.e., <span class="math inline">\(f(2j+1)\geq s_{2j+1}− K\)</span> and <span class="math inline">\(f(2j)\geq s_{2j} − K\)</span>. The discounted expected value at node <span class="math inline">\(j\)</span> under the risk-neutral probability <span class="math inline">\(q_j\)</span> is <span class="math inline">\(f(j)=\frac{1}{1+r}[q_jf(2j+1)+(1−q_j)f(2j)]\)</span>. Show that <span class="math inline">\(f(j)\geq s_j-K\)</span>, i.e., show that the value of the option under the risk-neutral probability is at least as large as the value of the option if the option is exercised.</p>
+<p>[10 points] Consider an American call option on one share of stock in a binomial tree model where the risk-free interest rate per period is <span class="math inline">\(r\)</span>. Recall that node <span class="math inline">\(j\)</span> leads to nodes <span class="math inline">\(2j\)</span> and <span class="math inline">\(2j+1\)</span> and that the risk-neutral probability <span class="math inline">\(q_j\)</span> for node <span class="math inline">\(j\)</span> is given by <span class="math inline">\(q_j=\frac{(1+r)s_j−s_{2j}}{s_{2j+1}−s_{2j}}\)</span>. Suppose that the option is not exercised at node <span class="math inline">\(2j+1\)</span> or at node <span class="math inline">\(2j\)</span>, i.e., <span class="math inline">\(f_{(2j+1)}\geq s_{2j+1}−K\)</span> and <span class="math inline">\(f_{(2j)}\geq s_{2j}−K\)</span>. The discounted expected value at node <span class="math inline">\(j\)</span> under the risk-neutral probability <span class="math inline">\(q_j\)</span> is <span class="math inline">\(f_{(j)}=\frac{1}{1+r}\left[q_jf_{(2j+1)}+(1−q_j)f_{(2j)}\right]\)</span>. Show that <span class="math inline">\(f_{(j)}\geq s_j-K\)</span>, i.e., show that the value of the option under the risk-neutral probability is at least as large as the value of the option if the option is exercised.</p>
+<div class="w">
+<p><span class="math display">\[\begin{align}
+f_{(j)}
+&amp;=\frac{1}{1+r}\left[q_jf_{(2j+1)}+(1−q_j)f_{(2j)}\right]\\
+&amp;\geq\frac{1}{1+r}\left[q_j(s_{2j+1}−K)+(1−q_j)(s_{2j}−K)\right]\\
+&amp;=\frac{1}{1+r}\left[q_js_{2j+1}−q_jK+s_{2j}−K−q_js_{2j}+q_jK\right]\\
+&amp;=\frac{1}{1+r}\left[q_j(s_{2j+1}−s_{2j})+s_{2j}−K\right]\\
+&amp;=\frac{1}{1+r}\left[\frac{(1+r)s_j−s_{2j}}{s_{2j+1}−s_{2j}}(s_{2j+1}−s_{2j})+s_{2j}−K\right]\\
+&amp;=\frac{1}{1+r}\left[(1+r)s_j−s_{2j}+s_{2j}−K\right]\\
+&amp;=\frac{1}{1+r}\left[(1+r)s_j−K\right]\\
+&amp;=s_j-\frac{1}{1+r}K\\
+&amp;=s_j-K+\frac{r}{1+r}K\\
+&amp;&gt;s_j-K
+\end{align}\]</span></p>
+</div>
 </div>
 
 
