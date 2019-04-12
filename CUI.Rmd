@@ -141,7 +141,12 @@ ul {font-size: 16px; color: black;}
     - Due: Mar/26/2019 at 11:59PM
     - Data: [unequal](CU/4060/unequal.txt) (.txt)
     - [Summary](CU/4060/STSCI 4060 - HW 4.html)
-
+    - [Solutions](CU/4060/HW4_S.7z) (.7z)
+5. [Homework 5](CU/4060/HW5.pdf)
+    - Due: Apr/19/2019 at 11:59PM
+    - Data: [iris](CU/4060/iris.txt) (.txt)
+    - [Summary](CU/4060/STSCI 4060 - HW 4.html) (pending)
+    - [Solutions](CU/4060/HW5_S.7z) (.7z) (pending)
 
 
 ##Data Files
