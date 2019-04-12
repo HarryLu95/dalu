@@ -113,6 +113,9 @@ ul {font-size: 16px; color: black;}
     - [Note 6-1](CU/4060/LectureNote6-1.html): Plotting, Bar Chart, Graphical user interface (GUI), Linear regression plot, 3-D plotting with plotting modules
 7. [Lecture 7](CU/4060/Lec07.pdf)
 8. [Lecture 8](CU/4060/Lec08.pdf)
+    - [Note 8-1](CU/4060/LectureNote8-1.html)
+    - [Note 8-2](CU/4060/LectureNote8-2.html)
+9. [Lecture 9](CU/4060/Lec09.pdf)
 
 
 ##Homeworks
@@ -146,6 +149,7 @@ ul {font-size: 16px; color: black;}
 1. [Quiz 1 with solutions](CU/4060/Quiz1_S.pdf)
 2. [Quiz 2 with solutions](CU/4060/Quiz2_S.pdf)
 3. [Quiz 3 with solutions](CU/4060/Quiz3_S.pdf)
+4. [Quiz 4 with solutions](CU/4060/Quiz4_S.pdf)
 
 ##Books and References
 - [Hands-on Python](CU/4060/Books and References/Hands-on Python.pdf)
