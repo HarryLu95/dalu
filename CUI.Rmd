@@ -58,10 +58,12 @@ ul {font-size: 16px; color: black;}
 1. [Homework 1](CU/5065/HW1.pdf)
     - Due: Feb/18/2019 at 11:59PM
     - [Summary](CU/5065/HW1_Summary.html)
+    - [Solutions](CU/5065/HW1_Solutions.7z) (.7z)
 2. [Homework 2](CU/5065/HW2.pdf)
     - Due: Mar/12/2019 at 11:59PM
     - Data: [shakespeare](CU/5065/shakespeare.txt) (.txt)
     - [Summary](CU/5065/HW2_Summary.html)
+    - [Solutions](CU/5065/HW2_Solutions.pdf)
 3. [Homework 3](CU/5065/HW3.pdf)
     - Due: Mar/29/2019 at 11:59PM
     - Data: [flight12](CU/5065/flight12.csv) (.csv)
@@ -69,11 +71,13 @@ ul {font-size: 16px; color: black;}
     - Data: [NYSE_dividends](CU/5065/NYSE_dividends.csv) (.csv)
     - Data: [stock](CU/5065/stock.zip) (.zip)
     - [Summary](CU/5065/HW3_Summary.html)
+    - [Solutions](CU/5065/HW3_Solutions.pdf)
 
 ##Quizzes
 1. [Quiz 1 with solutions](CU/5065/Quiz1_S.pdf)
 2. [Quiz 2 with solutions](CU/5065/Quiz2_S.pdf)
 3. [Quiz 3 with solutions](CU/5065/Quiz3_S.pdf)
+4. [Quiz 4 with solutions](CU/5065/Quiz4_S.pdf)
 
 ##Data Files
 - [1901-1](CU/5065/1901-1) (.File)
