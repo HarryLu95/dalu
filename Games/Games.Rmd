@@ -37,3 +37,8 @@ ul {font-size: 16px; color: black;}
 - [Castlevania - Dawn of Sorrow (蒼月的十字架)](Castlevania - Dawn of Sorrow.nds) (.nds)
 - [Castlevania - Portrait of Ruin (迷宮的畫廊)](Castlevania - Portrait of Ruin.nds) (.nds)
 - [Castlevania - Order of Ecclesia (被奪走的刻印)](Castlevania - Order of Ecclesia.nds) (.nds)
+
+---
+
+#Castlevania - Dawn of Sorrow
+![](Castlevania - Dawn of Sorrow - Weapons.jpg)
