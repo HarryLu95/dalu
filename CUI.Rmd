@@ -211,13 +211,16 @@ ul {font-size: 16px; color: black;}
     16. Th: [Mar/21](CU/4630/Lec16.html) (pending revision)
 - Week 10
     - Tu: Mar/26, Midterm 2
-    17. Th: [Mar/28](CU/4630/Lec17.html) (pending)
+    17. Th: [Mar/28](CU/4630/Lec17.html) (pending revision)
 - Week 11
     - Tu: Apr/2, Holiday
     - Th: Apr/4, Holiday
 - Week 12
-    18. Tu: [Apr/9](CU/4630/Lec18.html) (pending)
-    19. Th: [Apr/11](CU/4630/Lec19.html) (pending)
+    18. Tu: [Apr/9](CU/4630/Lec18.html) (pending revision)
+    19. Th: [Apr/11](CU/4630/Lec19.html) (pending revision)
+- Week 13
+    20. Tu: [Apr/16](CU/4630/Lec20.html) (pending)
+    21. Th: [Apr/18](CU/4630/Lec21.html) (pending)
 
 
 
