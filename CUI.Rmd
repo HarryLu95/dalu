@@ -49,7 +49,7 @@ ul {font-size: 16px; color: black;}
 13. [Introduction to Apache Pig 1](CU/5065/Lec13.pdf)
     - [Lecture 13 Note](CU/5065/Summary13.html)
 14. [Introduction to Apache Pig 2](CU/5065/Lec14.pdf)
-    - [Lecture 14 Note](CU/5065/Summary14.html) (pending)
+    - [Lecture 14 Note](CU/5065/Summary14.html)
 
 
 
