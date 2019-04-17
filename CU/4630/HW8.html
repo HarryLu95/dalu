@@ -321,7 +321,7 @@ a[1]</code></pre>
 <pre><code>## [1] 14.34952</code></pre>
 <pre class="r"><code>a[1]+c(-1,1)*qnorm(0.95)*a[2]/sqrt(a[3])</code></pre>
 <pre><code>## [1] 11.33953 11.35446</code></pre>
-<pre class="r"><code>b=BS_price_formula(80,0.2,75,1.25,0.03)
+<pre class="r"><code>b=BS_price_formula(S_0=80,sigma=0.2,K=75,T=1.25,r=0.03)
 b</code></pre>
 <pre><code>## [1] 11.34635</code></pre>
 <pre class="r"><code>a[1]-b</code></pre>
@@ -331,11 +331,11 @@ b</code></pre>
 </div>
 <p>i) Report the simulation-based estimate of the discounted risk-neutral expectation of the value of the call option at expiration.</p>
 <div class="w">
-
+<p>The expectation is 11.3469935.</p>
 </div>
 <p>ii) Report the simulation-based estimate of the standard deviation of the discounted riskneutral value of the call option at expiration.</p>
 <div class="w">
-
+<p>The standard deviation is 14.349522.</p>
 </div>
 <p>iii) Report the simulation-based <span class="math inline">\(90\%\)</span> confidence interval for the discounted risk-neutral expectation of the value of the call option at expiration.</p>
 <div class="w">
