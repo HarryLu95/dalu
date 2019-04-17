@@ -118,8 +118,8 @@ ul {font-size: 16px; color: black;}
     - [Note 6-1](CU/4060/LectureNote6-1.html): Plotting, Bar Chart, Graphical user interface (GUI), Linear regression plot, 3-D plotting with plotting modules
 7. [Lecture 7](CU/4060/Lec07.pdf)
 8. [Lecture 8](CU/4060/Lec08.pdf)
-    - [Note 8-1](CU/4060/LectureNote8-1.html) (pending)
-    - [Note 8-2](CU/4060/LectureNote8-2.html) (pending)
+    - [Note 8-1](CU/4060/LectureNote8-1.html)
+    - [Note 8-2](CU/4060/LectureNote8-2.html)
 9. [Lecture 9](CU/4060/Lec09.pdf)
     - [Note 9](CU/4060/Lec09.html)
 
