@@ -42,3 +42,5 @@ ul {font-size: 16px; color: black;}
 
 #Castlevania - Dawn of Sorrow
 ![](Castlevania - Dawn of Sorrow - Weapons.jpg)
+
+![](Castlevania - Dawn of Sorrow - Maps_1.jpg)
