@@ -257,8 +257,9 @@ ul {font-size: 16px; color: black;}
     - Due: Apr/9/2019, Tuesday
     - [HW7](CU/4630/HW7.html)
 8. [Homework 8](CU/4630/HW8.pdf)
-    - Due: Apr/16/2019, Tuesday
-    - [HW8](CU/4630/HW8.html) (pending)
+    - Due: Apr/18/2019, Thursday
+    - [HW8](CU/4630/HW8.html)
+9. [Homework 9](CU/4630/HW9.pdf) (pending)
 
 
 ##Exams
