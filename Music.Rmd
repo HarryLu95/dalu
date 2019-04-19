@@ -106,9 +106,11 @@ Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/), [kuroto2000](http://k
 - [UM - 英雄の詩](Music Sheets/英雄の詩.pdf) [<bdi>original</bdi>](http://kuroto2000.com/archives/924/)
 - [Piano Man](Music Sheets/Piano Man.pdf) [<bdi>original</bdi>](https://musescore.com/user/2136241/scores/4650781)
 - [Time to Say Goodbye](Music Sheets/Time to Say Goodbye.pdf) [<bdi>original</bdi>](https://www.scribd.com/doc/15247636/Con-Te-Partiro-Time-to-Say-Goodbye-Original)
-- [Castlevania - Wood Carving Partita (Piano)](Music Sheets/Castlevania - Wood Carving Partita (鋼琴).pdf) [<bdi>original</bdi>](https://musescore.com/user/28104096/scores/5010601)
-- [Castlevania - Wood Carving Partita (Piano & Flute)](Music Sheets/Castlevania - Wood Carving Partita (鋼琴+長笛).pdf) [<bdi>original</bdi>](https://musescore.com/user/22289956/scores/5029937)
-- [Castlevania - Wood Carving Partita (Guitar)](Music Sheets/Castlevania - Wood Carving Partita (吉他).pdf) [<bdi>original</bdi>](https://musescore.com/user/30397486/scores/5325224)
+- [Castlevania - Wood Carving Partita (Piano)](Music Sheets/Castlevania - Wood Carving Partita (Piano).pdf) [<bdi>original</bdi>](https://musescore.com/user/28104096/scores/5010601)
+- [Castlevania - Wood Carving Partita (Piano & Flute)](Music Sheets/Castlevania - Wood Carving Partita (Piano & Flute).pdf) [<bdi>original</bdi>](https://musescore.com/user/22289956/scores/5029937)
+- [Castlevania - Wood Carving Partita (Guitar)](Music Sheets/Castlevania - Wood Carving Partita (Guitar).pdf) [<bdi>original</bdi>](https://musescore.com/user/30397486/scores/5325224)
+- [Castlevania - Bloody Tears (Piano)](Music Sheets/Castlevania - Bloody Tears (Piano).pdf) [<bdi>original</bdi>](https://musescore.com/user/1441356/scores/3401896)
+- [Castevania Down of Sorrow - Gloomy Memories (Piano)](Music Sheets/Castevania Down of Sorrow - Gloomy Memories (Piano).pdf) [<bdi>original</bdi>](https://musescore.com/user/14097276/scores/4850036)
 
 - [](Music Sheets/.pdf) [<bdi>original</bdi>]()
 
