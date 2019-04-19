@@ -122,7 +122,8 @@ ul {font-size: 16px; color: black;}
     - [Note 8-2](CU/4060/LectureNote8-2.html)
 9. [Lecture 9](CU/4060/Lec09.pdf)
     - [Note 9](CU/4060/Lec09.html)
-
+10. [Lecture 10](CU/4060/Lec10.pdf)
+    - [Note 10]() (pending)
 
 ##Homeworks
 1. [Homework 1](CU/4060/HW1.pdf)
