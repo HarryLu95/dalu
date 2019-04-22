@@ -222,10 +222,11 @@ ul {font-size: 16px; color: black;}
     18. Tu: [Apr/9](CU/4630/Lec18.html) (pending revision)
     19. Th: [Apr/11](CU/4630/Lec19.html) (pending revision)
 - Week 13
-    20. Tu: [Apr/16](CU/4630/Lec20.html) (pending)
-    21. Th: [Apr/18](CU/4630/Lec21.html) (pending)
-
-
+    20. Tu: [Apr/16](CU/4630/Lec20.html) (pending revision)
+    21. Th: [Apr/18](CU/4630/Lec21.html) (pending revision)
+- Week 14
+    22. Tu: [Apr/23](CU/4630/Lec22.html) (pending)
+    23. Th: [Apr/25](CU/4630/Lec23.html) (pending)
 
 ##Homeworks
 1. [Homework 1](CU/4630/HW1.pdf)
