@@ -310,29 +310,26 @@ pre {color: blue;}
 .math.inline {font-size: 16px;}
 </style>
 <hr />
-<div class="w">
-
-</div>
 <div id="question-1" class="section level1">
 <h1>Question 1</h1>
 <p>[25 points]</p>
-<p>i) Suppose that the price of a stock is initially S0 = 120, with drift μ = 0.04 per year and volatility  = 0.3 per year. Consider a European call option with expiry in 1.25 years and strike price 125. Adapt the given programs to calculate the option prices along the binomial tree for the Black-Scholes model with n = 5 steps, where the interest rate is assumed to be r = 0.02 per year compounded continuously. Submit the output that shows the option prices. What is the price of the option at time t = 0? What is the value of the risk-neutral probability q?</p>
+<p>i) Suppose that the price of a stock is initially <span class="math inline">\(S_0=120\)</span>, with drift <span class="math inline">\(\mu=0.04\)</span> per year and volatility <span class="math inline">\(\sigma=0.3\)</span> per year. Consider a European call option with expiry in <span class="math inline">\(1.25\)</span> years and strike price <span class="math inline">\(125\)</span>. Adapt the given programs to calculate the option prices along the binomial tree for the Black-Scholes model with <span class="math inline">\(n=5\)</span> steps, where the interest rate is assumed to be <span class="math inline">\(r=0.02\)</span> per year compounded continuously. Submit the output that shows the option prices. What is the price of the option at time <span class="math inline">\(t=0\)</span>? What is the value of the risk-neutral probability <span class="math inline">\(q\)</span>?</p>
 <div class="w">
 
 </div>
-<p>ii) Repeat part i), but this time suppose that the drift of the stock price is μ = 0.1. Does the price of the option at time t = 0 change from the price in part i)? Does the value of q change from the value in part i)?</p>
+<p>ii) Repeat part i), but this time suppose that the drift of the stock price is <span class="math inline">\(\mu=0.1\)</span>. Does the price of the option at time <span class="math inline">\(t=0\)</span> change from the price in part i)? Does the value of <span class="math inline">\(q\)</span> change from the value in part i)?</p>
 <div class="w">
 
 </div>
-<p>iii) Repeat part i), but this time suppose that the option is an American call option. Does the price of the option at time t = 0 change from the price in part i)? Does the value of q change from the value in part i)?</p>
+<p>iii) Repeat part i), but this time suppose that the option is an American call option. Does the price of the option at time <span class="math inline">\(t=0\)</span> change from the price in part i)? Does the value of <span class="math inline">\(q\)</span> change from the value in part i)?</p>
 <div class="w">
 
 </div>
-<p>iv) Repeat part i), but this time suppose that the option is a European put option. Does the value of q change from the value in part i)?</p>
+<p>iv) Repeat part i), but this time suppose that the option is a European put option. Does the value of <span class="math inline">\(q\)</span> change from the value in part i)?</p>
 <div class="w">
 
 </div>
-<p>v) Repeat part i), but this time suppose that the option is an American put option. Does the price of the option at time t = 0 change from the price in part iv)? Does the price increase or decrease from the price in part iv)?</p>
+<p>v) Repeat part i), but this time suppose that the option is an American put option. Does the price of the option at time <span class="math inline">\(t=0\)</span> change from the price in part iv)? Does the price increase or decrease from the price in part iv)?</p>
 <div class="w">
 
 </div>
@@ -340,23 +337,23 @@ pre {color: blue;}
 <div id="question-2" class="section level1">
 <h1>Question 2</h1>
 <p>[25 points]</p>
-<p>i) Suppose that the price of a stock is initially S0 = 120, with drift μ = 0.04 per year and volatility  = 0.3 per year. Consider a European call option with expiry in 1.25 years and strike price 125. Adapt the given programs to calculate the option price at t = 0 for the Black-Scholes model with n = 25 steps, where the interest rate is assumed to be r = 0.02 per year compounded continuously. Submit the output from the appropriate program. What is the price of the option at time t = 0? What is the value given by the Black-Scholes formula? How does the price of the option compare to the value from the Black-Scholes formula? What is the value of the risk-neutral probability q?</p>
+<p>i) Suppose that the price of a stock is initially <span class="math inline">\(S_0=120\)</span>, with drift <span class="math inline">\(\mu=0.04\)</span> per year and volatility <span class="math inline">\(\sigma=0.3\)</span> per year. Consider a European call option with expiry in <span class="math inline">\(1.25\)</span> years and strike price <span class="math inline">\(125\)</span>. Adapt the given programs to calculate the option price at <span class="math inline">\(t=0\)</span> for the Black-Scholes model with <span class="math inline">\(n=25\)</span> steps, where the interest rate is assumed to be <span class="math inline">\(r=0.02\)</span> per year compounded continuously. Submit the output from the appropriate program. What is the price of the option at time <span class="math inline">\(t=0\)</span>? What is the value given by the Black-Scholes formula? How does the price of the option compare to the value from the Black-Scholes formula? What is the value of the risk-neutral probability <span class="math inline">\(q\)</span>?</p>
 <div class="w">
 
 </div>
-<p>ii) Repeat part i), but this time use n = 5000 steps.</p>
+<p>ii) Repeat part i), but this time use <span class="math inline">\(n=5000\)</span> steps.</p>
 <div class="w">
 
 </div>
-<p>iii) Repeat part i), but this time consider a European put option and use n = 5000.</p>
+<p>iii) Repeat part i), but this time consider a European put option and use <span class="math inline">\(n=5000\)</span>.</p>
 <div class="w">
 
 </div>
-<p>iv) Repeat part i), but this time consider an American put option and use n = 5000.</p>
+<p>iv) Repeat part i), but this time consider an American put option and use <span class="math inline">\(n=5000\)</span>.</p>
 <div class="w">
 
 </div>
-<p>v) Repeat part iv), but this time use n = 50000. Does the price derived by using n = 50000 differ from the price derived by using n = 10000? The purpose of this question is to show how simulation can be used to deduce the price of an American put option. Is using n = 50000 steps warranted, or does n = 10000 steps suffice for pricing the option?</p>
+<p>v) Repeat part iv), but this time use <span class="math inline">\(n=50000\)</span>. Does the price derived by using <span class="math inline">\(n=50000\)</span> differ from the price derived by using <span class="math inline">\(n=10000\)</span>? The purpose of this question is to show how simulation can be used to deduce the price of an American put option. Is using <span class="math inline">\(n=50000\)</span> steps warranted, or does <span class="math inline">\(n=10000\)</span> steps suffice for pricing the option?</p>
 <div class="w">
 
 </div>
@@ -364,48 +361,48 @@ pre {color: blue;}
 <div id="question-3" class="section level1">
 <h1>Question 3</h1>
 <p>[20 points]</p>
-<p>i) Suppose that the price of a stock is initially S0 = 120, with drift μ = 0.04 per year and volatility  = 0.3 per year. Consider an Asian call option with expiry in 1.25 years and strike price 125. Adapt the given programs to estimate by simulation the option price at t = 0 for the Black-Scholes model with n = 50 steps, where the interest rate is assumed to be r = 0.02 per year compounded continuously. Use a sample size 1000 and set the seed to 4630 for the simulation. Submit the output from the appropriate program. What is the estimate of the price of the option at time t = 0? Give a 95% confidence interval for the option price. Is the simulation size 1000 sufficiently large?</p>
+<p>i) Suppose that the price of a stock is initially <span class="math inline">\(S_0=120\)</span>, with drift <span class="math inline">\(\mu=0.04\)</span> per year and volatility <span class="math inline">\(\sigma=0.3\)</span> per year. Consider an Asian call option with expiry in <span class="math inline">\(1.25\)</span> years and strike price <span class="math inline">\(125\)</span>. Adapt the given programs to estimate by simulation the option price at <span class="math inline">\(t=0\)</span> for the Black-Scholes model with <span class="math inline">\(n=50\)</span> steps, where the interest rate is assumed to be <span class="math inline">\(r=0.02\)</span> per year compounded continuously. Use a sample size <span class="math inline">\(1000\)</span> and set the seed to <span class="math inline">\(4630\)</span> for the simulation. Submit the output from the appropriate program. What is the estimate of the price of the option at time <span class="math inline">\(t=0\)</span>? Give a <span class="math inline">\(95\%\)</span> confidence interval for the option price. Is the simulation size <span class="math inline">\(1000\)</span> sufficiently large?</p>
 <div class="w">
 
 </div>
-<p>ii) Repeat part i), but this time take the number of steps to be n = 10000.</p>
+<p>ii) Repeat part i), but this time take the number of steps to be <span class="math inline">\(n=10000\)</span>.</p>
 <div class="w">
 
 </div>
-<p>iii) Repeat part i), but, in addition to taking the number of steps to be n = 10000, take the sample size to be 500000.</p>
+<p>iii) Repeat part i), but, in addition to taking the number of steps to be <span class="math inline">\(n=10000\)</span>, take the sample size to be <span class="math inline">\(500000\)</span>.</p>
 <div class="w">
 
 </div>
-<p>iv) How large a sample size for the simulation would be required for the confidence interval to have width less than one cent, i.e., width less than 0.01?</p>
+<p>iv) How large a sample size for the simulation would be required for the confidence interval to have width less than one cent, i.e., width less than <span class="math inline">\(0.01\)</span>?</p>
 <div class="w">
 
 </div>
 </div>
 <div id="question-4" class="section level1">
 <h1>Question 4</h1>
-<p>[10 points] Suppose that the prices of zero-coupon bonds having par value 100 and 13- week, 26-week, 1-year, and 2-year maturities are 99.55, 98.98, 97.70, and 95.18, respectively. Adapt the given programs to find the 13-week, 26-week, 52-week and 2-year spot rates from these prices. Consider quarterly compounding. Submit the output from the appropriate program.</p>
+<p>[10 points] Suppose that the prices of zero-coupon bonds having par value <span class="math inline">\(100\)</span> and <span class="math inline">\(13\)</span>-week, <span class="math inline">\(26\)</span>-week, <span class="math inline">\(1\)</span>-year, and <span class="math inline">\(2\)</span>-year maturities are <span class="math inline">\(99.55\)</span>, <span class="math inline">\(98.98\)</span>, <span class="math inline">\(97.70\)</span>, and <span class="math inline">\(95.18\)</span>, respectively. Adapt the given programs to find the <span class="math inline">\(13\)</span>-week, <span class="math inline">\(26\)</span>-week, <span class="math inline">\(52\)</span>-week and <span class="math inline">\(2\)</span>-year spot rates from these prices. Consider quarterly compounding. Submit the output from the appropriate program.</p>
 <div class="w">
 
 </div>
-<p>i) What is the 2-year spot rate expressed as an annual rate?</p>
+<p>i) What is the <span class="math inline">\(2\)</span>-year spot rate expressed as an annual rate?</p>
 <div class="w">
 
 </div>
-<p>ii) What is the 1-year spot rate expressed as a quarterly rate?</p>
+<p>ii) What is the <span class="math inline">\(1\)</span>-year spot rate expressed as a quarterly rate?</p>
 <div class="w">
 
 </div>
 </div>
 <div id="question-5" class="section level1">
 <h1>Question 5</h1>
-<p>[10 points] Consider a coupon bond having maturity 1 year and par value 100, where the coupon payment 1.1 occurs quarterly. Suppose the quarterly spot rates over the life of the bond are y1 = 0.008, y2 = 0.009, y3 = 0.011, and y4 = 0.012. Adapt the given programs to find the present value of the bond. Submit the output from the appropriate program. What is the price of the bond?</p>
+<p>[10 points] Consider a coupon bond having maturity <span class="math inline">\(1\)</span> year and par value <span class="math inline">\(100\)</span>, where the coupon payment <span class="math inline">\(1.1\)</span> occurs quarterly. Suppose the quarterly spot rates over the life of the bond are <span class="math inline">\(y_1=0.008\)</span>, <span class="math inline">\(y_2=0.009\)</span>, <span class="math inline">\(y_3=0.011\)</span>, and <span class="math inline">\(y_4=0.012\)</span>. Adapt the given programs to find the present value of the bond. Submit the output from the appropriate program. What is the price of the bond?</p>
 <div class="w">
 
 </div>
 </div>
 <div id="question-6" class="section level1">
 <h1>Question 6</h1>
-<p>[10 points] Consider a coupon bond having maturity 1 year and par value 100, where the coupon payment 1.1 occurs quarterly. Suppose the price of the bond is 101. Adapt the given programs to find the yield to maturity of the bond. Submit the output from the appropriate program. What is the yield to maturity expressed as a quarterly rate? What is the yield to maturity expressed as an annual rate?</p>
+<p>[10 points] Consider a coupon bond having maturity <span class="math inline">\(1\)</span> year and par value <span class="math inline">\(100\)</span>, where the coupon payment <span class="math inline">\(1.1\)</span> occurs quarterly. Suppose the price of the bond is <span class="math inline">\(101\)</span>. Adapt the given programs to find the yield to maturity of the bond. Submit the output from the appropriate program. What is the yield to maturity expressed as a quarterly rate? What is the yield to maturity expressed as an annual rate?</p>
 <div class="w">
 
 </div>
