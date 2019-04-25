@@ -150,7 +150,9 @@ ul {font-size: 16px; color: black;}
     - Data: [iris](CU/4060/iris.txt) (.txt)
     - [Summary](CU/4060/STSCI 4060 - HW 5.html)
     - [Solutions](CU/4060/HW5_S.7z) (.7z) (pending)
-
+6. [Homework 6](CU/4060/HW6.pdf)
+    - Due: Apr/29/2019 at 11:59PM
+    - [Summary]() (pending)
 
 ##Data Files
 - [points_scatplot1](CU/4060/points_scatplot1.txt) (.txt)
