@@ -73,6 +73,14 @@ ul {font-size: 16px; color: black;}
     - Data: [stock](CU/5065/stock.zip) (.zip)
     - [Summary](CU/5065/HW3_Summary.html)
     - [Solutions](CU/5065/HW3_Solutions.pdf)
+4. [Homework 4](CU/5065/HW4.pdf)
+    - Due: May/3/2019 at 11:59PM
+    - Data: [NYSE_daily_prices](CU/5065/NYSE_daily_prices.csv) (.csv)
+    - Data: [NYSE_dividends](CU/5065/NYSE_dividends.csv) (.csv)
+    - Data: [flight12](CU/5065/flight12.csv) (.csv)
+    - [Summary]() (pending)
+
+
 
 ##Quizzes
 1. [Quiz 1 with solutions](CU/5065/Quiz1_S.pdf)
