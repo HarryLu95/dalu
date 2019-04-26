@@ -132,6 +132,8 @@ ul {font-size: 16px; color: black;}
     - [Note 9](CU/4060/Lec09.html): Creating Dynamic Web Pages with Python
 10. [Lecture 10](CU/4060/Lec10.pdf)
     - [Note 10](CU/4060/Lec10.html): Integrate Python with Oracle DB
+11. [Lecture 11](CU/4060/Lec11.pdf)
+    - [Note 11]() (pending)
 
 ##Homeworks
 1. [Homework 1](CU/4060/HW1.pdf)
