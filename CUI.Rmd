@@ -245,6 +245,9 @@ ul {font-size: 16px; color: black;}
 - Week 14
     22. Tu: [Apr/23](CU/4630/Lec22.html) (pending)
     23. Th: [Apr/25](CU/4630/Lec23.html) (pending)
+- Week 15
+    24. Tu: [Apr/30](CU/4630/Lec24.html) (pending)
+    25. Th: [May/2](CU/4630/Lec25.html) (pending)
 
 ##Homeworks
 1. [Homework 1](CU/4630/HW1.pdf)
