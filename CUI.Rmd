@@ -48,12 +48,12 @@ ul {font-size: 16px; color: black;}
     - [Lecture 12 Note](CU/5065/Summary12.html)
 13. [Introduction to Apache Pig 1](CU/5065/Lec13.pdf)
     - [Lecture 13 Note](CU/5065/Summary13.html)
-14. [Introduction to Apache Pig 2](CU/5065/Lec14.pdf)
+14. [Introduction to Apache Pig 2](CU/5065/Lec14.pdf): Pig Latin - Advanced Topics
     - [Lecture 14 Note](CU/5065/Summary14.html)
-15. [Introduction to Apache Pig 3](CU/5065/Lec15.pdf)
-    - [Lecture 15 Note](CU/5065/Summary15.html) (pending)
-16. [Introduction to Apache Pig 4](CU/5065/Lec16.pdf)
-    - [Lecture 16 Note](CU/5065/Summary16.html) (pending)
+15. [Introduction to Apache Pig 3](CU/5065/Lec15.pdf): Pig Functions
+    - [Lecture 15 Note](CU/5065/Summary15.html)
+16. [Introduction to Apache Pig 4](CU/5065/Lec16.pdf): Pig Case Study - Baseball Data Analysis
+    - [Lecture 16 Note](CU/5065/Summary16.html)
 17. [Install and Configure Ipython Notebook with Apache Spark in HDP](CU/5065/Lec17.pdf)
     - [Lecture 17 Note](CU/5065/Summary17.html) (pending)
 18. [Introduction to Apache Spark](CU/5065/Lec18.pdf)
