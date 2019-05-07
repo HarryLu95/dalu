@@ -6,14 +6,10 @@ def show(input_tuple):
     max_index = 0
     min_index = 0
     for i in range(len(input_tuple)):
-        if input_tuple[i] != max_value:
-            i = i + 1
-        else:
+        if input_tuple[i] == max_value:
             max_index = i
     for i in range(len(input_tuple)):
-        if input_tuple[i] != min_value:
-            i = i + 1
-        else:
+        if input_tuple[i] == min_value:
             min_index = i
     highest_average_delay = internal_tuple[max_index]
     lowest_average_delay = internal_tuple[min_index]
