@@ -1,4 +1,4 @@
-@outputSchema("output_string:string")
+@outputSchema("output_string:chararray")
 def show(input_tuple):
     internal_tuple = ("CARRIER_DELAY","WEATHER_DELAY","NAS_DELAY","SECURITY_DELAY","LATE_AIRCRAFT_DELAY")
     max_value = max(input_tuple)
