@@ -182,6 +182,11 @@ ul {font-size: 16px; color: black;}
 3. [Quiz 3 with solutions](CU/4060/Quiz3_S.pdf)
 4. [Quiz 4 with solutions](CU/4060/Quiz4_S.pdf)
 
+##Final Project
+- Due: May/14/2019 at 11:59PM
+- [Final Project](CU/4060/Final_Project.pdf)
+- [Data](CU/4060/honeybee_gene_sequences.txt) (.txt)
+
 ##Books and References
 - [Hands-on Python](CU/4060/Books and References/Hands-on Python.pdf)
 - [Python Tutorial](CU/4060/Books and References/Python Tutorial.pdf)
