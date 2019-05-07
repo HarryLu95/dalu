@@ -84,7 +84,8 @@ ul {font-size: 16px; color: black;}
     - Data: [NYSE_daily_prices](CU/5065/NYSE_daily_prices.csv) (.csv)
     - Data: [NYSE_dividends](CU/5065/NYSE_dividends.csv) (.csv)
     - Data: [flight12](CU/5065/flight12.csv) (.csv)
-    - [Summary](CU/5065/HW4_Summary.html) (pending)
+    - [Summary](CU/5065/HW4_Summary.html)
+        - [Python UDF for 2-E](CU/5065/delay_udf.py) (.py)
 
 
 
