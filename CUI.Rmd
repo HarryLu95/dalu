@@ -87,13 +87,16 @@ ul {font-size: 16px; color: black;}
     - [Summary](CU/5065/HW4_Summary.html)
         - [Python UDF for 2-E](CU/5065/delay_udf.py) (.py)
 
-
-
 ##Quizzes
 1. [Quiz 1 with solutions](CU/5065/Quiz1_S.pdf)
 2. [Quiz 2 with solutions](CU/5065/Quiz2_S.pdf)
 3. [Quiz 3 with solutions](CU/5065/Quiz3_S.pdf)
 4. [Quiz 4 with solutions](CU/5065/Quiz4_S.pdf)
+
+##Final Project
+- Due: May/13/2019 at 11:59PM
+- [Final Project](CU/5065/Final_Project.pdf)
+- Data: [flightDelays](CU/5065/flightDelays.tar.gz) (.gz)
 
 ##Data Files
 - [1901-1](CU/5065/1901-1) (.File)
@@ -185,7 +188,7 @@ ul {font-size: 16px; color: black;}
 ##Final Project
 - Due: May/14/2019 at 11:59PM
 - [Final Project](CU/4060/Final_Project.pdf)
-- [Data](CU/4060/honeybee_gene_sequences.txt) (.txt)
+- Data: [honeybee_gene_sequences](CU/4060/honeybee_gene_sequences.txt) (.txt)
 
 ##Books and References
 - [Hands-on Python](CU/4060/Books and References/Hands-on Python.pdf)
