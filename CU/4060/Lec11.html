@@ -505,7 +505,7 @@ def processInput(theFile):
         freq_Y = seq.count(&quot;Y&quot;)/float(seqLength)
         freq_V = seq.count(&quot;V&quot;)/float(seqLength)
         
-        cur.execute('''insert into beeProteins (gi, sequence, freq_A, freq_R, freq_N, freq_D, freq_C, freq_Q, freq_E, freq_G, freq_H, freq_I, freq_L, freq_K, freq_M, freq_F, freq_P, freq_S, freq_T, freq_W, freq_Y, freq_V) values(:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16, :v17, :v18, :v19, :v20, :v21, :v22)''', (g1, seq, freq_A, freq_R, freq_N, freq_D, freq_C, freq_Q, freq_E, freq_G, freq_H, freq_I, freq_L, freq_K, freq_M, freq_F, freq_P, freq_S, freq_T, freq_W, freq_Y, freq_V))
+        cur.execute('''insert into beeProteins (gi, sequence, freq_A, freq_R, freq_N, freq_D, freq_C, freq_Q, freq_E, freq_G, freq_H, freq_I, freq_L, freq_K, freq_M, freq_F, freq_P, freq_S, freq_T, freq_W, freq_Y, freq_V) values(:v1, :v2, :v3, :v4, :v5, :v6, :v7, :v8, :v9, :v10, :v11, :v12, :v13, :v14, :v15, :v16, :v17, :v18, :v19, :v20, :v21, :v22)''', (gi, seq, freq_A, freq_R, freq_N, freq_D, freq_C, freq_Q, freq_E, freq_G, freq_H, freq_I, freq_L, freq_K, freq_M, freq_F, freq_P, freq_S, freq_T, freq_W, freq_Y, freq_V))
     
     con.commit()
     
