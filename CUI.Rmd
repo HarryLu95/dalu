@@ -252,11 +252,13 @@ ul {font-size: 16px; color: black;}
     20. Tu: [Apr/16](CU/4630/Lec20.html) (pending revision)
     21. Th: [Apr/18](CU/4630/Lec21.html) (pending revision)
 - Week 14
-    22. Tu: [Apr/23](CU/4630/Lec22.html) (pending)
-    23. Th: [Apr/25](CU/4630/Lec23.html) (pending)
+    22. Tu: [Apr/23](CU/4630/Lec22.html) (pending revision)
+    23. Th: [Apr/25](CU/4630/Lec23.html) (pending revision)
 - Week 15
-    24. Tu: [Apr/30](CU/4630/Lec24.html) (pending)
-    25. Th: [May/2](CU/4630/Lec25.html) (pending)
+    24. Tu: [Apr/30](CU/4630/Lec24.html) (pending revision)
+    25. Th: [May/2](CU/4630/Lec25.html) (pending revision)
+- Week 16
+    26. Tu: [May/7](CU/4630/Lec26.html) (pending)
 
 ##Homeworks
 1. [Homework 1](CU/4630/HW1.pdf)
