@@ -248,6 +248,67 @@ r_1&amp;=y_T\\
 r_T&amp;=T\cdot y_T-(T-1)\cdot y_{T-1}
 \end{align}\]</span></p>
 <p>So far, piece-wise constant forward rates <span class="math inline">\(r_1,r_2,\cdots,r_n\)</span></p>
+<p><span class="math display">\[\frac{100}{e^{r_1+\cdots+r_T}}=100\times e^{-r_T}\times\cdots\times e^{-r_1}\]</span></p>
+<p>Consider a piece-wise continuous forward rate function <span class="math inline">\(r_{(t)},0\leq t\leq n\)</span>. <span class="math inline">\(\$100\)</span> payment at year <span class="math inline">\(T\)</span> is presently worth <span class="math inline">\(100\times e^{-\int^T_0r_{(t)}dt}\)</span>.</p>
+<p>From above case,</p>
+<p><span class="math display">\[e^{-\int^T_0r_{(t)}dt}=e^{-(r_1+\cdots+r_T)}\]</span></p>
+<p>Introduce the discount function,</p>
+<p><span class="math display">\[D_{(T)}=e^{-\int^T_0r_{(t)}dt}\]</span></p>
+<p>Present value of a zero-coupon bond having par value <span class="math inline">\(P\)</span> and maturity <span class="math inline">\(T\)</span> years is:</p>
+<p><span class="math display">\[\begin{align}
+P_{(T)}
+&amp;=P\times D_{(T)}\\
+&amp;=\frac{P}{e^{\int^T_0r_{(t)}dt}}
+\end{align}\]</span></p>
+<p>Spot rate <span class="math inline">\(y_T\)</span> is the yield to maturity <span class="math inline">\(y_T\)</span> of a zero-coupon bond of par value <span class="math inline">\(P\)</span> and maturity <span class="math inline">\(T\)</span> years.</p>
+<p><span class="math display">\[\begin{align}
+P_{(T)}&amp;=\frac{P}{e^{T\cdot y_T}}\\
+y_T&amp;=\frac{r_1+\cdots+r_T}{T}\\
+&amp;\Rightarrow\\
+y_T&amp;=\frac{1}{T}\int^T_0r_{(t)}dt
+\end{align}\]</span></p>
+<hr />
+<p><strong>How to get the forward rate function <span class="math inline">\(r_{(t)}\)</span></strong></p>
+<p>Consider <span class="math inline">\(n\)</span> zero-coupon bonds, bond <span class="math inline">\(i\)</span> has par value <span class="math inline">\(P_i\)</span>, maturity <span class="math inline">\(T_i\)</span> and price <span class="math inline">\(V_i\)</span>. Assume a functional form for the forward rate function <span class="math inline">\(r_{(t)}\)</span>. Say this functional form depends on a parameter <span class="math inline">\(\theta=(\theta_1,\cdots,\theta_k)\)</span>, write the forward rate function as <span class="math inline">\(r_{(t,\theta)}\)</span>.</p>
+<p>The spot rates are:</p>
+<p><span class="math display">\[y_{(T,\theta)}=\frac{1}{T}\int^T_0r_{(t,\theta)}dt\]</span></p>
+<p>Present value of the <span class="math inline">\(i\)</span>-th bond is:</p>
+<p><span class="math display">\[\begin{align}
+{V_i}_{(\theta)}
+&amp;=\frac{P_i}{e^{T_i\cdot y_{(T_i,\theta)}}}\\
+&amp;=P_i\times e^{-T_i\cdot y_{(T_i,\theta)}}
+\end{align}\]</span></p>
+<p>Choose <span class="math inline">\(\theta\)</span> to be <span class="math inline">\(\hat\theta\)</span>, which is the value of <span class="math inline">\(\theta\)</span> that makes <span class="math inline">\({V_i}_{(\theta)}\)</span> close to <span class="math inline">\(V_i\)</span> for <span class="math inline">\(i=1,2,\cdots,n\)</span>.</p>
+<p>Least squares: choose <span class="math inline">\(\hat\theta\)</span> to minimize <span class="math inline">\(\sum_{i=1}^{n}\left(V_i-{V_i}_{(\theta)}\right)^2\)</span></p>
+<hr />
+<p><strong>How to choose <span class="math inline">\(r_{(t,\theta)}\)</span>?</strong></p>
+<p>Quadratic polynomial: <span class="math inline">\(r_{(t,\theta)}=\theta_0+\theta_1t+\theta_2t^2\)</span>, <span class="math inline">\(\theta=(\theta_0,\theta_1,\theta_2)\)</span></p>
+<p>Cubic polynomial: <span class="math inline">\(r_{(t,\theta)}=\theta_0+\theta_1t+\theta_2t^2+\theta_3t^3\)</span>, <span class="math inline">\(\theta=(\theta_0,\theta_1,\theta_2,\theta_3)\)</span></p>
+<p>Quadratic spline:</p>
+<p><span class="math display">\[\begin{align}
+r_{(t,\theta)}
+&amp;=\theta_0+\theta_1t+\theta_2t^2+\theta_3[(t-t_0)_+]^2\\
+&amp;=
+  \left\{\begin{array}{l}
+  \theta_0+\theta_1t+\theta_2t^2 &amp; ,t\leq t_0\\
+  \theta_0+\theta_3t_0^2+(\theta_1-2\theta_3t_0)t+(\theta_2+\theta_3)t^2 &amp; ,t\geq t_0
+  \end{array}\right.
+\end{align}\]</span></p>
+<p><span class="math inline">\(t_0\)</span>: the “knot”</p>
+<p><span class="math display">\[y_{(T,\theta)}=\theta_0+\theta_1\cdot\frac{T}{2}+\theta_2\cdot\frac{T^2}{3}+\theta_3\cdot\frac{(T-t_0)^3}{3T}\]</span></p>
+<hr />
+<p><strong>Nelso-siegel Model</strong></p>
+<p><span class="math display">\[\begin{align}
+r_{(t,\theta)}
+&amp;=\theta_1+(\theta_2+\theta_3t)e^{-\theta_4t}\\
+y_{(t,\theta)}
+&amp;=\theta_1+\left(\theta_2+\frac{\theta_3}{\theta_4}\right)\left(\frac{1-e^{-\theta_4T}}{\theta_4T}\right)-\frac{\theta_3}{\theta_4}e^{-\theta_4T}
+\end{align}\]</span></p>
+<hr />
+<p><strong>Value at Risk</strong></p>
+<p>Consider a time horizon <span class="math inline">\(T\)</span></p>
+<p>Define <span class="math inline">\(V_{(\alpha,T)}\)</span> as follows:</p>
+<p>Idea: you are <span class="math inline">\(100(1-\alpha)\%\)</span> certain that the loss over the time horizon <span class="math inline">\(T\)</span> is <span class="math inline">\(\leq V_{(\alpha,T)}\)</span>. Only a <span class="math inline">\(100\alpha\%\)</span> chance that the loss exceeds <span class="math inline">\(V_{(\alpha,T)}\)</span>.</p>
 <hr />
 <p>Thanks to <em>Zhenjie Shen</em> for help with the notes.</p>
 
