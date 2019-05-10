@@ -209,6 +209,85 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 
 </style>
 <hr />
+<p><strong>ARCH Model</strong></p>
+<ul>
+<li><span class="math inline">\(\{\epsilon_t\}\)</span>: <span class="math inline">\(\epsilon_t\)</span>’s are i.i.d. and <span class="math inline">\(N(0,1)\)</span></li>
+<li><span class="math inline">\(\{a_t\}\)</span>: <span class="math inline">\(a_t=\sigma_t\epsilon_t\)</span>, <span class="math inline">\(\sigma_t=\sqrt{\alpha_0+\alpha_1a_{t-1}^2}\)</span>, <span class="math inline">\(\alpha_0,\alpha_1\geq0\)</span></li>
+</ul>
+<hr />
+<p><strong>Examine the conditional mean and variance of <span class="math inline">\(\{a_t\}\)</span></strong></p>
+<p>Showed</p>
+<p><span class="math display">\[\text{E}(a_t|a_{t-1},\cdots)=0\]</span></p>
+<p>Now</p>
+<p><span class="math display">\[\begin{align}
+\text{Var}(a_t|a_{t-1},\cdots)
+&amp;=\text{E}(a_t^2|a_{t-1},\cdots)\\
+&amp;=\text{E}(\sigma_t^2\epsilon_t^2|a_{t-1},\cdots)\\
+&amp;=\sigma_t^2\cdot\text{E}(\epsilon_t^2|a_{t-1},\cdots)\\
+&amp;=\sigma_t^2\cdot\text{E}(\epsilon_t^2)\\
+&amp;=\alpha_0+\alpha_1a_{t-1}^2
+\end{align}\]</span></p>
+<p>Given <span class="math inline">\(\cdots,a_{t-2},a_{t-1}\)</span>, then <span class="math inline">\(a_t=\sigma_t\cdot\epsilon_t\sim N\left(0,\alpha_0+\alpha_1a_{t-1}^2\right)\)</span></p>
+<hr />
+<p><strong>Unconditional Mean and Variance of <span class="math inline">\(\{a_t\}\)</span></strong></p>
+<p>Mean:</p>
+<p><span class="math display">\[\begin{align}
+\text{E}(a_t)
+&amp;=\text{E}(\text{E}(a_t|a_{t-1},\cdots))\\
+&amp;=\text{E}(0)\\
+&amp;=0
+\end{align}\]</span></p>
+<p>Also recall <span class="math inline">\(\epsilon_t\)</span> is independent of <span class="math inline">\(a_{t-1},a_{t-2},\cdots\)</span></p>
+<p><span class="math display">\[\begin{align}
+\text{E}(a_t)
+&amp;=\text{E}(\sigma_t\cdot\epsilon_t)\\
+&amp;=\text{E}(\sigma_t)\cdot\text{E}(\epsilon_t)\\
+&amp;=\text{E}(\sigma_t)\cdot0\\
+&amp;=0
+\end{align}\]</span></p>
+<p>Variance:</p>
+<p><span class="math display">\[\begin{align}
+\text{Var}(a_t)
+&amp;=\text{E}(\text{Var}(a_t|a_{t-1},\cdots))+\text{Var}(\text{E}(a_t|a_{t-1},\cdots))\\
+&amp;=\text{E}\left(\alpha_0+\alpha_1a_{t-1}^2\right)+\text{Var}(0)\\
+&amp;=\text{E}\left(\alpha_0+\alpha_1a_{t-1}^2\right)\\
+&amp;=\alpha_0+\alpha_1\cdot\text{E}\left(a_{t-1}^2\right)\\
+&amp;=\alpha_0+\alpha_1\cdot\left(\text{Var}(a_{t-1})+\text{E}^2(a_{t-1})\right)\\
+&amp;=\alpha_0+\alpha_1\cdot\left(\text{Var}(a_{t-1})+0^2\right)\\
+&amp;=\alpha_0+\alpha_1\cdot\text{Var}(a_{t-1})
+\end{align}\]</span></p>
+<p>Let <span class="math inline">\(\gamma(0)=\text{Var}(a_t)\)</span>, then <span class="math inline">\(\gamma(0)=\alpha_0+\alpha_1\cdot\gamma(0)\)</span>. So <span class="math inline">\(\gamma(0)=\cfrac{\alpha_0}{1-\alpha_1}\)</span> must have <span class="math inline">\(\alpha_1&lt;1\)</span>.</p>
+<p>Also,</p>
+<p><span class="math display">\[\begin{align}
+\text{Var}(a_t)
+&amp;=\text{E}\left(a_t^2\right)+\text{E}^2(a_t)\\
+&amp;=\text{E}\left(a_t^2\right)+0\\
+&amp;=\text{E}\left(\epsilon_t^2\cdot\left(\alpha_0+\alpha_1a_{t-1}^2\right)\right)\\
+&amp;=\text{E}\left(\epsilon_t^2\right)\cdot\text{E}\left(\alpha_0+\alpha_1a_{t-1}^2\right)\\
+&amp;=1\cdot\left(\alpha_0+\alpha_1\cdot\text{E}\left(a_{t-1}^2\right)\right)\\
+&amp;=\alpha_0+\alpha_1\cdot\text{Var}(a_{t-1})
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align}
+\text{Cov}(a_t,a_{t+h})
+&amp;=\text{E}(a_t\cdot a_{t+h})-\text{E}(a_t)\cdot\text{E}(a_{t+h})\\
+&amp;=\text{E}(a_t\cdot a_{t+h})\\
+&amp;=0
+\end{align}\]</span></p>
+<p>Unconditionally, <span class="math inline">\(a_t=\sigma_t\cdot\epsilon_t=\sqrt{\alpha_0+\alpha_1a_{t-1}^2}\cdot\epsilon_t\)</span> is not normally distributed.</p>
+<hr />
+<p>So far we considered the ARCH(1) model</p>
+<p>ARCH(p):</p>
+<p><span class="math display">\[\begin{align}
+a_t
+&amp;=\epsilon_t\cdot\sqrt{\alpha_0+\alpha_1a_{t-1}^2+\cdots+\alpha_pa_{t-p}^2}\\
+&amp;=\epsilon_t\cdot\sigma_t
+\end{align}\]</span></p>
+<p>GARCH(p, q):</p>
+<p><span class="math display">\[\begin{align}
+a_t
+&amp;=\epsilon_t\cdot\sqrt{\alpha_0+\alpha_1a_{t-1}^2+\cdots+\alpha_pa_{t-p}^2}\\
+&amp;\quad+\beta_1\sigma_{t_1}^2+\cdots+\beta_q\sigma_{t_q}^2
+\end{align}\]</span></p>
 <hr />
 <p>Thanks to <em>Zhenjie Shen</em> for help with the notes.</p>
 
