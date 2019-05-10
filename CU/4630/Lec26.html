@@ -285,8 +285,7 @@ a_t
 <p>GARCH(p, q):</p>
 <p><span class="math display">\[\begin{align}
 a_t
-&amp;=\epsilon_t\cdot\sqrt{\alpha_0+\alpha_1a_{t-1}^2+\cdots+\alpha_pa_{t-p}^2}\\
-&amp;\quad+\beta_1\sigma_{t_1}^2+\cdots+\beta_q\sigma_{t_q}^2
+&amp;=\epsilon_t\cdot\sqrt{\alpha_0+\alpha_1a_{t-1}^2+\cdots+\alpha_pa_{t-p}^2+\beta_1\sigma_{t-1}^2+\cdots+\beta_q\sigma_{t-q}^2}
 \end{align}\]</span></p>
 <hr />
 <p>Thanks to <em>Zhenjie Shen</em> for help with the notes.</p>
