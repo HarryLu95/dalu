@@ -563,7 +563,7 @@ def processInput(): # This function extracts data from a Oracle table.
     fList = [() for t in range(20)]
     for i in range(20):
         myDict = {&quot;aa&quot;:aaList[i]}
-        obj = cur.execute('''select qi, freq_%(aa)s from beeproteins, (select max(freq_%(aa)s) as max%(aa)s from beeproteins) where freq_%(aa)s = max%(aa)s''' % myDict)
+        obj = cur.execute('''select gi, freq_%(aa)s from beeproteins, (select max(freq_%(aa)s) as max%(aa)s from beeproteins) where freq_%(aa)s = max%(aa)s''' % myDict)
         for x in obj:
             fList[i] = x
     
