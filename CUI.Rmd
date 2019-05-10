@@ -265,38 +265,53 @@ ul {font-size: 16px; color: black;}
     - data: [returns](CU/4630/returns.csv) (.csv)
     - Due: Feb/5/2019, Tuesday
     - [HW1](CU/4630/HW1.html)
+    - [HW1 Solutions](CU/4630/HW1_S.pdf)
 2. [Homework 2](CU/4630/HW2.pdf)
     - data: [returns](CU/4630/returns.csv) (.csv)
     - Due: Feb/12/2019, Tuesday
     - [HW2](CU/4630/HW2.html)
+    - [HW2 Solutions](CU/4630/HW2_S.pdf)
 3. [Homework 3](CU/4630/HW3.pdf)
     - data: [returns](CU/4630/returns.csv) (.csv)
     - Due: Feb/19/2019, Tuesday
     - [HW3](CU/4630/HW3.html)
+    - [HW3 Solutions](CU/4630/HW3_S.pdf)
 4. [Homework 4](CU/4630/HW4.pdf)
     - data: [returns](CU/4630/returns.csv) (.csv)
     - data: [prices](CU/4630/prices.csv) (.csv)
     - Due: Feb/28/2019, Thursday
     - [HW4](CU/4630/HW4.html)
+    - [HW4 Solutions](CU/4630/HW4_S.pdf)
 5. [Homework 5](CU/4630/HW5.pdf)
     - data: [returns](CU/4630/returns.csv) (.csv)
     - Due: Mar/12/2019, Tuesday
     - [HW5](CU/4630/HW5.html)
+    - [HW5 Solutions](CU/4630/HW5_S.pdf)
 6. [Homework 6](CU/4630/HW6.pdf)
     - data: [returns](CU/4630/returns.csv) (.csv)
     - data: [3m_treasury_bill_rate](CU/4630/3m_treasury_bill_rate.csv) (.csv)
     - Due: Mar/19/2019, Tuesday
     - [HW6](CU/4630/HW6.html)
+    - [HW6 Solutions](CU/4630/HW6_S.pdf)
 7. [Homework 7](CU/4630/HW7.pdf)
     - Due: Apr/9/2019, Tuesday
     - [HW7](CU/4630/HW7.html)
+    - [HW7 Solutions](CU/4630/HW7_S.pdf)
 8. [Homework 8](CU/4630/HW8.pdf)
     - Due: Apr/18/2019, Thursday
     - [HW8](CU/4630/HW8.html)
+    - [HW8 Solutions](CU/4630/HW8_S.pdf)
 9. [Homework 9](CU/4630/HW9.pdf)
     - Due: Apr/25/2019, Thursday
-    - [HW9](CU/4630/HW9.html) (pending)
-
+    - [HW9](CU/4630/HW9.html)
+    - [HW9 Solutions](CU/4630/HW9_S.pdf)
+10. [Homework 10](CU/4630/HW10.pdf)
+    - data: [zero_coupon](CU/4630/zero_coupon.csv) (.csv)
+    - data: [strips_dec95](CU/4630/strips_dec95.csv) (.csv)
+    - data: [returns](CU/4630/returns.csv) (.csv)
+    - Due: Not to be submitted
+    - [HW10](CU/4630/HW10.html) (pending)
+    - [HW10 Solutions](CU/4630/HW10_S.pdf)
 
 ##Exams
 - [Midterm 1 Solution](CU/4630/Midterm1_S.pdf)
