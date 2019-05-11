@@ -218,17 +218,19 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p>Suppose node <span class="math inline">\(j\)</span> splits into nodes <span class="math inline">\(2j\)</span> and <span class="math inline">\(2j+1\)</span>:</p>
 <ul>
 <li><span class="math inline">\(s_j\)</span> is the stock price at node <span class="math inline">\(j\)</span></li>
-<li><span class="math inline">\(f(j)\)</span> is the value of the option at node <span class="math inline">\(j\)</span></li>
+<li><span class="math inline">\(f_{(j)}\)</span> is the value of the option at node <span class="math inline">\(j\)</span></li>
 </ul>
-<p><span class="math inline">\(f(j)=\frac{1}{1+r}[q_jf(2j+1)+(1-q_j)f(2j)]\)</span>, where <span class="math inline">\(q_j=\frac{(1+r)s_j-s_{2j}}{s_{2j+1}-s_{2j}}\)</span></p>
+<p><span class="math display">\[f_{(j)}=\frac{1}{1+r}\left[q_j\cdot f_{(2j+1)}+(1-q_j)\cdot f_{(2j)}\right]\]</span></p>
+<p>where</p>
+<p><span class="math display">\[q_j=\frac{(1+r)s_j-s_{2j}}{s_{2j+1}-s_{2j}}\]</span></p>
 <hr />
 <p><strong>Relationship with the previous approach</strong></p>
-<p>Hedge Ratio at node <span class="math inline">\(j\)</span> is <span class="math inline">\(\delta_j=\frac{f(2j_1)-f(2j)}{s_{2j+1}-s_{2j}}\)</span></p>
-<p>Synthetic portfolio: buy <span class="math inline">\(\delta_j\)</span> share at price <span class="math inline">\(s_j\)</span> per share (<span class="math inline">\(\delta_js_j\)</span>), borrow <span class="math inline">\(\frac{\delta_js_{2j}-f(2j)}{1+r}\)</span> at the current time</p>
+<p>Hedge Ratio at node <span class="math inline">\(j\)</span> is <span class="math inline">\(\delta_j=\frac{f_{(2j+1)}-f_{(2j)}}{s_{2j+1}-s_{2j}}\)</span></p>
+<p>Synthetic portfolio: buy <span class="math inline">\(\delta_j\)</span> share at price <span class="math inline">\(s_j\)</span> per share (<span class="math inline">\(\delta_j\cdot s_j\)</span>), borrow <span class="math inline">\(\frac{\delta_j\cdot s_{2j}-f_{(2j)}}{1+r}\)</span> at the current time</p>
 <p><span class="math display">\[\begin{align}
-f(j)
-&amp;=\delta_js_j-\frac{\delta_js_{2j}-f(2j)}{1+r}\\
-&amp;=\frac{1}{1+r}[q_jf(2j+1)+(1-q_j)f(2j)]
+f_{(j)}
+&amp;=\delta_j\cdot s_j-\frac{\delta_j\cdot s_{2j}-f_{(2j)}}{1+r}\\
+&amp;=\frac{1}{1+r}\left[q_j\cdot f_{(2j+1)}+(1-q_j)\cdot f_{(2j)}\right]
 \end{align}\]</span></p>
 <p><span class="math inline">\(q_j\)</span> is called the “risk-neutral” probability</p>
 <hr />
@@ -244,16 +246,16 @@ f(j)
 <p><span class="math display">\[80\rightarrow\left\{\begin{array}{l}95&amp;,0.4\rightarrow\left\{\begin{array}{l}115&amp;,0.2\\90&amp;,0.8\end{array}\right.\\70&amp;,0.6\rightarrow\left\{\begin{array}{l}85&amp;,0.4\\60&amp;,0.6\end{array}\right.\end{array}\right.\]</span></p>
 <blockquote>
 <p>Option (<span class="math inline">\(K=80\)</span>)</p>
-<p><span class="math display">\[f(1)\rightarrow\left\{\begin{array}{l}f(3)\rightarrow\left\{\begin{array}{l}35\\10\end{array}\right.\\f(2)\rightarrow\left\{\begin{array}{l}5\\0\end{array}\right.\end{array}\right.\]</span></p>
+<p><span class="math display">\[f_{(1)}\rightarrow\left\{\begin{array}{l}f_{(3)}\rightarrow\left\{\begin{array}{l}35\\10\end{array}\right.\\f_{(2)}\rightarrow\left\{\begin{array}{l}5\\0\end{array}\right.\end{array}\right.\]</span></p>
 </blockquote>
-<p><span class="math inline">\(f(3)=0.2\times35+0.8\times10=15\)</span></p>
-<p><span class="math inline">\(f(2)=0.4\times5+0.6\times0=2\)</span></p>
-<p><span class="math inline">\(f(1)=14\times0.4+2\times0.6=7.2\)</span></p>
+<p><span class="math inline">\(f_{(3)}=0.2\times35+0.8\times10=15\)</span></p>
+<p><span class="math inline">\(f_{(2)}=0.4\times5+0.6\times0=2\)</span></p>
+<p><span class="math inline">\(f_{(1)}=14\times0.4+2\times0.6=7.2\)</span></p>
 <hr />
 <p><strong>Put Option</strong></p>
-<p>Give the holder the right to sell the stock at a given strike price</p>
+<p>Give the holder the right to sell the stock at a given strike price.</p>
 <p>Value is <span class="math inline">\((K-s)_+\)</span></p>
-<p>Ex:</p>
+<p><strong>Example:</strong></p>
 <p>STOCK</p>
 <p><span class="math display">\[100\rightarrow\left\{\begin{array}{c}115\\90\end{array}\right.\]</span></p>
 <p>PUT OPTION (<span class="math inline">\(K=105\)</span>)</p>
@@ -266,14 +268,14 @@ f(j)
 <p>If <span class="math inline">\(r=0\)</span>, the option price is <span class="math inline">\(-60+69=9\)</span></p>
 <p><span class="math display">\[q=\frac{(1+r)s_1-s_2}{s_3-s_2}=\frac{(1+r)100-90}{115-90}\]</span></p>
 <p>The expected value at expiration is <span class="math inline">\(\frac{q\times0+(1-q)\times15}{1+r}=\frac{69}{1+r}-60\)</span></p>
-<p>Ex:</p>
+<p><strong>Example:</strong></p>
 <p>Stock</p>
 <p><span class="math display">\[80\rightarrow\left\{\begin{array}{l}95&amp;,0.4\rightarrow\left\{\begin{array}{l}115&amp;,0.2\\90&amp;,0.8\end{array}\right.\\70&amp;,0.6\rightarrow\left\{\begin{array}{l}85&amp;,0.4\\60&amp;,0.6\end{array}\right.\end{array}\right.\]</span></p>
 <p>Put Option (<span class="math inline">\(K=95\)</span>)</p>
-<p><span class="math display">\[f(1)\rightarrow\left\{\begin{array}{l}f(3)\rightarrow\left\{\begin{array}{l}0\\5\end{array}\right.\\f(2)\rightarrow\left\{\begin{array}{l}10\\35\end{array}\right.\end{array}\right.\]</span></p>
-<p><span class="math inline">\(f(3)=0\times0.2+5\times0.8=4\)</span></p>
-<p><span class="math inline">\(f(2)=10\times0.4+35\times0.6=25\)</span></p>
-<p><span class="math inline">\(f(1)=4\times0.4+25\times0.6=16.6\)</span></p>
+<p><span class="math display">\[f_{(1)}\rightarrow\left\{\begin{array}{l}f_{(3)}\rightarrow\left\{\begin{array}{l}0\\5\end{array}\right.\\f_{(2)}\rightarrow\left\{\begin{array}{l}10\\35\end{array}\right.\end{array}\right.\]</span></p>
+<p><span class="math inline">\(f_{(3)}=0\times0.2+5\times0.8=4\)</span></p>
+<p><span class="math inline">\(f_{(2)}=10\times0.4+35\times0.6=25\)</span></p>
+<p><span class="math inline">\(f_{(1)}=4\times0.4+25\times0.6=16.6\)</span></p>
 <hr />
 <p>Thanks to <em>Zhenjie Shen</em> for help with the notes.</p>
 

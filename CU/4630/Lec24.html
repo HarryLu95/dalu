@@ -213,7 +213,7 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 <p><strong><span class="math inline">\(\text{VaR}(\alpha)\)</span> and <span class="math inline">\(\text{ES}(\alpha)\)</span></strong></p>
 <p>Non-parametric/parametric estimation</p>
 <p>Assume <span class="math inline">\(\text{Ret}\)</span> has some density <span class="math inline">\(f(\cdot|\theta)\)</span> depending on <span class="math inline">\(\theta=(\theta_1,\cdots,\theta_k)\)</span></p>
-<p><span class="math inline">\(\text{Ret}\)</span> has df <span class="math inline">\(F(\cdot|\theta)\)</span></p>
+<p><span class="math inline">\(\text{Ret}\)</span> has cdf <span class="math inline">\(F(\cdot|\theta)\)</span></p>
 <ul>
 <li><span class="math inline">\(\text{VaR}(\alpha)=-S\times F^{-1}(\alpha|\theta)\)</span></li>
 <li><span class="math inline">\(\text{ES}(\alpha)=-\frac{S}{\alpha}\times\int_0^\alpha F^{-1}(u|\theta)du\)</span></li>
@@ -253,12 +253,12 @@ F^{-1}(\alpha|\mu,\sigma^2)
 <hr />
 <p><strong>How does the bootstrap work?</strong></p>
 <p>Suppose an observed random variable <span class="math inline">\(X\)</span> has cdf <span class="math inline">\(F\)</span>. Let <span class="math inline">\(\phi=t(F)\)</span> be a parameter depending on <span class="math inline">\(F\)</span>. Suppose we have i.i.d. data <span class="math inline">\(X_1,\cdots,X_n\)</span>. Suppose we have some estimate <span class="math inline">\(\hat\phi=\hat\phi(X_1,\cdots,X_n)\)</span> of <span class="math inline">\(\phi\)</span> based on data. Goal: to derive an approximate <span class="math inline">\(100(1-\alpha)\%\)</span> <span class="math inline">\(\text{CI}\)</span> for <span class="math inline">\(\phi\)</span> (say <span class="math inline">\(95\%\)</span>)</p>
-<p>First, we use the data to estimate F: call the estimate <span class="math inline">\(\hat F\)</span>. This estimation depends on whether we are treating the problem parametrically.</p>
+<p>First, we use the data to estimate <span class="math inline">\(F\)</span>: call the estimate <span class="math inline">\(\hat F\)</span>. This estimation depends on whether we are treating the problem parametrically.</p>
 <p><strong>Example (parametric):</strong></p>
-<p>Suppose <span class="math inline">\(X\)</span> has <span class="math inline">\(N(\mu,\sigma^2)\)</span> where <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> are unknown. Given data, we estimate <span class="math inline">\((\mu,\sigma^2)\)</span> by <span class="math inline">\((\bar{X},X^2)\)</span> where</p>
+<p>Suppose <span class="math inline">\(X\)</span> has <span class="math inline">\(N(\mu,\sigma^2)\)</span> where <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> are unknown. Given data, we estimate <span class="math inline">\((\mu,\sigma^2)\)</span> by <span class="math inline">\((\bar{X},S^2)\)</span> where</p>
 <p><span class="math display">\[\begin{align}
 \bar{X}&amp;=\frac{1}{n}\sum_{i=1}^{n}X_i\\
-X^2&amp;=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X})^2
+S^2&amp;=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X})^2
 \end{align}\]</span></p>
 <p>We estimate the distribution of <span class="math inline">\(X\)</span> by <span class="math inline">\(N(\bar{X},S^2)\)</span>.</p>
 <p><strong>Example (non-parametric):</strong></p>

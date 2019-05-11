@@ -211,23 +211,24 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 <hr />
 <p><strong>Black-Scholes Formula</strong></p>
 <p>Consider time interval <span class="math inline">\([0,1]\)</span>, divide the interval into <span class="math inline">\(n\)</span> sub-intervals, each of length <span class="math inline">\(\frac{1}{n}\)</span>.</p>
-<p><span class="math display">\[s_j\rightarrow\left\{\begin{array}{l}s_{2j+1}=s_j\cdot e^{\frac{\mu}{n}+\frac{\sigma}{\sqrt{n}}}&amp;,P=\frac{1}{2}\\s_{2j}=s_j\cdot e^{\frac{\mu}{n}-\frac{\sigma}{\sqrt{n}}}&amp;,P=\frac{1}{2}\end{array}\right.\]</span></p>
+<p><span class="math display">\[s_j\rightarrow\left\{\begin{array}{l}s_{2j+1}=s_j\cdot e^{\frac{\mu}{n}+\frac{\sigma}{\sqrt{n}}}&amp;,p=\frac{1}{2}\\s_{2j}=s_j\cdot e^{\frac{\mu}{n}-\frac{\sigma}{\sqrt{n}}}&amp;,p=\frac{1}{2}\end{array}\right.\]</span></p>
 <p>where <span class="math inline">\(\mu\)</span> is the drift per unit time, <span class="math inline">\(\sigma\)</span> is the volatility per unit time.</p>
+<hr />
 <p><strong>Risk-neutral probabilities</strong></p>
 <p>Assume <span class="math inline">\(r\)</span> is the risk-free rate per unit time.</p>
 <p>If <span class="math inline">\(n\)</span> is large, then <span class="math inline">\(e^{\frac{r}{n}}\approx1+\frac{r}{n}\)</span>, so assume continuous compounding over the interval.</p>
 <p><span class="math display">\[q\approx\frac{1}{2}\left(1-\frac{\mu-r+\frac{\sigma^2}{2}}{\sigma\sqrt{n}}\right)\]</span></p>
 <p>Consider time <span class="math inline">\(t\)</span>, where <span class="math inline">\(t=\frac{m}{n}\)</span>, <span class="math inline">\(m&lt;n\)</span></p>
 <p><span class="math display">\[\begin{align}
-P_t
-&amp;=P_{\frac{m}{n}}\\
-&amp;=P_0\cdot\prod_{j=1}^{m}e^{\frac{\mu}{n}+\frac{\sigma}{\sqrt{n}}(2w_j-1)}
+\textbf{P}_t
+&amp;=\textbf{P}_{\frac{m}{n}}\\
+&amp;=\textbf{P}_0\cdot\prod_{j=1}^{m}e^{\frac{\mu}{n}+\frac{\sigma}{\sqrt{n}}(2w_j-1)}
 \end{align}\]</span></p>
-<p>where <span class="math inline">\(w_j=\left\{\begin{array}{l}1&amp;,P=q\\0&amp;,P=1-q\end{array}\right.\)</span>, so <span class="math inline">\(2w_j-1\)</span> is either <span class="math inline">\(1\)</span> or <span class="math inline">\(-1\)</span>. Then</p>
+<p>where <span class="math inline">\(w_j=\left\{\begin{array}{l}1&amp;,p=q\\0&amp;,p=1-q\end{array}\right.\)</span>, so <span class="math inline">\(2w_j-1\)</span> is either <span class="math inline">\(1\)</span> or <span class="math inline">\(-1\)</span>. Then</p>
 <p><span class="math display">\[\begin{align}
-P_{\frac{m}{n}}
-&amp;=P_0\cdot e^{\mu\frac{m}{n}+\frac{\sigma}{\sqrt{n}}\sum_{j=1}^{m}(2w_j-1)}\\
-&amp;=P_0\cdot e^{\mu\frac{m}{n}+\frac{\sigma}{\sqrt{n}}[2(w_1+\cdots+w_m)-m]}
+\textbf{P}_{\frac{m}{n}}
+&amp;=\textbf{P}_0\cdot e^{\mu\frac{m}{n}+\frac{\sigma}{\sqrt{n}}\sum_{j=1}^{m}(2w_j-1)}\\
+&amp;=\textbf{P}_0\cdot e^{\mu\frac{m}{n}+\frac{\sigma}{\sqrt{n}}[2(w_1+\cdots+w_m)-m]}
 \end{align}\]</span></p>
 <p><span class="math display">\[\begin{align}
 \text{E}(w_j)&amp;=q\\
@@ -242,7 +243,7 @@ P_{\frac{m}{n}}
 &amp;=\frac{\sigma^2}{n}4mq(1-q)\\
 &amp;=\sigma^2t
 \end{align}\]</span></p>
-<p><span class="math display">\[\left\{\begin{array}{l}q=\frac{1}{2}+\frac{\textbf{C}}{\sqrt{n}}\\1-q=\frac{1}{2}-\frac{\textbf{C}}{\sqrt{n}}\end{array}\right.\Rightarrow q(1-q)=\frac{1}{4}-\frac{\textbf{C}^2}{n}\]</span></p>
+<p><span class="math display">\[\left\{\begin{array}{l}q=\frac{1}{2}+\frac{c}{\sqrt{n}}\\1-q=\frac{1}{2}-\frac{c}{\sqrt{n}}\end{array}\right.\Rightarrow q(1-q)=\frac{1}{4}-\frac{c^2}{n}\approx\frac{1}{4}\]</span></p>
 <p>Let <span class="math inline">\(n\rightarrow\infty\)</span>, hold <span class="math inline">\(t=\frac{m}{n}\)</span> constant, so <span class="math inline">\(m\rightarrow\infty\)</span> as well.</p>
 <p><span class="math display">\[\frac{\sigma}{\sqrt{n}}[2(\underbrace{w_1+\cdots+w_m}_{\sim\text{Bi}(m,q)})-m]-t\left(r-\mu-\frac{\sigma^2}{2}\right)\rightarrow N(0,\sigma^2t)\]</span></p>
 <p>As a process, this converges to <span class="math inline">\(\sigma\cdot B_t\)</span>, where <span class="math inline">\(B_t\)</span> is standard Brownian Motion.</p>
@@ -256,19 +257,19 @@ P_{\frac{m}{n}}
 </ol>
 <p>Standard Brownian Motion has <span class="math inline">\(\sigma^2=1\)</span>, so</p>
 <p><span class="math display">\[\mu t+\frac{\sigma}{\sqrt{n}}[2(w_1+\cdots+w_m)-m]\rightarrow\left(r-\frac{\sigma^2}{2}\right)t+\sigma B_t\]</span></p>
-<p><span class="math display">\[P_t=P_0\cdot e^{\left(r-\frac{\sigma^2}{2}\right)t+\sigma B_t}\]</span></p>
+<p><span class="math display">\[\textbf{P}_t=\textbf{P}_0\cdot e^{\left(r-\frac{\sigma^2}{2}\right)t+\sigma B_t}\]</span></p>
 <p>Consider the price of an option having strike price <span class="math inline">\(K\)</span> and expiration time <span class="math inline">\(T\)</span>.</p>
 <p>Value at expiry is</p>
-<p><span class="math display">\[(P_t-K)_+=\left[P_0\cdot e^{\left(r-\frac{\sigma^2}{2}\right)T+\sigma B_T}-K\right]_+\]</span></p>
+<p><span class="math display">\[(\textbf{P}_t-K)_+=\left[\textbf{P}_0\cdot e^{\left(r-\frac{\sigma^2}{2}\right)T+\sigma B_T}-K\right]_+\]</span></p>
 <p>The expected value of the option is</p>
-<p><span class="math display">\[\text{EV}=\int_{-\infty}^{\infty}\left[P_0\cdot e^{\left(r-\frac{\sigma^2}{2}\right)T+\sigma\sqrt{T}z}-K\right]_+\phi(z)dz\quad\text{where }\phi(z)=\frac{1}{\sqrt{2\pi}e^{-\frac{z^2}{2}}}\]</span></p>
+<p><span class="math display">\[\text{EV}=\int_{-\infty}^{\infty}\left[\textbf{P}_0\cdot e^{\left(r-\frac{\sigma^2}{2}\right)T+\sigma\sqrt{T}z}-K\right]_+\phi(z)dz\quad\text{where }\phi(z)=\frac{1}{\sqrt{2\pi}e^{-\frac{z^2}{2}}}\]</span></p>
 <p>The price of the option, the discounted value is</p>
 <p><span class="math display">\[\begin{align}
 \textbf{C}
 &amp;=e^{-rt}\cdot\text{EV}\\
-&amp;=\int_{-\infty}^{\infty}\left[P_0\cdot e^{-\frac{\sigma^2T}{2}+\sigma\sqrt{T}z}-K\cdot e^{-rt}\right]_+\phi(z)dz
+&amp;=\int_{-\infty}^{\infty}\left[\textbf{P}_0\cdot e^{-\frac{\sigma^2T}{2}+\sigma\sqrt{T}z}-K\cdot e^{-rt}\right]_+\phi(z)dz
 \end{align}\]</span></p>
-<p>By using calculus, with <span class="math inline">\(P_0=S_0\)</span>, we have</p>
+<p>By using calculus, with <span class="math inline">\(\textbf{P}_0=S_0\)</span>, we have</p>
 <p><span class="math display">\[\left\{\begin{align}
 \textbf{C}&amp;=\Phi(d_1)S_0-\Phi(d_2)Ke^{-rT}\quad\text{where }\Phi(z)=\int_{-\infty}^{z}\frac{1}{\sqrt{2\pi}}e^{-\frac{u^2}{2}}du\\
 d_1&amp;=\frac{\ln\left(\frac{S_0}{K}\right)+\left(r+\frac{\sigma^2}{2}\right)T}{\sigma\sqrt{T}}\\

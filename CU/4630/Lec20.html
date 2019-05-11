@@ -211,7 +211,6 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 </style>
 <hr />
 <p><strong>Chapter 9: Fixed Income Securities (Bonds)</strong></p>
-<hr />
 <p><strong>Zero-coupon bonds - discount bonds</strong></p>
 <p>A par-value is paid to the holder at maturity</p>
 <p>Suppose a discount bond pays <span class="math inline">\(\$100\)</span> in <span class="math inline">\(30\)</span> years and the annual interest rate is <span class="math inline">\(3\%\)</span></p>
@@ -223,8 +222,10 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 <hr />
 <p>Consider the effect of changes in interest rates:</p>
 <p>Suppose <span class="math inline">\(3\%\)</span> rate hold when we buy the bond, so we pay <span class="math inline">\(\$41.20\)</span>.</p>
-<p>Suppose in <span class="math inline">\(2\)</span> years, the interest rate goes up to <span class="math inline">\(4\%\)</span> compounded annually, the value of bond in <span class="math inline">\(2\)</span> years is <span class="math inline">\(\frac{100}{(1+0.04)^{28}}\approx33.35\)</span>. In the <span class="math inline">\(2\)</span> years, the return on the bond is <span class="math inline">\(\frac{33.35-41.20}{41.20}\approx-19.06\%\)</span>.</p>
-<p>Suppose in <span class="math inline">\(2\)</span> years, the interest rate changes to <span class="math inline">\(2\%\)</span> compounded annually, the value of the bond is <span class="math inline">\(\frac{100}{(1+0.02)^28}\approx57.44\)</span>. The two-year return is <span class="math inline">\(\frac{57.44-41.20}{41.20}\approx39.42\%\)</span>.</p>
+<ul>
+<li>Suppose in <span class="math inline">\(2\)</span> years, the interest rate goes up to <span class="math inline">\(4\%\)</span> compounded annually, the value of bond in <span class="math inline">\(2\)</span> years is <span class="math inline">\(\frac{100}{(1+0.04)^{28}}\approx33.35\)</span>. In the <span class="math inline">\(2\)</span> years, the return on the bond is <span class="math inline">\(\frac{33.35-41.20}{41.20}\approx-19.06\%\)</span>.</li>
+<li>Suppose in <span class="math inline">\(2\)</span> years, the interest rate changes to <span class="math inline">\(2\%\)</span> compounded annually, the value of the bond is <span class="math inline">\(\frac{100}{(1+0.02)^{28}}\approx57.44\)</span>. The two-year return is <span class="math inline">\(\frac{57.44-41.20}{41.20}\approx39.42\%\)</span>.</li>
+</ul>
 <hr />
 <p><strong>Coupon Bonds</strong></p>
 <p>Maturity of <span class="math inline">\(T\)</span> years, pays a coupon <span class="math inline">\(C\)</span> at regular intervals, say <span class="math inline">\(m\)</span> times per year. The par value of the bond is paid at maturity. What is the present (discounted) value of the bond?</p>
@@ -236,7 +237,8 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 &amp;=\cdots\\
 &amp;=\frac{C}{r}+\left(P-\frac{C}{r}\right)(1+r)^{-mT}
 \end{align}\]</span></p>
-<p>Example: Suppose <span class="math inline">\(T=30\)</span> years, par value <span class="math inline">\(P=\$100\)</span>, coupon <span class="math inline">\(e=\$1\)</span> paid quarterly (<span class="math inline">\(m=4\)</span>), annual rate is <span class="math inline">\(4\%\)</span> compounded quarterly.</p>
+<p><strong>Example:</strong></p>
+<p>Suppose <span class="math inline">\(T=30\)</span> years, par value <span class="math inline">\(P=\$100\)</span>, coupon <span class="math inline">\(e=\$1\)</span> paid quarterly (<span class="math inline">\(m=4\)</span>), annual rate is <span class="math inline">\(4\%\)</span> compounded quarterly.</p>
 <p><span class="math display">\[mr=4m=0.04\quad\Rightarrow\quad r=0.01\]</span></p>
 <p><span class="math display">\[\text{PV}=\frac{1}{0.01}+\left(100-\frac{1}{0.01}\right)(1+0.01)^{-120}=100\]</span></p>
 <ul>
@@ -246,7 +248,8 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 <hr />
 <p><strong>Bond Concepts</strong></p>
 <p>The <strong>coupon rate</strong> is <span class="math inline">\(\frac{C}{P}\)</span> per interval (or <span class="math inline">\(\frac{mC}{P}\)</span> per year compounded per interval).</p>
-<p>Suppose <span class="math inline">\(r=\frac{C}{P}\)</span>, then the present value is <span class="math inline">\(\frac{C}{C/P}+\left(P-\frac{C}{C/P}\right)\cdot\left(1+\frac{C}{P}\right)^{-mT}=P\)</span></p>
+<p>Suppose <span class="math inline">\(r=\frac{C}{P}\)</span>, then the present value is</p>
+<p><span class="math display">\[\frac{C}{C/P}+\left(P-\frac{C}{C/P}\right)\cdot\left(1+\frac{C}{P}\right)^{-mT}=P\]</span></p>
 <p>Suppose the present value (current price) of the bond is <span class="math inline">\(V\)</span>. Typically, <span class="math inline">\(V\neq P\)</span>. The <strong>current yield</strong> is <span class="math inline">\(\frac{C}{V}\)</span> per interval (or <span class="math inline">\(\frac{mC}{V}\)</span> per year compounded per interval).</p>
 <p>The <strong>yield to maturity</strong> is the rate <span class="math inline">\(r\)</span> such that the present value calculation gives the current price:</p>
 <p><span class="math display">\[\text{solve}\quad\frac{C}{r}+\left(P-\frac{C}{r}\right)(1+r)^{-mT}=V\quad\text{for}\quad r\]</span></p>

@@ -211,7 +211,7 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 </style>
 <hr />
 <p><strong>Coupon Bonds and zero-coupon bonds</strong></p>
-<p>Interested in <strong>yield to maturity</strong>: yield to maturity is of zero-coupon bonds give <strong>spot rates</strong>:</p>
+<p>Interested in <strong>yield to maturity</strong>: yield to maturity is of zero-coupon bonds give <strong>spot rates</strong>.</p>
 <p>zero-coupon bond: maturity <span class="math inline">\(n\)</span> years, par value <span class="math inline">\(P\)</span>, current price <span class="math inline">\(V\)</span>.</p>
 <p><span class="math inline">\(n\)</span> years spot rate <span class="math inline">\(y_n\)</span> is given by:</p>
 <p><span class="math display">\[\frac{P}{(1+y_n)^n}=V\]</span></p>
@@ -219,8 +219,10 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 <p>Suppose the maturity is in <span class="math inline">\(T\)</span> years, interest is compounded <span class="math inline">\(m\)</span> times per year. Then,</p>
 <p><span class="math display">\[\frac{P}{(1+y_T)^{mT}}=V\]</span></p>
 <p>where <span class="math inline">\(y_T\)</span> is the per period spot rate, <span class="math inline">\(m\cdot y_T\)</span> is the annual rate, and the interest compounded <span class="math inline">\(m\)</span> times per year.</p>
+<hr />
 <p>Once we have spot rates, we can value (price) coupon bonds:</p>
-<p>e.g.: Let <span class="math inline">\(T=1\)</span>, <span class="math inline">\(m=2\)</span>, <span class="math inline">\(P=100\)</span>, <span class="math inline">\(C=4\)</span>. Suppose the half-year spot rate is <span class="math inline">\(4\%\)</span> (annual rate), so in the half-year period, the rate is <span class="math inline">\(2\%\)</span>. Suppose the one-year spot rate is <span class="math inline">\(6\%\)</span> (annual rate), so in the one-year period, the rate is still <span class="math inline">\(6\%\)</span>. Then, the price of the coupon bond is:</p>
+<p><strong>Example:</strong></p>
+<p>Let <span class="math inline">\(T=1\)</span>, <span class="math inline">\(m=2\)</span>, <span class="math inline">\(P=100\)</span>, <span class="math inline">\(C=4\)</span>. Suppose the half-year spot rate is <span class="math inline">\(4\%\)</span> (annual rate), so in the half-year period, the rate is <span class="math inline">\(2\%\)</span>. Suppose the one-year spot rate is <span class="math inline">\(6\%\)</span> (annual rate), so in the one-year period, the rate is still <span class="math inline">\(6\%\)</span>. Then, the price of the coupon bond is:</p>
 <p><span class="math display">\[\frac{4}{1+\frac{0.04}{2}}+\frac{4}{1+0.06}+\frac{100}{1+0.06}\approx102.0348\]</span></p>
 <p>The yield to maturity of the coupon bond is:</p>
 <p><span class="math display">\[\frac{4}{1+y}+\frac{4}{(1+y)^2}+\frac{100}{(1+y)^2}=102.0348\]</span></p>

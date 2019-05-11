@@ -214,14 +214,14 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p><strong>General Formulation</strong></p>
 <p>STOCK:</p>
 <p><span class="math display">\[s_1\rightarrow\left\{\begin{array}{cl}s_3&amp;p\\s_2&amp;1-p\end{array}\right.\]</span></p>
-<p>OPTION (Strike Price <span class="math inline">\(K\)</span>, <span class="math inline">\(s_2&lt;K&lt;s_3\)</span>)</p>
+<p>OPTION (Strike Price <span class="math inline">\(K\)</span>, <span class="math inline">\(s_2&lt;K&lt;s_3\)</span>):</p>
 <p><span class="math display">\[?\rightarrow\left\{\begin{array}{l}(s_3-K)_+=s_3-K\\(s_2-K)_+=0\end{array}\right.\]</span></p>
 <p>Hedge Ratio <span class="math inline">\(\delta=\frac{s_3-K}{s_3-s_2}\)</span></p>
-<p>Have <span class="math inline">\(\delta\)</span> stock in the synthetic portfolio</p>
-<p><span class="math display">\[\delta s_1\rightarrow\left\{\begin{array}{l}\delta s_3=\frac{(s_3-K)s_3}{s_3-s_2}\\\delta s_2=\frac{(s_3-K)s_2}{s_3-s_2}\end{array}\right.\quad\text{where}\quad\left\{\begin{array}{l}\delta s_3-\delta s_2=s_3-K\\\delta s_2-\delta s_2=0\end{array}\right.\]</span></p>
-<p>Borrow an amount of money that is <span class="math inline">\(\delta s_2=\frac{(s_3-K)s_2}{s_3-s_2}\)</span> at expiration</p>
-<p>Suppose the risk-free rate over the period is <span class="math inline">\(r\)</span>, the borrowed money is worth <span class="math inline">\(\frac{\delta s_2}{1+r}\)</span> now</p>
-<p>The price of the option is <span class="math inline">\(\delta s_1-\frac{\delta s_2}{1+r}=\frac{s_3-K}{s_3-s_2}\left(s_1-\frac{s_2}{1+r}\right)\)</span></p>
+<p>Have <span class="math inline">\(\delta\)</span> stock in the synthetic portfolio (<span class="math inline">\(\delta\)</span> STOCK):</p>
+<p><span class="math display">\[\delta\cdot s_1\rightarrow\left\{\begin{array}{l}\delta\cdot s_3=\frac{(s_3-K)s_3}{s_3-s_2}\\\delta\cdot s_2=\frac{(s_3-K)s_2}{s_3-s_2}\end{array}\right.\quad\text{where}\quad\left\{\begin{array}{l}\delta\cdot s_3-\delta\cdot s_2=s_3-K\\\delta\cdot s_2-\delta\cdot s_2=0\end{array}\right.\]</span></p>
+<p>Borrow an amount of money that is <span class="math inline">\(\delta\cdot s_2=\frac{(s_3-K)s_2}{s_3-s_2}\)</span> at expiration</p>
+<p>Suppose the risk-free rate over the period is <span class="math inline">\(r\)</span>, the borrowed money is worth <span class="math inline">\(\frac{\delta\cdot s_2}{1+r}\)</span> now</p>
+<p>The price of the option is <span class="math inline">\(\delta\cdot\left(s_1-\frac{s_2}{1+r}\right)=\left(\frac{s_3-K}{s_3-s_2}\right)\cdot\left(s_1-\frac{s_2}{1+r}\right)\)</span></p>
 <hr />
 <p><strong>Binomial Model: “two-step version”</strong></p>
 <p>Assume risk-free rate is 0 over the period</p>
@@ -274,7 +274,7 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p><span class="math display">\[s_1\rightarrow\left\{\begin{array}{cl}s_3&amp;,q\\s_2&amp;,1-q\end{array}\right.\]</span></p>
 <p>OPTION:</p>
 <p><span class="math display">\[?\rightarrow\left\{\begin{array}{l}s_3-K&amp;,q\\0&amp;,1-q\end{array}\right.\]</span></p>
-<p>The expected value of the option at expiratoin is</p>
+<p>The expected value of the option at expiration is</p>
 <p><span class="math display">\[q(s_3-K)+(1-q)0=q(s_3-K)\]</span></p>
 <p>and the current value is</p>
 <p><span class="math display">\[\frac{q(s_3-K)}{1+r}\]</span></p>
@@ -291,7 +291,7 @@ img {display: block; margin-bottom: 0px; margin-left: auto; margin-right: auto; 
 <p>Now:</p>
 <p><span class="math display">\[q=\frac{1.07\times100-90}{115-90}=0.68\]</span></p>
 <ul>
-<li>Expected value of the option at expiratoin is <span class="math inline">\(q(s_3-K)=0.68(115-105)=6.8\)</span></li>
+<li>Expected value of the option at expiration is <span class="math inline">\(q(s_3-K)=0.68(115-105)=6.8\)</span></li>
 <li>The current value is <span class="math inline">\(\frac{6.8}{1.07}=6.36\)</span></li>
 </ul>
 <hr />

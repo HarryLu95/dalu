@@ -210,11 +210,11 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 
 </style>
 <hr />
-<p>Connection between the price of a European call option and a European put option</p>
+<p><strong>Connection between the price of a European call option and a European put option</strong></p>
 <p>Binomial Tree with <span class="math inline">\(T\)</span> periods</p>
-<p>Let <span class="math inline">\(P\)</span> be the price of the put, <span class="math inline">\(C\)</span> be the price of the call</p>
+<p>Let <span class="math inline">\(\textbf{P}\)</span> be the price of the put, <span class="math inline">\(\textbf{C}\)</span> be the price of the call</p>
 <p>Assume risk-free rate is <span class="math inline">\(r\)</span> per period</p>
-<p>Claim: <span class="math inline">\(P=C+(1+r)^{-T}K-S_0\)</span>, where <span class="math inline">\(S_0\)</span> is the initial price of the stock, and <span class="math inline">\(K\)</span> is the strike price of the call and put option</p>
+<p>Claim: <span class="math inline">\(\textbf{P}=\textbf{C}+(1+r)^{-T}K-S_0\)</span>, where <span class="math inline">\(S_0\)</span> is the initial price of the stock, and <span class="math inline">\(K\)</span> is the strike price of the call and put option</p>
 <p>Consider two portfolios</p>
 <ol style="list-style-type: decimal">
 <li>hold the call and <span class="math inline">\((1+r)^{-T}K\)</span> of the risk-free asset, value at expiry (i.e. in <span class="math inline">\(T\)</span> periods) is:</li>
@@ -232,11 +232,11 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 
 </div>
 <p>In the above graph, there are <span class="math inline">\(n\)</span> sub-intervals, and each of them has length <span class="math inline">\(\frac{T}{n}\)</span></p>
-<p><span class="math display">\[\textbf{C}+(1+r\cdot\frac{T}{n})^{-n}K-S_0=\textbf{P}\]</span></p>
+<p><span class="math display">\[\textbf{C}+\left(1+r\cdot\frac{T}{n}\right)^{-n}K-S_0=\textbf{P}\]</span></p>
 <p><span class="math display">\[n\rightarrow\infty,\quad\textbf{C}+e^{-rT}K-S_0=\textbf{P}\]</span></p>
 <hr />
 <p><strong>American v.s. European Call Option</strong></p>
-<p>Early exercise of an American call option is <strong>never</strong> optimal. At any time before the expiration date, the price of the option is at least as great as the amount obtained by exerciseing the option. So American calls have the same price as Eutopean calls having the same strike price and expiration date.</p>
+<p>Early exercise of an American call option is <strong>never</strong> optimal. At any time before the expiration date, the price of the option is at least as great as the amount obtained by exercising the option. So American calls have the same price as European calls having the same strike price and expiration date.</p>
 <p>But <strong>NOT</strong> for puts!</p>
 <hr />
 <p><strong>Example: 2-period Binomial Tree Model</strong></p>
