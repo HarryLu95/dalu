@@ -323,7 +323,7 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 <div class="w">
 <pre class="shell"><code>[root@sandbox ~]# hadoop fs -mkdir /final_project</code></pre>
 <pre class="shell"><code>[root@sandbox ~]# hadoop fs -mkdir /final_project/data</code></pre>
-<p><a href="01_1.png">01_1</a></p>
+<p><a href="01_1.PNG">01_1</a></p>
 </div>
 </div>
 <div id="problem-2" class="section level1">
@@ -356,7 +356,7 @@ total 764M
 -rw-r--r-- 1 1276589696 11103514 70M Apr  3  2015 flightDelays_7.csv
 -rw-r--r-- 1 1276589696 11103514 68M Apr  3  2015 flightDelays_8.csv
 -rw-r--r-- 1 1276589696 11103514 61M Apr  3  2015 flightDelays_9.csv</code></pre>
-<p><a href="02_1.png">02_1</a></p>
+<p><a href="02_1.PNG">02_1</a></p>
 </div>
 </div>
 <div id="problem-3" class="section level1">
@@ -365,10 +365,10 @@ total 764M
 <div class="w">
 <p><strong>Method 1:</strong></p>
 <pre class="shell"><code>[root@sandbox FP]# hadoop fs -copyFromLocal flig*  /final_project/data</code></pre>
-<p><a href="03_1.png">03_1</a> Using <code>-copyFromLocal</code> to copy all the files start with “flig” from local directory to the <code>/final_project/data</code> directory.</p>
+<p><a href="03_1.PNG">03_1</a> Using <code>-copyFromLocal</code> to copy all the files start with “flig” from local directory to the <code>/final_project/data</code> directory.</p>
 <p><strong>Method 2:</strong></p>
 <pre class="shell"><code>[root@sandbox FP]# hadoop fs -put flig*  /final_project/data</code></pre>
-<p><a href="03_2.png">03_2</a> Using <code>-put</code> to copy all the files start with “flig” from local directory to the <code>/final_project/data</code> directory.</p>
+<p><a href="03_2.PNG">03_2</a> Using <code>-put</code> to copy all the files start with “flig” from local directory to the <code>/final_project/data</code> directory.</p>
 <p><strong>Method 3:</strong></p>
 <p><font color="red"><strong>???</strong></font></p>
 </div>
