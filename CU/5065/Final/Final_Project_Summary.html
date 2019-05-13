@@ -394,7 +394,7 @@ Time taken: 0.61 seconds, Fetched: 1 row(s)</code></pre>
 <h1>Problem 5</h1>
 <p>Use a Pig script in Ambari to create a relation called <code>flightDelays</code> to load all the 12 files <strong>with a single LOAD statement</strong>. You use the following column names: <code>YEAR</code>, <code>FL_DATE</code>, <code>UNIQUE_CARRIER</code>, <code>CARRIER</code>, <code>FL_NUM</code>, <code>ORIGIN_AIRPORT_ID</code>, <code>ORIGIN</code>, <code>ORIGIN_CITY_NAME</code>, <code>ORIGIN_STATE_ABR</code>, <code>DEST_AIRPORT_ID</code>, <code>DEST</code>, <code>DEST_CITY_NAME</code>, <code>DEST_STATE_ABR</code>, <code>DEP_DELAY_NEW</code>, <code>ARR_DELAY</code>, <code>ARR_DELAY_NEW</code>, <code>CARRIER_DELAY</code>, <code>WEATHER_DELAY</code>, <code>NAS_DELAY</code>, <code>SECURITY_DELAY</code>, and <code>LATE_AIRCRAFT_DELAY</code>. If a column name contains the word “DELAY”, assign the <strong>float</strong> data type to it. Leave all other columns the <strong>chararray</strong> data type, except the YEAR column, which has an <strong>int</strong> data type. When you list the column names, please list one column name per line. Note that the data files contain a special data format: some values are enclosed in quotation marks but there is a comma within that value. Name your pig script <code>flightDelays</code>. Attach a screenshot showing that you successfully ran your pig script, including the logs.</p>
 <div class="w">
-<pre class="pig"><code>flightDelays = LOAD '/final_project/data/{flightDelays_1.csv, flightDelays_2.csv, flightDelays_3.csv, flightDelays_4.csv, flightDelays_5.csv, flightDelays_6.csv, flightDelays_7.csv, flightDelays_8.csv, flightDelays_9.csv, flightDelays_10.csv, flightDelays_11.csv, flightDelays_12.csv}' 
+<pre class="pig"><code>flightDelays = LOAD '/final_project/data' 
                 USING org.apache.pig.piggybank.storage.CSVExcelStorage() 
                 AS (YEAR:int, 
                     FL_DATE:chararray, 
@@ -424,7 +424,7 @@ Time taken: 0.61 seconds, Fetched: 1 row(s)</code></pre>
 <h1>Problem 6</h1>
 <p>Based on the <code>flightDelays</code> relation, calculate the <strong>average delays</strong> (rounded to two decimal points) of the following delay categories: <code>CARRIER_DELAY</code>, <code>WEATHER_DELAY</code>, <code>NAS_DELAY</code>, <code>SECURITY_DELAY</code>, and <code>LATE_AIRCRAFT_DELAY</code>. Name your pig script <code>averageDelays</code>. Attach a screenshot showing that you successfully ran your pig script, including the logs.</p>
 <div class="w">
-<pre class="pig"><code>flightDelays = LOAD '/final_project/data/{flightDelays_1.csv, flightDelays_2.csv, flightDelays_3.csv, flightDelays_4.csv, flightDelays_5.csv, flightDelays_6.csv, flightDelays_7.csv, flightDelays_8.csv, flightDelays_9.csv, flightDelays_10.csv, flightDelays_11.csv, flightDelays_12.csv}' 
+<pre class="pig"><code>flightDelays = LOAD '/final_project/data' 
                 USING org.apache.pig.piggybank.storage.CSVExcelStorage() 
                 AS (YEAR:int, 
                     FL_DATE:chararray, 
@@ -470,7 +470,7 @@ DUMP B;</code></pre>
 <h1>Problem 7</h1>
 <p>Based on the <code>flightDelays</code> relation, calculate the <strong>longest delays</strong> of the following delay categories: <code>CARRIER_DELAY</code>, <code>WEATHER_DELAY</code>, <code>NAS_DELAY</code>, <code>SECURITY_DELAY</code>, and <code>LATE_AIRCRAFT_DELAY</code>. Name your pig script <code>longestDelays</code>. Attach a screenshot showing that you successfully ran your pig script, including the logs.</p>
 <div class="w">
-<pre class="pig"><code>flightDelays = LOAD '/final_project/data/{flightDelays_1.csv, flightDelays_2.csv, flightDelays_3.csv, flightDelays_4.csv, flightDelays_5.csv, flightDelays_6.csv, flightDelays_7.csv, flightDelays_8.csv, flightDelays_9.csv, flightDelays_10.csv, flightDelays_11.csv, flightDelays_12.csv}' 
+<pre class="pig"><code>flightDelays = LOAD '/final_project/data' 
                 USING org.apache.pig.piggybank.storage.CSVExcelStorage() 
                 AS (YEAR:int, 
                     FL_DATE:chararray, 
