@@ -97,7 +97,7 @@ ul {font-size: 16px; color: black;}
 - Due: May/13/2019 at 11:59PM
 - [Final Project](CU/5065/Final_Project.pdf)
 - Data: [flightDelays](CU/5065/flightDelays.tar.gz) (.gz)
-- [Summary](CU/5065/Final_Project_Summary.html) (pending)
+- [Summary](CU/5065/Final/Final_Project_Summary.html) (pending)
 
 ##Data Files
 - [1901-1](CU/5065/1901-1) (.File)
