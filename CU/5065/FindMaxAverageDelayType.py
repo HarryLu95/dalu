@@ -9,7 +9,7 @@ def FindMaxAverageDelayType(a,b,c,d,e):
     return (names[max_index], values[max_index])
 
 for line in sys.stdin:
-  line = line.strip()
-  carrier, weather, nas, security, late_aircraft = line.split('\t')
-  output = FindMaxAverageDelayTypee(float(carrier), float(weather), float(nas), float(security), float(late_aircraft))
-  print "The delay category with the longest average delay is %s; the average delay time is %s minutes." % output
+    line = line.strip()
+    carrier, weather, nas, security, late_aircraft = line.split('\t')
+    output = FindMaxAverageDelayType(float(carrier), float(weather), float(nas), float(security), float(late_aircraft))
+    print "The delay category with the longest average delay is %s; the average delay time is %s minutes." % output

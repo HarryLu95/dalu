@@ -360,7 +360,7 @@ total 764M
 </div>
 </div>
 <div id="problem-3" class="section level1">
-<h1>Problem 3 (***)</h1>
+<h1>Problem 3</h1>
 <p>Load the 12 files from the <code>FP</code> directory to the HDFS directory, <code>/final_project/data</code>. Use three different approaches to load these files. Describe each of your approach and attach a screenshot of the result of each method. Note that at the beginning of a new method, you need to delete the files loaded previously and get ready for the next method to load the same files.</p>
 <div class="w">
 <p><strong>Method 1:</strong></p>
@@ -372,7 +372,20 @@ total 764M
 <p><a href="03_2.PNG">03_2</a></p>
 <p>Using <code>-put</code> to copy all the files start with “flig” from local directory to the <code>/final_project/data</code> directory.</p>
 <p><strong>Method 3:</strong></p>
-<p><font color="red"><strong>???</strong></font></p>
+<pre class="shell"><code>[root@sandbox FP]# hadoop fs -copyFromLocal flightDelays_1.csv  /final_project/data
+[root@sandbox FP]# hadoop fs -copyFromLocal flightDelays_2.csv  /final_project/data
+[root@sandbox FP]# hadoop fs -copyFromLocal flightDelays_3.csv  /final_project/data
+[root@sandbox FP]# hadoop fs -copyFromLocal flightDelays_4.csv  /final_project/data
+[root@sandbox FP]# hadoop fs -copyFromLocal flightDelays_5.csv  /final_project/data
+[root@sandbox FP]# hadoop fs -copyFromLocal flightDelays_6.csv  /final_project/data
+[root@sandbox FP]# hadoop fs -copyFromLocal flightDelays_7.csv  /final_project/data
+[root@sandbox FP]# hadoop fs -copyFromLocal flightDelays_8.csv  /final_project/data
+[root@sandbox FP]# hadoop fs -copyFromLocal flightDelays_9.csv  /final_project/data
+[root@sandbox FP]# hadoop fs -copyFromLocal flightDelays_10.csv  /final_project/data
+[root@sandbox FP]# hadoop fs -copyFromLocal flightDelays_11.csv  /final_project/data
+[root@sandbox FP]# hadoop fs -copyFromLocal flightDelays_12.csv  /final_project/data</code></pre>
+<p><a href="03_2.PNG">03_2</a></p>
+<p>Using the full file name to do this process.</p>
 </div>
 </div>
 <div id="problem-4" class="section level1">
@@ -790,10 +803,34 @@ def FindMaxAverageDelayType(a,b,c,d,e):
     return (names[max_index], values[max_index])
 
 for line in sys.stdin:
-  line = line.strip()
-  carrier, weather, nas, security, late_aircraft = line.split('\t')
-  output = FindMaxAverageDelayTypee(float(carrier), float(weather), float(nas), float(security), float(late_aircraft))
-  print &quot;The delay category with the longest average delay is %s; the average delay time is %s minutes.&quot; % output</code></pre>
+    line = line.strip()
+    carrier, weather, nas, security, late_aircraft = line.split('\t')
+    output = FindMaxAverageDelayType(float(carrier), float(weather), float(nas), float(security), float(late_aircraft))
+    print &quot;The delay category with the longest average delay is %s; the average delay time is %s minutes.&quot; % output</code></pre>
+<pre class="hive"><code>hive&gt; ADD FILE /FP/FindMaxAverageDelayType.py;
+Added resources: [/FP/FindMaxAverageDelayType.py]
+hive&gt; SELECT TRANSFORM(mean_carrier_delay, mean_weather_delay, mean_nas_delay, mean_security_delay, mean_late_aircraft_delay)
+    &gt;   USING 'python FindMaxAverageDelayType.py'
+    &gt;   FROM fpdb.averagedelays_v;
+Query ID = root_20190514021631_6dfd306c-2f39-41bc-afe7-f93872e87c94
+Total jobs = 1
+Launching Job 1 out of 1
+
+
+Status: Running (Executing on YARN cluster with App id application_1557789583888_0022)
+
+--------------------------------------------------------------------------------
+        VERTICES      STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED
+--------------------------------------------------------------------------------
+Map 1 ..........   SUCCEEDED      4          4        0        0       0       0
+Reducer 2 ......   SUCCEEDED      1          1        0        0       0       0
+--------------------------------------------------------------------------------
+VERTICES: 02/02  [==========================&gt;&gt;] 100%  ELAPSED TIME: 29.74 s    
+--------------------------------------------------------------------------------
+OK
+The delay category with the longest average delay is LATE_AIRCRAFT_DELAY; the average delay time is 23.87 minutes.
+Time taken: 39.105 seconds, Fetched: 1 row(s)</code></pre>
+<p><a href="13_1.PNG">13_1</a></p>
 </div>
 </div>
 <div id="problem-14" class="section level1">
@@ -802,15 +839,49 @@ for line in sys.stdin:
 <p><span class="math display">\[r=\frac{n\left(\sum{xy}\right)-\left(\sum{x}\right)\left(\sum{y}\right)}{\sqrt{\left[n\left(\sum{x^2}\right)-\left(\sum{x}\right)^2\right]\left[n\left(\sum{y^2}\right)-\left(\sum{y}\right)^2\right]}}\]</span></p>
 <p>or with a Hive built-in function, <code>CORR(col1, col2)</code>, where <code>col1</code> and <code>col2</code> are two numeric Hive table columns. Query the <code>fd_t</code> table to calculated the r value (round to 4 decimal points, the same below) of the <code>weather_delay</code> and the <code>carrier_delay</code> categories with both methods. You should get the same results with these two methods. Assign an alias to each result. For example, use <code>w_c</code> as an alias for the <code>weather_delay</code> and <code>carrier_delay</code> pair. After that, use the <code>CORR()</code> function to calculate all the r values of the 10 possible pairs of delay categories, <strong>in a single query</strong>; use aliases for all your pairs. Comment on your results, and attach screenshots of your results. (Hint: you will need to use several Hive built-in functions to calculate the r values with the formula.)</p>
 <div class="w">
-
+<pre class="hive"><code>CREATE VIEW fpdb.calc_v AS
+    SELECT count(*) as n, 
+        sum(weather_delay) as x, 
+        sum(carrier_delay) as y, 
+        sum(weather_delay*carrier_delay) as xy, 
+        sum(power(weather_delay, 2)) as x2, 
+        sum(power(carrier_delay, 2)) as y2
+FROM fpdb.fd_t;</code></pre>
+<pre class="hive"><code>SELECT round(
+        (n*xy-x*y)
+        /
+        (sqrt((n*x2-x*x)*(n*y2-y*y)))
+    , 4) as w_c
+    FROM fpdb.calc_v;</code></pre>
+<p><a href="14_1.PNG">14_1</a></p>
+<pre class="hive"><code>SELECT round(corr(weather_delay, carrier_delay), 4) as w_c_corr
+    FROM fpdb.fd_t;</code></pre>
+<p><a href="14_2.PNG">14_2</a></p>
+<pre class="hive"><code>SELECT
+    round(corr(carrier_delay, weather_delay), 4)
+        as c_w_corr,
+    round(corr(carrier_delay, nas_delay), 4)
+        as c_n_corr,
+    round(corr(carrier_delay, security_delay), 4)
+        as c_s_corr,
+    round(corr(carrier_delay, late_aircraft_delay), 4)
+        as c_l_corr,
+    round(corr(weather_delay, nas_delay), 4)
+        as w_n_corr,
+    round(corr(weather_delay, security_delay), 4)
+        as w_s_corr,
+    round(corr(weather_delay, late_aircraft_delay), 4)
+        as w_l_corr,
+    round(corr(nas_delay, security_delay), 4)
+        as n_s_corr,
+    round(corr(nas_delay, late_aircraft_delay), 4)
+        as n_l_corr,
+    round(corr(security_delay, late_aircraft_delay), 4)
+        as s_l_corr
+    FROM fpdb.fd_t;</code></pre>
+<p><a href="14_3.PNG">14_3</a></p>
+<p>They all have negative correlations. The correlation between “nas” and “late_aircraft” have the highest absolute value.</p>
 </div>
-<pre class="r"><code>for (i in 1:12){
-  path = paste(&quot;1/flightDelays_&quot;,i,&quot;.csv&quot;,sep=&quot;&quot;)
-  file = read.csv(path,header=F)
-  a=file$V17
-  a=na.omit(a)
-  print(max(a))
-}</code></pre>
 </div>
 
 
