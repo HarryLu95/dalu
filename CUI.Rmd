@@ -57,7 +57,7 @@ ul {font-size: 16px; color: black;}
 17. [Install and Configure Ipython Notebook with Apache Spark in HDP](CU/5065/Lec17.pdf)
     - [Lecture 17 Note](CU/5065/Summary17.html)
 18. [Introduction to Apache Spark](CU/5065/Lec18.pdf)
-    - [Lecture 18 Note](CU/5065/Summary18.html) (pending)
+    - [Lecture 18 Note](CU/5065/Summary18.html)
 19. [HDFS Data Visualization](CU/5065/Lec19.pdf)
     - [Lecture 19 Note](CU/5065/Summary19.html) (pending)
 20. [Hadoop and SAS](CU/5065/Lec20.pdf)
