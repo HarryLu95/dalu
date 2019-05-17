@@ -59,7 +59,7 @@ ul {font-size: 16px; color: black;}
 18. [Introduction to Apache Spark](CU/5065/Lec18.pdf)
     - [Lecture 18 Note](CU/5065/Summary18.html)
 19. [HDFS Data Visualization](CU/5065/Lec19.pdf)
-    - [Lecture 19 Note](CU/5065/Summary19.html) (pending)
+    - [Lecture 19 Note](CU/5065/Summary19.html)
 20. [Hadoop and SAS](CU/5065/Lec20.pdf)
     - [Lecture 20 Note](CU/5065/Summary20.html) (pending)
 
