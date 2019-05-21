@@ -61,7 +61,7 @@ ul {font-size: 16px; color: black;}
 19. [HDFS Data Visualization](CU/5065/Lec19.pdf)
     - [Lecture 19 Note](CU/5065/Summary19.html)
 20. [Hadoop and SAS](CU/5065/Lec20.pdf)
-    - [Lecture 20 Note](CU/5065/Summary20.html) (pending)
+    - [Lecture 20 Note](CU/5065/Summary20.html)
 
 ##Homeworks
 1. [Homework 1](CU/5065/HW1.pdf)
