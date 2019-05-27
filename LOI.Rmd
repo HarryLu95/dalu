@@ -1,0 +1,145 @@
+---
+title: "2019 Summer #1"
+output:
+  html_document:
+    toc: FALSE
+    toc_float:
+      collapsed: FALSE
+    toc_depth: 2
+---
+
+<style>
+h1 {font-size: 28px; color: black; font-weight: bold; text-align: center;}
+h1.title {color: black; text-align: center;}
+h2 {font-size: 20px; color: black; font-weight: bold; font-style: italic;}
+p {font-size: 16px; color: black;}
+ol {font-size: 16px; color: black;}
+ul {font-size: 16px; color: black;}
+table {border: 1px solid black; border-collapse: collapse; margin-top: 10px; margin-bottom: 10px; }
+td {border: 1px solid black; width: 200px; height: 50px; text-align: center; font-size: 16px; color: black;}
+</style>
+
+---
+
+#Time Table
+##May/2019
+<table>
+<tr>
+  <td>**Mon**</td>
+  <td>**Tue**</td>
+  <td>**Wed**</td>
+  <td>**Thu**</td>
+  <td>**Fri**</td>
+  <td>**Sat**</td>
+  <td>**Sun**</td>
+</tr>
+<tr>
+  <td></td>
+  <td>22nd  
+    [Class 1](LO/Algorithm_Class_1.html)</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>26th  
+    [Practice 1](LO/Algorithm_Class_2.html)</td>
+</tr>
+<tr>
+  <td>27th  
+    Class 2</td>
+  <td></td>
+  <td>29th  
+    Practice 2</td>
+  <td></td>
+  <td>31st  
+    Practice 3</td>
+  <td></td>
+  <td></td>
+</tr>
+</table>
+
+- Class 1: 試聼課 [Link](LO/Algorithm_Class_1.html)
+- Practice 1 [Link](LO/Algorithm_Class_2.html)
+- Class 2: Recursion I and Binary Search [Link](LO/Algorithm_Class_3.html) (pending)
+- Practice 2 [Link](LO/Algorithm_Class_4.html) (pending)
+- Practice 3 [Link](LO/Algorithm_Class_5.html) (pending)
+
+##June/2019
+<table>
+<tr>
+  <td>**Mon**</td>
+  <td>**Tue**</td>
+  <td>**Wed**</td>
+  <td>**Thu**</td>
+  <td>**Fri**</td>
+  <td>**Sat**</td>
+  <td>**Sun**</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>1st  
+    Class 3</td>
+  <td>2nd  
+    Practice 4</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+</table>
+
+- Class 3: Linked List [Link](LO/Algorithm_Class_6.html) (pending)
+- Practice 4 [Link](LO/Algorithm_Class_7.html) (pending)
+
+---
+
+<center>
+
+Copyright © 2019 Harry Lu. All rights reserved.
+
+</center>
