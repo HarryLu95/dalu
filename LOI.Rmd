@@ -49,7 +49,7 @@ td {border: 1px solid black; width: 200px; height: 50px; text-align: center; fon
     [Class 2](LO/Algorithm_Class_3.html)</td>
   <td></td>
   <td>29th  
-    Practice 2</td>
+    [Practice 2](LO/Algorithm_Class_4.html)</td>
   <td></td>
   <td>31st  
     Practice 3</td>
