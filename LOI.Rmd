@@ -46,7 +46,7 @@ td {border: 1px solid black; width: 200px; height: 50px; text-align: center; fon
 </tr>
 <tr>
   <td>27th  
-    Class 2</td>
+    [Class 2](LO/Algorithm_Class_3.html)</td>
   <td></td>
   <td>29th  
     Practice 2</td>
@@ -58,7 +58,7 @@ td {border: 1px solid black; width: 200px; height: 50px; text-align: center; fon
 </tr>
 </table>
 
-- Class 1: 試聼課 [Link](LO/Algorithm_Class_1.html)
+- Class 1: 試聼課 [Link](LO/Algorithm_Class_1.html) (pending)
 - Practice 1 [Link](LO/Algorithm_Class_2.html)
 - Class 2: Recursion I and Binary Search [Link](LO/Algorithm_Class_3.html) (pending)
 - Practice 2 [Link](LO/Algorithm_Class_4.html) (pending)
