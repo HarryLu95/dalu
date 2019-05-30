@@ -44,7 +44,9 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 #Castlevania - Circle of the Moon
 ![](Castlevania - Circle of the Moon - Maps_1.jpg)
 
-#Castlevania - Dawn of Sorrow
-![](Castlevania - Dawn of Sorrow - Weapons.jpg)
+![](Castlevania - Circle of the Moon - Maps_2.png)
 
-![](Castlevania - Dawn of Sorrow - Maps_1.jpg)
+#Castlevania - Dawn of Sorrow
+[Weapons](Castlevania - Dawn of Sorrow - Weapons.jpg)
+
+[Map](Castlevania - Dawn of Sorrow - Maps_1.jpg)
