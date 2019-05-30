@@ -294,7 +294,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Algorithm Class 4 - Practice 2</h1>
-<h3 class="subtitle">???</h3>
+<h3 class="subtitle">Classes, objects, and references - II</h3>
 <h4 class="date">May/29/2019</h4>
 
 </div>
@@ -314,8 +314,216 @@ ul {font-size: 18px; color: black;}
 img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; margin-right: auto; width: 400px;}
 </style>
 <hr />
-<div id="hello" class="section level1">
-<h1><span class="header-section-number">1</span> Hello</h1>
+<div id="static" class="section level1">
+<h1><span class="header-section-number">1</span> Static</h1>
+<p>Members (fields, methods, classes) belong to class, not object. (<a href="https://stackoverflow.com/questions/413898/what-does-the-static-keyword-do-in-a-class" class="uri">https://stackoverflow.com/questions/413898/what-does-the-static-keyword-do-in-a-class</a>)</p>
+<p>What do you mean by “belong to class, not instance”?</p>
+<pre class="java"><code>LaiOfferManager sunLaoShi = new LaiOfferManager();
+sunLaoShi.name = &quot;Sun&quot;;
+sunLaoShi.salary = 9999999;
+LaiOfferManager zhaoLaoShi = new LaiOfferManager();
+zhaoLaoShi.name = &quot;Zhao&quot;;
+zhaoLaoShisalary = 1000000;</code></pre>
+<p>Each teacher has one’s own name and salary.</p>
+<pre class="java"><code>LaiOfferManager.meetingSoftware = new Zoom();
+LaiOfferManager.isRich = false;</code></pre>
+<p>Note: we do not need an instance to access those (static) fields. These fields belong to the class.</p>
+<pre class="java"><code>public class LaiOfferManager {
+  public static void ipo() {
+    isRish = true;
+  }
+  public void test() {
+    name = &quot;test&quot;;
+    salary = salary + 1000;
+  }
+}
+...
+LaiOfferManager.ipo();</code></pre>
+<p>The behavior <code>ipo()</code> also belong to the whole class, but not any instance. Of course, it can only operate fields that belong to the class, but not instances (static fields).</p>
+<div id="class-variable-v.s.-instance-variable-class-method-v.s.-instance-method" class="section level2">
+<h2><span class="header-section-number">1.1</span> Class variable v.s. Instance variable / Class method v.s. Instance method</h2>
+<pre class="java"><code>public class Solution {
+  static int result = 0;
+  public static void sort() { // 但static有很大局限
+    result = 100;
+  }
+  public static void main(String[] args) {
+    sort();
+  }
+}</code></pre>
+<pre class="java"><code>public class Solution {
+  int result = 0;
+  public void sort() {
+    result = 100;
+  }
+  public static void main(String[] args) {
+    Solution s = new Solution();
+    s.sort();
+  }
+}</code></pre>
+<pre class="java"><code>Solution.main(args);</code></pre>
+</div>
+</div>
+<div id="final" class="section level1">
+<h1><span class="header-section-number">2</span> Final</h1>
+<p>Constants. “Once assigned, cannot be changed.”</p>
+<ul>
+<li>Final <strong>class</strong>: A class that cannot be derived (不可以繼承).</li>
+<li>Final <strong>method</strong>: A method that cannot be overridden (不可以修改).</li>
+<li>Final <strong>variable</strong>: A variable that once assigned, cannot be assigned again.</li>
+</ul>
+<p>Enforced invariance, instead of this:</p>
+<pre class="java"><code>// Don't change the value!
+int value = 5;
+...
+...
+value = getValueFromInput();</code></pre>
+<p>Using:</p>
+<pre class="java"><code>final int value = 5;</code></pre>
+<p>What is the implication of this?</p>
+<pre class="java"><code>public class Boy extends Student {
+  ...
+  final Student girlFriend;
+  public Boy(Student gf) {
+    girlFriend = gf;
+  }
+  ...
+}</code></pre>
+<p>Can we do this?</p>
+<pre class="java"><code>Boy b = new Boy(new Girl(&quot;taylor&quot;));
+b.girlFriend = new Girl(&quot;gaga&quot;);  // error!!!</code></pre>
+<ul>
+<li>No.</li>
+</ul>
+<p>Or this?</p>
+<pre class="java"><code>Boy b = new Boy(new Girl(&quot;taylor&quot;));
+b.girlFriend.setName(&quot;gaga&quot;);</code></pre>
+<ul>
+<li>Yes.</li>
+</ul>
+</div>
+<div id="java-parameter-passing" class="section level1">
+<h1><span class="header-section-number">3</span> Java Parameter Passing</h1>
+<p>What is parameter passing?</p>
+<pre class="java"><code>void foo(int a) {
+  System.out.println(a * a);
+}
+...
+foo(5);
+...</code></pre>
+<p>We’re passing int value 5 to method foo(int).</p>
+<p>How to actually “pass”?</p>
+<ul>
+<li>Java is always pass by value (copy).
+<ul>
+<li>primitive type: <strong>copy</strong> of the <strong>value itself</strong></li>
+<li>objects: <strong>copy</strong> of the object <strong>reference</strong></li>
+</ul></li>
+</ul>
+<p><strong>What is the implication?</strong></p>
+<pre class="java"><code>public class Simple {
+  public int value;
+  
+  public Simple(int v) {
+    value = v;
+  }
+}</code></pre>
+<p>1. <code>changeSimpleValue1</code>:</p>
+<pre class="java"><code>public class ChangeTest {
+  public static void main(String[] args) {
+    Simple originalSimple = new Simple(5);  // originalSimple指向值為5的object
+    changeSimpleValue1(originalSimple);
+    System.out.println(originalSimple.value);
+  }
+  
+  private static void changeSimpleValue1(Simple simple) {
+    Simple newSimple = new Simple(10);
+    simple = newSimple;
+  }
+}</code></pre>
+<ul>
+<li>result: 5</li>
+</ul>
+<p>2. <code>changeSimpleValue2</code>:</p>
+<pre class="java"><code>public class ChangeTest {
+  public static void main(String[] args) {
+    Simple originalSimple = new Simple(5);
+    changeSimpleValue2(originalSimple);
+    System.out.println(originalSimple.value);
+  }
+  
+  private static void changeSimpleValue2(Simple simple) {
+    Simple.value = 10;  // 通過deref修改了heap上的值
+  }
+}</code></pre>
+<ul>
+<li>result: 10</li>
+</ul>
+<p>3. <code>changeSimpleValue3</code>:</p>
+<pre class="java"><code>public class ChangeTest {
+  public static void main(String[] args) {
+    Simple originalSimple = new Simple(5);
+    changeSimpleValue3(originalSimple);
+    System.out.println(originalSimple.value);
+  }
+  
+  private static void changeSimpleValue3(Simple simple) {
+    Simple newSimple = new Simple(10);
+    return newSimple;
+  }
+}</code></pre>
+<ul>
+<li>result: 5</li>
+</ul>
+<p>4. <code>changeIntValue(int x)</code>:</p>
+<pre class="java"><code>public class ChangeTest {
+  public static void main(String[] args) {
+    int x = 5;
+    changeIntValue(x);
+    System.out.println(x);
+  }
+  
+  private static void changeIntValue(int x) {
+    x = 10;
+  }
+}</code></pre>
+<ul>
+<li>result: 5</li>
+</ul>
+</div>
+<div id="array-v.s.-objects" class="section level1">
+<h1><span class="header-section-number">4</span> Array v.s. objects</h1>
+<p>What are arrays in Java? How are they stored in memory?</p>
+<ul>
+<li>arrays are <strong>Objects</strong></li>
+<li>I cannot find the class for arrays…
+<ul>
+<li>True, the class declaration is not visible, but there still exists a class inside JVM.</li>
+<li>each of the arrays created is an instance of that class.</li>
+<li>remember “<strong>new</strong>” - it implies that there is a new object created.</li>
+</ul></li>
+<li>the elements in the array still occupy consecutive memory space on the heap</li>
+<li><strong>“length” is a field of the array object</strong> (array的<code>length</code>是個field, 沒有<code>()</code>)</li>
+<li><strong>array length cannot be changed after the array object is created. (final)</strong></li>
+</ul>
+<pre class="java"><code>int[] array = new int[3];
+array.length;</code></pre>
+<pre class="java"><code>int[][] array = new int[2][];</code></pre>
+<div id="exceptionserrors" class="section level2">
+<h2><span class="header-section-number">4.1</span> Exceptions/Errors</h2>
+<p>1. ArrayIndexOutOfBoundException!</p>
+<p>If the index specified is not in the valid range of the array.</p>
+<pre class="java"><code>int[] array = new int[] {5};
+int value = array[5]; // ArrayIndexOutOfBoundException!</code></pre>
+<p>2. NullPointerException!</p>
+<pre class="java"><code>int[] array = null;
+int value = array[1];
+
+int[][] array = new int[5][]; // {null, null, null, null, null}
+int[] v1 = array[6];  // ArrayIndexOutOfBoundException!
+int v2 = array[3][2]; // NullPointerException!</code></pre>
+<pre class="java"><code>dict.get(i)</code></pre>
+</div>
 </div>
 
 
