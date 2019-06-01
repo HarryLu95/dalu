@@ -52,7 +52,7 @@ td {border: 1px solid black; width: 200px; height: 50px; text-align: center; fon
     [Practice 2](LO/Algorithm_Class_4.html)</td>
   <td></td>
   <td>31st  
-    Practice 3</td>
+    [Practice 3](LO/Algorithm_Class_5.html)</td>
   <td></td>
   <td></td>
 </tr>
@@ -61,7 +61,7 @@ td {border: 1px solid black; width: 200px; height: 50px; text-align: center; fon
 - Class 1: 試聼課 [Link](LO/Algorithm_Class_1.html) (pending)
 - Practice 1 [Link](LO/Algorithm_Class_2.html)
 - Class 2: Recursion I and Binary Search [Link](LO/Algorithm_Class_3.html) (pending)
-- Practice 2 [Link](LO/Algorithm_Class_4.html) (pending)
+- Practice 2 [Link](LO/Algorithm_Class_4.html)
 - Practice 3 [Link](LO/Algorithm_Class_5.html) (pending)
 
 ##June/2019
