@@ -27,6 +27,8 @@ td.diagonalRising {
 	  Snow 51.1%,
 	  Snow 100%);
 }
+td.pending {background-color: LightSalmon;}
+td.updated {background-color: MediumSpringGreen;}
 </style>
 
 ---
@@ -45,23 +47,23 @@ td.diagonalRising {
 </tr>
 <tr>
   <td></td>
-  <td>22nd  
+  <td class="pending">22nd  
     [Class 1](LO/Algorithm_Class_1.html)</td>
   <td></td>
   <td></td>
   <td></td>
   <td></td>
-  <td>26th  
+  <td class="updated">26th  
     [Practice 1](LO/Algorithm_Class_2.html)</td>
 </tr>
 <tr>
-  <td>27th  
+  <td class="pending">27th  
     [Class 2](LO/Algorithm_Class_3.html)</td>
   <td></td>
-  <td>29th  
+  <td class="updated">29th  
     [Practice 2](LO/Algorithm_Class_4.html)</td>
   <td></td>
-  <td>31st  
+  <td class="updated">31st  
     [Practice 3](LO/Algorithm_Class_5.html)</td>
   <td class="diagonalRising"></td>
   <td class="diagonalRising"></td>
@@ -69,10 +71,10 @@ td.diagonalRising {
 </table>
 
 - Class 1: 試聼課 [Link](LO/Algorithm_Class_1.html) (pending)
-- Practice 1 [Link](LO/Algorithm_Class_2.html)
+    - Practice 1 [Link](LO/Algorithm_Class_2.html)
 - Class 2: Recursion I and Binary Search [Link](LO/Algorithm_Class_3.html) (pending)
-- Practice 2 [Link](LO/Algorithm_Class_4.html)
-- Practice 3 [Link](LO/Algorithm_Class_5.html) (pending)
+    - Practice 2 [Link](LO/Algorithm_Class_4.html)
+    - Practice 3 [Link](LO/Algorithm_Class_5.html)
 
 ##June/2019
 <table>
@@ -91,19 +93,24 @@ td.diagonalRising {
   <td class="diagonalRising"></td>
   <td class="diagonalRising"></td>
   <td class="diagonalRising"></td>
-  <td>1st  
+  <td class="pending">1st  
     [Class 3](LO/Algorithm_Class_6.html)</td>
   <td>2nd  
     Practice 4</td>
 </tr>
 <tr>
+  <td>3rd  
+    Class 4</td>
   <td></td>
+  <td>5th  
+    Practice 5</td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>7th  
+    Class 5</td>
+  <td>8th  
+    Practice 6</td>
+  <td>9th  
+    Practice 7</td>
 </tr>
 <tr>
   <td></td>
@@ -144,8 +151,12 @@ td.diagonalRising {
 </table>
 
 - Class 3: Linked List [Link](LO/Algorithm_Class_6.html) (pending)
-- Practice 4 [Link](LO/Algorithm_Class_7.html) (pending)
-
+    - Practice 4 [Link](LO/Algorithm_Class_7.html) (pending)
+- Class 4: Queue and Stack [Link](LO/Algorithm_Class_8.html) (pending)
+    - Practice 5 [Link](LO/Algorithm_Class_9.html) (pending)
+- Class 5: Binary Tree [Link](LO/Algorithm_Class_10.html) (pending)
+    - Practice 6 [Link](LO/Algorithm_Class_11.html) (pending)
+    - Practice 7 [Link](LO/Algorithm_Class_12.html) (pending)
 
 
 
