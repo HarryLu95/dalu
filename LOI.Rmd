@@ -17,6 +17,16 @@ ol {font-size: 16px; color: black;}
 ul {font-size: 16px; color: black;}
 table {border: 1px solid black; border-collapse: collapse; margin-top: 10px; margin-bottom: 10px; }
 td {border: 1px solid black; width: 200px; height: 50px; text-align: center; font-size: 16px; color: black;}
+
+td.diagonalRising {
+	background: linear-gradient(to right bottom,
+	  Snow 0%,
+	  Snow 49.9%,
+	  Black 50%,
+	  Black 51%,
+	  Snow 51.1%,
+	  Snow 100%);
+}
 </style>
 
 ---
@@ -53,8 +63,8 @@ td {border: 1px solid black; width: 200px; height: 50px; text-align: center; fon
   <td></td>
   <td>31st  
     [Practice 3](LO/Algorithm_Class_5.html)</td>
-  <td></td>
-  <td></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
 </tr>
 </table>
 
@@ -76,13 +86,13 @@ td {border: 1px solid black; width: 200px; height: 50px; text-align: center; fon
   <td>**Sun**</td>
 </tr>
 <tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
   <td>1st  
-    Class 3</td>
+    [Class 3](LO/Algorithm_Class_6.html)</td>
   <td>2nd  
     Practice 4</td>
 </tr>
@@ -135,6 +145,10 @@ td {border: 1px solid black; width: 200px; height: 50px; text-align: center; fon
 
 - Class 3: Linked List [Link](LO/Algorithm_Class_6.html) (pending)
 - Practice 4 [Link](LO/Algorithm_Class_7.html) (pending)
+
+
+
+
 
 ---
 
