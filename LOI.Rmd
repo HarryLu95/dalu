@@ -95,58 +95,64 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="diagonalRising"></td>
   <td class="pending">1st  
     [Class 3](LO/Algorithm_Class_6.html)</td>
-  <td>2nd  
-    Practice 4</td>
+  <td class="pending">2nd  
+    [Practice 4](LO/Algorithm_Class_7.html)</td>
 </tr>
 <tr>
-  <td>3rd  
+  <td class="pending">3rd  
     Class 4</td>
   <td></td>
-  <td>5th  
+  <td class="pending">5th  
     Practice 5</td>
   <td></td>
-  <td>7th  
+  <td class="pending">7th  
     Class 5</td>
-  <td>8th  
+  <td class="pending">8th  
     Practice 6</td>
-  <td>9th  
+  <td class="pending">9th  
     Practice 7</td>
 </tr>
 <tr>
+  <td>10th  
+    ?</td>
   <td></td>
+  <td>12th  
+    ?</td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>14th  
+    ?</td>
+  <td>15th  
+    ?</td>
+  <td>16th  
+    ?</td>
 </tr>
 <tr>
+  <td>17th  
+    ?</td>
   <td></td>
+  <td>19th  
+    ?</td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>21st  
+    ?</td>
+  <td>22nd  
+    ?</td>
+  <td>23rd  
+    ?</td>
 </tr>
 <tr>
+  <td>24th  
+    ?</td>
   <td></td>
+  <td>26th  
+    ?</td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>28th  
+    ?</td>
+  <td>29th  
+    ?</td>
+  <td>30th  
+    ?</td>
 </tr>
 </table>
 
