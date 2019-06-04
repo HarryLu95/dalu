@@ -589,7 +589,6 @@ public ListNode get(ListNode head, int index) {
   }
   return head;
 }</code></pre>
-<p><span class="r"><strong><em>Revision Pending</em></strong></span></p>
 </div>
 </div>
 <div id="linkedlist-in-java" class="section level1">
@@ -619,7 +618,7 @@ class LinkedList&lt;E&gt; {
 </ul></li>
 <li><code>set(int index, E e)</code>
 <ul>
-<li>from the head/tail, traverse the list to the get the element at index, and change it</li>
+<li>from the head/tail, traverse the list to get the element at index, and change it</li>
 </ul></li>
 <li><code>add(int index, E e)</code>, <code>add(E e)</code>
 <ul>
@@ -673,7 +672,7 @@ System.out.println(list); // {4, 1}</code></pre>
 <li>Lists can contain duplicate elements.</li>
 </ul>
 <p>The user of a List generally has precise control over where in the list each element is inserted and can access elements by their index.</p>
-<p>Provided functionalities (interfaces)</p>
+<p>Provided functionalities (interfaces):</p>
 <ul>
 <li>Random Access:
 <ul>
@@ -701,12 +700,9 @@ System.out.println(list); // {4, 1}</code></pre>
 <p>E.g., in real life: 菜譜 v.s. 做飯, 攻略 v.s. 打游戲</p>
 <p>Semantically:</p>
 <ol style="list-style-type: decimal">
-<li>int i = 0;</li>
-<li>i++;</li>
+<li><code>int i = 0;</code></li>
+<li><code>i++;</code>, now i = 1</li>
 </ol>
-<ul>
-<li>Now i = 1</li>
-</ul>
 <p>In one implementation:</p>
 <ol style="list-style-type: decimal">
 <li>Set i to be 0</li>
