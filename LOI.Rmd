@@ -93,7 +93,7 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="diagonalRising"></td>
   <td class="diagonalRising"></td>
   <td class="diagonalRising"></td>
-  <td class="pending">1st  
+  <td class="updated">1st  
     [Class 3](LO/Algorithm_Class_6.html)</td>
   <td class="updated">2nd  
     [Practice 4](LO/Algorithm_Class_7.html)</td>
@@ -156,7 +156,7 @@ td.updated {background-color: MediumSpringGreen;}
 </tr>
 </table>
 
-- Class 3: Linked List [Link](LO/Algorithm_Class_6.html) (pending)
+- Class 3: Linked List [Link](LO/Algorithm_Class_6.html)
     - Practice 4 [Link](LO/Algorithm_Class_7.html)
 - Class 4: Queue and Stack [Link](LO/Algorithm_Class_8.html) (pending)
     - Practice 5 [Link](LO/Algorithm_Class_9.html) (pending)
