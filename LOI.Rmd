@@ -100,16 +100,16 @@ td.updated {background-color: MediumSpringGreen;}
 </tr>
 <tr>
   <td class="pending">3rd  
-    Class 4</td>
+    [Class 4](LO/Algorithm_Class_8.html)</td>
   <td></td>
-  <td class="pending">5th  
+  <td>5th  
     Practice 5</td>
   <td></td>
-  <td class="pending">7th  
+  <td>7th  
     Class 5</td>
-  <td class="pending">8th  
+  <td>8th  
     Practice 6</td>
-  <td class="pending">9th  
+  <td>9th  
     Practice 7</td>
 </tr>
 <tr>
