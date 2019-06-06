@@ -102,8 +102,8 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="pending">3rd  
     [Class 4](LO/Algorithm_Class_8.html)</td>
   <td></td>
-  <td>5th  
-    Practice 5</td>
+  <td class="pending">5th  
+    [Practice 5](LO/Algorithm_Class_9.html)</td>
   <td></td>
   <td>7th  
     Class 5</td>
@@ -165,6 +165,23 @@ td.updated {background-color: MediumSpringGreen;}
     - Practice 7 [Link](LO/Algorithm_Class_12.html) (pending)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+#Homework Solutions
+##Section 1
+- [Link](LO/Java_Solutions.html) (pending)
 
 
 ---
