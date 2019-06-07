@@ -189,7 +189,18 @@ td.updated {background-color: MediumSpringGreen;}
     - 1.5. Last Occurrence
     - 1.6. K Closest In Sorted Array
     - 1.7. Search In Unknown Sized Sorted Array
-
+- Class 2 - Recursion I and Sorting Algorithms
+    - 2.1 Fibonacci Number
+    - 2.2 a To the Power of b
+    - 2.3 Selection Sort
+    - 2.4 Merge Sort
+    - 2.5 Quick Sort
+    - 2.6 Move 0s To The End I
+    - 2.7 Rainbow Sort
+- Class 3 - Linked Lists
+    - 3.1 Reverse Linked List
+    - 3.2 Find Middle Node Of Linked List
+    - 3.3 Check If Linked List Has Cycle
 ---
 
 <center>
