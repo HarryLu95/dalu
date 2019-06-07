@@ -181,8 +181,14 @@ td.updated {background-color: MediumSpringGreen;}
 
 #Homework Solutions
 ##Section 1
-- [Link](LO/Java_Solutions.html) (pending)
-
+- Class 1 - Binary Search
+    - 1.1. Classical Binary Search
+    - 1.2. Binary Search In Sorted 2D Array I
+    - 1.3. Closest Number In Sorter Array
+    - 1.4. First Occurrence
+    - 1.5. Last Occurrence
+    - 1.6. K Closest In Sorted Array
+    - 1.7. Search In Unknown Sized Sorted Array
 
 ---
 
