@@ -914,18 +914,167 @@ class DictImpl implements Dictionary {
 <p>Given an array of integers, sort the elements in the array in ascending order. The merge sort algorithm should be used to solve this problem.</p>
 <p><a href="https://app.laicode.io/app/problem/9" class="uri">https://app.laicode.io/app/problem/9</a></p>
 <pre class="java"><code>public class MergeSort {
+  public int[] mergeSort(int[] array) {
+    // Check null array first.
+    if (array == null) {
+      return array;
+    }
+    // Allocate helper array to help merge step, so that we guarantee no more than O(n) space is used.
+    // The space complexity is O(n) in this case.
+    int[] helper = new int[array.length];
+    mergeSort(array, helper, 0, array.length - 1);
+    return array;
+  }
   
+  private void mergeSort(int[] array, int[] helper, int left, int right) {
+    if (left &gt;= right) {
+      return;
+    }
+    int mid = left + (right - left) / 2;
+    mergeSort(array, helper, left, mid);
+    mergeSort(array, helper, mid + 1, right);
+    merge(array, helper, left, mid, right);
+  }
+  
+  private void merge(int[] array, int[] helper, int left, int mid, int right) {
+    // Copy the content to helper array and we will merge from the helper array.
+    for (int i = left; i &lt;= right; i++) {
+      helper[i] = array[i];
+    }
+    int leftIndex = left;
+    int rightIndex = mid + 1;
+    while (leftIndex &lt;= mid &amp;&amp; rightIndex &lt;= right) {
+      if (helper[leftIndex] &lt;= helper[rightIndex]) {
+        array[left] = helper[leftIndex];
+        left++;
+        leftIndex++;
+      }
+      else {
+        array[left] = helper[rightIndex];
+        left++;
+        rightIndex;
+      }
+    }
+    // If we still have some elements at left side, we need to copy them
+    while (leftIndex &lt;= mid) {
+      array[left] = helper[leftIndex];
+      left++;
+      leftIndex++;
+    }
+    // If there are some elements at right side, we do not need to copy them because they are already in their position.
+  }
+  
+  public static void main(String[] args) {
+    MergeSort sol = new MergeSort();
+    
+    // test cases to cover possible situations.
+    int[] array = null;
+    array = sol.mergeSort(array);
+    System.out.println(Arrays.toString(array));
+    
+    array = new int[0];
+    array = sol.mergeSort(array);
+    System.out.println(Arrays.toString(array));
+    
+    array = new int[] {1, 2, 3, 4};
+    array = sol.mergeSort(array);
+    System.out.println(Arrays.toString(array));
+    
+    array = new int[] {4, 3, 2, 1};
+    array = sol.mergeSort(array);
+    System.out.println(Arrays.toString(array));
+    
+    array = new int[] {2, 4, 1, 5, 3};
+    array = sol.mergeSort(array);
+    System.out.println(Arrays.toString(array));
+  }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="quick-sort" class="section level2">
 <h2><span class="header-section-number">2.5</span> Quick Sort</h2>
 <p>Given an array of integers, sort the elements in the array in ascending order. The quick sort algorithm should be used to solve this problem.</p>
 <p><a href="https://app.laicode.io/app/problem/10" class="uri">https://app.laicode.io/app/problem/10</a></p>
 <pre class="java"><code>public class QuickSort {
+  public int[] quickSort(int[] array) {
+    // Check null first.
+    if (array == null) {
+      return array;
+    }
+    quickSort(array, 0, array.length - 1);
+    return array;
+  }
   
+  public void quickSort(int[] array, int left, int right) {
+    if (left &gt;= right) {
+      return;
+    }
+    // Define a pivot and use the pivot to partition the array.
+    int pivotPos = partition(array, left, right);
+    // pivot is already at its position, when we do the recursive call on the two partitions, pivot should not be included in any of them.
+    quickSort(array, left, pivotPos - 1);
+    quickSort(array, pivotPos + 1, right);
+  }
+  
+  private int partition(int[] array, int left, int right) {
+    int pivotIndex = pivotIndex(left, right);
+    int pivot = array[pivotIndex];
+    // swap the pivot element to the rightmost position first
+    swap(array, pivotIndex, right);
+    int leftBound = left;
+    int rightBound = right - 1;
+    while (leftBound &lt;= rightBound) {
+      if (array[leftBound] &lt; pivot) {
+        leftBound++;
+      }
+      else if (array[rightBound] &gt;= pivot) {
+        rightBound--;
+      }
+      else {
+        swap(array, leftBound, rightBound);
+        leftBound++;
+        rightBound--;
+      }
+    }
+    // swap back the pivot element.
+    swap(array, leftBound, right);
+    return leftBound;
+  }
+  
+  // This is one of the ways defining the pivot, pick random element in the range of [left, right].
+  private int pivotIndex(int left, int right) {
+    return left + (int)(Math.random() * (right - left + 1));
+  }
+  
+  private void swap(int[] array, int left, int right) {
+    int temp = array[left];
+    array[left] = array[right];
+    array[right] = temp;
+  }
+  
+  public static void main(String[] args) {
+    QuickSort sol = new QuickSort();
+    
+    int[] array = null;
+    array = sol.quickSort(array);
+    System.out.println(Arrays.toString(array));
+    
+    array = new int[0];
+    array = sol.quickSort(array);
+    System.out.println(Arrays.toString(array));
+    
+    array = new int[] {1, 2, 3, 4};
+    array = sol.quickSort(array);
+    System.out.println(Arrays.toString(array));
+    
+    array = new int[] {4, 3, 2, 1};
+    array = sol.quickSort(array);
+    System.out.println(Arrays.toString(array));
+    
+    array = new int[] {2, 5, 3, 1, 4};
+    array = sol.quickSort(array);
+    System.out.println(Arrays.toString(array));
+  }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="move-0s-to-the-end-i" class="section level2">
 <h2><span class="header-section-number">2.6</span> Move 0s To The End I</h2>
