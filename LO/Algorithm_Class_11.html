@@ -613,7 +613,7 @@ null</code></pre>
 <li>use linked list</li>
 </ul>
 <div id="use-linked-list-to-implement-a-stack" class="section level3">
-<h3><span class="header-section-number">2.5.1</span> Use linked list to implement a stack</h3>
+<h3><span class="header-section-number">2.5.1</span> Use Linked list to implement a stack</h3>
 <pre class="java"><code>class ListNode {
   int value;
   ListNode next;
@@ -653,7 +653,7 @@ null</code></pre>
 }</code></pre>
 </div>
 <div id="use-linked-list-to-implement-a-queue" class="section level3">
-<h3><span class="header-section-number">2.5.2</span> Use linked list to implement a queue</h3>
+<h3><span class="header-section-number">2.5.2</span> Use Linked list to implement a queue</h3>
 <ul>
 <li>Do we need doubly linked list? Not really.</li>
 <li>We can track the head and tail at the same time.</li>
@@ -713,15 +713,57 @@ t              h</code></pre>
   }
 }</code></pre>
 </div>
-<div id="use-array" class="section level3">
-<h3><span class="header-section-number">2.5.3</span> Use Array</h3>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<div id="use-circular-array-to-implement-a-queue" class="section level3">
+<h3><span class="header-section-number">2.5.3</span> Use (Circular) Array to implement a queue</h3>
 <p>Let’s make a simpler case first, assume the capacity of the queue is bounded.</p>
 <p>First, we need to maintain the position of head and tail - use two pointers.</p>
 <ul>
 <li>offer: put one element, tail++ (tail points to the next available position)</li>
 <li>poll: grab element at head, head++ (head points to the next element in queue)</li>
 </ul>
+<pre><code>[ 11 |  2 |    |    |    |    |    |    |    |    ]
+ head      tail</code></pre>
+<p>What is the problem here?</p>
+<p>What is tail == array.length - 1 and we need to do tail++?</p>
+<p><strong>Circular Array:</strong> We can connect the start and end of the array, so that it is a cycle. Then, the index of array.length is equal to index 0.</p>
+<p>Quick tip:</p>
+<ol style="list-style-type: decimal">
+<li>head = head + 1 == array.length ? 0 : head + 1;</li>
+<li>head = (head + 1) % array.length</li>
+</ol>
+<ul>
+<li>In 2, head may overflow! Wrong!</li>
+</ul>
+<p>Second, we need to know when empty, when full.</p>
+<ul>
+<li>head == tail, empty?</li>
+<li>head == tail, full?</li>
+</ul>
+<p>Two solutions:</p>
+<ol style="list-style-type: decimal">
+<li>record size, size = 0 (empty), size == array.length (full)</li>
+<li>head + 1 == tail, then empty, head == tail, then full, capacity = array.length - 1 (next of head points to the head of the queue)</li>
+</ol>
+<p>Solution 2 is better, because the size in solution 1 is very hard to maintain in the real world.</p>
+<p>Solution 2:</p>
+<pre><code>[    |    |    |    |    |    |    |    |    |    ]
+ head tail
+
+---
+
+[    | 12 | 13 | 14 |  5 |    |    |    |    |    ]
+ head                     tail
+
+---
+
+[    |    | 13 | 14 |  5 |  6 |  7 |  8 |  9 |    ]
+      head                                    tail
+
+---
+
+[    | 12 | 13 | 14 |  5 |  6 |  7 |  8 |  9 | 10 ]
+ head
+ tail</code></pre>
 <pre class="java"><code>public class BoundedQueue {
   int head;
   int tail;
@@ -775,6 +817,11 @@ t              h</code></pre>
     return size == array.length;
   }
 }</code></pre>
+</div>
+<div id="use-circular-array-to-implement-a-stack" class="section level3">
+<h3><span class="header-section-number">2.5.4</span> Use (Circular) Array to implement a stack</h3>
+<pre><code>[    |    |    |    |    |    |    |    |    |    ]
+ head</code></pre>
 <pre class="java"><code>public class BoundedStack {
   int[] array;
   int head;
@@ -800,8 +847,28 @@ t              h</code></pre>
     return head == -1 ? null : array[head];
   }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
+</div>
+<div id="summary" class="section level2">
+<h2><span class="header-section-number">2.6</span> Summary</h2>
+<ul>
+<li>The Linked list implementation: <code>LinkedList</code></li>
+<li>The Array implementation: <code>ArrayDeque</code></li>
+</ul>
+</div>
+<div id="exercise" class="section level2">
+<h2><span class="header-section-number">2.7</span> Exercise</h2>
+<ol style="list-style-type: decimal">
+<li>We have done Queue and Stack, how about Deque?
+<ul>
+<li>Use Linked list
+<ul>
+<li>can we still use singly linked list or we need doubly linked list?</li>
+</ul></li>
+<li>Use Circular array</li>
+</ul></li>
+<li>Resizable queue/stack/deque by circular array</li>
+</ol>
 </div>
 </div>
 
