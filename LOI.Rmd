@@ -105,26 +105,26 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="pending">5th  
     [Practice 5](LO/Algorithm_Class_9.html)</td>
   <td></td>
-  <td>7th  
-    Class 5</td>
-  <td>8th  
-    Practice 6</td>
+  <td class="pending">7th  
+    [Class 5](LO/Algorithm_Class_10.html)</td>
+  <td class="pending">8th  
+    [Practice 6](LO/Algorithm_Class_11.html)</td>
   <td>9th  
     Practice 7</td>
 </tr>
 <tr>
   <td>10th  
-    ?</td>
+    Practice 8</td>
   <td></td>
   <td>12th  
-    ?</td>
+    Class 6</td>
   <td></td>
   <td>14th  
-    ?</td>
+    Practice 9</td>
   <td>15th  
-    ?</td>
+    Class 7</td>
   <td>16th  
-    ?</td>
+    Practice 10</td>
 </tr>
 <tr>
   <td>17th  
@@ -163,7 +163,11 @@ td.updated {background-color: MediumSpringGreen;}
 - Class 5: Binary Tree [Link](LO/Algorithm_Class_10.html) (pending)
     - Practice 6 [Link](LO/Algorithm_Class_11.html) (pending)
     - Practice 7 [Link](LO/Algorithm_Class_12.html) (pending)
-
+    - Practice 8 [Link](LO/Algorithm_Class_13.html) (pending)
+- Class 6: Heap and Graph Search I  [Link](LO/Algorithm_Class_14.html) (pending)
+    - Practice 9 [Link](LO/Algorithm_Class_15.html) (pending)
+- Class 7: DFS [Link](LO/Algorithm_Class_16.html) (pending)
+    - Practice 10 [Link](LO/Algorithm_Class_17.html) (pending)
 
 
 
