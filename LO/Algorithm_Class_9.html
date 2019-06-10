@@ -454,67 +454,68 @@ list.add(1);  // -&gt; list.add(Integer.valueOf(1));</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">get(int index) at head/tail</td>
+<td align="left"><code>get(int index)</code> at head/tail</td>
 <td align="left">O(<span class="math inline">\(1\)</span>)</td>
 <td align="left">O(<span class="math inline">\(1\)</span>), maintain both head and tail</td>
 </tr>
 <tr class="even">
-<td align="left">get(int index) in middle</td>
+<td align="left"><code>get(int index)</code> in middle</td>
 <td align="left">O(<span class="math inline">\(1\)</span>)</td>
 <td align="left">O(<span class="math inline">\(n\)</span>)</td>
 </tr>
 <tr class="odd">
-<td align="left">set(int index) at head/tail</td>
+<td align="left"><code>set(int index)</code> at head/tail</td>
 <td align="left">O(<span class="math inline">\(1\)</span>)</td>
 <td align="left">O(<span class="math inline">\(1\)</span>)</td>
 </tr>
 <tr class="even">
-<td align="left">set(int index) in middle</td>
+<td align="left"><code>set(int index)</code> in middle</td>
 <td align="left">O(<span class="math inline">\(1\)</span>)</td>
 <td align="left">O(<span class="math inline">\(n\)</span>)</td>
 </tr>
 <tr class="odd">
-<td align="left">add(int index, E e) in middle</td>
+<td align="left"><code>add(int index, E e)</code> in middle</td>
 <td align="left">O(<span class="math inline">\(n\)</span>)</td>
 <td align="left">O(<span class="math inline">\(n\)</span>)</td>
 </tr>
 <tr class="even">
-<td align="left">add(int index, E e) at head</td>
+<td align="left"><code>add(int index, E e)</code> at head</td>
 <td align="left">O(<span class="math inline">\(n\)</span>)</td>
 <td align="left">O(<span class="math inline">\(1\)</span>)</td>
 </tr>
 <tr class="odd">
-<td align="left">add(E e) at tail</td>
+<td align="left"><code>add(E e)</code> at tail</td>
 <td align="left">worst case: O(<span class="math inline">\(n\)</span>) || 1. need to expand: O(<span class="math inline">\(n\)</span>) 2. no need to expand: O(<span class="math inline">\(1\)</span>) || Amortized time complexity: O(<span class="math inline">\(1\)</span>)</td>
 <td align="left">O(<span class="math inline">\(1\)</span>)</td>
 </tr>
 <tr class="even">
-<td align="left">remove(int index) at head</td>
+<td align="left"><code>remove(int index)</code> at head</td>
 <td align="left">O(<span class="math inline">\(n\)</span>)</td>
 <td align="left">O(<span class="math inline">\(1\)</span>)</td>
 </tr>
 <tr class="odd">
-<td align="left">remove(int index) at tail</td>
+<td align="left"><code>remove(int index)</code> at tail</td>
 <td align="left">O(<span class="math inline">\(1\)</span>)</td>
 <td align="left">O(<span class="math inline">\(1\)</span>)</td>
 </tr>
 <tr class="even">
-<td align="left">remove(int index) at middle</td>
+<td align="left"><code>remove(int index)</code> at middle</td>
 <td align="left">O(<span class="math inline">\(n\)</span>)</td>
 <td align="left">O(<span class="math inline">\(n\)</span>)</td>
 </tr>
 <tr class="odd">
-<td align="left">size()</td>
+<td align="left"><code>size()</code></td>
 <td align="left">O(<span class="math inline">\(1\)</span>)</td>
 <td align="left">O(<span class="math inline">\(1\)</span>)</td>
 </tr>
 <tr class="even">
-<td align="left">isEmpty()</td>
+<td align="left"><code>isEmpty()</code></td>
 <td align="left">O(<span class="math inline">\(1\)</span>)</td>
 <td align="left">O(<span class="math inline">\(1\)</span>)</td>
 </tr>
 </tbody>
 </table>
+<p>Amortized time complexity of <code>add(E e)</code> at tail:</p>
 <pre><code>array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 size = n
 
@@ -547,11 +548,107 @@ O(1) * 0.5n
 </div>
 <div id="mergesort" class="section level1">
 <h1><span class="header-section-number">3</span> MergeSort</h1>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="reorder-linked-list" class="section level1">
 <h1><span class="header-section-number">4</span> Reorder Linked List</h1>
 <p>Reorder the given singly-link</p>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="logical-operator-short-circuit" class="section level1">
+<h1><span class="header-section-number">5</span> Logical Operator Short Circuit</h1>
+<pre><code>if (head == null || head.next == null)</code></pre>
+<pre><code>while (fast.next != null &amp;&amp; fast.next.next != null)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="center">.</th>
+<th align="center">Meaning</th>
+<th align="center">Short Circuit?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>&amp;&amp;</code></td>
+<td align="center">and</td>
+<td align="center">yes</td>
+</tr>
+<tr class="even">
+<td align="center"><code>&amp;</code></td>
+<td align="center">and</td>
+<td align="center">no</td>
+</tr>
+<tr class="odd">
+<td align="center"><code>||</code></td>
+<td align="center">or</td>
+<td align="center">yes</td>
+</tr>
+<tr class="even">
+<td align="center"><code>|</code></td>
+<td align="center">or</td>
+<td align="center">no</td>
+</tr>
+</tbody>
+</table>
+<p>Short circuit if the first expression is enough to decide.</p>
+</div>
+<div id="dummy-head" class="section level1">
+<h1><span class="header-section-number">6</span> Dummy Head</h1>
+<p>It is not a must, but can make your life <strong>much easier</strong>, there are several suitable conditions using dummy will be very handy.</p>
+<ul>
+<li>The head could be changed when solving the problem, so it is helpful to use a dummy head.</li>
+</ul>
+<div id="example-1-insert-a-value-into-a-sorted-list" class="section level2">
+<h2><span class="header-section-number">6.1</span> Example 1: Insert a Value into a Sorted List</h2>
+<pre><code>1 -&gt; 3 -&gt; 5 -&gt; null</code></pre>
+<p>Insert 4 is easy, but insert 0 is not that easy.</p>
+<pre><code>dummy -&gt; 1 -&gt; 3 -&gt; 5 -&gt; null
+ prev</code></pre>
+<pre class="java"><code>while (prev.next != null &amp;&amp; prev.next.val &lt; val) {
+  prev = prev.next;
+}</code></pre>
+<ol style="list-style-type: decimal">
+<li>With dummy node’s help</li>
+</ol>
+<pre class="java"><code>public ListNode insert(ListNode head, int val) {
+  ListNode dummy = new ListNode(0);
+  dummy.next = head;
+  ListNode newNode = new ListNode(val);
+  ListNode curr = dummy.next;
+  ListNode prev = dummy;
+  while (curr != null &amp;&amp; curr.val &lt; val) {
+    prev = curr;
+    curr = curr.next;
+  }
+  prev.next = newNode;
+  newNode.next = curr;
+  return dummy.next;
+}</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Without dummy node’s help</li>
+</ol>
+<pre class="java"><code>public ListNode insert(ListNode head, int val) {
+  ListNode newNode = new ListNode(val);
+  // Check head.
+  if (head == null || val &lt;= head.val) {
+    newNode.next = head;
+    return newNode;
+  }
+  // The inserted node is not the new head.
+  ListNode curr = head;
+  while(curr.next != null &amp;&amp; curr.next.val &lt; val) {
+    curr = curr.next;
+  }
+  // curr.next == null || curr.next.val &gt;= val
+  newNode.next = curr.next;
+  curr.next = newNode;
+  return head;
+}</code></pre>
+</div>
+<div id="example-2-merge-two-sorted-list" class="section level2">
+<h2><span class="header-section-number">6.2</span> Example 2: Merge Two Sorted List</h2>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
 </div>
 
 
