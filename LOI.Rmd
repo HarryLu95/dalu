@@ -195,7 +195,7 @@ td.updated {background-color: MediumSpringGreen;}
     - 1.7. Search In Unknown Sized Sorted Array
 - Class 2 - Recursion I and Sorting Algorithms
     - 2.1 Fibonacci Number
-    - 2.2 a To the Power of b
+    - 2.2 a To The Power Of b
     - 2.3 Selection Sort
     - 2.4 Merge Sort
     - 2.5 Quick Sort
@@ -205,7 +205,24 @@ td.updated {background-color: MediumSpringGreen;}
     - 3.1 Reverse Linked List
     - 3.2 Find Middle Node Of Linked List
     - 3.3 Check If Linked List Has Cycle
-
+    - 3.4 Insert In Sorted Linked List
+    - 3.5 Merge Two Sorted Linked List
+    - 3.6 Reorder Linked List
+    - 3.7 Partition Linked List
+- Class 4 - Queue and Stack
+    - 4.1 Sort Numbers In Two Stacks
+    - 4.2 Implement Queue By Two Stacks
+    - 4.3 Stack With min()
+- Class 5 - Binary Tree & Binary Search Tree
+    - 5.1 Binary Tree Pre-order Interative Traversal
+    - 5.2 Binary Tree In-order Iterative Traversal
+    - 5.3 Binary Tree Post-order Iterative Traversal
+    - 5.4 Check If Binary Tree Is Balanced
+    - 5.5 Check If Binary Tree Is Symmetric
+    - 5.6 Tweaked Identical Binary Trees
+    - 5.7 Is Binary Search Tree Or Not
+    - 5.8 Get Keys In Binary Search Tree In Given Range
+- Class 6 - Heap & Graph Search Algorithm I (BFS)
 
 
 

@@ -836,7 +836,7 @@ class DictImpl implements Dictionary {
 }</code></pre>
 </div>
 <div id="a-to-the-power-of-b" class="section level2">
-<h2><span class="header-section-number">2.2</span> a To the Power of b</h2>
+<h2><span class="header-section-number">2.2</span> a To The Power Of b</h2>
 <p>Evaluate a to the power of b, assuming both a and b are integers and b is non-negative.</p>
 <p><a href="https://app.laicode.io/app/problem/13" class="uri">https://app.laicode.io/app/problem/13</a></p>
 <pre class="java"><code>public class Power {
@@ -1164,55 +1164,309 @@ public class RainbowSort {
 <p><a href="https://app.laicode.io/app/problem/34" class="uri">https://app.laicode.io/app/problem/34</a></p>
 <pre class="java"><code>// Reverse singled linked list, both iterative and recursive ways.
 public class ReverseLinkedList {
+  public ListNode reverseLinkedList(ListNode head) {
+    ListNode prev = null;
+    while (head != null) {
+      ListNode next = head.next;
+      head.next = prev;
+      prev = head;
+      head = next;
+    }
+    return prev;
+  }
   
+  public ListNode reverseLinkedListI(ListNode head) {
+    // Be careful about the base case, need to make sure the later head.next.next != null.
+    if (head == null || head.next == null) {
+      return head;
+    }
+    ListNode newHead = reverseLinkedListI(head.next);
+    head.next.next = head;
+    head.next = null;
+    return newHead;
+  }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="find-middle-node-of-linked-list" class="section level2">
 <h2><span class="header-section-number">3.2</span> Find Middle Node Of Linked List</h2>
 <p>Find the middle node of a given linked list.</p>
 <p><a href="https://app.laicode.io/app/problem/36" class="uri">https://app.laicode.io/app/problem/36</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>// Find the middle node of a singled linked list.
+// 1. 1 -&gt; 2 -&gt; 3 -&gt; null, the middle node is 2.
+// 2. 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; null, the middle node is 2.
+// 3. null, the middle node is null.
+public class MiddleNode {
+  public ListNode findMiddle(ListNode head) {
+    if (head == null) {
+      return null;
+    }
+    ListNode slow = head;
+    ListNode fast = head;
+    while (fast.next != null &amp;&amp; fast.next.next !- null) {
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    return slow;
+  }
+}</code></pre>
 </div>
 <div id="check-if-linked-list-has-cycle" class="section level2">
 <h2><span class="header-section-number">3.3</span> Check If Linked List Has Cycle</h2>
 <p>Check if a given linked list has a cycle. Return true if it does, otherwise return false.</p>
 <p><a href="https://app.laicode.io/app/problem/37" class="uri">https://app.laicode.io/app/problem/37</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class CheckCycle {
+  public boolean hasCycle(ListNode head) {
+    if (head == null || head.next == null) {
+      return false;
+    }
+    ListNode slow = head;
+    ListNode fast = head;
+    while (fast != null &amp;&amp; fast.next != null) {
+      slow = slow.next;
+      fast = fast.next.next;
+      if (slow == fast) {
+        return true;
+      }
+    }
+    return false;
+  }
+}</code></pre>
 </div>
 <div id="insert-in-sorted-linked-list" class="section level2">
 <h2><span class="header-section-number">3.4</span> Insert In Sorted Linked List</h2>
 <p>Insert a value in a sorted linked list.</p>
 <p><a href="https://app.laicode.io/app/problem/39" class="uri">https://app.laicode.io/app/problem/39</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class InsertSortedList {
+  public ListNode insert(ListNode head, int value) {
+    ListNode newNode = new ListNode(value);
+    // 1. Determine if the inserted node is before head.
+    if (head == null || head.value &gt;= value) {
+      newNode.next = head;
+      return newNode;
+    }
+    // 2. Insert the new node to the right position.
+    // Using the previous node to traverse the linked list.
+    // The insert position of the new node should be between prev and prev.next.
+    ListNode prev = head;
+    while (prev.next != null &amp;&amp; prev.next.value &lt; value) {
+      prev = prev.next;
+    }
+    newNode.next = prev.next;
+    prev.next = newNode;
+    return head;
+  }
+}</code></pre>
 </div>
 <div id="merge-two-sorted-linked-list" class="section level2">
 <h2><span class="header-section-number">3.5</span> Merge Two Sorted Linked List</h2>
 <p>Merge two sorted lists into one large sorted list.</p>
 <p><a href="https://app.laicode.io/app/problem/40" class="uri">https://app.laicode.io/app/problem/40</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class mergeTwoSortedList {
+  public ListNode merge(ListNode h1, listNode h2) {
+    ListNode dummy = new ListNode(0);
+    ListNode curr = dummy;
+    while (h1 != null &amp;&amp; h2 != null) {
+      if (h1.value &lt;= h2.value) {
+        curr.next = h1;
+        h1 = h1.next;
+      }
+      else {
+        curr.next = h2;
+        h2 = h2.next;
+      }
+      curr = curr.next;
+    }
+    // Link the remaining possible nodes.
+    if (h1 != null) {
+      curr.next = h1;
+    }
+    else {
+      curr.next = h2;
+    }
+    return dummy.next;
+  }
+}</code></pre>
 </div>
 <div id="reorder-linked-list" class="section level2">
 <h2><span class="header-section-number">3.6</span> Reorder Linked List</h2>
 <p>Reorder the given singly-linked list N1 -&gt; N2 -&gt; N3 -&gt; N4 -&gt; … -&gt; Nn -&gt; null to be N1 -&gt; Nn -&gt; N2 -&gt; Nn-1 -&gt; N3 -&gt; Nn-2 -&gt; … -&gt; null.</p>
 <p><a href="https://app.laicode.io/app/problem/41" class="uri">https://app.laicode.io/app/problem/41</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class ReorderList {
+  public ListNode reorder(ListNode head) {
+    if (head == null || head.next == null) {
+      return head;
+    }
+    // 1. Find the middle node
+    ListNode mid = middleNode(head);
+    ListNode one = head;
+    ListNode two = mid.next;
+    // De-link the second half from the list
+    mid.next = null;
+    // 2. Reverse the second half
+    // 3. Merge the two halves
+    return merge(one, reverse(two));
+  }
+  
+  private ListNode middleNode(ListNode head) {
+    ListNode slow = head;
+    ListNode fast = head;
+    while (fast.next != null &amp;&amp; fast.next.next != null) {
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    return slow;
+  }
+  
+  private ListNode reverse(ListNode head) {
+    if (head == null || head.next == null) {
+      return head;
+    }
+    ListNode prev = null;
+    while (head != null) {
+      ListNode next = head.next;
+      head.next = prev;
+      prev = head;
+      head = next;
+    }
+    return prev;
+  }
+  
+  private ListNode merge(ListNode h1, listNode h2) {
+    ListNode dummy = new ListNode(0);
+    ListNode curr = dummy;
+    while (h1 != null &amp;&amp; h2 != null) {
+      curr.next = h1;
+      h1 = h1.next;
+      curr.next.next = h2;
+      h2 = h2.next;
+      curr = curr.next.next;
+    }
+    if (h1 != null) {
+      curr.next = h1;
+    }
+    else {
+      curr.next = h2;
+    }
+    return dummy.next;
+  }
+}</code></pre>
 </div>
 <div id="partition-linked-list" class="section level2">
 <h2><span class="header-section-number">3.7</span> Partition Linked List</h2>
 <p>Given a linked list and a target value T, partition it such that all nodes less than T are listed before the nodes larger than or equal to target value T. The original relative order of the nodes in each of the two partitions should be preserved.</p>
 <p><a href="https://app.laicode.io/app/problem/42" class="uri">https://app.laicode.io/app/problem/42</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class PartitionList {
+  public ListNode partition(ListNode head, int target) {
+    if (head == null || head.next == null) {
+      return head;
+    }
+    ListNode small = new ListNode(0);
+    ListNode large = new ListNode(0);
+    ListNode curSmall = small;
+    ListNode curLarge = large;
+    while (head != null) {
+      if (head.value &lt; target) {
+        curSmall.next = head;
+        curSmall = curSmall.next;
+      }
+      else {
+        curLarge.next = head;
+        curLarge = curLarge.next;
+      }
+      head = head.next;
+    }
+    // Connect the two partitions
+    curSmall.next = large.next;
+    // Un-link the last node in large partition
+    curLarge.next = null;
+    return small.next;
+  }
+}</code></pre>
 </div>
 </div>
 <div id="class-4---queue-and-stack" class="section level1">
 <h1><span class="header-section-number">4</span> Class 4 - Queue and Stack</h1>
+<div id="sort-numbers-in-two-stacks" class="section level2">
+<h2><span class="header-section-number">4.1</span> Sort Numbers In Two Stacks</h2>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="implement-queue-by-two-stacks" class="section level2">
+<h2><span class="header-section-number">4.2</span> Implement Queue By Two Stacks</h2>
+<p>Implement a queue by using two stacks. The queue should provide size(), isEmpty(), offer(), poll() and peek() operations. When the queue is empty, poll() and peek() should return null.</p>
+<p><a href="https://app.laicode.io/app/problem/31" class="uri">https://app.laicode.io/app/problem/31</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="stack-with-min" class="section level2">
+<h2><span class="header-section-number">4.3</span> Stack With min()</h2>
+<p>Enhance the stack implementation to support min() operation. min() should return the current minimum value in the stack. If the stack is empty, min() should return -1.</p>
+<p><a href="https://app.laicode.io/app/problem/32" class="uri">https://app.laicode.io/app/problem/32</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+</div>
+<div id="class-5---binary-tree-binary-search-tree" class="section level1">
+<h1><span class="header-section-number">5</span> Class 5 - Binary Tree &amp; Binary Search Tree</h1>
+<div id="binary-tree-pre-order-interative-traversal" class="section level2">
+<h2><span class="header-section-number">5.1</span> Binary Tree Pre-order Interative Traversal</h2>
+<p>Implement an iterative, pre-order traversal of a given binary tree, return the list of keys of each node in the tree as it is pre-order traversed.</p>
+<p><a href="https://app.laicode.io/app/problem/44" class="uri">https://app.laicode.io/app/problem/44</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="binary-tree-in-order-iterative-traversal" class="section level2">
+<h2><span class="header-section-number">5.2</span> Binary Tree In-order Iterative Traversal</h2>
+<p>Implement an iterative, in-order traversal of a given binary tree, return the list of keys of each node in the tree as it is in-order traversed.</p>
+<p><a href="https://app.laicode.io/app/problem/43" class="uri">https://app.laicode.io/app/problem/43</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="binary-tree-post-order-iterative-traversal" class="section level2">
+<h2><span class="header-section-number">5.3</span> Binary Tree Post-order Iterative Traversal</h2>
+<p>Implement an iterative, post-order traversal of a given binary tree, return the list of keys of each node in the tree as it is post-order traversed.</p>
+<p><a href="https://app.laicode.io/app/problem/45" class="uri">https://app.laicode.io/app/problem/45</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="check-if-binary-tree-is-balanced" class="section level2">
+<h2><span class="header-section-number">5.4</span> Check If Binary Tree Is Balanced</h2>
+<p>Check if a given binary tree is balanced. A balanced binary tree is one in which the depths of every node’s left and right subtree differ by at most 1.</p>
+<p><a href="https://app.laicode.io/app/problem/46" class="uri">https://app.laicode.io/app/problem/46</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="check-if-binary-tree-is-symmetric" class="section level2">
+<h2><span class="header-section-number">5.5</span> Check If Binary Tree Is Symmetric</h2>
+<p>Check if a given binary tree is symmetric.</p>
+<p><a href="https://app.laicode.io/app/problem/48" class="uri">https://app.laicode.io/app/problem/48</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="tweaked-identical-binary-trees" class="section level2">
+<h2><span class="header-section-number">5.6</span> Tweaked Identical Binary Trees</h2>
+<p>Determine whether two given binary trees are identical assuming any number of ’tweak’s are allowed. A tweak is defined as a swap of the children of one node in the tree.</p>
+<p><a href="https://app.laicode.io/app/problem/50" class="uri">https://app.laicode.io/app/problem/50</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="is-binary-search-tree-or-not" class="section level2">
+<h2><span class="header-section-number">5.7</span> Is Binary Search Tree Or Not</h2>
+<p>Determine if a given binary tree is binary search tree.</p>
+<p><a href="https://app.laicode.io/app/problem/54" class="uri">https://app.laicode.io/app/problem/54</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="get-keys-in-binary-search-tree-in-given-range" class="section level2">
+<h2><span class="header-section-number">5.8</span> Get Keys In Binary Search Tree In Given Range</h2>
+<p>Get the list of keys in a given binary search tree in a given range[min, max] in ascending order, both min and max are inclusive.</p>
+<p><a href="https://app.laicode.io/app/problem/55" class="uri">https://app.laicode.io/app/problem/55</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+</div>
+<div id="class-6---heap-graph-search-algorithm-i-bfs" class="section level1">
+<h1><span class="header-section-number">6</span> Class 6 - Heap &amp; Graph Search Algorithm I (BFS)</h1>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 
