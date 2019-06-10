@@ -548,6 +548,97 @@ O(1) * 0.5n
 </div>
 <div id="mergesort" class="section level1">
 <h1><span class="header-section-number">3</span> MergeSort</h1>
+<p>Given an array of integers, sort the elements in the array in ascending order. The merge sort algorithm should be used to solve this problem.</p>
+<p>Examples:</p>
+<ul>
+<li>{1} is sorted to {1}</li>
+<li>{1, 2, 3} is sorted to {1, 2, 3}</li>
+<li>{3, 2, 1} is sorted to {1, 2, 3}</li>
+<li>{4, 2, -3, 6, 1} is sorted to {-3, 1, 2, 4, 6}</li>
+</ul>
+<p>Corner Cases</p>
+<ul>
+<li>What if the given array is null? In this case, we do not need to do anything.</li>
+<li>What if the given array is of length zero? In this case, we do not need to do anything.</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>MergeSort with returning new ArrayList each level:</li>
+</ol>
+<pre class="java"><code>public class MergeSort {
+  public List&lt;Integer&gt; mergeSort(List&lt;Integer&gt; array) {
+    if (array == null) {
+      return array;
+    }
+    return mergeSort(array, 0, array.size() - 1);
+  }
+  
+  public List&lt;Integer&gt; mergeSort(List&lt;Integer&gt; array, int left, int right) {
+    List&lt;Integer&gt; result = new ArrayList&lt;&gt;();
+    if (left &gt; right) {
+      return result;
+    }
+    if (left == right) {
+      result.add(array.get(left));
+      return result;
+    }
+    int mid = left + (right - left) / 2;
+    List&lt;Integer&gt; reLeft = mergeSort(array, left, mid);
+    List&lt;Integer&gt; reRight = mergeSort(array, mid + 1, right);
+    merge(reLeft, reRight, result);
+    return result;
+  }
+  
+  private void merge(List&lt;Integer&gt; left, List&lt;Integer&gt; right, List&lt;Integer&gt; result) {
+    int l = 0;
+    int r = 0;
+    while (l &lt; left.size() &amp;&amp; r &lt; right.size()) {
+      if (left.get(l) &lt;= right.get(r)) {
+        result.add(left.get(l));
+        l++;
+      }
+      else {
+        result.add(right.get(r));
+        r++;
+      }
+    }
+    while (l &lt; left.size()) {
+      result.add(left.get(l));
+      l++;
+    }
+    while (r &lt; right.size()) {
+      result.add(right.get(r));
+      r++;
+    }
+  }
+}</code></pre>
+<ul>
+<li>Time: O(<span class="math inline">\(n\log(n)\)</span>)</li>
+<li>Space: O(<span class="math inline">\(n\)</span>)</li>
+</ul>
+<pre><code>          n
+      /       \
+   n/2         n/2
+  /   \       /   \
+n/4   n/4   n/4   n/4
+...
+
+---
+
+   {1, 4, 2, 3}
+     /      \
+ {1, 4}    {2, 3}
+  /  \      /  \
+{1}  {4}  {2}  {3}  - return O(n)
+  \  /      \  /
+ {1, 4}    {2, 3}   - return O(n)
+     \      /
+   {1, 2, 3, 4}     - return O(n)</code></pre>
+<p><strong>That’s only in theory.</strong> In Java, temp variables won’t be reclaimed immediately. This is an implementation challenge. (That way C++ solution is fine.)</p>
+<p>Compare to sample solution, we’re reusing the same array to bound memory consumption.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Sample solution:</li>
+</ol>
+<pre class="java"><code></code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="reorder-linked-list" class="section level1">
@@ -647,6 +738,73 @@ O(1) * 0.5n
 </div>
 <div id="example-2-merge-two-sorted-list" class="section level2">
 <h2><span class="header-section-number">6.2</span> Example 2: Merge Two Sorted List</h2>
+<ol style="list-style-type: decimal">
+<li>With dummy node’s help</li>
+</ol>
+<pre class="java"><code>public ListNode merge(ListNode h1, ListNode h2) {
+  ListNode dummy = new ListNode(0);
+  ListNode curr = dummy;
+  
+  while (h1 != null &amp;&amp; h2 != null) {
+    if (h1.value &lt;= h2.value) {
+      curr.next = h1;
+      h1 = h1.next;
+    }
+    else {
+      curr.next = h2;
+      h2 = h2.next;
+    }
+    curr = curr.next;
+  }
+  
+  if (h1 != null) {
+    curr.next = h1;
+  }
+  if (h2 != null) {
+    curr.next = h2;
+  }
+  return dummy.next;
+}</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Without dummy node’s help</li>
+</ol>
+<pre class="java"><code>public ListNode merge(ListNode h1, ListNode h2) {
+  if (h1 == null) {
+    return h2;
+  }
+  if (h2 == null) {
+    return h2;
+  }
+  ListNode head = null;
+  if (h1.value &lt;= h2.value) {
+    head = h1;
+    h1 = h1.next;
+  }
+  else {
+    head = h2;
+    h2 = h2.next;
+  }
+  ListNode curr = head;
+  while (h1 != null &amp;&amp; h2 != null) {
+    if (h1.value &lt;= h2.value) {
+      curr.next = h1;
+      h1 = h1.next;
+    }
+    else {
+      curr.next = h2;
+      h2 = h2.next;
+    }
+    curr = curr.next;
+  }
+  
+  if (h1 != null) {
+    curr.next = h1;
+  }
+  if (h2 != null) {
+    curr.next = h2;
+  }
+  return head;
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 </div>
