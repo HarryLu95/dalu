@@ -102,7 +102,7 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="pending">3rd  
     [Class 4](LO/Algorithm_Class_8.html)</td>
   <td></td>
-  <td class="pending">5th  
+  <td class="updated">5th  
     [Practice 5](LO/Algorithm_Class_9.html)</td>
   <td></td>
   <td class="pending">7th  
@@ -113,8 +113,8 @@ td.updated {background-color: MediumSpringGreen;}
     [Practice 7](LO/Algorithm_Class_12.html)</td>
 </tr>
 <tr>
-  <td>10th  
-    Practice 8</td>
+  <td class="pending">10th  
+    [Practice 8](LO/Algorithm_Class_13.html)</td>
   <td></td>
   <td>12th  
     Class 6</td>
@@ -159,7 +159,7 @@ td.updated {background-color: MediumSpringGreen;}
 - Class 3: Linked List [Link](LO/Algorithm_Class_6.html)
     - Practice 4 [Link](LO/Algorithm_Class_7.html)
 - Class 4: Queue and Stack [Link](LO/Algorithm_Class_8.html) (pending)
-    - Practice 5 [Link](LO/Algorithm_Class_9.html) (pending)
+    - Practice 5 [Link](LO/Algorithm_Class_9.html)
 - Class 5: Binary Tree [Link](LO/Algorithm_Class_10.html) (pending)
     - Practice 6 [Link](LO/Algorithm_Class_11.html)
     - Practice 7 [Link](LO/Algorithm_Class_12.html) (pending)
@@ -169,12 +169,121 @@ td.updated {background-color: MediumSpringGreen;}
 - Class 7: DFS [Link](LO/Algorithm_Class_16.html) (pending)
     - Practice 10 [Link](LO/Algorithm_Class_17.html) (pending)
 
+##July/2019
+<table>
+<tr>
+  <td>**Mon**</td>
+  <td>**Tue**</td>
+  <td>**Wed**</td>
+  <td>**Thu**</td>
+  <td>**Fri**</td>
+  <td>**Sat**</td>
+  <td>**Sun**</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+</tr>
+</table>
 
-
-
-
-
-
+##August/2019
+<table>
+<tr>
+  <td>**Mon**</td>
+  <td>**Tue**</td>
+  <td>**Wed**</td>
+  <td>**Thu**</td>
+  <td>**Fri**</td>
+  <td>**Sat**</td>
+  <td>**Sun**</td>
+</tr>
+<tr>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="diagonalRising"></td>
+</tr>
+</table>
 
 
 
