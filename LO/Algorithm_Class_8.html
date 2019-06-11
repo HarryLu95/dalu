@@ -349,10 +349,10 @@ span.r {color: red;}
 </div>
 <div id="four-popular-queue-stack-related-interview-questions" class="section level1">
 <h1><span class="header-section-number">2</span> Four Popular (Queue-Stack Related) Interview Questions</h1>
-<div id="question-1" class="section level2">
-<h2><span class="header-section-number">2.1</span> Question 1</h2>
+<div id="question-1-sort-numbers-with-two-stacks" class="section level2">
+<h2><span class="header-section-number">2.1</span> Question 1: Sort numbers with two stacks</h2>
 <p><strong>Lecture 2的“舉一反三”題</strong></p>
-<p>How to sorted numbers with three (or two) stacks?</p>
+<p>How to sort numbers with three (or two) stacks?</p>
 <pre><code>S1 input  []
 S2 buffer []
 S3 output []</code></pre>
@@ -428,8 +428,8 @@ S2 [1 | 4 2 3] globalMin = 2
 <li>Time: O(<span class="math inline">\(n^2\)</span>)</li>
 </ul>
 </div>
-<div id="question-2" class="section level2">
-<h2><span class="header-section-number">2.2</span> Question 2</h2>
+<div id="question-2-implement-a-queue-by-two-stacks" class="section level2">
+<h2><span class="header-section-number">2.2</span> Question 2: Implement a queue by two stacks</h2>
 <p>How could we implement a queue by using two stacks?</p>
 <pre><code>Stack1 (enqueue) []
 Stack2 (dequeue) []
@@ -511,8 +511,8 @@ Stack2 (dequeue) [3 2]
 <li>For any specific input, we amortized all operations within this input.</li>
 </ul>
 </div>
-<div class="section level3">
-<h3><span class="header-section-number">2.2.2</span> 舉一反二</h3>
+<div id="q2.1-implement-a-stack-by-two-queues-" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Q2.1 Implement a stack by two queues (舉一反二)</h3>
 <p>How could we implement a stack by using two queues?</p>
 <pre><code>Q1 &lt;--[]&lt;--
 Q2 &lt;--[]&lt;--
@@ -560,20 +560,39 @@ Q2 &lt;--[1 2]&lt;--
 ===
 
 Stack [1 2 4]
+Q1 &lt;--[]&lt;--
+Q2 &lt;--[1 2 4]&lt;--</code></pre>
+<p>stack.push() =&gt; Q1.enqueue()</p>
+</div>
+<div id="q2.2-implement-a-stack-by-one-queue-" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Q2.2 Implement a stack by one queue (舉一反三)</h3>
+<p>How could we implement a stack by using only one queue, assuming we can get the size of the queue at any time?</p>
+<pre><code>Q  &lt;--[]&lt;--
+Stack []    size = 0</code></pre>
+<pre><code>Stack [1]          size = 1
+Q  &lt;--[1]&lt;--
+
+===
+
+Stack [1 2]        size = 2
+Q  &lt;--[1 2]&lt;--
+
+===
+
+Stack [1 2 3]      size = 3
+Q  &lt;--[1 2 3]&lt;--
+
+===
+
+Stack [1 2]        size = 2
 
 ---
 
-???
-???
-???
-</code></pre>
-<p>stack.push() =&gt; Q1.enqueue()</p>
-</div>
-<div class="section level3">
-<h3><span class="header-section-number">2.2.3</span> 舉一反三</h3>
-<p>How could we implement a stack by using only one queue, assuming we can get the size of the queue at any time?</p>
+Q  &lt;-1-[2 3]&lt;--
+Q  &lt;--[2 3]&lt;-1-
+Q  &lt;--[2 3 1]&lt;--</code></pre>
 <p>假設知道length, head出一個tail進一個</p>
-<p>xxxxxx</p>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 </div>
 <div id="question-3" class="section level2">
@@ -658,7 +677,7 @@ Two Stacks:
 </ul>
 <p>Amortized Time:</p>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
-<div id="-1" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">2.4.1</span> 舉一反三</h3>
 <p>How to speed up the remove() operations?</p>
 <p>Solution: Use a third stack as a buffer</p>
