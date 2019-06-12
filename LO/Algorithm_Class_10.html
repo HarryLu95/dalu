@@ -585,10 +585,9 @@ boolean isSymmetric(TreeNode left, TreeNode right) {
 <li>Time: O(<span class="math inline">\(n\)</span>)</li>
 <li>Space: O(<span class="math inline">\(\text{height}\)</span>)</li>
 </ul>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
-<div id="problem-3-" class="section level2">
-<h2><span class="header-section-number">1.8</span> Problem 3 (舉一反三)</h2>
+<div id="problem-3-whether-have-same-structure-of-two-binary-trees-" class="section level2">
+<h2><span class="header-section-number">1.8</span> Problem 3: Whether Have Same Structure of Two Binary Trees? (舉一反三)</h2>
 <p>Let’s assume if we tweak the lchild with rchild of an arbitrary node in a binary tree, then the “structure” of the tree are not changed. Then how can we determine whether two binary trees’ structures are identical.</p>
 <pre><code>  8
  / \
@@ -596,22 +595,24 @@ boolean isSymmetric(TreeNode left, TreeNode right) {
 |
 7
 
-        Case 1
-   8a             8b
- /    \         /    \
-4a    5a  AND  4b    5b
-|              |
-7              7
+         Case 1
 
-          OR
+   8a               8b
+ /    \           /    \
+4a    5a   AND   4b    5b
+|                |
+7                7
 
-        Case 2
-   8a             8b
- /    \         /    \
-4a    5a  AND  5b    4b
-|                     |
-7                     7</code></pre>
-<pre class="java"><code>boolean isIdentical(TreeNode left = 8a, TreeNode right = 8b) {
+           OR
+
+         Case 2
+
+   8a               8b
+ /    \           /    \
+4a    5a   AND   5b    4b
+|                       |
+7                       7</code></pre>
+<pre class="java"><code>boolean isIdentical(TreeNode left, TreeNode right) {
   if (left == null &amp;&amp; right == null) {
     return true;
   }
@@ -626,47 +627,101 @@ boolean isSymmetric(TreeNode left, TreeNode right) {
   return (isIdentical(left.left, right.left) &amp;&amp; isIdentical(left.right, right.right)) || (isIdentical(left.left, right.right) &amp;&amp; isIdentical(left.right, right.left));
 }</code></pre>
 <p>Assume two trees are both balanced:</p>
-<pre><code></code></pre>
+<pre><code>root of given left tree: 8a (n nodes)
+root of given right tree: 8b (n nodes)
+
+                  isIdentical(8a, 8b)
+           /             |  |             \
+(8a.L, 8b.L)  (8a.R, 8b.R)  (8a.L, 8b.R)  (8a.R, 8b.L)
+    /||\          /||\          /||\          /||\</code></pre>
+<p>If the trees are binary trees, then the total number of nodes depend on the last layer (leaf layer). E.g., 1 2 4 8 16 32 …</p>
+<p>This recursion tree is actually a Quadral tree: 1 14 16 64 256 …</p>
+<p>How many leaf nodes in the last layer? We must first answer this question.</p>
+<p>Because the original input tree is balanced (ASSUMED), it has <span class="math inline">\(\log_2(n)\)</span> levels. Then the number of levels in this quadral tree is <span class="math inline">\(\log_2(n)\)</span>.</p>
+<p>Total number of nodes in this quadral tree is: <span class="math inline">\(n^2\)</span></p>
+<p><span class="math display">\[\begin{align}
+4^{\log_2(n)}
+&amp;=2^{2\log_2(n)}\\
+&amp;=2^{\log_2(n^2)}\\
+&amp;=n^2
+\end{align}\]</span></p>
 <p>Total time: O(<span class="math inline">\(n^2\)</span>)</p>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 </div>
 <div id="binary-search-tree-1" class="section level1">
 <h1><span class="header-section-number">2</span> Binary Search Tree</h1>
-<div id="problem-1-determine-bst" class="section level2">
-<h2><span class="header-section-number">2.1</span> Problem 1: Determine BST</h2>
+<div id="problem-1-whether-a-binary-search-tree" class="section level2">
+<h2><span class="header-section-number">2.1</span> Problem 1: Whether a Binary Search Tree?</h2>
 <p>How to determine a binary tree is a BST?</p>
 <pre><code>      10 == root
     /    \
   5       15
  / \     /  \
 2   7   12  20</code></pre>
-<p>Solution 0a: (Primitive way but very bad in terms of space consumption)</p>
+<p><strong>Solution 0a:</strong> (Primitive way but very bad in terms of space consumption)</p>
 <ul>
-<li>Step 1: In-order traverse the tree and store</li>
+<li>Step 1: In-order traverse the tree and store all numbers in an arrayList.</li>
+<li>Step 2: Iterate over the array to determine, whether A[i] &lt; A[i+1].</li>
 </ul>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
-<p>Solution 1: (Our way)</p>
-<pre><code></code></pre>
-<pre class="java"><code>boolean isBSTHelper(TreeNode root = 10, int min = -inf, int max = +inf) {
+<p><strong>Solution 0b:</strong> (Better way)</p>
+<ul>
+<li>Step 1: In-order traverse the tree and whenever we print out a new element, we compare it with the element that was printed out previously.</li>
+</ul>
+<p><strong>Solution 1:</strong> (Our way)</p>
+<pre><code>                       10 (min=-inf,max=+inf)
+                           /             \
+         5 (min=-inf,max=10)     AND     15
+                 /  \                   /  \
+2 (min=-inf,max=5)  X (min=5,max=10)   12  20</code></pre>
+<pre class="java"><code>// In the example, root = 10, min = -inf, max = +inf
+boolean isBSTHelper(TreeNode root, int min, int max) {
   if (root == null) {
-    return ture;
+    return true;
   }
-  if (root.value &gt; min &amp;&amp; root.value &lt; max) {
-    return isBSTHelper(root.left, min, root.value) &amp;&amp; isBSTHelper(root.right, root.value, max);
-  }
-  else {
+  if (root.value &lt;= min || root.value &gt;= max) {
     return false;
   }
+  return isBSTHelper(root.left, min, root.value) &amp;&amp;
+         isBSTHelper(root.right, root.value, max);
 }</code></pre>
+<ul>
+<li>Time: O(<span class="math inline">\(n\)</span>)</li>
+<li>Space: O(<span class="math inline">\(\text{height}\)</span>)</li>
+</ul>
 </div>
 <div id="discussion" class="section level2">
 <h2><span class="header-section-number">2.2</span> Discussion</h2>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p>The basic application of recursion in tree topics can be roughly divided into two categories:</p>
+<ol style="list-style-type: decimal">
+<li>Pass the value from top to bottom (從上往下傳遞)
+<ol style="list-style-type: lower-alpha">
+<li>BST determination</li>
+</ol></li>
+<li>Only pass the value from bottom to top (從下往上傳遞)
+<ol style="list-style-type: lower-alpha">
+<li><code>getHeight(root)</code>, pass <strong>integer</strong> value from bottom to top</li>
+<li><code>isBalanced(root)</code>, pass <strong>boolean</strong> value from bottom to top</li>
+<li><code>isSymmetric(root1, root2)</code>, pass <strong>boolean</strong> value from bottom to top</li>
+<li>Assign the value of each node to be the total number of nodes that belong to its subtree, pass <strong>integer</strong> value from bottom to top</li>
+</ol></li>
+</ol>
 </div>
 <div id="problem-2-print-bst-keys-in-the-given-range" class="section level2">
 <h2><span class="header-section-number">2.3</span> Problem 2: Print BST keys in the given range</h2>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p>Given two values k1 and k2 (where k1 &lt; k2) and a root pointer to a Binary Search Tree. Porint all the keys of tree in range k1 to k2. In other words, print all x such that k1&lt;=x,=k2 and x is a key of the given BST. Print all the keys in an increasing order.</p>
+<pre><code>in order:
+
+[k1 = 16  &lt;-  x  -&gt;  k2 = 50]
+
+      10 == root
+    /    \
+  5       15
+ / \     /  \
+2   7   12  20</code></pre>
+<ul>
+<li>Step 1: Determine whether we need to go left, only if (root.value &gt; lower_bound) do we need to go left</li>
+<li>Step 2: Determine whether we need to go right, only if (root.value &lt; upper_bound) do we need to go right</li>
+</ul>
 <pre class="java"><code>void rangeInOrderTra(TreeNode root, int lower, int upper) {
   if (root == null) {
     return;
@@ -685,10 +740,12 @@ boolean isSymmetric(TreeNode left, TreeNode right) {
   }
 }</code></pre>
 <ul>
-<li>Time = O(<span class="math inline">\(\text{height}+\text{# of nodes in the rage of [k1, k2]}\)</span>), worst case O(<span class="math inline">\(n\)</span>)</li>
+<li>Time: worst case O(<span class="math inline">\(n\)</span>)
+<ul>
+<li>Better answer: O(<span class="math inline">\(\text{height}+\text{# of nodes in the rage of [k1, k2]}\)</span>)</li>
+</ul></li>
 <li>Space: O(<span class="math inline">\(\text{height}\)</span>)</li>
 </ul>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 </div>
 
