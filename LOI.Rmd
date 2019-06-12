@@ -99,7 +99,7 @@ td.updated {background-color: MediumSpringGreen;}
     [Practice 4](LO/Algorithm_Class_7.html)</td>
 </tr>
 <tr>
-  <td class="pending">3rd  
+  <td class="updated">3rd  
     [Class 4](LO/Algorithm_Class_8.html)</td>
   <td></td>
   <td class="updated">5th  
@@ -158,7 +158,7 @@ td.updated {background-color: MediumSpringGreen;}
 
 - Class 3: Linked List [Link](LO/Algorithm_Class_6.html)
     - Practice 4 [Link](LO/Algorithm_Class_7.html)
-- Class 4: Queue and Stack [Link](LO/Algorithm_Class_8.html) (pending)
+- Class 4: Queue and Stack [Link](LO/Algorithm_Class_8.html)
     - Practice 5 [Link](LO/Algorithm_Class_9.html)
 - Class 5: Binary Tree [Link](LO/Algorithm_Class_10.html) (pending)
     - Practice 6 [Link](LO/Algorithm_Class_11.html)

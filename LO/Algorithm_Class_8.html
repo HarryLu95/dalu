@@ -585,22 +585,29 @@ Q  &lt;--[1 2 3]&lt;--
 ===
 
 Stack [1 2]        size = 2
+original size = 3, so do 3 - 1 = 2 rounds of pop() and push(), and pop() the last element, which is actually on the top of the stack.
 
 ---
 
 Q  &lt;-1-[2 3]&lt;--
 Q  &lt;--[2 3]&lt;-1-
-Q  &lt;--[2 3 1]&lt;--</code></pre>
-<p>假設知道length, head出一個tail進一個</p>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+Q  &lt;--[2 3 1]&lt;--
+
+Q  &lt;-2-[3 1]&lt;--
+Q  &lt;--[3 1]&lt;-2-
+Q  &lt;--[3 1 2]&lt;--
+
+Q  &lt;-3-[1 2]&lt;--
+Q  &lt;--[1 2]&lt;--</code></pre>
 </div>
 </div>
-<div id="question-3" class="section level2">
-<h2><span class="header-section-number">2.3</span> Question 3</h2>
+<div id="question-3-implement-min-with-two-stacks" class="section level2">
+<h2><span class="header-section-number">2.3</span> Question 3: Implement <code>min()</code> with two stacks</h2>
 <p>How to implement the <code>min()</code> function when using stack with time complexity O(<span class="math inline">\(1\)</span>) for each operation?</p>
 <pre><code>S1 []
 S2 []</code></pre>
-<p>Use Stack2 to store the min.value inside stack1.</p>
+<p><strong>Method 1:</strong> Keep the adding &amp; removing action in synchronization with each other. min() returns the stack2.top() value as the result.</p>
+<p>Use Stack2 to store the min.value inside stack1:</p>
 <pre><code>S1 [3]
 S2 [3]
 min = 3
@@ -640,10 +647,75 @@ min = -1
 S1 [3 1 0 10 20 -1 10]
 S2 [3 1 0  0  0 -1 -1]
 min = -1</code></pre>
-<p>Or, in Stack2, only store the globalMin once if the next one is the same.</p>
+<ul>
+<li>Time: O(<span class="math inline">\(1\)</span>)</li>
+<li>Space: O(<span class="math inline">\(n\)</span>)</li>
+</ul>
+<div id="q3.1-optimize-the-method" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Q3.1 Optimize the method</h3>
+<p>How to optimize the space usage of stack2 assuming that there are a lot of duplicates?</p>
+<pre><code>S1 [
+S2 [
+S3 [</code></pre>
+<ul>
+<li>Insight: Try to make the elements in Stack2 a descending order.</li>
+<li>Stack 1: Store input elements.</li>
+<li>Stack 2: Store the min element so far in Stack 1 (as its top element). (Only store the globalMin once if the next one is the same.)</li>
+<li>Stack 3: The size of Stack 1 when this element is added to Stack 2.</li>
+</ul>
+<pre><code>add(3)
+min = 3
+S1 [3
+S2 [3
+S3 [1
+
+---
+
+add(1)
+min = 1
+S1 [3  1
+S2 [3  1
+S3 [1  2
+
+---
+
+add(-7)
+min = -7
+S1 [3  1 -7
+S2 [3  1 -7
+S3 [1  2  3
+
+---
+
+add(-6)
+min = -7, no operation for S2 and S3
+S1 [3  1 -7 -6
+S2 [3  1 -7
+S3 [1  2  3
+
+---
+
+add(-8)
+min = -8
+S1 [3  1 -7 -6 -8
+S2 [3  1 -7 -8
+S3 [1  2  3  5
+
+---
+
+add(-4)
+min = -4, no operation for S2 and S3
+S1 [3  1 -7 -6 -8 -4
+S2 [3  1 -7 -8
+S3 [1  2  3  5
+
+---
+
+...</code></pre>
 </div>
-<div id="question-4" class="section level2">
-<h2><span class="header-section-number">2.4</span> Question 4</h2>
+</div>
+<div id="question-4-implement-a-deque-by-two-stacks" class="section level2">
+<h2><span class="header-section-number">2.4</span> Question 4: Implement a deque by two stacks</h2>
 <p>How to use multiple Stacks to implement a deque?</p>
 <pre><code>Deque:
 L.add()        R.add()
@@ -672,22 +744,148 @@ Two Stacks:
 </ul>
 <p>API4: Right.remove()</p>
 <ul>
-<li>Case 1: if not empty…</li>
-<li>Case 2: if empty…</li>
+<li>Case 1: if not empty, O(<span class="math inline">\(1\)</span>)</li>
+<li>Case 2: if empty, O(<span class="math inline">\(n\)</span>)</li>
 </ul>
-<p>Amortized Time:</p>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
-<div class="section level3">
-<h3><span class="header-section-number">2.4.1</span> 舉一反三</h3>
+<pre><code>[] Stack1 Stack2 [1 2 3 4 5 ... n]
+
+L.remove()  2n + 1
+R.remove()  2(n-1) + 1
+L.remove()  2(n-2) + 1
+R.remove()  2(n-3) + 1
+...         ...</code></pre>
+<p>Amortized Time: O(<span class="math inline">\(n\)</span>)</p>
+<p><span class="math display">\[\frac{2\times[n+(n-1)+(n-2)+\cdots+1]+1\times n}{n}=\frac{n\times(n-1)+n}{n}=n\]</span></p>
+<p>Worst case time for an operation = O(<span class="math inline">\(n\)</span>) <strong>cannot</strong> be amortized to O(<span class="math inline">\(1\)</span>).</p>
+<div id="q4.1-optimize-the-method" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Q4.1 Optimize the method</h3>
 <p>How to speed up the remove() operations?</p>
-<p>Solution: Use a third stack as a buffer</p>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p>Solution: Use 3 stacks to improve the time complexity of remove() operation.</p>
+<p>We use a buffer stack, say Stack3 to buffer the elements, when moving all elements from right part to left part. To make sure the number of elements in Left and Right part are roughly 50% of all elements. In detail, Stack3 us used as the buffer to store the top 1/2 element, so that the bottom 1/2 element can be moved to stack1.</p>
+<pre><code>             Stack 1  ][  Stack 2      as a deque
+
+input       (Empty)   ][1 2 3 4 5 6 7
+output                ][
+        Stack 3 [
+---
+
+input       (Empty)   ][1 2 3 4 5 6
+output                ][
+        Stack 3 [7
+
+---
+
+input       (Empty)   ][1 2 3 4 5
+output                ][
+        Stack 3 [7 6
+
+---
+
+input       (Empty)   ][1 2 3 4
+output                ][
+        Stack 3 [7 6 5
+
+---
+
+input       (Empty)   ][1 2 3
+output                ][
+        Stack 3 [7 6 5 4
+
+---
+
+input       (Empty)   ][1 2
+output               3][
+        Stack 3 [7 6 5 4
+
+---
+
+input       (Empty)   ][1
+output             2 3][
+        Stack 3 [7 6 5 4
+
+---
+
+input       (Empty)   ][
+output           1 2 3][
+        Stack 3 [7 6 5 4
+
+---
+
+input       (Empty)   ][
+output           1 2 3][4
+        Stack 3 [7 6 5
+
+---
+
+input       (Empty)   ][
+output           1 2 3][4 5
+        Stack 3 [7 6
+
+---
+
+input       (Empty)   ][
+output           1 2 3][4 5 6
+        Stack 3 [7
+
+---
+
+input       (Empty)   ][
+output           1 2 3][4 5 6 7
+        Stack 3 [</code></pre>
+<p>Worst case amortized time = ??</p>
+<ul>
+<li>Step 1: We move 1/2 * n elements from stack2 to stack3 (buffer)</li>
+</ul>
+<pre><code>1/2 * n (pop) + 1/2 * n (push) = n</code></pre>
+<ul>
+<li>Step 2: We move the remaining 1/2 elements from stack2 to stack1 (from right to left side)</li>
+</ul>
+<pre><code>1/2 * n (pop) + 1/2 * n (push) = n</code></pre>
+<ul>
+<li>Step 3: Reverse Step 1</li>
+</ul>
+<pre><code>1/2 * n (pop) + 1/2 * n (push) = n</code></pre>
+<p>So, in order to balance both sides, it taks O(<span class="math inline">\(3n\)</span>) for n elements.</p>
+<p>All the following pop operations take only O(<span class="math inline">\(1\)</span>):</p>
+<ul>
+<li>For 1st n/2 elements: O(<span class="math inline">\(1\)</span>)</li>
+</ul>
+<p><span class="math display">\[\frac{3n+\frac{n}{2}\times1}{\frac{n}{2}}=\frac{3.5n}{0.5n}=7\]</span></p>
+<ul>
+<li>For 2nd n/4 elements: O(<span class="math inline">\(1\)</span>)</li>
+</ul>
+<p><span class="math display">\[\frac{3n'+\frac{n'}{2}\times1}{\frac{n'}{2}}=7\quad,n'=\frac{n}{2}\]</span></p>
+<ul>
+<li>For 3rd n/8 elements: O(<span class="math inline">\(1\)</span>)</li>
+</ul>
+<p><span class="math display">\[\frac{3n''+\frac{n''}{2}\times1}{\frac{n''}{2}}=7\quad,n''=\frac{n}{4}\]</span></p>
+<ul>
+<li>…</li>
+<li>Total: O(<span class="math inline">\(1\)</span>)</li>
+</ul>
+<p><span class="math display">\[\frac{3.5n+3.5n\times\frac{1}{2}+3.5n\times\frac{1}{4}+\cdots}{n}=\frac{3.5n\times\left(1+\frac{1}{2}+\frac{1}{4}+\cdots\right)}{n}=\frac{3.5n\times2}{n}=7\]</span></p>
 </div>
 </div>
 </div>
 <div id="discussion-on-stack" class="section level1">
 <h1><span class="header-section-number">3</span> Discussion on Stack</h1>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p>What are the common features of Stack operations?</p>
+<ol style="list-style-type: decimal">
+<li>Move all the elements of Stack1 to Stack2, then the order of the elements in Stack2 is completely reversed.</li>
+<li>Move all the elements of Stack1 to Stack2, and move all (or part) of the elements back to Stack1, then the order of the elements back to Stack1 is unchanged. The amortized time complexity on each moved element is O(<span class="math inline">\(1\)</span>).</li>
+</ol>
+<p>什麽問題要往Stack上考慮?</p>
+<ul>
+<li>When scanning an array/string linearly from left to right, it is often necessary to use the stack if you want to keep looking back at the latest elements on the left. (從左到右linear scan, 不斷回頭看)
+<ol style="list-style-type: decimal">
+<li>Find the largest rectangle in the Histogram.</li>
+<li>Reverse Polish Notation. <code>a*(b+c) -&gt; abc+*</code>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Shunting-yard_algorithm" class="uri">https://en.wikipedia.org/wiki/Shunting-yard_algorithm</a>, Shunting Yard algorithm: convert a mid-fix expression to post-fix expression (Reverse polish notation).</li>
+</ul></li>
+<li>Deduplication of strings. <code>cabba -&gt; caa -&gt; c</code></li>
+</ol></li>
+</ul>
 </div>
 
 
