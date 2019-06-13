@@ -313,14 +313,14 @@ td {border: 1px solid black; width: auto; height: 50px; text-align: left; font-s
 td.title {text-align: center;}
 ol {font-size: 18px; color: black;}
 ul {font-size: 18px; color: black;}
-img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; margin-right: auto; width: 200px;}
+img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; margin-right: auto; width: 250px;}
 span.r {color: red;}
 </style>
 <hr />
 <div id="heap" class="section level1">
 <h1><span class="header-section-number">1</span> Heap</h1>
 <p>Heap (or min/max heap) (堆), is also called Priority Queue (優先隊列).</p>
-<p>用途: 維護一個<strong>變化</strong>的數據集的<strong>最優值</strong>.</p>
+<p>Purpose: Maintain an <strong>optimal value</strong> for a continuously <strong>changing</strong> data set.</p>
 <div id="example" class="section level2">
 <h2><span class="header-section-number">1.1</span> Example</h2>
 <pre><code>      1
@@ -337,12 +337,12 @@ right_index = parent_index * 2 + 2</code></pre>
 </div>
 <div id="property-of-heap" class="section level2">
 <h2><span class="header-section-number">1.2</span> Property of Heap</h2>
-<p>性質: 堆的實現通過構造二叉堆 (binary heap), 這種數據結構具有以下性質.</p>
+<p>Nature: The heap is implemented by constructing a binary heap (二叉堆). This data structure has the following properties.</p>
 <ol style="list-style-type: decimal">
-<li>堆總是一顆完全二叉樹 (complete binary tree).</li>
-<li>堆序性: 任意節點小於它的所有後裔 (descendent).</li>
+<li>Heap is always a complete binary tree (完全二叉樹).</li>
+<li>Heap Order (堆序性): Any node is less than all its descendents (後裔).</li>
 </ol>
-<p>根節點最小的堆叫做最小堆 (MIN HEAP). 根節點最大的堆叫做最大堆 (MAX HEAP).</p>
+<p>The heap which the root value is the smallest is called a MIN HEAP (最小堆). The heap which the root value is the largest is called a MAX HEAP (最大堆).</p>
 <div id="implement-by-an-array" class="section level3">
 <h3><span class="header-section-number">1.2.1</span> Implement by an array</h3>
 <p>Implemented as an unsorted array:</p>
@@ -356,7 +356,7 @@ right_index = parent_index * 2 + 2</code></pre>
 <div id="operation-of-heap" class="section level2">
 <h2><span class="header-section-number">1.3</span> Operation of Heap</h2>
 <ol style="list-style-type: decimal">
-<li>insert: 向堆中插入一個新元素. Time: O(<span class="math inline">\(\log(n)\)</span>) (percolateUp)</li>
+<li><code>insert(e)</code>: Insert a new element into the heap. Time: O(<span class="math inline">\(\log(n)\)</span>) (percolate Up)</li>
 </ol>
 <pre><code>insert(0)
 
@@ -376,11 +376,23 @@ right_index = parent_index * 2 + 2</code></pre>
 
 ---
 
-???</code></pre>
+      1
+    /   \
+  2       0
+ / \     / \
+5   4   7   3
+
+---
+
+      0
+    /   \
+  2       1
+ / \     / \
+5   4   7   3</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>update: 將新元素提升使其符合堆的性質. Time: O(<span class="math inline">\(\log(n)\)</span>)</li>
+<li><code>update(e1, e2)</code>: Update a new element and match it with the nature of the heap. Time: O(<span class="math inline">\(\log(n)\)</span>)</li>
 </ol>
-<pre><code>2 -&gt; 8, change with the smaller child
+<pre><code>update(2, 8)
 
       1
     /   \
@@ -390,12 +402,28 @@ right_index = parent_index * 2 + 2</code></pre>
 
 ---
 
-???</code></pre>
+      1
+    /   \
+  8       3
+ / \     / \
+5   4   7  null
+
+---
+
+change 8 with its smaller child, which is 4
+
+      1
+    /   \
+  4       3
+ / \     / \
+5   8   7  null</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>get/top: 獲取當前堆頂元素的值. Time: O(<span class="math inline">\(1\)</span>)</li>
-<li>pop: 刪除堆頂元素. Time: O(<span class="math inline">\(\log(n)\)</span>) (percolateDown)</li>
+<li><code>getTop()</code>: Get the value of the current root element. Time: O(<span class="math inline">\(1\)</span>)</li>
+<li><code>pop()</code>: Delete the root element. Time: O(<span class="math inline">\(\log(n)\)</span>) (percolate Down)</li>
 </ol>
-<pre><code>      1
+<pre><code>pop()
+
+      1
     /   \
   2       3
  / \     / \
@@ -433,14 +461,14 @@ right_index = parent_index * 2 + 2</code></pre>
  / \     / \
 5   7   n   n</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li>heapify: 使得一個unsorted array變成一個堆. Time: O(<span class="math inline">\(n\)</span>)
+<li><code>heapify()</code>: Make an unsorted array into a heap. Time: O(<span class="math inline">\(n\)</span>)
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Heapsort" class="uri">https://en.wikipedia.org/wiki/Heapsort</a></li>
 </ul></li>
 </ol>
 </div>
-<div id="problem-1" class="section level2">
-<h2><span class="header-section-number">1.4</span> Problem 1</h2>
+<div id="problem-smallest-k-elements-of-an-array" class="section level2">
+<h2><span class="header-section-number">1.4</span> Problem: Smallest k Elements of an Array</h2>
 <p>Find <strong>smallest</strong> k elements from an unsorted array of size n.</p>
 <p><strong>Solution 0:</strong> Sort</p>
 <ul>
@@ -463,11 +491,11 @@ right_index = parent_index * 2 + 2</code></pre>
 <li>Step 3: Finally, all elements remaining in this heap is the result to return.</li>
 <li>Total time: O(<span class="math inline">\(k+(n-k)\log(k)\)</span>)</li>
 </ul>
-<pre><code>k = 7
+<pre><code>Example:
 
-n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, ...
-
-[n1 n2 n3 n4 n5 n6 n7] n8 n9 n10, ...
+- k = 7
+- n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, ...</code></pre>
+<pre><code>[n1 n2 n3 n4 n5 n6 n7] n8 n9 n10 ...
 
 n1 ~ n7:
       x &lt;- max
@@ -485,7 +513,7 @@ scan from n8
 k = 20
 
 xxxP3xxxxxxxxxxP2xxxxxxxxxxxxxxP1xxxxxxxxxxxxxxxxxx
- 3      195         ...                  500</code></pre>
+ 3      195            ...              500</code></pre>
 <ul>
 <li>Average time: O(<span class="math inline">\(n+n/2+n/4+\cdots\)</span>) = O(<span class="math inline">\(n\)</span>)</li>
 <li>Worst case time: O(<span class="math inline">\(n+(n-1)+(n-2)+\cdots+1\)</span>) = O(<span class="math inline">\(n^2\)</span>)</li>
@@ -507,8 +535,8 @@ xxxP3xxxxxxxxxxP2xxxxxxxxxxxxxxP1xxxxxxxxxxxxxxxxxx
 <ul>
 <li>Adjacency Matrix
 <ul>
-<li>Pros:</li>
-<li>Cons:</li>
+<li>Pros: Representation is easy to implement. Edge removal takes O(<span class="math inline">\(1\)</span>) time. Queries like whether there is an edge from vertex “u” to vertex “v” are efficient and can be done O(<span class="math inline">\(1\)</span>).</li>
+<li>Cons: Consumes more space, O(<span class="math inline">\(V^2\)</span>). (V is the number of vertex/node.) Even if the graph is sparse (contains less number of edges), it is still waste of space.</li>
 </ul></li>
 </ul>
 <div class="figure">
@@ -738,7 +766,7 @@ Expand 5
 <div id="-dijkstras-algorithm" class="section level2">
 <h2><span class="header-section-number">3.4</span> 經典考題 (運用Dijkstra’s Algorithm的性質)</h2>
 <p>Given a matrix of size NxN, for each row the elements are sorted in an ascending order, and for each column the elements are also sorted in an ascending order. How to find</p>
-<p>expand nore [i][j], from pq, time=O(number of nodes)=O(logk)</p>
+<p>expand node [i][j], from pq, time=O(number of nodes)=O(logk)</p>
 <p>k layers, so O(klogk)</p>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
