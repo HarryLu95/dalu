@@ -1388,22 +1388,133 @@ public class MiddleNode {
 <h1><span class="header-section-number">4</span> Class 4 - Queue and Stack</h1>
 <div id="sort-numbers-in-two-stacks" class="section level2">
 <h2><span class="header-section-number">4.1</span> Sort Numbers In Two Stacks</h2>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>// The numbers are in input originally, and after sorting, they should be in ascending order from bottom to top in input stack.
+// Assumption: There are no duplicate elements in input.
+public class SortTwoStacks {
+  public void sort(Deque&lt;Integer&gt; input) {
+    if (input == null || input.size() &lt;= 1) {
+      return;
+    }
+    Deque&lt;Integer&gt; buffer = new ArrayDeque&lt;&gt;();
+    sort(input, buffer);
+  }
+  
+  private void sort(Deque&lt;Integer&gt; input, Deque&lt;Integer&gt; buffer) {
+    int prevMin = Integer.MIN_VALUE;
+    while (input.peekFirst() &gt; prevMin) {
+      int curMin = Integer.MAX_VALUE;
+      while (!input.isEmpty() &amp;&amp; input.peekFirst() &gt; prevMin) {
+        curMin = Math.min(curMin, input.peekFirst());
+        buffer.offerFirst(input.pollFirst());
+      }
+      input.offerFirst(curMin);
+      while (!buffer.isEmpty()) {
+        int temp = buffer.pollFirst();
+        if (temp != curMin) {
+          input.offerFirst(temp);
+        }
+      }
+      prevMin = curMin;
+    }
+  }
+}</code></pre>
 </div>
 <div id="implement-queue-by-two-stacks" class="section level2">
 <h2><span class="header-section-number">4.2</span> Implement Queue By Two Stacks</h2>
 <p>Implement a queue by using two stacks. The queue should provide size(), isEmpty(), offer(), poll() and peek() operations. When the queue is empty, poll() and peek() should return null.</p>
 <p><a href="https://app.laicode.io/app/problem/31" class="uri">https://app.laicode.io/app/problem/31</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class QueueByTwoStack {
+  // We always insert into the in stack.
+  private LinkedList&lt;Integer&gt; in;
+  // We always remove from the out stack.
+  private LinkedList&lt;Integer&gt; out;
+  
+  public QueueByTwoStack() {
+    in = new LinkedList&lt;Integer&gt;();
+    out = new LinkedList&lt;Integer&gt;();
+  }
+  
+  public Integer poll() {
+    // If out stack is empty, need to move the elements from in stack to out stack.
+    move();
+    return out.isEmpty() ? null : out.pollFirst();
+  }
+  
+  public void offer(int value) {
+    // Always push into the in stack.
+    in.offerFirst(value);
+  }
+  
+  public Integer peek() {
+    move();
+    return out.isEmpty() ? null : out.peekFirst();
+  }
+  
+  // When out stack is empty, move the elements from in stack to out stack.
+  private void move() {
+    if (out.isEmpty()) {
+      while (!in.isEmpty()) {
+        out.offerFirst(in.pollFirst());
+      }
+    }
+  }
+  
+  public int size() {
+    return in.size() + out.size();
+  }
+  
+  public boolean isEmpty() {
+    return in.size() == 0 &amp;&amp; out.size() == 0;
+  }
+}</code></pre>
 </div>
 <div id="stack-with-min" class="section level2">
 <h2><span class="header-section-number">4.3</span> Stack With min()</h2>
 <p>Enhance the stack implementation to support min() operation. min() should return the current minimum value in the stack. If the stack is empty, min() should return -1.</p>
 <p><a href="https://app.laicode.io/app/problem/32" class="uri">https://app.laicode.io/app/problem/32</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class StackWithMin {
+  private Deque&lt;Integer&gt; stack;
+  private Deque&lt;Integer&gt; minStack;
+  
+  public StackWithMin() {
+    stack = new LinkedList&lt;Integer&gt;();
+    minStack = new LinkedList&lt;Integer&gt;();
+  }
+  
+  public Integer min() {
+    if (minStack.isEmpty()) {
+      return null;
+    }
+    return minStack.peekFirst();
+  }
+  
+  public void push(int value) {
+    stack.offerFirst(value);
+    // When value &lt;= current min value in stack, need to push the value to minStack.
+    if (minStack.isEmpty() || value &lt;= minStack.peekFirst()) {
+      minStack.offerFirst(value);
+    }
+  }
+  
+  public Integer pop() {
+    if (stak.isEmpty()) {
+      return null;
+    }
+    Integer result = stack.pollFirst();
+    // When the popped value is the same as top value of minStack, the value need to be popped from minStack as well.
+    if (minStack.peekFirst().equals(result)) {
+      minStack.pollFirst();
+    }
+    return result;
+  }
+  
+  public Integer top() {
+    if (stack.isEmpty()) {
+      return null;
+    }
+    return stack.peekFirst();
+  }
+}</code></pre>
 </div>
 </div>
 <div id="class-5---binary-tree-binary-search-tree" class="section level1">
@@ -1412,15 +1523,55 @@ public class MiddleNode {
 <h2><span class="header-section-number">5.1</span> Binary Tree Pre-order Interative Traversal</h2>
 <p>Implement an iterative, pre-order traversal of a given binary tree, return the list of keys of each node in the tree as it is pre-order traversed.</p>
 <p><a href="https://app.laicode.io/app/problem/44" class="uri">https://app.laicode.io/app/problem/44</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class PreOrder {
+  public List&lt;Integer&gt; preOrder(TreeNode root) {
+    List&lt;Integer&gt; preorder = new ArrayList&lt;Integer&gt;();
+    if (root == null) {
+      return preorder;
+    }
+    Deque&lt;TreeNode&gt; stack = new LinkedList&lt;TreeNode&gt;();
+    stack.offerFirst(root);
+    while (!stack.isEmpty()) {
+      TreeNode curr = stack.pollFirst();
+      // The left subtree should be traversed before right subtree, since stack is LIFO, we should push right into the stack first, so for the next step the top element of the stack is the left subtree.
+      if (curr.right != null) {
+        stack.offerFirst(curr.right);
+      }
+      if (curr.left != null) {
+        stack.offerFirst(curr.left);
+      }
+      preorder.add(curr.key);
+    }
+    return preorder;
+  }
+}</code></pre>
 </div>
 <div id="binary-tree-in-order-iterative-traversal" class="section level2">
 <h2><span class="header-section-number">5.2</span> Binary Tree In-order Iterative Traversal</h2>
 <p>Implement an iterative, in-order traversal of a given binary tree, return the list of keys of each node in the tree as it is in-order traversed.</p>
 <p><a href="https://app.laicode.io/app/problem/43" class="uri">https://app.laicode.io/app/problem/43</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class InOrder {
+  public List&lt;Integer&gt; inOrder(TreeNode root) {
+    List&lt;Integer&gt; inorder = new ArrayList&lt;Integer&gt;();
+    Deque&lt;TreeNode&gt; stack = new LinkedList&lt;TreeNode&gt;();
+    TreeNode curr = root;
+    while (curr != null || !stack.isEmpty()) {
+      // Always try go to the left side to see if there is any node should be traversed before the curr node, curr node is stored on stack since it has not been traversed yet.
+      if (curr != null) {
+        stack.offerFirst(curr);
+        curr = curr.left;
+      }
+      else {
+        // If cannot go left, meaning all the nodes on the left side of the top node on stack have been traversed, the next traversing node should be the top node on stack.
+        curr = stack.pollFirst();
+        inorder.add(curr.key);
+        // The next subtree we want to traverse is curr.right.
+        curr = curr.right;
+      }
+    }
+    return inorder;
+  }
+}</code></pre>
 </div>
 <div id="binary-tree-post-order-iterative-traversal" class="section level2">
 <h2><span class="header-section-number">5.3</span> Binary Tree Post-order Iterative Traversal</h2>
