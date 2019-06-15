@@ -317,10 +317,248 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 span.r {color: red;}
 </style>
 <hr />
+<div id="background" class="section level1">
+<h1><span class="header-section-number">1</span> Background</h1>
+<pre><code>                       隊列   實現
+PriorityQueue &lt;------- Heap -------&gt; Array
+
+Queue: head進tail出
+Heap: 右下進頂端出</code></pre>
+<p>在Java中用PriorityQueue這個類的接口來實現Heap這個抽象數據結構.</p>
+<p>Heap通過取出優先級最高的數據來實現PriorityQueue.</p>
+</div>
 <div id="priorityqueue" class="section level1">
-<h1><span class="header-section-number">1</span> PriorityQueue</h1>
+<h1><span class="header-section-number">2</span> PriorityQueue</h1>
 <p>It is a heap with the same Queue interface with <code>offer()</code>, <code>peek()</code>, <code>poll()</code>.</p>
 <p>But, it is not FIFO. When <code>poll()</code> or <code>peek()</code>, we always look at the smallest/largest element (min heap/max heap).</p>
+<p>The PriorityQueue will arrange the elements based on the order of the elements (who is smaller/larger by comparing any two of them) and it is optimized for problems about “who is the smallest/largest element”.</p>
+<p>Internally it is implemented using an array.</p>
+<ul>
+<li><code>offer(E e)</code>: insert one element into the heap</li>
+<li><code>peek()</code>: peek the top element in the heap (smallest/largest based on how to order the elements)</li>
+<li><code>poll()</code>: remove the top element from the heap, and return it (smallest/largest based on how to order the elements)</li>
+<li><code>size()</code></li>
+<li><code>isEmpty()</code></li>
+</ul>
+<p>Time complexity:</p>
+<ul>
+<li><code>offer(E e)</code>: O(<span class="math inline">\(\log(n)\)</span>)</li>
+<li><code>peek()</code>: O(<span class="math inline">\(1\)</span>)</li>
+<li><code>poll()</code>: O(<span class="math inline">\(\log(n)\)</span>) (return null)</li>
+<li><code>remove()</code>: O(<span class="math inline">\(\log(n)\)</span>) (throw exception), from AbstractQueue. Remove the root element and then maintain other elements.</li>
+<li><code>remove(Object)</code>: O(<span class="math inline">\(n\)</span>)</li>
+<li><code>size()</code>: O(<span class="math inline">\(1\)</span>)</li>
+<li><code>isEmpty()</code>: O(<span class="math inline">\(1\)</span>)</li>
+</ul>
+<p><code>remove(Object)</code> in heap and balanced BST:</p>
+<ol style="list-style-type: decimal">
+<li>heap:
+<ul>
+<li>search: O(<span class="math inline">\(n\)</span>)</li>
+<li>delete: O(<span class="math inline">\(\log(n)\)</span>)</li>
+<li><code>remove(Object)</code>: O(<span class="math inline">\(n+\log(n)\)</span>)=O(<span class="math inline">\(n\)</span>)</li>
+</ul></li>
+<li>balanced BST:
+<ul>
+<li>search: O(<span class="math inline">\(\log(n)\)</span>)</li>
+<li>delete: O(<span class="math inline">\(\log(n)\)</span>)</li>
+<li><code>remove(Object)</code>: O(<span class="math inline">\(\log(n)\)</span>)</li>
+</ul></li>
+</ol>
+<p>Order: The PriorityQueue need to know how to compare the elements and determine which one is smaller/larger.</p>
+<p>There are two ways to do so:</p>
+<p>The element type implementing Comparable interface.</p>
+<p><strong>Example:</strong></p>
+<pre class="java"><code>PriorityQueue&lt;Integer&gt; minHeap = new PriorityQueue&lt;Integer&gt;();
+
+minHeap.offer(4);
+minHeap.offer(5);
+minHeap.offer(2);
+minHeap.offer(3);
+minHeap.offer(1);
+
+while (!minHeap.isEmppty()) {
+  System.out.println(minHeap.poll());
+}</code></pre>
+<pre><code>1
+2
+3
+4
+5</code></pre>
+<p>How does the priorityqueue know how to compare the Integer objects?</p>
+<p>The element’s class can implement Comparable interface and thus implement the required method <code>compareTo()</code>, PriorityQueue will use this method to compare any two elements.</p>
+<pre class="java"><code>interface Comparable&lt;E&gt; {
+  int compareTo(E ele);
+}
+
+// Part of the Integer class implementation...
+class Integer implements Comparable&lt;Integer&gt; {
+  private int value;
+  
+  public Integer(int value) {
+    this.value = value;
+  }
+  
+  @Override
+  public int compareTo(Integer another) {
+    if (this.value == another.value) {
+      return 0;
+    }
+    return this.value &lt; another.value ? -1 : 1;
+  }
+}</code></pre>
+<p>The return value of <code>compareTo(another)</code> method determines the order of this and another:</p>
+<ul>
+<li>0: <code>this</code> and <code>another</code> are of the same priority</li>
+<li>-1 (&lt; 0): <code>this</code> has higher priority than <code>another</code></li>
+<li>1 (&gt; 0): <code>this</code> has less priority than <code>another</code></li>
+</ul>
+<p>Natural ordering</p>
+<p><strong>Another Example using custom class:</strong></p>
+<p>Suppose you have an integer matrix, each row is sorted by ascending order and each column is also sorted by ascending order, we need a class to representing each cell in the matrix, and we need to compare two cells with their value in the matrix.</p>
+<pre class="java"><code>class Cell {
+  public int row;
+  public int col;
+  public int value;
+  public Cell(int row, int col, int value) {
+    this.row = row;
+    this.col = col;
+    this.value = value;
+  }
+}
+// We want to have a minHeap by the value of the Cell element.
+</code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p><strong>Most frequently used constructors of PriorityQueue</strong></p>
+<ol style="list-style-type: decimal">
+<li><code>PriorityQueue&lt;Cell&gt; heap = new PriorityQueue&lt;Cell&gt;();</code>
+<ul>
+<li>initialize the internal array with default capacity(11)</li>
+<li>class <code>Cell</code> must implements <code>Comparable&lt;Cell&gt;</code>!</li>
+</ul></li>
+<li><code>PriorityQueue&lt;Cell&gt; heap = new PriorityQueue&lt;Cell&gt;(16);</code>
+<ul>
+<li>initialize the internal array with specified capacity(16)</li>
+<li>class <code>Cell</code> implements <code>Comparable&lt;Cell&gt;</code>!</li>
+</ul></li>
+<li><code>PriorityQueue&lt;Cell&gt; heap = new PriorityQueue&lt;Cell&gt;(16, new MyComparator());</code>
+<ul>
+<li>initialize the internal array with specified capacity(16)</li>
+<li>class <code>MyComparator</code> implements <code>Comparator&lt;Cell&gt;</code>!</li>
+</ul></li>
+<li><code>PriorityQueue&lt;Cell&gt; heap = new PriorityQueue&lt;Cell&gt;(new MyComparator());</code>
+<ul>
+<li>class <code>MyComparator</code> implements <code>Comparator&lt;Cell&gt;</code>!</li>
+<li><strong>Java 8 only</strong></li>
+</ul></li>
+</ol>
+<p><strong>Be Careful - the initial capacity has to be &gt; 0:</strong></p>
+<ul>
+<li>if k &lt;= 0, <code>IllegalArgumentException</code> will be thrown in the constructor.</li>
+</ul>
+<pre class="java"><code>PriorityQueue&lt;Cell&gt; minHeap = new PriorityQueue&lt;Cell&gt;(k, new MyComparator());</code></pre>
+<p><strong>Method 1 and 2, the object inside the PriorityQueue should be comparable!</strong> Otherwise, Java will throw runtime exception (it will cast anything inside into a <code>Comparable</code> to do the comparison).</p>
+<p><strong><code>heapify()</code>: convert an array to heap in O(<span class="math inline">\(n\)</span>) time</strong></p>
+<pre class="java"><code>List&lt;Cell&gt; list = new ArrayList&lt;Cell&gt;();
+// ...
+PriorityQueue&lt;Cell&gt; heap = new PriorityQueue&lt;Cell&gt;(list);
+// 1. initialize the internal array with heapify() internally
+// 2. class Cell implements Comparable&lt;Cell&gt;!</code></pre>
+<ul>
+<li>It is not exposed to outside from PriorityQueue class, it is a private method.</li>
+<li>The only way you can utilize the <code>heapify()</code>, is to use the constructor.</li>
+</ul>
+<pre class="java"><code>PriorityQueue(Collection&lt;? extends E&gt; c)</code></pre>
+<ul>
+<li>This constructor will call <code>heapify()</code> internally</li>
+</ul>
+<pre class="java"><code>// Part of the PriorityQueue implementation...
+class PriorityQueue&lt;E&gt; {
+  private E[] heapArray;
+  private int size;
+  
+  public PriorityQueue(Collection&lt;? extends E&gt; c) {
+    heapArray = c.toArray();
+    size = heapArray.length;
+    heapify();  // the only place heapify is called.
+  }
+  private void heapify() {
+    // heapify the heapArray.
+    for (int i = size / 2 - 1; i &gt;= 0; i--) {
+      percolateDown(i);
+    }
+  }
+}</code></pre>
+<ul>
+<li>Nested class: define a class within a class.</li>
+<li>Static nested class v.s. non-static nested class: belong to class, or belong to instance.</li>
+<li>Anonymous class: nested class with no name. Often replaceable by lambda expressions in Java 8.</li>
+<li>Categories (Just know it).</li>
+</ul>
+<p><strong>Anonymous class</strong> (defined in a method with just new and no definition)</p>
+<pre class="java"><code>PriorityQueue&lt;Cell&gt; pQueue = new PriorityQueue&lt;&gt;(16, new Comparator&lt;Cell&gt;() {
+  @Override
+  public int compare(Cell c1, Cell c2) {
+    return ...;
+  }
+});</code></pre>
+<p>In the following code:</p>
+<pre><code>new Comparator&lt;Cell&gt;() {
+  @Override
+  public int compare(Cell c1, Cell c2) {
+    return ...;
+  }
+}</code></pre>
+<ol style="list-style-type: decimal">
+<li><code>Comparator&lt;Cell&gt;</code>: Implement an interface</li>
+<li><code>{...}</code>: Define a class</li>
+<li><code>new</code>: Create an instance</li>
+<li><code>()</code>: Call constructor</li>
+</ol>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p><strong>Problem: Smallest K Elements In Unsorted Array</strong></p>
+<p>Find the K smallest numbers in an unsorted integer array A. The returned numbers should be in ascending order.</p>
+<p>Assumptions:</p>
+<ul>
+<li>A is not null</li>
+<li>K is &gt;= 0 and smaller than or equal to size of A</li>
+</ul>
+<p>Return:</p>
+<ul>
+<li>An array with size K containing the K smallest numbers in ascending order</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>A = {3, 4, 1, 2, 5}, K = 3, the 3 smallest numbers are {1, 2, 3}</li>
+</ul>
+<p>Solutions:</p>
+<ol style="list-style-type: decimal">
+<li>sort
+<ul>
+<li>time: O(<span class="math inline">\(n\log(n)\)</span>)</li>
+<li>space: O(<span class="math inline">\(n\)</span>) &lt;- merge sort</li>
+</ul></li>
+<li>min heap
+<ul>
+<li>pop k elements</li>
+<li>time: O(<span class="math inline">\((n+k)\log(n)\)</span>)</li>
+<li>space: O(<span class="math inline">\(n\)</span>)</li>
+</ul></li>
+<li><strong>max heap (online)</strong>
+<ul>
+<li>scan n-k elements</li>
+<li>time: O(<span class="math inline">\(n\log(k)\)</span>)</li>
+<li>space: O(<span class="math inline">\(k\)</span>)</li>
+</ul></li>
+<li>quick select
+<ul>
+<li>time: worst case O(<span class="math inline">\(n^2\)</span>)</li>
+<li>space: O(<span class="math inline">\(n\)</span>)</li>
+</ul></li>
+</ol>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p><strong>batch processing v.s. stream processing</strong></p>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 

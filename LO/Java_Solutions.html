@@ -1577,7 +1577,35 @@ public class SortTwoStacks {
 <h2><span class="header-section-number">5.3</span> Binary Tree Post-order Iterative Traversal</h2>
 <p>Implement an iterative, post-order traversal of a given binary tree, return the list of keys of each node in the tree as it is post-order traversed.</p>
 <p><a href="https://app.laicode.io/app/problem/45" class="uri">https://app.laicode.io/app/problem/45</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class Postorder {
+  // Method 1: Post-order is
+  public List&lt;Integer&gt; postOrderI(TreeNode root) {
+    List&lt;Integer&gt; result = new ArrayList&lt;Integer&gt;();
+    if (root == null) {
+      return result;
+    }
+    Deque&lt;TreeNode&gt; preOrder = new LinkedList&lt;TreeNode&gt;();
+    preOrder.offerFirst(root);
+    while (!preOrder.isEmpty()) {
+      TreeNode curr = preOrder.pollFirst();
+      // Conduct
+      result.add(curr.key);
+      // In pre-order
+      if (curr.left != null) {
+        preOrder.offerFirst(curr.left);
+      }
+      if (curr.right != null) {
+        preOrder.offerFirst(curr.right);
+      }
+    }
+    // Reverse the
+    Collections.reverse(result);
+    return result;
+  }
+  
+  // Method 2
+  public
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="check-if-binary-tree-is-balanced" class="section level2">
