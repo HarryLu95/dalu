@@ -123,8 +123,8 @@ td.updated {background-color: MediumSpringGreen;}
     [Practice 9](LO/Algorithm_Class_15.html)</td>
   <td class="updated">15th  
     [Class 7](LO/Algorithm_Class_16.html)</td>
-  <td>16th  
-    Practice 10</td>
+  <td class="pending">16th  
+    [Practice 10](LO/Algorithm_Class_17.html)</td>
 </tr>
 <tr>
   <td>17th  
