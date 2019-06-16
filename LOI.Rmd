@@ -113,7 +113,7 @@ td.updated {background-color: MediumSpringGreen;}
     [Practice 7](LO/Algorithm_Class_12.html)</td>
 </tr>
 <tr>
-  <td class="pending">10th  
+  <td class="updated">10th  
     [Practice 8](LO/Algorithm_Class_13.html)</td>
   <td></td>
   <td class="updated">12th  
@@ -163,7 +163,7 @@ td.updated {background-color: MediumSpringGreen;}
 - Class 5: Binary Tree [Link](LO/Algorithm_Class_10.html)
     - Practice 6 [Link](LO/Algorithm_Class_11.html)
     - Practice 7 [Link](LO/Algorithm_Class_12.html)
-    - Practice 8 [Link](LO/Algorithm_Class_13.html) (pending)
+    - Practice 8 [Link](LO/Algorithm_Class_13.html)
 - Class 6: Heap and Graph Search I  [Link](LO/Algorithm_Class_14.html)
     - Practice 9 [Link](LO/Algorithm_Class_15.html) (pending)
 - Class 7: DFS [Link](LO/Algorithm_Class_16.html)
