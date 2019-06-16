@@ -70,7 +70,7 @@ td.updated {background-color: MediumSpringGreen;}
 </tr>
 </table>
 
-- Class 1: 試聼課 [Link](LO/Algorithm_Class_1.html) (pending)
+- Class 1: Binary Search [Link](LO/Algorithm_Class_1.html) (pending)
     - Practice 1 [Link](LO/Algorithm_Class_2.html)
 - Class 2: Recursion I and Sorting Algorithms [Link](LO/Algorithm_Class_3.html)
     - Practice 2 [Link](LO/Algorithm_Class_4.html)
@@ -160,13 +160,13 @@ td.updated {background-color: MediumSpringGreen;}
     - Practice 4 [Link](LO/Algorithm_Class_7.html)
 - Class 4: Queue and Stack [Link](LO/Algorithm_Class_8.html)
     - Practice 5 [Link](LO/Algorithm_Class_9.html)
-- Class 5: Binary Tree [Link](LO/Algorithm_Class_10.html)
+- Class 5: Binary Tree & Binary Search Tree [Link](LO/Algorithm_Class_10.html)
     - Practice 6 [Link](LO/Algorithm_Class_11.html)
     - Practice 7 [Link](LO/Algorithm_Class_12.html)
     - Practice 8 [Link](LO/Algorithm_Class_13.html)
 - Class 6: Heap and Graph Search I  [Link](LO/Algorithm_Class_14.html)
     - Practice 9 [Link](LO/Algorithm_Class_15.html) (pending)
-- Class 7: DFS [Link](LO/Algorithm_Class_16.html)
+- Class 7: Graph Search II - DFS [Link](LO/Algorithm_Class_16.html)
     - Practice 10 [Link](LO/Algorithm_Class_17.html) (pending)
     - Practice 11 [Link](LO/Algorithm_Class_18.html) (pending)
     - Practice 12 [Link](LO/Algorithm_Class_19.html) (pending)
