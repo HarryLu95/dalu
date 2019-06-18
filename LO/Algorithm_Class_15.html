@@ -329,6 +329,8 @@ Heap: 右下進頂端出</code></pre>
 </div>
 <div id="priorityqueue" class="section level1">
 <h1><span class="header-section-number">2</span> PriorityQueue</h1>
+<div id="properties-and-apis" class="section level2">
+<h2><span class="header-section-number">2.1</span> Properties and APIs</h2>
 <p>It is a heap with the same Queue interface with <code>offer()</code>, <code>peek()</code>, <code>poll()</code>.</p>
 <p>But, it is not FIFO. When <code>poll()</code> or <code>peek()</code>, we always look at the smallest/largest element (min heap/max heap).</p>
 <p>The PriorityQueue will arrange the elements based on the order of the elements (who is smaller/larger by comparing any two of them) and it is optimized for problems about “who is the smallest/largest element”.</p>
@@ -365,9 +367,14 @@ Heap: 右下進頂端出</code></pre>
 <li><code>remove(Object)</code>: O(<span class="math inline">\(\log(n)\)</span>)</li>
 </ul></li>
 </ol>
-<p>Order: The PriorityQueue need to know how to compare the elements and determine which one is smaller/larger.</p>
-<p>There are two ways to do so:</p>
-<p>The element type implementing Comparable interface.</p>
+</div>
+<div id="order" class="section level2">
+<h2><span class="header-section-number">2.2</span> Order</h2>
+<p>The PriorityQueue need to know how to compare the elements and determine which one is smaller/larger.</p>
+<p>There are two ways to do so: <code>Comparable</code> and <code>Comparator</code></p>
+<div id="comparable" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> <code>Comparable</code></h3>
+<p>The element type implementing <code>Comparable</code> interface.</p>
 <p><strong>Example:</strong></p>
 <pre class="java"><code>PriorityQueue&lt;Integer&gt; minHeap = new PriorityQueue&lt;Integer&gt;();
 
@@ -386,7 +393,7 @@ while (!minHeap.isEmppty()) {
 4
 5</code></pre>
 <p>How does the priorityqueue know how to compare the Integer objects?</p>
-<p>The element’s class can implement Comparable interface and thus implement the required method <code>compareTo()</code>, PriorityQueue will use this method to compare any two elements.</p>
+<p>The element’s class can implement <code>Comparable</code> interface and thus implement the required method <code>compareTo()</code>, PriorityQueue will use this method to compare any two elements.</p>
 <pre class="java"><code>interface Comparable&lt;E&gt; {
   int compareTo(E ele);
 }
@@ -411,9 +418,9 @@ class Integer implements Comparable&lt;Integer&gt; {
 <ul>
 <li>0: <code>this</code> and <code>another</code> are of the same priority</li>
 <li>-1 (&lt; 0): <code>this</code> has higher priority than <code>another</code></li>
-<li>1 (&gt; 0): <code>this</code> has less priority than <code>another</code></li>
+<li>1 (&gt; 0): <code>this</code> has lower priority than <code>another</code></li>
 </ul>
-<p>Natural ordering</p>
+<p>“Natural ordering”</p>
 <p><strong>Another Example using custom class:</strong></p>
 <p>Suppose you have an integer matrix, each row is sorted by ascending order and each column is also sorted by ascending order, we need a class to representing each cell in the matrix, and we need to compare two cells with their value in the matrix.</p>
 <pre class="java"><code>class Cell {
@@ -427,9 +434,120 @@ class Integer implements Comparable&lt;Integer&gt; {
   }
 }
 // We want to have a minHeap by the value of the Cell element.
-</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
-<p><strong>Most frequently used constructors of PriorityQueue</strong></p>
+PriorityQueue&lt;Cell&gt; minHeap = new PriorityQueue&lt;Cell&gt;();
+Cell c1 = new Cell(0, 0, 0);
+Cell c2 = new Cell(0, 1, 2);
+minHeap.offer(c1);
+minHeap.offer(c2);
+
+class Cell implements Comparable&lt;Cell&gt; {
+  public int row;
+  public int col;
+  public int value;
+  public Cell(int row, int col, int value) {
+    this.row = row;
+    this.cell = cell;
+    this.value = value;
+  }
+  
+  @Override
+  public int compareTo(Cell another) {
+    if (this.value == another.value) {
+      return 0;
+    }
+    return this.value &lt; another.value ? -1 : 1;
+  }
+}</code></pre>
+<p>To compare two Cell objects, use the <code>compareTo()</code> method.</p>
+<pre class="java"><code>Cell c1 = new Cell(0, 0, 0);
+Cell c2 = new Cell(0, 1, 2);
+int result = c1.compareTo(c2);</code></pre>
+<p>Return -1. c1 priority higher than c2.</p>
+</div>
+<div id="comparator" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> <code>Comparator</code></h3>
+<p><strong>Provide an extra Comparator object to compare the elements</strong></p>
+<p>There is another interface Comparator, it is used to compare two elements with same type E.</p>
+<pre class="java"><code>interface Comparator&lt;E&gt; {
+  int compare(E o1, E o2);
+}
+
+class Cell {
+  public int row;
+  public int col;
+  public int value;
+  public Cell(int row, int col, int value) {
+    this.row = row;
+    this.cell = cell;
+    this.value = value;
+  }
+}
+
+class MyComparator implements Comparator&lt;Cell&gt; {
+  @Override
+  public int compare(Cell c1, Cell c2) {
+    if (c1.value == c2.value) {
+      return 0;
+    }
+    return c1.value &lt; c2.value ? -1 : 1;
+  }
+}</code></pre>
+<p>The return value of <code>compare(o1, o2)</code> method determines the order of <code>o1</code> and <code>o2</code>:</p>
+<ul>
+<li>0: <code>o1</code> and <code>o2</code> are of the same priority</li>
+<li>-1 (&lt; 0): <code>o1</code> has higher priority than <code>o2</code></li>
+<li>1 (&gt; 0): <code>o1</code> has lower priority than <code>o2</code></li>
+</ul>
+<p>We want to have a minHeap by the value of the Cell elements:</p>
+<pre class="java"><code>PriorityQueue&lt;Cell&gt; minHeap = new PriorityQueue&lt;Cell&gt;(11, new MyComparator());
+Cell c1 = new Cell(0, 0, 0);
+Cell c2 = new Cell(0, 1, 2);
+minHeap.offer(c1);
+minHeap.offer(c2);</code></pre>
+<p>If class E already implements <code>Comparable</code> interface, and we need another way of ordering the elements in our PriorityQueue, we can pass the new Comparator.</p>
+<p>Example:</p>
+<pre class="java"><code>PriorityQueue&lt;Integer&gt; minHeap = new PriorityQueue&lt;Integer&gt;();
+// I want a max heap here, so I need to provide a new Comparator, the ordering defined by the Comparator is the reversed natural order provided by Integer class
+class ReverseComparator implements Comparator&lt;Integer&gt; {
+  @Override
+  public int compare(Integer i1, Integer i2) {
+    if (i1.equals(i2)) {
+      return 0;
+    }
+    return i1 &lt; i2 ? 1 : -1;
+  }
+}
+PriorityQueue&lt;Integer&gt; maxHeap = new PriorityQueue&lt;Integer&gt;(16, new ReverseComparator());
+
+maxHeap.offer(4);
+maxHeap.offer(5);
+maxHeap.offer(2);
+maxHeap.offer(3);
+maxHeap.offer(1);
+
+while (!maxHeap.isEmpty()) {
+  System.out.println(maxHeap.poll());
+}</code></pre>
+<pre><code>5
+4
+3
+2
+1</code></pre>
+<p>Or, there is a utility method <code>Collections.reverseOrder()</code>, it will return a comparator that reverses the natural order.</p>
+<pre class="java"><code>PriorityQueue&lt;Integer&gt; maxHeap = new PriorityQueue&lt;Integer&gt;(Collections.reverseOrder());</code></pre>
+</div>
+<div id="conclusion" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Conclusion</h3>
+<p>To make PriorityQueue work, you have to:</p>
+<ul>
+<li>Either let the element class E implements <code>Comparable</code> interface</li>
+<li>Or provide a <code>Comparator&lt;E&gt;</code> class to compare elements, and pass an comparator object to the PriorityQueue.</li>
+</ul>
+<p>If E already implements <code>Comparable&lt;E&gt;</code>, but still you provide a Comparator, PriorityQueue will choose the order specified in Comparator.</p>
+</div>
+</div>
+<div id="most-frequently-used-constructors-of-priorityqueue" class="section level2">
+<h2><span class="header-section-number">2.3</span> Most Frequently Used Constructors of PriorityQueue</h2>
 <ol style="list-style-type: decimal">
 <li><code>PriorityQueue&lt;Cell&gt; heap = new PriorityQueue&lt;Cell&gt;();</code>
 <ul>
@@ -458,7 +576,10 @@ class Integer implements Comparable&lt;Integer&gt; {
 </ul>
 <pre class="java"><code>PriorityQueue&lt;Cell&gt; minHeap = new PriorityQueue&lt;Cell&gt;(k, new MyComparator());</code></pre>
 <p><strong>Method 1 and 2, the object inside the PriorityQueue should be comparable!</strong> Otherwise, Java will throw runtime exception (it will cast anything inside into a <code>Comparable</code> to do the comparison).</p>
-<p><strong><code>heapify()</code>: convert an array to heap in O(<span class="math inline">\(n\)</span>) time</strong></p>
+</div>
+<div id="heapify" class="section level2">
+<h2><span class="header-section-number">2.4</span> Heapify</h2>
+<p><code>heapify()</code>: convert an array to heap in O(<span class="math inline">\(n\)</span>) time.</p>
 <pre class="java"><code>List&lt;Cell&gt; list = new ArrayList&lt;Cell&gt;();
 // ...
 PriorityQueue&lt;Cell&gt; heap = new PriorityQueue&lt;Cell&gt;(list);
@@ -489,6 +610,9 @@ class PriorityQueue&lt;E&gt; {
     }
   }
 }</code></pre>
+</div>
+<div id="anonymous-class" class="section level2">
+<h2><span class="header-section-number">2.5</span> Anonymous Class</h2>
 <ul>
 <li>Nested class: define a class within a class.</li>
 <li>Static nested class v.s. non-static nested class: belong to class, or belong to instance.</li>
@@ -515,8 +639,24 @@ class PriorityQueue&lt;E&gt; {
 <li><code>new</code>: Create an instance</li>
 <li><code>()</code>: Call constructor</li>
 </ol>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
-<p><strong>Problem: Smallest K Elements In Unsorted Array</strong></p>
+<p>Similar to:</p>
+<pre class="java"><code>class ReverseComparator implements Comparator&lt;Cell&gt; {
+  @Override
+  public int compare(Cell c1, Cell c2) {
+    // return ...;
+  }
+}
+
+PriorityQueue&lt;Cell&gt; maxHeap = new PriorityQueue&lt;Cell&gt;(16, new ReverseComparator());</code></pre>
+<p>The only difference: we do not need to give the new class a name.</p>
+<p><strong>Lambda expression:</strong> Java 8 and after</p>
+<pre class="java"><code>PriorityQueue&lt;Cell&gt; pQueue = new PriorityQueue&lt;&gt;(16, (Cell c1, Cell c2) -&gt; {
+  // return ...;
+});</code></pre>
+<p><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html" class="uri">https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html</a></p>
+</div>
+<div id="problem-smallest-k-elements-in-unsorted-array" class="section level2">
+<h2><span class="header-section-number">2.6</span> Problem: Smallest K Elements In Unsorted Array</h2>
 <p>Find the K smallest numbers in an unsorted integer array A. The returned numbers should be in ascending order.</p>
 <p>Assumptions:</p>
 <ul>
@@ -556,10 +696,55 @@ class PriorityQueue&lt;E&gt; {
 <li>space: O(<span class="math inline">\(n\)</span>)</li>
 </ul></li>
 </ol>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public static int[] smallestKElementsNHeap(int[] array, int k) {
+  Queue&lt;Integer&gt; minHeap = new PriorityQueue&lt;&gt;();
+  for (int i = 0; i &lt; array.length; i++) {
+    minHeap.offer(array[i]);
+  }
+  int[] result = new int[k];
+  for (int i = 0; i &lt; k; i++) {
+    result[i] = minHeap.poll();
+  }
+  return result;
+}
+
+private static class MyComparator implements Comparator&lt;Integer&gt; {
+  @Override
+  public int compare(Integer i1, Integer i2) {
+    if (i1.equals(i2)) {  // i1.intValue() == i2.intValue()
+      return 0;
+    }
+    return i1 &gt; i2 ? -1 : 1;
+  }
+}
+
+// Assumption: k &gt;= 0
+public static int[] smallestKElementsKHeap(int[] array, int k) {
+  if (k == 0) {
+    return new int[0];
+  }
+  Queue&lt;Integer&gt; maxHeap = new PriorityQueue&lt;Integer&gt;(k, new MyComparator());
+  for (int i = 0; i &lt; k; i++) {
+    maxHeap.offer(array[i]);
+  }
+  for (int i = k; i &lt; array.length; i++) {
+    if (array[i] &lt; maxHeap.peek()) {
+      maxHeap.poll();
+      maxHeap.offer(array[i]);
+    }
+  }
+  return toArray(maxHeap);
+}
+
+private static int[] toArray(Queue&lt;Integer&gt; q) {
+  int[] result = new int[q.size()];
+  for (int i = result.length - 1; i &gt;= 0; i--) {
+    result[i] = q.poll();
+  }
+  return result;
+}</code></pre>
 <p><strong>batch processing v.s. stream processing</strong></p>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
 </div>
 
 

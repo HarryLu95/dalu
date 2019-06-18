@@ -119,7 +119,7 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="updated">12th  
     [Class 6](LO/Algorithm_Class_14.html)</td>
   <td></td>
-  <td class="pending">14th  
+  <td class="updated">14th  
     [Practice 9](LO/Algorithm_Class_15.html)</td>
   <td class="updated">15th  
     [Class 7](LO/Algorithm_Class_16.html)</td>
@@ -165,7 +165,7 @@ td.updated {background-color: MediumSpringGreen;}
     - Practice 7 [Link](LO/Algorithm_Class_12.html)
     - Practice 8 [Link](LO/Algorithm_Class_13.html)
 - Class 6: Heap and Graph Search I  [Link](LO/Algorithm_Class_14.html)
-    - Practice 9 [Link](LO/Algorithm_Class_15.html) (pending)
+    - Practice 9 [Link](LO/Algorithm_Class_15.html)
 - Class 7: Graph Search II - DFS [Link](LO/Algorithm_Class_16.html)
     - Practice 10 [Link](LO/Algorithm_Class_17.html) (pending)
     - Practice 11 [Link](LO/Algorithm_Class_18.html) (pending)
