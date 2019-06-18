@@ -1519,8 +1519,8 @@ public class SortTwoStacks {
 </div>
 <div id="class-5---binary-tree-binary-search-tree" class="section level1">
 <h1><span class="header-section-number">5</span> Class 5 - Binary Tree &amp; Binary Search Tree</h1>
-<div id="binary-tree-pre-order-interative-traversal" class="section level2">
-<h2><span class="header-section-number">5.1</span> Binary Tree Pre-order Interative Traversal</h2>
+<div id="binary-tree-pre-order-iterative-traversal" class="section level2">
+<h2><span class="header-section-number">5.1</span> Binary Tree Pre-order Iterative Traversal</h2>
 <p>Implement an iterative, pre-order traversal of a given binary tree, return the list of keys of each node in the tree as it is pre-order traversed.</p>
 <p><a href="https://app.laicode.io/app/problem/44" class="uri">https://app.laicode.io/app/problem/44</a></p>
 <pre class="java"><code>public class PreOrder {
@@ -1578,7 +1578,7 @@ public class SortTwoStacks {
 <p>Implement an iterative, post-order traversal of a given binary tree, return the list of keys of each node in the tree as it is post-order traversed.</p>
 <p><a href="https://app.laicode.io/app/problem/45" class="uri">https://app.laicode.io/app/problem/45</a></p>
 <pre class="java"><code>public class Postorder {
-  // Method 1: Post-order is
+  // Method 1: Post-order is the reverse order of pre-order with traversing right subtree before traversing left subtree.
   public List&lt;Integer&gt; postOrderI(TreeNode root) {
     List&lt;Integer&gt; result = new ArrayList&lt;Integer&gt;();
     if (root == null) {
@@ -1588,9 +1588,9 @@ public class SortTwoStacks {
     preOrder.offerFirst(root);
     while (!preOrder.isEmpty()) {
       TreeNode curr = preOrder.pollFirst();
-      // Conduct
+      // Conduct the result for the special pre-order traversal.
       result.add(curr.key);
-      // In pre-order
+      // In pre-order the right subtree will be traversed before the left subtree so pushing left child first.
       if (curr.left != null) {
         preOrder.offerFirst(curr.left);
       }
@@ -1598,55 +1598,286 @@ public class SortTwoStacks {
         preOrder.offerFirst(curr.right);
       }
     }
-    // Reverse the
+    // Reverse the pre-order traversal sequence to get the post-order result.
     Collections.reverse(result);
     return result;
   }
   
-  // Method 2
-  public
+  // Method 2: Check the relation between the current node and the previous node to determine which direction should go next.
+  public List&lt;Integer&gt; postOrderII(TreeNode root) {
+    List&lt;Integer&gt; result = new ArrayList&lt;Integer&gt;();
+    if (root == null) {
+      return result;
+    }
+    Deque&lt;TreeNode&gt; stack = new LinkedList&lt;TreeNode&gt;();
+    stack.offerFirst(root);
+    // To record the previous node on the way of DFS so that we can determine the direction.
+    TreeNode prev = null;
+    while (!stack.isEmpty()) {
+      TreeNode curr = stack.peekFirst();
+      // If we are going down, either left/right direction.
+      if (prev == null || curr == prev.left || curr == prev.right) {
+        // If we can still go down, try go left first.
+        if (curr.left != null) {
+          stack.offerFirst(curr.left);
+        }
+        else if (curr.right != null) {
+          stack.offerFirst(curr.right);
+        }
+        // If we cannot go either way, meaning curr is a leaf node.
+        else {
+          stack.pollFirst();
+          result.add(curr.key);
+        }
+      }
+      // If we are going up from the right side or going up from the left side but we cannot go right afterwards.
+      else if (prev == curr.right || prev == curr.left &amp;&amp; curr.right == null) {
+        stack.pollFirst();
+        result.add(curr.key);
+      }
+      // Otherwise, we are going up from the left side and we can go down right side.
+      else {
+        stack.offerFirst(curr.right);
+      }
+      prev = curr;
+    }
+    return result;
+  }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="check-if-binary-tree-is-balanced" class="section level2">
 <h2><span class="header-section-number">5.4</span> Check If Binary Tree Is Balanced</h2>
 <p>Check if a given binary tree is balanced. A balanced binary tree is one in which the depths of every node’s left and right subtree differ by at most 1.</p>
 <p><a href="https://app.laicode.io/app/problem/46" class="uri">https://app.laicode.io/app/problem/46</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class CheckBalanced {
+  public boolean isBalanced(TreeNode root) {
+    if (root == null) {
+      return true;
+    }
+    // Use -1 to denote the tree is not balanced.
+    // &gt;= 0 value means the tree is balanced and it is the height of the tree.
+    return height(root) != -1;
+  }
+  
+  private int height(TreeNode root) {
+    if (root == null) {
+      return 0;
+    }
+    int leftHeight = height(root.left);
+    // If left subtree is already not balanced, we do not need to continue and we can return -1 directly.
+    if (leftHeight == -1) {
+      return -1;
+    }
+    int rightHeight = height(root.right);
+    if (rightHeight == -1) {
+      return -1;
+    }
+    // If not balanced, return -1.
+    if (Math.abs(leftHeight - rightHeight) &gt; 1) {
+      return -1;
+    }
+    return Math.max(leftHeight, rightHeight) + 1;
+  }
+}</code></pre>
 </div>
 <div id="check-if-binary-tree-is-symmetric" class="section level2">
 <h2><span class="header-section-number">5.5</span> Check If Binary Tree Is Symmetric</h2>
 <p>Check if a given binary tree is symmetric.</p>
 <p><a href="https://app.laicode.io/app/problem/48" class="uri">https://app.laicode.io/app/problem/48</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class CheckSymmetric {
+  public boolean isSymmetric(TreeNode root) {
+    if (root == null) {
+      return ture;
+    }
+    return isSymmetric(root.left, root.right);
+  }
+  
+  private boolean isSymmetric(TreeNode n1, TreeNode n2) {
+    if (n1 == null &amp;&amp; n2 == null) {
+      return true;
+    }
+    else if (n1 == null || n2 == null) {
+      return false;
+    }
+    else if (n1.key != n2.key) {
+      return false;
+    }
+    return isSymmetric(n1.left, n2.right)
+        &amp;&amp; isSymmetric(n1.right, n2.left);
+  }
+}</code></pre>
 </div>
 <div id="tweaked-identical-binary-trees" class="section level2">
 <h2><span class="header-section-number">5.6</span> Tweaked Identical Binary Trees</h2>
 <p>Determine whether two given binary trees are identical assuming any number of ’tweak’s are allowed. A tweak is defined as a swap of the children of one node in the tree.</p>
 <p><a href="https://app.laicode.io/app/problem/50" class="uri">https://app.laicode.io/app/problem/50</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class CheckTweakedIdentical {
+  public boolean isTweakedIdentical(TreeNode n1, TreeNode n2) {
+    if (n1 == null &amp;&amp; n2 == null) {
+      return true;
+    }
+    else if (n1 == null || n2 == null) {
+      return false;
+    }
+    else if (n1.key != n2.key) {
+      return false;
+    }
+    return isTweakedIdentical(n1.left, n2.left) &amp;&amp; isTweakedIdentical(n1.right, n2.right)
+        || isTweakedIdentical(n1.left, n2.right) &amp;&amp; isTweakedIdentical(n1.right, n2.left);
+  }
+}</code></pre>
 </div>
 <div id="is-binary-search-tree-or-not" class="section level2">
 <h2><span class="header-section-number">5.7</span> Is Binary Search Tree Or Not</h2>
 <p>Determine if a given binary tree is binary search tree.</p>
 <p><a href="https://app.laicode.io/app/problem/54" class="uri">https://app.laicode.io/app/problem/54</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class CheckBST {
+  public boolean isBST(TreeNode root) {
+    return isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+  }
+  
+  private boolean isBST(TreeNode root, int min, int max) {
+    if (root == null) {
+      return true;
+    }
+    if (root.key &lt; min || root.key &gt; max) {
+      return false;
+    }
+    return isBST(root.left, min, root.key - 1)
+        &amp;&amp; isBST(root.right, root.key + 1, max);
+  }
+}</code></pre>
 </div>
 <div id="get-keys-in-binary-search-tree-in-given-range" class="section level2">
 <h2><span class="header-section-number">5.8</span> Get Keys In Binary Search Tree In Given Range</h2>
 <p>Get the list of keys in a given binary search tree in a given range[min, max] in ascending order, both min and max are inclusive.</p>
 <p><a href="https://app.laicode.io/app/problem/55" class="uri">https://app.laicode.io/app/problem/55</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class GetRange {
+  public List&lt;Integer&gt; getRange(TreeNode root, int min, int max) {
+    List&lt;integer&gt; list = new ArrayList&lt;Integer&gt;();
+    getRange(root, min, max, list);
+    return list;
+  }
+  
+  private void getRange(TreeNode root, int min, int max, List&lt;Integer&gt; list) {
+    if (root == null) {
+      return;
+    }
+    // 1. Determine if left subtree should be traversed, only when root.key &gt; min, we should traverse the left subtree.
+    if (root.key &gt; min) {
+      getRange(root.left, min, max, list);
+    }
+    // 2. Determine if root should be traversed.
+    if (root.key &gt;= min &amp;&amp; root.key &lt;= max) {
+      list.add(root.key);
+    }
+    // 3. Determine if right subtree should be traversed, only when root.key &lt; max, we should traverse the right subtree.
+    if (root.key &lt; max) {
+      getRange(root.right, min, max, list);
+    }
+  }
+}</code></pre>
 </div>
 </div>
 <div id="class-6---heap-graph-search-algorithm-i-bfs" class="section level1">
 <h1><span class="header-section-number">6</span> Class 6 - Heap &amp; Graph Search Algorithm I (BFS)</h1>
+<div id="k-smallest-in-unsorted-array" class="section level2">
+<h2><span class="header-section-number">6.1</span> K Smallest In Unsorted Array</h2>
+<p>Find the K smallest numbers in an unsorted integer array A. The returned numbers should be in ascending order.</p>
+<p><a href="https://app.laicode.io/app/problem/25" class="uri">https://app.laicode.io/app/problem/25</a></p>
+<pre class="java"><code>// Find the smallest k elements in an unsorted array.
+// Assumptions:
+// 1. array is not null
+// 2. k &gt;= 0 and k &lt;= array.length
+public class KSmallest {
+  // Method 1: K sized max heap
+  public int[] kSmallestI(int[] array, int k) {
+    
+  }
+  
+  // Method 2: Quick select
+  public int[] kSmallestII(int[] array, int k) {
+    
+  }
+  
+  private void quickSelect(int[] array, int left, int right, int target) {
+    
+  }
+  
+  private int partition(int[] array, int left, int right) {
+    
+  }
+  
+  private void swap(int[] array, int a, int b) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="get-keys-in-binary-tree-layer-by-layer" class="section level2">
+<h2><span class="header-section-number">6.2</span> Get Keys In Binary Tree Layer By Layer</h2>
+<p>Get the list of list of keys in a given binary tree layer by layer. Each layer is represented by a list of keys and the keys are traversed from left to right.</p>
+<p><a href="https://app.laicode.io/app/problem/57" class="uri">https://app.laicode.io/app/problem/57</a></p>
+<pre class="java"><code>public class LayerByLayer {
+  public List&lt;List&lt;Integer&gt;&gt; layerByLayer(TreeNode root) {
+    
+  }
+}</code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="bipartite" class="section level2">
+<h2><span class="header-section-number">6.3</span> Bipartite</h2>
+<p>Determine if an undirected graph is bipartite. A bipartite graph is one in which the nodes can be divided into two groups such that no nodes have direct edges to other nodes in the same group.</p>
+<p><a href="https://app.laicode.io/app/problem/56" class="uri">https://app.laicode.io/app/problem/56</a></p>
+<pre class="java"><code>// Assumptions:
+// 1. The given graph is not null.
+public class Bipartite {
+  public boolean isBipartite(List&lt;GraphNode&gt; graph) {
+    
+  }
+  
+  private boolean BFS(GraphNode node, HashMap&lt;GraphNode, Integer&gt; visited) {
+    
+  }
+}</code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="check-if-binary-tree-is-complete" class="section level2">
+<h2><span class="header-section-number">6.4</span> Check If Binary Tree Is Complete</h2>
+<p>Check is a given binary tree is completed. A complete binary tree is one in which every level of the binary tree is completely filled except possibly the last level. Furthermore, all nodes are as far left as possible.</p>
+<p><a href="https://app.laicode.io/app/problem/47" class="uri">https://app.laicode.io/app/problem/47</a></p>
+<pre class="java"><code>public class CheckCompleted {
+  public boolean isCompleted(TreeNode root) {
+    
+  }
+}</code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="kth-smallest-number-in-sorted-matrix" class="section level2">
+<h2><span class="header-section-number">6.5</span> Kth Smallest Number In Sorted Matrix</h2>
+<p>Given a matrix of size N x M. For each row the elements are sorted in ascending order, and for each column the elements are also sorted in ascending order. Find the Kth smallest number in it.</p>
+<p><a href="https://app.laicode.io/app/problem/26" class="uri">https://app.laicode.io/app/problem/26</a></p>
+<pre class="java"><code>// Assumptions:
+// 1. matrix is not null, N * M where N &gt; 0 and M &gt; 0
+// 2. k &gt; 0 and k &lt;= N * M
+public class KthSmallestInSortedMatrix {
+  public int kthSmallest(int[][] matrix, int k) {
+    
+  }
+  
+  static class Cell {
+    
+  }
+}</code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+</div>
+<div id="class-7---graph-search-algorithm-ii-dfs" class="section level1">
+<h1><span class="header-section-number">7</span> Class 7 - Graph Search Algorithm II (DFS)</h1>
+<div id="all-subsets-i" class="section level2">
+<h2><span class="header-section-number">7.1</span> All Subsets I</h2>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
 </div>
 
 

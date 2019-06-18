@@ -334,7 +334,7 @@ td.updated {background-color: MediumSpringGreen;}
     - 4.2 Implement Queue By Two Stacks
     - 4.3 Stack With min()
 - Class 5 - Binary Tree & Binary Search Tree
-    - 5.1 Binary Tree Pre-order Interative Traversal
+    - 5.1 Binary Tree Pre-order Iterative Traversal
     - 5.2 Binary Tree In-order Iterative Traversal
     - 5.3 Binary Tree Post-order Iterative Traversal
     - 5.4 Check If Binary Tree Is Balanced
@@ -343,8 +343,13 @@ td.updated {background-color: MediumSpringGreen;}
     - 5.7 Is Binary Search Tree Or Not
     - 5.8 Get Keys In Binary Search Tree In Given Range
 - Class 6 - Heap & Graph Search Algorithm I (BFS)
-
-
+    - 6.1 K Smallest In Unsorted Array
+    - 6.2 Get Keys In Binary Tree Layer By Layer
+    - 6.3 Bipartite
+    - 6.4 Check If Binary Tree Is Complete
+    - 6.5 Kth Smallest Number In Sorted Matrix
+- Class 7 - Graph Search Algorithm II (DFS)
+    - 7.1 All Subsets I
 
 
 

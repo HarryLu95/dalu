@@ -294,7 +294,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Algorithm Class 17 - Practice 10</h1>
-<h3 class="subtitle">???</h3>
+<h3 class="subtitle">Implementing Heaps</h3>
 <h4 class="date">June/16/2019</h4>
 
 </div>
@@ -317,9 +317,262 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 span.r {color: red;}
 </style>
 <hr />
-<div id="part-one" class="section level1">
-<h1><span class="header-section-number">1</span> Part One</h1>
+<div id="implement-priorityqueue-heap" class="section level1">
+<h1><span class="header-section-number">1</span> Implement PriorityQueue (Heap)</h1>
+<div id="definition" class="section level2">
+<h2><span class="header-section-number">1.1</span> Definition</h2>
+<ul>
+<li>Heap is a (binary) tree based data structure</li>
+<li>Across the entire tree, the relation between a parent node and a child node stays consistent.
+<ul>
+<li>Example: min heap
+<ol style="list-style-type: decimal">
+<li>The parent node is always &lt;= its two child nodes (parent node is the smallest node in the subtree rooted at itself).</li>
+<li>The relation between the two child nodes can differ.</li>
+</ol></li>
+</ul></li>
+<li>The common implementation of a heap is using a complete binary tree.
+<ul>
+<li>A “complete binary tree” is a binary tree in which every level, except possily the last level, is completely filled, and all nodes are as far left as possible.</li>
+</ul></li>
+</ul>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p>Min Heap Example:</p>
+<pre><code>         1
+      /     \
+     3       10
+   /   \    /  \
+  5     4  13  19
+ / \   /
+11  8 6
+
+{1, 3, 10, 5, 4, 13, 19, 11, 8, 6}
+ 0  1   2  3  4   5   6   7  8  9</code></pre>
+<p>Max Heap Example:</p>
+<pre><code>          19
+       /      \
+     13        6
+   /    \     / \
+  8      11  5   4
+ / \    /
+3   7  1
+
+{19, 13, 6, 8, 11, 5, 4, 3, 7, 1}
+  0   1  2  3   4  5  6  7  8  9</code></pre>
+<pre><code>index:
+0 -&gt; left: 1, right: 2
+</code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="representation" class="section level2">
+<h2><span class="header-section-number">1.2</span> Representation</h2>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="basic-heap-internal-operations" class="section level2">
+<h2><span class="header-section-number">1.3</span> Basic Heap Internal Operations</h2>
+<div id="percolateup-offer" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> percolateUp(), offer()</h3>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre><code>         1
+      /     \
+     3       10
+   /   \    /  \
+  5     4  13  19
+ / \   /
+11  8 6</code></pre>
+<p>offer(2):</p>
+<pre><code>Step 1: Insert 2
+         1
+      /     \
+     3       10
+   /   \    /  \
+  5     4  13  19
+ / \   / \
+11  8 6   2
+
+---
+
+Step 2: swap(2, 4)
+         1
+      /     \
+     3       10
+   /   \    /  \
+  5     2  13  19
+ / \   / \
+11  8 6   4
+
+---
+
+Step 3: swap(2, 3)
+         1
+      /     \
+     2       10
+   /   \    /  \
+  5     3  13  19
+ / \   / \
+11  8 6   4</code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="percolatedown-poll" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> percolateDown(), poll()</h3>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre><code>         1
+      /     \
+     3       10
+   /   \    /  \
+  5     4  13  19
+ / \   /
+11  8 6</code></pre>
+<p>poll():</p>
+<pre><code>Step 1: delete root, move 6 to root
+         n
+      /     \
+     3       10
+   /   \    /  \
+  5     4  13  19
+ / \   /
+11  8 6
+
+         6
+      /     \
+     3       10
+   /   \    /  \
+  5     4  13  19
+ / \
+11  8
+
+---
+
+Step 2: swap(6, 3)
+         3
+      /     \
+     6       10
+   /   \    /  \
+  5     4  13  19
+ / \
+11  8
+
+---
+
+Step 3: swap(6, 4)
+         3
+      /     \
+     4       10
+   /   \    /  \
+  5     6  13  19
+ / \
+11  8</code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="heapify" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> heapify()</h3>
+<ul>
+<li>Convert an array into a heap in O(<span class="math inline">\(n\)</span>) time.</li>
+<li>How?
+<ul>
+<li>For each node that has at least one child, we perform percolateDown() action, in the order of from the nodes on the deepest level to the root.</li>
+<li>The time complexity of heapify() is O(<span class="math inline">\(n\)</span>).</li>
+</ul></li>
+</ul>
+<pre><code>        10
+      /    \
+    11      7
+   /  \    / \
+  2    8  4   6
+ / \
+13  3</code></pre>
+<p>All the red nodes are the nodes has at least ibe child. Perform percolateDown() on each of them following the order: 2, 7, 11, 10:</p>
+<pre><code></code></pre>
+<p>k level full tree: (k = 4)</p>
+<p>n total number of nodes: <span class="math inline">\(2^k-1\)</span></p>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="key-points" class="section level3">
+<h3><span class="header-section-number">1.3.4</span> Key Points</h3>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="implementation" class="section level3">
+<h3><span class="header-section-number">1.3.5</span> Implementation</h3>
+<pre class="java"><code>public class Heap {
+  private int[] store;
+  private int size;
+  
+  public Heap(int[] array) {
+    
+  }
+  
+  public void offer(int value) {
+    
+  }
+  
+  public Integer poll() {
+    if (size == 0) {
+      return null;
+    }
+    int result = store[0];
+    store[0] = store[size - 1];
+    
+  }
+  
+  public Integer peek() {
+    if (size == 0) {
+      return null;
+    }
+    return store[0];
+  }
+  
+  public int size() {
+    return size;
+  }
+  
+  public boolean isEmpty() {
+    return size == 0;
+  }
+  
+  private void feapify() {
+    
+  }
+}</code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+</div>
+<div id="sorting-algorithms-and-heap" class="section level2">
+<h2><span class="header-section-number">1.4</span> Sorting Algorithms and Heap</h2>
+<pre class="java"><code>int[] array = {4, 5, 0, 1, 2, 3};
+Arrays.sort(array); // quicksort</code></pre>
+<pre class="java"><code>Integer[] array;
+Arrays.sort(array); // mergesort</code></pre>
+<p>Quicksort is used for arrays of primitive types while mergesort for Object[] arrays. For primitives the stability of the sort is meaningless, as you cannot distinguish two values that are equal. Hence, quicksort is used (except when sorting an array of Objects, for which mergesort is performed).</p>
+<pre><code>Student[] students;
+
+int id;
+int gpa;</code></pre>
+<pre><code>int[] array = {2, 2, 5(1), 3, 3, 5(2)}</code></pre>
+<p>quicksort:</p>
+<ol style="list-style-type: decimal">
+<li>Time worst case O(<span class="math inline">\(n^2\)</span>), average O(<span class="math inline">\(n\log(n)\)</span>). Space worst case O(<span class="math inline">\(n\)</span>), average O(<span class="math inline">\(\log(n)\)</span>).</li>
+<li>Unstable sort.</li>
+</ol>
+<p>mergesort:</p>
+<ol style="list-style-type: decimal">
+<li>Time worst case O(<span class="math inline">\(n\log(n)\)</span>), average O(<span class="math inline">\(n\log(n)\)</span>). Space worst case O(<span class="math inline">\(n\)</span>), average O(<span class="math inline">\(n\)</span>).</li>
+<li>Stable sort.</li>
+</ol>
+<p>Stable sorting algorithms maintain the relative order of records with equal keys (i.e. values). That is, a sorting algorithm is stable if whenever there are two records R and S with the same key and with R appearing before S in the original list, R will appear before S in the sorted list.</p>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p>heapSort (not stable):</p>
+<ol style="list-style-type: decimal">
+<li>Heapify the input array to maxHeap, O(<span class="math inline">\(n\)</span>).</li>
+<li>n times pool operation, O(<span class="math inline">\(n\log(n)\)</span>).</li>
+</ol>
+<p>Not preferred because:</p>
+<ol style="list-style-type: decimal">
+<li>(Typical) Runtime overhead</li>
+<li>Poor locality (swap from first to last) (spatial locality: prefer to access data nearby)</li>
+<li>Hard to parallelize/distribute</li>
+</ol>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
 </div>
 
 
