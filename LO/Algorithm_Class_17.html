@@ -333,7 +333,7 @@ span.r {color: red;}
 </ul></li>
 <li>The common implementation of a heap is using a complete binary tree.
 <ul>
-<li>A “complete binary tree” is a binary tree in which every level, except possily the last level, is completely filled, and all nodes are as far left as possible.</li>
+<li>A “complete binary tree” is a binary tree in which every level, except possibly the last level, is completely filled, and all nodes are as far left as possible.</li>
 </ul></li>
 </ul>
 <p>Min Heap Example:</p>
@@ -397,8 +397,13 @@ span.r {color: red;}
    /   \    /  \
   5     4  13  19
  / \   /
-11  8 6</code></pre>
-<p>offer(2):</p>
+11  8 6
+
+ 0  1   2  3  4   5   6   7  8  9
+{1, 3, 10, 5, 4, 13, 19, 11, 8, 6}</code></pre>
+<ul>
+<li>offer(2):</li>
+</ul>
 <pre><code>Step 1: Insert 2
          1
       /     \
@@ -407,6 +412,9 @@ span.r {color: red;}
   5     4  13  19
  / \   / \
 11  8 6   2
+
+ 0  1   2  3  4   5   6   7  8  9 10
+{1, 3, 10, 5, 4, 13, 19, 11, 8, 6, 2}
 
 ---
 
@@ -419,6 +427,12 @@ Step 2: swap(2, 4)
  / \   / \
 11  8 6   4
 
+(10 - 1) / 2 = 4
+index 10 &lt;-&gt; index 4
+
+ 0  1   2  3  4   5   6   7  8  9 10
+{1, 3, 10, 5, 2, 13, 19, 11, 8, 6, 4}
+
 ---
 
 Step 3: swap(2, 3)
@@ -428,20 +442,37 @@ Step 3: swap(2, 3)
    /   \    /  \
   5     3  13  19
  / \   / \
-11  8 6   4</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+11  8 6   4
+
+(4 - 1) / 2 = 1
+index 4 &lt;-&gt; index 1
+
+ 0  1   2  3  4   5   6   7  8  9 10
+{1, 2, 10, 5, 3, 13, 19, 11, 8, 6, 4}</code></pre>
 </div>
 <div id="percolatedown-poll" class="section level3">
 <h3><span class="header-section-number">1.3.2</span> percolateDown(), poll()</h3>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p>When to use?</p>
+<ul>
+<li>The element need to be moved down to maintain the heap’s property, for example, when poll the root element from the heap.</li>
+</ul>
+<p>How?</p>
+<ul>
+<li>Compare the element with its two children, if the smallest one of the two children is smaller than the element, swap the element with that child. Do this until the element does not need to be moved.</li>
+</ul>
 <pre><code>         1
       /     \
      3       10
    /   \    /  \
   5     4  13  19
  / \   /
-11  8 6</code></pre>
-<p>poll():</p>
+11  8 6
+
+ 0  1   2  3  4   5   6   7  8  9
+{1, 3, 10, 5, 4, 13, 19, 11, 8, 6}</code></pre>
+<ul>
+<li>poll():</li>
+</ul>
 <pre><code>Step 1: delete root, move 6 to root
          n
       /     \
@@ -451,6 +482,9 @@ Step 3: swap(2, 3)
  / \   /
 11  8 6
 
+ 0  1   2  3  4   5   6   7  8  9
+{x, 3, 10, 5, 4, 13, 19, 11, 8, 6}
+
          6
       /     \
      3       10
@@ -458,6 +492,9 @@ Step 3: swap(2, 3)
   5     4  13  19
  / \
 11  8
+
+ 0  1   2  3  4   5   6   7  8
+{6, 3, 10, 5, 4, 13, 19, 11, 8}
 
 ---
 
@@ -470,6 +507,13 @@ Step 2: swap(6, 3)
  / \
 11  8
 
+0 * 2 + 1 = 1, value == 6
+0 * 2 + 2 = 2, value == 10
+index 0 &lt;-&gt; index 1
+
+ 0  1   2  3  4   5   6   7  8
+{3, 6, 10, 5, 4, 13, 19, 11, 8}
+
 ---
 
 Step 3: swap(6, 4)
@@ -479,8 +523,14 @@ Step 3: swap(6, 4)
    /   \    /  \
   5     6  13  19
  / \
-11  8</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+11  8
+
+1 * 2 + 1 = 3, value == 5
+1 * 2 + 2 = 4, value == 4
+index 1 &lt;-&gt; index 4
+
+ 0  1   2  3  4   5   6   7  8
+{3, 4, 10, 5, 6, 13, 19, 11, 8}</code></pre>
 </div>
 <div id="heapify" class="section level3">
 <h3><span class="header-section-number">1.3.3</span> heapify()</h3>
@@ -492,25 +542,168 @@ Step 3: swap(6, 4)
 <li>The time complexity of heapify() is O(<span class="math inline">\(n\)</span>).</li>
 </ul></li>
 </ul>
-<pre><code>        10
+<pre><code>       [10]
+      /    \
+   [11]    [7]
+   /  \    / \
+ [2]   8  4   6
+ / \
+13  3</code></pre>
+<p>All the nodes with “[]” are the nodes has at least one child. Perform percolateDown() on each of them following the order: 2, 7, 11, 10:</p>
+<pre><code>Step 0:
+        10
       /    \
     11      7
    /  \    / \
   2    8  4   6
  / \
-13  3</code></pre>
-<p>All the red nodes are the nodes has at least ibe child. Perform percolateDown() on each of them following the order: 2, 7, 11, 10:</p>
+13  3
+
+===
+
+Step 1: percolate 2 down
+
+no change:
+        10
+      /    \
+    11      7
+   /  \    / \
+  2    8  4   6
+ / \
+13  3
+
+===
+
+Step 2: percolate 7 down
+
+swap(7, 4):
+        10
+      /    \
+    11      4
+   /  \    / \
+  2    8  7   6
+ / \
+13  3
+
+===
+
+Step 3: percolate 11 down
+
+swap(11, 2):
+        10
+      /    \
+     2      4
+    / \    / \
+  11   8  7   6
+ /  \
+13   3
+
+---
+
+swap(11, 3):
+       10
+     /    \
+    2      4
+   / \    / \
+  3   8  7   6
+ / \
+13 11
+
+===
+
+Step 4: percolate 10 down
+
+swap(10, 2):
+         2
+      /     \
+    10       4
+   /  \     / \
+  3    8   7   6
+ / \
+13 11
+
+---
+
+swap(10, 3):
+         2
+      /     \
+     3       4
+    / \     / \
+  10   8   7   6
+ /  \
+13  11</code></pre>
+<p>The original tree is:</p>
+<pre><code>       [10]
+      /    \
+   [11]    [7]
+   /  \    / \
+ [2]   8  4   6
+ / \
+13  3
+
+  0     1     2    3   4  5  6   7  8
+{[10], [11], [7], [2], 8, 4, 6, 13, 3}</code></pre>
+<p>The range of indices need to perform percolateDown() is: [0, n / 2 - 1]. In the above example, n = 8, the range is [0, 3].</p>
+<p>The last index’ parent = ((n - 1) - 1) / 2 = (n - 2) / 2 = n / 2 - 1.</p>
+<p>If the heap has n elements:</p>
+<ul>
+<li>n = 9, range [0, 3]</li>
+<li>n = 8, range [0, 3]</li>
+<li>n = 7, range [0, 2]</li>
+<li>…</li>
+</ul>
+<p>Proof:</p>
+<pre><code>L0         [10]
+          /    \
+L1     [11]    [7]
+       /  \    / \
+L2   [2]   8  4   6
+     / \
+L3  13  3</code></pre>
+<ul>
+<li>k level full tree: <span class="math inline">\(k=\log_2(n)\)</span>, in the above example, k = 4</li>
+<li>n total number of nodes: <span class="math inline">\(n=2^k-1\)</span></li>
+<li>S: sum of percolateDown numbers</li>
+</ul>
+<pre><code>      S(k) = 2^0*(k-1) + 2^1*(k-2) + ... + 2^(k-2)*(k-(k-1))
+     2S(k) =             2^1*(k-1) + ... + 2^(k-2)*(k-(k-2)) + 2^(k-1)*(k-(k-1))
+2S(k)-S(k) = -2^0*(k-1) + 2^1 + 2^2 + ... + 2^(k-1)
+      S(k) = (2^1 + 2^2 + ... + 2^(k-1)) - k + 1
+           = (2^k - 2) - k + 1
+           = 2^k - k - 1
+      S(n) = n - log_2(n) - 1
+          -&gt; O(n)</code></pre>
+<p>Note: “Heapify” via offer and percolateUp:</p>
+<pre><code>      S(k) = 2^0 * 0 + 2^1 * 1 + ... + 2^(k-1) * (k-1)
+     2S(k) =           2^1 * 0 + ... + 2^(k-1) * (k-2) + 2^(k-0) * (k-1)
+2S(k)-S(k) = 2^k * (k-1) - 2^1 - 2^2 - ... - 2^(k-1)
+      S(k) = k * 2^k - 2^k - (2^1 + 2^2 + 2^(k-1))
+           = k * 2^k - 2^k - (2^k - 2)
+           = (k - 2) * 2^k + 2
+      S(n) = (log_2(n) - 2) * n + 2
+          -&gt; O(n*log(n))</code></pre>
+</div>
+<div id="update" class="section level3">
+<h3><span class="header-section-number">1.3.4</span> update()</h3>
+<p>If you know the position of the element you want to update, it will take O(<span class="math inline">\(\log(n)\)</span>).</p>
+<p>How?</p>
+<ul>
+<li>Either percolateUp() or percolateDown() the element.</li>
+</ul>
+<p>What if you do not know the position of the element?</p>
+<ul>
+<li>Need to find the position of the element first. If not asking for help with other additional data structures, this operation is O(<span class="math inline">\(n\)</span>).</li>
+</ul>
+<p><strong>Examples:</strong></p>
 <pre><code></code></pre>
-<p>k level full tree: (k = 4)</p>
-<p>n total number of nodes: <span class="math inline">\(2^k-1\)</span></p>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="key-points" class="section level3">
-<h3><span class="header-section-number">1.3.4</span> Key Points</h3>
+<h3><span class="header-section-number">1.3.5</span> Key Points</h3>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="implementation" class="section level3">
-<h3><span class="header-section-number">1.3.5</span> Implementation</h3>
+<h3><span class="header-section-number">1.3.6</span> Implementation</h3>
 <pre class="java"><code>public class Heap {
   private int[] store;
   private int size;
