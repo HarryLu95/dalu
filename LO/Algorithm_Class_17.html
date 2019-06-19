@@ -336,7 +336,6 @@ span.r {color: red;}
 <li>A “complete binary tree” is a binary tree in which every level, except possily the last level, is completely filled, and all nodes are as far left as possible.</li>
 </ul></li>
 </ul>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 <p>Min Heap Example:</p>
 <pre><code>         1
       /     \
@@ -361,18 +360,37 @@ span.r {color: red;}
   0   1  2  3   4  5  6  7  8  9</code></pre>
 <pre><code>index:
 0 -&gt; left: 1, right: 2
-</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+1 -&gt; left: 3, right: 4
+4 -&gt; left: 9, right: 10</code></pre>
 </div>
 <div id="representation" class="section level2">
 <h2><span class="header-section-number">1.2</span> Representation</h2>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p>It can also be represented as an array (by the level order traversal of the binary tree), since it is a complete binary tree.</p>
+<ul>
+<li>Why? If is is a complete binary tree, the matching between the nodes and the index of the array is determined, and the relation of parent and child nodes can be well transferred to the relation between two indices.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Given the index of parent = i, what is the index of the two child nodes?</p>
+<ul>
+<li>left child of index: i = 2 * i + 1</li>
+<li>right child of index: i = 2 * i + 2</li>
+<li>parent of index i = (i - 1) / 2</li>
+</ul>
+<p>The root of the tree is at index 0.</p>
 </div>
 <div id="basic-heap-internal-operations" class="section level2">
 <h2><span class="header-section-number">1.3</span> Basic Heap Internal Operations</h2>
 <div id="percolateup-offer" class="section level3">
 <h3><span class="header-section-number">1.3.1</span> percolateUp(), offer()</h3>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p>When to use?</p>
+<ul>
+<li>The element need to be moved up to maintain the heap’s property. For example, when offering a new element into the heap.</li>
+</ul>
+<p>How?</p>
+<ul>
+<li>Compare the element with its parent, move it up when necessary. Do this until the element does not need to be moved.</li>
+</ul>
+<p><strong>Example:</strong></p>
 <pre><code>         1
       /     \
      3       10
@@ -533,11 +551,118 @@ Step 3: swap(6, 4)
     
   }
 }</code></pre>
+<pre><code>public class Heap {
+    private int[] store;
+    private int size;
+    private static final double RESIZE_FACTOR = 1.5;
+    private static final int INIT_CAP = 10;
+    public Heap() {
+        size = 0;
+        store = new int[INIT_CAP];
+}
+
+    public Heap(int[] array) {
+        size = array.length;
+store = new int[array.length];
+        for (int i = 0; i &lt; size; i++) {
+            store[i] = array[i];
+        }
+
+        heapify();
+    }
+    
+    public void offer(int value) {
+        if (size == store.length) {
+            // resize
+            int[] newStore = new int[(int)(size * RESIZE_FACTOR)];
+            for (int i = 0; i &lt; size; i++) {
+                newStore[i] = store[i];
+            }
+            store = newStore;
+        }
+        store[size] = value;
+        size++;
+        percolateUp(size - 1);
+    }
+
+    public Integer poll() {
+        if (this.size == 0) {
+            return null;
+        }
+        int result = store[0];
+        store[0] = store[size - 1];
+        size--;
+        percolateDown(0);
+        return result;
+    }
+
+    public Integer peek() {
+        if (this.size == 0) {
+            return null;
+        }
+        return store[0];
+    }
+
+    public int size() {
+        return this.size;
+    }
+
+    public boolean isEmpty() {
+        return this.size == 0;
+    }
+
+    private void heapify() {
+        for (int i = size / 2 - 1; i &gt;= 0; i--) {
+            percolateDown(i);
+        }
+    }
+
+// (size - 1)
+// (size - 1 - 1) / 2
+// (size - 2) / 2 = size / 2 - 1
+
+    private void percolateDown(int index) {
+        while (index &lt;= size / 2 - 1) {
+            int left = index * 2 + 1;
+int right = index * 2 + 2;
+int candidate = left;
+if (right &lt;= size - 1 &amp;&amp; store[right] &lt; store[left]) {
+    candidate = right;
+}
+if (store[index] &gt; store[candidate]) {
+    swap(index, candidate);
+} else {
+    break;
+}
+index = candidate;
+        }
+    }
+
+    private void percolateUp(int index) {
+        while (index &gt; 0) {
+            int parent = (index - 1)  / 2;
+            if (store[parent] &gt; store[index]) {
+                swap(index, parent);
+                index = parent;
+            } else {
+                break;
+            }
+        }
+    }
+
+    private void swap(int a, int b) {
+        int tmp = store[a];
+        store[a] = store[b];
+        store[b] = tmp;
+    }
+
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 </div>
-<div id="sorting-algorithms-and-heap" class="section level2">
-<h2><span class="header-section-number">1.4</span> Sorting Algorithms and Heap</h2>
+</div>
+<div id="sorting-algorithms-and-heap" class="section level1">
+<h1><span class="header-section-number">2</span> Sorting Algorithms and Heap</h1>
 <pre class="java"><code>int[] array = {4, 5, 0, 1, 2, 3};
 Arrays.sort(array); // quicksort</code></pre>
 <pre class="java"><code>Integer[] array;
@@ -572,7 +697,6 @@ int gpa;</code></pre>
 <li>Hard to parallelize/distribute</li>
 </ol>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
-</div>
 </div>
 
 
