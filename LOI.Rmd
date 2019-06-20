@@ -130,7 +130,7 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="pending">17th  
     [Practice 11](LO/Algorithm_Class_18.html)</td>
   <td></td>
-  <td class="pending">19th  
+  <td class="updated">19th  
     [Practice 12](LO/Algorithm_Class_19.html)</td>
   <td></td>
   <td>21st  
@@ -169,7 +169,7 @@ td.updated {background-color: MediumSpringGreen;}
 - Class 7: Graph Search II - DFS [Link](LO/Algorithm_Class_16.html)
     - Practice 10 [Link](LO/Algorithm_Class_17.html) (pending)
     - Practice 11 [Link](LO/Algorithm_Class_18.html) (pending)
-    - Practice 12 [Link](LO/Algorithm_Class_19.html) (pending)
+    - Practice 12 [Link](LO/Algorithm_Class_19.html)
 - Class 8: HashTable I and String I [Link](LO/Algorithm_Class_20.html) (pending)
 - Class 9: String II [Link](LO/Algorithm_Class_21.html) (pending)
     - Practice 13 [Link](LO/Algorithm_Class_22.html) (pending)
