@@ -925,7 +925,7 @@ Step 4:
 Arrays.sort(array); // quicksort</code></pre>
 <pre class="java"><code>Integer[] array;
 Arrays.sort(array); // mergesort</code></pre>
-<p>Quicksort is used for arrays of primitive types while mergesort for Object[] arrays. For primitives the stability of the sort is meaningless, as you cannot distinguish two values that are equal. Hence, quicksort is used (except when sorting an array of Objects, for which mergesort is performed).</p>
+<p><strong>Quicksort</strong> is used for arrays of <strong>primitive types</strong> while <strong>mergesort</strong> for <strong>Object[]</strong> arrays. For primitives the stability of the sort is meaningless, as you cannot distinguish two values that are equal. Hence, quicksort is used (except when sorting an array of Objects, for which mergesort is performed).</p>
 <pre><code>Student[] students;
 
 int id;
@@ -941,8 +941,13 @@ int gpa;</code></pre>
 <li>Time worst case O(<span class="math inline">\(n\log(n)\)</span>), average O(<span class="math inline">\(n\log(n)\)</span>). Space worst case O(<span class="math inline">\(n\)</span>), average O(<span class="math inline">\(n\)</span>).</li>
 <li>Stable sort.</li>
 </ol>
-<p>Stable sorting algorithms maintain the relative order of records with equal keys (i.e. values). That is, a sorting algorithm is stable if whenever there are two records R and S with the same key and with R appearing before S in the original list, R will appear before S in the sorted list.</p>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p><strong>Stable sorting</strong> algorithms maintain the relative order of records with equal keys (i.e. values). That is, a <strong>sorting</strong> algorithm is <strong>stable</strong> if whenever there are two records R and S with the same key and with R appearing before S in the original list, R will appear before S in the sorted list.</p>
+<p>Why object sorting needs to be stable?</p>
+<p>Example: Sorting by scores, then by gender.</p>
+<ul>
+<li>Two male students m1 and m2, if m1’s score is higher than m2, then after the sort the order is preserved.</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=ZZuD6iUe3Pc">Visualization and Comparison of Sorting Algorithms</a></p>
 <p>heapSort (not stable):</p>
 <ol style="list-style-type: decimal">
 <li>Heapify the input array to maxHeap, O(<span class="math inline">\(n\)</span>).</li>
@@ -954,7 +959,129 @@ int gpa;</code></pre>
 <li>Poor locality (swap from first to last) (spatial locality: prefer to access data nearby)</li>
 <li>Hard to parallelize/distribute</li>
 </ol>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<div id="min-heap-implementation" class="section level2">
+<h2><span class="header-section-number">2.1</span> Min Heap Implementation</h2>
+<pre class="java"><code>public class MinHeap {
+  private int[] array;
+  private int size;
+  
+  public MinHeap(int[] array) {
+    if (array == null || array.length == 0) {
+      throw new IllegalArgumentException(&quot;input array cannot be null or empty&quot;);
+    }
+    this.array = array;
+    size = array.length;
+    heapify();
+  }
+  
+  public MinHeap(int capacity) {
+    if (capacity &lt;= 0) {
+      throw new IllegalArgumentException(&quot;capacity cannot be &lt;= 0&quot;);
+    }
+    array = new int[capacity];
+    size = 0;
+  }
+  
+  public int size() {
+    return size;
+  }
+  
+  public boolean isEmpty() {
+    return size == 0;
+  }
+  
+  public boolean isFull() {
+    return size == array.length;
+  }
+  
+  public int peek() {
+    if (size == 0) {
+      throw new NoSuchElementException(&quot;heap is empty&quot;);
+    }
+    return array[0];
+  }
+  
+  public int poll() {
+    if (size == 0) {
+      throw new NoSuchElementException(&quot;heap is empty&quot;);
+    }
+    int result = array[0];
+    array[0] = array[size - 1];
+    size--;
+    percolateDown(0);
+    return result;
+  }
+  
+  public void offer(int ele) {
+    if (size == array.length) {
+      int[] newArray = new int[array.length * 1.5];
+      // copy(array, newArray);
+      array = newArray;
+    }
+    array[size] = ele;
+    size++;
+    percolateUp(size - 1);
+  }
+  
+  public int update(int index, int ele) {
+    if (index &lt; 0 || index &gt; size - 1) {
+      throw new ArrayIndexOutOfBoundsException(&quot;invalid index range&quot;);
+    }
+    int result = array[index];
+    array[index] = ele;
+    if (result &gt; ele) {
+      percolateUp(index);
+    }
+    else {
+      percolateDown(index);
+    }
+    return result;
+  }
+  
+  private void heapify() {
+    for (int i = size / 2 - 1; i &gt;= 0; i--) {
+      percolateDown(i);
+    }
+  }
+  
+  private void percolateUp(int index) {
+    while (index &gt; 0) {
+      int parentIndex = (index - 1) / 2;
+      if (array[parentIndex] &gt; array[index]) {
+        swap(array, parentIndex, index);
+      }
+      else {
+        break;
+      }
+      index = parentIndex;
+    }
+  }
+  
+  private void percolateDown(int index) {
+    while (index &lt;= size / 2 - 1) {
+      int leftChildIndex = index * 2 + 1;
+      int rightChildIndex = index * 2 + 2;
+      int swapCandidate = leftChildIndex;
+      if (rightChildIndex &lt;= size - 1 &amp;&amp; array[leftChildIndex] &gt;= array[rightChildIndex]) {
+        swapCandidate = rightChildIndex;
+      }
+      if (array[index] &gt; array[swapCandidate]) {
+        swap(array, index, swapCandidate);
+      }
+      else {
+        break;
+      }
+      index = swapCandidate;
+    }
+  }
+  
+  private void swap(int[] array, int a, int b) {
+    int temp = array[a];
+    array[a] = array[b];
+    array[b] = temp;
+  }
+}</code></pre>
+</div>
 </div>
 
 
