@@ -342,7 +342,7 @@ class B implements A{}
 interface C extends A{}
 class D extends B{}</code></pre>
 <p>Methods belonging to each interface:</p>
-<p><code>List</code>:</p>
+<p>1. <code>List</code>:</p>
 <ul>
 <li><code>add(E e)</code>
 <ol style="list-style-type: lower-roman">
@@ -375,7 +375,7 @@ class D extends B{}</code></pre>
 <li>LinkedList: O(<span class="math inline">\(n\)</span>)</li>
 </ol></li>
 </ul>
-<p><code>Queue</code>:</p>
+<p>2. <code>Queue</code>:</p>
 <ul>
 <li><code>offer(E e)</code>; return false
 <ol style="list-style-type: lower-roman">
@@ -414,7 +414,7 @@ class D extends B{}</code></pre>
 <li>PriorityQueue: O(<span class="math inline">\(\log(n)\)</span>)</li>
 </ol></li>
 </ul>
-<p><code>Deque</code>:</p>
+<p>3. <code>Deque</code>:</p>
 <ul>
 <li><code>offerFirst(E e)</code>; O(<span class="math inline">\(1\)</span>)</li>
 <li><code>offerLast(E e)</code> = <code>offer(E e)</code>; O(<span class="math inline">\(1\)</span>)</li>
@@ -425,7 +425,7 @@ class D extends B{}</code></pre>
 <li><del><code>push(E e)</code></del></li>
 <li><del><code>pop()</code></del></li>
 </ul>
-<p>All:</p>
+<p>4. All:</p>
 <ul>
 <li><code>int size()</code></li>
 <li><code>boolean isEmpty()</code></li>
@@ -463,43 +463,44 @@ class D extends B{}</code></pre>
 <p>這裏的LinkedList好像跟上課學的ListNode不一樣, 他們之間有聯係麽?</p>
 </blockquote>
 <ol style="list-style-type: decimal">
-<li>Yes</li>
+<li><p>Yes, because if you only use (<code>offerLast</code>, <code>peekLast</code> and <code>poolLast</code>) OR (<code>offerFirst</code>, <code>peekFirst</code> and <code>pollFirst</code>), is IS a stack.</p></li>
+<li><p>Not a property of LinkedList. Instead, it is a method defined by “Deque”.</p></li>
+<li><p>ListNode is your own implementation of “linked list”. <code>LinkedList</code> is a Java library implementation.</p></li>
 </ol>
 </div>
 <div id="quiz" class="section level1">
 <h1><span class="header-section-number">3</span> Quiz</h1>
-<div id="tf-1" class="section level2">
-<h2><span class="header-section-number">3.1</span> T/F 1</h2>
+<p><strong>Q 1</strong></p>
 <pre class="java"><code>Deque&lt;String&gt; stack = new Stack&lt;&gt;;</code></pre>
-<p>Wrong!!!</p>
-</div>
-<div id="tf-2" class="section level2">
-<h2><span class="header-section-number">3.2</span> T/F 2</h2>
+<ul>
+<li>Wrong!!!</li>
+</ul>
+<p><strong>Q 2</strong></p>
 <pre class="java"><code>Deque&lt;String&gt; pq = new PriorityQueue&lt;&gt;();</code></pre>
-<p>Wrong!!!</p>
-</div>
-<div id="tf-3" class="section level2">
-<h2><span class="header-section-number">3.3</span> T/F 3</h2>
+<ul>
+<li>Wrong!!!</li>
+</ul>
+<p><strong>Q 3</strong></p>
 <pre class="java"><code>Queue&lt;String&gt; stack = new ArrayDeque&lt;&gt;();</code></pre>
-<p>Ok, but naming is wrong.</p>
-</div>
-<div id="tf-4" class="section level2">
-<h2><span class="header-section-number">3.4</span> T/F 4</h2>
+<ul>
+<li>Ok, but naming is wrong.</li>
+</ul>
+<p><strong>Q 4</strong></p>
 <pre class="java"><code>List&lt;String&gt; list = new ArrayDeque&lt;&gt;();</code></pre>
-<p>Wrong!!!</p>
-</div>
-<div id="tf-5" class="section level2">
-<h2><span class="header-section-number">3.5</span> T/F 5</h2>
+<ul>
+<li>Wrong!!!</li>
+</ul>
+<p><strong>Q 5</strong></p>
 <pre class="java"><code>class Test {
   public static void main(String[] args) {
     Queue&lt;String&gt; q = ne ArrayDeque&lt;&gt;();
     q.offerLast(&quot;hello&quot;);
   }
 }</code></pre>
-<p>Queue does not have the method “offerLast”.</p>
-</div>
-<div id="tf-6" class="section level2">
-<h2><span class="header-section-number">3.6</span> T/F 6</h2>
+<ul>
+<li>Queue does not have the method “offerLast”.</li>
+</ul>
+<p><strong>Q 6</strong></p>
 <pre class="java"><code>class Test {
   public static void main(String[] args) {
     List&lt;String&gt; l = new LinkedList&lt;&gt;();
@@ -507,10 +508,10 @@ class D extends B{}</code></pre>
     System.out.println(l.get(0));
   }
 }</code></pre>
-<p>Ok, because LinkedList implements List, which has add() and get().</p>
-</div>
-<div id="tf-7" class="section level2">
-<h2><span class="header-section-number">3.7</span> T/F 7</h2>
+<ul>
+<li>Ok, because LinkedList implements List, which has add() and get().</li>
+</ul>
+<p><strong>Q 7</strong></p>
 <pre class="java"><code>class Test {
   public static void main(String[] args) {
     List&lt;String&gt; l = new LinkedList&lt;&gt;();
@@ -518,12 +519,14 @@ class D extends B{}</code></pre>
     System.out.println(l.get(0));
   }
 }</code></pre>
-<pre><code>Exception in ???</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
-<p>You can only append in the middle or at the end. You cannot jump to nonexisting location! (Still a linear data structure)</p>
-</div>
-<div id="tf-8" class="section level2">
-<h2><span class="header-section-number">3.8</span> T/F 8</h2>
+<pre><code>Exception in thread &quot;main&quot; java.lang.IndexOutOfBoundsException: Index: 3, Size: 0
+        at java.util.LinkedList.checkPositionIndex(LinkedList.java:560)
+        at java.util.LinkedList.add(LinkedList.java:507)
+        at laioffer.Test.main(Test.java:6)</code></pre>
+<ul>
+<li>You can only append in the middle or at the end. You cannot jump to nonexisting location! (Still a linear data structure)</li>
+</ul>
+<p><strong>Q 8</strong></p>
 <pre class="java"><code>class Test {
   public static void main(String[] args) {
     Deque&lt;String&gt; dq = new ArrayDeque&lt;&gt;();
@@ -531,24 +534,33 @@ class D extends B{}</code></pre>
     System.out.println(dq.get(0));
   }
 }</code></pre>
-<p>No. Deque does not implement List, does not have method get(int index).</p>
+<ul>
+<li>No. Deque does not implement List, does not have method get(int index).</li>
+</ul>
 </div>
-<div id="summary" class="section level2">
-<h2><span class="header-section-number">3.9</span> Summary</h2>
-<ol style="list-style-type: decimal">
-<li><p>If you want</p></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<div id="summary" class="section level1">
+<h1><span class="header-section-number">4</span> Summary</h1>
+<p>1. If you want to use a queue</p>
+<pre class="java"><code>Queue&lt;X&gt; q = new ArrayDeque&lt;&gt;();</code></pre>
+<p>2. If you want to use a stack</p>
+<pre class="java"><code>Deque&lt;X&gt; stack = new ArrayDeque&lt;&gt;();</code></pre>
+<ul>
+<li>Note: Only use …First or …Last!!!</li>
+</ul>
+<p>3. If you want to use a two-end queue</p>
+<pre class="java"><code>Deque&lt;X&gt; dq = new ArrayDeque&lt;&gt;();</code></pre>
+<p>4. If you want to use a size-adjustable array</p>
+<pre class="java"><code>List&lt;X&gt; list = new ArrayList&lt;&gt;();</code></pre>
+<p>5. If you want to use a priority queue</p>
+<pre class="java"><code>Queue&lt;X&gt; pq = new PriorityQueue&lt;&gt;();</code></pre>
+<p>or</p>
+<pre class="java"><code>PriorityQueue&lt;X&gt; pq = new PriorityQueue&lt;&gt;();</code></pre>
 </div>
-<div id="qa-2-minmax-heap" class="section level2">
-<h2><span class="header-section-number">3.10</span> Q&amp;A 2: Min/Max Heap</h2>
+<div id="qa-2-minmax-heap" class="section level1">
+<h1><span class="header-section-number">5</span> Q&amp;A 2: Min/Max Heap</h1>
 </div>
-<div id="comparator-class" class="section level2">
-<h2><span class="header-section-number">3.11</span> Comparator Class</h2>
+<div id="comparator-class" class="section level1">
+<h1><span class="header-section-number">6</span> Comparator Class</h1>
 <p>Possible ways to provide a comparator class:</p>
 <ol style="list-style-type: decimal">
 <li></li>
@@ -559,9 +571,8 @@ class D extends B{}</code></pre>
 <pre class="java"><code></code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
-</div>
 <div id="qa-3-lca-with-parent" class="section level1">
-<h1><span class="header-section-number">4</span> Q&amp;A 3: LCA with parent</h1>
+<h1><span class="header-section-number">7</span> Q&amp;A 3: LCA with parent</h1>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 
