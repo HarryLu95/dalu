@@ -142,17 +142,17 @@ td.updated {background-color: MediumSpringGreen;}
 </tr>
 <tr>
   <td>24th  
-    ?</td>
+    Practice 14</td>
   <td></td>
   <td>26th  
-    ?</td>
+    Class 10</td>
   <td></td>
   <td>28th  
-    ?</td>
+    Practice 15</td>
   <td>29th  
-    ?</td>
+    Class 11</td>
   <td>30th  
-    ?</td>
+    Practice 16</td>
 </tr>
 </table>
 
@@ -173,10 +173,11 @@ td.updated {background-color: MediumSpringGreen;}
 - Class 8: HashTable I and String I [Link](LO/Algorithm_Class_20.html) (pending)
 - Class 9: String II [Link](LO/Algorithm_Class_21.html) (pending)
     - Practice 13 [Link](LO/Algorithm_Class_22.html) (pending)
-
-
-
-
+    - Practice 14 [Link](LO/Algorithm_Class_23.html) (pending)
+- Class 10: Bit [Link](LO/Algorithm_Class_24.html) (pending)
+    - Practice 15 [Link](LO/Algorithm_Class_25.html) (pending)
+- Class 11: Midterm I [Link](LO/Algorithm_Class_26.html) (pending)
+    - Practice 16 [Link](LO/Algorithm_Class_27.html) (pending)
 
 
 
