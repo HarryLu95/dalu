@@ -133,8 +133,8 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="updated">19th  
     [Practice 12](LO/Algorithm_Class_19.html)</td>
   <td></td>
-  <td>21st  
-    Class 8</td>
+  <td class="pending">21st  
+    [Class 8](LO/Algorithm_Class_20.html)</td>
   <td>22nd  
     Class 9</td>
   <td>23rd  
@@ -170,7 +170,7 @@ td.updated {background-color: MediumSpringGreen;}
     - Practice 10 [Link](LO/Algorithm_Class_17.html)
     - Practice 11 [Link](LO/Algorithm_Class_18.html) (pending)
     - Practice 12 [Link](LO/Algorithm_Class_19.html)
-- Class 8: HashTable I and String I [Link](LO/Algorithm_Class_20.html) (pending)
+- Class 8: Hash Table and String I [Link](LO/Algorithm_Class_20.html) (pending)
 - Class 9: String II [Link](LO/Algorithm_Class_21.html) (pending)
     - Practice 13 [Link](LO/Algorithm_Class_22.html) (pending)
     - Practice 14 [Link](LO/Algorithm_Class_23.html) (pending)
