@@ -141,11 +141,11 @@ td.updated {background-color: MediumSpringGreen;}
     [Practice 13](LO/Algorithm_Class_22.html)</td>
 </tr>
 <tr>
-  <td>24th  
-    Practice 14</td>
+  <td class="pending">24th  
+    [Practice 14](LO/Algorithm_Class_23.html)</td>
   <td></td>
-  <td>26th  
-    Class 10</td>
+  <td class="pending">26th   
+    [Class 10](LO/Algorithm_Class_24.html)</td>
   <td></td>
   <td>28th  
     Practice 15</td>
