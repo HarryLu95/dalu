@@ -127,7 +127,7 @@ td.updated {background-color: MediumSpringGreen;}
     [Practice 10](LO/Algorithm_Class_17.html)</td>
 </tr>
 <tr>
-  <td class="pending">17th  
+  <td class="updated">17th  
     [Practice 11](LO/Algorithm_Class_18.html)</td>
   <td></td>
   <td class="updated">19th  
@@ -168,7 +168,7 @@ td.updated {background-color: MediumSpringGreen;}
     - Practice 9 [Link](LO/Algorithm_Class_15.html)
 - Class 7: Graph Search II - DFS [Link](LO/Algorithm_Class_16.html)
     - Practice 10 [Link](LO/Algorithm_Class_17.html)
-    - Practice 11 [Link](LO/Algorithm_Class_18.html) (pending)
+    - Practice 11 [Link](LO/Algorithm_Class_18.html)
     - Practice 12 [Link](LO/Algorithm_Class_19.html)
 - Class 8: Hash Table and String I [Link](LO/Algorithm_Class_20.html) (pending)
 - Class 9: String II [Link](LO/Algorithm_Class_21.html) (pending)

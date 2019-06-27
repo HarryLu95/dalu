@@ -973,7 +973,121 @@ TestSolution.test(): 19: java.lang.NullPointerException</code></pre>
 </div>
 <div id="possible-ways-to-provide-a-comparator-class-or-set-class-with-natural-ordering" class="section level1">
 <h1><span class="header-section-number">9</span> Possible ways to provide a comparator class or set class with natural ordering</h1>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p>此處以反序(reverse Integer class的natural order), 即MaxHeap爲例:</p>
+<div id="way-1" class="section level2">
+<h2><span class="header-section-number">9.1</span> Way 1</h2>
+<p>Implementing natural ordering from Interface <code>Comparable</code> and override <code>CompareTo(E e)</code> method</p>
+<pre class="java"><code>interface Comparable&lt;E&gt; {
+  int compareTo(E ele)
+}</code></pre>
+<pre class="java"><code>class MyInteger implements Comparable&lt;MyInteger&gt; {
+  private int value;
+  public MyInteger(int value) {
+    this.value = value;
+  }
+  @Override
+  public int compareTo(MyInteger another) {
+    if (this.equals(another)) {
+      // compare two objects, use &quot;.equals()&quot;, not &quot;==&quot;
+      return 0;
+    }
+    return this.value &gt; another.value ? -1 : 1;
+  }
+}</code></pre>
+<p>or: 調用Integer的<code>CompareTo</code>來反序</p>
+<pre class="java"><code>class MyInteger implements Comparable&lt;MyInteger&gt; {
+  private int value;
+  public MyInteger(int value) {
+    this.value = value;
+  }
+  @Override
+  public int compareTo(MyInteger another) {
+    return Integer.valueOf(another.value).compareTo(this.value);
+  }
+}</code></pre>
+<p>Declaration:</p>
+<pre class="java"><code>PriorityQueue&lt;MyInteger&gt; pq = new PriorityQueue&lt;&gt;();</code></pre>
+</div>
+<div id="way-2" class="section level2">
+<h2><span class="header-section-number">9.2</span> Way 2</h2>
+<p>Provide Top-level class implements from Interface <code>Comparator</code> and override <code>Compare(E e1, E e2)</code> method</p>
+<pre class="java"><code>interface Comparator&lt;E&gt; {
+  int compare(E o1, E o2)
+}</code></pre>
+<pre class="java"><code>class MyInteger {
+  private int value;
+  public MyInteger(int value) {
+    this.value = value;
+  }
+}
+class MyComparator implements Comparator&lt;MyInteger&gt; {
+  @Override
+  public int compare(MyInteger o1, MyInteger o2) {
+    return Integer.valueOf(o2.value).compareTo(o1.value);
+  }
+}</code></pre>
+<p>Declaration:</p>
+<pre class="java"><code>PriorityQueue&lt;MyInteger&gt; pq = new PriorityQueue&lt;&gt;(new MyComparator());</code></pre>
+</div>
+<div id="way-3" class="section level2">
+<h2><span class="header-section-number">9.3</span> Way 3</h2>
+<p>Static nested class override <code>Compare(E e1, E e2)</code> method</p>
+<pre class="java"><code>class MyInteger {
+  private int value;
+  public MyInteger(int value) {
+    this.value = value;
+  }
+  static class MyComparator implements Comparator&lt;MyInteger&gt; {
+    @Override
+    public int compare(MyInteger o1, MyInteger o2) {
+      if (o1.value == o2.value) {
+        return 0;
+      }
+      return o1.value &gt; o2.value ? -1 : 1;
+    }
+  }
+}</code></pre>
+<p>Declaration:</p>
+<pre class="java"><code>PriorityQueue&lt;MyInteger&gt; pq = new PriorityQueue&lt;MyInteger&gt;(new MyInteger.MyComparator());</code></pre>
+<p>Static nested class v.s. non-static nested class: belongs to class (static), or belongs to instance (non-static).</p>
+</div>
+<div id="way-4" class="section level2">
+<h2><span class="header-section-number">9.4</span> Way 4</h2>
+<p>Anonymous class override <code>Compare(E e1, E e2)</code> method</p>
+<p>Declaration:</p>
+<pre class="java"><code>PriorityQueue&lt;E&gt; pq = new PriorityQueue&lt;&gt;(16, new Comparator&lt;E&gt; {
+  @Override
+  public int compare(E o1, E o2) {
+    return o2.compareTo(o1);
+    // compareTo is the natural ordering in this Comparable class E
+  }
+});</code></pre>
+</div>
+<div id="way-5" class="section level2">
+<h2><span class="header-section-number">9.5</span> Way 5</h2>
+<p>Other: <code>Collections.reverseOrder()</code>. 僅針對反序情況.</p>
+<p>Class <code>Collections</code> has a method <code>reverseOrder()</code> returns a Comparator which reverses the natural ordering:</p>
+<pre class="java"><code>public static&lt;T&gt; Comparator&lt;T&gt; reverseOrder()</code></pre>
+<ul>
+<li>Returns a comparator that imposes the reverse of the <strong>natural ordering</strong> on a collection of objects that implement the <code>Comparable</code> interface. (The natural ordering is the ordering imposed by the object’s own <code>compareTo</code> method.)</li>
+</ul>
+<pre class="java"><code>public static&lt;T&gt; Comparator&lt;T&gt; reverseOrder(Comparator&lt;T&gt; cmp)</code></pre>
+<ul>
+<li>Returns a comparator that imposes the reverse ordering of the specified comparator. If the specified comparator is null, this method is equivalent to <code>reverseOrder()</code>. (In other words, it returns a comparator that imposes the reverse of the <strong>natural ordering</strong> on a collection of objects that implement the <code>Comparable</code> interface.)</li>
+</ul>
+<p><code>Comparator</code>: <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html" class="uri">https://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html</a></p>
+<p><code>reverseOrder()</code>: <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Collections.html#reverseOrder" class="uri">https://docs.oracle.com/javase/7/docs/api/java/util/Collections.html#reverseOrder</a>()</p>
+<p>Declaration:</p>
+<pre class="java"><code>PriorityQueue&lt;Integer&gt; pq = new PriorityQueue&lt;&gt;(Collections.reverseOrder());</code></pre>
+</div>
+<div id="way-6" class="section level2">
+<h2><span class="header-section-number">9.6</span> Way 6</h2>
+<p>Lambda expression (Java 8)</p>
+<p>Declaration 1:</p>
+<pre class="java"><code>PriorityQueue&lt;MyInteger&gt; pq = new PriorityQueue&lt;&gt;((s1, s2) -&gt; s1.value &lt; s2.value? 1 : s1.value &gt; s2.value ? -1 : 0);</code></pre>
+<p>Declaration 2:</p>
+<pre class="java"><code>PriorityQueue&lt;MyInteger&gt; pq = new PriorityQueue&lt;&gt;((s1, s2) -&gt; Integer.valueOf(s2.value).compareTo(s1.value));</code></pre>
+</div>
 </div>
 
 
