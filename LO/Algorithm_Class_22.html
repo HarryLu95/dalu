@@ -309,7 +309,8 @@ h3.subtitle {background-color: White; text-align: center;}
 h4.date {text-align: center;}
 p {font-size: 18px; color: black;}
 table {border: 1px solid black; border-collapse: collapse; margin-top: 10px; margin-bottom: 10px;}
-td {border: 1px solid black; width: auto; height: 50px; text-align: left; font-size: 16px; color: black;}
+th {border: 1px solid black; width: auto; height: 50px; font-size: 16px; color: black;}
+td {border: 1px solid black; width: auto; height: 50px; font-size: 16px; color: black;}
 td.title {text-align: center;}
 ol {font-size: 18px; color: black;}
 ul {font-size: 18px; color: black;}
@@ -438,7 +439,7 @@ span.r {color: red;}
 <p><strong>We do not use Hashtable anymore.</strong></p>
 </div>
 <div id="a-hashmap-implementation---i" class="section level2">
-<h2><span class="header-section-number">3.4</span> A HashMap implementation - I</h2>
+<h2><span class="header-section-number">3.4</span> A HashMap Implementation - I</h2>
 <ul>
 <li>A table of <strong>buckets</strong> (an array of buckets), using the array index to denote each bucket.</li>
 <li>For each <code>&lt;key, value&gt;</code>, it goes to one of the buckets, the bucket index is determined by a <strong>hash function</strong> applied on <strong>key</strong> and the size of array.</li>
@@ -582,20 +583,46 @@ while (curr != null) {
 </div>
 <div id="equals-hashcode" class="section level2">
 <h2><span class="header-section-number">3.7</span> <code>==</code>, <code>equals()</code>, <code>hashCode()</code></h2>
-<ul>
-<li><code>==</code>
+<p>1. <code>==</code></p>
 <ul>
 <li>determine if two primitive types have the same value.</li>
 <li><strong>determine if two references are pointed to the same object.</strong></li>
-</ul></li>
-<li><code>equals()</code>, <code>hashCode()</code>
+</ul>
+<p>2. <code>equals()</code>, <code>hashCode()</code></p>
 <ul>
 <li>defined in <code>Object</code> class, Object is the root class for any Java class</li>
 <li>any Java class implicitly extends Object class, so if in the subclass these two methods are not overridden, it inherits what if defines in Object class.</li>
-<li>the xxxx</li>
-</ul></li>
+<li>the default implementation of equals() is check if the two references are pointed to the same object <code>==</code>.</li>
+<li>the default implementation of hashCode() returns a “unique hash value” for the object based on its memory address.</li>
 </ul>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>class Object {
+  public boolean equals(Object obj) {
+    return this == obj;
+  }
+  public int hashCode() {
+    // Here it returns the object's hash value based on its memory address. It is unique for each object.
+  }
+  public String toString() {
+    // ...
+  }
+}</code></pre>
+<ul>
+<li>sometimes we do not want to compare the reference, we want to compare the <strong>object’s content</strong>.</li>
+</ul>
+<p><strong>Example: (from an existing class)</strong></p>
+<pre class="java"><code>// s1 and s2 are different String objects
+String s1 = &quot;abc&quot;;
+String s2 = new String(&quot;abc&quot;);
+
+// this will return false, &quot;==&quot; always compare if they are the same object
+s1 == s2;
+
+// this will return true, &quot;equals()&quot; for String class actually checks the value
+s1.equals(s2);</code></pre>
+<p>Why <code>s1.equals(s2) == true</code>?</p>
+<ul>
+<li>In <code>String</code> class, the <code>equals()</code> method is overridden:</li>
+</ul>
 <pre class="java"><code>class String {
   char[] array;
   int offset;
@@ -618,11 +645,12 @@ while (curr != null) {
       if (this.array[this.offset + i] != another.array[another.offset + i]) {
         return false;
       }
-    }
+    } 
     // return true if they match
     return true;
   }
 }</code></pre>
+<p><strong>Example (out own class):</strong></p>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 <p>In Java, there is a contract between <code>equals()</code> and <code>hashCode()</code>, the developers need to maintain:</p>
 <ul>
