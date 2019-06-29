@@ -193,45 +193,67 @@ td.updated {background-color: MediumSpringGreen;}
   <td>**Sun**</td>
 </tr>
 <tr>
+  <td>1st  
+    ???</td>
   <td></td>
+  <td>3rd  
+    ???</td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>5th  
+    ???</td>
+  <td>6th  
+    ???</td>
+  <td>7th  
+    ???</td>
 </tr>
 <tr>
+  <td>8th  
+    ???</td>
   <td></td>
+  <td>10th  
+    ???</td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>12th  
+    ???</td>
+  <td>13th  
+    ???</td>
+  <td>14th  
+    ???</td>
 </tr>
 <tr>
+  <td>15th  
+    ???</td>
   <td></td>
+  <td>17th  
+    ???</td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>19th  
+    ???</td>
+  <td>20th  
+    ???</td>
+  <td>21st  
+    ???</td>
 </tr>
 <tr>
+  <td>22nd  
+    ???</td>
   <td></td>
+  <td>24th  
+    ???</td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>26th  
+    ???</td>
+  <td>27th  
+    ???</td>
+  <td>28th  
+    ???</td>
 </tr>
 <tr>
+  <td>29th  
+    ???</td>
   <td></td>
-  <td></td>
-  <td></td>
+  <td>31st  
+    ???</td>
   <td class="diagonalRising"></td>
   <td class="diagonalRising"></td>
   <td class="diagonalRising"></td>
@@ -255,18 +277,26 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="diagonalRising"></td>
   <td class="diagonalRising"></td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>2nd  
+    ???</td>
+  <td>3rd  
+    ???</td>
+  <td>4th  
+    ???</td>
 </tr>
 <tr>
+  <td>5th  
+    ???</td>
   <td></td>
+  <td>7th  
+    ???</td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>9th  
+    ???</td>
+  <td>10th  
+    ???</td>
+  <td>11th  
+    ???</td>
 </tr>
 <tr>
   <td></td>
@@ -304,7 +334,7 @@ td.updated {background-color: MediumSpringGreen;}
 
 ---
 
-#Homework Solutions
+#Homework
 ##Section 1
 - Class 1 - Binary Search
     - 1.1. Classical Binary Search
