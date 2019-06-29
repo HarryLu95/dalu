@@ -2070,8 +2070,59 @@ public class KthSmallestInSortedMatrix {
 <h2><span class="header-section-number">7.1</span> All Subsets I</h2>
 <p>Given a set of characters represented by a String, return a list containing all subsets of the characters.</p>
 <p><a href="https://app.laicode.io/app/problem/62" class="uri">https://app.laicode.io/app/problem/62</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>// Assumptions:
+// 1. There are no duplicate characters in the given string.
+public class SubSetsI {
+  // Method 1: DFS solution.
+  public List&lt;String&gt; subSets(String set) {
+    List&lt;String&gt; result = new ArrayList&lt;String&gt;();
+    if (set == null) {
+      return result;
+    }
+    char[] arraySet = set.toCharArray();
+    // Record the current subset.
+    StringBuilder sb = new StringBuilder();
+    helper(arraySet, sb, 0, result);
+    return result;
+  }
+  
+  // At each level, determine the character at the position &quot;index&quot; to be picked or not.
+  private void helper(char[] set, StringBuilder sb, int index, List&lt;String&gt; result) {
+    // Terminate condition: When we finish determining for all the characters pick or not, we have a complete subset.
+    if (index == set.length) {
+      result.add(sb.toString());
+      return;
+    }
+    // 1. Not pick the character at index.
+    helper(set, sb, index + 1, result);
+    // 2. Pick the character at index.
+    helper(set, sb.append(set[index]), index + 1, result);
+    // Remember to remove the added character when back tracking to the previous level.
+    sb.deleteCharAt(sb.length() - 1);
+  }
+  
+  // Method 2: Another DFS solution.
+  public List&lt;String&gt; subSetsII(String set) {
+    List&lt;String&gt; result = new ArrayList&lt;String&gt;();
+    if (set == null) {
+      return result;
+    }
+    char[] arraySet = set.toCharArray();
+    StringBuilder sb = new StringBuilder();
+    helperII(arraySet, sb, 0, result);
+    return result;
+  }
+  
+  private void helperII(char[] set, StringBuilder sb, int index, List&lt;String&gt; result) {
+    result.add(sb.toString());
+    // Maintains ascending order of the indices of picked characters. Choose the next picked index (the smallest one can be picked is index).
+    for (int i = index; i &lt; set.length; i++) {
+      sb.append(set[i]);
+      helperII(set, sb, i + 1, result);
+      sb.deleteCharAt(sb.length() - 1);
+    }
+  }
+}</code></pre>
 </div>
 <div id="all-valid-permutations-of-parentheses-i" class="section level2">
 <h2><span class="header-section-number">7.2</span> All Valid Permutations Of Parentheses I</h2>
