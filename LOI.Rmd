@@ -351,8 +351,35 @@ td.updated {background-color: MediumSpringGreen;}
     - 6.5 Kth Smallest Number In Sorted Matrix
 - Class 7 - Graph Search Algorithm II (DFS)
     - 7.1 All Subsets I
-
-
+    - 7.2 All Valid Permutations Of Parentheses I
+    - 7.3 Combinations Of Coins
+    - 7.4 All Permutations I
+- Class 8 - HashTable & String I
+    - 8.1 Top K Frequent Words
+    - 8.2 Missing Number I
+    - 8.3 Common Numbers Of Two Sorted Arrays
+    - 8.4 Remove Certain Characters
+    - 8.5 Remove All Leading/Trailing/Duplicate Space Characters
+    - 8.6 Remove Adjacent Repeated Characters I
+    - 8.7 Remove Adjacent Repeated Characters IV
+    - 8.8 Determine If One String Is Another’s Substring
+- Class 9 - String II
+    - 9.1 Reverse String
+    - 9.2 Reverse Words In Sentence
+    - 9.3 Right Shift By N Characters
+    - 9.4 String Replace
+    - 9.5 String Shuffling
+    - 9.6 All Permutations II (with duplicate characters)
+    - 9.7 Compress String II
+    - 9.8 Decompress String II
+    - 9.9 Longest Substring With Only Unique Characters
+    - 9.10 Find All Anagrams Of Short String In A Long String
+- Class 10 - Bit Representation and Bit Operation
+    - 10.1 Determine If A Number Is Power Of 2
+    - 10.2 Number Of Different Bits
+    - 10.3 All Unique Characters II
+    - 10.4 Reverse Bits
+    - 10.5 Hexadecimal Representation
 
 
 

@@ -1973,10 +1973,41 @@ public class Bipartite {
 <p><a href="https://app.laicode.io/app/problem/47" class="uri">https://app.laicode.io/app/problem/47</a></p>
 <pre class="java"><code>public class CheckCompleted {
   public boolean isCompleted(TreeNode root) {
-    
+    if (root == null) {
+      return true;
+    }
+    Queue&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;();
+    // If the flag is set true, there should not be any child nodes afterwards.
+    boolean flag = false;
+    queue.offer(root);
+    while (!queue.isEmpty()) {
+      TreeNode curr = queue.poll();
+      // If any of the child is not present, set the flag to true.
+      if (curr.left == null) {
+        flag = true;
+      }
+      else if (flag) {
+        // If flag is set but we still see curr has a left child, the binary tree is not a completed one.
+        return false;
+      }
+      else {
+        // If flag is not set and left child is present.
+        queue.offer(curr.left);
+      }
+      // Same logic applied to the right child.
+      if (curr.right == null) {
+        flag = true;
+      }
+      else if (flag) {
+        return false;
+      }
+      else {
+        queue.offer(curr.right);
+      }
+    }
+    return true;
   }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="kth-smallest-number-in-sorted-matrix" class="section level2">
 <h2><span class="header-section-number">6.5</span> Kth Smallest Number In Sorted Matrix</h2>
@@ -1987,20 +2018,254 @@ public class Bipartite {
 // 2. k &gt; 0 and k &lt;= N * M
 public class KthSmallestInSortedMatrix {
   public int kthSmallest(int[][] matrix, int k) {
-    
+    int rows = matrix.length;
+    int cols = matrix[0].length;
+    // Best First Search, need a minheap on the value of each cells.
+    PriorityQueue&lt;Cell&gt; minHeap = new PriorityQueue&lt;Cell&gt;(k, new Comparator&lt;Cell&gt;() {
+      @Override
+      public int compare(Cell c1, Cell c2) {
+        if (c1.value == c2.value) {
+          return 0;
+        }
+        return c1.value &lt; c2.value ? -1 : 1;
+      }
+    });
+    // All the generated cells will be marked true to avoid being generated more than once.
+    boolean[][] visited = new boolean[rows][cols];
+    minHeap.offer(new Cell(0, 0, matrix[0][0]));
+    visited[0][0] = true;
+    // Iterate k-1 rounds, and Best First Search the smallest k-1 cells.
+    for (int i = 0; i &lt; k - 1; i++) {
+      Cell curr = minHeap.poll();
+      // The neighbor cell will be inserted back to the minheap only if 1) it is not of boundary; 2) it has not been generated before. Because for each cell it could be generated twice.
+      if (curr.row + 1 &lt; rows &amp;&amp; !visited[curr.row + 1][curr.col]) {
+        minHeap.offer(new Cell(curr.row + 1, curr.col, matrix[curr.row + 1][curr.col]));
+        visited[curr.row + 1][curr.col] = true;
+      }
+      if (curr.col + 1 &lt; cols &amp;&amp; !visited[curr.row][curr.col + 1]) {
+        minHeap.offer(new Cell(curr.row, curr.col + 1, matrix[curr.row][curr.col + 1]));
+        visited[curr.row][curr.col + 1] = true;
+      }
+    }
+    return minHeap.peek().value;
   }
   
   static class Cell {
+    int row;
+    int col;
+    int value;
     
+    Cell(int row, int col, int value) {
+      this.row = row;
+      this.col = col;
+      this.value = value;
+    }
   }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 </div>
 <div id="class-7---graph-search-algorithm-ii-dfs" class="section level1">
 <h1><span class="header-section-number">7</span> Class 7 - Graph Search Algorithm II (DFS)</h1>
 <div id="all-subsets-i" class="section level2">
 <h2><span class="header-section-number">7.1</span> All Subsets I</h2>
+<p>Given a set of characters represented by a String, return a list containing all subsets of the characters.</p>
+<p><a href="https://app.laicode.io/app/problem/62" class="uri">https://app.laicode.io/app/problem/62</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="all-valid-permutations-of-parentheses-i" class="section level2">
+<h2><span class="header-section-number">7.2</span> All Valid Permutations Of Parentheses I</h2>
+<p>Given N pairs of parentheses “()”, return a list with all the valid permutations.</p>
+<p><a href="https://app.laicode.io/app/problem/66" class="uri">https://app.laicode.io/app/problem/66</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="combinations-of-coins" class="section level2">
+<h2><span class="header-section-number">7.3</span> Combinations Of Coins</h2>
+<p>Given a number of different denominations of coins (e.g., 1 cent, 5 cents, 10 cents, 25 cents), get all the possible ways to pay a target number of cents.</p>
+<p><a href="https://app.laicode.io/app/problem/73" class="uri">https://app.laicode.io/app/problem/73</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="all-permutations-i" class="section level2">
+<h2><span class="header-section-number">7.4</span> All Permutations I</h2>
+<p>Given a string with no duplicate characters, return a list with all permutations of the characters.</p>
+<p><a href="https://app.laicode.io/app/problem/64" class="uri">https://app.laicode.io/app/problem/64</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+</div>
+<div id="class-8---hashtable-string-i" class="section level1">
+<h1><span class="header-section-number">8</span> Class 8 - HashTable &amp; String I</h1>
+<div id="top-k-frequent-words" class="section level2">
+<h2><span class="header-section-number">8.1</span> Top K Frequent Words</h2>
+<p>Given a composition with different kinds of words, return a list of the top K most frequent words in the composition.</p>
+<p><a href="https://app.laicode.io/app/problem/67" class="uri">https://app.laicode.io/app/problem/67</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="missing-number-i" class="section level2">
+<h2><span class="header-section-number">8.2</span> Missing Number I</h2>
+<p>Given an integer array of size N - 1, containing all the numbers from 1 to N except one, find the missing number.</p>
+<p><a href="https://app.laicode.io/app/problem/68" class="uri">https://app.laicode.io/app/problem/68</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="common-numbers-of-two-sorted-arrays" class="section level2">
+<h2><span class="header-section-number">8.3</span> Common Numbers Of Two Sorted Arrays</h2>
+<p>Find all numbers that appear in both of two sorted arrays (the two arrays are all sorted in ascending order).</p>
+<p><a href="https://app.laicode.io/app/problem/72" class="uri">https://app.laicode.io/app/problem/72</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="remove-certain-characters" class="section level2">
+<h2><span class="header-section-number">8.4</span> Remove Certain Characters</h2>
+<p>Remove given characters in input string, the relative order of other characters should be remained. Return the new string after deletion.</p>
+<p><a href="https://app.laicode.io/app/problem/395" class="uri">https://app.laicode.io/app/problem/395</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="remove-all-leadingtrailingduplicate-space-characters" class="section level2">
+<h2><span class="header-section-number">8.5</span> Remove All Leading/Trailing/Duplicate Space Characters</h2>
+<p>Given a string, remove all leading/trailing/duplicate empty spaces.</p>
+<p><a href="https://app.laicode.io/app/problem/281" class="uri">https://app.laicode.io/app/problem/281</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="remove-adjacent-repeated-characters-i" class="section level2">
+<h2><span class="header-section-number">8.6</span> Remove Adjacent Repeated Characters I</h2>
+<p>Remove adjacent, repeated characters in a given string, leaving only one character for each group of such characters.</p>
+<p><a href="https://app.laicode.io/app/problem/79" class="uri">https://app.laicode.io/app/problem/79</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="remove-adjacent-repeated-characters-iv" class="section level2">
+<h2><span class="header-section-number">8.7</span> Remove Adjacent Repeated Characters IV</h2>
+<p>Repeatedly remove all adjacent, repeated characters in a given string from left to right. No adjacent characters should be identified in the final string.</p>
+<p><a href="https://app.laicode.io/app/problem/82" class="uri">https://app.laicode.io/app/problem/82</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="determine-if-one-string-is-anothers-substring" class="section level2">
+<h2><span class="header-section-number">8.8</span> Determine If One String Is Another’s Substring</h2>
+<p>Determine if a small string is a substring of another large string. Return the index of the first occurrence of the small string in the large string. Return -1 if the small string is not a substring of the large string.</p>
+<p><a href="https://app.laicode.io/app/problem/85" class="uri">https://app.laicode.io/app/problem/85</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+</div>
+<div id="class-9---string-ii" class="section level1">
+<h1><span class="header-section-number">9</span> Class 9 - String II</h1>
+<div id="reverse-string" class="section level2">
+<h2><span class="header-section-number">9.1</span> Reverse String</h2>
+<p>Reverse a given string.</p>
+<p><a href="https://app.laicode.io/app/problem/396" class="uri">https://app.laicode.io/app/problem/396</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="reverse-words-in-sentence" class="section level2">
+<h2><span class="header-section-number">9.2</span> Reverse Words In Sentence</h2>
+<p>Reverse the words in a sentence.</p>
+<p><a href="https://app.laicode.io/app/problem/84" class="uri">https://app.laicode.io/app/problem/84</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="right-shift-by-n-characters" class="section level2">
+<h2><span class="header-section-number">9.3</span> Right Shift By N Characters</h2>
+<p>Right shift a given string by n characters.</p>
+<p><a href="https://app.laicode.io/app/problem/397" class="uri">https://app.laicode.io/app/problem/397</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="string-replace" class="section level2">
+<h2><span class="header-section-number">9.4</span> String Replace</h2>
+<p>Given an original string input, and two strings S and T, replace all occurrences of S in input with T.</p>
+<p><a href="https://app.laicode.io/app/problem/172" class="uri">https://app.laicode.io/app/problem/172</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="string-shuffling" class="section level2">
+<h2><span class="header-section-number">9.5</span> String Shuffling</h2>
+<p>Given an array of elements, reorder it as follow:</p>
+<ul>
+<li>{N1, N2, N3, …, N2k} -&gt; {N1, Nk+1, N2, Nk+2, N3, Nk+3, …, Nk, N2k}</li>
+<li>{N1, N2, N3, …, N2k+1} -&gt; {N1, Nk+1, N2, Nk+2, N3, Nk+3, …, Nk, N2k, N2k+1}</li>
+</ul>
+<p>Try to do it in place.</p>
+<p><a href="https://app.laicode.io/app/problem/197" class="uri">https://app.laicode.io/app/problem/197</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="all-permutations-ii-with-duplicate-characters" class="section level2">
+<h2><span class="header-section-number">9.6</span> All Permutations II (with duplicate characters)</h2>
+<p>Given a string with possible duplicate characters, return a list with all permutations of the characters.</p>
+<p><a href="https://app.laicode.io/app/problem/65" class="uri">https://app.laicode.io/app/problem/65</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="compress-string-ii" class="section level2">
+<h2><span class="header-section-number">9.7</span> Compress String II</h2>
+<p>Given a string, replace adjacent, repeated characters with the character followed by the number of repeated occurrences.</p>
+<p><a href="https://app.laicode.io/app/problem/611" class="uri">https://app.laicode.io/app/problem/611</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="decompress-string-ii" class="section level2">
+<h2><span class="header-section-number">9.8</span> Decompress String II</h2>
+<p>Given a string in compressed form, decompress it to the original string. The adjacent repeated characters in the original string are compressed to have the character followed by the number of repeated occurrences.</p>
+<p><a href="https://app.laicode.io/app/problem/175" class="uri">https://app.laicode.io/app/problem/175</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="longest-substring-with-only-unique-characters" class="section level2">
+<h2><span class="header-section-number">9.9</span> Longest Substring With Only Unique Characters</h2>
+<p>Given a string, find the longest substring without any repeating characters and return the length of it. The input string is guaranteed to be not null.</p>
+<p><a href="https://app.laicode.io/app/problem/253" class="uri">https://app.laicode.io/app/problem/253</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="find-all-anagrams-of-short-string-in-a-long-string" class="section level2">
+<h2><span class="header-section-number">9.10</span> Find All Anagrams Of Short String In A Long String</h2>
+<p>Find all occurrence of anagrams of a given string s in a given string I. Return the list of starting indices.</p>
+<p><a href="https://app.laicode.io/app/problem/398" class="uri">https://app.laicode.io/app/problem/398</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+</div>
+<div id="class-10---bit-representation-and-bit-operation" class="section level1">
+<h1><span class="header-section-number">10</span> Class 10 - Bit Representation and Bit Operation</h1>
+<div id="determine-if-a-number-is-power-of-2" class="section level2">
+<h2><span class="header-section-number">10.1</span> Determine If A Number Is Power Of 2</h2>
+<p>Determine if a given integer is power of 2.</p>
+<p><a href="https://app.laicode.io/app/problem/74" class="uri">https://app.laicode.io/app/problem/74</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="number-of-different-bits" class="section level2">
+<h2><span class="header-section-number">10.2</span> Number Of Different Bits</h2>
+<p>Determine the number of bits that are different for two given integers.</p>
+<p><a href="https://app.laicode.io/app/problem/75" class="uri">https://app.laicode.io/app/problem/75</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="all-unique-characters-ii" class="section level2">
+<h2><span class="header-section-number">10.3</span> All Unique Characters II</h2>
+<p>Determine if the characters of a given string are all unique.</p>
+<p><a href="https://app.laicode.io/app/problem/77" class="uri">https://app.laicode.io/app/problem/77</a></p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="reverse-bits" class="section level2">
+<h2><span class="header-section-number">10.4</span> Reverse Bits</h2>
+<p>Not found.</p>
+<pre class="java"><code></code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="hexadecimal-representation" class="section level2">
+<h2><span class="header-section-number">10.5</span> Hexadecimal Representation</h2>
+<p>Generate the hexadecimal representation for a given non-negative integer number as a string. The hex representation should start with “0x”.</p>
+<p><a href="https://app.laicode.io/app/problem/78" class="uri">https://app.laicode.io/app/problem/78</a></p>
+<pre class="java"><code></code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 </div>
