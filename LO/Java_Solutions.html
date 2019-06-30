@@ -2283,18 +2283,58 @@ public class SubSetsI {
 <pre class="java"><code>public class TopKFrequent {
   // Assumptions: combo is not, and k &gt;= 1.
   public String[] topKFrequent(String[] combo, int k) {
-    
+    // Handle the special case of empty combo at the very beginning.
+    if (combo.length == 0) {
+      return new String[0];
+    }
+    // Get all the distinct strings as keys and their frequencies as values.
+    // NOTICE: The &quot;freqMap&quot; has at least size 1.
+    Map&lt;String, Integer&gt; freqMap = getFreqMap(combo);
+    // minHeap on the frequencies of the strings.
+    // NOTICE: Using &quot;Map.Entry&quot; as the element type directly so that all the operations are mostly efficient.
+    PriorityQueue&lt;Map.Entry&lt;String, Integer&gt;&gt; minHeap = new PriorityQueue&lt;&gt;(k, new Comparator&lt;Map.Entry&lt;String, Integer&gt;&gt;() {
+      @Override
+      public int compare(Map.Entry&lt;String, Integer&gt; e1, Map.Entry&lt;String, Integer&gt; e2) {
+        // Compare the frequencies, directly call the &quot;compareTo&quot; method since the frequencies are represented by Integer.
+        return e1.getValue().compareTo(e2.getValue());
+      }
+    });
+    for (Map.Entry&lt;String, Integer&gt; entry : freqMap.entrySet()) {
+      if (minHeap.size() &lt; k) {
+        minHeap.offer(entry);
+      }
+      else if (entry.getValue() &gt; minHeap.peek().getValue()) {
+        minHeap.poll();
+        minHeap.offer(entry);
+      }
+    }
+    // Since the returned array required the strings sorted by their frequencies, use a separate helper method to do this operation.
+    return freqArray(minHeap);
   }
   
   private Map&lt;String, Integer&gt; getFreqMap(String[] combo) {
-    
+    Map&lt;String, Integer&gt; freqMap = new HashMap&lt;&gt;();
+    // NOTICE: When possible, choose the most efficient way for HashMap operations.
+    for (String s : combo) {
+      Integer freq = freqMap.get(s);
+      if (freq == null) {
+        freqMap.put(s, 1);
+      }
+      else {
+        freqMap.put(s, freq + 1);
+      }
+    }
+    return freqMap;
   }
   
   private String[] freqArray(PriorityQueue&lt;Map.Entry&lt;String, Integer&gt;&gt; minHeap) {
-    
+    String[] result = new String[minHeap.size()];
+    for (int i = minHeap.size() - 1; i &gt;= 0; i--) {
+      result[i] = minHeap.poll().getKey();
+    }
+    return result;
   }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="missing-number-i" class="section level2">
 <h2><span class="header-section-number">8.2</span> Missing Number I</h2>
@@ -2304,22 +2344,62 @@ public class SubSetsI {
   // Method 1: Use HashSet.
   // Assumption: array is not null.
   public int missingI(int[] array) {
-    
+    int n = array.length + 1;
+    HashSet&lt;Integer&gt; set = new HashSet&lt;Integer&gt;();
+    for (int number : array) {
+      set.add(number);
+    }
+    for (int i = 1; i &lt; n; i++) {
+      if (!set.contains(i)) {
+        return i;
+      }
+    }
+    return n;
   }
   
   // Method 2: Use sum.
   public int missingII(int[] array) {
-    
+    int n = array.length + 1;
+    long targetSum = (n + 0L) * (n + 1) / 2;
+    long actualSum = 0L;
+    for (int num : array) {
+      actualSum += num;
+    }
+    return (int) (targetSum - actualSum);
   }
   
   // Method 3: bit operation, O(n).
   public int missingIII(int[] array) {
-    
+    int n = array.length + 1;
+    int xor = 0;
+    // xor 1 to n.
+    for (int i = 1; i &lt;= n; i++) {
+      xor ^= i;
+    }
+    // After this operation, all the numbers from 1 to n are pair xor-ed except for the missing number. Since x ^ x = 0, the remaining number is the result.
+    for (int num : array) {
+      xor ^= num;
+    }
+    return xor;
   }
   
   // Method 4: Swap to the original position, O(n).
   public int missingIV(int[] array) {
-    
+    // Try to swap the numbers to its corresponding position. For the number x, the corresponding position is &quot;x - 1&quot;.
+    for (int i = 0; i &lt; array.length; i++) {
+      // While &quot;array[i]&quot; is not &quot;i + 1&quot;, swap &quot;array[i]&quot; to its correct position if possible.
+      while (array[i] != i + 1 &amp;&amp; array[i] != array.length + 1) {
+        swap(array, i ,array[i] - 1);
+      }
+    }
+    // If the missing number is in range of &quot;1&quot; to &quot;n - 1&quot;, then we can find it by checking the index &quot;i&quot; where &quot;array[i] != i + 1&quot;.
+    for (int i = 0; i &lt; array.length; i++) {
+      if (array[i] != i + 1) {
+        return i + 1;
+      }
+    }
+    // If all the numbers of &quot;1&quot; to &quot;n - 1&quot; are in position, the missing number is &quot;n&quot;.
+    return array.length + 1;
   }
   
   private void swap(int[] array, int i, int j) {
@@ -2328,14 +2408,70 @@ public class SubSetsI {
     array[j] = temp;
   }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="common-numbers-of-two-sorted-arrays" class="section level2">
 <h2><span class="header-section-number">8.3</span> Common Numbers Of Two Sorted Arrays</h2>
 <p>Find all numbers that appear in both of two sorted arrays (the two arrays are all sorted in ascending order).</p>
 <p><a href="https://app.laicode.io/app/problem/72" class="uri">https://app.laicode.io/app/problem/72</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>// Assumptions: There could be duplicated elements in the given arrays.
+public class CommonNumbersII {
+  // Method 1: Two pointers.
+  public List&lt;Integer&gt; commonI(int[] a, int[] b) {
+    // Assumption: a, b are not null.
+    List&lt;Integer&gt; common = new ArrayList&lt;Integer&gt;();
+    int i = 0;
+    int j = 0;
+    while (i &lt; a.length &amp;&amp; j &lt; b.length) {
+      if (a[i] == b[j]) {
+        common.add(a[i]);
+        i++;
+        j++;
+      }
+      else if (a[i] &lt; b[j]) {
+        i++;
+      }
+      else {
+        j++;
+      }
+    }
+    return common;
+  }
+  
+  // Method 2: Use HashMap.
+  public List&lt;Integer&gt; commonII(int[] a, int[] b) {
+    List&lt;Integer&gt; common = new ArrayList&lt;Integer&gt;();
+    HashMap&lt;Integer, Integer&gt; countA = new HashMap&lt;Integer, Integer&gt;();
+    for (int num : a) {
+      Integer ct = countA.get(num);
+      if (ct != null) {
+        countA.put(num, ct + 1);
+      }
+      else {
+        countA.put(num, 1);
+      }
+    }
+    HashMap&lt;Integer, Integer&gt; countB = new HashMap&lt;Integer, Integer&gt;();
+    for (int num : b) {
+      Integer ct = countB.get(num);
+      if (ct != null) {
+        countB.put(num, ct + 1);
+      }
+      else {
+        countB.put(num, 1);
+      }
+    }
+    for (Map.Entry&lt;Integer, Integer&gt; entry : countA.entrySet()) {
+      Integer ctInB = countB.get(entry.getKey());
+      if (ctInB != null) {
+        int appear = Math.min(entry.getValue(), ctInB);
+        for (int i = 0; i &lt; appear; i++) {
+          common.add(entry.getKey());
+        }
+      }
+    }
+    return common;
+  }
+}</code></pre>
 </div>
 <div id="remove-certain-characters" class="section level2">
 <h2><span class="header-section-number">8.4</span> Remove Certain Characters</h2>
