@@ -2128,22 +2128,150 @@ public class SubSetsI {
 <h2><span class="header-section-number">7.2</span> All Valid Permutations Of Parentheses I</h2>
 <p>Given N pairs of parentheses “()”, return a list with all the valid permutations.</p>
 <p><a href="https://app.laicode.io/app/problem/66" class="uri">https://app.laicode.io/app/problem/66</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class ValidParenthesesI {
+  public List&lt;String&gt; validParentheses(int k) {
+    List&lt;String&gt; result = new ArrayList&lt;String&gt;();
+    // The final string contains 2k characters.
+    char[] curr = new char[k * 2];
+    helper(curr, k, k, 0, result);
+    return result;
+  }
+  
+  // &quot;left&quot;: how many &quot;(&quot; we still have
+  // &quot;right&quot;: how many &quot;)&quot; we still have
+  // &quot;index&quot;: the current position in curr we want to fill in with either &quot;(&quot; or &quot;)&quot;
+  private void helper(char[] curr, int left, int right, int index, List&lt;String&gt; result) {
+    // Terminate condition: When we do not have any parentheses left.
+    if (left == 0 &amp;&amp; right == 0) {
+      result.add(new String(curr));
+      return;
+    }
+    // When we can add a &quot;(&quot;? Whenever there is some &quot;(&quot; we can still use.
+    if (left &gt; 0) {
+      curr[index] = &quot;(&quot;;
+      helper(curr, left - 1, right, index + 1, result);
+      // NOTICE: It looks like we do not do anything when back tracking to the previous level. The code is still correct because:
+      // 1. we are setting the character at index and when back tracking, what we need is just remove the character at index and add a different character at index.
+      // 2. only when we fill in all the positions in curr, we have a complete solution.
+      // The code itself actually already suffices the above two points and it already does the correct removing operation when back tracked to the previous level.
+    }
+    // When we can add a &quot;)&quot;? When there is more &quot;(&quot; than &quot;)&quot; used, because each &quot;)&quot; should be associated with a previous &quot;(&quot;.
+    if (right &gt; left) {
+      curr[index] = &quot;)&quot;;
+      helper(curr, left, right - 1, index + 1, result);
+    }
+  }
+}</code></pre>
 </div>
 <div id="combinations-of-coins" class="section level2">
 <h2><span class="header-section-number">7.3</span> Combinations Of Coins</h2>
 <p>Given a number of different denominations of coins (e.g., 1 cent, 5 cents, 10 cents, 25 cents), get all the possible ways to pay a target number of cents.</p>
 <p><a href="https://app.laicode.io/app/problem/73" class="uri">https://app.laicode.io/app/problem/73</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class CombinationsOfCoins {
+  public List&lt;List&lt;Integer&gt;&gt; combinations(int target, int[] coins) {
+    // Each combination is represented as a &quot;List&lt;Integer&gt; curr&quot;, and &quot;curr.get(i)&quot; is the number of coins of &quot;coins[i]&quot;. All the combinations are stored in the &quot;result&quot; as List of &quot;List&lt;Integer&gt;&quot;.
+    List&lt;List&lt;Integer&gt;&gt; result = new ArrayList&lt;List&lt;Integer&gt;&gt;();
+    List&lt;Integer&gt; curr = new ArrayList&lt;Integer&gt;();
+    helper(target, coins, 0, curr, result);
+    return result;
+  }
+  
+  // &quot;target&quot;: remaining cents we need to complete
+  // &quot;coins&quot;: all the possible different coins
+  // &quot;index&quot;: we want to see how many coins we need for &quot;coins[index]&quot;
+  private void helper(int target, int[] coins, int index, List&lt;Integer&gt; curr, List&lt;List&lt;Integer&gt;&gt; result) {
+    // Terminate condition: NOTICE: This can also be done at &quot;index == coins.length&quot; where all the coins have been picked, but a probably better one is at a previous level to reduce the number of unnecessary branches in the DFS. Think about it, &quot;coins.length - 1&quot; represents the last coin we can use and actually what we can do at this level is to get &quot;target / coins[coins.length - 1]&quot; coins if possible.
+    if (index == coin.length - 1) {
+      if (target % coins[coins.length - 1] == 0) {
+        curr.add(target / coins[coins.length - 1]);
+        result.add(new ArrayList&lt;Integer&gt;(curr));
+        curr.remove(curr.size() - 1);
+      }
+      return;
+    }
+    // For &quot;coins[index]&quot;, we can pick &quot;0&quot;, &quot;1&quot;, &quot;2&quot;, ..., &quot;target / coins[index]&quot; coins.
+    int max = target / coins[index];
+    for (int i = 0; i &lt;= max; i++) {
+      curr.add(i);
+      // Remember to modify the remaining cents for the next level.
+      helper(target - i * coins[index], coins, index + 1, curr, result);
+      curr.remove(curr.size() - 1);
+    }
+  }
+}</code></pre>
 </div>
 <div id="all-permutations-i" class="section level2">
 <h2><span class="header-section-number">7.4</span> All Permutations I</h2>
 <p>Given a string with no duplicate characters, return a list with all permutations of the characters.</p>
 <p><a href="https://app.laicode.io/app/problem/64" class="uri">https://app.laicode.io/app/problem/64</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class PermutationsI {
+  // Solution 1: DFS with swapping
+  public List&lt;String&gt; permutations(String set) {
+    List&lt;String&gt; result = new ArrayList&lt;String&gt;();
+    if (set == null) {
+      return result;
+    }
+    char[] array = set.toCharArray();
+    helper(array, 0, result);
+    return result;
+  }
+  
+  // Choose the character to be at the position of &quot;index&quot;, all the already chosen positions are &quot;(0, index - 1)&quot;, all the condidate characters can be at position &quot;index&quot; are in the subarray of &quot;(index, array.length - 1)&quot;.
+  private void helper(char[] array, int index, List&lt;String&gt; result) {
+    // Terminate condition: Only when we have already chosen the characters for all the position, we can have a complete permutation.
+    if (index == array.length) {
+      result.add(new String(array));
+      return;
+    }
+    // All the possible characters could be placed at index are the characters in the subarray &quot;(index, array.length - 1)&quot;.
+    for (int i = index; i &lt; array.length; i++) {
+      swap(array, index, i);
+      helper(array, index + 1, result);
+      // Remember to swap back when back track to previous level.
+      swap(array, index, i);
+    }
+  }
+  
+  private void swap(char[] array, int left, int right) {
+    char temp = array[left];
+    array[left] = array[right];
+    array[right] = temp;
+  }
+  
+  // Solution 2: Maintain the order of all the permutations.
+  public List&lt;String&gt; permutationsWithOrder(String set) {
+    List&lt;String&gt; result = new ArrayList&lt;String&gt;();
+    if (set == null) {
+      return null;
+    }
+    char[] arraySet = set.toCharArray();
+    Arrays.sort(arraySet);
+    // Record which index has been used in the original arraySet.
+    boolean[] used = new boolean[arraySet.length];
+    Stringbuilder curr = new StringBuilder();
+    helperWithOrder(arraySet, used, curr, result);
+    return result;
+  }
+  
+  private void helperWithOrder(char[] array, boolean[] used, StringBuilder curr, List&lt;String&gt; result) {
+    // Terminate condition: When the permutation contains all the characters in the original array.
+    if (curr.length() == array.length) {
+      result.add(curr.toString());
+      return;
+    }
+    // When picking the next char, always according to the order.
+    for (int i = 0; i &lt; array.length; i++) {
+      // If a character is already been used, we cannot pick it for a second time.
+      if (!used[i]) {
+        used[i] = true;
+        curr.append(array[i]);
+        helperWithOrder(array, used, curr, result);
+        used[i] = false;
+        curr.deleteCharAt(curr.length() - 1);
+      }
+    }
+  }
+}</code></pre>
 </div>
 </div>
 <div id="class-8---hashtable-string-i" class="section level1">
@@ -2152,14 +2280,54 @@ public class SubSetsI {
 <h2><span class="header-section-number">8.1</span> Top K Frequent Words</h2>
 <p>Given a composition with different kinds of words, return a list of the top K most frequent words in the composition.</p>
 <p><a href="https://app.laicode.io/app/problem/67" class="uri">https://app.laicode.io/app/problem/67</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class TopKFrequent {
+  // Assumptions: combo is not, and k &gt;= 1.
+  public String[] topKFrequent(String[] combo, int k) {
+    
+  }
+  
+  private Map&lt;String, Integer&gt; getFreqMap(String[] combo) {
+    
+  }
+  
+  private String[] freqArray(PriorityQueue&lt;Map.Entry&lt;String, Integer&gt;&gt; minHeap) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="missing-number-i" class="section level2">
 <h2><span class="header-section-number">8.2</span> Missing Number I</h2>
 <p>Given an integer array of size N - 1, containing all the numbers from 1 to N except one, find the missing number.</p>
 <p><a href="https://app.laicode.io/app/problem/68" class="uri">https://app.laicode.io/app/problem/68</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class MissingNumberI {
+  // Method 1: Use HashSet.
+  // Assumption: array is not null.
+  public int missingI(int[] array) {
+    
+  }
+  
+  // Method 2: Use sum.
+  public int missingII(int[] array) {
+    
+  }
+  
+  // Method 3: bit operation, O(n).
+  public int missingIII(int[] array) {
+    
+  }
+  
+  // Method 4: Swap to the original position, O(n).
+  public int missingIV(int[] array) {
+    
+  }
+  
+  private void swap(int[] array, int i, int j) {
+    int temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="common-numbers-of-two-sorted-arrays" class="section level2">
