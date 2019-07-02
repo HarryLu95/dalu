@@ -179,8 +179,6 @@ td.updated {background-color: MediumSpringGreen;}
 - Class 11: Midterm I [Link](LO/Algorithm_Class_26.html) (pending)
     - Practice 16 [Link](LO/Algorithm_Class_27.html) (pending)
 
-
-
 ##July/2019
 <table>
 <tr>
@@ -193,18 +191,18 @@ td.updated {background-color: MediumSpringGreen;}
   <td>**Sun**</td>
 </tr>
 <tr>
-  <td>1st  
-    ???</td>
+  <td class="pending">1st  
+    [Practice 17](LO/Algorithm_Class_28.html)</td>
   <td></td>
   <td>3rd  
-    ???</td>
+    Class 12</td>
   <td></td>
   <td>5th  
-    ???</td>
+    Class 13</td>
   <td>6th  
-    ???</td>
+    Design 1</td>
   <td>7th  
-    ???</td>
+    Practice 18</td>
 </tr>
 <tr>
   <td>8th  
@@ -260,6 +258,16 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="diagonalRising"></td>
 </tr>
 </table>
+
+- (Continue)
+    - Practice 17 [Link](LO/Algorithm_Class_27.html) (pending)
+- Class 12: Recursion II [Link](LO/Algorithm_Class_28.html) (pending)
+- Class 13: DP I [Link](LO/Algorithm_Class_29.html) (pending)
+- Design 1: OOD I [Link](LO/Algorithm_Class_30.html) (pending)
+    - Practice 18 [Link](LO/Algorithm_Class_31.html) (pending)
+
+
+
 
 ##August/2019
 <table>
