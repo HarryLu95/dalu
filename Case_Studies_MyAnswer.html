@@ -415,16 +415,23 @@ kable(t)</code></pre>
 </tr>
 </tbody>
 </table>
+<p>New variables:</p>
 <ul>
-<li><code>M_S</code>: Ratio of “M1” to “sales”. The conversion rate among the sales.</li>
-<li><code>C_S</code>: Ratio of “C1” to “sales”.</li>
-<li><code>D_S</code>: Ratio of “D1” to “sales”. The potential rate that we need to focus, because this ratio is our potential customers and it may convert to “M1” to bring us more income.</li>
-<li><code>M_V</code>: Ratio of “M1” to “visitors”. The conversion rate among the visitors.</li>
-<li><code>C_V</code>: Ratio of “C1” to “visitors”.</li>
-<li><code>D_V</code>: Ratio of “D1” to “visitors”.</li>
+<li><code>S_V</code>: Percentage ratio of “sales” to “visitors”. The conversion rate of paying for the 7 days.</li>
+<li><code>M_S</code>: Percentage ratio of “M1” to “sales”. The conversion rate among the sales.</li>
+<li><code>C_S</code>: Percentage ratio of “C1” to “sales”.</li>
+<li><code>D_S</code>: Percentage ratio of “D1” to “sales”. The potential rate that we need to focus, because this ratio is our potential customers and it may convert to “M1” to bring us more revenue.</li>
+<li><code>M_V</code>: Percentage ratio of “M1” to “visitors”. The conversion rate among the visitors.</li>
+<li><code>C_V</code>: Percentage ratio of “C1” to “visitors”.</li>
+<li><code>D_V</code>: Percentage ratio of “D1” to “visitors”.</li>
 <li><code>SIN_RVN</code>: The difference between LTV and CPA on a single sale.</li>
+<li><code>100_MS_RVN</code>: The total estimated guaranteed revenue among 100 sales. Calculated by <code>M_S * SIN_RVN * 100</code>.</li>
+<li><code>100_DS_RVN</code>: The total estimated potential revenue among 100 sales. Calculated by <code>D_S * SIN_RVN * 100</code>.</li>
+<li><code>100_MV_RVN</code>: The total estimated guaranteed revenue among 100 visitors. Calculated by <code>M_V * SIN_RVN * 100</code>.</li>
+<li><code>100_DV_RVN</code>: The total estimated potential revenue among 100 visitors. Calculated by <code>D_V * SIN_RVN * 100</code>.</li>
 </ul>
 <pre class="r"><code>library(scales)
+t$S_V = percent(t$sales / t$visitors)
 t$M_S = percent(t$M1 / t$sales)
 t$C_S = percent(t$C1 / t$sales)
 t$D_S = percent(t$D1 / t$sales)
@@ -432,6 +439,10 @@ t$M_V = percent(t$M1 / t$visitors)
 t$C_V = percent(t$C1 / t$visitors)
 t$D_V = percent(t$D1 / t$visitors)
 t$SIN_RVN = t$LTV - t$CPA
+t$&quot;100_MS_RVN&quot; = (t$M1 / t$sales) * t$SIN_RVN * 100
+t$&quot;100_DS_RVN&quot; = (t$D1 / t$sales) * t$SIN_RVN * 100
+t$&quot;100_MV_RVN&quot; = (t$M1 / t$visitors) * t$SIN_RVN * 100
+t$&quot;100_DV_RVN&quot; = (t$D1 / t$visitors) * t$SIN_RVN * 100
 kable(t)</code></pre>
 <table>
 <thead>
@@ -445,6 +456,7 @@ kable(t)</code></pre>
 <th align="right">D1</th>
 <th align="right">LTV</th>
 <th align="right">CPA</th>
+<th align="left">S_V</th>
 <th align="left">M_S</th>
 <th align="left">C_S</th>
 <th align="left">D_S</th>
@@ -452,6 +464,10 @@ kable(t)</code></pre>
 <th align="left">C_V</th>
 <th align="left">D_V</th>
 <th align="right">SIN_RVN</th>
+<th align="right">100_MS_RVN</th>
+<th align="right">100_DS_RVN</th>
+<th align="right">100_MV_RVN</th>
+<th align="right">100_DV_RVN</th>
 </tr>
 </thead>
 <tbody>
@@ -465,6 +481,7 @@ kable(t)</code></pre>
 <td align="right">197</td>
 <td align="right">57.9</td>
 <td align="right">35</td>
+<td align="left">2.17%</td>
 <td align="left">30.43%</td>
 <td align="left">27.66%</td>
 <td align="left">41.9%</td>
@@ -472,6 +489,10 @@ kable(t)</code></pre>
 <td align="left">0.601%</td>
 <td align="left">0.91%</td>
 <td align="right">22.9</td>
+<td align="right">696.7447</td>
+<td align="right">959.8511</td>
+<td align="right">15.130527</td>
+<td align="right">20.844153</td>
 </tr>
 <tr class="even">
 <td align="left">Email</td>
@@ -483,6 +504,7 @@ kable(t)</code></pre>
 <td align="right">265</td>
 <td align="right">55.7</td>
 <td align="right">35</td>
+<td align="left">2.56%</td>
 <td align="left">28.73%</td>
 <td align="left">23.70%</td>
 <td align="left">47.6%</td>
@@ -490,6 +512,10 @@ kable(t)</code></pre>
 <td align="left">0.607%</td>
 <td align="left">1.22%</td>
 <td align="right">20.7</td>
+<td align="right">594.6140</td>
+<td align="right">984.8294</td>
+<td align="right">15.242303</td>
+<td align="right">25.245064</td>
 </tr>
 <tr class="odd">
 <td align="left">Display</td>
@@ -501,6 +527,7 @@ kable(t)</code></pre>
 <td align="right">153</td>
 <td align="right">60.0</td>
 <td align="right">40</td>
+<td align="left">3.26%</td>
 <td align="left">31.45%</td>
 <td align="left">27.42%</td>
 <td align="left">41.1%</td>
@@ -508,6 +535,10 @@ kable(t)</code></pre>
 <td align="left">0.893%</td>
 <td align="left">1.34%</td>
 <td align="right">20.0</td>
+<td align="right">629.0323</td>
+<td align="right">822.5806</td>
+<td align="right">20.492162</td>
+<td align="right">26.797443</td>
 </tr>
 <tr class="even">
 <td align="left">Display</td>
@@ -519,6 +550,7 @@ kable(t)</code></pre>
 <td align="right">173</td>
 <td align="right">62.9</td>
 <td align="right">40</td>
+<td align="left">3.49%</td>
 <td align="left">32.50%</td>
 <td align="left">24.25%</td>
 <td align="left">43.2%</td>
@@ -526,6 +558,10 @@ kable(t)</code></pre>
 <td align="left">0.847%</td>
 <td align="left">1.51%</td>
 <td align="right">22.9</td>
+<td align="right">744.2500</td>
+<td align="right">990.4250</td>
+<td align="right">25.995459</td>
+<td align="right">34.593957</td>
 </tr>
 <tr class="odd">
 <td align="left">Search</td>
@@ -537,6 +573,7 @@ kable(t)</code></pre>
 <td align="right">69</td>
 <td align="right">65.0</td>
 <td align="right">45</td>
+<td align="left">0.79%</td>
 <td align="left">35.27%</td>
 <td align="left">31.40%</td>
 <td align="left">33.3%</td>
@@ -544,6 +581,10 @@ kable(t)</code></pre>
 <td align="left">0.249%</td>
 <td align="left">0.26%</td>
 <td align="right">20.0</td>
+<td align="right">705.3140</td>
+<td align="right">666.6667</td>
+<td align="right">5.591085</td>
+<td align="right">5.284724</td>
 </tr>
 <tr class="even">
 <td align="left">Search</td>
@@ -555,6 +596,7 @@ kable(t)</code></pre>
 <td align="right">104</td>
 <td align="right">68.5</td>
 <td align="right">45</td>
+<td align="left">0.95%</td>
 <td align="left">36.00%</td>
 <td align="left">22.40%</td>
 <td align="left">41.6%</td>
@@ -562,9 +604,290 @@ kable(t)</code></pre>
 <td align="left">0.213%</td>
 <td align="left">0.39%</td>
 <td align="right">23.5</td>
+<td align="right">846.0000</td>
+<td align="right">977.6000</td>
+<td align="right">8.030223</td>
+<td align="right">9.279368</td>
 </tr>
 </tbody>
 </table>
+<p>In the table below, we mainly focus on four columns: <code>100_MS_RVN</code>, <code>100_DS_RVN</code>, <code>100_MV_RVN</code>, <code>100_DV_RVN</code>.</p>
+<pre class="r"><code>t2 = t[, c(&quot;traffic_sources&quot;, &quot;versions&quot;, &quot;S_V&quot;, &quot;M_S&quot;, &quot;D_S&quot;, &quot;SIN_RVN&quot;, &quot;100_MS_RVN&quot;, &quot;100_DS_RVN&quot;, &quot;100_MV_RVN&quot;, &quot;100_DV_RVN&quot;)]
+kable(t2)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">traffic_sources</th>
+<th align="left">versions</th>
+<th align="left">S_V</th>
+<th align="left">M_S</th>
+<th align="left">D_S</th>
+<th align="right">SIN_RVN</th>
+<th align="right">100_MS_RVN</th>
+<th align="right">100_DS_RVN</th>
+<th align="right">100_MV_RVN</th>
+<th align="right">100_DV_RVN</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Email</td>
+<td align="left">Control</td>
+<td align="left">2.17%</td>
+<td align="left">30.43%</td>
+<td align="left">41.9%</td>
+<td align="right">22.9</td>
+<td align="right">696.7447</td>
+<td align="right">959.8511</td>
+<td align="right">15.130527</td>
+<td align="right">20.844153</td>
+</tr>
+<tr class="even">
+<td align="left">Email</td>
+<td align="left">Challenger</td>
+<td align="left">2.56%</td>
+<td align="left">28.73%</td>
+<td align="left">47.6%</td>
+<td align="right">20.7</td>
+<td align="right">594.6140</td>
+<td align="right">984.8294</td>
+<td align="right">15.242303</td>
+<td align="right">25.245064</td>
+</tr>
+<tr class="odd">
+<td align="left">Display</td>
+<td align="left">Control</td>
+<td align="left">3.26%</td>
+<td align="left">31.45%</td>
+<td align="left">41.1%</td>
+<td align="right">20.0</td>
+<td align="right">629.0323</td>
+<td align="right">822.5806</td>
+<td align="right">20.492162</td>
+<td align="right">26.797443</td>
+</tr>
+<tr class="even">
+<td align="left">Display</td>
+<td align="left">Challenger</td>
+<td align="left">3.49%</td>
+<td align="left">32.50%</td>
+<td align="left">43.2%</td>
+<td align="right">22.9</td>
+<td align="right">744.2500</td>
+<td align="right">990.4250</td>
+<td align="right">25.995459</td>
+<td align="right">34.593957</td>
+</tr>
+<tr class="odd">
+<td align="left">Search</td>
+<td align="left">Control</td>
+<td align="left">0.79%</td>
+<td align="left">35.27%</td>
+<td align="left">33.3%</td>
+<td align="right">20.0</td>
+<td align="right">705.3140</td>
+<td align="right">666.6667</td>
+<td align="right">5.591085</td>
+<td align="right">5.284724</td>
+</tr>
+<tr class="even">
+<td align="left">Search</td>
+<td align="left">Challenger</td>
+<td align="left">0.95%</td>
+<td align="left">36.00%</td>
+<td align="left">41.6%</td>
+<td align="right">23.5</td>
+<td align="right">846.0000</td>
+<td align="right">977.6000</td>
+<td align="right">8.030223</td>
+<td align="right">9.279368</td>
+</tr>
+</tbody>
+</table>
+<p>1. Take the part of “estimated revenue from sales” out:</p>
+<pre class="r"><code>t3 = t2[, c(&quot;traffic_sources&quot;, &quot;versions&quot;, &quot;100_MS_RVN&quot;, &quot;100_DS_RVN&quot;)]
+kable(t3)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">traffic_sources</th>
+<th align="left">versions</th>
+<th align="right">100_MS_RVN</th>
+<th align="right">100_DS_RVN</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Email</td>
+<td align="left">Control</td>
+<td align="right">696.7447</td>
+<td align="right">959.8511</td>
+</tr>
+<tr class="even">
+<td align="left">Email</td>
+<td align="left">Challenger</td>
+<td align="right">594.6140</td>
+<td align="right">984.8294</td>
+</tr>
+<tr class="odd">
+<td align="left">Display</td>
+<td align="left">Control</td>
+<td align="right">629.0323</td>
+<td align="right">822.5806</td>
+</tr>
+<tr class="even">
+<td align="left">Display</td>
+<td align="left">Challenger</td>
+<td align="right">744.2500</td>
+<td align="right">990.4250</td>
+</tr>
+<tr class="odd">
+<td align="left">Search</td>
+<td align="left">Control</td>
+<td align="right">705.3140</td>
+<td align="right">666.6667</td>
+</tr>
+<tr class="even">
+<td align="left">Search</td>
+<td align="left">Challenger</td>
+<td align="right">846.0000</td>
+<td align="right">977.6000</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="10%"></col>
+<col width="39%"></col>
+<col width="49%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>traffic_sources</th>
+<th>diff of 100_MS_RVN (new - old)</th>
+<th>diff of 100_DS_RVN (new - old)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Email</td>
+<td>-102.1306773</td>
+<td>24.9783796</td>
+</tr>
+<tr class="even">
+<td>Display</td>
+<td>115.2177419</td>
+<td>167.8443548</td>
+</tr>
+<tr class="odd">
+<td>Search</td>
+<td>140.6859903</td>
+<td>310.9333333</td>
+</tr>
+<tr class="even">
+<td><strong>Simple Sum</strong></td>
+<td><strong>153.773055</strong></td>
+<td><strong>503.7560678</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Now we can compare the numbers:</li>
+<li>For the estimated guaranteed revenue from sales (“100_MS_RVN”), the traffic source 1 (Email) decreases $102.1306773 when changing to new version. However, the traffic source 2 (Display) and the traffic source 3 (Search) both increases: $115.2177419 and $140.6859903. Assume the three traffic sources have same amount of traffics, then if we have 300 sales, 100 sales from each source, we would guarantee to have $153.773055 amount of revenue.</li>
+<li>For the estimated potential revenue from sales (“100_DS_RVN”), all of the three sources have positive changes. No matter what the ratios that the three traffics have, the result would always be positive. And no matter what the conversion rate is (from D to M), using the new version would bring more revenue. For example, assume three sources have equal weight, and the conversion rate is 10%, we would have a increase in revenue of $50.3756068 per 300 sales.</li>
+</ul>
+<p>2. Take the part of “estimated revenue from visitors” out:</p>
+<pre class="r"><code>t4 = t2[, c(&quot;traffic_sources&quot;, &quot;versions&quot;, &quot;100_MV_RVN&quot;, &quot;100_DV_RVN&quot;)]
+kable(t4)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">traffic_sources</th>
+<th align="left">versions</th>
+<th align="right">100_MV_RVN</th>
+<th align="right">100_DV_RVN</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Email</td>
+<td align="left">Control</td>
+<td align="right">15.130527</td>
+<td align="right">20.844153</td>
+</tr>
+<tr class="even">
+<td align="left">Email</td>
+<td align="left">Challenger</td>
+<td align="right">15.242303</td>
+<td align="right">25.245064</td>
+</tr>
+<tr class="odd">
+<td align="left">Display</td>
+<td align="left">Control</td>
+<td align="right">20.492162</td>
+<td align="right">26.797443</td>
+</tr>
+<tr class="even">
+<td align="left">Display</td>
+<td align="left">Challenger</td>
+<td align="right">25.995459</td>
+<td align="right">34.593957</td>
+</tr>
+<tr class="odd">
+<td align="left">Search</td>
+<td align="left">Control</td>
+<td align="right">5.591085</td>
+<td align="right">5.284724</td>
+</tr>
+<tr class="even">
+<td align="left">Search</td>
+<td align="left">Challenger</td>
+<td align="right">8.030223</td>
+<td align="right">9.279368</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="10%"></col>
+<col width="39%"></col>
+<col width="49%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>traffic_sources</th>
+<th>diff of 100_MV_RVN (new - old)</th>
+<th>diff of 100_DV_RVN (new - old)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Email</td>
+<td>0.1117757</td>
+<td>4.4009114</td>
+</tr>
+<tr class="even">
+<td>Display</td>
+<td>5.5032971</td>
+<td>7.7965145</td>
+</tr>
+<tr class="odd">
+<td>Search</td>
+<td>2.4391376</td>
+<td>3.9946441</td>
+</tr>
+<tr class="even">
+<td><strong>Simple Sum</strong></td>
+<td><strong>8.0542104</strong></td>
+<td><strong>16.19207</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>For the estimated guaranteed revenue from visitors (“100_MV_RVN”), all the three traffics have a increase from old version to new version. Assume three sources have equal weight, the estimated guaranteed revenue from 300 visitors is $8.0542104.</li>
+<li>For the estimated potential revenue from visitors (“100_DV_RVN”), the good news is the same, all the three differences between old version and new version are positive. With the same assumption as above (equal weight, 10% rate), we could have a increase in revenue of $1.619207 per 300 visitors.</li>
+</ul>
+<p>Overall, since “Display” and “Search” have a better result than “Email”, I recommend the marketing team to expand the traffic number (visitors) on “Display” and “Search”. And for <em>Nations Info</em>, using the new pages on the sites is a great idea, and it would generate more revenue based on the above analysis.</p>
 </div>
 </div>
 <div id="technical" class="section level1">
