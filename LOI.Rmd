@@ -194,8 +194,8 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="pending">1st  
     [Practice 17](LO/Algorithm_Class_28.html)</td>
   <td></td>
-  <td>3rd  
-    Class 12</td>
+  <td class="pending">3rd  
+    [Class 12](LO/Algorithm_Class_29.html)</td>
   <td></td>
   <td>5th  
     Class 13</td>
@@ -206,17 +206,17 @@ td.updated {background-color: MediumSpringGreen;}
 </tr>
 <tr>
   <td>8th  
-    ???</td>
+    Design 2</td>
   <td></td>
   <td>10th  
-    ???</td>
+    Class 14</td>
   <td></td>
   <td>12th  
-    ???</td>
+    Class 15</td>
   <td>13th  
-    ???</td>
+    Class 16</td>
   <td>14th  
-    ???</td>
+    Class 17</td>
 </tr>
 <tr>
   <td>15th  
@@ -260,12 +260,16 @@ td.updated {background-color: MediumSpringGreen;}
 </table>
 
 - (Continue)
-    - Practice 17 [Link](LO/Algorithm_Class_27.html) (pending)
-- Class 12: Recursion II [Link](LO/Algorithm_Class_28.html) (pending)
-- Class 13: DP I [Link](LO/Algorithm_Class_29.html) (pending)
-- Design 1: OOD I [Link](LO/Algorithm_Class_30.html) (pending)
-    - Practice 18 [Link](LO/Algorithm_Class_31.html) (pending)
-
+    - Practice 17 [Link](LO/Algorithm_Class_28.html) (pending)
+- Class 12: Recursion II [Link](LO/Algorithm_Class_29.html) (pending)
+- Class 13: DP I [Link](LO/Algorithm_Class_30.html) (pending)
+- Design 1: OOD I [Link](LO/Algorithm_Class_31.html) (pending)
+    - Practice 18 [Link](LO/Algorithm_Class_32.html) (pending)
+- Design 2: OOD II [Link](LO/Algorithm_Class_33.html) (pending)
+- Class 14: DP II [Link](LO/Algorithm_Class_34.html) (pending)
+- Class 15: Resume [Link](LO/Algorithm_Class_35.html) (pending)
+- Class 16: DP III [Link](LO/Algorithm_Class_36.html) (pending)
+- Class 17: Sampling [Link](LO/Algorithm_Class_37.html) (pending)
 
 
 
