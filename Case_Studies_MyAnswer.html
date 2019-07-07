@@ -3343,17 +3343,61 @@ option_2</code></pre>
 <ul>
 <li>Table 1 (<code>tbl_mapped</code>) contains all the properties information with duplication of some properties.</li>
 <li>The duplicate properties in table 1 may have same field values of “Date”, “Address”, “Zip”, “City”, “State” and “Sale_type” and different field values of “mapped_id” and “Data source” (speculation from the example). However, those same field values may not necessary be the same, but actually depends on the quality of the data source <sup>Question 1</sup>.</li>
-<li>Let’s assume all the data from table 1 has been cleaned (which means those field values mentioned before are the same). Then each group of same properties (multiple rows in table 1) could be merged into one row by the same “Address” and formed table 2 (<code>tbl_merged</code>). However, in the field name description of table 2, there is no explanation of how “merged_id” and “Property_id” are calculated.</li>
+<li>Let’s assume all the data from table 1 has been cleaned (which means those field values mentioned before are the same). Then each group of same properties (multiple rows in table 1) could be merged into one row by the same “Address” and formed table 2 (<code>tbl_merged</code>). However, in the field name description of table 2, there is no explanation of how “merged_id” and “Property_id” are calculated <sup>Question 2</sup>.</li>
+<li>The table 3 (<code>tbl_prop</code>) is a combined result from table 2 and the old listings, so I assume that there is another table comes from the old listings, denoted as table 4 (<code>tbl_extra</code>), which contains at least following information: “Property_id”, “Contact”, “Picture” and “Price” where “Property_id” is the primary key. Under this assumption, table 2 (<code>tbl_merged</code>) and table 4 (<code>tbl_extra</code>) could be connected by “Property_id” to form table 3 through <code>LEFT JOIN</code> statement <sup>Question 3</sup>.</li>
 </ul>
-<p>Question 1: Are the same properties have the exact data field values on “Date”, “Address”, “Zip”, “City”, “State” and “Sale_type”?</p>
+<p><strong>Question 1:</strong> Are the same properties have the exact data field values on “Date”, “Address”, “Zip”, “City”, “State” and “Sale_type”?</p>
 <ul>
 <li>If not, need to do the data cleaning on each fields before merging them.</li>
 </ul>
-<p>Question 2: How to get “merged_id” and “Property_id” from table 2? There is no relative information from table 1.</p>
+<p><strong>Question 2:</strong> How to get “merged_id” and “Property_id” from table 2? There is no relative information from table 1.</p>
 <ul>
 <li>Table 1 could have an extra field called “Property_id”.</li>
-<li>Table 1 could have another field relatied to “merged_id” so that this field after merging can give out the right “merged_id” in table 2.</li>
+<li>Table 1 could have another field related to “merged_id” so that this field after merging can give out the right “merged_id” in table 2.</li>
 </ul>
+<p><strong>Question 3:</strong> Is there another table contains more information (such as table 4, <code>tbl_extra</code>) to connect with table 2 in order to form table 3?</p>
+<ul>
+<li>The table 4 could contain at least these four fields: “Property_id”, “Contact”, “Picture” and “Price” where “Property_id” is the primary key, so that it could connect with table 2.</li>
+</ul>
+<p>Table 4: <code>tbl_extra</code></p>
+<table>
+<thead>
+<tr class="header">
+<th>Property_id</th>
+<th>Contact</th>
+<th>Picture</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>Question 4:</strong> How to define the word “enough”?</p>
+<ul>
+<li>There should be a threshold of some value. When the query made by the customer gives out a listing of properties, and the total number is greater or equal to this threshold, then we would say this query gives “enough” listings.</li>
+</ul>
+<p><strong>Key Metric Design:</strong></p>
+<p>Assume the above four questions are answered properly. E.g., There is way to acquire “merged_id” and “Property_id” from table 1 to table 2, and there is table 4 just like the one described above to provide extra information.</p>
+<p>Now we have table 3 as the database for the customers. The customer could input a zip code on the website, and get the properties around that zip code area. The customer could also input the maximum and minimal bound of the price (optional) to narrow down the search result.</p>
+<p>1. In order to monitor the listings to make sure we have enough listings for customers with different demands, we could use randomization method to verify our listings:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Do 1000 times of randomization to pick out 1000 different zip codes from all the possible zip codes that we collected.</li>
+<li>For each zip code, find the corresponding “City” and “State”, and use SQL to select out all the properties which have the same “City” value and “State” value. Then, count the row numbers for this query.</li>
+<li>We could get 1000 numbers from the above process. Compare these 1000 numbers to the threshold. Calculate the ratio between the amount of numbers greater than the threshold and 1000. For example: there are 950 numbers greater than or equal to the threshold number, then the ratio is 950/1000 = 95%. <strong>This ratio can be used as the first metrics to see how good the data quality is. More specifically, this ratio measures the data sufficiency. In other words, whether we have enough listings for different demands.</strong></li>
+</ol>
+<p>2. In order to find out whether the property provided by different data sources is as valuable as each other, we can compare whether the data source contains “Contact”, “Picture” and “Price” and whether the data source has many duplication of property. Of course, because we are paying for all data sources, we want each data source have enough data, and it brings a lot of new properties that never appear in the old table 1.</p>
+<ol style="list-style-type: lower-alpha">
+<li>For each data source, use SQL to check whether it contains “Contact”, “Picture” and “Price”. We assume each data source has all the basic information for table 1, but not necessarily has “Contact”, “Picture” or “Price”.</li>
+<li>We would get a series of boolean value (TRUE / FALSE) from all the data source, and calculate the percentage of TRUE. <strong>This percentage ratio can be used as the second metrics of the data quality. A high percentage ratio means the data sources have a good data completeness.</strong></li>
+<li>Next step is checking the duplication of each data source. Since the table 3 contains all the information, we are going to focus on the “Data sources” field. We need to count the appearance number of each data source from the list of “Data sources” strings. This process would give every data source a number. <strong>This number can be used as the third metrics of the data quality. A large number means this data source contains many property duplication, which leads to a low data quality.</strong></li>
+</ol>
+<p><strong>Conclusion:</strong></p>
+<p>We are going to use three metrics to judge the data quality:</p>
+<ol style="list-style-type: decimal">
+<li>Data sufficiency. A data source with high data sufficiency can provide enough listings for different demands.</li>
+<li>Data completeness. A data source with high data completeness can provide more extra information, such as “Contact”, “Picture” and “Price”.</li>
+<li>Data duplication. A data source with low data duplication can provide more new properties, which is more valuable.</li>
+</ol>
 </div>
 </div>
 
