@@ -3209,9 +3209,9 @@ option_2</code></pre>
 <td>When the property is imported into our database</td>
 </tr>
 <tr class="odd">
-<td>Data</td>
-<td>sources</td>
-<td>Text A combination of indices assigned to each data sources ([2715,2019] means that the property comes from data source 2715 and 2019 stored in tables above)</td>
+<td>Data sources</td>
+<td>Text</td>
+<td>A combination of indices assigned to each data sources ([2715,2019] means that the property comes from data source 2715 and 2019 stored in tables above)</td>
 </tr>
 <tr class="even">
 <td>Address</td>
@@ -3271,9 +3271,88 @@ option_2</code></pre>
 </div>
 <div id="answer-4" class="section level2">
 <h2><span class="header-section-number">4.2</span> Answer</h2>
-<p>Question 1: Are the same properties have the exact data from different “tbl_mapped”s?</p>
+<p>Table 1: <code>tbl_mapped</code></p>
+<table>
+<thead>
+<tr class="header">
+<th>mapped_id</th>
+<th>Date</th>
+<th>Data source</th>
+<th>Address</th>
+<th>Zip</th>
+<th>City</th>
+<th>State</th>
+<th>Sale_type</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>Table 2: <code>tbl_merged</code></p>
+<table>
+<thead>
+<tr class="header">
+<th>merged_id</th>
+<th>Date</th>
+<th>Property_id</th>
+<th>Data sources</th>
+<th>Address</th>
+<th>Zip</th>
+<th>City</th>
+<th>State</th>
+<th>Sale_type</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>Table 3: <code>tbl_prop</code></p>
+<table>
+<colgroup>
+<col width="9%"></col>
+<col width="9%"></col>
+<col width="9%"></col>
+<col width="9%"></col>
+<col width="9%"></col>
+<col width="9%"></col>
+<col width="9%"></col>
+<col width="9%"></col>
+<col width="9%"></col>
+<col width="9%"></col>
+<col width="9%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property_id</th>
+<th>Date</th>
+<th>Data sources</th>
+<th>Address</th>
+<th>Zip</th>
+<th>City</th>
+<th>State</th>
+<th>Sale_type</th>
+<th>Contact</th>
+<th>Picture</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>My understanding to the given descriptions:</p>
 <ul>
-<li>If not, need to do the data cleaning on each fields.</li>
+<li>Table 1 (<code>tbl_mapped</code>) contains all the properties information with duplication of some properties.</li>
+<li>The duplicate properties in table 1 may have same field values of “Date”, “Address”, “Zip”, “City”, “State” and “Sale_type” and different field values of “mapped_id” and “Data source” (speculation from the example). However, those same field values may not necessary be the same, but actually depends on the quality of the data source <sup>Question 1</sup>.</li>
+<li>Let’s assume all the data from table 1 has been cleaned (which means those field values mentioned before are the same). Then each group of same properties (multiple rows in table 1) could be merged into one row by the same “Address” and formed table 2 (<code>tbl_merged</code>). However, in the field name description of table 2, there is no explanation of how “merged_id” and “Property_id” are calculated.</li>
+</ul>
+<p>Question 1: Are the same properties have the exact data field values on “Date”, “Address”, “Zip”, “City”, “State” and “Sale_type”?</p>
+<ul>
+<li>If not, need to do the data cleaning on each fields before merging them.</li>
+</ul>
+<p>Question 2: How to get “merged_id” and “Property_id” from table 2? There is no relative information from table 1.</p>
+<ul>
+<li>Table 1 could have an extra field called “Property_id”.</li>
+<li>Table 1 could have another field relatied to “merged_id” so that this field after merging can give out the right “merged_id” in table 2.</li>
 </ul>
 </div>
 </div>
