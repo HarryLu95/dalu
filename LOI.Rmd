@@ -33,8 +33,8 @@ td.updated {background-color: MediumSpringGreen;}
 
 ---
 
-#Time Table
-##May/2019
+# Time Table
+## May/2019
 <table>
 <tr>
   <td>**Mon**</td>
@@ -76,7 +76,7 @@ td.updated {background-color: MediumSpringGreen;}
     - Practice 2 [Link](LO/Algorithm_Class_4.html)
     - Practice 3 [Link](LO/Algorithm_Class_5.html)
 
-##June/2019
+## June/2019
 <table>
 <tr>
   <td>**Mon**</td>
@@ -179,7 +179,7 @@ td.updated {background-color: MediumSpringGreen;}
 - Class 11: Midterm I [Link](LO/Algorithm_Class_26.html) (pending)
     - Practice 16 [Link](LO/Algorithm_Class_27.html) (pending)
 
-##July/2019
+## July/2019
 <table>
 <tr>
   <td>**Mon**</td>
@@ -197,10 +197,10 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="pending">3rd  
     [Class 12](LO/Algorithm_Class_29.html)</td>
   <td></td>
-  <td>5th  
-    Class 13</td>
-  <td>6th  
-    Design 1</td>
+  <td class="pending">5th  
+    [Class 13](LO/Algorithm_Class_30.html)</td>
+  <td class="pending">6th  
+    [Design 1](LO/Algorithm_Class_31.html)</td>
   <td>7th  
     Practice 18</td>
 </tr>
@@ -273,7 +273,7 @@ td.updated {background-color: MediumSpringGreen;}
 
 
 
-##August/2019
+## August/2019
 <table>
 <tr>
   <td>**Mon**</td>
@@ -346,8 +346,8 @@ td.updated {background-color: MediumSpringGreen;}
 
 ---
 
-#Homework
-##Section 1
+# Homework
+## Section 1
 - Class 1 - Binary Search
     - 1.1. Classical Binary Search
     - 1.2. Binary Search In Sorted 2D Array I
