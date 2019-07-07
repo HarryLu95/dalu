@@ -2525,6 +2525,7 @@ ORDER BY
 </tr>
 </tbody>
 </table>
+<p><strong>Code breakdown Part 1</strong></p>
 <pre class="sql"><code>SELECT
   DATE(nic_billing.order.order_date) AS date,
   count(nic_billing.order.order_date) AS downsells,
@@ -2547,6 +2548,7 @@ ORDER BY
 <li>Same as 3, but it counts the number of <code>id_brand = 6</code>.</li>
 </ol>
 <p>I assume that the <code>id_brand</code> only has six values, from 1 to 6. Then <code>downsells</code> should be the sum of <code>downsells_1</code> to <code>downsells_6</code>.</p>
+<p><strong>Code breakdown Part 2</strong></p>
 <pre class="sql"><code>SELECT
   ...
 FROM
@@ -2560,18 +2562,257 @@ FROM
   INNER JOIN main.tbl_customer
     ON main.tbl_customer.CUSTOMER_ID = nic_billing.membership.id_customer
 ...</code></pre>
+<p>The above code combines:</p>
+<ol style="list-style-type: decimal">
+<li><code>nic_billing.membership</code> and <code>nic_billing.order_item</code> by <code>id_membership</code> where <code>nic_billing.membership</code> keeps all the rows of <code>id_membership</code>. Rows from <code>nic_billing.order_item</code> are removed if the <code>id_membership</code> does not appear in <code>nic_billing.membership</code>.</li>
+<li>The previous result from “1.” and <code>nic_billing.order</code> by <code>id_order</code> where the previous result keeps all the rows of <code>id_order</code>. Rows from <code>nic_billing.order</code> are removed if the <code>id_order</code> does not appear in the previous result.</li>
+<li>The previous result from “2.” and <code>nic_offer.offer</code> by <code>id_offer</code> where the previous result keeps all the rows of <code>id_offer</code>. Rows from <code>nic_offer.offer</code> are removed if the <code>id_offer</code> does not appear in the previous result.</li>
+<li>The previous result from “3.” and <code>main.tbl_customer</code> by <code>CUSTOMER_ID</code>/<code>id_customer</code> where only the rows with common customer id are kept.</li>
+</ol>
+<p>With the above process, the <code>SELECT</code> statement actually makes the query from this table.</p>
+<p><strong>Code breakdown Part 3</strong></p>
+<pre class="sql"><code>SELECT
+  ...
+FROM
+  ...
+WHERE
+  nic_billing.order.order_status = &#39;success&#39; AND
+  nic_offer.offer.signup_type = &#39;downsell&#39; AND
+  nic_billing.order.order_date &gt; ADDDATE(CURRENT_DATE,INTERVAL -14 DAY) AND
+  main.tbl_customer.test_account &lt;&gt; 1
+GROUP BY
+  DAY(nic_billing.order.order_date)
+ORDER BY
+  DAY(nic_billing.order.order_date) DESC</code></pre>
+<p>The above code provides following restrictions/conditions to the queried table made by <code>FROM</code> statement:</p>
+<ol style="list-style-type: decimal">
+<li>Only keep the rows where the value from column <code>order_status</code> is <code>&#39;success&#39;</code>.</li>
+<li>Only keep the rows where the value from column <code>signup_type</code> is <code>&#39;downsell&#39;</code>.</li>
+<li>Only keep the rows where the value from column <code>order_date</code> contains the most recent 14 days.
+<ul>
+<li>Note: Not includes the early end. For example, today is 15th, “-14 DAY” would be 1st. Because of the condition is “&gt;”, so the earliest day would be 2nd.</li>
+</ul></li>
+<li>Only keep the rows where the value from column <code>test_account</code> is not <code>1</code>.</li>
+<li>Sum up all the counted number on a particular “date”.</li>
+<li>The results are showed in descending order from column <code>order_date</code> (“date”).</li>
+</ol>
+<p><strong>Four Questions:</strong></p>
 <blockquote>
-<p>1. What data this report will show including any conditions</p>
+<p><strong>1. What data this report will show including any conditions</strong></p>
 </blockquote>
+<p>The report will show the data of:</p>
+<ul>
+<li>“date” (a column of values, all the <code>order_date</code> under the conditions) and</li>
+<li>“downsells” (a single value, the total number of rows of “date”) and</li>
+<li>“downsells_1” (a single value, a portion of “downsells” where the “id_brand” is 1) and</li>
+<li>“downsells_2” (a single value, a portion of “downsells” where the “id_brand” is 2) and</li>
+<li>“downsells_3” (a single value, a portion of “downsells” where the “id_brand” is 3) and</li>
+<li>“downsells_4” (a single value, a portion of “downsells” where the “id_brand” is 4) and</li>
+<li>“downsells_5” (a single value, a portion of “downsells” where the “id_brand” is 5) and</li>
+<li>“downsells_6” (a single value, a portion of “downsells” where the “id_brand” is 6)</li>
+</ul>
+<p>with conditions of:</p>
+<ul>
+<li>the rows where the value from column <code>order_status</code> is <code>&#39;success&#39;</code> and</li>
+<li>the rows where the value from column <code>signup_type</code> is <code>&#39;downsell&#39;</code> and</li>
+<li>the rows where the value from column <code>order_date</code> contains the most recent 14 days and</li>
+<li>the rows where the value from column <code>test_account</code> is not <code>1</code> and</li>
+<li>only one appearance of each “date” because of the <code>GROUP BY</code> statement and</li>
+<li>the results are showed in descending order from column <code>order_date</code>.</li>
+</ul>
+<p>The answer for question 1 is a combination of “Code breakdown Part 1” and “Code breakdown Part 3”.</p>
 <blockquote>
-<p>2. How this report actually looks like (just make up data as necessary)</p>
+<p><strong>2. How this report actually looks like (just make up data as necessary)</strong></p>
 </blockquote>
+<p>Assume today’s date is 7/15/2019, so the result would only contains the date from 7/2/2019 to 7/15/2019.</p>
+<table>
+<colgroup>
+<col width="12%"></col>
+<col width="12%"></col>
+<col width="12%"></col>
+<col width="12%"></col>
+<col width="12%"></col>
+<col width="12%"></col>
+<col width="12%"></col>
+<col width="12%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>date</th>
+<th>downsells</th>
+<th>downsells_1</th>
+<th>downsells_2</th>
+<th>downsells_3</th>
+<th>downsells_4</th>
+<th>downsells_5</th>
+<th>downsells_6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>7/15/2019</td>
+<td>15</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>7/14/2019</td>
+<td>21</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>7/13/2019</td>
+<td>15</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>7/12/2019</td>
+<td>21</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>7/11/2019</td>
+<td>15</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>7/10/2019</td>
+<td>21</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>7/9/2019</td>
+<td>15</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>7/8/2019</td>
+<td>21</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>7/7/2019</td>
+<td>15</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>7/6/2019</td>
+<td>21</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>7/5/2019</td>
+<td>15</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>7/4/2019</td>
+<td>21</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>7/3/2019</td>
+<td>15</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>7/2/2019</td>
+<td>21</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
-<p>3. List what database tables are sources for this report</p>
+<p><strong>3. List what database tables are sources for this report</strong></p>
 </blockquote>
+<p>There are totally 5 tables:</p>
+<ul>
+<li><code>nic_billing.membership</code> and</li>
+<li><code>nic_billing.order_item</code> and</li>
+<li><code>nic_billing.order</code> and</li>
+<li><code>nic_offer.offer</code> and</li>
+<li><code>main.tbl_customer</code></li>
+</ul>
+<p>The answer of question 3 is also shown above (the 5 tables with made up values based on my analysis on the code).</p>
 <blockquote>
-<p>4. How database tables in this query are connected</p>
+<p><strong>4. How database tables in this query are connected</strong></p>
 </blockquote>
+<ul>
+<li>Step 1: <code>nic_billing.membership</code> is connected with <code>nic_billing.order_item</code> by <code>id_membership</code> where <code>nic_billing.membership</code> keeps all the rows of <code>id_membership</code> because of the <code>LEFT JOIN</code> statement. Rows from <code>nic_billing.order_item</code> are removed if the <code>id_membership</code> does not appear in <code>nic_billing.membership</code> because of the <code>LEFT JOIN</code> statement.</li>
+<li>Step 2: The previous result from “Step 1” is connected with <code>nic_billing.order</code> by <code>id_order</code> where the previous result keeps all the rows of <code>id_order</code> because of the <code>LEFT JOIN</code> statement. Rows from <code>nic_billing.order</code> are removed if the <code>id_order</code> does not appear in the previous result because of the <code>LEFT JOIN</code> statement.</li>
+<li>Step 3: The previous result from “Step 2” is connected with <code>nic_offer.offer</code> by <code>id_offer</code> where the previous result keeps all the rows of <code>id_offer</code> because of the <code>LEFT JOIN</code> statement. Rows from <code>nic_offer.offer</code> are removed if the <code>id_offer</code> does not appear in the previous result because of the <code>LEFT JOIN</code> statement.</li>
+<li>Step 4: The previous result from “Step 3” is connected with <code>main.tbl_customer</code> by <code>CUSTOMER_ID</code>/<code>id_customer</code> where only the rows with common customer id are kept because of the <code>INNER JOIN</code> statement.</li>
+</ul>
+<p>The answer of question 4 is also given out in “Code breakdown Part 2”.</p>
 </div>
 </div>
 <div id="part-2" class="section level2 tabset">
@@ -2588,6 +2829,10 @@ FROM
 </div>
 <div id="answer-2" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Answer</h3>
+<p>Documentation: <a href="https://documentation.sisense.com/" class="uri">https://documentation.sisense.com/</a></p>
+<p>Tutorials: <a href="https://www.sisense.com/training/tutorials/" class="uri">https://www.sisense.com/training/tutorials/</a></p>
+<p>[Draw 1]</p>
+<p>[Draw 2]</p>
 </div>
 </div>
 </div>
@@ -2800,7 +3045,7 @@ option_2</code></pre>
 <ul>
 <li>Option 1 has the expected revenue of $4200, and option 2 has the expected revenue of $4400. Option 2 has a greater revenue.</li>
 </ul>
-<p><strong>Conclusion:</strong> These two assumptions give two different results, and we cannot not simplyly point out the better one just based on the analysis. However, assumption 2 is more realistic and more reasonable. The business is more likely to keep going after the 12 months. Therefore we conclude that the results from assumption 2 are better.</p>
+<p><strong>Conclusion:</strong> These two assumptions give two different results, and we cannot not simply point out the better one just based on the analysis. However, assumption 2 is more realistic and more reasonable. The business is more likely to keep going after the 12 months. Therefore we conclude that the results from assumption 2 are better.</p>
 <p>The forecasted LTV is $44.2, and the option 2 would bring a higher revenue than option 1. The expected extra revenue is $200.</p>
 </div>
 </div>
@@ -3026,6 +3271,10 @@ option_2</code></pre>
 </div>
 <div id="answer-4" class="section level2">
 <h2><span class="header-section-number">4.2</span> Answer</h2>
+<p>Question 1: Are the same properties have the exact data from different “tbl_mapped”s?</p>
+<ul>
+<li>If not, need to do the data cleaning on each fields.</li>
+</ul>
 </div>
 </div>
 
