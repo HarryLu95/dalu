@@ -1683,13 +1683,13 @@ span.Brown {color: Brown;}
 <ol style="list-style-type: decimal">
 <li>Decide whether the new version (“Challenger”) is better than old version (“Control”).
 <ul>
-<li>Comparing the revenue from sales on each traffic for both old version and new version.</li>
-<li>Comparing the revenue from visitors on each traffic for both old version and new version.</li>
+<li>Comparing the profit from sales on each traffic for both old version and new version.</li>
+<li>Comparing the profit from visitors on each traffic for both old version and new version.</li>
 </ul></li>
 <li>Decide what measures could be done to improve the performance.
 <ul>
-<li>Expanding the traffic with positive revenue, and shrinking the traffic with negative revenue.</li>
-<li>Find out which kind(s) of visitor with respect to different traffic sources could bring more revenue, and try to boost up these traffics.</li>
+<li>Expanding the traffic with positive profit, and shrinking the traffic with negative profit.</li>
+<li>Find out which kind(s) of visitor with respect to different traffic sources could bring more profit, and try to boost up these traffics.</li>
 </ul></li>
 </ol>
 <p>Load data:</p>
@@ -1703,8 +1703,8 @@ C1 = c(130, 132, 102, 97, 65, 56)
 D1 = c(197, 265, 153, 173, 69, 104)
 LTV = c(57.9, 55.7, 60, 62.9, 65, 68.5)
 CPA = c(35, 35, 40, 40, 45, 45)
-t = data.frame(traffic_sources, versions, visitors, sales, M1, C1, D1, LTV, CPA)
-kable(t)</code></pre>
+t = data.frame(traffic_sources, versions, visitors, sales, M1, C1, D1, LTV, CPA)</code></pre>
+<p>Table 1.1: Original data</p>
 <table>
 <thead>
 <tr class="header">
@@ -1793,15 +1793,15 @@ kable(t)</code></pre>
 <li><code>S_V</code>: Percentage ratio of “sales” to “visitors”. The conversion rate of paying for the 7 days.</li>
 <li><code>M_S</code>: Percentage ratio of “M1” to “sales”. The conversion rate among the sales.</li>
 <li><code>C_S</code>: Percentage ratio of “C1” to “sales”.</li>
-<li><code>D_S</code>: Percentage ratio of “D1” to “sales”. The potential rate that we need to focus, because this ratio is our potential customers and it may convert to “M1” to bring us more revenue.</li>
+<li><code>D_S</code>: Percentage ratio of “D1” to “sales”. The potential rate that we need to focus, because this ratio is our potential customers and it may convert to “M1” to bring us more profit.</li>
 <li><code>M_V</code>: Percentage ratio of “M1” to “visitors”. The conversion rate among the visitors.</li>
 <li><code>C_V</code>: Percentage ratio of “C1” to “visitors”.</li>
 <li><code>D_V</code>: Percentage ratio of “D1” to “visitors”.</li>
-<li><code>SIN_RVN</code>: The difference between LTV and CPA on a single sale.</li>
-<li><code>100_MS_RVN</code>: The total estimated guaranteed revenue among 100 sales. Calculated by <code>M_S * SIN_RVN * 100</code>.</li>
-<li><code>100_DS_RVN</code>: The total estimated potential revenue among 100 sales. Calculated by <code>D_S * SIN_RVN * 100</code>.</li>
-<li><code>100_MV_RVN</code>: The total estimated guaranteed revenue among 100 visitors. Calculated by <code>M_V * SIN_RVN * 100</code>.</li>
-<li><code>100_DV_RVN</code>: The total estimated potential revenue among 100 visitors. Calculated by <code>D_V * SIN_RVN * 100</code>.</li>
+<li><code>SIN_PRFT</code>: The difference between LTV and CPA on a single sale.</li>
+<li><code>100_MS_PRFT</code>: The total estimated guaranteed profit among 100 sales. Calculated by <code>M_S * SIN_PRFT * 100</code>.</li>
+<li><code>100_DS_PRFT</code>: The total estimated potential future profit among 100 sales. Calculated by <code>D_S * SIN_PRFT * 100</code>. Assume that all the 100 “D1” will convert to “M1”.</li>
+<li><code>100_MV_PRFT</code>: The total estimated guaranteed profit among 100 visitors. Calculated by <code>M_V * SIN_PRFT * 100</code>.</li>
+<li><code>100_DV_PRFT</code>: The total estimated potential future profit among 100 visitors. Calculated by <code>D_V * SIN_PRFT * 100</code>. Assume that all the 100 “D1” will convert to “M1”.</li>
 </ul>
 <pre class="r"><code>library(scales)
 t$S_V = percent(t$sales / t$visitors)
@@ -1811,12 +1811,12 @@ t$D_S = percent(t$D1 / t$sales)
 t$M_V = percent(t$M1 / t$visitors)
 t$C_V = percent(t$C1 / t$visitors)
 t$D_V = percent(t$D1 / t$visitors)
-t$SIN_RVN = t$LTV - t$CPA
-t$&quot;100_MS_RVN&quot; = (t$M1 / t$sales) * t$SIN_RVN * 100
-t$&quot;100_DS_RVN&quot; = (t$D1 / t$sales) * t$SIN_RVN * 100
-t$&quot;100_MV_RVN&quot; = (t$M1 / t$visitors) * t$SIN_RVN * 100
-t$&quot;100_DV_RVN&quot; = (t$D1 / t$visitors) * t$SIN_RVN * 100
-kable(t)</code></pre>
+t$SIN_PRFT = t$LTV - t$CPA
+t$&quot;100_MS_PRFT&quot; = (t$M1 / t$sales) * t$SIN_PRFT * 100
+t$&quot;100_DS_PRFT&quot; = (t$D1 / t$sales) * t$SIN_PRFT * 100
+t$&quot;100_MV_PRFT&quot; = (t$M1 / t$visitors) * t$SIN_PRFT * 100
+t$&quot;100_DV_PRFT&quot; = (t$D1 / t$visitors) * t$SIN_PRFT * 100</code></pre>
+<p>Table 1.2: Original data with 12 new variables</p>
 <table>
 <thead>
 <tr class="header">
@@ -1836,11 +1836,11 @@ kable(t)</code></pre>
 <th align="left">M_V</th>
 <th align="left">C_V</th>
 <th align="left">D_V</th>
-<th align="right">SIN_RVN</th>
-<th align="right">100_MS_RVN</th>
-<th align="right">100_DS_RVN</th>
-<th align="right">100_MV_RVN</th>
-<th align="right">100_DV_RVN</th>
+<th align="right">SIN_PRFT</th>
+<th align="right">100_MS_PRFT</th>
+<th align="right">100_DS_PRFT</th>
+<th align="right">100_MV_PRFT</th>
+<th align="right">100_DV_PRFT</th>
 </tr>
 </thead>
 <tbody>
@@ -1984,9 +1984,9 @@ kable(t)</code></pre>
 </tr>
 </tbody>
 </table>
-<p>In the table below, we mainly focus on four columns: <code>100_MS_RVN</code>, <code>100_DS_RVN</code>, <code>100_MV_RVN</code>, <code>100_DV_RVN</code>.</p>
-<pre class="r"><code>t2 = t[, c(&quot;traffic_sources&quot;, &quot;versions&quot;, &quot;S_V&quot;, &quot;M_S&quot;, &quot;D_S&quot;, &quot;SIN_RVN&quot;, &quot;100_MS_RVN&quot;, &quot;100_DS_RVN&quot;, &quot;100_MV_RVN&quot;, &quot;100_DV_RVN&quot;)]
-kable(t2)</code></pre>
+<p>In the table below (Table 1.3), we mainly focus on four columns: <code>100_MS_PRFT</code>, <code>100_DS_PRFT</code>, <code>100_MV_PRFT</code>, <code>100_DV_PRFT</code>.</p>
+<pre class="r"><code>t2 = t[, c(&quot;traffic_sources&quot;, &quot;versions&quot;, &quot;S_V&quot;, &quot;M_S&quot;, &quot;D_S&quot;, &quot;SIN_PRFT&quot;, &quot;100_MS_PRFT&quot;, &quot;100_DS_PRFT&quot;, &quot;100_MV_PRFT&quot;, &quot;100_DV_PRFT&quot;)]</code></pre>
+<p>Table 1.3:</p>
 <table>
 <thead>
 <tr class="header">
@@ -1995,11 +1995,11 @@ kable(t2)</code></pre>
 <th align="left">S_V</th>
 <th align="left">M_S</th>
 <th align="left">D_S</th>
-<th align="right">SIN_RVN</th>
-<th align="right">100_MS_RVN</th>
-<th align="right">100_DS_RVN</th>
-<th align="right">100_MV_RVN</th>
-<th align="right">100_DV_RVN</th>
+<th align="right">SIN_PRFT</th>
+<th align="right">100_MS_PRFT</th>
+<th align="right">100_DS_PRFT</th>
+<th align="right">100_MV_PRFT</th>
+<th align="right">100_DV_PRFT</th>
 </tr>
 </thead>
 <tbody>
@@ -2012,8 +2012,8 @@ kable(t2)</code></pre>
 <td align="right">22.9</td>
 <td align="right">696.7447</td>
 <td align="right">959.8511</td>
-<td align="right">15.130527</td>
-<td align="right">20.844153</td>
+<td align="right">15.1305</td>
+<td align="right">20.8442</td>
 </tr>
 <tr class="even">
 <td align="left">Email</td>
@@ -2024,8 +2024,8 @@ kable(t2)</code></pre>
 <td align="right">20.7</td>
 <td align="right">594.6140</td>
 <td align="right">984.8294</td>
-<td align="right">15.242303</td>
-<td align="right">25.245064</td>
+<td align="right">15.2423</td>
+<td align="right">25.2451</td>
 </tr>
 <tr class="odd">
 <td align="left">Display</td>
@@ -2036,8 +2036,8 @@ kable(t2)</code></pre>
 <td align="right">20.0</td>
 <td align="right">629.0323</td>
 <td align="right">822.5806</td>
-<td align="right">20.492162</td>
-<td align="right">26.797443</td>
+<td align="right">20.4922</td>
+<td align="right">26.7974</td>
 </tr>
 <tr class="even">
 <td align="left">Display</td>
@@ -2048,8 +2048,8 @@ kable(t2)</code></pre>
 <td align="right">22.9</td>
 <td align="right">744.2500</td>
 <td align="right">990.4250</td>
-<td align="right">25.995459</td>
-<td align="right">34.593957</td>
+<td align="right">25.9955</td>
+<td align="right">34.5940</td>
 </tr>
 <tr class="odd">
 <td align="left">Search</td>
@@ -2060,8 +2060,8 @@ kable(t2)</code></pre>
 <td align="right">20.0</td>
 <td align="right">705.3140</td>
 <td align="right">666.6667</td>
-<td align="right">5.591085</td>
-<td align="right">5.284724</td>
+<td align="right">5.5911</td>
+<td align="right">5.2847</td>
 </tr>
 <tr class="even">
 <td align="left">Search</td>
@@ -2072,21 +2072,21 @@ kable(t2)</code></pre>
 <td align="right">23.5</td>
 <td align="right">846.0000</td>
 <td align="right">977.6000</td>
-<td align="right">8.030223</td>
-<td align="right">9.279368</td>
+<td align="right">8.0302</td>
+<td align="right">9.2794</td>
 </tr>
 </tbody>
 </table>
-<p>1. Take the part of “estimated revenue from sales” out:</p>
-<pre class="r"><code>t3 = t2[, c(&quot;traffic_sources&quot;, &quot;versions&quot;, &quot;100_MS_RVN&quot;, &quot;100_DS_RVN&quot;)]
-kable(t3)</code></pre>
+<p><strong>1. Focus on “estimated profit from sales”:</strong></p>
+<pre class="r"><code>t3 = t2[, c(&quot;traffic_sources&quot;, &quot;versions&quot;, &quot;100_MS_PRFT&quot;, &quot;100_DS_PRFT&quot;)]</code></pre>
+<p>Table 1.4: Estimated profit from sales for both “M1” and “D1” (<code>100_MS_PRFT</code> and <code>100_DS_PRFT</code>)</p>
 <table>
 <thead>
 <tr class="header">
 <th align="left">traffic_sources</th>
 <th align="left">versions</th>
-<th align="right">100_MS_RVN</th>
-<th align="right">100_DS_RVN</th>
+<th align="right">100_MS_PRFT</th>
+<th align="right">100_DS_PRFT</th>
 </tr>
 </thead>
 <tbody>
@@ -2128,6 +2128,7 @@ kable(t3)</code></pre>
 </tr>
 </tbody>
 </table>
+<p>Table 1.5: Difference of estimated profit from sales between two versions</p>
 <table>
 <colgroup>
 <col width="10%"></col>
@@ -2137,89 +2138,90 @@ kable(t3)</code></pre>
 <thead>
 <tr class="header">
 <th>traffic_sources</th>
-<th>diff of 100_MS_RVN (new - old)</th>
-<th>diff of 100_DS_RVN (new - old)</th>
+<th>diff of 100_MS_PRFT (new - old)</th>
+<th>diff of 100_DS_PRFT (new - old)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Email</td>
-<td>-102.1306773</td>
-<td>24.9783796</td>
+<td>-102.1307</td>
+<td>24.9784</td>
 </tr>
 <tr class="even">
 <td>Display</td>
-<td>115.2177419</td>
-<td>167.8443548</td>
+<td>115.2177</td>
+<td>167.8444</td>
 </tr>
 <tr class="odd">
 <td>Search</td>
-<td>140.6859903</td>
-<td>310.9333333</td>
+<td>140.686</td>
+<td>310.9333</td>
 </tr>
 <tr class="even">
 <td><strong>Simple Sum</strong></td>
-<td><strong>153.773055</strong></td>
-<td><strong>503.7560678</strong></td>
+<td><strong>153.7731</strong></td>
+<td><strong>503.7561</strong></td>
 </tr>
 </tbody>
 </table>
 <ul>
 <li>Now we can compare the numbers:</li>
-<li>For the estimated guaranteed revenue from sales (“100_MS_RVN”), the traffic source 1 (Email) decreases $102.1306773 when changing to new version. However, the traffic source 2 (Display) and the traffic source 3 (Search) both increases: $115.2177419 and $140.6859903. Assume the three traffic sources have same amount of traffics, then if we have 300 sales, 100 sales from each source, we would guarantee to have $153.773055 amount of revenue.</li>
-<li>For the estimated potential revenue from sales (“100_DS_RVN”), all of the three sources have positive changes. No matter what the ratios that the three traffics have, the result would always be positive. And no matter what the conversion rate is (from D to M), using the new version would bring more revenue. For example, assume three sources have equal weight, and the conversion rate is 10%, we would have a increase in revenue of $50.3756068 per 300 sales.</li>
+<li>For the estimated guaranteed profit from sales (“100_MS_PRFT”), the traffic source 1 (Email) decreases $102.1307 when changing to new version. However, the traffic source 2 (Display) and the traffic source 3 (Search) both increases: $115.2177 and $140.686. Assume the three traffic sources have same amount of traffics, then if we have 300 sales, 100 sales from each source, we would guarantee to have $153.7731 amount of profit.</li>
+<li>For the estimated potential profit from sales (“100_DS_PRFT”), all of the three sources have positive changes. No matter what the ratios that the three traffics have, the result would always be positive. And no matter what the conversion rate is (from D to M), using the new version would bring more profit. For example, assume three sources have equal weight, and the conversion rate is 10%, we would have a increase in profit of $50.3756 per 300 sales.</li>
 </ul>
-<p>2. Take the part of “estimated revenue from visitors” out:</p>
-<pre class="r"><code>t4 = t2[, c(&quot;traffic_sources&quot;, &quot;versions&quot;, &quot;100_MV_RVN&quot;, &quot;100_DV_RVN&quot;)]
-kable(t4)</code></pre>
+<p><strong>2. Focus on “estimated profit from visitors”:</strong></p>
+<pre class="r"><code>t4 = t2[, c(&quot;traffic_sources&quot;, &quot;versions&quot;, &quot;100_MV_PRFT&quot;, &quot;100_DV_PRFT&quot;)]</code></pre>
+<p>Table 1.6: Estimated profit from visitors for both “M1” and “D1” (<code>100_MV_PRFT</code> and <code>100_DV_PRFT</code>)</p>
 <table>
 <thead>
 <tr class="header">
 <th align="left">traffic_sources</th>
 <th align="left">versions</th>
-<th align="right">100_MV_RVN</th>
-<th align="right">100_DV_RVN</th>
+<th align="right">100_MV_PRFT</th>
+<th align="right">100_DV_PRFT</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">Email</td>
 <td align="left">Control</td>
-<td align="right">15.130527</td>
-<td align="right">20.844153</td>
+<td align="right">15.130</td>
+<td align="right">20.844</td>
 </tr>
 <tr class="even">
 <td align="left">Email</td>
 <td align="left">Challenger</td>
-<td align="right">15.242303</td>
-<td align="right">25.245064</td>
+<td align="right">15.242</td>
+<td align="right">25.245</td>
 </tr>
 <tr class="odd">
 <td align="left">Display</td>
 <td align="left">Control</td>
-<td align="right">20.492162</td>
-<td align="right">26.797443</td>
+<td align="right">20.492</td>
+<td align="right">26.797</td>
 </tr>
 <tr class="even">
 <td align="left">Display</td>
 <td align="left">Challenger</td>
-<td align="right">25.995459</td>
-<td align="right">34.593957</td>
+<td align="right">25.995</td>
+<td align="right">34.594</td>
 </tr>
 <tr class="odd">
 <td align="left">Search</td>
 <td align="left">Control</td>
-<td align="right">5.591085</td>
-<td align="right">5.284724</td>
+<td align="right">5.591</td>
+<td align="right">5.285</td>
 </tr>
 <tr class="even">
 <td align="left">Search</td>
 <td align="left">Challenger</td>
-<td align="right">8.030223</td>
-<td align="right">9.279368</td>
+<td align="right">8.030</td>
+<td align="right">9.279</td>
 </tr>
 </tbody>
 </table>
+<p>Table 1.7: Difference of estimated profit from visitors between two versions</p>
 <table>
 <colgroup>
 <col width="10%"></col>
@@ -2229,40 +2231,41 @@ kable(t4)</code></pre>
 <thead>
 <tr class="header">
 <th>traffic_sources</th>
-<th>diff of 100_MV_RVN (new - old)</th>
-<th>diff of 100_DV_RVN (new - old)</th>
+<th>diff of 100_MV_PRFT (new - old)</th>
+<th>diff of 100_DV_PRFT (new - old)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Email</td>
-<td>0.1117757</td>
-<td>4.4009114</td>
+<td>0.1118</td>
+<td>4.4009</td>
 </tr>
 <tr class="even">
 <td>Display</td>
-<td>5.5032971</td>
-<td>7.7965145</td>
+<td>5.5033</td>
+<td>7.7965</td>
 </tr>
 <tr class="odd">
 <td>Search</td>
-<td>2.4391376</td>
-<td>3.9946441</td>
+<td>2.4391</td>
+<td>3.9946</td>
 </tr>
 <tr class="even">
 <td><strong>Simple Sum</strong></td>
-<td><strong>8.0542104</strong></td>
-<td><strong>16.19207</strong></td>
+<td><strong>8.0542</strong></td>
+<td><strong>16.1921</strong></td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>For the estimated guaranteed revenue from visitors (“100_MV_RVN”), all the three traffics have a increase from old version to new version. Assume three sources have equal weight, the estimated guaranteed revenue from 300 visitors is $8.0542104.</li>
-<li>For the estimated potential revenue from visitors (“100_DV_RVN”), the good news is the same, all the three differences between old version and new version are positive. With the same assumption as above (equal weight, 10% rate), we could have a increase in revenue of $1.619207 per 300 visitors.</li>
+<li>For the estimated guaranteed profit from visitors (“100_MV_PRFT”), all the three traffics have a increase from old version to new version. Assume three sources have equal weight, the estimated guaranteed profit from 300 visitors is $8.0542.</li>
+<li>For the estimated potential profit from visitors (“100_DV_PRFT”), the good news is the same, all the three differences between old version and new version are positive. With the same assumption as above (equal weight, 10% rate), we could have a increase in profit of $1.6192 per 300 visitors.</li>
 </ul>
-<p>Overall, since “Display” and “Search” have a better result than “Email”, I recommend the marketing team to expand the traffic number (visitors) on “Display” and “Search”, especially on the “Display” traffic since it has the best performance.</p>
-<p>The traffic from “Email” has a lower conversion rate from the sales, which probably means that the customer satisfaction of the new version is lower than the satisfaction of the old version. However, the traffic from “Email” has a higher conversion from the visitors, which probably means that the new version has a better first impression to customers. Even if all the three traffic sources have same amount of visitors, and assume the conversion rates are the same as them in the analysis, the negative revenue generated by “Email” from the sales would be cancelled out by the positive revenue generated by the other two types of traffic. So the new version under this assumption would bring a higher revenue than the old version.</p>
-<p>Therefore, for <em>Nations Info</em>, using the new pages on the sites is a great idea, and it would generate more revenue based on the above analysis.</p>
+<p><strong>Conclusion:</strong></p>
+<p>Overall, since “Display” and “Search” have a better result than “Email”<sup>Table 1.5 and Table 1.7</sup>, I recommend the marketing team to expand the traffic number (visitors) on “Display” and “Search”, especially on the “Display” traffic since it has the best performance<sup>Table 1.7</sup>.</p>
+<p>The traffic from “Email” has a negative profit between two versions from the sales<sup>Table 1.5</sup>, which probably means that the customer satisfaction of the new version is lower than the satisfaction of the old version. However, the traffic from “Email” has a positive profit between two versions from the visitors<sup>Table 1.7</sup> based on 10% conversion rate from “D1” to “M1”, which probably means that the new version has a better first impression to customers. Even if all the three traffic sources have same amount of visitors, and assume the conversion rates are the same as them in the analysis, the negative profit generated by “Email” from the sales would be cancelled out by the positive profit generated by the other two types of traffic. So the new version under this assumption would bring a higher profit than the old version.</p>
+<p>Therefore, for <em>Nations Info</em>, using the new pages on the sites is a great idea, and it would generate more profit based on the above analysis.</p>
 </div>
 </div>
 <div id="technical" class="section level1">
@@ -2322,7 +2325,7 @@ ORDER BY
 <p><strong>My Analysis on the SQL code:</strong></p>
 <p>I just make up the numbers for each table below!</p>
 <ul>
-<li>Table 1: nic_billing.order</li>
+<li>Table 2.1: nic_billing.order</li>
 </ul>
 <table>
 <thead>
@@ -2373,155 +2376,155 @@ ORDER BY
 </tbody>
 </table>
 <ul>
-<li>Table 2: nic_billing.membership</li>
+<li>Table 2.2: nic_billing.membership</li>
 </ul>
 <table>
 <thead>
 <tr class="header">
-<th><span class="Brown">id_customer</span></th>
+<th align="right"><span class="Brown">id_customer</span></th>
 <th><span class="Green">id_membership</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1111</td>
+<td align="right">1111</td>
 <td>M1</td>
 </tr>
 <tr class="even">
-<td>2222</td>
+<td align="right">2222</td>
 <td>M1</td>
 </tr>
 <tr class="odd">
-<td>3333</td>
+<td align="right">3333</td>
 <td>M2</td>
 </tr>
 <tr class="even">
-<td>4444</td>
+<td align="right">4444</td>
 <td>M2</td>
 </tr>
 <tr class="odd">
-<td>5555</td>
+<td align="right">5555</td>
 <td>M3</td>
 </tr>
 <tr class="even">
-<td>6666</td>
+<td align="right">6666</td>
 <td>M3</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>Table 3: nic_billing.order_item</li>
+<li>Table 2.3: nic_billing.order_item</li>
 </ul>
 <table>
 <thead>
 <tr class="header">
-<th><span class="Blue">id_order</span></th>
+<th align="right"><span class="Blue">id_order</span></th>
 <th><span class="Green">id_membership</span></th>
-<th><span class="Magenta">id_offer</span></th>
+<th align="right"><span class="Magenta">id_offer</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1001</td>
+<td align="right">1001</td>
 <td>M1</td>
-<td>01</td>
+<td align="right">01</td>
 </tr>
 <tr class="even">
-<td>1001</td>
+<td align="right">1001</td>
 <td>M1</td>
-<td>02</td>
+<td align="right">02</td>
 </tr>
 <tr class="odd">
-<td>1001</td>
+<td align="right">1001</td>
 <td>M2</td>
-<td>01</td>
+<td align="right">01</td>
 </tr>
 <tr class="even">
-<td>1001</td>
+<td align="right">1001</td>
 <td>M2</td>
-<td>02</td>
+<td align="right">02</td>
 </tr>
 <tr class="odd">
-<td>1002</td>
+<td align="right">1002</td>
 <td>M1</td>
-<td>01</td>
+<td align="right">01</td>
 </tr>
 <tr class="even">
-<td>1002</td>
+<td align="right">1002</td>
 <td>M1</td>
-<td>02</td>
+<td align="right">02</td>
 </tr>
 <tr class="odd">
-<td>1002</td>
+<td align="right">1002</td>
 <td>M2</td>
-<td>01</td>
+<td align="right">01</td>
 </tr>
 <tr class="even">
-<td>1002</td>
+<td align="right">1002</td>
 <td>M2</td>
-<td>02</td>
+<td align="right">02</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>Table 4: nic_offer.offer</li>
+<li>Table 2.4: nic_offer.offer</li>
 </ul>
 <table>
 <thead>
 <tr class="header">
-<th><span class="Magenta">id_offer</span></th>
+<th align="right"><span class="Magenta">id_offer</span></th>
 <th>signup_type</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>01</td>
+<td align="right">01</td>
 <td>‘downsell’</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>Table 5: main.tbl_customer</li>
+<li>Table 2.5: main.tbl_customer</li>
 </ul>
 <table>
 <thead>
 <tr class="header">
-<th><span class="Brown">CUSTOMER_ID</span></th>
-<th>test_account</th>
+<th align="right"><span class="Brown">CUSTOMER_ID</span></th>
+<th align="right">test_account</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1111</td>
-<td>0</td>
+<td align="right">1111</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
-<td>2222</td>
-<td>0</td>
+<td align="right">2222</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
-<td>3333</td>
-<td>0</td>
+<td align="right">3333</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
-<td>4444</td>
-<td>0</td>
+<td align="right">4444</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
-<td>5555</td>
-<td>0</td>
+<td align="right">5555</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
-<td>6666</td>
-<td>0</td>
+<td align="right">6666</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
-<td>7777</td>
-<td>1</td>
+<td align="right">7777</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
-<td>8888</td>
-<td>1</td>
+<td align="right">8888</td>
+<td align="right">1</td>
 </tr>
 </tbody>
 </table>
@@ -2603,7 +2606,7 @@ ORDER BY
 <p>The report will show the data of:</p>
 <ul>
 <li>“date” (a column of values, all the <code>order_date</code> under the conditions) and</li>
-<li>“downsells” (a single value, the total number of rows of “date”) and</li>
+<li>“downsells” (a single value, the total number of rows of “date”) which is the sum of “downsells_1” to “downsells_6”, and</li>
 <li>“downsells_1” (a single value, a portion of “downsells” where the “id_brand” is 1) and</li>
 <li>“downsells_2” (a single value, a portion of “downsells” where the “id_brand” is 2) and</li>
 <li>“downsells_3” (a single value, a portion of “downsells” where the “id_brand” is 3) and</li>
@@ -2625,9 +2628,10 @@ ORDER BY
 <p><strong>2. How this report actually looks like (just make up data as necessary)</strong></p>
 </blockquote>
 <p>Assume today’s date is 7/15/2019, so the result would only contains the date from 7/2/2019 to 7/15/2019.</p>
-<table>
+<p>Table 2.6:</p>
+<table style="width:100%;">
 <colgroup>
-<col width="12%"></col>
+<col width="11%"></col>
 <col width="12%"></col>
 <col width="12%"></col>
 <col width="12%"></col>
@@ -2639,158 +2643,159 @@ ORDER BY
 <thead>
 <tr class="header">
 <th>date</th>
-<th>downsells</th>
-<th>downsells_1</th>
-<th>downsells_2</th>
-<th>downsells_3</th>
-<th>downsells_4</th>
-<th>downsells_5</th>
-<th>downsells_6</th>
+<th align="right">downsells</th>
+<th align="right">downsells_1</th>
+<th align="right">downsells_2</th>
+<th align="right">downsells_3</th>
+<th align="right">downsells_4</th>
+<th align="right">downsells_5</th>
+<th align="right">downsells_6</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>7/15/2019</td>
-<td>15</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>0</td>
+<td align="right">15</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td>7/14/2019</td>
-<td>21</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
+<td align="right">21</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">6</td>
 </tr>
 <tr class="odd">
 <td>7/13/2019</td>
-<td>15</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>0</td>
+<td align="right">15</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td>7/12/2019</td>
-<td>21</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
+<td align="right">21</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">6</td>
 </tr>
 <tr class="odd">
 <td>7/11/2019</td>
-<td>15</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>0</td>
+<td align="right">15</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td>7/10/2019</td>
-<td>21</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
+<td align="right">21</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">6</td>
 </tr>
 <tr class="odd">
 <td>7/9/2019</td>
-<td>15</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>0</td>
+<td align="right">15</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td>7/8/2019</td>
-<td>21</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
+<td align="right">21</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">6</td>
 </tr>
 <tr class="odd">
 <td>7/7/2019</td>
-<td>15</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>0</td>
+<td align="right">15</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td>7/6/2019</td>
-<td>21</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
+<td align="right">21</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">6</td>
 </tr>
 <tr class="odd">
 <td>7/5/2019</td>
-<td>15</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>0</td>
+<td align="right">15</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td>7/4/2019</td>
-<td>21</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
+<td align="right">21</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">6</td>
 </tr>
 <tr class="odd">
 <td>7/3/2019</td>
-<td>15</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>0</td>
+<td align="right">15</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td>7/2/2019</td>
-<td>21</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
+<td align="right">21</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">6</td>
 </tr>
 </tbody>
 </table>
+<p>Note: downsells = downsells_1 + downsells_2 + downsells_3 + downsells_4 + downsells_5 + downsells_6</p>
 <blockquote>
 <p><strong>3. List what database tables are sources for this report</strong></p>
 </blockquote>
@@ -2913,7 +2918,7 @@ draw_data = data.frame(index, m_ratio)
 ggplot(data = draw_data, mapping = aes(x = index, y = m_ratio)) + geom_point() + geom_line()</code></pre>
 <p><img src="data:image/png;base64,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" width="672" /></p>
 <ul>
-<li>Step 2: Apply those ratios on Partner X’s data, which start at 41.5%. The exact values of forecasted Partner X data is denoted as <code>new_m</code>.</li>
+<li>Step 2: Apply those ratios on Partner X’s data, which start at 41.5%. The exact values of forecasted Partner X data are denoted as <code>new_m</code>.</li>
 </ul>
 <pre class="r"><code>new_m = c(41.5, rep(0, times = 11))
 for (i in 1:11) {
@@ -2938,7 +2943,7 @@ LTV</code></pre>
 <pre><code>## [1] 43.8</code></pre>
 <ul>
 <li>The value of LTV is $43.8.</li>
-<li>Step 5: Compare option 1 and option 2 to judge which option has a larger revenue.</li>
+<li>Step 5: Compare option 1 and option 2 to judge which option has a larger profit.</li>
 </ul>
 <pre class="r"><code>option_1 = 1000 * (LTV - 40)
 option_1</code></pre>
@@ -2949,7 +2954,7 @@ option_2</code></pre>
 <pre class="r"><code>option_1 &gt; option_2</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <ul>
-<li>Option 1 has the expected revenue of $3800, and option 2 has the expected revenue of $3600. Option 1 has a greater revenue.</li>
+<li>Option 1 has the expected profit of $3800, and option 2 has the expected profit of $3600. Option 1 has a greater profit.</li>
 </ul>
 <p><strong>Assumption 2:</strong> The business from Partner X may last longer, longer than what the example shows. Therefore we cannot only focus on the first 12 months but probably longer, depends on the following analysis.</p>
 <p>Idea: The question gives a Retention Tail from partners that have similar performance. We can use the ratio between the value of each month and the value of the first month, and find out a fitted curve for those values, and do the forecasting based on the curve to get the further values.</p>
@@ -3032,7 +3037,7 @@ LTV</code></pre>
 <pre><code>## [1] 44.2</code></pre>
 <ul>
 <li>The value of LTV is $44.2. Notice that this value is higher than the LTV under the previous assumption (Assumption 1). The forecasted value from month 1 to 12 are the same, the key difference is on the 13-th month, which has an extra value equals to 1. This extra subscription leads to the higher LTV.</li>
-<li>Step 7: Compare option 1 and option 2 to judge which option has a larger revenue.</li>
+<li>Step 7: Compare option 1 and option 2 to judge which option has a larger profit.</li>
 </ul>
 <pre class="r"><code>option_1 = 1000 * (LTV - 40)
 option_1</code></pre>
@@ -3043,10 +3048,10 @@ option_2</code></pre>
 <pre class="r"><code>option_1 &gt; option_2</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <ul>
-<li>Option 1 has the expected revenue of $4200, and option 2 has the expected revenue of $4400. Option 2 has a greater revenue.</li>
+<li>Option 1 has the expected profit of $4200, and option 2 has the expected profit of $4400. Option 2 has a greater profit.</li>
 </ul>
 <p><strong>Conclusion:</strong> These two assumptions give two different results, and we cannot not simply point out the better one just based on the analysis. However, assumption 2 is more realistic and more reasonable. The business is more likely to keep going after the 12 months. Therefore we conclude that the results from assumption 2 are better.</p>
-<p>The forecasted LTV is $44.2, and the option 2 would bring a higher revenue than option 1. The expected extra revenue is $200.</p>
+<p>The forecasted LTV is $44.2, and the option 2 would bring a higher profit than option 1. The expected extra profit is $200.</p>
 </div>
 </div>
 <div id="metrics-definition-bonus" class="section level1 tabset">
@@ -3271,7 +3276,7 @@ option_2</code></pre>
 </div>
 <div id="answer-4" class="section level2">
 <h2><span class="header-section-number">4.2</span> Answer</h2>
-<p>Table 1: <code>tbl_mapped</code></p>
+<p>Table 4.1: <code>tbl_mapped</code></p>
 <table>
 <thead>
 <tr class="header">
@@ -3288,7 +3293,7 @@ option_2</code></pre>
 <tbody>
 </tbody>
 </table>
-<p>Table 2: <code>tbl_merged</code></p>
+<p>Table 4.2: <code>tbl_merged</code></p>
 <table>
 <thead>
 <tr class="header">
@@ -3306,7 +3311,7 @@ option_2</code></pre>
 <tbody>
 </tbody>
 </table>
-<p>Table 3: <code>tbl_prop</code></p>
+<p>Table 4.3: <code>tbl_prop</code></p>
 <table>
 <colgroup>
 <col width="9%"></col>
@@ -3341,10 +3346,10 @@ option_2</code></pre>
 </table>
 <p>My understanding to the given descriptions:</p>
 <ul>
-<li>Table 1 (<code>tbl_mapped</code>) contains all the properties information with duplication of some properties.</li>
-<li>The duplicate properties in table 1 may have same field values of “Date”, “Address”, “Zip”, “City”, “State” and “Sale_type” and different field values of “mapped_id” and “Data source” (speculation from the example). However, those same field values may not necessary be the same, but actually depends on the quality of the data source <sup>Question 1</sup>.</li>
-<li>Let’s assume all the data from table 1 has been cleaned (which means those field values mentioned before are the same). Then each group of same properties (multiple rows in table 1) could be merged into one row by the same “Address” and formed table 2 (<code>tbl_merged</code>). However, in the field name description of table 2, there is no explanation of how “merged_id” and “Property_id” are calculated <sup>Question 2</sup>.</li>
-<li>The table 3 (<code>tbl_prop</code>) is a combined result from table 2 and the old listings, so I assume that there is another table comes from the old listings, denoted as table 4 (<code>tbl_extra</code>), which contains at least following information: “Property_id”, “Contact”, “Picture” and “Price” where “Property_id” is the primary key. Under this assumption, table 2 (<code>tbl_merged</code>) and table 4 (<code>tbl_extra</code>) could be connected by “Property_id” to form table 3 through <code>LEFT JOIN</code> statement <sup>Question 3</sup>.</li>
+<li>Table 4.1 (<code>tbl_mapped</code>) contains all the properties information with duplication of some properties.</li>
+<li>The duplicate properties in table 4.1 may have same field values of “Date”, “Address”, “Zip”, “City”, “State” and “Sale_type” and different field values of “mapped_id” and “Data source” (speculation from the example). However, those same field values may not necessary be the same, but actually depends on the quality of the data source <sup>Question 1</sup>.</li>
+<li>Let’s assume all the data from table 4.1 has been cleaned (which means those field values mentioned before are the same). Then each group of same properties (multiple rows in table 4.1) could be merged into one row by the same “Address” and formed table 4.2 (<code>tbl_merged</code>). However, in the field name description of table 4.2, there is no explanation of how “merged_id” and “Property_id” are calculated <sup>Question 2</sup>.</li>
+<li>The table 4.3 (<code>tbl_prop</code>) is a combined result from table 4.2 and the old listings, so I assume that there is another table comes from the old listings, denoted as table 4.4 (<code>tbl_extra</code>), which contains at least following information: “Property_id”, “Contact”, “Picture” and “Price” where “Property_id” is the primary key. Under this assumption, table 4.2 (<code>tbl_merged</code>) and table 4.4 (<code>tbl_extra</code>) could be connected by “Property_id” to form table 4.3 through <code>LEFT JOIN</code> statement <sup>Question 3</sup>.</li>
 </ul>
 <p><strong>Question 1:</strong> Are the same properties have the exact data field values on “Date”, “Address”, “Zip”, “City”, “State” and “Sale_type”?</p>
 <ul>
@@ -3352,14 +3357,14 @@ option_2</code></pre>
 </ul>
 <p><strong>Question 2:</strong> How to get “merged_id” and “Property_id” from table 2? There is no relative information from table 1.</p>
 <ul>
-<li>Table 1 could have an extra field called “Property_id”.</li>
-<li>Table 1 could have another field related to “merged_id” so that this field after merging can give out the right “merged_id” in table 2.</li>
+<li>Table 4.1 could have an extra field called “Property_id”.</li>
+<li>Table 4.1 could have another field related to “merged_id” so that this field after merging can give out the right “merged_id” in table 2.</li>
 </ul>
-<p><strong>Question 3:</strong> Is there another table contains more information (such as table 4, <code>tbl_extra</code>) to connect with table 2 in order to form table 3?</p>
+<p><strong>Question 3:</strong> Is there another table contains more information (such as table 4.4, <code>tbl_extra</code>) to connect with table 4.2 in order to form table 4.3?</p>
 <ul>
-<li>The table 4 could contain at least these four fields: “Property_id”, “Contact”, “Picture” and “Price” where “Property_id” is the primary key, so that it could connect with table 2.</li>
+<li>The table 4.4 could contain at least these four fields: “Property_id”, “Contact”, “Picture” and “Price” where “Property_id” is the primary key, so that it could connect with table 4.2.</li>
 </ul>
-<p>Table 4: <code>tbl_extra</code></p>
+<p>Table 4.4: <code>tbl_extra</code></p>
 <table>
 <thead>
 <tr class="header">
@@ -3377,19 +3382,19 @@ option_2</code></pre>
 <li>There should be a threshold of some value. When the query made by the customer gives out a listing of properties, and the total number is greater or equal to this threshold, then we would say this query gives “enough” listings.</li>
 </ul>
 <p><strong>Key Metric Design:</strong></p>
-<p>Assume the above four questions are answered properly. E.g., There is way to acquire “merged_id” and “Property_id” from table 1 to table 2, and there is table 4 just like the one described above to provide extra information.</p>
-<p>Now we have table 3 as the database for the customers. The customer could input a zip code on the website, and get the properties around that zip code area. The customer could also input the maximum and minimal bound of the price (optional) to narrow down the search result.</p>
+<p>Assume the above four questions are answered properly. E.g., There is way to acquire “merged_id” and “Property_id” from table 4.1 to table 4.2, and there is table 4.4 just like the one described above to provide extra information.</p>
+<p>Now we have table 4.3 as the database for the customers. The customer could input a zip code on the website, and get the properties around that zip code area. The customer could also input the maximum and minimal bound of the price (optional) to narrow down the search result.</p>
 <p>1. In order to monitor the listings to make sure we have enough listings for customers with different demands, we could use randomization method to verify our listings:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Do 1000 times of randomization to pick out 1000 different zip codes from all the possible zip codes that we collected.</li>
 <li>For each zip code, find the corresponding “City” and “State”, and use SQL to select out all the properties which have the same “City” value and “State” value. Then, count the row numbers for this query.</li>
 <li>We could get 1000 numbers from the above process. Compare these 1000 numbers to the threshold. Calculate the ratio between the amount of numbers greater than the threshold and 1000. For example: there are 950 numbers greater than or equal to the threshold number, then the ratio is 950/1000 = 95%. <strong>This ratio can be used as the first metrics to see how good the data quality is. More specifically, this ratio measures the data sufficiency. In other words, whether we have enough listings for different demands.</strong></li>
 </ol>
-<p>2. In order to find out whether the property provided by different data sources is as valuable as each other, we can compare whether the data source contains “Contact”, “Picture” and “Price” and whether the data source has many duplication of property. Of course, because we are paying for all data sources, we want each data source have enough data, and it brings a lot of new properties that never appear in the old table 1.</p>
+<p>2. In order to find out whether the property provided by different data sources is as valuable as each other, we can compare whether the data source contains “Contact”, “Picture” and “Price” and whether the data source has many duplication of property. Of course, because we are paying for all data sources, we want each data source have enough data, and it brings a lot of new properties that never appear in the old table 4.1.</p>
 <ol style="list-style-type: lower-alpha">
-<li>For each data source, use SQL to check whether it contains “Contact”, “Picture” and “Price”. We assume each data source has all the basic information for table 1, but not necessarily has “Contact”, “Picture” or “Price”.</li>
+<li>For each data source, use SQL to check whether it contains “Contact”, “Picture” and “Price”. We assume each data source has all the basic information for table 4.1, but not necessarily has “Contact”, “Picture” or “Price”.</li>
 <li>We would get a series of boolean value (TRUE / FALSE) from all the data source, and calculate the percentage of TRUE. <strong>This percentage ratio can be used as the second metrics of the data quality. A high percentage ratio means the data sources have a good data completeness.</strong></li>
-<li>Next step is checking the duplication of each data source. Since the table 3 contains all the information, we are going to focus on the “Data sources” field. We need to count the appearance number of each data source from the list of “Data sources” strings. This process would give every data source a number. <strong>This number can be used as the third metrics of the data quality. A large number means this data source contains many property duplication, which leads to a low data quality.</strong></li>
+<li>Next step is checking the duplication of each data source. Since the table 4.3 contains all the information, we are going to focus on the “Data sources” field. We need to count the appearance number of each data source from the list of “Data sources” strings. This process would give every data source a number. <strong>This number can be used as the third metrics of the data quality. A large number means this data source contains many property duplication, which leads to a low data quality.</strong></li>
 </ol>
 <p><strong>Conclusion:</strong></p>
 <p>We are going to use three metrics to judge the data quality:</p>
