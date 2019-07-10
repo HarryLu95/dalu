@@ -201,12 +201,12 @@ td.updated {background-color: MediumSpringGreen;}
     [Class 13](LO/Algorithm_Class_30.html)</td>
   <td class="pending">6th  
     [Design 1](LO/Algorithm_Class_31.html)</td>
-  <td>7th  
-    Practice 18</td>
+  <td class="pending">7th  
+    [Practice 18](LO/Algorithm_Class_32.html)</td>
 </tr>
 <tr>
-  <td>8th  
-    Design 2</td>
+  <td class="pending">8th  
+    [Design 2](LO/Algorithm_Class_33.html)</td>
   <td></td>
   <td>10th  
     Class 14</td>
