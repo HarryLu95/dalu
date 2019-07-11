@@ -11,7 +11,7 @@
 
 
 
-<title>Java Solutions</title>
+<title>Algorithm Class 34 - Lecture 14</title>
 
 <script>/*! jQuery v1.11.3 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */
 !function(a,b){"object"==typeof module&&"object"==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error("jQuery requires a window with a document");return b(a)}:b(a)}("undefined"!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l="1.11.3",m=function(a,b){return new m.fn.init(a,b)},n=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,o=/^-ms-/,p=/-([\da-z])/gi,q=function(a,b){return b.toUpperCase()};m.fn=m.prototype={jquery:l,constructor:m,selector:"",length:0,toArray:function(){return d.call(this)},get:function(a){return null!=a?0>a?this[a+this.length]:this[a]:d.call(this)},pushStack:function(a){var b=m.merge(this.constructor(),a);return b.prevObject=this,b.context=this.context,b},each:function(a,b){return m.each(this,a,b)},map:function(a){return this.pushStack(m.map(this,function(b,c){return a.call(b,c,b)}))},slice:function(){return this.pushStack(d.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},eq:function(a){var b=this.length,c=+a+(0>a?b:0);return this.pushStack(c>=0&&b>c?[this[c]]:[])},end:function(){return this.prevObject||this.constructor(null)},push:f,sort:c.sort,splice:c.splice},m.extend=m.fn.extend=function(){var a,b,c,d,e,f,g=arguments[0]||{},h=1,i=arguments.length,j=!1;for("boolean"==typeof g&&(j=g,g=arguments[h]||{},h++),"object"==typeof g||m.isFunction(g)||(g={}),h===i&&(g=this,h--);i>h;h++)if(null!=(e=arguments[h]))for(d in e)a=g[d],c=e[d],g!==c&&(j&&c&&(m.isPlainObject(c)||(b=m.isArray(c)))?(b?(b=!1,f=a&&m.isArray(a)?a:[]):f=a&&m.isPlainObject(a)?a:{},g[d]=m.extend(j,f,c)):void 0!==c&&(g[d]=c));return g},m.extend({expando:"jQuery"+(l+Math.random()).replace(/\D/g,""),isReady:!0,error:function(a){throw new Error(a)},noop:function(){},isFunction:function(a){return"function"===m.type(a)},isArray:Array.isArray||function(a){return"array"===m.type(a)},isWindow:function(a){return null!=a&&a==a.window},isNumeric:function(a){return!m.isArray(a)&&a-parseFloat(a)+1>=0},isEmptyObject:function(a){var b;for(b in a)return!1;return!0},isPlainObject:function(a){var b;if(!a||"object"!==m.type(a)||a.nodeType||m.isWindow(a))return!1;try{if(a.constructor&&!j.call(a,"constructor")&&!j.call(a.constructor.prototype,"isPrototypeOf"))return!1}catch(c){return!1}if(k.ownLast)for(b in a)return j.call(a,b);for(b in a);return void 0===b||j.call(a,b)},type:function(a){return null==a?a+"":"object"==typeof a||"function"==typeof a?h[i.call(a)]||"object":typeof a},globalEval:function(b){b&&m.trim(b)&&(a.execScript||function(b){a.eval.call(a,b)})(b)},camelCase:function(a){return a.replace(o,"ms-").replace(p,q)},nodeName:function(a,b){return a.nodeName&&a.nodeName.toLowerCase()===b.toLowerCase()},each:function(a,b,c){var d,e=0,f=a.length,g=r(a);if(c){if(g){for(;f>e;e++)if(d=b.apply(a[e],c),d===!1)break}else for(e in a)if(d=b.apply(a[e],c),d===!1)break}else if(g){for(;f>e;e++)if(d=b.call(a[e],e,a[e]),d===!1)break}else for(e in a)if(d=b.call(a[e],e,a[e]),d===!1)break;return a},trim:function(a){return null==a?"":(a+"").replace(n,"")},makeArray:function(a,b){var c=b||[];return null!=a&&(r(Object(a))?m.merge(c,"string"==typeof a?[a]:a):f.call(c,a)),c},inArray:function(a,b,c){var d;if(b){if(g)return g.call(b,a,c);for(d=b.length,c=c?0>c?Math.max(0,d+c):c:0;d>c;c++)if(c in b&&b[c]===a)return c}return-1},merge:function(a,b){var c=+b.length,d=0,e=a.length;while(c>d)a[e++]=b[d++];if(c!==c)while(void 0!==b[d])a[e++]=b[d++];return a.length=e,a},grep:function(a,b,c){for(var d,e=[],f=0,g=a.length,h=!c;g>f;f++)d=!b(a[f],f),d!==h&&e.push(a[f]);return e},map:function(a,b,c){var d,f=0,g=a.length,h=r(a),i=[];if(h)for(;g>f;f++)d=b(a[f],f,c),null!=d&&i.push(d);else for(f in a)d=b(a[f],f,c),null!=d&&i.push(d);return e.apply([],i)},guid:1,proxy:function(a,b){var c,e,f;return"string"==typeof b&&(f=a[b],b=a,a=f),m.isFunction(a)?(c=d.call(arguments,2),e=function(){return a.apply(b||this,c.concat(d.call(arguments)))},e.guid=a.guid=a.guid||m.guid++,e):void 0},now:function(){return+new Date},support:k}),m.each("Boolean Number String Function Array Date RegExp Object Error".split(" "),function(a,b){h["[object "+b+"]"]=b.toLowerCase()});function r(a){var b="length"in a&&a.length,c=m.type(a);return"function"===c||m.isWindow(a)?!1:1===a.nodeType&&b?!0:"array"===c||0===b||"number"==typeof b&&b>0&&b-1 in a}var s=function(a){var b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u="sizzle"+1*new Date,v=a.document,w=0,x=0,y=ha(),z=ha(),A=ha(),B=function(a,b){return a===b&&(l=!0),0},C=1<<31,D={}.hasOwnProperty,E=[],F=E.pop,G=E.push,H=E.push,I=E.slice,J=function(a,b){for(var c=0,d=a.length;d>c;c++)if(a[c]===b)return c;return-1},K="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",L="[\\x20\\t\\r\\n\\f]",M="(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",N=M.replace("w","w#"),O="\\["+L+"*("+M+")(?:"+L+"*([*^$|!~]?=)"+L+"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|("+N+"))|)"+L+"*\\]",P=":("+M+")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|"+O+")*)|.*)\\)|)",Q=new RegExp(L+"+","g"),R=new RegExp("^"+L+"+|((?:^|[^\\\\])(?:\\\\.)*)"+L+"+$","g"),S=new RegExp("^"+L+"*,"+L+"*"),T=new RegExp("^"+L+"*([>+~]|"+L+")"+L+"*"),U=new RegExp("="+L+"*([^\\]'\"]*?)"+L+"*\\]","g"),V=new RegExp(P),W=new RegExp("^"+N+"$"),X={ID:new RegExp("^#("+M+")"),CLASS:new RegExp("^\\.("+M+")"),TAG:new RegExp("^("+M.replace("w","w*")+")"),ATTR:new RegExp("^"+O),PSEUDO:new RegExp("^"+P),CHILD:new RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\("+L+"*(even|odd|(([+-]|)(\\d*)n|)"+L+"*(?:([+-]|)"+L+"*(\\d+)|))"+L+"*\\)|)","i"),bool:new RegExp("^(?:"+K+")$","i"),needsContext:new RegExp("^"+L+"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\("+L+"*((?:-\\d)?\\d*)"+L+"*\\)|)(?=[^-]|$)","i")},Y=/^(?:input|select|textarea|button)$/i,Z=/^h\d$/i,$=/^[^{]+\{\s*\[native \w/,_=/^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,aa=/[+~]/,ba=/'|\\/g,ca=new RegExp("\\\\([\\da-f]{1,6}"+L+"?|("+L+")|.)","ig"),da=function(a,b,c){var d="0x"+b-65536;return d!==d||c?b:0>d?String.fromCharCode(d+65536):String.fromCharCode(d>>10|55296,1023&d|56320)},ea=function(){m()};try{H.apply(E=I.call(v.childNodes),v.childNodes),E[v.childNodes.length].nodeType}catch(fa){H={apply:E.length?function(a,b){G.apply(a,I.call(b))}:function(a,b){var c=a.length,d=0;while(a[c++]=b[d++]);a.length=c-1}}}function ga(a,b,d,e){var f,h,j,k,l,o,r,s,w,x;if((b?b.ownerDocument||b:v)!==n&&m(b),b=b||n,d=d||[],k=b.nodeType,"string"!=typeof a||!a||1!==k&&9!==k&&11!==k)return d;if(!e&&p){if(11!==k&&(f=_.exec(a)))if(j=f[1]){if(9===k){if(h=b.getElementById(j),!h||!h.parentNode)return d;if(h.id===j)return d.push(h),d}else if(b.ownerDocument&&(h=b.ownerDocument.getElementById(j))&&t(b,h)&&h.id===j)return d.push(h),d}else{if(f[2])return H.apply(d,b.getElementsByTagName(a)),d;if((j=f[3])&&c.getElementsByClassName)return H.apply(d,b.getElementsByClassName(j)),d}if(c.qsa&&(!q||!q.test(a))){if(s=r=u,w=b,x=1!==k&&a,1===k&&"object"!==b.nodeName.toLowerCase()){o=g(a),(r=b.getAttribute("id"))?s=r.replace(ba,"\\$&"):b.setAttribute("id",s),s="[id='"+s+"'] ",l=o.length;while(l--)o[l]=s+ra(o[l]);w=aa.test(a)&&pa(b.parentNode)||b,x=o.join(",")}if(x)try{return H.apply(d,w.querySelectorAll(x)),d}catch(y){}finally{r||b.removeAttribute("id")}}}return i(a.replace(R,"$1"),b,d,e)}function ha(){var a=[];function b(c,e){return a.push(c+" ")>d.cacheLength&&delete b[a.shift()],b[c+" "]=e}return b}function ia(a){return a[u]=!0,a}function ja(a){var b=n.createElement("div");try{return!!a(b)}catch(c){return!1}finally{b.parentNode&&b.parentNode.removeChild(b),b=null}}function ka(a,b){var c=a.split("|"),e=a.length;while(e--)d.attrHandle[c[e]]=b}function la(a,b){var c=b&&a,d=c&&1===a.nodeType&&1===b.nodeType&&(~b.sourceIndex||C)-(~a.sourceIndex||C);if(d)return d;if(c)while(c=c.nextSibling)if(c===b)return-1;return a?1:-1}function ma(a){return function(b){var c=b.nodeName.toLowerCase();return"input"===c&&b.type===a}}function na(a){return function(b){var c=b.nodeName.toLowerCase();return("input"===c||"button"===c)&&b.type===a}}function oa(a){return ia(function(b){return b=+b,ia(function(c,d){var e,f=a([],c.length,b),g=f.length;while(g--)c[e=f[g]]&&(c[e]=!(d[e]=c[e]))})})}function pa(a){return a&&"undefined"!=typeof a.getElementsByTagName&&a}c=ga.support={},f=ga.isXML=function(a){var b=a&&(a.ownerDocument||a).documentElement;return b?"HTML"!==b.nodeName:!1},m=ga.setDocument=function(a){var b,e,g=a?a.ownerDocument||a:v;return g!==n&&9===g.nodeType&&g.documentElement?(n=g,o=g.documentElement,e=g.defaultView,e&&e!==e.top&&(e.addEventListener?e.addEventListener("unload",ea,!1):e.attachEvent&&e.attachEvent("onunload",ea)),p=!f(g),c.attributes=ja(function(a){return a.className="i",!a.getAttribute("className")}),c.getElementsByTagName=ja(function(a){return a.appendChild(g.createComment("")),!a.getElementsByTagName("*").length}),c.getElementsByClassName=$.test(g.getElementsByClassName),c.getById=ja(function(a){return o.appendChild(a).id=u,!g.getElementsByName||!g.getElementsByName(u).length}),c.getById?(d.find.ID=function(a,b){if("undefined"!=typeof b.getElementById&&p){var c=b.getElementById(a);return c&&c.parentNode?[c]:[]}},d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){return a.getAttribute("id")===b}}):(delete d.find.ID,d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){var c="undefined"!=typeof a.getAttributeNode&&a.getAttributeNode("id");return c&&c.value===b}}),d.find.TAG=c.getElementsByTagName?function(a,b){return"undefined"!=typeof b.getElementsByTagName?b.getElementsByTagName(a):c.qsa?b.querySelectorAll(a):void 0}:function(a,b){var c,d=[],e=0,f=b.getElementsByTagName(a);if("*"===a){while(c=f[e++])1===c.nodeType&&d.push(c);return d}return f},d.find.CLASS=c.getElementsByClassName&&function(a,b){return p?b.getElementsByClassName(a):void 0},r=[],q=[],(c.qsa=$.test(g.querySelectorAll))&&(ja(function(a){o.appendChild(a).innerHTML="<a id='"+u+"'></a><select id='"+u+"-\f]' msallowcapture=''><option selected=''></option></select>",a.querySelectorAll("[msallowcapture^='']").length&&q.push("[*^$]="+L+"*(?:''|\"\")"),a.querySelectorAll("[selected]").length||q.push("\\["+L+"*(?:value|"+K+")"),a.querySelectorAll("[id~="+u+"-]").length||q.push("~="),a.querySelectorAll(":checked").length||q.push(":checked"),a.querySelectorAll("a#"+u+"+*").length||q.push(".#.+[+~]")}),ja(function(a){var b=g.createElement("input");b.setAttribute("type","hidden"),a.appendChild(b).setAttribute("name","D"),a.querySelectorAll("[name=d]").length&&q.push("name"+L+"*[*^$|!~]?="),a.querySelectorAll(":enabled").length||q.push(":enabled",":disabled"),a.querySelectorAll("*,:x"),q.push(",.*:")})),(c.matchesSelector=$.test(s=o.matches||o.webkitMatchesSelector||o.mozMatchesSelector||o.oMatchesSelector||o.msMatchesSelector))&&ja(function(a){c.disconnectedMatch=s.call(a,"div"),s.call(a,"[s!='']:x"),r.push("!=",P)}),q=q.length&&new RegExp(q.join("|")),r=r.length&&new RegExp(r.join("|")),b=$.test(o.compareDocumentPosition),t=b||$.test(o.contains)?function(a,b){var c=9===a.nodeType?a.documentElement:a,d=b&&b.parentNode;return a===d||!(!d||1!==d.nodeType||!(c.contains?c.contains(d):a.compareDocumentPosition&&16&a.compareDocumentPosition(d)))}:function(a,b){if(b)while(b=b.parentNode)if(b===a)return!0;return!1},B=b?function(a,b){if(a===b)return l=!0,0;var d=!a.compareDocumentPosition-!b.compareDocumentPosition;return d?d:(d=(a.ownerDocument||a)===(b.ownerDocument||b)?a.compareDocumentPosition(b):1,1&d||!c.sortDetached&&b.compareDocumentPosition(a)===d?a===g||a.ownerDocument===v&&t(v,a)?-1:b===g||b.ownerDocument===v&&t(v,b)?1:k?J(k,a)-J(k,b):0:4&d?-1:1)}:function(a,b){if(a===b)return l=!0,0;var c,d=0,e=a.parentNode,f=b.parentNode,h=[a],i=[b];if(!e||!f)return a===g?-1:b===g?1:e?-1:f?1:k?J(k,a)-J(k,b):0;if(e===f)return la(a,b);c=a;while(c=c.parentNode)h.unshift(c);c=b;while(c=c.parentNode)i.unshift(c);while(h[d]===i[d])d++;return d?la(h[d],i[d]):h[d]===v?-1:i[d]===v?1:0},g):n},ga.matches=function(a,b){return ga(a,null,null,b)},ga.matchesSelector=function(a,b){if((a.ownerDocument||a)!==n&&m(a),b=b.replace(U,"='$1']"),!(!c.matchesSelector||!p||r&&r.test(b)||q&&q.test(b)))try{var d=s.call(a,b);if(d||c.disconnectedMatch||a.document&&11!==a.document.nodeType)return d}catch(e){}return ga(b,n,null,[a]).length>0},ga.contains=function(a,b){return(a.ownerDocument||a)!==n&&m(a),t(a,b)},ga.attr=function(a,b){(a.ownerDocument||a)!==n&&m(a);var e=d.attrHandle[b.toLowerCase()],f=e&&D.call(d.attrHandle,b.toLowerCase())?e(a,b,!p):void 0;return void 0!==f?f:c.attributes||!p?a.getAttribute(b):(f=a.getAttributeNode(b))&&f.specified?f.value:null},ga.error=function(a){throw new Error("Syntax error, unrecognized expression: "+a)},ga.uniqueSort=function(a){var b,d=[],e=0,f=0;if(l=!c.detectDuplicates,k=!c.sortStable&&a.slice(0),a.sort(B),l){while(b=a[f++])b===a[f]&&(e=d.push(f));while(e--)a.splice(d[e],1)}return k=null,a},e=ga.getText=function(a){var b,c="",d=0,f=a.nodeType;if(f){if(1===f||9===f||11===f){if("string"==typeof a.textContent)return a.textContent;for(a=a.firstChild;a;a=a.nextSibling)c+=e(a)}else if(3===f||4===f)return a.nodeValue}else while(b=a[d++])c+=e(b);return c},d=ga.selectors={cacheLength:50,createPseudo:ia,match:X,attrHandle:{},find:{},relative:{">":{dir:"parentNode",first:!0}," ":{dir:"parentNode"},"+":{dir:"previousSibling",first:!0},"~":{dir:"previousSibling"}},preFilter:{ATTR:function(a){return a[1]=a[1].replace(ca,da),a[3]=(a[3]||a[4]||a[5]||"").replace(ca,da),"~="===a[2]&&(a[3]=" "+a[3]+" "),a.slice(0,4)},CHILD:function(a){return a[1]=a[1].toLowerCase(),"nth"===a[1].slice(0,3)?(a[3]||ga.error(a[0]),a[4]=+(a[4]?a[5]+(a[6]||1):2*("even"===a[3]||"odd"===a[3])),a[5]=+(a[7]+a[8]||"odd"===a[3])):a[3]&&ga.error(a[0]),a},PSEUDO:function(a){var b,c=!a[6]&&a[2];return X.CHILD.test(a[0])?null:(a[3]?a[2]=a[4]||a[5]||"":c&&V.test(c)&&(b=g(c,!0))&&(b=c.indexOf(")",c.length-b)-c.length)&&(a[0]=a[0].slice(0,b),a[2]=c.slice(0,b)),a.slice(0,3))}},filter:{TAG:function(a){var b=a.replace(ca,da).toLowerCase();return"*"===a?function(){return!0}:function(a){return a.nodeName&&a.nodeName.toLowerCase()===b}},CLASS:function(a){var b=y[a+" "];return b||(b=new RegExp("(^|"+L+")"+a+"("+L+"|$)"))&&y(a,function(a){return b.test("string"==typeof a.className&&a.className||"undefined"!=typeof a.getAttribute&&a.getAttribute("class")||"")})},ATTR:function(a,b,c){return function(d){var e=ga.attr(d,a);return null==e?"!="===b:b?(e+="","="===b?e===c:"!="===b?e!==c:"^="===b?c&&0===e.indexOf(c):"*="===b?c&&e.indexOf(c)>-1:"$="===b?c&&e.slice(-c.length)===c:"~="===b?(" "+e.replace(Q," ")+" ").indexOf(c)>-1:"|="===b?e===c||e.slice(0,c.length+1)===c+"-":!1):!0}},CHILD:function(a,b,c,d,e){var f="nth"!==a.slice(0,3),g="last"!==a.slice(-4),h="of-type"===b;return 1===d&&0===e?function(a){return!!a.parentNode}:function(b,c,i){var j,k,l,m,n,o,p=f!==g?"nextSibling":"previousSibling",q=b.parentNode,r=h&&b.nodeName.toLowerCase(),s=!i&&!h;if(q){if(f){while(p){l=b;while(l=l[p])if(h?l.nodeName.toLowerCase()===r:1===l.nodeType)return!1;o=p="only"===a&&!o&&"nextSibling"}return!0}if(o=[g?q.firstChild:q.lastChild],g&&s){k=q[u]||(q[u]={}),j=k[a]||[],n=j[0]===w&&j[1],m=j[0]===w&&j[2],l=n&&q.childNodes[n];while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if(1===l.nodeType&&++m&&l===b){k[a]=[w,n,m];break}}else if(s&&(j=(b[u]||(b[u]={}))[a])&&j[0]===w)m=j[1];else while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if((h?l.nodeName.toLowerCase()===r:1===l.nodeType)&&++m&&(s&&((l[u]||(l[u]={}))[a]=[w,m]),l===b))break;return m-=e,m===d||m%d===0&&m/d>=0}}},PSEUDO:function(a,b){var c,e=d.pseudos[a]||d.setFilters[a.toLowerCase()]||ga.error("unsupported pseudo: "+a);return e[u]?e(b):e.length>1?(c=[a,a,"",b],d.setFilters.hasOwnProperty(a.toLowerCase())?ia(function(a,c){var d,f=e(a,b),g=f.length;while(g--)d=J(a,f[g]),a[d]=!(c[d]=f[g])}):function(a){return e(a,0,c)}):e}},pseudos:{not:ia(function(a){var b=[],c=[],d=h(a.replace(R,"$1"));return d[u]?ia(function(a,b,c,e){var f,g=d(a,null,e,[]),h=a.length;while(h--)(f=g[h])&&(a[h]=!(b[h]=f))}):function(a,e,f){return b[0]=a,d(b,null,f,c),b[0]=null,!c.pop()}}),has:ia(function(a){return function(b){return ga(a,b).length>0}}),contains:ia(function(a){return a=a.replace(ca,da),function(b){return(b.textContent||b.innerText||e(b)).indexOf(a)>-1}}),lang:ia(function(a){return W.test(a||"")||ga.error("unsupported lang: "+a),a=a.replace(ca,da).toLowerCase(),function(b){var c;do if(c=p?b.lang:b.getAttribute("xml:lang")||b.getAttribute("lang"))return c=c.toLowerCase(),c===a||0===c.indexOf(a+"-");while((b=b.parentNode)&&1===b.nodeType);return!1}}),target:function(b){var c=a.location&&a.location.hash;return c&&c.slice(1)===b.id},root:function(a){return a===o},focus:function(a){return a===n.activeElement&&(!n.hasFocus||n.hasFocus())&&!!(a.type||a.href||~a.tabIndex)},enabled:function(a){return a.disabled===!1},disabled:function(a){return a.disabled===!0},checked:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&!!a.checked||"option"===b&&!!a.selected},selected:function(a){return a.parentNode&&a.parentNode.selectedIndex,a.selected===!0},empty:function(a){for(a=a.firstChild;a;a=a.nextSibling)if(a.nodeType<6)return!1;return!0},parent:function(a){return!d.pseudos.empty(a)},header:function(a){return Z.test(a.nodeName)},input:function(a){return Y.test(a.nodeName)},button:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&"button"===a.type||"button"===b},text:function(a){var b;return"input"===a.nodeName.toLowerCase()&&"text"===a.type&&(null==(b=a.getAttribute("type"))||"text"===b.toLowerCase())},first:oa(function(){return[0]}),last:oa(function(a,b){return[b-1]}),eq:oa(function(a,b,c){return[0>c?c+b:c]}),even:oa(function(a,b){for(var c=0;b>c;c+=2)a.push(c);return a}),odd:oa(function(a,b){for(var c=1;b>c;c+=2)a.push(c);return a}),lt:oa(function(a,b,c){for(var d=0>c?c+b:c;--d>=0;)a.push(d);return a}),gt:oa(function(a,b,c){for(var d=0>c?c+b:c;++d<b;)a.push(d);return a})}},d.pseudos.nth=d.pseudos.eq;for(b in{radio:!0,checkbox:!0,file:!0,password:!0,image:!0})d.pseudos[b]=ma(b);for(b in{submit:!0,reset:!0})d.pseudos[b]=na(b);function qa(){}qa.prototype=d.filters=d.pseudos,d.setFilters=new qa,g=ga.tokenize=function(a,b){var c,e,f,g,h,i,j,k=z[a+" "];if(k)return b?0:k.slice(0);h=a,i=[],j=d.preFilter;while(h){(!c||(e=S.exec(h)))&&(e&&(h=h.slice(e[0].length)||h),i.push(f=[])),c=!1,(e=T.exec(h))&&(c=e.shift(),f.push({value:c,type:e[0].replace(R," ")}),h=h.slice(c.length));for(g in d.filter)!(e=X[g].exec(h))||j[g]&&!(e=j[g](e))||(c=e.shift(),f.push({value:c,type:g,matches:e}),h=h.slice(c.length));if(!c)break}return b?h.length:h?ga.error(a):z(a,i).slice(0)};function ra(a){for(var b=0,c=a.length,d="";c>b;b++)d+=a[b].value;return d}function sa(a,b,c){var d=b.dir,e=c&&"parentNode"===d,f=x++;return b.first?function(b,c,f){while(b=b[d])if(1===b.nodeType||e)return a(b,c,f)}:function(b,c,g){var h,i,j=[w,f];if(g){while(b=b[d])if((1===b.nodeType||e)&&a(b,c,g))return!0}else while(b=b[d])if(1===b.nodeType||e){if(i=b[u]||(b[u]={}),(h=i[d])&&h[0]===w&&h[1]===f)return j[2]=h[2];if(i[d]=j,j[2]=a(b,c,g))return!0}}}function ta(a){return a.length>1?function(b,c,d){var e=a.length;while(e--)if(!a[e](b,c,d))return!1;return!0}:a[0]}function ua(a,b,c){for(var d=0,e=b.length;e>d;d++)ga(a,b[d],c);return c}function va(a,b,c,d,e){for(var f,g=[],h=0,i=a.length,j=null!=b;i>h;h++)(f=a[h])&&(!c||c(f,d,e))&&(g.push(f),j&&b.push(h));return g}function wa(a,b,c,d,e,f){return d&&!d[u]&&(d=wa(d)),e&&!e[u]&&(e=wa(e,f)),ia(function(f,g,h,i){var j,k,l,m=[],n=[],o=g.length,p=f||ua(b||"*",h.nodeType?[h]:h,[]),q=!a||!f&&b?p:va(p,m,a,h,i),r=c?e||(f?a:o||d)?[]:g:q;if(c&&c(q,r,h,i),d){j=va(r,n),d(j,[],h,i),k=j.length;while(k--)(l=j[k])&&(r[n[k]]=!(q[n[k]]=l))}if(f){if(e||a){if(e){j=[],k=r.length;while(k--)(l=r[k])&&j.push(q[k]=l);e(null,r=[],j,i)}k=r.length;while(k--)(l=r[k])&&(j=e?J(f,l):m[k])>-1&&(f[j]=!(g[j]=l))}}else r=va(r===g?r.splice(o,r.length):r),e?e(null,g,r,i):H.apply(g,r)})}function xa(a){for(var b,c,e,f=a.length,g=d.relative[a[0].type],h=g||d.relative[" "],i=g?1:0,k=sa(function(a){return a===b},h,!0),l=sa(function(a){return J(b,a)>-1},h,!0),m=[function(a,c,d){var e=!g&&(d||c!==j)||((b=c).nodeType?k(a,c,d):l(a,c,d));return b=null,e}];f>i;i++)if(c=d.relative[a[i].type])m=[sa(ta(m),c)];else{if(c=d.filter[a[i].type].apply(null,a[i].matches),c[u]){for(e=++i;f>e;e++)if(d.relative[a[e].type])break;return wa(i>1&&ta(m),i>1&&ra(a.slice(0,i-1).concat({value:" "===a[i-2].type?"*":""})).replace(R,"$1"),c,e>i&&xa(a.slice(i,e)),f>e&&xa(a=a.slice(e)),f>e&&ra(a))}m.push(c)}return ta(m)}function ya(a,b){var c=b.length>0,e=a.length>0,f=function(f,g,h,i,k){var l,m,o,p=0,q="0",r=f&&[],s=[],t=j,u=f||e&&d.find.TAG("*",k),v=w+=null==t?1:Math.random()||.1,x=u.length;for(k&&(j=g!==n&&g);q!==x&&null!=(l=u[q]);q++){if(e&&l){m=0;while(o=a[m++])if(o(l,g,h)){i.push(l);break}k&&(w=v)}c&&((l=!o&&l)&&p--,f&&r.push(l))}if(p+=q,c&&q!==p){m=0;while(o=b[m++])o(r,s,g,h);if(f){if(p>0)while(q--)r[q]||s[q]||(s[q]=F.call(i));s=va(s)}H.apply(i,s),k&&!f&&s.length>0&&p+b.length>1&&ga.uniqueSort(i)}return k&&(w=v,j=t),r};return c?ia(f):f}return h=ga.compile=function(a,b){var c,d=[],e=[],f=A[a+" "];if(!f){b||(b=g(a)),c=b.length;while(c--)f=xa(b[c]),f[u]?d.push(f):e.push(f);f=A(a,ya(e,d)),f.selector=a}return f},i=ga.select=function(a,b,e,f){var i,j,k,l,m,n="function"==typeof a&&a,o=!f&&g(a=n.selector||a);if(e=e||[],1===o.length){if(j=o[0]=o[0].slice(0),j.length>2&&"ID"===(k=j[0]).type&&c.getById&&9===b.nodeType&&p&&d.relative[j[1].type]){if(b=(d.find.ID(k.matches[0].replace(ca,da),b)||[])[0],!b)return e;n&&(b=b.parentNode),a=a.slice(j.shift().value.length)}i=X.needsContext.test(a)?0:j.length;while(i--){if(k=j[i],d.relative[l=k.type])break;if((m=d.find[l])&&(f=m(k.matches[0].replace(ca,da),aa.test(j[0].type)&&pa(b.parentNode)||b))){if(j.splice(i,1),a=f.length&&ra(j),!a)return H.apply(e,f),e;break}}}return(n||h(a,o))(f,b,!p,e,aa.test(a)&&pa(b.parentNode)||b),e},c.sortStable=u.split("").sort(B).join("")===u,c.detectDuplicates=!!l,m(),c.sortDetached=ja(function(a){return 1&a.compareDocumentPosition(n.createElement("div"))}),ja(function(a){return a.innerHTML="<a href='#'></a>","#"===a.firstChild.getAttribute("href")})||ka("type|href|height|width",function(a,b,c){return c?void 0:a.getAttribute(b,"type"===b.toLowerCase()?1:2)}),c.attributes&&ja(function(a){return a.innerHTML="<input/>",a.firstChild.setAttribute("value",""),""===a.firstChild.getAttribute("value")})||ka("value",function(a,b,c){return c||"input"!==a.nodeName.toLowerCase()?void 0:a.defaultValue}),ja(function(a){return null==a.getAttribute("disabled")})||ka(K,function(a,b,c){var d;return c?void 0:a[b]===!0?b.toLowerCase():(d=a.getAttributeNode(b))&&d.specified?d.value:null}),ga}(a);m.find=s,m.expr=s.selectors,m.expr[":"]=m.expr.pseudos,m.unique=s.uniqueSort,m.text=s.getText,m.isXMLDoc=s.isXML,m.contains=s.contains;var t=m.expr.match.needsContext,u=/^<(\w+)\s*\/?>(?:<\/\1>|)$/,v=/^.[^:#\[\.,]*$/;function w(a,b,c){if(m.isFunction(b))return m.grep(a,function(a,d){return!!b.call(a,d,a)!==c});if(b.nodeType)return m.grep(a,function(a){return a===b!==c});if("string"==typeof b){if(v.test(b))return m.filter(b,a,c);b=m.filter(b,a)}return m.grep(a,function(a){return m.inArray(a,b)>=0!==c})}m.filter=function(a,b,c){var d=b[0];return c&&(a=":not("+a+")"),1===b.length&&1===d.nodeType?m.find.matchesSelector(d,a)?[d]:[]:m.find.matches(a,m.grep(b,function(a){return 1===a.nodeType}))},m.fn.extend({find:function(a){var b,c=[],d=this,e=d.length;if("string"!=typeof a)return this.pushStack(m(a).filter(function(){for(b=0;e>b;b++)if(m.contains(d[b],this))return!0}));for(b=0;e>b;b++)m.find(a,d[b],c);return c=this.pushStack(e>1?m.unique(c):c),c.selector=this.selector?this.selector+" "+a:a,c},filter:function(a){return this.pushStack(w(this,a||[],!1))},not:function(a){return this.pushStack(w(this,a||[],!0))},is:function(a){return!!w(this,"string"==typeof a&&t.test(a)?m(a):a||[],!1).length}});var x,y=a.document,z=/^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/,A=m.fn.init=function(a,b){var c,d;if(!a)return this;if("string"==typeof a){if(c="<"===a.charAt(0)&&">"===a.charAt(a.length-1)&&a.length>=3?[null,a,null]:z.exec(a),!c||!c[1]&&b)return!b||b.jquery?(b||x).find(a):this.constructor(b).find(a);if(c[1]){if(b=b instanceof m?b[0]:b,m.merge(this,m.parseHTML(c[1],b&&b.nodeType?b.ownerDocument||b:y,!0)),u.test(c[1])&&m.isPlainObject(b))for(c in b)m.isFunction(this[c])?this[c](b[c]):this.attr(c,b[c]);return this}if(d=y.getElementById(c[2]),d&&d.parentNode){if(d.id!==c[2])return x.find(a);this.length=1,this[0]=d}return this.context=y,this.selector=a,this}return a.nodeType?(this.context=this[0]=a,this.length=1,this):m.isFunction(a)?"undefined"!=typeof x.ready?x.ready(a):a(m):(void 0!==a.selector&&(this.selector=a.selector,this.context=a.context),m.makeArray(a,this))};A.prototype=m.fn,x=m(y);var B=/^(?:parents|prev(?:Until|All))/,C={children:!0,contents:!0,next:!0,prev:!0};m.extend({dir:function(a,b,c){var d=[],e=a[b];while(e&&9!==e.nodeType&&(void 0===c||1!==e.nodeType||!m(e).is(c)))1===e.nodeType&&d.push(e),e=e[b];return d},sibling:function(a,b){for(var c=[];a;a=a.nextSibling)1===a.nodeType&&a!==b&&c.push(a);return c}}),m.fn.extend({has:function(a){var b,c=m(a,this),d=c.length;return this.filter(function(){for(b=0;d>b;b++)if(m.contains(this,c[b]))return!0})},closest:function(a,b){for(var c,d=0,e=this.length,f=[],g=t.test(a)||"string"!=typeof a?m(a,b||this.context):0;e>d;d++)for(c=this[d];c&&c!==b;c=c.parentNode)if(c.nodeType<11&&(g?g.index(c)>-1:1===c.nodeType&&m.find.matchesSelector(c,a))){f.push(c);break}return this.pushStack(f.length>1?m.unique(f):f)},index:function(a){return a?"string"==typeof a?m.inArray(this[0],m(a)):m.inArray(a.jquery?a[0]:a,this):this[0]&&this[0].parentNode?this.first().prevAll().length:-1},add:function(a,b){return this.pushStack(m.unique(m.merge(this.get(),m(a,b))))},addBack:function(a){return this.add(null==a?this.prevObject:this.prevObject.filter(a))}});function D(a,b){do a=a[b];while(a&&1!==a.nodeType);return a}m.each({parent:function(a){var b=a.parentNode;return b&&11!==b.nodeType?b:null},parents:function(a){return m.dir(a,"parentNode")},parentsUntil:function(a,b,c){return m.dir(a,"parentNode",c)},next:function(a){return D(a,"nextSibling")},prev:function(a){return D(a,"previousSibling")},nextAll:function(a){return m.dir(a,"nextSibling")},prevAll:function(a){return m.dir(a,"previousSibling")},nextUntil:function(a,b,c){return m.dir(a,"nextSibling",c)},prevUntil:function(a,b,c){return m.dir(a,"previousSibling",c)},siblings:function(a){return m.sibling((a.parentNode||{}).firstChild,a)},children:function(a){return m.sibling(a.firstChild)},contents:function(a){return m.nodeName(a,"iframe")?a.contentDocument||a.contentWindow.document:m.merge([],a.childNodes)}},function(a,b){m.fn[a]=function(c,d){var e=m.map(this,b,c);return"Until"!==a.slice(-5)&&(d=c),d&&"string"==typeof d&&(e=m.filter(d,e)),this.length>1&&(C[a]||(e=m.unique(e)),B.test(a)&&(e=e.reverse())),this.pushStack(e)}});var E=/\S+/g,F={};function G(a){var b=F[a]={};return m.each(a.match(E)||[],function(a,c){b[c]=!0}),b}m.Callbacks=function(a){a="string"==typeof a?F[a]||G(a):m.extend({},a);var b,c,d,e,f,g,h=[],i=!a.once&&[],j=function(l){for(c=a.memory&&l,d=!0,f=g||0,g=0,e=h.length,b=!0;h&&e>f;f++)if(h[f].apply(l[0],l[1])===!1&&a.stopOnFalse){c=!1;break}b=!1,h&&(i?i.length&&j(i.shift()):c?h=[]:k.disable())},k={add:function(){if(h){var d=h.length;!function f(b){m.each(b,function(b,c){var d=m.type(c);"function"===d?a.unique&&k.has(c)||h.push(c):c&&c.length&&"string"!==d&&f(c)})}(arguments),b?e=h.length:c&&(g=d,j(c))}return this},remove:function(){return h&&m.each(arguments,function(a,c){var d;while((d=m.inArray(c,h,d))>-1)h.splice(d,1),b&&(e>=d&&e--,f>=d&&f--)}),this},has:function(a){return a?m.inArray(a,h)>-1:!(!h||!h.length)},empty:function(){return h=[],e=0,this},disable:function(){return h=i=c=void 0,this},disabled:function(){return!h},lock:function(){return i=void 0,c||k.disable(),this},locked:function(){return!i},fireWith:function(a,c){return!h||d&&!i||(c=c||[],c=[a,c.slice?c.slice():c],b?i.push(c):j(c)),this},fire:function(){return k.fireWith(this,arguments),this},fired:function(){return!!d}};return k},m.extend({Deferred:function(a){var b=[["resolve","done",m.Callbacks("once memory"),"resolved"],["reject","fail",m.Callbacks("once memory"),"rejected"],["notify","progress",m.Callbacks("memory")]],c="pending",d={state:function(){return c},always:function(){return e.done(arguments).fail(arguments),this},then:function(){var a=arguments;return m.Deferred(function(c){m.each(b,function(b,f){var g=m.isFunction(a[b])&&a[b];e[f[1]](function(){var a=g&&g.apply(this,arguments);a&&m.isFunction(a.promise)?a.promise().done(c.resolve).fail(c.reject).progress(c.notify):c[f[0]+"With"](this===d?c.promise():this,g?[a]:arguments)})}),a=null}).promise()},promise:function(a){return null!=a?m.extend(a,d):d}},e={};return d.pipe=d.then,m.each(b,function(a,f){var g=f[2],h=f[3];d[f[1]]=g.add,h&&g.add(function(){c=h},b[1^a][2].disable,b[2][2].lock),e[f[0]]=function(){return e[f[0]+"With"](this===e?d:this,arguments),this},e[f[0]+"With"]=g.fireWith}),d.promise(e),a&&a.call(e,e),e},when:function(a){var b=0,c=d.call(arguments),e=c.length,f=1!==e||a&&m.isFunction(a.promise)?e:0,g=1===f?a:m.Deferred(),h=function(a,b,c){return function(e){b[a]=this,c[a]=arguments.length>1?d.call(arguments):e,c===i?g.notifyWith(b,c):--f||g.resolveWith(b,c)}},i,j,k;if(e>1)for(i=new Array(e),j=new Array(e),k=new Array(e);e>b;b++)c[b]&&m.isFunction(c[b].promise)?c[b].promise().done(h(b,k,c)).fail(g.reject).progress(h(b,j,i)):--f;return f||g.resolveWith(k,c),g.promise()}});var H;m.fn.ready=function(a){return m.ready.promise().done(a),this},m.extend({isReady:!1,readyWait:1,holdReady:function(a){a?m.readyWait++:m.ready(!0)},ready:function(a){if(a===!0?!--m.readyWait:!m.isReady){if(!y.body)return setTimeout(m.ready);m.isReady=!0,a!==!0&&--m.readyWait>0||(H.resolveWith(y,[m]),m.fn.triggerHandler&&(m(y).triggerHandler("ready"),m(y).off("ready")))}}});function I(){y.addEventListener?(y.removeEventListener("DOMContentLoaded",J,!1),a.removeEventListener("load",J,!1)):(y.detachEvent("onreadystatechange",J),a.detachEvent("onload",J))}function J(){(y.addEventListener||"load"===event.type||"complete"===y.readyState)&&(I(),m.ready())}m.ready.promise=function(b){if(!H)if(H=m.Deferred(),"complete"===y.readyState)setTimeout(m.ready);else if(y.addEventListener)y.addEventListener("DOMContentLoaded",J,!1),a.addEventListener("load",J,!1);else{y.attachEvent("onreadystatechange",J),a.attachEvent("onload",J);var c=!1;try{c=null==a.frameElement&&y.documentElement}catch(d){}c&&c.doScroll&&!function e(){if(!m.isReady){try{c.doScroll("left")}catch(a){return setTimeout(e,50)}I(),m.ready()}}()}return H.promise(b)};var K="undefined",L;for(L in m(k))break;k.ownLast="0"!==L,k.inlineBlockNeedsLayout=!1,m(function(){var a,b,c,d;c=y.getElementsByTagName("body")[0],c&&c.style&&(b=y.createElement("div"),d=y.createElement("div"),d.style.cssText="position:absolute;border:0;width:0;height:0;top:0;left:-9999px",c.appendChild(d).appendChild(b),typeof b.style.zoom!==K&&(b.style.cssText="display:inline;margin:0;border:0;padding:1px;width:1px;zoom:1",k.inlineBlockNeedsLayout=a=3===b.offsetWidth,a&&(c.style.zoom=1)),c.removeChild(d))}),function(){var a=y.createElement("div");if(null==k.deleteExpando){k.deleteExpando=!0;try{delete a.test}catch(b){k.deleteExpando=!1}}a=null}(),m.acceptData=function(a){var b=m.noData[(a.nodeName+" ").toLowerCase()],c=+a.nodeType||1;return 1!==c&&9!==c?!1:!b||b!==!0&&a.getAttribute("classid")===b};var M=/^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,N=/([A-Z])/g;function O(a,b,c){if(void 0===c&&1===a.nodeType){var d="data-"+b.replace(N,"-$1").toLowerCase();if(c=a.getAttribute(d),"string"==typeof c){try{c="true"===c?!0:"false"===c?!1:"null"===c?null:+c+""===c?+c:M.test(c)?m.parseJSON(c):c}catch(e){}m.data(a,b,c)}else c=void 0}return c}function P(a){var b;for(b in a)if(("data"!==b||!m.isEmptyObject(a[b]))&&"toJSON"!==b)return!1;
@@ -1442,7 +1442,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2",
+      selectors: "h1,h2,h3",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
@@ -1547,8 +1547,9 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Java Solutions</h1>
-<h3 class="subtitle">Section 1</h3>
+<h1 class="title toc-ignore">Algorithm Class 34 - Lecture 14</h1>
+<h3 class="subtitle">Dynamic Programming II</h3>
+<h4 class="date">July/10/2019</h4>
 
 </div>
 
@@ -1559,2922 +1560,310 @@ h1.title {color: black; background-color: white; text-align: center;}
 h2 {font-size: 24px; color: black; font-weight: bold; font-style: normal; background-color: Yellow;}
 h3 {font-size: 20px; color: black; font-weight: bold; font-style: normal; background-color: Wheat;}
 h3.subtitle {background-color: White; text-align: center;}
+h4.date {text-align: center;}
 p {font-size: 18px; color: black;}
+table {border: 1px solid black; border-collapse: collapse; margin-top: 10px; margin-bottom: 10px; }
+td {border: 1px solid black; width: auto; height: 50px; text-align: left; font-size: 16px; color: black;}
+td.title {text-align: center;}
 ol {font-size: 18px; color: black;}
 ul {font-size: 18px; color: black;}
+img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; margin-right: auto; width: 400px;}
 span.r {color: red;}
 </style>
 <hr />
-<div id="class-1---binary-search" class="section level1">
-<h1><span class="header-section-number">1</span> Class 1 - Binary Search</h1>
-<div id="classical-binary-search" class="section level2">
-<h2><span class="header-section-number">1.1</span> Classical Binary Search</h2>
-<p>Given a target integer T and an integer array A sorted in ascending order, find the index i such that A[i] == T or return -1 if there is no such index.</p>
-<p><a href="https://app.laicode.io/app/problem/14" class="uri">https://app.laicode.io/app/problem/14</a></p>
-<pre class="java"><code>public class ClassicalBinarySearch {
-  public int binarySearch(int[] array, int target) {
-    if (array == null || array.length == 0) {
-      return -1;
-    }
-    int left = 0;
-    int right = array.length - 1;
-    while (left &lt;= right) {
-      int mid = left + (right - left) / 2;
-      if (array[mid] == target) {
-        return mid;
-      }
-      else if (array[mid] &lt; target) {
-        left = mid + 1;
-      }
-      else {
-        right = mid - 1;
-      }
-    }
-    return -1;
-  }
-}</code></pre>
+<div id="review" class="section level1">
+<h1><span class="header-section-number">1</span> Review</h1>
+<div id="section" class="section level2">
+<h2><span class="header-section-number">1.1</span> 核心思想</h2>
+<p>DP的<strong>核心思想</strong>類似於我們高中學習的數學歸納法:</p>
+<p>1.</p>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
-<div id="binary-search-in-sorted-2d-array-i" class="section level2">
-<h2><span class="header-section-number">1.2</span> Binary Search In Sorted 2D Array I</h2>
-<p>Given a 2D matrix that contains integers only, which each row is sorted in an ascending order. The first element of next row is larger than (or equal to) the last element of previous row.</p>
-<p>Given a target number, returning the position that the target locates within the matrix. If the target number does not exist in the matrix, return {-1, -1}.</p>
-<p><a href="https://app.laicode.io/app/problem/267" class="uri">https://app.laicode.io/app/problem/267</a></p>
-<pre class="java"><code>public class SearchInSortedMatrixI {
-  // Assumptions: matrix is not null, and has size N * M where N &gt;= 0 and M &gt;= 0.
-  // Return {-1, -1} if not found.
-  // Method 1: find row first then find col.
-  public int[] searchI(int[][] matrix, int target) {
-    int[] result = new int[] {-1, -1};
-    if (matrix.length == 0 || matrix[0].length == 0) {
-      return result;
-    }
-    // Find the possible row location for target.
-    int row = findRow(matrix, 0, matrix.length - 1, target);
-    if (row == -1) {
-      return result;
-    }
-    // Find the possible col location in the row for target.
-    int col = findCol(matrix[row], 0, matrix[row].length - 1, target);
-    if (col == -1) {
-      return result;
-    }
-    result[0] = row;
-    result[1] = col;
-    return result;
-  }
-  
-  // Find the larget row with first element &lt;= target.
-  private int findRow(int[][] matrix, int up, int down, int target) {
-    while (up &lt;= down) {
-      int mid = up + (down - up) / 2;
-      if (matrix[mid][0] &gt; target) {
-        down = mid - 1;
-      }
-      else {
-        up = mid + 1;
-      }
-    }
-    return down;
-  }
-  
-  // Classical binary search to find the col on the row.
-  private int findCol(int[] array, int left, int right, int target) {
-    while (left &lt; right) {
-      int mid = left + (right - left) / 2;
-      if (array[mid] == target) {
-        return mid;
-      }
-      else if (array[mid] &lt; target) {
-        left = mid + 1;
-      }
-      else {
-        right = mid - 1;
-      }
-    }
-    return -1;
-  }
-  
-  
-  
-  // Method 2: convert the 2D array to 1D array and do binary search.
-  public int[] search(int[][] matrix, int target) {
-    if (matrix.length == 0 || matrix[0].length == 0) {
-      return new int[] {-1, -1};
-    }
-    int rows = matrix.length;
-    int cols = matrix[0].length;
-    int left = 0;
-    // convert the 2D array to 1D array with rows * cols elements.
-    int right = rows * cols - 1;
-    while (left &lt;= right) {
-      int mid = left + (right - left) / 2;
-      // convert the position in 1D array back to row and col in 2D array.
-      int row = mid / cols;
-      int col = mid % cols;
-      if (matrix[row][col] == target) {
-        return new int[] {row, col};
-      }
-      else if (matrix[row][col] &lt; target) {
-        left = mid + 1;
-      }
-      else {
-        right = mid - 1;
-      }
-    }
-    return new int[] {-1, -1};
-  }
-}</code></pre>
+<div id="section-1" class="section level2">
+<h2><span class="header-section-number">1.2</span> 解題常用方法</h2>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
-<div id="closest-number-in-sorter-array" class="section level2">
-<h2><span class="header-section-number">1.3</span> Closest Number In Sorter Array</h2>
-<p>Given a target integer T and an integer array A sorted in ascending order, find the index i in A such that A[i] is closest to T.</p>
-<p><a href="https://app.laicode.io/app/problem/17" class="uri">https://app.laicode.io/app/problem/17</a></p>
-<pre class="java"><code>public class Closest {
-  public int closest(int[] array, int target) {
-    if (array == null || array.length == 0) {
-      return -1;
-    }
-    int left = 0;
-    int right = array.length - 1;
-    while (left &lt; right - 1) {
-      int mid = left + (right - left) / 2;
-      if (array[mid] == target) {
-        return mid;
-      }
-      else if (array[mid] &lt; target) {
-        left = mid;
-      }
-      else {
-        right = mid;
-      }
-    }
-    if (Math.abs(array[left] - target) &lt;= Math.abs(array[right] - target)) {
-      return left;
-    }
-    return right;
-  }
-}</code></pre>
 </div>
-<div id="first-occurrence" class="section level2">
-<h2><span class="header-section-number">1.4</span> First Occurrence</h2>
-<p>Given a target integer T and an integer array A sorted in ascending order, find the index of the first occurrence of T in A or return -1 if there is no such index.</p>
-<p><a href="https://app.laicode.io/app/problem/15" class="uri">https://app.laicode.io/app/problem/15</a></p>
-<pre class="java"><code>public class FirstOccurrence {
-  public int firstOccur(int[] array, int target) {
-    if (array == null || array.length == 0) {
-      return -1;
-    }
-    int left = 0;
-    int right = array.length - 1;
-    // We need to use left &lt; right - 1 here to make sure there is no infinite loop.
-    // Think about the case when left == right - 1, then mid = left, it will be possible picking [mid, right] for the next round and it will go into an infinite loop in that case.
-    while (left &lt; right - 1) {
-      int mid = left + (right - left) / 2;
-      if (array[mid] &gt;= target) {
-        right = mid;
-      }
-      else {
-        left = mid;
-      }
-    }
-    // Make sure you understand all the possible situations when entering this postprocessing procedure.
-    // 1. array has only 1 element.
-    // 2. array has only 2 elements.
-    // 3. left == right - 1 and left is the result.
-    // 4. left == right - 1 and right is the result.
-    // 5. left == right - 1 and none of left, right is the result.
-    if (array[left] == target) {
-      return left;
-    }
-    else if (array[right] == target) {
-      return right;
-    }
-    return -1;
-  }
-}</code></pre>
+<div id="previous-question-from-last-class" class="section level1">
+<h1><span class="header-section-number">2</span> Previous Question (from last class)</h1>
+<p>Given an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your <strong>maximum</strong> jump length at the position. Determine if you are able to reach the last index.</p>
+<pre><code>For example:
+     0  1  2  3  4
+A = [2, 3, 1, 1, 4], return ture.</code></pre>
+<p>Base case: M[last index] = true</p>
+<p>Induction rule: M[i]…</p>
 </div>
-<div id="last-occurrence" class="section level2">
-<h2><span class="header-section-number">1.5</span> Last Occurrence</h2>
-<p>Given a target integer T and an integer array A sorted in ascending order, find the index of the last occurrence of T in A or return -1 if there is no such index.</p>
-<p><a href="https://app.laicode.io/app/problem/16" class="uri">https://app.laicode.io/app/problem/16</a></p>
-<pre class="java"><code>public class LastOccurrence {
-  public int lastOccur(int[] array, int target) {
-    if (array == null || array.length == 0) {
-      return -1;
-    }
-    int left = 0;
-    int right = array.length - 1;
-    while (left &lt; right - 1) {
-      int mid = left + (right - left) / 2;
-      if (array[mid] &lt;= target) {
-        left = mid;
-      }
-      else {
-        right = mid;
-      }
-    }
-    if (array[right] == target) {
-      return right;
-    }
-    else if (array[left] == target) {
-      return left;
-    }
-    return -1;
-  }
-}</code></pre>
-</div>
-<div id="k-closest-in-sorted-array" class="section level2">
-<h2><span class="header-section-number">1.6</span> K Closest In Sorted Array</h2>
-<p>Given a target integer T, a non-negative integer K and an integer array A sorted in ascending order, find the K closest numbers to T in A.</p>
-<p><a href="https://app.laicode.io/app/problem/19" class="uri">https://app.laicode.io/app/problem/19</a></p>
-<pre class="java"><code>public class KClosest {
-  public int[] kClosest(int[] array, int target, int k) {
-    if (array == null || array.length == 0) {
-      return array;
-    }
-    if (k == 0) {
-      return new int[0];
-    }
-    // left is the index of the largest smaller or equal element, right = left + 1.
-    // These two should be the closest to target.
-    int left = largestSmallerEqual(array, target);
-    int right = left + 1;
-    int[] result = new int[k];
-    // This is a typical merge operation.
-    for (int i = 0; i &lt; k; i++) {
-      // We can advance the left pointer when:
-      // 1. right pointer is already out of bound.
-      // 2. right pointer is not out of bound, left pointer is not out of bound, and array[left] is closer to target.
-      if (right &gt;= array.length || left &gt;= 0
-          &amp;&amp; target - array[left] &lt;= array[right] - target) {
-        result[i] = array[left];
-        left--;
-      }
-      else {
-        result[i] = array[right];
-        right++;
-      }
-    }
-    return result;
-  }
-  
-  private int largestSmallerEqual(int[] array, int target) {
-    // Find the largest smaller or equal element&#39;s index in the array
-    int left = 0;
-    int right = array.length - 1;
-    while (left &lt; right - 1) {
-      int mid  = left + (right - left) / 2;
-      if (array[mid] &lt;= target) {
-        left = mid;
-      }
-      else {
-        right = mid;
-      }
-    }
-    if (array[right] &lt;= target) {
-      return right;
-    }
-    if (array[left] &lt;= target) {
-      return left;
-    }
-    // Cannot find...
-    return -1;
-  }
-}</code></pre>
-</div>
-<div id="search-in-unknown-sized-sorted-array" class="section level2">
-<h2><span class="header-section-number">1.7</span> Search In Unknown Sized Sorted Array</h2>
-<p>Given a integer dictionary A of unknown size, where the numbers in the dictionary are sorted in ascending order, determine if a given target integer T is in the dictionary. Return the index of T in A, return -1 if T is not in A.</p>
-<p><a href="https://app.laicode.io/app/problem/20" class="uri">https://app.laicode.io/app/problem/20</a></p>
-<pre class="java"><code>// Binary search implementation on an dictionary with unknown size.
-// Assumption:
-// 1. The dictionary is an unknown sized sorted array, it only provides get(int index) functionality, if the index asked for is out of right bound, it will return null.
-// 2. The elements in the dictionary are all Integers.
-public class UnknownSizeBinarySearch {
-  public int search(Dictionary dictionary, int target) {
-    if (dictionary == null) {
-      return -1;
-    }
-    int left = 0;
-    int right = 1;
-    // Find the right boundary for binary search.
-    // Extends until we are sure the target is within the [left, right] range.
-    while (dictionary.get(right) != null &amp;&amp; dictionary.get(right) &lt; target) {
-      // 1. move left to right
-      // 2. double right index
-      left = right;
-      right = 2 * right;
-    }
-    return binarySearch(dictionary, target, left, right);
-  }
-  
-  private int binarySearch(Dictionary dict, int target, int left, int right) {
-    // Classical binary search
-    while (left &lt;= right) {
-      int mid = left + (right - left) / 2;
-      if (dict.get(mid) == null || dict.get(mid) &gt; target) {
-        right = mid - 1;
-      }
-      else if (dict.get(mid) &lt; target) {
-        left = mid + 1;
-      }
-      else {
-        return mid;
-      }
-    }
-    return -1;
-  }
-  
-  public static void main(String[] args) {
-    UnknownSizeBinarySearch sol = new UnknownSizeBinarySearch();
-    // test cases
-    Dictionary dict = new DictImpl(new int[0]);
-    int target = 0;
-    System.out.println(&quot;Expect: -1, Actual: &quot; + sol.search(dict, target));  // expected -1
-    
-    dict = new DictImpl(new int[] {1});
-    target = 0;
-    System.out.println(&quot;Expect: -1, Actual: &quot; + sol.search(dict, target));  // expected -1
-    
-    dict = new DictImpl(new int[] {1});
-    target = 1;
-    System.out.println(&quot;Expect: 0, Actual: &quot; + sol.search(dict, target));  // expected 0
-    
-    dict = new DictImpl(new int[] {1});
-    target = 2;
-    System.out.println(&quot;Expect: -1, Actual: &quot; + sol.search(dict, target));  // expected -1
-    
-    dict = new DictImpl(new int[] {1, 3});
-    target = 0;
-    System.out.println(&quot;Expect: -1, Actual: &quot; + sol.search(dict, target));  // expected -1
-    
-    dict = new DictImpl(new int[] {1, 3});
-    target = 3;
-    System.out.println(&quot;Expect: 1, Actual: &quot; + sol.search(dict, target));  // expected 1
-    
-    dict = new DictImpl(new int[] {1, 3});
-    target = 2;
-    System.out.println(&quot;Expect: -1, Actual: &quot; + sol.search(dict, target));  // expected -1
-    
-    dict = new DictImpl(new int[] {1, 3});
-    target = 4;
-    System.out.println(&quot;Expect: -1, Actual: &quot; + sol.search(dict, target));  // expected -1
-    
-    dict = new DictImpl(new int[] {1, 3, 4, 4, 6, 10, 11, 12, 15, 15});
-    target = 0;
-    System.out.println(&quot;Expect: -1, Actual: &quot; + sol.search(dict, target));  // expected -1
-    target = 6;
-    System.out.println(&quot;Expect: 4, Actual: &quot; + sol.search(dict, target));  // expected 4
-    target = 8;
-    System.out.println(&quot;Expect: -1, Actual: &quot; + sol.search(dict, target));  // expected -1
-    
-    dict = new DictImpl(largeArray(100000));
-    target = 99999;
-    System.out.println(&quot;Expect: 99999, Actual: &quot; + sol.search(dict, target));  // expected 99999
-    target = 100001;
-    System.out.println(&quot;Expect: -1, Actual: &quot; + sol.search(dict, target));  // expected -1
-  }
-  
-  public static int[] largeArray(int size) {
-    int[] array = new int[size];
-    for (int i = 0; i &lt; size; i++) {
-      array[i] = i;
-    }
-    return array;
-  }
-}
+<div id="question-0-minimum-number-of-jumps" class="section level1">
+<h1><span class="header-section-number">3</span> Question 0: Minimum Number of Jumps</h1>
+<p>Given the same setup as the Jump problem, can you return the minimum number of jumps needed to reach the end instead of just whether or not it is possible to reach the end?</p>
+<p>M[i] represents the min steps needed to jump from the i-th index to the target index.</p>
+<p>Base case: M[n] = 0</p>
+<pre><code>     0  1  2  3  4
+A = [2, 3, 1, 1, 4]
+M =              0
 
-interface Dictionary {
-  public Integer get(int index);
-}
+Need 0 step to reach the end
 
-// We do not provide length() to outside.
-// NOTICE: You DO NOT need to implement this interface yourself on laicode.com, it is already there when running the tests against your solution.
+---
 
-class DictImpl implements Dictionary {
-  private int[] array;
-  
-  public DictImpl(int[] array) {
-    this.array = array;
-  }
-  
-  // If the index is out of bound, null will be returned.
-  @Override
-  public Integer get(int index) {
-    if (array == null || index &gt;= array.length) {
-      return null;
-    }
-    return array[index];
-  }
-  
-  // For pretty printout.
-  @Override
-  public String toString() {
-    if (array == null) {
-      return String.valueOf(null);
-    }
-    if (array.length &lt;= 10) {
-      return Arrays.toString(array);
-    }
-    // Truncate output of array is too large.
-    StringBuilder sb = new StringBuilder(&quot;[&quot;);
-    for (int i = 0; i &lt; 5; i++) {
-      sb.append(array[i]).append(&quot;, &quot;);
-    }
-    sb.append(&quot;......, &quot;);
-    for (int i = array.length - 4; i &lt; array.length; i++) {
-      sb.append(array[i]);
-      if (i != array.length - 1) {
-        sb.append(&quot;, &quot;);
-      }
-    }
-    sb.append(&quot;]&quot;);
-    return sb.toString();
-  }
-}</code></pre>
+     0  1  2  3  4
+A = [2, 3, 1, 1, 4]
+M =           1  0
+
+Possible range is {1}, need 1 step to reach the end
+
+---
+
+     0  1  2  3  4
+A = [2, 3, 1, 1, 4]
+M =        2  1  0
+
+Possible range is {1}, need 2 steps to reach the end
+
+---
+
+     0  1  2  3  4
+A = [2, 3, 1, 1, 4]
+M =     1  2  1  0
+
+Possible range is {1, 2, 3}, minimal need 1 step to reach the end
+
+---
+
+     0  1  2  3  4
+A = [2, 3, 1, 1, 4]
+M =  2  1  2  1  0
+
+Possible range is {1, 2}, minimal need 2 steps to reach the end (1 step to index 1, then 1 step to index 4)</code></pre>
+<p>Induction rule: M[i] = min(M[j]) + 1, where i &lt; j &lt;= i + A[i]</p>
 </div>
-</div>
-<div id="class-2---recursion-i-and-sorting-algorithms" class="section level1">
-<h1><span class="header-section-number">2</span> Class 2 - Recursion I and Sorting Algorithms</h1>
-<div id="fibonacci-number" class="section level2">
-<h2><span class="header-section-number">2.1</span> Fibonacci Number</h2>
-<p>Get the Kth number in the Fibonacci Sequence. (K is 0-indexed, the 0th Fibonacci number is 0 and the 1st Fibonacci number is 1).</p>
-<p><a href="https://app.laicode.io/app/problem/12" class="uri">https://app.laicode.io/app/problem/12</a></p>
-<pre class="java"><code>public class FibonacciNumber {
-  // Method 1: recursion, this method will timeout on laicode.com
-  public long fibonacci(int K) {
-    if (K &lt;= 0) {
-      return 0;
-    }
-    if (K == 1) {
-      return 1;
-    }
-    return fibonacci(K - 1) + fibonacci(K - 2;)
-  }
-  
-  
-  
-  // Method 2: dp solution with O(n) space.
-  public long fibonacciI(int K) {
-    if (K &lt;= 0) {
-      return 0;
-    }
-    long[] array = new long[K + 1];
-    array[1] = 1;
-    for (int i = 2; i &lt;= K, i++) {
-      array[i] = array[i - 2] + array[i - 1];
-    }
-    return array[K];
-  }
-  
-  
-  
-  // Method 3: dp solution with O(1) space.
-  public long fibonacciII(int K) {
-    long a = 0;
-    long b = 1;
-    if (K &lt;= 0) {
-      return a;
-    }
-    while (K &gt; 1) {
-      long temp = a + b;
-      a = b;
-      b = temp;
-      K--;
-    }
-    return b;
-  }
-  
-  
-  
-  // Method 4: O(logn) solution using matrix multiplication.
-  // M = {{1, 1}, {1, 0}} = {{f(2), f(1)}, {f(1), (f(0))}}
-  // fibo(K) = (M ^ K)[0][0]
-  public static final long[][] SEED = {{1L, 1L}, {1L, 0L}};
-  
-  public long fibonacciIII(int K) {
-    if (K &lt;= 0) {
-      return 0;
-    }
-    if (K == 1) {
-      return 1;
-    }
-    long[][] matrix = {{1L, 1L}, {1L, 0L}};
-    pow(matrix, K - 1);
-    return matrix[0][0];
-  }
-  
-  // Calculate matrix ^ pow, and use the result to update matrix value.
-  private void pow(long[][] matrix, int pow) {
-    if (pow == 1) {
-      return;
-    }
-    pow(matrix, pow / 2);
-    multiply(matrix, matrix);
-    if (pow % 2 != 0) {
-      multiply(matrix, SEED);
-    }
-  }
-  
-  // Matrix multiplication and the result is updated to matrix itself.
-  private void multiply(long[][] matrix, long[][] multiplier) {
-    long topLeft = matrix[0][0] * multiplier[0][0] + matrix[0][1] * multiplier[1][0];
-    long topRight = matrix[0][0] * multiplier[0][1] + matrix[0][1] * multiplier[1][1];
-    long bottomLeft = matrix[1][0] * multiplier[0][0] + matrix[1][1] * multiplier[1][0];
-    long bottonRight = matrix[1][0] * multiplier[0][1] + matrix[1][1] * multiplier[1][1];
-    matrix[0][0] = topLeft;
-    matrix[0][1] = topRight;
-    matrix[1][0] = bottomLeft;
-    matrix[1][1] = bottomRight;
-  }
-}</code></pre>
-</div>
-<div id="a-to-the-power-of-b" class="section level2">
-<h2><span class="header-section-number">2.2</span> a To The Power Of b</h2>
-<p>Evaluate a to the power of b, assuming both a and b are integers and b is non-negative.</p>
-<p><a href="https://app.laicode.io/app/problem/13" class="uri">https://app.laicode.io/app/problem/13</a></p>
-<pre class="java"><code>public class Power {
-  // Assumption: b &gt;= 0.
-  public long power(int a, int b) {
-    if (b == 0) {
-      return 1;
-    }
-    if (a == 0) {
-      return 0;
-    }
-    long half = power(a, b / 2);
-    return b % 2 == 0 ? half * half : half * half * a;
-  }
-}</code></pre>
-</div>
-<div id="selection-sort" class="section level2">
-<h2><span class="header-section-number">2.3</span> Selection Sort</h2>
-<p>Given an array of integers, sort the elements in the array in ascending order. The selection sort algorithm should be used to solve this problem.</p>
-<p><a href="https://app.laicode.io/app/problem/4" class="uri">https://app.laicode.io/app/problem/4</a></p>
-<pre class="java"><code>public class SelectionSort {
-  public int[] selectionSort(int[] array) {
-    // Check null before any other things.
-    // Check other conditions - empty array... etc.
-    if (array == null || array.length &lt;= 1) {
-      return array;
-    }
-    for (int i = 0; i &lt; array.length - 1; i++) {
-      int min = i;
-      // Find the min element in the subarray of (i, array.length - 1)
-      for (int j = i + 1; j &lt; array.length; j++) {
-        if (array[j] &lt; array[min]) {
-          min = j;
-        }
-      }
-      swap (array, i, min);
-    }
-    return array;
-  }
-  
-  public void swap(int[] array, int left, int right) {
-    int temp = array[left];
-    array[left] = array[right];
-    array[right] = temp;
-  }
-  
-  public static void main(String[] args) {
-    SelectionSort sol = new SelectionSort();
-    
-    // test cases to cover all the possible situations.
-    int[] array = null;
-    array = sol.selectionSort(array);
-    System.out.println(Arrays.toString(array));
-    
-    array = new int[0];
-    array = sol.selectionSort(array);
-    System.out.println(Arrays.toString(array));
-    
-    array = new int[] {1, 2, 3, 4};
-    array = sol.selectionSort(array);
-    System.out.println(Arrays.toString(array));
-    
-    array = new int[] {4, 3, 2, 1};
-    array = sol.selectionSort(array);
-    System.out.println(Arrays.toString(array));
-    
-    array = new int[] {2, 4, 1, 5, 3};
-    array = sol.selectionSort(array);
-    System.out.println(Arrays.toString(array));
-  }
-}</code></pre>
-</div>
-<div id="merge-sort" class="section level2">
-<h2><span class="header-section-number">2.4</span> Merge Sort</h2>
-<p>Given an array of integers, sort the elements in the array in ascending order. The merge sort algorithm should be used to solve this problem.</p>
-<p><a href="https://app.laicode.io/app/problem/9" class="uri">https://app.laicode.io/app/problem/9</a></p>
-<pre class="java"><code>public class MergeSort {
-  public int[] mergeSort(int[] array) {
-    // Check null array first.
-    if (array == null) {
-      return array;
-    }
-    // Allocate helper array to help merge step, so that we guarantee no more than O(n) space is used.
-    // The space complexity is O(n) in this case.
-    int[] helper = new int[array.length];
-    mergeSort(array, helper, 0, array.length - 1);
-    return array;
-  }
-  
-  private void mergeSort(int[] array, int[] helper, int left, int right) {
-    if (left &gt;= right) {
-      return;
-    }
-    int mid = left + (right - left) / 2;
-    mergeSort(array, helper, left, mid);
-    mergeSort(array, helper, mid + 1, right);
-    merge(array, helper, left, mid, right);
-  }
-  
-  private void merge(int[] array, int[] helper, int left, int mid, int right) {
-    // Copy the content to helper array and we will merge from the helper array.
-    for (int i = left; i &lt;= right; i++) {
-      helper[i] = array[i];
-    }
-    int leftIndex = left;
-    int rightIndex = mid + 1;
-    while (leftIndex &lt;= mid &amp;&amp; rightIndex &lt;= right) {
-      if (helper[leftIndex] &lt;= helper[rightIndex]) {
-        array[left] = helper[leftIndex];
-        left++;
-        leftIndex++;
-      }
-      else {
-        array[left] = helper[rightIndex];
-        left++;
-        rightIndex;
-      }
-    }
-    // If we still have some elements at left side, we need to copy them
-    while (leftIndex &lt;= mid) {
-      array[left] = helper[leftIndex];
-      left++;
-      leftIndex++;
-    }
-    // If there are some elements at right side, we do not need to copy them because they are already in their position.
-  }
-  
-  public static void main(String[] args) {
-    MergeSort sol = new MergeSort();
-    
-    // test cases to cover possible situations.
-    int[] array = null;
-    array = sol.mergeSort(array);
-    System.out.println(Arrays.toString(array));
-    
-    array = new int[0];
-    array = sol.mergeSort(array);
-    System.out.println(Arrays.toString(array));
-    
-    array = new int[] {1, 2, 3, 4};
-    array = sol.mergeSort(array);
-    System.out.println(Arrays.toString(array));
-    
-    array = new int[] {4, 3, 2, 1};
-    array = sol.mergeSort(array);
-    System.out.println(Arrays.toString(array));
-    
-    array = new int[] {2, 4, 1, 5, 3};
-    array = sol.mergeSort(array);
-    System.out.println(Arrays.toString(array));
-  }
-}</code></pre>
-</div>
-<div id="quick-sort" class="section level2">
-<h2><span class="header-section-number">2.5</span> Quick Sort</h2>
-<p>Given an array of integers, sort the elements in the array in ascending order. The quick sort algorithm should be used to solve this problem.</p>
-<p><a href="https://app.laicode.io/app/problem/10" class="uri">https://app.laicode.io/app/problem/10</a></p>
-<pre class="java"><code>public class QuickSort {
-  public int[] quickSort(int[] array) {
-    // Check null first.
-    if (array == null) {
-      return array;
-    }
-    quickSort(array, 0, array.length - 1);
-    return array;
-  }
-  
-  public void quickSort(int[] array, int left, int right) {
-    if (left &gt;= right) {
-      return;
-    }
-    // Define a pivot and use the pivot to partition the array.
-    int pivotPos = partition(array, left, right);
-    // pivot is already at its position, when we do the recursive call on the two partitions, pivot should not be included in any of them.
-    quickSort(array, left, pivotPos - 1);
-    quickSort(array, pivotPos + 1, right);
-  }
-  
-  private int partition(int[] array, int left, int right) {
-    int pivotIndex = pivotIndex(left, right);
-    int pivot = array[pivotIndex];
-    // swap the pivot element to the rightmost position first
-    swap(array, pivotIndex, right);
-    int leftBound = left;
-    int rightBound = right - 1;
-    while (leftBound &lt;= rightBound) {
-      if (array[leftBound] &lt; pivot) {
-        leftBound++;
-      }
-      else if (array[rightBound] &gt;= pivot) {
-        rightBound--;
-      }
-      else {
-        swap(array, leftBound, rightBound);
-        leftBound++;
-        rightBound--;
-      }
-    }
-    // swap back the pivot element.
-    swap(array, leftBound, right);
-    return leftBound;
-  }
-  
-  // This is one of the ways defining the pivot, pick random element in the range of [left, right].
-  private int pivotIndex(int left, int right) {
-    return left + (int)(Math.random() * (right - left + 1));
-  }
-  
-  private void swap(int[] array, int left, int right) {
-    int temp = array[left];
-    array[left] = array[right];
-    array[right] = temp;
-  }
-  
-  public static void main(String[] args) {
-    QuickSort sol = new QuickSort();
-    
-    int[] array = null;
-    array = sol.quickSort(array);
-    System.out.println(Arrays.toString(array));
-    
-    array = new int[0];
-    array = sol.quickSort(array);
-    System.out.println(Arrays.toString(array));
-    
-    array = new int[] {1, 2, 3, 4};
-    array = sol.quickSort(array);
-    System.out.println(Arrays.toString(array));
-    
-    array = new int[] {4, 3, 2, 1};
-    array = sol.quickSort(array);
-    System.out.println(Arrays.toString(array));
-    
-    array = new int[] {2, 5, 3, 1, 4};
-    array = sol.quickSort(array);
-    System.out.println(Arrays.toString(array));
-  }
-}</code></pre>
-</div>
-<div id="move-0s-to-the-end-i" class="section level2">
-<h2><span class="header-section-number">2.6</span> Move 0s To The End I</h2>
-<p>Given an array of integers, move all the 0s to the right end of the array.</p>
-<p>The relative order of the elements in the original array does not need to be maintained.</p>
-<p><a href="https://app.laicode.io/app/problem/258" class="uri">https://app.laicode.io/app/problem/258</a></p>
-<pre class="java"><code>// Move 0s to the right end of the array, no need to keep the relative order of the elements in the original array.
-public class MoveZeroI {
-  public int[] moveZero(int[] array) {
-    if (array == null || array.length &lt;= 1) {
-      return array;
-    }
-    int left = 0;
-    int right = array.length - 1;
-    while (left &lt;= right) {
-      if (array[left] != 0) {
-        left++;
-      }
-      else if (array[right] == 0) {
-        right--;
-      }
-      else {
-        swap(array, left, right);
-        left++;
-        right--;
-      }
-    }
-    return array;
-  }
-  
-  private void swap(int[] array, int a, int b) {
-    int temp = array[a];
-    array[a] = array[b];
-    array[b] = temp;
-  }
-}</code></pre>
-</div>
-<div id="rainbow-sort" class="section level2">
-<h2><span class="header-section-number">2.7</span> Rainbow Sort</h2>
-<p>Given an array of balls, where the color of the balls can only be Red, Green or Blue, sort the balls such that all the Red balls are grouped on the left side, all the Green balls are grouped in the middle and all the Blue balls are grouped on the right side. (Red is denoted by -1, Green is denoted by 0, and Blue is denoted by 1.)</p>
-<p><a href="https://app.laicode.io/app/problem/11" class="uri">https://app.laicode.io/app/problem/11</a></p>
-<pre class="java"><code>// Assumption:
-// 1. We have three colors denoted as -1, 0, 1 and all the elements in the array are valid.
-public class RainbowSort {
-  public int[] rainbowSort(int[] array) {
-    if (array == null || array.length &lt;= 1) {
-      return array;
-    }
-    // Three bounds:
-    // 1. The left side of neg is -1 (exclusive of neg).
-    // 2. The right side of one is 1 (exclusive of one).
-    // 3. The part between neg and zero is 0 (exclusive of zero).
-    // 4. Between zero and one is to be discovered (inclusive of both).
-    int neg = 0;
-    int zero = 0;
-    int one = array.length - 1;
-    while (zero &lt;= one) {
-      if (array[zero] == -1) {
-        swap(array, neg, zero);
-        neg++;
-        zero++;
-      }
-      else if (array[zero] == 1) {
-        zero++;
-      }
-      else {
-        swap(array, zero, one);
-        one--;
-      }
-    }
-    return array;
-  }
-  
-  private void swap(int[] array, int a, int b) {
-    int temp = array[a];
-    array[a] = array[b];
-    array[b] = temp;
-  }
-}</code></pre>
-</div>
-</div>
-<div id="class-3---linked-lists" class="section level1">
-<h1><span class="header-section-number">3</span> Class 3 - Linked Lists</h1>
-<div id="reverse-linked-list" class="section level2">
-<h2><span class="header-section-number">3.1</span> Reverse Linked List</h2>
-<p>Reverse a singly-linked list.</p>
-<p><a href="https://app.laicode.io/app/problem/34" class="uri">https://app.laicode.io/app/problem/34</a></p>
-<pre class="java"><code>// Reverse singled linked list, both iterative and recursive ways.
-public class ReverseLinkedList {
-  public ListNode reverseLinkedList(ListNode head) {
-    ListNode prev = null;
-    while (head != null) {
-      ListNode next = head.next;
-      head.next = prev;
-      prev = head;
-      head = next;
-    }
-    return prev;
-  }
-  
-  public ListNode reverseLinkedListI(ListNode head) {
-    // Be careful about the base case, need to make sure the later head.next.next != null.
-    if (head == null || head.next == null) {
-      return head;
-    }
-    ListNode newHead = reverseLinkedListI(head.next);
-    head.next.next = head;
-    head.next = null;
-    return newHead;
-  }
-}</code></pre>
-</div>
-<div id="find-middle-node-of-linked-list" class="section level2">
-<h2><span class="header-section-number">3.2</span> Find Middle Node Of Linked List</h2>
-<p>Find the middle node of a given linked list.</p>
-<p><a href="https://app.laicode.io/app/problem/36" class="uri">https://app.laicode.io/app/problem/36</a></p>
-<pre class="java"><code>// Find the middle node of a singled linked list.
-// 1. 1 -&gt; 2 -&gt; 3 -&gt; null, the middle node is 2.
-// 2. 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; null, the middle node is 2.
-// 3. null, the middle node is null.
-public class MiddleNode {
-  public ListNode findMiddle(ListNode head) {
-    if (head == null) {
-      return null;
-    }
-    ListNode slow = head;
-    ListNode fast = head;
-    while (fast.next != null &amp;&amp; fast.next.next !- null) {
-      slow = slow.next;
-      fast = fast.next.next;
-    }
-    return slow;
-  }
-}</code></pre>
-</div>
-<div id="check-if-linked-list-has-cycle" class="section level2">
-<h2><span class="header-section-number">3.3</span> Check If Linked List Has Cycle</h2>
-<p>Check if a given linked list has a cycle. Return true if it does, otherwise return false.</p>
-<p><a href="https://app.laicode.io/app/problem/37" class="uri">https://app.laicode.io/app/problem/37</a></p>
-<pre class="java"><code>public class CheckCycle {
-  public boolean hasCycle(ListNode head) {
-    if (head == null || head.next == null) {
-      return false;
-    }
-    ListNode slow = head;
-    ListNode fast = head;
-    while (fast != null &amp;&amp; fast.next != null) {
-      slow = slow.next;
-      fast = fast.next.next;
-      if (slow == fast) {
-        return true;
-      }
-    }
-    return false;
-  }
-}</code></pre>
-</div>
-<div id="insert-in-sorted-linked-list" class="section level2">
-<h2><span class="header-section-number">3.4</span> Insert In Sorted Linked List</h2>
-<p>Insert a value in a sorted linked list.</p>
-<p><a href="https://app.laicode.io/app/problem/39" class="uri">https://app.laicode.io/app/problem/39</a></p>
-<pre class="java"><code>public class InsertSortedList {
-  public ListNode insert(ListNode head, int value) {
-    ListNode newNode = new ListNode(value);
-    // 1. Determine if the inserted node is before head.
-    if (head == null || head.value &gt;= value) {
-      newNode.next = head;
-      return newNode;
-    }
-    // 2. Insert the new node to the right position.
-    // Using the previous node to traverse the linked list.
-    // The insert position of the new node should be between prev and prev.next.
-    ListNode prev = head;
-    while (prev.next != null &amp;&amp; prev.next.value &lt; value) {
-      prev = prev.next;
-    }
-    newNode.next = prev.next;
-    prev.next = newNode;
-    return head;
-  }
-}</code></pre>
-</div>
-<div id="merge-two-sorted-linked-list" class="section level2">
-<h2><span class="header-section-number">3.5</span> Merge Two Sorted Linked List</h2>
-<p>Merge two sorted lists into one large sorted list.</p>
-<p><a href="https://app.laicode.io/app/problem/40" class="uri">https://app.laicode.io/app/problem/40</a></p>
-<pre class="java"><code>public class mergeTwoSortedList {
-  public ListNode merge(ListNode h1, listNode h2) {
-    ListNode dummy = new ListNode(0);
-    ListNode curr = dummy;
-    while (h1 != null &amp;&amp; h2 != null) {
-      if (h1.value &lt;= h2.value) {
-        curr.next = h1;
-        h1 = h1.next;
-      }
-      else {
-        curr.next = h2;
-        h2 = h2.next;
-      }
-      curr = curr.next;
-    }
-    // Link the remaining possible nodes.
-    if (h1 != null) {
-      curr.next = h1;
-    }
-    else {
-      curr.next = h2;
-    }
-    return dummy.next;
-  }
-}</code></pre>
-</div>
-<div id="reorder-linked-list" class="section level2">
-<h2><span class="header-section-number">3.6</span> Reorder Linked List</h2>
-<p>Reorder the given singly-linked list N1 -&gt; N2 -&gt; N3 -&gt; N4 -&gt; … -&gt; Nn -&gt; null to be N1 -&gt; Nn -&gt; N2 -&gt; Nn-1 -&gt; N3 -&gt; Nn-2 -&gt; … -&gt; null.</p>
-<p><a href="https://app.laicode.io/app/problem/41" class="uri">https://app.laicode.io/app/problem/41</a></p>
-<pre class="java"><code>public class ReorderList {
-  public ListNode reorder(ListNode head) {
-    if (head == null || head.next == null) {
-      return head;
-    }
-    // 1. Find the middle node
-    ListNode mid = middleNode(head);
-    ListNode one = head;
-    ListNode two = mid.next;
-    // De-link the second half from the list
-    mid.next = null;
-    // 2. Reverse the second half
-    // 3. Merge the two halves
-    return merge(one, reverse(two));
-  }
-  
-  private ListNode middleNode(ListNode head) {
-    ListNode slow = head;
-    ListNode fast = head;
-    while (fast.next != null &amp;&amp; fast.next.next != null) {
-      slow = slow.next;
-      fast = fast.next.next;
-    }
-    return slow;
-  }
-  
-  private ListNode reverse(ListNode head) {
-    if (head == null || head.next == null) {
-      return head;
-    }
-    ListNode prev = null;
-    while (head != null) {
-      ListNode next = head.next;
-      head.next = prev;
-      prev = head;
-      head = next;
-    }
-    return prev;
-  }
-  
-  private ListNode merge(ListNode h1, listNode h2) {
-    ListNode dummy = new ListNode(0);
-    ListNode curr = dummy;
-    while (h1 != null &amp;&amp; h2 != null) {
-      curr.next = h1;
-      h1 = h1.next;
-      curr.next.next = h2;
-      h2 = h2.next;
-      curr = curr.next.next;
-    }
-    if (h1 != null) {
-      curr.next = h1;
-    }
-    else {
-      curr.next = h2;
-    }
-    return dummy.next;
-  }
-}</code></pre>
-</div>
-<div id="partition-linked-list" class="section level2">
-<h2><span class="header-section-number">3.7</span> Partition Linked List</h2>
-<p>Given a linked list and a target value T, partition it such that all nodes less than T are listed before the nodes larger than or equal to target value T. The original relative order of the nodes in each of the two partitions should be preserved.</p>
-<p><a href="https://app.laicode.io/app/problem/42" class="uri">https://app.laicode.io/app/problem/42</a></p>
-<pre class="java"><code>public class PartitionList {
-  public ListNode partition(ListNode head, int target) {
-    if (head == null || head.next == null) {
-      return head;
-    }
-    ListNode small = new ListNode(0);
-    ListNode large = new ListNode(0);
-    ListNode curSmall = small;
-    ListNode curLarge = large;
-    while (head != null) {
-      if (head.value &lt; target) {
-        curSmall.next = head;
-        curSmall = curSmall.next;
-      }
-      else {
-        curLarge.next = head;
-        curLarge = curLarge.next;
-      }
-      head = head.next;
-    }
-    // Connect the two partitions
-    curSmall.next = large.next;
-    // Un-link the last node in large partition
-    curLarge.next = null;
-    return small.next;
-  }
-}</code></pre>
-</div>
-</div>
-<div id="class-4---queue-and-stack" class="section level1">
-<h1><span class="header-section-number">4</span> Class 4 - Queue and Stack</h1>
-<div id="sort-numbers-in-two-stacks" class="section level2">
-<h2><span class="header-section-number">4.1</span> Sort Numbers In Two Stacks</h2>
-<pre class="java"><code>// The numbers are in input originally, and after sorting, they should be in ascending order from bottom to top in input stack.
-// Assumption: There are no duplicate elements in input.
-public class SortTwoStacks {
-  public void sort(Deque&lt;Integer&gt; input) {
-    if (input == null || input.size() &lt;= 1) {
-      return;
-    }
-    Deque&lt;Integer&gt; buffer = new ArrayDeque&lt;&gt;();
-    sort(input, buffer);
-  }
-  
-  private void sort(Deque&lt;Integer&gt; input, Deque&lt;Integer&gt; buffer) {
-    int prevMin = Integer.MIN_VALUE;
-    while (input.peekFirst() &gt; prevMin) {
-      int curMin = Integer.MAX_VALUE;
-      while (!input.isEmpty() &amp;&amp; input.peekFirst() &gt; prevMin) {
-        curMin = Math.min(curMin, input.peekFirst());
-        buffer.offerFirst(input.pollFirst());
-      }
-      input.offerFirst(curMin);
-      while (!buffer.isEmpty()) {
-        int temp = buffer.pollFirst();
-        if (temp != curMin) {
-          input.offerFirst(temp);
-        }
-      }
-      prevMin = curMin;
-    }
-  }
-}</code></pre>
-</div>
-<div id="implement-queue-by-two-stacks" class="section level2">
-<h2><span class="header-section-number">4.2</span> Implement Queue By Two Stacks</h2>
-<p>Implement a queue by using two stacks. The queue should provide size(), isEmpty(), offer(), poll() and peek() operations. When the queue is empty, poll() and peek() should return null.</p>
-<p><a href="https://app.laicode.io/app/problem/31" class="uri">https://app.laicode.io/app/problem/31</a></p>
-<pre class="java"><code>public class QueueByTwoStack {
-  // We always insert into the in stack.
-  private LinkedList&lt;Integer&gt; in;
-  // We always remove from the out stack.
-  private LinkedList&lt;Integer&gt; out;
-  
-  public QueueByTwoStack() {
-    in = new LinkedList&lt;Integer&gt;();
-    out = new LinkedList&lt;Integer&gt;();
-  }
-  
-  public Integer poll() {
-    // If out stack is empty, need to move the elements from in stack to out stack.
-    move();
-    return out.isEmpty() ? null : out.pollFirst();
-  }
-  
-  public void offer(int value) {
-    // Always push into the in stack.
-    in.offerFirst(value);
-  }
-  
-  public Integer peek() {
-    move();
-    return out.isEmpty() ? null : out.peekFirst();
-  }
-  
-  // When out stack is empty, move the elements from in stack to out stack.
-  private void move() {
-    if (out.isEmpty()) {
-      while (!in.isEmpty()) {
-        out.offerFirst(in.pollFirst());
-      }
-    }
-  }
-  
-  public int size() {
-    return in.size() + out.size();
-  }
-  
-  public boolean isEmpty() {
-    return in.size() == 0 &amp;&amp; out.size() == 0;
-  }
-}</code></pre>
-</div>
-<div id="stack-with-min" class="section level2">
-<h2><span class="header-section-number">4.3</span> Stack With min()</h2>
-<p>Enhance the stack implementation to support min() operation. min() should return the current minimum value in the stack. If the stack is empty, min() should return -1.</p>
-<p><a href="https://app.laicode.io/app/problem/32" class="uri">https://app.laicode.io/app/problem/32</a></p>
-<pre class="java"><code>public class StackWithMin {
-  private Deque&lt;Integer&gt; stack;
-  private Deque&lt;Integer&gt; minStack;
-  
-  public StackWithMin() {
-    stack = new LinkedList&lt;Integer&gt;();
-    minStack = new LinkedList&lt;Integer&gt;();
-  }
-  
-  public Integer min() {
-    if (minStack.isEmpty()) {
-      return null;
-    }
-    return minStack.peekFirst();
-  }
-  
-  public void push(int value) {
-    stack.offerFirst(value);
-    // When value &lt;= current min value in stack, need to push the value to minStack.
-    if (minStack.isEmpty() || value &lt;= minStack.peekFirst()) {
-      minStack.offerFirst(value);
-    }
-  }
-  
-  public Integer pop() {
-    if (stak.isEmpty()) {
-      return null;
-    }
-    Integer result = stack.pollFirst();
-    // When the popped value is the same as top value of minStack, the value need to be popped from minStack as well.
-    if (minStack.peekFirst().equals(result)) {
-      minStack.pollFirst();
-    }
-    return result;
-  }
-  
-  public Integer top() {
-    if (stack.isEmpty()) {
-      return null;
-    }
-    return stack.peekFirst();
-  }
-}</code></pre>
-</div>
-</div>
-<div id="class-5---binary-tree-binary-search-tree" class="section level1">
-<h1><span class="header-section-number">5</span> Class 5 - Binary Tree &amp; Binary Search Tree</h1>
-<div id="binary-tree-pre-order-iterative-traversal" class="section level2">
-<h2><span class="header-section-number">5.1</span> Binary Tree Pre-order Iterative Traversal</h2>
-<p>Implement an iterative, pre-order traversal of a given binary tree, return the list of keys of each node in the tree as it is pre-order traversed.</p>
-<p><a href="https://app.laicode.io/app/problem/44" class="uri">https://app.laicode.io/app/problem/44</a></p>
-<pre class="java"><code>public class PreOrder {
-  public List&lt;Integer&gt; preOrder(TreeNode root) {
-    List&lt;Integer&gt; preorder = new ArrayList&lt;Integer&gt;();
-    if (root == null) {
-      return preorder;
-    }
-    Deque&lt;TreeNode&gt; stack = new LinkedList&lt;TreeNode&gt;();
-    stack.offerFirst(root);
-    while (!stack.isEmpty()) {
-      TreeNode curr = stack.pollFirst();
-      // The left subtree should be traversed before right subtree, since stack is LIFO, we should push right into the stack first, so for the next step the top element of the stack is the left subtree.
-      if (curr.right != null) {
-        stack.offerFirst(curr.right);
-      }
-      if (curr.left != null) {
-        stack.offerFirst(curr.left);
-      }
-      preorder.add(curr.key);
-    }
-    return preorder;
-  }
-}</code></pre>
-</div>
-<div id="binary-tree-in-order-iterative-traversal" class="section level2">
-<h2><span class="header-section-number">5.2</span> Binary Tree In-order Iterative Traversal</h2>
-<p>Implement an iterative, in-order traversal of a given binary tree, return the list of keys of each node in the tree as it is in-order traversed.</p>
-<p><a href="https://app.laicode.io/app/problem/43" class="uri">https://app.laicode.io/app/problem/43</a></p>
-<pre class="java"><code>public class InOrder {
-  public List&lt;Integer&gt; inOrder(TreeNode root) {
-    List&lt;Integer&gt; inorder = new ArrayList&lt;Integer&gt;();
-    Deque&lt;TreeNode&gt; stack = new LinkedList&lt;TreeNode&gt;();
-    TreeNode curr = root;
-    while (curr != null || !stack.isEmpty()) {
-      // Always try go to the left side to see if there is any node should be traversed before the curr node, curr node is stored on stack since it has not been traversed yet.
-      if (curr != null) {
-        stack.offerFirst(curr);
-        curr = curr.left;
-      }
-      else {
-        // If cannot go left, meaning all the nodes on the left side of the top node on stack have been traversed, the next traversing node should be the top node on stack.
-        curr = stack.pollFirst();
-        inorder.add(curr.key);
-        // The next subtree we want to traverse is curr.right.
-        curr = curr.right;
-      }
-    }
-    return inorder;
-  }
-}</code></pre>
-</div>
-<div id="binary-tree-post-order-iterative-traversal" class="section level2">
-<h2><span class="header-section-number">5.3</span> Binary Tree Post-order Iterative Traversal</h2>
-<p>Implement an iterative, post-order traversal of a given binary tree, return the list of keys of each node in the tree as it is post-order traversed.</p>
-<p><a href="https://app.laicode.io/app/problem/45" class="uri">https://app.laicode.io/app/problem/45</a></p>
-<pre class="java"><code>public class Postorder {
-  // Method 1: Post-order is the reverse order of pre-order with traversing right subtree before traversing left subtree.
-  public List&lt;Integer&gt; postOrderI(TreeNode root) {
-    List&lt;Integer&gt; result = new ArrayList&lt;Integer&gt;();
-    if (root == null) {
-      return result;
-    }
-    Deque&lt;TreeNode&gt; preOrder = new LinkedList&lt;TreeNode&gt;();
-    preOrder.offerFirst(root);
-    while (!preOrder.isEmpty()) {
-      TreeNode curr = preOrder.pollFirst();
-      // Conduct the result for the special pre-order traversal.
-      result.add(curr.key);
-      // In pre-order the right subtree will be traversed before the left subtree so pushing left child first.
-      if (curr.left != null) {
-        preOrder.offerFirst(curr.left);
-      }
-      if (curr.right != null) {
-        preOrder.offerFirst(curr.right);
-      }
-    }
-    // Reverse the pre-order traversal sequence to get the post-order result.
-    Collections.reverse(result);
-    return result;
-  }
-  
-  // Method 2: Check the relation between the current node and the previous node to determine which direction should go next.
-  public List&lt;Integer&gt; postOrderII(TreeNode root) {
-    List&lt;Integer&gt; result = new ArrayList&lt;Integer&gt;();
-    if (root == null) {
-      return result;
-    }
-    Deque&lt;TreeNode&gt; stack = new LinkedList&lt;TreeNode&gt;();
-    stack.offerFirst(root);
-    // To record the previous node on the way of DFS so that we can determine the direction.
-    TreeNode prev = null;
-    while (!stack.isEmpty()) {
-      TreeNode curr = stack.peekFirst();
-      // If we are going down, either left/right direction.
-      if (prev == null || curr == prev.left || curr == prev.right) {
-        // If we can still go down, try go left first.
-        if (curr.left != null) {
-          stack.offerFirst(curr.left);
-        }
-        else if (curr.right != null) {
-          stack.offerFirst(curr.right);
-        }
-        // If we cannot go either way, meaning curr is a leaf node.
-        else {
-          stack.pollFirst();
-          result.add(curr.key);
-        }
-      }
-      // If we are going up from the right side or going up from the left side but we cannot go right afterwards.
-      else if (prev == curr.right || prev == curr.left &amp;&amp; curr.right == null) {
-        stack.pollFirst();
-        result.add(curr.key);
-      }
-      // Otherwise, we are going up from the left side and we can go down right side.
-      else {
-        stack.offerFirst(curr.right);
-      }
-      prev = curr;
-    }
-    return result;
-  }
-}</code></pre>
-</div>
-<div id="check-if-binary-tree-is-balanced" class="section level2">
-<h2><span class="header-section-number">5.4</span> Check If Binary Tree Is Balanced</h2>
-<p>Check if a given binary tree is balanced. A balanced binary tree is one in which the depths of every node’s left and right subtree differ by at most 1.</p>
-<p><a href="https://app.laicode.io/app/problem/46" class="uri">https://app.laicode.io/app/problem/46</a></p>
-<pre class="java"><code>public class CheckBalanced {
-  public boolean isBalanced(TreeNode root) {
-    if (root == null) {
-      return true;
-    }
-    // Use -1 to denote the tree is not balanced.
-    // &gt;= 0 value means the tree is balanced and it is the height of the tree.
-    return height(root) != -1;
-  }
-  
-  private int height(TreeNode root) {
-    if (root == null) {
-      return 0;
-    }
-    int leftHeight = height(root.left);
-    // If left subtree is already not balanced, we do not need to continue and we can return -1 directly.
-    if (leftHeight == -1) {
-      return -1;
-    }
-    int rightHeight = height(root.right);
-    if (rightHeight == -1) {
-      return -1;
-    }
-    // If not balanced, return -1.
-    if (Math.abs(leftHeight - rightHeight) &gt; 1) {
-      return -1;
-    }
-    return Math.max(leftHeight, rightHeight) + 1;
-  }
-}</code></pre>
-</div>
-<div id="check-if-binary-tree-is-symmetric" class="section level2">
-<h2><span class="header-section-number">5.5</span> Check If Binary Tree Is Symmetric</h2>
-<p>Check if a given binary tree is symmetric.</p>
-<p><a href="https://app.laicode.io/app/problem/48" class="uri">https://app.laicode.io/app/problem/48</a></p>
-<pre class="java"><code>public class CheckSymmetric {
-  public boolean isSymmetric(TreeNode root) {
-    if (root == null) {
-      return ture;
-    }
-    return isSymmetric(root.left, root.right);
-  }
-  
-  private boolean isSymmetric(TreeNode n1, TreeNode n2) {
-    if (n1 == null &amp;&amp; n2 == null) {
-      return true;
-    }
-    else if (n1 == null || n2 == null) {
-      return false;
-    }
-    else if (n1.key != n2.key) {
-      return false;
-    }
-    return isSymmetric(n1.left, n2.right)
-        &amp;&amp; isSymmetric(n1.right, n2.left);
-  }
-}</code></pre>
-</div>
-<div id="tweaked-identical-binary-trees" class="section level2">
-<h2><span class="header-section-number">5.6</span> Tweaked Identical Binary Trees</h2>
-<p>Determine whether two given binary trees are identical assuming any number of ’tweak’s are allowed. A tweak is defined as a swap of the children of one node in the tree.</p>
-<p><a href="https://app.laicode.io/app/problem/50" class="uri">https://app.laicode.io/app/problem/50</a></p>
-<pre class="java"><code>public class CheckTweakedIdentical {
-  public boolean isTweakedIdentical(TreeNode n1, TreeNode n2) {
-    if (n1 == null &amp;&amp; n2 == null) {
-      return true;
-    }
-    else if (n1 == null || n2 == null) {
-      return false;
-    }
-    else if (n1.key != n2.key) {
-      return false;
-    }
-    return isTweakedIdentical(n1.left, n2.left) &amp;&amp; isTweakedIdentical(n1.right, n2.right)
-        || isTweakedIdentical(n1.left, n2.right) &amp;&amp; isTweakedIdentical(n1.right, n2.left);
-  }
-}</code></pre>
-</div>
-<div id="is-binary-search-tree-or-not" class="section level2">
-<h2><span class="header-section-number">5.7</span> Is Binary Search Tree Or Not</h2>
-<p>Determine if a given binary tree is binary search tree.</p>
-<p><a href="https://app.laicode.io/app/problem/54" class="uri">https://app.laicode.io/app/problem/54</a></p>
-<pre class="java"><code>public class CheckBST {
-  public boolean isBST(TreeNode root) {
-    return isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
-  }
-  
-  private boolean isBST(TreeNode root, int min, int max) {
-    if (root == null) {
-      return true;
-    }
-    if (root.key &lt; min || root.key &gt; max) {
-      return false;
-    }
-    return isBST(root.left, min, root.key - 1)
-        &amp;&amp; isBST(root.right, root.key + 1, max);
-  }
-}</code></pre>
-</div>
-<div id="get-keys-in-binary-search-tree-in-given-range" class="section level2">
-<h2><span class="header-section-number">5.8</span> Get Keys In Binary Search Tree In Given Range</h2>
-<p>Get the list of keys in a given binary search tree in a given range[min, max] in ascending order, both min and max are inclusive.</p>
-<p><a href="https://app.laicode.io/app/problem/55" class="uri">https://app.laicode.io/app/problem/55</a></p>
-<pre class="java"><code>public class GetRange {
-  public List&lt;Integer&gt; getRange(TreeNode root, int min, int max) {
-    List&lt;integer&gt; list = new ArrayList&lt;Integer&gt;();
-    getRange(root, min, max, list);
-    return list;
-  }
-  
-  private void getRange(TreeNode root, int min, int max, List&lt;Integer&gt; list) {
-    if (root == null) {
-      return;
-    }
-    // 1. Determine if left subtree should be traversed, only when root.key &gt; min, we should traverse the left subtree.
-    if (root.key &gt; min) {
-      getRange(root.left, min, max, list);
-    }
-    // 2. Determine if root should be traversed.
-    if (root.key &gt;= min &amp;&amp; root.key &lt;= max) {
-      list.add(root.key);
-    }
-    // 3. Determine if right subtree should be traversed, only when root.key &lt; max, we should traverse the right subtree.
-    if (root.key &lt; max) {
-      getRange(root.right, min, max, list);
-    }
-  }
-}</code></pre>
-</div>
-</div>
-<div id="class-6---heap-graph-search-algorithm-i-bfs" class="section level1">
-<h1><span class="header-section-number">6</span> Class 6 - Heap &amp; Graph Search Algorithm I (BFS)</h1>
-<div id="k-smallest-in-unsorted-array" class="section level2">
-<h2><span class="header-section-number">6.1</span> K Smallest In Unsorted Array</h2>
-<p>Find the K smallest numbers in an unsorted integer array A. The returned numbers should be in ascending order.</p>
-<p><a href="https://app.laicode.io/app/problem/25" class="uri">https://app.laicode.io/app/problem/25</a></p>
-<pre class="java"><code>// Find the smallest k elements in an unsorted array.
-// Assumptions:
-// 1. array is not null
-// 2. k &gt;= 0 and k &lt;= array.length
-public class KSmallest {
-  // Method 1: K sized max heap
-  public int[] kSmallestI(int[] array, int k) {
-    // Handle all possible corner cases at the very beginning.
-    if (array.length == 0 || k == 0) {
-      return new int[0];
-    }
-    PriorityQueue&lt;Integer&gt; maxHeap = new PriorityQueue&lt;Integer&gt;(k, new Comparator&lt;Integer&gt;() {
-      @Override
-      public int compare(Integer o1, Integer o2) {
-        // Do not use &quot;==&quot; here!!!
-        if (o1.equals(o2)) {
-          return 0;
-        }
-        return o1 &gt; o2 ? -1 : 1;
-      }
-    });
-    for (int i = 0; i &lt; array.length; i++) {
-      if (i &lt; k) {
-        // Offer the first k elements into max heap.
-        // NOTICE: If you want to utilize heapify(), the only thing you can do is to call a certain constructor of PriorityQueue.
-        maxHeap.offer(array[i]);
-      }
-      else if (array[i] &lt; maxHeap.peek()) {
-        // For the other elements, only offer it into the max heap if it is smaller than the max value in the max heap.
-        maxHeap.poll();
-        maxHeap.offer(array[i]);
-      }
-    }
-    int[] result = new int[k];
-    for (int i = k - 1; i &gt;= 0; i--) {
-      result[i] = maxHeap.poll();
-    }
-    return result;
-  }
-  
-  // Method 2: Quick select
-  public int[] kSmallestII(int[] array, int k) {
-    // Handle corner cases at the beginning.
-    if (array.length == 0 || k == 0) {
-      return new int[0];
-    }
-    // Quickselect to find the kth smallest element. After calling this method, the first k elements in the array are the k smallest ones (but not sorted).
-    quickSelect(array, 0, array.length - 1, k - 1);
-    // Copy out the first k elements and sort them.
-    int[] result = Arrays.copyOf(array, k);
-    Arrays.sort(result);
-    return result;
-  }
-  
-  private void quickSelect(int[] array, int left, int right, int target) {
-    // Like quick sort, we need to do the partition using pivot value.
-    int mid = partition(array, left, right);
-    // Unlike quick sort, we only need to do quickselect on at most one partition. If the pivot is already the kth smallest element, we can directly return.
-    if (mid == target) {
-      return;
-    }
-    else if (target &lt; mid) {
-      // Only need to recursively call quick select on the left partition if the kth smallest one is in the left partition.
-      quickSelect(array, left, mid - 1, target);
-    }
-    else {
-      // Only need to recursively call quick select on the right partition if the kth smallest one is in the right partition.
-      quickSelect(array, mid + 1, right, target);
-    }
-  }
-  
-  private int partition(int[] array, int left, int right) {
-    int pivot = array[right];
-    int start = left;
-    int end = right - 1;
-    while (start &lt;= end) {
-      if (array[start] &lt; pivot) {
-        start++;
-      }
-      else if (array[end] &gt;= pivot) {
-        end--;
-      }
-      else {
-        swap(array, start, end);
-        start++;
-        end--;
-      }
-    }
-    swap(array, start, right);
-    return start;
-  }
-  
-  private void swap(int[] array, int a, int b) {
-    int temp = array[a];
-    array[a] = array[b];
-    array[b] = temp;
-  }
-}</code></pre>
-</div>
-<div id="get-keys-in-binary-tree-layer-by-layer" class="section level2">
-<h2><span class="header-section-number">6.2</span> Get Keys In Binary Tree Layer By Layer</h2>
-<p>Get the list of list of keys in a given binary tree layer by layer. Each layer is represented by a list of keys and the keys are traversed from left to right.</p>
-<p><a href="https://app.laicode.io/app/problem/57" class="uri">https://app.laicode.io/app/problem/57</a></p>
-<pre class="java"><code>public class LayerByLayer {
-  public List&lt;List&lt;Integer&gt;&gt; layerByLayer(TreeNode root) {
-    List&lt;List&lt;Integer&gt;&gt; list = new ArrayList&lt;List&lt;Integer&gt;&gt;();
-    if (root == null) {
-      return list;
-    }
-    Queue&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;();
-    queue.offer(root);
-    while (!queue.isEmpty()) {
-      // The list storing all the nodes on the current level.
-      List&lt;Integer&gt; currLayer = new ArrayList&lt;Integer&gt;();
-      // The size of current level.
-      int size = queue.size();
-      // Traverse all the nodes on the current level and prepare for the next level.
-      for (int i = 0; i &lt; size; i++) {
-        TreeNode curr = queue.poll();
-        currLayer.add(curr.key);
-        if (curr.left != null) {
-          queue.offer(curr.left);
-        }
-        if (curr.right != null) {
-          queue.offer(curr.right);
-        }
-      }
-      list.add(currLayer);
-    }
-    return list;
-  }
-}</code></pre>
-</div>
-<div id="bipartite" class="section level2">
-<h2><span class="header-section-number">6.3</span> Bipartite</h2>
-<p>Determine if an undirected graph is bipartite. A bipartite graph is one in which the nodes can be divided into two groups such that no nodes have direct edges to other nodes in the same group.</p>
-<p><a href="https://app.laicode.io/app/problem/56" class="uri">https://app.laicode.io/app/problem/56</a></p>
-<pre class="java"><code>// Assumptions:
-// 1. The given graph is not null.
-public class Bipartite {
-  public boolean isBipartite(List&lt;GraphNode&gt; graph) {
-    // Use 0 and 1 to denote two different groups. The map maintains for each node which group it belongs to.
-    HashMap&lt;GraphNode, Integer&gt; visited = new HashMap&lt;GraphNode, Integer&gt;();
-    // The graph can be represented by a list of nodes (if it is not guaranteed to be connected). We have to do BFS from each of the nodes.
-    for (GraphNode node : graph) {
-      if (!BFS(node, visited)) {
-        return false;
-      }
-    }
-    return true;
-  }
-  
-  private boolean BFS(GraphNode node, HashMap&lt;GraphNode, Integer&gt; visited) {
-    // If this node has been traversed, no need to do BFS again.
-    if (visited.containsKey(node)) {
-      return true;
-    }
-    Queue&lt;GraphNode&gt; queue = new LinkedList&lt;GraphNode&gt;();
-    queue.offer(node);
-    // Start breadth-first-search from the node, since the node has not been visited, we can assign it to any of the groups, for example, group 0.
-    visited.put(node, 0);
-    while (!queue.isEmpty()) {
-      GraphNode curr = queue.poll();
-      // The group assigned for current node.
-      int curGroup = visited.get(curr);
-      // The group assigned for any neighbor of current node.
-      int neiGroup = curGroup == 0 ? 1 : 0;
-      for (Graphnode nei : curr.neigbors) {
-        // If the neighbor has not been visited, just put it in the queue and choose the correct group.
-        if (!visited.containsKey(nei)) {
-          visited.put(nei, neiGroup);
-          queue.offer(nei);
-        }
-        else if (visited.get(nei) != neiGroup) {
-          // Only if the neighbor has been traversed and the group does not match to the desired one, return false.
-          return false;
-        }
-        // If the neighbor has been traversed and the group matches the desired one, we do not need to do anything.
-      }
-    }
-    return true;
-  }
-}</code></pre>
-</div>
-<div id="check-if-binary-tree-is-complete" class="section level2">
-<h2><span class="header-section-number">6.4</span> Check If Binary Tree Is Complete</h2>
-<p>Check is a given binary tree is completed. A complete binary tree is one in which every level of the binary tree is completely filled except possibly the last level. Furthermore, all nodes are as far left as possible.</p>
-<p><a href="https://app.laicode.io/app/problem/47" class="uri">https://app.laicode.io/app/problem/47</a></p>
-<pre class="java"><code>public class CheckCompleted {
-  public boolean isCompleted(TreeNode root) {
-    if (root == null) {
-      return true;
-    }
-    Queue&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;();
-    // If the flag is set true, there should not be any child nodes afterwards.
-    boolean flag = false;
-    queue.offer(root);
-    while (!queue.isEmpty()) {
-      TreeNode curr = queue.poll();
-      // If any of the child is not present, set the flag to true.
-      if (curr.left == null) {
-        flag = true;
-      }
-      else if (flag) {
-        // If flag is set but we still see curr has a left child, the binary tree is not a completed one.
-        return false;
-      }
-      else {
-        // If flag is not set and left child is present.
-        queue.offer(curr.left);
-      }
-      // Same logic applied to the right child.
-      if (curr.right == null) {
-        flag = true;
-      }
-      else if (flag) {
-        return false;
-      }
-      else {
-        queue.offer(curr.right);
-      }
-    }
-    return true;
-  }
-}</code></pre>
-</div>
-<div id="kth-smallest-number-in-sorted-matrix" class="section level2">
-<h2><span class="header-section-number">6.5</span> Kth Smallest Number In Sorted Matrix</h2>
-<p>Given a matrix of size N x M. For each row the elements are sorted in ascending order, and for each column the elements are also sorted in ascending order. Find the Kth smallest number in it.</p>
-<p><a href="https://app.laicode.io/app/problem/26" class="uri">https://app.laicode.io/app/problem/26</a></p>
-<pre class="java"><code>// Assumptions:
-// 1. matrix is not null, N * M where N &gt; 0 and M &gt; 0
-// 2. k &gt; 0 and k &lt;= N * M
-public class KthSmallestInSortedMatrix {
-  public int kthSmallest(int[][] matrix, int k) {
-    int rows = matrix.length;
-    int cols = matrix[0].length;
-    // Best First Search, need a minheap on the value of each cells.
-    PriorityQueue&lt;Cell&gt; minHeap = new PriorityQueue&lt;Cell&gt;(k, new Comparator&lt;Cell&gt;() {
-      @Override
-      public int compare(Cell c1, Cell c2) {
-        if (c1.value == c2.value) {
-          return 0;
-        }
-        return c1.value &lt; c2.value ? -1 : 1;
-      }
-    });
-    // All the generated cells will be marked true to avoid being generated more than once.
-    boolean[][] visited = new boolean[rows][cols];
-    minHeap.offer(new Cell(0, 0, matrix[0][0]));
-    visited[0][0] = true;
-    // Iterate k-1 rounds, and Best First Search the smallest k-1 cells.
-    for (int i = 0; i &lt; k - 1; i++) {
-      Cell curr = minHeap.poll();
-      // The neighbor cell will be inserted back to the minheap only if 1) it is not of boundary; 2) it has not been generated before. Because for each cell it could be generated twice.
-      if (curr.row + 1 &lt; rows &amp;&amp; !visited[curr.row + 1][curr.col]) {
-        minHeap.offer(new Cell(curr.row + 1, curr.col, matrix[curr.row + 1][curr.col]));
-        visited[curr.row + 1][curr.col] = true;
-      }
-      if (curr.col + 1 &lt; cols &amp;&amp; !visited[curr.row][curr.col + 1]) {
-        minHeap.offer(new Cell(curr.row, curr.col + 1, matrix[curr.row][curr.col + 1]));
-        visited[curr.row][curr.col + 1] = true;
-      }
-    }
-    return minHeap.peek().value;
-  }
-  
-  static class Cell {
-    int row;
-    int col;
-    int value;
-    
-    Cell(int row, int col, int value) {
-      this.row = row;
-      this.col = col;
-      this.value = value;
-    }
-  }
-}</code></pre>
-</div>
-</div>
-<div id="class-7---graph-search-algorithm-ii-dfs" class="section level1">
-<h1><span class="header-section-number">7</span> Class 7 - Graph Search Algorithm II (DFS)</h1>
-<div id="all-subsets-i" class="section level2">
-<h2><span class="header-section-number">7.1</span> All Subsets I</h2>
-<p>Given a set of characters represented by a String, return a list containing all subsets of the characters.</p>
-<p><a href="https://app.laicode.io/app/problem/62" class="uri">https://app.laicode.io/app/problem/62</a></p>
-<pre class="java"><code>// Assumptions:
-// 1. There are no duplicate characters in the given string.
-public class SubSetsI {
-  // Method 1: DFS solution.
-  public List&lt;String&gt; subSets(String set) {
-    List&lt;String&gt; result = new ArrayList&lt;String&gt;();
-    if (set == null) {
-      return result;
-    }
-    char[] arraySet = set.toCharArray();
-    // Record the current subset.
-    StringBuilder sb = new StringBuilder();
-    helper(arraySet, sb, 0, result);
-    return result;
-  }
-  
-  // At each level, determine the character at the position &quot;index&quot; to be picked or not.
-  private void helper(char[] set, StringBuilder sb, int index, List&lt;String&gt; result) {
-    // Terminate condition: When we finish determining for all the characters pick or not, we have a complete subset.
-    if (index == set.length) {
-      result.add(sb.toString());
-      return;
-    }
-    // 1. Not pick the character at index.
-    helper(set, sb, index + 1, result);
-    // 2. Pick the character at index.
-    helper(set, sb.append(set[index]), index + 1, result);
-    // Remember to remove the added character when back tracking to the previous level.
-    sb.deleteCharAt(sb.length() - 1);
-  }
-  
-  // Method 2: Another DFS solution.
-  public List&lt;String&gt; subSetsII(String set) {
-    List&lt;String&gt; result = new ArrayList&lt;String&gt;();
-    if (set == null) {
-      return result;
-    }
-    char[] arraySet = set.toCharArray();
-    StringBuilder sb = new StringBuilder();
-    helperII(arraySet, sb, 0, result);
-    return result;
-  }
-  
-  private void helperII(char[] set, StringBuilder sb, int index, List&lt;String&gt; result) {
-    result.add(sb.toString());
-    // Maintains ascending order of the indices of picked characters. Choose the next picked index (the smallest one can be picked is index).
-    for (int i = index; i &lt; set.length; i++) {
-      sb.append(set[i]);
-      helperII(set, sb, i + 1, result);
-      sb.deleteCharAt(sb.length() - 1);
-    }
-  }
-}</code></pre>
-</div>
-<div id="all-valid-permutations-of-parentheses-i" class="section level2">
-<h2><span class="header-section-number">7.2</span> All Valid Permutations Of Parentheses I</h2>
-<p>Given N pairs of parentheses “()”, return a list with all the valid permutations.</p>
-<p><a href="https://app.laicode.io/app/problem/66" class="uri">https://app.laicode.io/app/problem/66</a></p>
-<pre class="java"><code>public class ValidParenthesesI {
-  public List&lt;String&gt; validParentheses(int k) {
-    List&lt;String&gt; result = new ArrayList&lt;String&gt;();
-    // The final string contains 2k characters.
-    char[] curr = new char[k * 2];
-    helper(curr, k, k, 0, result);
-    return result;
-  }
-  
-  // &quot;left&quot;: how many &quot;(&quot; we still have
-  // &quot;right&quot;: how many &quot;)&quot; we still have
-  // &quot;index&quot;: the current position in curr we want to fill in with either &quot;(&quot; or &quot;)&quot;
-  private void helper(char[] curr, int left, int right, int index, List&lt;String&gt; result) {
-    // Terminate condition: When we do not have any parentheses left.
-    if (left == 0 &amp;&amp; right == 0) {
-      result.add(new String(curr));
-      return;
-    }
-    // When we can add a &quot;(&quot;? Whenever there is some &quot;(&quot; we can still use.
-    if (left &gt; 0) {
-      curr[index] = &quot;(&quot;;
-      helper(curr, left - 1, right, index + 1, result);
-      // NOTICE: It looks like we do not do anything when back tracking to the previous level. The code is still correct because:
-      // 1. we are setting the character at index and when back tracking, what we need is just remove the character at index and add a different character at index.
-      // 2. only when we fill in all the positions in curr, we have a complete solution.
-      // The code itself actually already suffices the above two points and it already does the correct removing operation when back tracked to the previous level.
-    }
-    // When we can add a &quot;)&quot;? When there is more &quot;(&quot; than &quot;)&quot; used, because each &quot;)&quot; should be associated with a previous &quot;(&quot;.
-    if (right &gt; left) {
-      curr[index] = &quot;)&quot;;
-      helper(curr, left, right - 1, index + 1, result);
-    }
-  }
-}</code></pre>
-</div>
-<div id="combinations-of-coins" class="section level2">
-<h2><span class="header-section-number">7.3</span> Combinations Of Coins</h2>
-<p>Given a number of different denominations of coins (e.g., 1 cent, 5 cents, 10 cents, 25 cents), get all the possible ways to pay a target number of cents.</p>
-<p><a href="https://app.laicode.io/app/problem/73" class="uri">https://app.laicode.io/app/problem/73</a></p>
-<pre class="java"><code>public class CombinationsOfCoins {
-  public List&lt;List&lt;Integer&gt;&gt; combinations(int target, int[] coins) {
-    // Each combination is represented as a &quot;List&lt;Integer&gt; curr&quot;, and &quot;curr.get(i)&quot; is the number of coins of &quot;coins[i]&quot;. All the combinations are stored in the &quot;result&quot; as List of &quot;List&lt;Integer&gt;&quot;.
-    List&lt;List&lt;Integer&gt;&gt; result = new ArrayList&lt;List&lt;Integer&gt;&gt;();
-    List&lt;Integer&gt; curr = new ArrayList&lt;Integer&gt;();
-    helper(target, coins, 0, curr, result);
-    return result;
-  }
-  
-  // &quot;target&quot;: remaining cents we need to complete
-  // &quot;coins&quot;: all the possible different coins
-  // &quot;index&quot;: we want to see how many coins we need for &quot;coins[index]&quot;
-  private void helper(int target, int[] coins, int index, List&lt;Integer&gt; curr, List&lt;List&lt;Integer&gt;&gt; result) {
-    // Terminate condition: NOTICE: This can also be done at &quot;index == coins.length&quot; where all the coins have been picked, but a probably better one is at a previous level to reduce the number of unnecessary branches in the DFS. Think about it, &quot;coins.length - 1&quot; represents the last coin we can use and actually what we can do at this level is to get &quot;target / coins[coins.length - 1]&quot; coins if possible.
-    if (index == coin.length - 1) {
-      if (target % coins[coins.length - 1] == 0) {
-        curr.add(target / coins[coins.length - 1]);
-        result.add(new ArrayList&lt;Integer&gt;(curr));
-        curr.remove(curr.size() - 1);
-      }
-      return;
-    }
-    // For &quot;coins[index]&quot;, we can pick &quot;0&quot;, &quot;1&quot;, &quot;2&quot;, ..., &quot;target / coins[index]&quot; coins.
-    int max = target / coins[index];
-    for (int i = 0; i &lt;= max; i++) {
-      curr.add(i);
-      // Remember to modify the remaining cents for the next level.
-      helper(target - i * coins[index], coins, index + 1, curr, result);
-      curr.remove(curr.size() - 1);
-    }
-  }
-}</code></pre>
-</div>
-<div id="all-permutations-i" class="section level2">
-<h2><span class="header-section-number">7.4</span> All Permutations I</h2>
-<p>Given a string with no duplicate characters, return a list with all permutations of the characters.</p>
-<p><a href="https://app.laicode.io/app/problem/64" class="uri">https://app.laicode.io/app/problem/64</a></p>
-<pre class="java"><code>public class PermutationsI {
-  // Solution 1: DFS with swapping
-  public List&lt;String&gt; permutations(String set) {
-    List&lt;String&gt; result = new ArrayList&lt;String&gt;();
-    if (set == null) {
-      return result;
-    }
-    char[] array = set.toCharArray();
-    helper(array, 0, result);
-    return result;
-  }
-  
-  // Choose the character to be at the position of &quot;index&quot;, all the already chosen positions are &quot;(0, index - 1)&quot;, all the condidate characters can be at position &quot;index&quot; are in the subarray of &quot;(index, array.length - 1)&quot;.
-  private void helper(char[] array, int index, List&lt;String&gt; result) {
-    // Terminate condition: Only when we have already chosen the characters for all the position, we can have a complete permutation.
-    if (index == array.length) {
-      result.add(new String(array));
-      return;
-    }
-    // All the possible characters could be placed at index are the characters in the subarray &quot;(index, array.length - 1)&quot;.
-    for (int i = index; i &lt; array.length; i++) {
-      swap(array, index, i);
-      helper(array, index + 1, result);
-      // Remember to swap back when back track to previous level.
-      swap(array, index, i);
-    }
-  }
-  
-  private void swap(char[] array, int left, int right) {
-    char temp = array[left];
-    array[left] = array[right];
-    array[right] = temp;
-  }
-  
-  // Solution 2: Maintain the order of all the permutations.
-  public List&lt;String&gt; permutationsWithOrder(String set) {
-    List&lt;String&gt; result = new ArrayList&lt;String&gt;();
-    if (set == null) {
-      return null;
-    }
-    char[] arraySet = set.toCharArray();
-    Arrays.sort(arraySet);
-    // Record which index has been used in the original arraySet.
-    boolean[] used = new boolean[arraySet.length];
-    Stringbuilder curr = new StringBuilder();
-    helperWithOrder(arraySet, used, curr, result);
-    return result;
-  }
-  
-  private void helperWithOrder(char[] array, boolean[] used, StringBuilder curr, List&lt;String&gt; result) {
-    // Terminate condition: When the permutation contains all the characters in the original array.
-    if (curr.length() == array.length) {
-      result.add(curr.toString());
-      return;
-    }
-    // When picking the next char, always according to the order.
-    for (int i = 0; i &lt; array.length; i++) {
-      // If a character is already been used, we cannot pick it for a second time.
-      if (!used[i]) {
-        used[i] = true;
-        curr.append(array[i]);
-        helperWithOrder(array, used, curr, result);
-        used[i] = false;
-        curr.deleteCharAt(curr.length() - 1);
-      }
-    }
-  }
-}</code></pre>
-</div>
-</div>
-<div id="class-8---hashtable-string-i" class="section level1">
-<h1><span class="header-section-number">8</span> Class 8 - HashTable &amp; String I</h1>
-<div id="top-k-frequent-words" class="section level2">
-<h2><span class="header-section-number">8.1</span> Top K Frequent Words</h2>
-<p>Given a composition with different kinds of words, return a list of the top K most frequent words in the composition.</p>
-<p><a href="https://app.laicode.io/app/problem/67" class="uri">https://app.laicode.io/app/problem/67</a></p>
-<pre class="java"><code>public class TopKFrequent {
-  // Assumptions: combo is not, and k &gt;= 1.
-  public String[] topKFrequent(String[] combo, int k) {
-    // Handle the special case of empty combo at the very beginning.
-    if (combo.length == 0) {
-      return new String[0];
-    }
-    // Get all the distinct strings as keys and their frequencies as values.
-    // NOTICE: The &quot;freqMap&quot; has at least size 1.
-    Map&lt;String, Integer&gt; freqMap = getFreqMap(combo);
-    // minHeap on the frequencies of the strings.
-    // NOTICE: Using &quot;Map.Entry&quot; as the element type directly so that all the operations are mostly efficient.
-    PriorityQueue&lt;Map.Entry&lt;String, Integer&gt;&gt; minHeap = new PriorityQueue&lt;&gt;(k, new Comparator&lt;Map.Entry&lt;String, Integer&gt;&gt;() {
-      @Override
-      public int compare(Map.Entry&lt;String, Integer&gt; e1, Map.Entry&lt;String, Integer&gt; e2) {
-        // Compare the frequencies, directly call the &quot;compareTo&quot; method since the frequencies are represented by Integer.
-        return e1.getValue().compareTo(e2.getValue());
-      }
-    });
-    for (Map.Entry&lt;String, Integer&gt; entry : freqMap.entrySet()) {
-      if (minHeap.size() &lt; k) {
-        minHeap.offer(entry);
-      }
-      else if (entry.getValue() &gt; minHeap.peek().getValue()) {
-        minHeap.poll();
-        minHeap.offer(entry);
-      }
-    }
-    // Since the returned array required the strings sorted by their frequencies, use a separate helper method to do this operation.
-    return freqArray(minHeap);
-  }
-  
-  private Map&lt;String, Integer&gt; getFreqMap(String[] combo) {
-    Map&lt;String, Integer&gt; freqMap = new HashMap&lt;&gt;();
-    // NOTICE: When possible, choose the most efficient way for HashMap operations.
-    for (String s : combo) {
-      Integer freq = freqMap.get(s);
-      if (freq == null) {
-        freqMap.put(s, 1);
-      }
-      else {
-        freqMap.put(s, freq + 1);
-      }
-    }
-    return freqMap;
-  }
-  
-  private String[] freqArray(PriorityQueue&lt;Map.Entry&lt;String, Integer&gt;&gt; minHeap) {
-    String[] result = new String[minHeap.size()];
-    for (int i = minHeap.size() - 1; i &gt;= 0; i--) {
-      result[i] = minHeap.poll().getKey();
-    }
-    return result;
-  }
-}</code></pre>
-</div>
-<div id="missing-number-i" class="section level2">
-<h2><span class="header-section-number">8.2</span> Missing Number I</h2>
-<p>Given an integer array of size N - 1, containing all the numbers from 1 to N except one, find the missing number.</p>
-<p><a href="https://app.laicode.io/app/problem/68" class="uri">https://app.laicode.io/app/problem/68</a></p>
-<pre class="java"><code>public class MissingNumberI {
-  // Method 1: Use HashSet.
-  // Assumption: array is not null.
-  public int missingI(int[] array) {
-    int n = array.length + 1;
-    HashSet&lt;Integer&gt; set = new HashSet&lt;Integer&gt;();
-    for (int number : array) {
-      set.add(number);
-    }
-    for (int i = 1; i &lt; n; i++) {
-      if (!set.contains(i)) {
-        return i;
-      }
-    }
-    return n;
-  }
-  
-  // Method 2: Use sum.
-  public int missingII(int[] array) {
-    int n = array.length + 1;
-    long targetSum = (n + 0L) * (n + 1) / 2;
-    long actualSum = 0L;
-    for (int num : array) {
-      actualSum += num;
-    }
-    return (int) (targetSum - actualSum);
-  }
-  
-  // Method 3: bit operation, O(n).
-  public int missingIII(int[] array) {
-    int n = array.length + 1;
-    int xor = 0;
-    // xor 1 to n.
-    for (int i = 1; i &lt;= n; i++) {
-      xor ^= i;
-    }
-    // After this operation, all the numbers from 1 to n are pair xor-ed except for the missing number. Since x ^ x = 0, the remaining number is the result.
-    for (int num : array) {
-      xor ^= num;
-    }
-    return xor;
-  }
-  
-  // Method 4: Swap to the original position, O(n).
-  public int missingIV(int[] array) {
-    // Try to swap the numbers to its corresponding position. For the number x, the corresponding position is &quot;x - 1&quot;.
-    for (int i = 0; i &lt; array.length; i++) {
-      // While &quot;array[i]&quot; is not &quot;i + 1&quot;, swap &quot;array[i]&quot; to its correct position if possible.
-      while (array[i] != i + 1 &amp;&amp; array[i] != array.length + 1) {
-        swap(array, i ,array[i] - 1);
-      }
-    }
-    // If the missing number is in range of &quot;1&quot; to &quot;n - 1&quot;, then we can find it by checking the index &quot;i&quot; where &quot;array[i] != i + 1&quot;.
-    for (int i = 0; i &lt; array.length; i++) {
-      if (array[i] != i + 1) {
-        return i + 1;
-      }
-    }
-    // If all the numbers of &quot;1&quot; to &quot;n - 1&quot; are in position, the missing number is &quot;n&quot;.
-    return array.length + 1;
-  }
-  
-  private void swap(int[] array, int i, int j) {
-    int temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-}</code></pre>
-</div>
-<div id="common-numbers-of-two-sorted-arrays" class="section level2">
-<h2><span class="header-section-number">8.3</span> Common Numbers Of Two Sorted Arrays</h2>
-<p>Find all numbers that appear in both of two sorted arrays (the two arrays are all sorted in ascending order).</p>
-<p><a href="https://app.laicode.io/app/problem/72" class="uri">https://app.laicode.io/app/problem/72</a></p>
-<pre class="java"><code>// Assumptions: There could be duplicated elements in the given arrays.
-public class CommonNumbersII {
-  // Method 1: Two pointers.
-  public List&lt;Integer&gt; commonI(int[] a, int[] b) {
-    // Assumption: a, b are not null.
-    List&lt;Integer&gt; common = new ArrayList&lt;Integer&gt;();
-    int i = 0;
-    int j = 0;
-    while (i &lt; a.length &amp;&amp; j &lt; b.length) {
-      if (a[i] == b[j]) {
-        common.add(a[i]);
-        i++;
-        j++;
-      }
-      else if (a[i] &lt; b[j]) {
-        i++;
-      }
-      else {
-        j++;
-      }
-    }
-    return common;
-  }
-  
-  // Method 2: Use HashMap.
-  public List&lt;Integer&gt; commonII(int[] a, int[] b) {
-    List&lt;Integer&gt; common = new ArrayList&lt;Integer&gt;();
-    HashMap&lt;Integer, Integer&gt; countA = new HashMap&lt;Integer, Integer&gt;();
-    for (int num : a) {
-      Integer ct = countA.get(num);
-      if (ct != null) {
-        countA.put(num, ct + 1);
-      }
-      else {
-        countA.put(num, 1);
-      }
-    }
-    HashMap&lt;Integer, Integer&gt; countB = new HashMap&lt;Integer, Integer&gt;();
-    for (int num : b) {
-      Integer ct = countB.get(num);
-      if (ct != null) {
-        countB.put(num, ct + 1);
-      }
-      else {
-        countB.put(num, 1);
-      }
-    }
-    for (Map.Entry&lt;Integer, Integer&gt; entry : countA.entrySet()) {
-      Integer ctInB = countB.get(entry.getKey());
-      if (ctInB != null) {
-        int appear = Math.min(entry.getValue(), ctInB);
-        for (int i = 0; i &lt; appear; i++) {
-          common.add(entry.getKey());
-        }
-      }
-    }
-    return common;
-  }
-}</code></pre>
-</div>
-<div id="remove-certain-characters" class="section level2">
-<h2><span class="header-section-number">8.4</span> Remove Certain Characters</h2>
-<p>Remove given characters in input string, the relative order of other characters should be remained. Return the new string after deletion.</p>
-<p><a href="https://app.laicode.io/app/problem/395" class="uri">https://app.laicode.io/app/problem/395</a></p>
-<pre class="java"><code>public class RemoveCertainCharacters {
-  // Assumption: &quot;input&quot; and &quot;t&quot; are not null.
-  public String remove(String input, String t) {
-    // We need to know how to solve this problem with inplace way. Usually we can convert the immutable String to char[].
-    char[] array = input.toCharArray();
-    // Get set of all distinct characters in &quot;t&quot; so that lookup operation will be efficient.
-    Set&lt;Character&gt; set = buildSet(t);
-    // &quot;slow&quot;: &quot;[0, slow)&quot; contains the valid result.
-    // &quot;fast&quot;: &quot;[fast, array.length)&quot; is the area to explore.
-    int slow = 0;
-    for (int fast = 0; fast &lt; array.length; fast++) {
-      // The exploring character can only be put into valid area if it is not in the set.
-      if (!set.contains(array[fast])) {
-        array[slow] = array[fast];
-        slow++;
-      }
-    }
-    // Convert the char[] subarray back to String Object. Please refer to Java API doc for applicable constructors.
-    return new String(array, 0, slow);
-  }
-  
-  private Set&lt;Character&gt; buildSet(String t) {
-    Set&lt;Character&gt; set = new HashSet&lt;Character&gt;();
-    for (int i = 0; i &lt; t.length(); i++) {
-      set.add(t.charAt(i));
-    }
-    return set;
-  }
-}</code></pre>
-</div>
-<div id="remove-all-leadingtrailingduplicate-space-characters" class="section level2">
-<h2><span class="header-section-number">8.5</span> Remove All Leading/Trailing/Duplicate Space Characters</h2>
-<p>Given a string, remove all leading/trailing/duplicate empty spaces.</p>
-<p><a href="https://app.laicode.io/app/problem/281" class="uri">https://app.laicode.io/app/problem/281</a></p>
-<pre class="java"><code>public class RemoveSpaces {
-  // Assumption: &quot;input&quot; is not null.
-  public String removeSpaces(String input) {
-    if (input.isEmpty()) {
-      return input;
-    }
-    char[] array = input.toCharArray();
-    int end = 0;
-    for (int i = 0; i &lt; array.length; i++) {
-      // When we would ignore the current space character:
-      // 1. We ignore all the space characters followed by another space character, so that if there are several consecutive space characters, only the first one will be remained.
-      // 2. We ignore also the space character if it is the first character of the input string.
-      if (array[i] == &quot; &quot; &amp;&amp; (i == 0 || array[i - 1] == &quot; &quot;)) {
-        continue;
-      }
-      array[end] = array[i];
-      end++;
-    }
-    // Post processing: it is possible we still have one trailing space character at the end.
-    if (end &gt; 0 &amp;&amp; array[end - 1] == &quot; &quot;) {
-      return new String(array, 0, end - 1);
-    }
-    return new String(array, 0, end);
-  }
-}</code></pre>
-</div>
-<div id="remove-adjacent-repeated-characters-i" class="section level2">
-<h2><span class="header-section-number">8.6</span> Remove Adjacent Repeated Characters I</h2>
-<p>Remove adjacent, repeated characters in a given string, leaving only one character for each group of such characters.</p>
-<p><a href="https://app.laicode.io/app/problem/79" class="uri">https://app.laicode.io/app/problem/79</a></p>
-<pre class="java"><code>public class RemoveDeplicateI {
-  // Try to convert the input to char[], and do it inplace.
-  public String deDup(String input) {
-    if (input == null) {
-      return null;
-    }
-    char[] array = input.toCharArray();
-    int end = 0;
-    for (int i = 0; i &lt; array.length; i++) {
-      // Repeated characters will be ignored except for the first character in the sequence.
-      if (i == 0 || array[i] != array[end - 1]) {
-        array[end] = array[i];
-        end++;
-      }
-    }
-    return new String(array, 0, end);
-  }
-}</code></pre>
-</div>
-<div id="remove-adjacent-repeated-characters-iv" class="section level2">
-<h2><span class="header-section-number">8.7</span> Remove Adjacent Repeated Characters IV</h2>
-<p>Repeatedly remove all adjacent, repeated characters in a given string from left to right. No adjacent characters should be identified in the final string.</p>
-<p><a href="https://app.laicode.io/app/problem/82" class="uri">https://app.laicode.io/app/problem/82</a></p>
-<pre class="java"><code>public class RemoveDuplicateIV {
-  public String deDup(String input) {
-    if (input == null || input.length() &lt;= 1) {
-      return input;
-    }
-    // Try to convert the string to char[], and do it inplace.
-    char[] array = input.toCharArray();
-    // Instead of using an extra stack explicitly, we can actually reuse the left side of the original char[] as the &quot;stack&quot;.
-    // &quot;end&quot;: is where the top of the stack is.
-    int end = 0;
-    for (int i = 1; i &lt; array.length; i++) {
-      // If the stack is empty (when &quot;end == -1&quot;) or there is no duplicate chars, we are able to push the character into the stack.
-      if (end == -1 || array[i] != array[end]) {
-        array[++end] = array[i];
-      }
-      else {
-        // Otherwise, we need pop the top element by &quot;end--&quot;, and ignore all the consecutive duplicate chars.
-        end--;
-        while (i + 1 &lt; array.length &amp;&amp; array[i] == array[i + 1]) {
-          i++;
-        }
-      }
-    }
-    return new String(array, 0, end + 1);
-  }
-}</code></pre>
-</div>
-<div id="determine-if-one-string-is-anothers-substring" class="section level2">
-<h2><span class="header-section-number">8.8</span> Determine If One String Is Another’s Substring</h2>
-<p>Determine if a small string is a substring of another large string. Return the index of the first occurrence of the small string in the large string. Return -1 if the small string is not a substring of the large string.</p>
-<p><a href="https://app.laicode.io/app/problem/85" class="uri">https://app.laicode.io/app/problem/85</a></p>
-<pre class="java"><code>// NOTICE:
-// 1. There is no assumption about the charset used in the String, so that we cannot assume we are using 26 lower case characters.
-// 2. This is the most correct version of RabinKarp in computer programming, we need to handle: 1) we could use arbitrary charset, 2) the overflow case, by taking the module operation on a very large number.
-// 3. You probably do not need to write this kind of solution to handle above two cases, if you are in an interview. But it is still necessary to understand the reason behind it.
-public class Strstr {
-  // Method 1: Naive solution.
-  public int strstrI(String large, String small) {
-    if (large.length() &lt; small.length()) {
-      return -1;
-    }
-    // Return 0 if small is empty.
-    if (small.length() == 0) {
-      return 0;
-    }
-    for (int i = 0; i &lt;= large.length() - small.length(); i++) {
-      if (equals(large, i, small)) {
-        return i;
-      }
-    }
-    return -1;
-  }
-  
-  // Method 2: RabinKarp
-  public int strstrII(String large, String small) {
-    if (large.length() &lt; small.length()) {
-      return -1;
-    }
-    // Return 0 if small is empty.
-    if (small.length() == 0) {
-      return 0;
-    }
-    // We need a large prime as module end.
-    int largePrime = 101;
-    // We also need a small prime to calculate the hash value (since the charset would be very large, e.g. 1112064 for using UFT, we cannot use that number).
-    int prime = 31;
-    int seed = 1;
-    // Hash value is calculated using the smallPrime and taken the module operation on largePrime.
-    // hash = (s0*smallP^k + s1*smallP^(k-1) + ... + sk*smallP^0) % largeP
-    int targetHash = small.charAt(0) % largePrime;
-    for (int i = 1; i &lt; small.length(); i++) {
-      seed = moduleHash(seed, 0, prime, largePrime);
-      targetHash = moduleHash(targetHash, small.charAt(i), prime, largePrime);
-    }
-    int hash = 0;
-    for (int i = 1; i &lt; small.length(); i++) {
-      hash = moduleHash(hash, large.charAt(i), prime, largePrime);
-    }
-    if (hash == targetHash &amp;&amp; equals(large, 0, small)) {
-      return 0;
-    }
-    for (int i = 1; i &lt;= large.length() - small.length(); i++) {
-      // We need to make sure the module number is non-negative.
-      hash = nonNegative(hash - seed * large.charAt(i - 1) % largePrime, largePrime);
-      hash = moduleHash(hash, large.charAt(i + small.length() - 1), prime, largePrime);
-      // Notice: If the hash matches, it does not mean we really find a substring match. Because there is collision, we need to check if the substring really matches the small string. On average, this will not increase the time complexity, the probability of collision is O(1) so we still have O(N + M).
-      if (hash == targetHash &amp;&amp; equals(large, i, small)) {
-        return i;
-      }
-    }
-    return -1;
-  }
-  
-  public boolean equals(String large, int start, String small) {
-    for (int i = 0; i &lt; small.length(); i++) {
-      if (large.charAt(i + start) != small.charAt(i)) {
-        return false;
-      }
-    }
-    return true;
-  }
-  
-  public int moduleHash(int hash, int addition, int prime, int largePrime) {
-    return (hash * prime % largePrime + addition) % largePrime;
-  }
-  
-  public int nonNegative(int hash, int largePrime) {
-    if (hash &lt; 0) {
-      hash += largePrime;
-    }
-    return hash;
-  }
-}</code></pre>
-</div>
-</div>
-<div id="class-9---string-ii" class="section level1">
-<h1><span class="header-section-number">9</span> Class 9 - String II</h1>
-<div id="reverse-string" class="section level2">
-<h2><span class="header-section-number">9.1</span> Reverse String</h2>
-<p>Reverse a given string.</p>
-<p><a href="https://app.laicode.io/app/problem/396" class="uri">https://app.laicode.io/app/problem/396</a></p>
-<pre class="java"><code>public class ReverseString {
-  // Method 1: Iterative reverse.
-  public String reverse(String input) {
-    if (input = null || input.length() &lt;= 1) {
-      return input;
-    }
-    char[] array = input.toCharArray();
-    for (int left = 0, right = array.length - 1; left &lt; right; left++, right--) {
-      swap(array, left, right);
-    }
-    return new String(array);
-  }
-  
-  // Method 2: Recursive reverse.
-  public String reverseRecursive(String input) {
-    if (input = null || input.length() &lt;= 1) {
-      return input;
-    }
-    char[] array = input.toCharArray();
-    reverseHelper(array, 0, array.length - 1);
-    return new String(array);
-  }
-  
-  private void reverseHelper(char[] array, int left, int right) {
-    if (left &gt;= right) {
-      return;
-    }
-    swap(array, left, right);
-    reverseHelper(array, left + 1, right - 1);
-  }
-  
-  private void swap(char[] array, int a, int b) {
-    char temp = array[a];
-    array[a] = array[b];
-    array[b] = temp;
-  }
-}</code></pre>
-</div>
-<div id="reverse-words-in-sentence" class="section level2">
-<h2><span class="header-section-number">9.2</span> Reverse Words In Sentence</h2>
-<p>Reverse the words in a sentence.</p>
-<p><a href="https://app.laicode.io/app/problem/84" class="uri">https://app.laicode.io/app/problem/84</a></p>
-<pre class="java"><code>public class ReverseWords {
-  // Assumptions:
-  // 1. The words are separated by one space character.
-  // 2. There are no leading or trailing spaces.
-  // 3. &quot;input&quot; is not null.
-  public String reverseWords(String input) {
-    // Try to convert it to char array and solve the problem inplace.
-    char[] array = input.toCharArray();
-    // 1. Reverse the whole char array.
-    reverse(array, 0, array.length - 1);
-    int start = 0;
-    // 2. Reverse each of the words.
-    for (int i = 0; i &lt; array.length; i++) {
-      // The start index of a word.
-      if (array[i] != &quot; &quot; &amp;&amp; (i == 0 || array[i - 1] == &quot; &quot;)) {
-        start = i;
-      }
-      // The end index of a word.
-      if (array[i] != &quot; &quot; &amp;&amp; (i == array.length - 1 || array[i + 1] == &quot; &quot;)) {
-        reverse(array, start, i);
-      }
-    }
-    return new String(array);
-  }
-  
-  private void reverse(char[] array, int left, int right) {
-    while (left &lt; right) {
-      char temp = array[left];
-      array[left] = array[right];
-      array[right] = temp;
-      left++;
-      right--;
-    }
-  }
-}</code></pre>
-</div>
-<div id="right-shift-by-n-characters" class="section level2">
-<h2><span class="header-section-number">9.3</span> Right Shift By N Characters</h2>
-<p>Right shift a given string by n characters.</p>
-<p><a href="https://app.laicode.io/app/problem/397" class="uri">https://app.laicode.io/app/problem/397</a></p>
-<pre class="java"><code>public class RightShift {
-  // Assumption: &quot;input&quot; is not null, &quot;n &gt;= 0&quot;.
-  public String rightShift(String input, int n) {
-    if (input.length() &lt;= 1) {
-      return input;
-    }
-    char[] array = input.toCharArray();
-    n %= array.length;
-    reverse(array, array.length - n, array.length - 1);
-    reverse(array, 0, array.length - n - 1);
-    reverse(array, 0, array.length - 1);
-    return new String(array);
-  }
-  
-  private void reverse(char[] array, int left, int right) {
-    while (left &lt; right) {
-      char temp = array[left];
-      array[left] = array[right];
-      array[right] = temp;
-      left++;
-      right--;
-    }
-  }
-}</code></pre>
-</div>
-<div id="string-replace" class="section level2">
-<h2><span class="header-section-number">9.4</span> String Replace</h2>
-<p>Given an original string input, and two strings S and T, replace all occurrences of S in input with T.</p>
-<p><a href="https://app.laicode.io/app/problem/172" class="uri">https://app.laicode.io/app/problem/172</a></p>
-<pre class="java"><code>public class StringReplace {
-  // Method 1: Not using any String/StringBuilder utility, and using char[] to do it inplace.
-  public String replaceI(String input, String s, String t) {
-    // Assumptions: input, s, t are not null, s is not empty.
-    char[] array = input.toCharArray();
-    if (s.length() &gt;= t.length()) {
-      return replaceShorter(array, s, t);
-    }
-    return replaceLonger(array, s, t);
-  }
-  
-  public String replaceShorter(char[] input, String s, String t) {
-    // We reuse the input char array since the number of characters needed is less.
-    // &quot;fast&quot; and &quot;slow&quot; pointers are both from left to right direction.
-    int slow = 0;
-    int fast = 0;
-    while (fast &lt; input.length) {
-      // When we find a match of &quot;s&quot; on the substring starting from the &quot;fast&quot; pointer, we copy the &quot;t&quot; at &quot;slow&quot; pointer.
-      if (fast &lt;= input.length - s.length() &amp;&amp; equalSubstring(input, fast, s)) {
-        copySubstring(input, slow, t);
-        slow += t.length();
-        fast += s.length();
-      }
-      else {
-        input[slow] = input[fast];
-        slow++;
-        fast++;
-      }
-    }
-    return new String(input, 0, slow);
-  }
-  
-  public String replaceLonger(char[] input, String s, String t) {
-    // Notice: We will need a longer array in this case, and if the requirement is inplace, usually you can assume you are given a long enough char array already, and the original input string resides on part of the char array starting from index 0. In this solution, we actually allocate a larger array on demand, and the purpose of the solution is to demonstrate how to do it inplace.
-    
-    // Get all the matches end positions in the input char array of string &quot;s&quot;.
-    ArrayList&lt;Integer&gt; matches = getAllMatches(input, s);
-    // Calculate the new length needed.
-    char[] result = new char[input.length + matches.size() * (t.length() - s.length())];
-    // &quot;fast&quot; and &quot;slow&quot; pointers are both from right to left direction.
-    // &quot;slow&quot;: the position when traversing the new length.
-    // &quot;fast&quot;: the position when traversing the old length.
-    // &quot;lastIndex&quot;: the index of the rightmost matching end position.
-    int lastIndex = matches.size() - 1;
-    int fast = input.length - 1;
-    int slow = result.length - 1;
-    while (fast &gt;= 0) {
-      // Only if we still have some match and &quot;slow&quot; is in the position of rightmost matching end position, we should copy &quot;t&quot;.
-      if (lastIndex &gt;= 0 &amp;&amp; fast == matches.get(lastIndex)) {
-        copySubstring(result, slow - t.length() + 1, t);
-        slow -= t.length();
-        fast -= s.length();
-        lastIndex--;
-      }
-      else {
-        result[slow] = input[fast];
-        slow--;
-        fast--;
-      }
-    }
-    return new String(result);
-  }
-  
-  // Check if the substring from &quot;fromIndex&quot; is the same as &quot;s&quot;.
-  private boolean equalSubstring(char[] input, int fromIndex, String s) {
-    for (int i = 0; i &lt; s.length(); i++) {
-      if (input[fromIndex + i] != s.charAt(i)) {
-        return false;
-      }
-    }
-    return true;
-  }
-  
-  // Copy the string &quot;t&quot; to &quot;result&quot; at &quot;fromIndex&quot;.
-  private void copySubstring(char[] result, int fromIndex, String t) {
-    for (int i = 0; i &lt; t.length(); i++) {
-      result[fromIndex + i] = t.charAt(i);
-    }
-  }
-  
-  // Get all the matches of &quot;s&quot; end positions in &quot;input&quot;.
-  private ArrayList&lt;Integer&gt; getAllMatches(char[] input, String s) {
-    ArrayList&lt;Integer&gt; matches = new ArrayList&lt;Integer&gt;();
-    int i = 0;
-    while (i &lt;= input.length - s.length()) {
-      if (equalSubstring(input, i, s)) {
-        // We record the match substring&#39;s end index instead of start index for later convenience.
-        matches.add(i + s.length() - 1);
-        i += s.length();
-      }
-      else {
-        i++;
-      }
-    }
-    return matches;
-  }
-  
-  // Method 2: Using Java&#39;s StringBuilder utility and String&#39;s &quot;indexof()&quot;, not using string&#39;s &quot;replace()&quot;.
-  public String replaceII(String input, String s, String t) {
-    // Assumptions: input, s, t are not null, s is not empty.
-    StringBuilder sb = new StringBuilder();
-    // We check if there exists a substring same as &quot;s&quot; in the substring of input starting at &quot;fromIndex&quot;.
-    int fromIndex = 0;
-    int matchIndex = input.indexOf(s, fromIndex);
-    while (matchIndex != -1) {
-      sb.append(input, fromIndex, matchIndex).append(t);
-      // Next time we need to start from matchIndex + s.length() to find if we have later matches.
-      fromIndex = matchIndex + s.length();
-      matchIndex = input.indexOf(s, fromIndex);
-    }
-    sb.append(input, fromIndex, input.length());
-    return sb.toString();
-  }
-}</code></pre>
-</div>
-<div id="string-shuffling" class="section level2">
-<h2><span class="header-section-number">9.5</span> String Shuffling</h2>
-<p>Given an array of elements, reorder it as follow:</p>
+<div id="question-1-largest-sum-of-a-subarray" class="section level1">
+<h1><span class="header-section-number">4</span> Question 1: Largest sum of a subarray</h1>
+<p>Given an unsorted array, find the <strong>subarray</strong> that has the greatest sum. Return the sum.</p>
+<p>For example: If the input array is {1, 2, 4, -1, -2, 10, -1}, the greatest sum is achieved by subarray {1, 2, 4, -1, -2, 10}.</p>
+<pre><code>index  0  1  2   3   4   5   6
+input {1, 2, 4, -1, -2, 10, -1}
+M[i]   1
+globalMax = 1
+---
+index  0  1  2   3   4   5   6
+input {1, 2, 4, -1, -2, 10, -1}
+M[i]   1  3
+globalMax = 3
+---
+index  0  1  2   3   4   5   6
+input {1, 2, 4, -1, -2, 10, -1}
+M[i]   1  3  7
+globalMax = 7
+---
+index  0  1  2   3   4   5   6
+input {1, 2, 4, -1, -2, 10, -1}
+M[i]   1  3  7   6
+globalMax = 7
+---
+index  0  1  2   3   4   5   6
+input {1, 2, 4, -1, -2, 10, -1}
+M[i]   1  3  7   6   4
+globalMax = 7
+---
+index  0  1  2   3   4   5   6
+input {1, 2, 4, -1, -2, 10, -1}
+M[i]   1  3  7   6   4  14
+globalMax = 14
+---
+index  0  1  2   3   4   5   6
+input {1, 2, 4, -1, -2, 10, -1}
+M[i]   1  3  7   6   4  14  13
+globalMax = 14
+---
+index  0  1  2   3   4   5   6     7   8   9  10
+input {1, 2, 4, -1, -2, 10, -1, -100, -1, 10, 20}
+M[i]   1  3  7   6   4  14  13   -87
+globalMax = 14
+---
+index  0  1  2   3   4   5   6     7   8   9  10
+input {1, 2, 4, -1, -2, 10, -1, -100, -1, 10, 20}
+M[i]   1  3  7   6   4  14  13   -87  -1
+globalMax = 14
+---
+index  0  1  2   3   4   5   6     7   8   9  10
+input {1, 2, 4, -1, -2, 10, -1, -100, -1, 10, 20}
+M[i]   1  3  7   6   4  14  13   -87  -1  10
+globalMax = 14
+---
+index  0  1  2   3   4   5   6     7   8   9  10
+input {1, 2, 4, -1, -2, 10, -1, -100, -1, 10, 20}
+M[i]   1  3  7   6   4  14  13   -87  -1  10  30
+globalMax = 30</code></pre>
+<p>Base case: M[0] = input[0]</p>
+<p>M[i] represents [within the range from the 0-th element to the i-th element] the largest sum (must include the i-th element)</p>
+<p>Induction rule:</p>
 <ul>
-<li>{N1, N2, N3, …, N2k} -&gt; {N1, Nk+1, N2, Nk+2, N3, Nk+3, …, Nk, N2k}</li>
-<li>{N1, N2, N3, …, N2k+1} -&gt; {N1, Nk+1, N2, Nk+2, N3, Nk+3, …, Nk, N2k, N2k+1}</li>
+<li>M[i] = M[i-1] + input[i], if M[i-1] &gt;= 0</li>
+<li>M[i] = input[i], otherwise</li>
+<li>return globalMax</li>
 </ul>
-<p>Try to do it inplace.</p>
-<p><a href="https://app.laicode.io/app/problem/197" class="uri">https://app.laicode.io/app/problem/197</a></p>
-<pre class="java"><code>public class ReOrderArray {
-  public int[] reorder(int[] array) {
-    // Assumption: &quot;array&quot; is not null.
-    if (array.length % 2 == 0) {
-      reorder(array, 0, array.length - 1);
-    }
-    else {
-      // If &quot;array&quot; has odd number of elements, we ignore the last one when do the reordering.
-      reorder(array, 0, array.length - 2);
-    }
-    return array;
-  }
-  
-  private void reorder(int[] array, int left, int right) {
-    int length = right - left + 1;
-    // If the subarray has 2 or 0 elements, we can just return as this should be the base case.
-    if (length &lt;= 2) {
-      return;
-    }
-    // Calculate the important mid points:
-    // {0 1 2 3 4 5 6 7}
-    // lm: 2, m: 4, rm: 6
-    // {0 1 2 3 4 5 6 7 8 9}
-    // lm: 2, m: 5, rm: 7
-    int mid = left + length / 2;
-    int lmid = left + length / 4;
-    int rmid = left + length * 3 / 4;
-    reverse(array, lmid, mid - 1);
-    reverse(array, mid, rmid - 1);
-    reverse(array, lmid, rmid - 1);
-    // Half of the left partition size = lmid - left.
-    reorder(array, left, left + (lmid - left) * 2 - 1);
-    reorder(array, left + (lmid - left) * 2, right);
-  }
-  
-  private void reverse(int[] array, int left, int right) {
-    while (left &lt; right) {
-      int temp = array[left];
-      array[left] = array[right];
-      array[right] = temp;
-      left++;
-      right--;
-    }
-  }
-}</code></pre>
+<p>Time: O(<span class="math inline">\(n\)</span>) Space: O(<span class="math inline">\(n\)</span>) -&gt; optimized to O(<span class="math inline">\(1\)</span>)</p>
+<p><strong>Follow up: How to return the left and right boundary of this subarray?</strong></p>
+<ul>
+<li>Use globalLeft, globalRight, currentLeft</li>
+</ul>
 </div>
-<div id="all-permutations-ii-with-duplicate-characters" class="section level2">
-<h2><span class="header-section-number">9.6</span> All Permutations II (with duplicate characters)</h2>
-<p>Given a string with possible duplicate characters, return a list with all permutations of the characters.</p>
-<p><a href="https://app.laicode.io/app/problem/65" class="uri">https://app.laicode.io/app/problem/65</a></p>
-<pre class="java"><code>public class PermutationsII {
-  public List&lt;String&gt; permutations(String set) {
-    List&lt;String&gt; result = new ArrayList&lt;String&gt;();
-    if (set == null) {
-      return result;
+<div id="question-2-dictionary-word-problem" class="section level1">
+<h1><span class="header-section-number">5</span> Question 2: Dictionary word problem</h1>
+<p>Given a word, can it be composed by concatenating words from a given dictionary?</p>
+<p>Example:</p>
+<pre><code>Dictionary:
+bob
+cat
+rob
+
+Word 1: bcoabt
+Solution: False
+
+Word 2: bobcatrob
+Solution: True</code></pre>
+<p>Base case: M[0] = true, empty string</p>
+<p>Induction rule: M[i] represents if we can cut the word[0, i-1] successfully.</p>
+<pre><code>M[1]: &quot;b&quot; = false
+
+---
+
+M[2]: &quot;bo&quot;
+- no cut -&gt; check &quot;bo&quot; -&gt; false
+- cut -&gt; &quot;b&quot;|&quot;o&quot;
+        M[1]  check &quot;o&quot; -&gt; false
+M[2] = false || false = false
+
+---
+
+M[3]: &quot;bob&quot;
+- not cut -&gt; check &quot;bob&quot; -&gt; true
+- cut -&gt; &quot;bo&quot;|&quot;b&quot;
+        M[2]   check &quot;b&quot; -&gt; false
+- cut -&gt; &quot;b&quot;|&quot;ob&quot;
+        M[1]  check &quot;ob&quot; -&gt; false
+M[2] = true || false || false = true</code></pre>
+<p>Base case: M[1] = check dictionary</p>
+<p>Induction rule: M[i] = OR {M[j] AND substring[j, i] is in the dictionary} or not cut, j = [1, i-1]</p>
+<pre class="java"><code>public boolean wordSolver(String word, HashSet&lt;String&gt; dict) {
+  boolean[] M = new boolean[word.length() + 1]; // include 0
+  for (int i = 1; i &lt;= word.length(); i++) {
+    // If the word is in the dictionary, done
+    if (dict.contains(word.subString(0, i))) {
+      M[i] = true;  // Case 0
+      continue;
     }
-    char[] array = set.toCharArray();
-    helper(array, 0, result);
-    return result;
-  }
-  
-  // &quot;index&quot;: At the level of index, we are to determine for the current permutation, which element is positioned at the index.
-  private void helper(char[] array, int index, List&lt;String&gt; result) {
-    if (index == array.length) {
-      // Base case: When we have determined for all the indices of the current permutation which element to choose.
-      result.add(new String(array));
-      return;
-    }
-    // Notice: The rule is just for the current level. If a certain element is picked, we cannot pick any of its duplicates, so that we use a set to record all the distinct elements.
-    Set&lt;Character&gt; used = new HashSet&lt;Character&gt;();
-    for (int i = index; i &lt; array.length; i++) {
-      // used.add(array[i]) will return false if the value of array[i] is already in the Set.
-      if (used.add(array[i])) {
-        swap(array, i, index);
-        // Go for the next level, index + 1.
-        helper(array, index + 1, result);
-        // Do not forget to do the clear operation when backtracking.
-        swap(array, i, index);
+    // Otherwise, check the possible single splits
+    for (int j = 1; j &lt; i; j++) {
+      // Check subproblem and check the rest of the word
+      if (M[j] &amp;&amp; dict.contains(word.substring(j, i))) {
+        M[i] = true;
+        break;
       }
     }
   }
-  
-  private void swap(char[] array, int left, int right) {
-    char temp = array[left];
-    array[left] = array[right];
-    array[right] = temp;
-  }
+  return M[word.length()];
 }</code></pre>
+<p>Time: O(<span class="math inline">\(n^3\)</span>)</p>
 </div>
-<div id="compress-string-ii" class="section level2">
-<h2><span class="header-section-number">9.7</span> Compress String II</h2>
-<p>Given a string, replace adjacent, repeated characters with the character followed by the number of repeated occurrences.</p>
-<p><a href="https://app.laicode.io/app/problem/611" class="uri">https://app.laicode.io/app/problem/611</a></p>
-<pre class="java"><code>public class Solution {
-  public String compress(String input) {
-    if (input == null || input.isEmpty()) {
-      return input;
-    }
-    char[] array = input.toCharArray();
-    return encode(array);
-  }
-  
-  private String encode(char[] input) {
-    // Step 1: Deal with the cases where the adjacent occurrence of the letters &gt;= 2.
-    int slow = 0;
-    int fast = 0;
-    int newLength = 0;
-    while (fast &lt; input.length) {
-      int begin = fast;
-      while (fast &lt; input.length &amp;&amp; input[fast] == input[begin]) {
-        fast++;
-      }
-      input[slow] = input[begin];
-      slow++;
-      if (fast - begin == 1) {
-        newLength += 2;
-      }
-      else {
-        int len = copyDigits(input, slow, fast - begin);
-        slow += len;
-        newLength += len + 1;
-      }
-    }
-    // Step 2: Deal with the cases where the adjacent occurrence of the letters == 1.
-    // Notice: If it is required to do this in place, usually the input array is a sufficient large one, you will not need to allocate a new array. This solution is only for demonstration.
-    char[] result = new char[newLength];
-    fast = slow - 1;
-    slow = newLength - 1;
-    while (fast &gt;= 0) {
-      if (Character.isDigit(input[fast])) {
-        while (fast &gt;= 0 &amp;&amp; Character.isDigit(input[fast])) {
-          result[slow] = input[fast];
-          slow--;
-          fast--;
-        }
-      }
-      else {
-        result[slow] = &quot;1&quot;;
-        slow--;
-      }
-      result[slow] = input[fast];
-      slow--;
-      fast--;
-    }
-    return new String(result);
-  }
-  
-  // Copy &quot;count&quot; as digits into &quot;input&quot;, starting at &quot;index&quot;.
-  private int copyDigits(char[] input, int index, int count) {
-    int len = 0;
-    for (int i = count; i &gt; 0; i /= 10) {
-      index++;
-      len++;
-    }
-    for (int i = count; i &gt; 0; i /= 10) {
-      int digit = i % 10;
-      input[--index] = (char)(&quot;0&quot; + digit);
-    }
-    return len;
-  }
-}</code></pre>
-</div>
-<div id="decompress-string-ii" class="section level2">
-<h2><span class="header-section-number">9.8</span> Decompress String II</h2>
-<p>Given a string in compressed form, decompress it to the original string. The adjacent repeated characters in the original string are compressed to have the character followed by the number of repeated occurrences.</p>
-<p><a href="https://app.laicode.io/app/problem/175" class="uri">https://app.laicode.io/app/problem/175</a></p>
-<pre class="java"><code>// Assumptions:
-// 1. 
-// 2. 
-// Example: &quot;a1c0c2&quot; -&gt; &quot;acc&quot;
-public class DecompressStringII {
-  // Method 1: Inplace. When we say inplace, it usually means the input is a long enough char array, and the original string only occupies part of the array starting from index 0, and usually the length to represent the original string is given.
-  public String decompressI(String input) {
-    
-  }
-  
-  // Return the length of the decoded string, only cares about &quot;a0&quot;, &quot;a1&quot;, &quot;a2&quot;, A.K.A., the decoded string is shorter.
-  private int decodeShort(char[] input) {
-    
-  }
-  
-  // Take care of &quot;a3&quot;, &quot;a4&quot;, &quot;a5&quot;, ..., the decoded string is longer.
-  // &quot;length&quot;: the length of the valid partition starting from index 0.
-  private String decodeLong(char[] input, int length) {
-    
-  }
-  
-  private int getDigit(char digit) {
-    
-  }
-  
-  // Method 2: Using StringBuilder to help.
-  public String decompressII(String input) {
-    
-  }
-}</code></pre>
+<div id="question-3-edit-distance" class="section level1">
+<h1><span class="header-section-number">6</span> Question 3: Edit Distance</h1>
+<p>Given two strings of alphanumeric characters, determine the minimum number of <strong>Replace</strong>, <strong>Delete</strong>, and <strong>Insert</strong> operations needed to transform one string into the other.</p>
+<p>Example:</p>
+<pre><code>s1 = &quot;asdf&quot;
+s2 = &quot;sghj&quot;</code></pre>
+<pre><code>1. Replace: a -&gt; s
+    asdf -&gt; ssdf
+2. Delete: a
+    asdf -&gt; sdf
+3. Insert: s
+    asdf -&gt; sasdf</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
-</div>
-<div id="longest-substring-with-only-unique-characters" class="section level2">
-<h2><span class="header-section-number">9.9</span> Longest Substring With Only Unique Characters</h2>
-<p>Given a string, find the longest substring without any repeating characters and return the length of it. The input string is guaranteed to be not null.</p>
-<p><a href="https://app.laicode.io/app/problem/253" class="uri">https://app.laicode.io/app/problem/253</a></p>
-<pre class="java"><code>public class LongestSubstringNonRepeatingCharacter {
-  public int longest(String input) {
-    
+<p>Solution 1: recursion</p>
+<pre class="java"><code>public int editDistance(String word1, String word2) {
+  // Base case
+  if (word1.isEmpty()) {
+    return word2.length();
   }
-}</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
-</div>
-<div id="find-all-anagrams-of-short-string-in-a-long-string" class="section level2">
-<h2><span class="header-section-number">9.10</span> Find All Anagrams Of Short String In A Long String</h2>
-<p>Find all occurrence of anagrams of a given string s in a given string I. Return the list of starting indices.</p>
-<p><a href="https://app.laicode.io/app/problem/398" class="uri">https://app.laicode.io/app/problem/398</a></p>
-<pre class="java"><code>public class AllAnagrams {
-  // Assumptions: &quot;s&quot;, &quot;l&quot; are not null. &quot;s&quot; is not empty.
-  public List&lt;Integer&gt; allAnagrams(String s, String l) {
-    
+  if (word2.isEmpty()) {
+    return word1.length();
   }
   
-  private Map&lt;Character, Integer&gt; countMap(String s) {
-    
+  // (a) Check what the distance is if the character[0] are identical and we do nothing first
+  if (word1.charAt(0) == word2.charAt(0)) {
+    int nothing = editDistance(word1.substring(1), word2.substring(1));
+    return nothing;
   }
-}</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
-</div>
-</div>
-<div id="class-10---bit-representation-and-bit-operation" class="section level1">
-<h1><span class="header-section-number">10</span> Class 10 - Bit Representation and Bit Operation</h1>
-<div id="determine-if-a-number-is-power-of-2" class="section level2">
-<h2><span class="header-section-number">10.1</span> Determine If A Number Is Power Of 2</h2>
-<p>Determine if a given integer is power of 2.</p>
-<p><a href="https://app.laicode.io/app/problem/74" class="uri">https://app.laicode.io/app/problem/74</a></p>
-<pre class="java"><code>public class PowerOfTwo {
-  // Method 1
-  public boolean isPowerOfTwoI(int number) {
-    
-  }
-  
-  // Method 2
-  public boolean isPowerOfTwoII(int number) {
-    
-  }
-  
-  // Method 3
-  public boolean isPowerOfTwoIII(int number) {
-    
-  }
-}</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
-</div>
-<div id="number-of-different-bits" class="section level2">
-<h2><span class="header-section-number">10.2</span> Number Of Different Bits</h2>
-<p>Determine the number of bits that are different for two given integers.</p>
-<p><a href="https://app.laicode.io/app/problem/75" class="uri">https://app.laicode.io/app/problem/75</a></p>
-<pre class="java"><code>public class NumberOfDiffBits {
+  // (b)
   
 }</code></pre>
+<ul>
+<li>Time: O(<span class="math inline">\(3^{m+n}\)</span>)</li>
+</ul>
+<p>Solution 2: DP</p>
+<pre><code>s1 = </code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<p>表格:</p>
+<ol style="list-style-type: decimal">
+<li>相同: 繼承左上角</li>
+<li>不相同: 左上角, 上, 左取最小值再加1</li>
+</ol>
+<pre><code> s2  |   s g h j
+size | 0 1 2 3 4
+----------------
+s1 0 | 0 1 2 3 4
+a  1 | 1 1 2 3 4
+s  2 | 2 1 2 3 4
+d  3 | 3 2 2 3 4
+f  4 | 4 3 3 3 4
+
+return 4, bottom-right corner</code></pre>
+<ul>
+<li>Time: O(<span class="math inline">\(mn\)</span>)</li>
+<li>Space: O(<span class="math inline">\(mn\)</span>) -&gt; optimized to O(<span class="math inline">\(\min(m,n)\)</span>)</li>
+</ul>
 </div>
-<div id="all-unique-characters-ii" class="section level2">
-<h2><span class="header-section-number">10.3</span> All Unique Characters II</h2>
-<p>Determine if the characters of a given string are all unique.</p>
-<p><a href="https://app.laicode.io/app/problem/77" class="uri">https://app.laicode.io/app/problem/77</a></p>
-<pre class="java"><code>// Assumptions: We are using ASCII encoding and the number of valid letters is 256, encoded from 0 to 255. The input &quot;word&quot; is not null.
-public class AllUniqueCharsII {
-  public boolean allUnique(String word) {
-    
-  }
-}</code></pre>
+<div id="question-4-largest-square-of-1s-in-a-binary-matrix" class="section level1">
+<h1><span class="header-section-number">7</span> Question 4: Largest square of 1’s in a binary matrix</h1>
+<p>What is the edge length of the largest square of 1’s in a given binary matrix. In this case, your solution should return 3 (3x3 square).</p>
+<pre><code>0 0 0 0 0
+1 1 1 1 0
+1 1 1 1 0
+1 1 1 0 0
+1 1 1 0 0</code></pre>
+<p>Solution 0:</p>
+<p>List all the squares, then check all the edges.</p>
+<p>Time: O(<span class="math inline">\(n^3\)</span>) * O(<span class="math inline">\(n^2\)</span>) = O(n^5)</p>
+<p>Solution 1:</p>
+<p>M[i][j] represents using (i, j) as the bottom-right corner, the largest edge length</p>
+<pre><code>size == 1
+
+1
+
+---
+
+size == 2
+
+1 1
+1 1
+
+---
+
+size == 3
+
+1 1 1
+1 1 1
+1 1 1</code></pre>
+<ul>
+<li>用上, 左上, 左三個方向小一號的square看邊長, 取最小值再加1</li>
+</ul>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
-</div>
-<div id="reverse-bits" class="section level2">
-<h2><span class="header-section-number">10.4</span> Reverse Bits</h2>
-<p>Not found.</p>
-<pre class="java"><code>public class ReverseBits {
-  // Method 1
-  public int reverseI(int num) {
-    
-  }
-  
-  // Method 2: Merge sort way of reversing all the bits.
-  public int reverseII(int num) {
-    
-  }
-}</code></pre>
+<ul>
+<li>Time: O(<span class="math inline">\(n^2\)</span>)</li>
+<li>Space: O(<span class="math inline">\(n^2\)</span>) -&gt; optimized to O(<span class="math inline">\(n\)</span>)</li>
+</ul>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
-</div>
-<div id="hexadecimal-representation" class="section level2">
-<h2><span class="header-section-number">10.5</span> Hexadecimal Representation</h2>
-<p>Generate the hexadecimal representation for a given non-negative integer number as a string. The hex representation should start with “0x”.</p>
-<p><a href="https://app.laicode.io/app/problem/78" class="uri">https://app.laicode.io/app/problem/78</a></p>
-<pre class="java"><code>public class HexRepresentation {
-  // Assumption: &quot;number &gt;= 0&quot;.
-  public String hex(int number) {
-    
-  }
-}</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
-</div>
 </div>
 
 

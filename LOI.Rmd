@@ -208,8 +208,8 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="pending">8th  
     [Design 2](LO/Algorithm_Class_33.html)</td>
   <td></td>
-  <td>10th  
-    Class 14</td>
+  <td class="pending">10th  
+    [Class 14](LO/Algorithm_Class_34.html)</td>
   <td></td>
   <td>12th  
     Class 15</td>
