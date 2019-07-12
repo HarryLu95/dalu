@@ -4343,36 +4343,97 @@ public class Strstr {
 <p>Given a string in compressed form, decompress it to the original string. The adjacent repeated characters in the original string are compressed to have the character followed by the number of repeated occurrences.</p>
 <p><a href="https://app.laicode.io/app/problem/175" class="uri">https://app.laicode.io/app/problem/175</a></p>
 <pre class="java"><code>// Assumptions:
-// 1. 
-// 2. 
+// 1. The string is not null.
+// 2. The characters used in the original string are guaranteed to be &quot;a&quot; - &quot;z&quot;.
+// 3. There are no adjacent repeated characters with length &gt; 9.
 // Example: &quot;a1c0c2&quot; -&gt; &quot;acc&quot;
+
 public class DecompressStringII {
   // Method 1: Inplace. When we say inplace, it usually means the input is a long enough char array, and the original string only occupies part of the array starting from index 0, and usually the length to represent the original string is given.
   public String decompressI(String input) {
-    
+    if (input.isEmpty()) {
+      return input;
+    }
+    char[] array = input.toCharArray();
+    // We need to handle the &quot;a0&quot;, &quot;a1&quot;, &quot;a2&quot; case (the decoded string is shorter) and &quot;a3&quot;, &quot;a4&quot;, ... case (the decoded string is longer) in two pass to avoid conflict, since the encoding of the two cases require different directions.
+    return decodeLong(array, decodeShort(array));
   }
   
   // Return the length of the decoded string, only cares about &quot;a0&quot;, &quot;a1&quot;, &quot;a2&quot;, A.K.A., the decoded string is shorter.
   private int decodeShort(char[] input) {
-    
+    // Since the decoded string is shorter, we should do the decoding work from left to right direction.
+    int end = 0;
+    for (int i = 0; i &lt; input.length; i += 2) {
+      int digit = getDigit(input[i + 1]);
+      if (digit &gt;= 0 &amp;&amp; digit &lt;= 2) {
+        for (int j = 0; j &lt; digit; j++) {
+          input[end] = input[i];
+          end++;
+        }
+      }
+      else {
+        // We do not handle the longer decoded string here.
+        input[end] = input[i];
+        end++;
+        input[end] = input[i + 1];
+        end++;
+      }
+    }
+    return end;
   }
   
   // Take care of &quot;a3&quot;, &quot;a4&quot;, &quot;a5&quot;, ..., the decoded string is longer.
   // &quot;length&quot;: the length of the valid partition starting from index 0.
   private String decodeLong(char[] input, int length) {
-    
+    // We need to calculate the new required length.
+    int newLength = length;
+    for (int i = 0; i &lt; length; i++) {
+      int digit = getDigit(input[i]);
+      if (digit &gt; 2 &amp;&amp; digit &lt; 9) {
+        newLength += digit - 2;
+      }
+    }
+    // Notice: If it is required to do this inplace, usually the input array is a sufficient large one, you will not need to allocate a new array. This solution is only for demonstration.
+    char[] result = new char[newLength];
+    int end = newLength - 1;
+    for (int i = length - 1; i &gt;= 0; i--) {
+      int digit = getDigit(input[i]);
+      if (digit &gt; 2 &amp;&amp; digit &lt;= 9) {
+        i--;
+        for (int j = 0; j &lt; digit; j++) {
+          result[end] = input[i];
+          end--;
+        }
+      }
+      else {
+        // We already take care the shorter cases, &quot;a1&quot; in previous pass. We can leave as it is. E.g., the input could be &quot;abc2&quot;.
+        result[end] = input[i];
+        end--;
+      }
+    }
+    return new String(result);
   }
   
   private int getDigit(char digit) {
-    
+    return digit - &quot;0&quot;;
   }
   
   // Method 2: Using StringBuilder to help.
   public String decompressII(String input) {
-    
+    // Assumption: input is not null.
+    char[] array = input.toCharArray();
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i &lt; array.length; i++) {
+      char ch = array[i];
+      i++;
+      int count = array[i] - &quot;0&quot;;
+      for (int c = 0; c &lt; count; c++) {
+        sb.append(ch);
+      }
+    }
+    return sb.toString();
   }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="longest-substring-with-only-unique-characters" class="section level2">
 <h2><span class="header-section-number">9.9</span> Longest Substring With Only Unique Characters</h2>
@@ -4380,10 +4441,28 @@ public class DecompressStringII {
 <p><a href="https://app.laicode.io/app/problem/253" class="uri">https://app.laicode.io/app/problem/253</a></p>
 <pre class="java"><code>public class LongestSubstringNonRepeatingCharacter {
   public int longest(String input) {
-    
+    // Assumption: the input string is not null.
+    // The distinct set contains all distinct characters in the sliding window of (slow, fast).
+    Set&lt;Character&gt; distinct = new HashSet&lt;&gt;();
+    int slow = 0;
+    int fast = 0;
+    int longest = 0;
+    while (fast &lt; input.length()) {
+      if (distinct.contains(input.charAt(fast))) {
+        // If there is duplicate character, we need to move the slow pointer.
+        distinct.remove(input.charAt(slow));
+        slow++;
+      }
+      else {
+        // If there is no duplicate character, we can slide fast pointer and we have a new sliding window of (slow, fast) containing all distinct characters.
+        distinct.add(input.charAt(fast));
+        fast++;
+        longest = Math.max(longest, fast - slow);
+      }
+    }
+    return longest;
   }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="find-all-anagrams-of-short-string-in-a-long-string" class="section level2">
 <h2><span class="header-section-number">9.10</span> Find All Anagrams Of Short String In A Long String</h2>
@@ -4392,14 +4471,68 @@ public class DecompressStringII {
 <pre class="java"><code>public class AllAnagrams {
   // Assumptions: &quot;s&quot;, &quot;l&quot; are not null. &quot;s&quot; is not empty.
   public List&lt;Integer&gt; allAnagrams(String s, String l) {
-    
+    List&lt;Integer&gt; result = new ArrayList&lt;Integer&gt;();
+    if (l.length() == 0) {
+      return result;
+    }
+    // When &quot;s&quot; is longer than &quot;l&quot;, there is no way any of the substrings of &quot;l&quot; could be an anagram of &quot;s&quot;.
+    if (s.length() &gt; l.length()) {
+      return result;
+    }
+    // This map records for each of the distinct characters in &quot;s&quot;, how many characters are needed.
+    // E.g., s = &quot;abbc&quot;, map = {&#39;a&#39;:1, &#39;b&#39;:2, &#39;c&#39;:1}
+    // When we get an instance of &quot;a&quot; in &quot;l&quot;, we let count of &quot;a&quot; decremented by 1, and only when the count is from 1 to 0, we have &quot;a&quot; totally matched.
+    Map&lt;Character, Integer&gt; map = countMap(s);
+    // Record how many distinct characters have been matched. Only when all the distinct characters are matched, A.K.A. &quot;match == map.size()&quot;, we find an anagram.
+    int match = 0;
+    // We have a sliding window of size s.length(), and since the size is fixed, we only need to record the end index of the sliding window. Also, when move the sliding window by one step from left to right, what we only is to change is:
+    // 1. remove the leftmost character at the previous sliding window.
+    // 2. add the rightmost character at the current sliding window.
+    for (int i = 0; i &lt; l.length(); i++) {
+      // Handle the new added character(rightmost) at the current sliding window.
+      char temp = l.charAt(i);
+      Integer count = map.get(temp);
+      if (count != null) {
+        // The number of needed count should be --. And only when the count is from 1 to 0, we find an additional match of distinct character.
+        map.put(temp, count - 1);
+        if (count == 1) {
+          match++;
+        }
+      }
+      // Handle the leftmost character at the previous sliding window.
+      if (i &gt;= s.length()) {
+        temp = l.charAt(i - s.length());
+        count = map.get(temp);
+        if (count != null) {
+          // The number of needed count should be ++. And only when the count is from 0 to 1, we are short for one match of distinct character.
+          map.put(temp, count + 1);
+          if (count == 0) {
+            match--;
+          }
+        }
+      }
+      // For the current sliding window, if all the distinct characters are matched (the count are all zero).
+      if (match == map.size()) {
+        result.add(i - s.length() + 1);
+      }
+    }
+    return result;
   }
   
   private Map&lt;Character, Integer&gt; countMap(String s) {
-    
+    Map&lt;Character, Integer&gt; map = new HashMap&lt;Character, Integer&gt;();
+    for (char ch : s.toCharArray()) {
+      Integer count = map.get(ch);
+      if (count == null) {
+        map.put(ch, 1);
+      }
+      else {
+        map.put(ch, count + 1);
+      }
+    }
+    return map;
   }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 </div>
 <div id="class-10---bit-representation-and-bit-operation" class="section level1">
