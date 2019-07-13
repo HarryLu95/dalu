@@ -4544,29 +4544,56 @@ public class DecompressStringII {
 <pre class="java"><code>public class PowerOfTwo {
   // Method 1
   public boolean isPowerOfTwoI(int number) {
-    
+    if (number &lt;= 0) {
+      return false;
+    }
+    // Ignore all the trailing 0s.
+    while ((number &amp; 1) == 0) {
+      number &gt;&gt;&gt;= 1;
+    }
+    // Check if the number is 1 at the end.
+    return number == 1;
   }
   
   // Method 2
   public boolean isPowerOfTwoII(int number) {
-    
+    if (number &lt;= 0) {
+      return false;
+    }
+    // Count the number of 1s.
+    int count = 0;
+    while (number &gt; 0) {
+      count += number &amp; 1;
+      number &gt;&gt;&gt;= 1;
+    }
+    // For a number of power of 2, there should be only one 1.
+    return count == 1;
   }
   
   // Method 3
   public boolean isPowerOfTwoIII(int number) {
-    
+    // Use the trick of number &amp; (number - 1) will remove the rightmost 1.
+    return number &gt; 0 &amp;&amp; (number &amp; (number - 1)) == 0;
   }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="number-of-different-bits" class="section level2">
 <h2><span class="header-section-number">10.2</span> Number Of Different Bits</h2>
 <p>Determine the number of bits that are different for two given integers.</p>
 <p><a href="https://app.laicode.io/app/problem/75" class="uri">https://app.laicode.io/app/problem/75</a></p>
 <pre class="java"><code>public class NumberOfDiffBits {
-  
+  public int diffBits(int a, int b) {
+    // After exclusive or, only the bits where &quot;a&quot; and &quot;b&quot; are different will be 1.
+    a ^= b;
+    int count = 0;
+    // In Java, notice that we are using logical right shift &quot;&gt;&gt;&gt;&quot;, and &quot;a != 0&quot; as the terminate condition.
+    while (a != 0) {
+      count += a &amp; 1;
+      a &gt;&gt;&gt;= 1;
+    }
+    return count;
+  }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="all-unique-characters-ii" class="section level2">
 <h2><span class="header-section-number">10.3</span> All Unique Characters II</h2>
@@ -4575,10 +4602,19 @@ public class DecompressStringII {
 <pre class="java"><code>// Assumptions: We are using ASCII encoding and the number of valid letters is 256, encoded from 0 to 255. The input &quot;word&quot; is not null.
 public class AllUniqueCharsII {
   public boolean allUnique(String word) {
-    
+    // Each int value can represent 32 bit, so we need 8 ints to represent 256 bits.
+    int[] vector = new int[8];
+    char[] array = word.toCharArray();
+    for (char c : array) {
+      // For a value &quot;c&quot; in the range of 0-255, it is actually mapped to the int value at &quot;c/32&quot; as index, and the &quot;c%32&quot;-th bit of the int value.
+      if ((vector[c / 32] &gt;&gt;&gt; (c % 32) &amp; 1) != 0) {
+        return false;
+      }
+      vector[c / 32] |= 1 &lt;&lt; (c % 32);
+    }
+    return true;
   }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="reverse-bits" class="section level2">
 <h2><span class="header-section-number">10.4</span> Reverse Bits</h2>
@@ -4586,15 +4622,27 @@ public class AllUniqueCharsII {
 <pre class="java"><code>public class ReverseBits {
   // Method 1
   public int reverseI(int num) {
-    
+    for (int offset = 0; offset &lt; 16; ++offset) {
+      int right = (num &gt;&gt; offset) &amp; 1;
+      int left = (num &gt;&gt; (31 - offset)) &amp; 1;
+      if (left != right) {
+        num ^= (1 &lt;&lt; offset);
+        num ^= (1 &lt;&lt; (31 - offset));
+      }
+    }
+    return num;
   }
   
   // Method 2: Merge sort way of reversing all the bits.
   public int reverseII(int num) {
-    
+    num = ((num &amp; 0xFFFF0000) &gt;&gt;&gt; 16) | ((num &amp; 0x0000FFFF) &lt;&lt; 16);
+    num = ((num &amp; 0xFF00FF00) &gt;&gt;&gt; 8) | ((num &amp; 0x00FF00FF) &lt;&lt; 8);
+    num = ((num &amp; 0xF0F0F0F0) &gt;&gt;&gt; 4) | ((num &amp; 0x0F0F0F0F) &lt;&lt; 4);
+    num = ((num &amp; 0xCCCCCCCC) &gt;&gt;&gt; 2) | ((num &amp; 0x33333333) &lt;&lt; 2);
+    num = ((num &amp; 0xAAAAAAAA) &gt;&gt;&gt; 1) | ((num &amp; 0x55555555) &lt;&lt; 1);
+    return num;
   }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="hexadecimal-representation" class="section level2">
 <h2><span class="header-section-number">10.5</span> Hexadecimal Representation</h2>
@@ -4603,10 +4651,27 @@ public class AllUniqueCharsII {
 <pre class="java"><code>public class HexRepresentation {
   // Assumption: &quot;number &gt;= 0&quot;.
   public String hex(int number) {
-    
+    String prefix = &quot;0x&quot;;
+    // Handle the special case of 0 first.
+    if (number == 0) {
+      return prefix + &quot;0&quot;;
+    }
+    // Using StringBuilder so append operation is more efficient.
+    StringBuilder sb = new StringBuilder();
+    while (number &gt; 0) {
+      int remainder = number % 16;
+      if (remainder &lt; 10) {
+        sb.append((char) (&quot;0&quot; + remainder));
+      }
+      else {
+        sb.append((char) (remainder - 10 + &quot;A&quot;));
+      }
+      number &gt;&gt;&gt;= 4;
+    }
+    // Reverse it at last so in all complexity is O(n).
+    return prefix + sb.reverse().toString();
   }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 </div>
 
