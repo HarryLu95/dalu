@@ -212,25 +212,25 @@ td.updated {background-color: MediumSpringGreen;}
     [Class 14](LO/Algorithm_Class_34.html)</td>
   <td></td>
   <td>12th  
-    Class 15</td>
-  <td>13th  
-    Class 16</td>
+    [Class 15](LO/Algorithm_Class_35.html)</td>
+  <td class="pending">13th  
+    [Class 16](LO/Algorithm_Class_36.html)</td>
   <td>14th  
     Class 17</td>
 </tr>
 <tr>
   <td>15th  
-    ???</td>
+    Design 3</td>
   <td></td>
   <td>17th  
-    ???</td>
+    Class 18</td>
   <td></td>
   <td>19th  
-    ???</td>
+    Design 4</td>
   <td>20th  
-    ???</td>
+    Class 19</td>
   <td>21st  
-    ???</td>
+    Practice 19</td>
 </tr>
 <tr>
   <td>22nd  
@@ -270,6 +270,12 @@ td.updated {background-color: MediumSpringGreen;}
 - Class 15: Resume [Link](LO/Algorithm_Class_35.html) (pending)
 - Class 16: DP III [Link](LO/Algorithm_Class_36.html) (pending)
 - Class 17: Sampling [Link](LO/Algorithm_Class_37.html) (pending)
+- Design 3: OOD III [Link](LO/Algorithm_Class_38.html) (pending)
+- Class 18: 加强 1 [Link](LO/Algorithm_Class_39.html) (pending)
+- Design 4: OOD IV [Link](LO/Algorithm_Class_40.html) (pending)
+- Class 19: Midterm II [Link](LO/Algorithm_Class_41.html) (pending)
+    - Practice 19 [Link](LO/Algorithm_Class_42.html) (pending)
+
 
 
 

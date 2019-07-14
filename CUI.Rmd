@@ -19,8 +19,8 @@ ul {font-size: 16px; color: black;}
 
 ---
 
-#STSCI 5065 - Big Data Management and Analysis
-##Lecture Slides
+# STSCI 5065 - Big Data Management and Analysis
+## Lecture Slides
 1. [Concepts of Big Data and Hadoop](CU/5065/Lec01.pdf)
     - [Lecture 1 Note](CU/5065/Summary01.html)
     - [Install CentOS in VirtualBox](CU/5065/Lec01.1.pdf)
@@ -63,7 +63,7 @@ ul {font-size: 16px; color: black;}
 20. [Hadoop and SAS](CU/5065/Lec20.pdf)
     - [Lecture 20 Note](CU/5065/Summary20.html)
 
-##Homeworks
+## Homeworks
 1. [Homework 1](CU/5065/HW1.pdf)
     - Due: Feb/18/2019 at 11:59PM
     - [Summary](CU/5065/HW1_Summary.html)
@@ -89,13 +89,13 @@ ul {font-size: 16px; color: black;}
     - [Summary](CU/5065/HW4_Summary.html)
         - [Python UDF for 2-E](CU/5065/delay_udf.py) (.py)
 
-##Quizzes
+## Quizzes
 1. [Quiz 1 with solutions](CU/5065/Quiz1_S.pdf)
 2. [Quiz 2 with solutions](CU/5065/Quiz2_S.pdf)
 3. [Quiz 3 with solutions](CU/5065/Quiz3_S.pdf)
 4. [Quiz 4 with solutions](CU/5065/Quiz4_S.pdf)
 
-##Final Project
+## Final Project
 - Due: May/13/2019 at 11:59PM
 - [Final Project](CU/5065/Final_Project.pdf)
 - Data: [flightDelays](CU/5065/flightDelays.tar.gz) (.gz)
@@ -103,7 +103,7 @@ ul {font-size: 16px; color: black;}
 - [flight_delay_udf](CU/5065/flight_delay_udf.py) (.py)
 - [FindMaxAverageDelayType](CU/5065/FindMaxAverageDelayType.py) (.py)
 
-##Data Files
+## Data Files
 - [1901-1](CU/5065/1901-1) (.File)
 - [1901](CU/5065/1901) (.File)
 - [1902](CU/5065/1902) (.File)
@@ -118,8 +118,8 @@ ul {font-size: 16px; color: black;}
 
 ---
 
-#STSCI 4060 - Python Programming and its Applications in Statistics
-##Lecture Slides
+# STSCI 4060 - Python Programming and its Applications in Statistics
+## Lecture Slides
 1. [Lecture 1](CU/4060/Lec01.pdf)
     - [Note 1-1](CU/4060/LectureNote1-1.html): Calculator, Basic Data Types
     - [Note 1-2](CU/4060/LectureNote1-2.html): String Functions, Lists
@@ -150,7 +150,7 @@ ul {font-size: 16px; color: black;}
 11. [Lecture 11](CU/4060/Lec11.pdf)
     - [Note 11](CU/4060/Lec11.html): Python, Database-Driven Web Pages, and SAS
 
-##Homeworks
+## Homeworks
 1. [Homework 1](CU/4060/HW1.pdf)
     - Due: Feb/15/2019 at 11:59PM
     - [Summary](CU/4060/STSCI 4060 - HW 1.html)
@@ -179,23 +179,23 @@ ul {font-size: 16px; color: black;}
     - Due: Apr/29/2019 at 11:59PM
     - [Summary]() (pending)
 
-##Data Files
+## Data Files
 - [points_scatplot1](CU/4060/points_scatplot1.txt) (.txt)
 - [ring](CU/4060/ring.txt) (.txt)
 - [bee_proteins](CU/4060/bee_proteins.txt) (.txt)
 
-##Quizzes
+## Quizzes
 1. [Quiz 1 with solutions](CU/4060/Quiz1_S.pdf)
 2. [Quiz 2 with solutions](CU/4060/Quiz2_S.pdf)
 3. [Quiz 3 with solutions](CU/4060/Quiz3_S.pdf)
 4. [Quiz 4 with solutions](CU/4060/Quiz4_S.pdf)
 
-##Final Project
+## Final Project
 - Due: May/14/2019 at 11:59PM
 - [Final Project](CU/4060/Final_Project.pdf)
 - Data: [honeybee_gene_sequences](CU/4060/honeybee_gene_sequences.txt) (.txt)
 
-##Books and References
+## Books and References
 - [Hands-on Python](CU/4060/Books and References/Hands-on Python.pdf)
 - [Python Tutorial](CU/4060/Books and References/Python Tutorial.pdf)
 - [Graphics Library Quick Reference](CU/4060/Books and References/Graphics Library Quick Reference.pdf)
@@ -205,7 +205,7 @@ ul {font-size: 16px; color: black;}
 - [HTML_Tag_List](CU/4060/Books and References/HTML_Tag_List.pdf)
 - [The Lorenz System](CU/4060/Books and References/The Lorenz System.pdf)
 
-##Software
+## Software
 - [kompozer-0.8b3.en-US.win32.exe](CU/4060/Software/kompozer-0.8b3.en-US.win32.exe.7z) (.7z)
 - [kompozer-0.8b3.en-US.mac-universal](CU/4060/Software/kompozer-0.8b3.en-US.mac-universal.dmg) (.dmg)
 - [commonFormFields](CU/4060/Software/commonFormFields.html)
@@ -215,8 +215,8 @@ ul {font-size: 16px; color: black;}
 
 ---
 
-#STSCI/ORIE 4630 - Operations Research Tools for Financial Engineering
-##Lecture Slides
+# STSCI/ORIE 4630 - Operations Research Tools for Financial Engineering
+## Lecture Slides
 - Week 1
     1. Tu: [Jan/22](CU/4630/Lec01.html)
     2. Th: [Jan/24](CU/4630/Lec02.html) 
@@ -266,7 +266,7 @@ ul {font-size: 16px; color: black;}
     26. Tu: [May/7](CU/4630/Lec26.html): ARCH(p) Model, GARCH(p, q) Model
     - Sunday: [Final Review](CU/4630/Exam_3_Review.html)
 
-##Homeworks
+## Homeworks
 1. [Homework 1](CU/4630/HW1.pdf)
     - data: [returns](CU/4630/returns.csv) (.csv)
     - Due: Feb/5/2019, Tuesday
@@ -319,20 +319,20 @@ ul {font-size: 16px; color: black;}
     - [HW10](CU/4630/HW10.html) (pending)
     - [HW10 Solutions](CU/4630/HW10_S.pdf)
 
-##Exams
+## Exams
 - [Midterm 1 Solution](CU/4630/Midterm1_S.pdf)
 
 ---
 
-#STSCI 5999 - Applied Statistics MPS Data Analysis Project
-##Project Progress
+# STSCI 5999 - Applied Statistics MPS Data Analysis Project
+## Project Progress
 - [Forecasting](CU/5999/Forecasting.html)
 - [Forecasting Function](CU/5999/Forecasting_Function.html)
 
 ---
 
-#CS 5786 - Machine Learning for Data Science
-##Lecture Slides
+# CS 5786 - Machine Learning for Data Science
+## Lecture Slides
 - Week 1
     - Lecture 1: [Course introduction, Logistics, Dimensionality reduction](CU/5786/Lec01.pdf)
     - Lecture 2: [Dimensionality Reduction, Principal Component Analysis](CU/5786/Lec02.pdf)
@@ -378,7 +378,7 @@ ul {font-size: 16px; color: black;}
     - Demo: [???]() (pending)
 
 
-##Homeworks
+## Homeworks
 - [Vocareum Link](https://labs.vocareum.com/home/login.php?email=dl947%40cornell.edu)
 - [Homework 1](CU/5786/HW1.html)
     - Due: Feb/20/2019 23:59:59 EST
@@ -387,7 +387,7 @@ ul {font-size: 16px; color: black;}
 -  
 -  
 
-##Exams
+## Exams
 - [Placement Exam](CU/5786/PlacementExam.pdf)
     - Due: Jan/31/2019
     - [Summary](CU/5786/Placement_Exam.html)
@@ -402,11 +402,11 @@ ul {font-size: 16px; color: black;}
 
 ---
 
-#STSCI 5010 - Applied Statistical Computation with SAS
-##Syllabus
+# STSCI 5010 - Applied Statistical Computation with SAS
+## Syllabus
 - Fall 2018 Syllabus
 
-##Lecture Slides
+## Lecture Slides
 **--- Module 1**
 
 1. [Basic Concepts](CU/5010/Lec1.pdf)
@@ -439,7 +439,7 @@ ul {font-size: 16px; color: black;}
 25. [Hierarchical Clustering](CU/5010/Lec25.pdf)
 26. [Optimization Clustering](CU/5010/Lec26.pdf)
 
-##Homeworks
+## Homeworks
 1. [HW 1](CU/5010/HW1.pdf)
     - data: [admit](CU/5010/admit.sas7bdat) (.sas7bdat)
     - Due: Sep/27/2018 at 11:59PM
@@ -458,7 +458,7 @@ ul {font-size: 16px; color: black;}
     - data: [flowers](CU/5010/flowers.sas7bdat) (.sas7bdat)
     - Due: Dec/5/2018 at 11:59PM
 
-##Labs
+## Labs
 1. [Lab 1](CU/5010/Lab1.pdf)
     - data: [nutrition](CU/5010/nutrition.sas7bdat) (.sas7bdat)
     - Due: Sep/23/2018 at 11:59PM
@@ -471,19 +471,19 @@ ul {font-size: 16px; color: black;}
     - Due: Oct/21/2018 at 11:59PM
     - [Solution](CU/5010/Lab2_S.7z) (.7z)
 
-##Quizzes
+## Quizzes
 1. [Quiz 1 with Solutions](CU/5010/Quiz1_S.pdf)
 2. [Quiz 2 with Solutions](CU/5010/Quiz2_S.pdf)
 3. [Quiz 3 with Solutions](CU/5010/Quiz3_S.pdf)
 4. [Quiz 4 with Solutions](CU/5010/Quiz4_S.pdf)
 
-##Exams
+## Exams
 1. [Midterm 1 with Solutions](CU/5010/Exam1_S.pdf)
 2. [Midterm 2 with Solutions](CU/5010/Exam2_S.pdf)
 3. [SAS Base Exam Practice](CU/5010/SAS_Exam_Practice.pdf)
     - [Solutions](CU/5010/SAS_Exam_Practice_S.pdf)
 
-##SAS Data
+## SAS Data
 1. [workloads](CU/5010/workloads.sas7bdat) (.sas7bdat)
 2. [unequal](CU/5010/unequal.sas7bdat) (.sas7bdat)
 3. [ring](CU/5010/ring.sas7bdat) (.sas7bdat)
@@ -492,21 +492,21 @@ ul {font-size: 16px; color: black;}
 6. [credit](CU/5010/credit.sas7bdat) (.sas7bdat)
 7. [bank](CU/5010/bank.sas7bdat) (.sas7bdat)
 
-##SAS Related Files
+## SAS Related Files
 - [Reference](CU/5010/SAS_Codes.html)
 - [Lab 1 log](CU/5010/Lab1_Log.pdf)
 - [SAS Certification Exam](CU/5010/SAS_Exam.pdf)
 
 ---
 
-#STSCI 5030 - Linear Models with Matrices
-##Resources
+# STSCI 5030 - Linear Models with Matrices
+## Resources
 - [Summary from Year 2016](CU/5030/Notes.pdf)
 - [Lecture 0](CU/5030/Lec0.pdf)
 - [Syllabus](CU/5030/Syllabus.pdf)
 - [Texts Links](CU/5030/TextsLinks.pdf)
 
-##Homeworks
+## Homeworks
 1. Homework 1
     - [Question 1](CU/5030/HW1-Q1.html)
     - [Question 2](CU/5030/HW1-Q2.html)
@@ -544,7 +544,7 @@ ul {font-size: 16px; color: black;}
     - Data: [rats](CU/5030/rats.csv) (.csv)
     - [Solutions](CU/5030/HW5_S.pdf)
 
-##Labs
+## Labs
 1. Lab 1 (Aug/27 - Aug/30)
     - [PDF](CU/5030/Lab1.pdf)
     - [RMarkdown](CU/5030/Lab1.Rmd) (.Rmd)
@@ -581,7 +581,7 @@ ul {font-size: 16px; color: black;}
     - [Data](CU/5030/golfballs.dat) (.dat)
     - [Solution (PDF)](CU/5030/Lab7_S.pdf)
 
-##Exams
+## Exams
 - [Practice Midterm 1](CU/5030/Midterm1_Fall2017.pdf), Fall 2017 Midterm - 1
     - [Solution](CU/5030/Midterm1_Fall2017_S.pdf)
     - [Summary](CU/5030/Midterm1_Fall2017_Summary.html)
@@ -597,11 +597,11 @@ ul {font-size: 16px; color: black;}
 
 ---
 
-#STSCI 5060 - Database Management and SAS High Performance Computing with DBMS
-##Syllabus
+# STSCI 5060 - Database Management and SAS High Performance Computing with DBMS
+## Syllabus
 - Fall 2018 Syllabus
 
-##Lecture Slides
+## Lecture Slides
 1. [Chapter 1 - Modern Database Management (MDBM)](CU/5060/Lec1.pdf)
 2. [Chapter 2 - Modeling data in an organization (Basic E-R model)](CU/5060/Lec2.pdf)
 3. [Chapter 3 - Enhanced E-R model](CU/5060/Lec3.pdf)
@@ -622,7 +622,7 @@ ul {font-size: 16px; color: black;}
 18. [SAS HPC with DBMS_4](CU/5060/HPC4.pdf)
 19. [SAS HPC with DBMS_5](CU/5060/HPC5.pdf)
 
-##Data Files
+## Data Files
 1. [customer](CU/5060/customer.sas7bdat) (.sas7bdat)
 2. [employee_addresses](CU/5060/employee_addresses.sas7bdat) (.sas7bdat)
 3. [employee_payroll](CU/5060/employee_payroll.sas7bdat) (.sas7bdat)
@@ -643,7 +643,7 @@ ul {font-size: 16px; color: black;}
 18. [supervisors](CU/5060/supervisors.sas7bdat) (.sas7bdat)
 19. [Supervisors3](CU/5060/Supervisors3.sas7bdat) (.sas7bdat)
 
-##Homeworks
+## Homeworks
 1. [HW 1](CU/5060/HW1.pdf)
     - Due: Sep/26/2018 at 11:59PM
 2. [HW 2](CU/5060/HW2.pdf)
@@ -655,7 +655,7 @@ ul {font-size: 16px; color: black;}
     - Data: [Materials](CU/5060/Materials.sql) (.sql)
     - Data: [CREATEPVFC](CU/5060/CREATEPVFC.sql) (.sql)
 
-##Labs
+## Labs
 1. [Lab 1](CU/5060/Lab1.pdf)
     - Due: Oct/16/2018 at 11:59PM
     - [Lab 1 Summary](CU/5060/Lab1_Smy.html)
@@ -667,20 +667,20 @@ ul {font-size: 16px; color: black;}
     - Due: Nov/12/2018 at 11:59PM
     - [Lab 3 Summary](CU/5060/Lab3_Smy.html)
 
-##Exams
+## Exams
 - [Review](CU/5060/Review.html)
 
-##Quizzes
+## Quizzes
 1. [Quiz 1 with Solutions](CU/5060/Quiz1.pdf)
 2. [Quiz 2 with Solutions](CU/5060/Quiz2.pdf)
 3. [Quiz 3 with Solutions](CU/5060/Quiz3.pdf)
 
-##Supplemental Materials
+## Supplemental Materials
 - [Oracle Database Datatypes](CU/5060/Sup1.pdf)
 - [Oracle Schema Object Names and Qualifiers](CU/5060/Sup2.pdf)
 - [Download and Install Oracle XE 11g](CU/5060/Sup3.pdf)
 
-##Final Project
+## Final Project
 - [Instruction](CU/5060/FP.pdf)
 - Data 1: [school_finance_2010](CU/5060/school_finance_2010.sas7bdat) (.sas7bdat)
 - Data 2: [school_finance_2014](CU/5060/school_finance_2014.sas7bdat) (.sas7bdat)
@@ -690,11 +690,11 @@ ul {font-size: 16px; color: black;}
 
 ---
 
-#STSCI 5080 - Probability Models and Inference
-##Syllabus
+# STSCI 5080 - Probability Models and Inference
+## Syllabus
 - [Fall 2018 Syllabus](CU/5080/Syllabus.pdf)
 
-##Lecture Slides
+## Lecture Slides
 1. [Lecture 1: Introduction](CU/5080/Lec1.pdf)
 2. [Lecture 2: Probability and Conditional Probability](CU/5080/Lec2.pdf)
 3. [Lecture 3: Independence and Random Variables](CU/5080/Lec3.pdf)
@@ -721,7 +721,7 @@ ul {font-size: 16px; color: black;}
 24. [Lecture 24: Testing (cont.)](CU/5080/Lec24.pdf)
 25. [Lecture 25: Review for the Final Exam](CU/5080/Lec25.pdf)
 
-##Homeworks
+## Homeworks
 1. [Homework 1](CU/5080/HW1.pdf)
     - [Solutions](CU/5080/HW1_S.pdf)
 2. [Homework 2](CU/5080/HW2.pdf)
@@ -735,7 +735,7 @@ ul {font-size: 16px; color: black;}
 6. [Homework 6](CU/5080/HW6.pdf)
     - [Solutions](CU/5080/HW6_S.pdf)
 
-##Discussions
+## Discussions
 1. [Discussion 1 with Solutions](CU/5080/Dis1.pdf)
 2. [Discussion 2 with Solutions](CU/5080/Dis2.pdf)
 3. [Discussion 3 with Solutions](CU/5080/Dis3.pdf)
@@ -749,7 +749,7 @@ ul {font-size: 16px; color: black;}
 11. [Discussion 11 with Solutions](CU/5080/Dis11.pdf)
 12. [Discussion 12 with Solutions](CU/5080/Dis12.pdf)
 
-##Supplementary Materials
+## Supplementary Materials
 1. [Some standard distributions](CU/5080/Sup1.pdf)
 2. [Densities of order statistics](CU/5080/Sup2.pdf)
 3. [More general definition of expectation](CU/5080/Sup3.pdf)
@@ -760,7 +760,7 @@ ul {font-size: 16px; color: black;}
 8. [Brown_Cai_DasGupta_(2001,Stat.Sci.)](CU/5080/Sup8.pdf)
 - [Formula](CU/5080/Formula.html)
 
-##Practice Exams
+## Practice Exams
 1. [Practice Midterm 1](CU/5080/PM1.pdf)
     - [Solutions](CU/5080/PM1_S.pdf)
 2. [Practice Midterm 2](CU/5080/PM2.pdf)
@@ -768,7 +768,7 @@ ul {font-size: 16px; color: black;}
 3. [Practice Final](CU/5080/PF.pdf)
     - [Solutions](CU/5080/PF_S.pdf)
 
-##Exams
+## Exams
 1. [Midterm 1 with Solutions](CU/5080/M1_S.pdf)
 2. [Midterm 2 with Solutions](CU/5080/M2_S.pdf)
     - [Formula Sheet](CU/5080/M2_Formula_Sheet.pdf)
