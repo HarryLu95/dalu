@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -1416,48 +1417,9 @@ summary {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -1562,7 +1524,8 @@ h3 {font-size: 20px; color: black; font-weight: bold; font-style: normal; backgr
 h3.subtitle {background-color: White; text-align: center;}
 h4.date {text-align: center;}
 p {font-size: 18px; color: black;}
-table {border: 1px solid black; border-collapse: collapse; margin-top: 10px; margin-bottom: 10px; }
+table {border: 1px solid black; border-collapse: collapse; margin-top: 10px; margin-bottom: 10px;}
+th {border: 1px solid black; width: auto; height: 50px; font-size: 16px; color: black;}
 td {border: 1px solid black; width: auto; height: 50px; text-align: left; font-size: 16px; color: black;}
 td.title {text-align: center;}
 ol {font-size: 18px; color: black;}
@@ -1571,8 +1534,6 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 span.r {color: red;}
 </style>
 <hr />
-<pre class="r"><code>library(knitr)
-knit_engines$set()</code></pre>
 <div id="example-fibonacci" class="section level1">
 <h1><span class="header-section-number">1</span> Example: Fibonacci</h1>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
@@ -1866,7 +1827,7 @@ input = 2 3 1 1 4
 <p>Induction rule:</p>
 <ul>
 <li><p>M[i] = Or(M[j] == true &amp;&amp; j + a[i] &gt;= i) for each 0 &lt;= j &lt;= i-1</p></li>
-<li>Time: O(<span class="math inline">\(n^2\)</span>)</li>
+<li><p>Time: O(<span class="math inline">\(n^2\)</span>)</p></li>
 <li><p>Space: O(<span class="math inline">\(n\)</span>)</p></li>
 </ul>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
@@ -1892,6 +1853,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

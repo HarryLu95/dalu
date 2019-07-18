@@ -215,12 +215,12 @@ td.updated {background-color: MediumSpringGreen;}
     [Class 15](LO/Algorithm_Class_35.html)</td>
   <td class="pending">13th  
     [Class 16](LO/Algorithm_Class_36.html)</td>
-  <td>14th  
-    Class 17</td>
+  <td class="pending">14th  
+    [Class 17](LO/Algorithm_Class_37.html)</td>
 </tr>
 <tr>
-  <td>15th  
-    Design 3</td>
+  <td class="pending">15th  
+    [Design 3](LO/Algorithm_Class_38.html)</td>
   <td></td>
   <td>17th  
     Class 18</td>
