@@ -15,7 +15,7 @@ h2 {font-size: 20px; color: black; font-weight: bold; font-style: italic;}
 p {font-size: 16px; color: black;}
 ol {font-size: 16px; color: black;}
 ul {font-size: 16px; color: black;}
-table {border: 1px solid black; border-collapse: collapse; margin-top: 10px; margin-bottom: 10px; }
+table {border: 1px solid black; border-collapse: collapse; margin-top: 10px; margin-bottom: 10px;}
 td {border: 1px solid black; width: 200px; height: 50px; text-align: center; font-size: 16px; color: black;}
 
 td.diagonalRising {
