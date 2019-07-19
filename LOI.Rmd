@@ -222,8 +222,8 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="pending">15th  
     [Design 3](LO/Algorithm_Class_38.html)</td>
   <td></td>
-  <td>17th  
-    Class 18</td>
+  <td class="pending">17th  
+    [Class 18](LO/Algorithm_Class_39.html)</td>
   <td></td>
   <td>19th  
     Design 4</td>
@@ -234,17 +234,17 @@ td.updated {background-color: MediumSpringGreen;}
 </tr>
 <tr>
   <td>22nd  
-    ???</td>
+    Design 5</td>
   <td></td>
   <td>24th  
-    ???</td>
+    Design 6</td>
   <td></td>
   <td>26th  
-    ???</td>
+    Class 20</td>
   <td>27th  
-    ???</td>
+    Practice 20</td>
   <td>28th  
-    ???</td>
+    Class 21</td>
 </tr>
 <tr>
   <td>29th  
@@ -275,6 +275,12 @@ td.updated {background-color: MediumSpringGreen;}
 - Design 4: OOD IV [Link](LO/Algorithm_Class_40.html) (pending)
 - Class 19: Midterm II [Link](LO/Algorithm_Class_41.html) (pending)
     - Practice 19 [Link](LO/Algorithm_Class_42.html) (pending)
+- Design 5: Overview and Architecture [Link](LO/Algorithm_Class_43.html) (pending)
+- Design 6: Web Applications [Link](LO/Algorithm_Class_44.html) (pending)
+- Class 20: 加强 2 [Link](LO/Algorithm_Class_45.html) (pending)
+    - Practice 20 [Link](LO/Algorithm_Class_46.html) (pending)
+- Class 21: Recursion II [Link](LO/Algorithm_Class_47.html) (pending)
+
 
 
 
