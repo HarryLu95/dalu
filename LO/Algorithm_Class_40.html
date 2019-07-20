@@ -1510,7 +1510,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Algorithm Class 40 - Design 4</h1>
-<h3 class="subtitle">OOD 4</h3>
+<h3 class="subtitle">Object-Oriented Design IV</h3>
 <h4 class="date">July/19/2019</h4>
 
 </div>
@@ -1534,8 +1534,221 @@ img {display: block; margin-top: 10px; margin-bottom: 10px; margin-left: auto; m
 span.r {color: red;}
 </style>
 <hr />
-<div id="section" class="section level1">
-<h1><span class="header-section-number">1</span> </h1>
+<div id="blackjack" class="section level1">
+<h1><span class="header-section-number">1</span> 設計實現BlackJack</h1>
+<p>棋牌類游戲OOD (Example: <a href="https://en.wikipedia.org/wiki/Blackjack">BlackJack</a>)</p>
+<p>1. 游戲規則和游戲流程</p>
+<p>2. 對游戲道具和游戲狀態的描述</p>
+<p>Data (設計撲克牌)</p>
+<p>Action (用設計的撲克牌設計BlackJack)</p>
+<ol style="list-style-type: lower-roman">
+<li>Design a generic deck of cards</li>
+<li>How to extend the <code>Card</code> design to support BlackJack?</li>
+<li>How to simulate the BlackJack game?</li>
+</ol>
+<div id="design-a-generic-deck-of-cards" class="section level2">
+<h2><span class="header-section-number">1.1</span> Design a generic deck of cards</h2>
+<p>Step 1. Figure out what <strong>classes</strong> we need to define and their <strong>relationships</strong>.</p>
+<p>Assumption: Standard 52-card set</p>
+<p>Card:</p>
+<ol style="list-style-type: decimal">
+<li><code>Value</code></li>
+<li><code>Suit</code></li>
+</ol>
+<p>Deck:</p>
+<ol style="list-style-type: decimal">
+<li><code>List&lt;Card&gt;</code></li>
+</ol>
+<p>Step 2. Functionalities of main classes and their public interfaces.</p>
+<p>Card:</p>
+<ul>
+<li><code>value()</code>: 牌面, 1 - 13</li>
+<li><code>suit():</code> 花色</li>
+</ul>
+<p>Deck:</p>
+<ul>
+<li><code>shuffle()</code>: 洗牌</li>
+<li><code>dealHand()</code>: 發牌</li>
+</ul>
+<pre><code>public enum Suit {
+  heart,
+  spade,
+  club,
+  diamond
+}</code></pre>
+<pre class="java"><code>public class Card {
+  private int faceValue;  // 1 for A, 11 for J, 12 for Q, 13 for K. Or we can use enum here.
+  private Suit suit;
+  
+  public Card(int c, Suit s) {
+    faceValue = c;
+    suit = s;
+  }
+  
+  public int value() {
+    return faceValue;
+  }
+  
+  public Suit suit() {
+    return suit;
+  }
+}</code></pre>
+<pre class="java"><code>public class Deck {
+  private static final Random random = new Random();
+  
+  private final List&lt;Card&gt; cards = new ArrayList&lt;&gt;(); // or &quot;Card[]&quot;
+  private int dealIndex = 0;
+  
+  public Deck() {
+    for (int i = 1; i &lt;= 13; i++) {
+      for (Suit suit : Suit.values()) {
+        cards.add(new Card(i, suit));
+      }
+    }
+  }
+  
+  public void shuffle() {
+    for (int i = 0; i &lt; cards.size() - 1; i++) {
+      int j = random.nextInt(cards.size() - i) + i;
+      Card card1 = cards.get(i);
+      Card card2 = cards.get(j);
+      cards.set(i, card2);
+      cards.set(j, card1);
+    }
+  }
+  
+  private int remainingCards() {
+    return cards.size() - dealIndex;
+  }
+  
+  public Card[] dealHand(int number) {
+    if (remainingCards() &lt; number) {
+      return null;
+    }
+    Card[] cards = new Card[number];
+    for (int i = 0; i &lt; number; i++) {
+      card[i] = dealCard();
+    }
+    return cards;
+  }
+  
+  public Card dealCard() {
+    return remainingCards() == 0 ? null : cards.get(dealIndex++);
+  }
+}</code></pre>
+<p>如何表示手牌?</p>
+<p>Player - Hand: <code>Card[]</code> or <code>List&lt;Card&gt;</code></p>
+<ul>
+<li><code>score()</code></li>
+<li><code>addCard(Card)</code></li>
+</ul>
+<pre class="java"><code>public abstract class Hand {
+  protected final List&lt;Card&gt; cards = new ArrayList&lt;&gt;();
+  
+  public int score() {  // or we can define an abstract method here, i.e., no implementation for &quot;score()&quot;
+    int score = 0;
+    for (Card card : cards) {
+      score += card.value();
+    }
+    return score;
+  }
+  
+  public void addCards(Card[] c) {
+    Collections.addAll(cards, c);
+  }
+  
+  public int size() {
+    return cards.size();
+  }
+}</code></pre>
+</div>
+<div id="how-to-extend-the-card-design-to-support-blackjack" class="section level2">
+<h2><span class="header-section-number">1.2</span> How to extend the <code>Card</code> design to support BlackJack?</h2>
+<p>BlackJack score rules:</p>
+<ul>
+<li>2 ~ 10 scores its face value</li>
+<li>J, Q, and K score 10</li>
+<li>A scores either 1 or 11</li>
+</ul>
+<p><code>BlackJackHand</code> extends <code>Hand</code>:</p>
+<ul>
+<li><code>score</code>: choose the best among all possible values</li>
+<li><code>isBlackJack</code>: boolean (A + 10/J/Q/K)</li>
+</ul>
+<p>Do we need to extend Card? No!</p>
+<pre class="java"><code>public class BlackJackHand extends Hand {
+  @Override
+  public final int score() {
+    
+  }
+  
+  private List&lt;Integer&gt; possibleScores() {
+    
+  }
+  
+  private void updateScores(Card card, List&lt;Integer&gt; scores) {
+    
+  }
+  
+  private int[] getScores(Card card) {
+    
+  }
+  
+  public boolean busted() {
+    
+  }
+  
+  public boolean isBlackJack() {
+    
+  }
+  
+  private static boolean isAce(Card c) {
+    
+  }
+  
+  private static boolean isFaceCard(Card c) {
+    
+  }
+}</code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="how-to-simulate-the-blackjack-game" class="section level2">
+<h2><span class="header-section-number">1.3</span> How to simulate the BlackJack game?</h2>
+<p>棋牌類游戲OOD</p>
+<ul>
+<li>對游戲道具和游戲狀態的描述 (v)</li>
+<li>游戲規則和游戲流程</li>
+</ul>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class BlackJackGameAutomator {
+  
+}</code></pre>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+</div>
+<div id="design-an-in-memory-file-system" class="section level1">
+<h1><span class="header-section-number">2</span> Design an in-memory file system</h1>
+<p>Main functionalities:</p>
+<ol style="list-style-type: decimal">
+<li>files, directory, a directory contains files/sub-directories</li>
+<li>metadata of files/directories: name, creation time, access time, modification time, etc.</li>
+<li>A FileSystem can then be modeled as a tree consisting of files/directories</li>
+</ol>
+<pre><code>           /
+     /a    /b    /c
+/a/foo...</code></pre>
+<pre class="java"><code>public abstract class Entry {
+  
+}</code></pre>
+<pre class="java"><code>public class File extends Entry {
+  
+}</code></pre>
+<pre class="java"><code>public class Directory extends Entry {
+  
+}</code></pre>
+<pre class="java"><code>public class FileSystem {
+  
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 
