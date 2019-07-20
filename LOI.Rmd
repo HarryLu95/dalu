@@ -225,10 +225,10 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="pending">17th  
     [Class 18](LO/Algorithm_Class_39.html)</td>
   <td></td>
-  <td class="pending">19th  
+  <td class="updated">19th  
     [Design 4](LO/Algorithm_Class_40.html)</td>
   <td>20th  
-    Class 19</td>
+    [Class 19](LO/Algorithm_Class_41.html)</td>
   <td>21st  
     Practice 19</td>
 </tr>
