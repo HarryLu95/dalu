@@ -272,7 +272,7 @@ td.updated {background-color: MediumSpringGreen;}
 - Class 17: Sampling [Link](LO/Algorithm_Class_37.html) (pending)
 - Design 3: OOD III [Link](LO/Algorithm_Class_38.html) (pending)
 - Class 18: 加强 1 [Link](LO/Algorithm_Class_39.html) (pending)
-- Design 4: OOD IV [Link](LO/Algorithm_Class_40.html) (pending)
+- Design 4: OOD IV [Link](LO/Algorithm_Class_40.html)
 - Class 19: Midterm II [Link](LO/Algorithm_Class_41.html) (pending)
     - Practice 19 [Link](LO/Algorithm_Class_42.html) (pending)
 - Design 5: Overview and Architecture [Link](LO/Algorithm_Class_43.html) (pending)
@@ -434,8 +434,36 @@ td.updated {background-color: MediumSpringGreen;}
     - 10.3 All Unique Characters II
     - 10.4 Reverse Bits
     - 10.5 Hexadecimal Representation
-
-
+- Class 11 - DFS II
+    - 11.1 All Subsequences Of Sorted String (All Subsets II)
+    - 11.2 All Valid Permutations Of Parentheses II (L pairs of (), M pairs of [], N pairs of {})
+    - 11.3 N Queens
+    - 11.4 Generate Random Maze
+- Class 12 - Dynamic Programming I
+    - 12.1 Longest Ascending Subarray
+    - 12.2 Max Product Of Cutting Rope
+    - 12.3 Array Hopper I
+- Class 13 - Dynamic Programming II
+    - 13.1 Array Hopper II
+    - 13.2 Largest Subarray Sum
+    - 13.3 Dictionary Word
+    - 13.4 Edit Distance
+    - 13.5 Largest Square Of 1s
+- Class 14 - Dynamic Programming III
+    - 14.1 Longest Consecutive 1s
+    - 14.2 Largest Cross With All 1s
+    - 14.3 Largest X With All 1s
+    - 14.4 Largest Subsquare Surrounded By 1s
+    - 14.5 Largest Submatrix Sum
+- Class 15 - Probability, Sampling, Randomization
+    - 15.1 Shuffle
+    - 15.2 Reservoir Sampling
+    - 15.3 Reservoir Sampling With K Samples
+    - 15.4 Random7 Using Random5
+    - 15.5 Random1000 Using Random5
+    - 15.6 Median Tracker Of Data Flow
+    - 15.7 95th Percentile
+- Class 16 - Recursion II
 
 
 
