@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Da (Harry) Lu" />
@@ -1417,48 +1418,9 @@ summary {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -3396,7 +3358,7 @@ option_2</code></pre>
 <li>Let’s assume all the data from table 4.1 has been cleaned (which means those field values mentioned before are the same). Then each group of same properties (multiple rows in table 4.1) could be merged into one row by the same “Address” and formed table 4.2 (<code>tbl_merged</code>). However, in the field name description of table 4.2, there is no explanation of how “merged_id” and “Property_id” are calculated <sup>Question 2</sup>.</li>
 <li>The table 4.3 (<code>tbl_prop</code>) is a combined result from table 4.2 and the old listings, so I assume that there is another table comes from the old listings, denoted as table 4.4 (<code>tbl_extra</code>), which contains at least following information: “Property_id”, “Contact”, “Picture” and “Price” where “Property_id” is the primary key. Under this assumption, table 4.2 (<code>tbl_merged</code>) and table 4.4 (<code>tbl_extra</code>) could be connected by “Property_id” to form table 4.3 through <code>LEFT JOIN</code> statement <sup>Question 3</sup>.</li>
 </ul>
-<p><strong>Question 1:</strong> Are the same properties have the exact data field values on “Date”, “Address”, “Zip”, “City”, “State” and “Sale_type”?</p>
+<p><strong>Question 1:</strong> Do the same properties have the exact data field values on “Date”, “Address”, “Zip”, “City”, “State” and “Sale_type”?</p>
 <ul>
 <li>If not, need to do the data cleaning on each fields before merging them.</li>
 </ul>
@@ -3469,6 +3431,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
