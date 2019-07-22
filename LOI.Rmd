@@ -229,8 +229,8 @@ td.updated {background-color: MediumSpringGreen;}
     [Design 4](LO/Algorithm_Class_40.html)</td>
   <td>20th  
     [Class 19](LO/Algorithm_Class_41.html)</td>
-  <td>21st  
-    Practice 19</td>
+  <td class="pending">21st  
+    [Practice 19](LO/Algorithm_Class_42.html)</td>
 </tr>
 <tr>
   <td>22nd  
