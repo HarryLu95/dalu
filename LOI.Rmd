@@ -229,7 +229,7 @@ td.updated {background-color: MediumSpringGreen;}
     [Design 4](LO/Algorithm_Class_40.html)</td>
   <td>20th  
     [Class 19](LO/Algorithm_Class_41.html)</td>
-  <td class="pending">21st  
+  <td class="updated">21st  
     [Practice 19](LO/Algorithm_Class_42.html)</td>
 </tr>
 <tr>
@@ -274,7 +274,7 @@ td.updated {background-color: MediumSpringGreen;}
 - Class 18: 加强 1 [Link](LO/Algorithm_Class_39.html) (pending)
 - Design 4: OOD IV [Link](LO/Algorithm_Class_40.html)
 - Class 19: Midterm II [Link](LO/Algorithm_Class_41.html) (pending)
-    - Practice 19 [Link](LO/Algorithm_Class_42.html) (pending)
+    - Practice 19 [Link](LO/Algorithm_Class_42.html)
 - Design 5: Overview and Architecture [Link](LO/Algorithm_Class_43.html) (pending)
 - Design 6: Web Applications [Link](LO/Algorithm_Class_44.html) (pending)
 - Class 20: 加强 2 [Link](LO/Algorithm_Class_45.html) (pending)

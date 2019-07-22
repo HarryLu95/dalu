@@ -1595,14 +1595,104 @@ span.r {color: red;}
 <h2><span class="header-section-number">1.2</span> All Valid Permutations Of Parentheses II (L pairs of (), M pairs of [], N pairs of {})</h2>
 <p>Get all valid permutation of l pairs of (), m pairs of [], and n pairs of {}.</p>
 <p><a href="https://app.laicode.io/app/problem/179" class="uri">https://app.laicode.io/app/problem/179</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class ValidParenthesesII {
+  private static final char[] PS = new char[] {&quot;(&quot;, &quot;)&quot;, &quot;[&quot;, &quot;]&quot;, &quot;{&quot;, &quot;}&quot;};
+  
+  public List&lt;String&gt; validParentheses(int l, int m, int n) {
+    // Assumptions: l, m, n &gt;= 0.
+    int[] remain = new int[] {l, l, m, m, n, n};
+    int targetLen = 2 * l + 2 * m + 2 * n;
+    StringBuilder curr = new StringBuilder();
+    Deque&lt;Character&gt; stack = new LinkedList&lt;Character&gt;();
+    List&lt;String&gt; result = new ArrayList&lt;String&gt;();
+    helper(curr, stack, remain, targetLen, result);
+    return result;
+  }
+  
+  private void helper(StringBuilder curr, Deque&lt;Character&gt; stack, int[] remain, int targetLen, List&lt;String&gt; result) {
+    if (curr.length() == targetLen) {
+      result.add(curr.toString());
+      return;
+    }
+    for (int i = 0; i &lt; remain.length; i++) {
+      if (i % 2 == 0) {
+        if (remain[i] &gt; 0) {
+          curr.append(PS[i]);
+          stack.offerFirst(PS[i]);
+          remain[i]--;
+          helper(curr, stack, remain, targetLen, result);
+          curr.deleteCharAt(curr.length() - 1);
+          stack.pollFirst();
+          remain[i]++;
+        }
+      }
+      else {
+        if (!stack.isEmpty() &amp;&amp; stack.peekFirst() == PS[i - 1]) {
+          curr.append(PS[i]);
+          stack.pollFirst();
+          remain[i]--;
+          helper(curr, stack, remain, targetLen, result);
+          curr.deleteCharAt(curr.length() - 1);
+          stack.offerFirst(PS[i - 1]);
+          remain[i]++;
+        }
+      }
+    }
+  }
+}</code></pre>
 </div>
 <div id="n-queens" class="section level2">
 <h2><span class="header-section-number">1.3</span> N Queens</h2>
 <p>Get all valid ways of putting N Queens on an N * N chessboard so that no two Queens threaten each other.</p>
 <p><a href="https://app.laicode.io/app/problem/233" class="uri">https://app.laicode.io/app/problem/233</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class NQueens {
+  // Method 1: Validate the queen position in O(n) each time.
+  public List&lt;List&lt;Integer&gt;&gt; nqueens(int n) {
+    // Assumptions: n &gt; 0.
+    List&lt;List&lt;Integer&gt;&gt; result = new ArrayList&lt;List&lt;Integer&gt;&gt;();
+    // &quot;curr&quot; will be a list of size n, and &quot;curr[i]&quot; is the column number where the queen on row i positioned.
+    List&lt;Integer&gt; curr = new ArrayList&lt;Integer&gt;();
+    helper(n, curr, result);
+    return result;
+  }
+  
+  private void helper(int n, List&lt;Integer&gt; curr, List&lt;List&lt;Integer&gt;&gt; result) {
+    // Base case: When for all the rows we know where the queen is positioned.
+    if (curr.size() == n) {
+      result.add(new ArrayList&lt;Integer&gt;(curr));
+      return;
+    }
+  }
+  
+  private boolean valid(List&lt;Integer&gt; curr, int column) {
+    
+  }
+  
+  // Method 2: Validate the queen position in O(1) each time.
+  public List&lt;List&lt;Integer&gt;&gt; nqueensII(int n) {
+    
+  }
+  
+  private void helper(int n, int row, int[] curr, List&lt;List&lt;Integer&gt;&gt; result, boolean[] usedColumns, boolean[] usedDiagonals, boolean[] usedRevDiagonals) {
+    
+  }
+  
+  private boolean valid(int n, int row, int column, boolean[] usedColumns, boolean[] usedDiagonals, boolean[] usedRevDiagonals) {
+    
+  }
+  
+  private void mark(int n, int row, int column, boolean[] usedColumns, boolean[] usedDiagonals, boolean[] usedRevDiagonals) {
+    
+  }
+  
+  private void unMark(int n, int row, int column, boolean[] usedColumns, boolean[] usedDiagonals, boolean[] usedRevDiagonals) {
+    
+  }
+  
+  private List&lt;Integer&gt; toList(int[] array) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="generate-random-maze" class="section level2">
