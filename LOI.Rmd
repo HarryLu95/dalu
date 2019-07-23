@@ -176,7 +176,7 @@ td.updated {background-color: MediumSpringGreen;}
     - Practice 14 [Link](LO/Algorithm_Class_23.html) (pending)
 - Class 10: Bit [Link](LO/Algorithm_Class_24.html) (pending)
     - Practice 15 [Link](LO/Algorithm_Class_25.html) (pending)
-- Class 11: Midterm I [Link](LO/Algorithm_Class_26.html) (pending)
+- Class 11: Midterm I [Link](LO/Algorithm_Class_26.html)
     - Practice 16 [Link](LO/Algorithm_Class_27.html) (pending)
 
 ## July/2019
@@ -233,8 +233,8 @@ td.updated {background-color: MediumSpringGreen;}
     [Practice 19](LO/Algorithm_Class_42.html)</td>
 </tr>
 <tr>
-  <td>22nd  
-    Design 5</td>
+  <td class="updated">22nd  
+    [Design 5](LO/Algorithm_Class_43.html)</td>
   <td></td>
   <td>24th  
     Design 6</td>
@@ -273,9 +273,9 @@ td.updated {background-color: MediumSpringGreen;}
 - Design 3: OOD III [Link](LO/Algorithm_Class_38.html) (pending)
 - Class 18: 加强 1 [Link](LO/Algorithm_Class_39.html) (pending)
 - Design 4: OOD IV [Link](LO/Algorithm_Class_40.html)
-- Class 19: Midterm II [Link](LO/Algorithm_Class_41.html) (pending)
+- Class 19: Midterm II [Link](LO/Algorithm_Class_41.html)
     - Practice 19 [Link](LO/Algorithm_Class_42.html)
-- Design 5: Overview and Architecture [Link](LO/Algorithm_Class_43.html) (pending)
+- Design 5: Overview and Architecture [Link](LO/Algorithm_Class_43.html)
 - Design 6: Web Applications [Link](LO/Algorithm_Class_44.html) (pending)
 - Class 20: 加强 2 [Link](LO/Algorithm_Class_45.html) (pending)
     - Practice 20 [Link](LO/Algorithm_Class_46.html) (pending)
