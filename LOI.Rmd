@@ -236,8 +236,8 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="updated">22nd  
     [Design 5](LO/Algorithm_Class_43.html)</td>
   <td></td>
-  <td>24th  
-    Design 6</td>
+  <td class="updated">24th  
+    [Design 6](LO/Algorithm_Class_44.html)</td>
   <td></td>
   <td>26th  
     Class 20</td>
@@ -276,7 +276,7 @@ td.updated {background-color: MediumSpringGreen;}
 - Class 19: Midterm II [Link](LO/Algorithm_Class_41.html)
     - Practice 19 [Link](LO/Algorithm_Class_42.html)
 - Design 5: Overview and Architecture [Link](LO/Algorithm_Class_43.html)
-- Design 6: Web Applications [Link](LO/Algorithm_Class_44.html) (pending)
+- Design 6: Web Applications [Link](LO/Algorithm_Class_44.html)
 - Class 20: 加强 2 [Link](LO/Algorithm_Class_45.html) (pending)
     - Practice 20 [Link](LO/Algorithm_Class_46.html) (pending)
 - Class 21: Recursion II [Link](LO/Algorithm_Class_47.html) (pending)
