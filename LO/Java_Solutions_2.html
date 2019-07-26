@@ -1715,29 +1715,109 @@ span.r {color: red;}
   }
   
   private boolean valid(int n, int row, int column, boolean[] usedColumns, boolean[] usedDiagonals, boolean[] usedRevDiagonals) {
-    
+    // For the reverse diagonal line, the actual range of column - row is actually [-(n-1), +(n-1)], we add n - 1 to make sure it can fit into the index.
+    return !usedColumns[column] &amp;&amp; !usedDiagonals[column + row] &amp;&amp; !usedRevDiagonals[column - row + n - 1];
   }
   
   private void mark(int n, int row, int column, boolean[] usedColumns, boolean[] usedDiagonals, boolean[] usedRevDiagonals) {
-    
+    usedColumns[column] = true;
+    usedDiagonals[column + row] = true;
+    usedRevDiagonals[column - row + n - 1] = true;
   }
   
   private void unMark(int n, int row, int column, boolean[] usedColumns, boolean[] usedDiagonals, boolean[] usedRevDiagonals) {
-    
+    usedColumns[column] = false;
+    usedDiagonals[column + row] = false;
+    usedRevDiagonals[column - row + n - 1] = false;
   }
   
   private List&lt;Integer&gt; toList(int[] array) {
-    
+    List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+    for (int num : array) {
+      list.add(num);
+    }
+    return list;
   }
 }</code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="generate-random-maze" class="section level2">
 <h2><span class="header-section-number">1.4</span> Generate Random Maze</h2>
 <p>Randomly generate a maze of size N * N (where N = 2K + 1) whose corridor and wall’s width are both 1 cell. For each pair of cells on the corridor, there must exist one and only one path between them. (Randomly means that the solution is generated randomly, and whenever the program is executed, the solution can be different.) The wall is denoted by 1 in the matrix and corridor is denoted by 0.</p>
 <p><a href="https://app.laicode.io/app/problem/218" class="uri">https://app.laicode.io/app/problem/218</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class GenerateRandomMaze {
+  public int[][] maze(int n) {
+    // Assumptions: n = 2 * k + 1, where k &gt;= 0.
+    int[][] maze = new int[n][n];
+    // Initialize the matrix as only (0, 0) is corridor, other cells are all walls at the beginning. Later we are trying to break the walls to form corridors.
+    for (int i = 0; i &lt; n; i++) {
+      for (int j = 0; j &lt; n; j++) {
+        if (i == 0 &amp;&amp; j == 0) {
+          maze[i][j] = 0;
+        }
+        else {
+          maze[i][j] = 1;
+        }
+      }
+    }
+    generate(maze, 0, 0);
+    return maze;
+  }
+  
+  private void generate(int[][] maze, int x, int y) {
+    // Get a random shuffle of all the possible directions, and follow the shuffled order to do DFS &amp; backtrack.
+    Dir[] dirs = Dir.values();
+    shuffle(dirs);
+    for (Dir dir : dirs) {
+      // Adcance by two steps.
+      int nextX = dir.moveX(x, 2);
+      int nextY = dir.moveY(y, 2);
+      if (isValidWall(maze, nextX, nextY)) {
+        // Only if the cell is a wall (meaning we have not visited before), we break the walls through to make it corridors.
+        maze[dir.moveX(x, 1)][dir.moveY(y, 1)] = 0;
+        maze[nextX][nextY] = 0;
+        generate(maze, nextX, nextY);
+      }
+    }
+  }
+  
+  // Get a random order of the directions.
+  private void shuffle(Dir[] dirs) {
+    for (int i = 0; i &lt; dirs.length; i++) {
+      int index = (int) (Math.random() * (dirs.length - i));
+      Dir temp = dirs[i];
+      dirs[i] = dirs[i + index];
+      dirs[i + index] = temp;
+    }
+  }
+  
+  // Check if the position (x, y) is within the maze and it is a wall.
+  private boolean isValidWall(int[][] maze, int x, int y) {
+    return x &gt;= 0 &amp;&amp; x &lt; maze.length &amp;&amp; y &gt;= 0 &amp;&amp; y &lt; maze[0].length &amp;&amp; maze[x][y] == 1;
+  }
+  
+  // This is an example of using enum in Java, basically enum is good and recommended way for representing a set of predefined constants.
+  enum Dir {
+    NORTH(-1, 0), SOUTH(1, 0), EAST(0, -1), WEST(0, 1);
+    
+    int deltaX;
+    int deltaY;
+    
+    Dir(int deltaX, int deltaY) {
+      this.deltaX = deltaX;
+      this.deltaY = deltaY;
+    }
+    
+    // Move certain times of deltaX.
+    public int moveX(int x, int times) {
+      return x + times * deltaX;
+    }
+    
+    // Move certain times of deltaY.
+    public int moveY(int y, int times) {
+      return y + times * deltaY;
+    }
+  }
+}</code></pre>
 </div>
 </div>
 <div id="class-12---dynamic-programming-i" class="section level1">
@@ -1746,21 +1826,76 @@ span.r {color: red;}
 <h2><span class="header-section-number">2.1</span> Longest Ascending Subarray</h2>
 <p>Given an unsorted array, find the length of the longest subarray in which the numbers are in ascending order.</p>
 <p><a href="https://app.laicode.io/app/problem/86" class="uri">https://app.laicode.io/app/problem/86</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class LongestAscendingSubArray {
+  public int longest(int[] array) {
+    // Assumptions: the given array is not null.
+    if (array.length == 0) {
+      return 0;
+    }
+    // dp[i] = 1, (array[i] &lt;= array[i-1])
+    // dp[i] = dp[i-1] + 1, (array[i] &gt; array[i-1])
+    // So we can make the space consumption more efficient by only recording the latest dp[i].
+    int result = 1;
+    int curr = 1;
+    for (int i = 1; i &lt; array.length; i++) {
+      if (array[i] &gt; array[i - 1]) {
+        // The second case, we can update dp[i].
+        curr++;
+        result = Math.max(result, curr);
+      }
+      else {
+        // The first case, we need to reset dp[i].
+        curr = 1;
+      }
+    }
+    return result;
+  }
+}</code></pre>
 </div>
 <div id="max-product-of-cutting-rope" class="section level2">
 <h2><span class="header-section-number">2.2</span> Max Product Of Cutting Rope</h2>
 <p>Given a rope with positive integer-length n, how to cut the rope into m integer-length parts with length p[0], p[1], …, p[m-1], in order to get the maximal product of p[0]p[1]…p[m-1]? m is determined by you and must be greater than 0 (at least one cut must be made). Return the max product you can have.</p>
 <p><a href="https://app.laicode.io/app/problem/87" class="uri">https://app.laicode.io/app/problem/87</a></p>
-<pre class="java"><code></code></pre>
-<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+<pre class="java"><code>public class MaxProductOfCuttingRope {
+  public int maxProduct(int length) {
+    // Assumptions: length &gt;= 2.
+    if (length == 2) {
+      return 1;
+    }
+    int[] array = new int[length + 1];
+    array[1] = 0;
+    array[2] = 1;
+    for (int i = 3; i &lt; array.length; i++) {
+      // At least one of the partitions after cutting is &lt;= i/2, so we can just pick that partition, and find the maximum product.
+      for (int j = 1; j &lt;= i / 2; j++) {
+        // For the other partition, we can choose not cutting it or cutting it, so the max number we can get is either i-j or array[i-j].
+        array[i] = Math.max(array[i], j * Math.max(i - j, array[i - j]));
+      }
+    }
+    return array[length];
+  }
+}</code></pre>
 </div>
 <div id="array-hopper-i" class="section level2">
 <h2><span class="header-section-number">2.3</span> Array Hopper I</h2>
 <p>Given an array A of non-negative integers, you are initially positioned at index 0 of the array. A[i] means the maximum jump distance from that position (you can only jump towards the end of the array). Determine if you are able to reach the last index.</p>
 <p><a href="https://app.laicode.io/app/problem/88" class="uri">https://app.laicode.io/app/problem/88</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class ArrayHopperI {
+  // Method 1: DP, canJump[i] means from index 0, can jump to index i.
+  public boolean canJump(int[] array) {
+    
+  }
+  
+  // Method 2: DP, canJump[i] means from index i, can jump to index array.length - 1.
+  public boolean canJumpII(int[] array) {
+    
+  }
+  
+  // Method 3: Greedy solution. Keep the max index reachable by jumping x steps, and the max index reachable by jumping x+1 steps.
+  public boolean canJumpIII(int[] array) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 </div>
@@ -1770,35 +1905,65 @@ span.r {color: red;}
 <h2><span class="header-section-number">3.1</span> Array Hopper II</h2>
 <p>Given an array A of non-negative integers, you are initially positioned at index 0 of the array. A[i] means the maximum jump distance from index i (you can only jump towards the end of the array). Determine the minimum number of jumps you need to reach the end of array. If you cannot reach the end of the array, return -1.</p>
 <p><a href="https://app.laicode.io/app/problem/89" class="uri">https://app.laicode.io/app/problem/89</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class ArrayHopperII {
+  // Method 1: DP
+  public int minJump(int[] array) {
+    
+  }
+  
+  // Method 2: Greedy solution.
+  public int minJumpII(int[] array) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="largest-subarray-sum" class="section level2">
 <h2><span class="header-section-number">3.2</span> Largest Subarray Sum</h2>
 <p>Given an unsorted integer array, find the subarray that has the greatest sum. Return the sum.</p>
 <p><a href="https://app.laicode.io/app/problem/97" class="uri">https://app.laicode.io/app/problem/97</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class LargestSubArraySum {
+  public int largestSum(int[] array) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="dictionary-word" class="section level2">
 <h2><span class="header-section-number">3.3</span> Dictionary Word</h2>
 <p>Given a word and a dictionary, determine if it can be composed by concatenating words from the given dictionary.</p>
 <p><a href="https://app.laicode.io/app/problem/99" class="uri">https://app.laicode.io/app/problem/99</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class DictionaryWord {
+  public boolean canBreak(String input, String[] dict) {
+    
+  }
+  
+  private Set&lt;String&gt; toSet(String[] dict) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="edit-distance" class="section level2">
 <h2><span class="header-section-number">3.4</span> Edit Distance</h2>
 <p>Given two strings of alphanumeric characters, determine the minimum number of Replace, Delete, and Insert operations needed to transform one string into the other.</p>
 <p><a href="https://app.laicode.io/app/problem/100" class="uri">https://app.laicode.io/app/problem/100</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class EditDistance {
+  public int editDistance(String one, String two) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="largest-square-of-1s" class="section level2">
 <h2><span class="header-section-number">3.5</span> Largest Square Of 1s</h2>
 <p>Determine the largest square of 1s in a binary matrix (a binary matrix only contains 0 and 1), return the length of the largest square.</p>
 <p><a href="https://app.laicode.io/app/problem/101" class="uri">https://app.laicode.io/app/problem/101</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class LargestSquareOfOnes {
+  public int largest(int[][] matrix) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 </div>
@@ -1808,35 +1973,96 @@ span.r {color: red;}
 <h2><span class="header-section-number">4.1</span> Longest Consecutive 1s</h2>
 <p>Given an array containing only 0s and 1s, find the length of the longest subarray of consecutive 1s.</p>
 <p><a href="https://app.laicode.io/app/problem/103" class="uri">https://app.laicode.io/app/problem/103</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class LongestOnes {
+  public int longest(int[] array) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="largest-cross-with-all-1s" class="section level2">
 <h2><span class="header-section-number">4.2</span> Largest Cross With All 1s</h2>
 <p>Given a matrix that contains only 1s and 0s, find the largest cross which contains only 1s, with the same arm lengths and the four arms joining at the central point.</p>
 <p><a href="https://app.laicode.io/app/problem/104" class="uri">https://app.laicode.io/app/problem/104</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class LargestCrossOfOnes {
+  public int largest(int[][] matrix) {
+    
+  }
+  
+  // Merge leftup and rightdown matrix into leftup, the value of each cell is the min value of the corresponding cells in the two matrix, also it returns the max value among all the cells in the merged matrix.
+  private int merge(int[][] leftUp, int[][] rightDown, int N, int M) {
+    
+  }
+  
+  // Calculate the max possible length of left and up arms for each of the cells in the matrix.
+  private int[][] leftUp(int[][] matrix, int N, int M) {
+    
+  }
+  
+  // Calculate the max possible length of right and down arms for each of the cells in the matrix.
+  private int[][] rightDown(int[][] matrix, int N, int M) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="largest-x-with-all-1s" class="section level2">
 <h2><span class="header-section-number">4.3</span> Largest X With All 1s</h2>
 <p>Given a matrix that contains only 1s and 0s, find the largest X shape which contains only 1s, with the same arm lengths and the four arms joining at the central point.</p>
 <p><a href="https://app.laicode.io/app/problem/105" class="uri">https://app.laicode.io/app/problem/105</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class LargestXOfOnes {
+  public int largest(int[][] matrix) {
+    
+  }
+  
+  private int merge(int[][] leftUp, int[][] rightDown, int N, int M) {
+    
+  }
+  
+  private int[][] leftUp(int[][] matrix, int N, int M) {
+    
+  }
+  
+  private int[][] rightDown(int[][] matrix, int N, int M) {
+    
+  }
+  
+  private int getNumber(int[][] number, int x, int y, int N, int M) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="largest-subsquare-surrounded-by-1s" class="section level2">
 <h2><span class="header-section-number">4.4</span> Largest Subsquare Surrounded By 1s</h2>
 <p>Given a matrix where every element is either 0 or 1, find the largest subsquare surrounded by 1.</p>
 <p>Not found</p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class LargestSquareSurroundedOne {
+  // Return the length of the largest square.
+  public int largest(int[][] matrix) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="largest-submatrix-sum" class="section level2">
 <h2><span class="header-section-number">4.5</span> Largest Submatrix Sum</h2>
 <p>Given a matrix that contains integers, find the submatrix with the largest sum. Return the sum of the submatrix.</p>
 <p><a href="https://app.laicode.io/app/problem/106" class="uri">https://app.laicode.io/app/problem/106</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class LargestSubMatrixSum {
+  public int largest(int[][] matrix) {
+    
+  }
+  
+  private void add(int[] curr, int[] add) {
+    
+  }
+  
+  // Largest subarray sum.
+  private int max(int[] curr) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 </div>
@@ -1846,7 +2072,15 @@ span.r {color: red;}
 <h2><span class="header-section-number">5.1</span> Shuffle</h2>
 <p>Given an array of integers (without any duplicates), shuffle the array such that all permutations are equally likely to be generated.</p>
 <p><a href="https://app.laicode.io/app/problem/108" class="uri">https://app.laicode.io/app/problem/108</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class PerfectShuffle {
+  public void shuffle(int[] array) {
+    
+  }
+  
+  private void swap(int[] array, int left, int right) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="reservoir-sampling" class="section level2">
@@ -1859,7 +2093,21 @@ span.r {color: red;}
 </ul>
 <p>You may need to add more fields for the class.</p>
 <p><a href="https://app.laicode.io/app/problem/109" class="uri">https://app.laicode.io/app/problem/109</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>// This class will be used as a reader and it read each of the element by calling the read() method. By calling the sample() method, it will return the sample of whatever read before.
+public class ReservoirSampling {
+  // How many numbers have been read so far.
+  private int count;
+  // only need to maintain the current sample.
+  private Integer sample;
+  
+  public ReservoirSampling() {
+    
+  }
+  
+  public void read(int value) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="reservoir-sampling-with-k-samples" class="section level2">
@@ -1876,21 +2124,46 @@ span.r {color: red;}
 </ul>
 <p>You may need to add more fields for the class.</p>
 <p><a href="https://app.laicode.io/app/problem/110" class="uri">https://app.laicode.io/app/problem/110</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class GeneralizedReservoirSampling {
+  private final int k;
+  private int count;
+  private List&lt;Integer&gt; sample;
+  
+  public GeneralizedReservoirSampling(int k) {
+    
+  }
+  
+  public void read(int value) {
+    
+  }
+  
+  public List&lt;Integer&gt; sample() {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="random7-using-random5" class="section level2">
 <h2><span class="header-section-number">5.4</span> Random7 Using Random5</h2>
 <p>Given a random generator random5(), the return value of random5() if 0 - 4 with equal probability. Use random5() to implement random7().</p>
 <p><a href="https://app.laicode.io/app/problem/111" class="uri">https://app.laicode.io/app/problem/111</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class RandomSeven {
+  // On laicode.com, you can directly call RandomFive.random5() to get a random number in the range of 0-4.
+  public int random7() {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="random1000-using-random5" class="section level2">
 <h2><span class="header-section-number">5.5</span> Random1000 Using Random5</h2>
 <p>Given a random generator random5(), the return value of random5() if 0 - 4 with equal probability. Use random5() to implement random1000().</p>
 <p><a href="https://app.laicode.io/app/problem/112" class="uri">https://app.laicode.io/app/problem/112</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class Solution {
+  public int random1000() {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="median-tracker-of-data-flow" class="section level2">
@@ -1910,7 +2183,27 @@ span.r {color: red;}
 <li>…</li>
 </ul>
 <p><a href="https://app.laicode.io/app/problem/113" class="uri">https://app.laicode.io/app/problem/113</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>// MedianTracker will call read() method to read the values one by one.
+public class MedianTracker {
+  private PriorityQueue&lt;Integer&gt; smallerHalf;
+  private PriorityQueue&lt;Integer&gt; largerHalf;
+  
+  public MedianTracker() {
+    
+  }
+  
+  public void read(int value) {
+    
+  }
+  
+  public Double median() {
+    
+  }
+  
+  private int size() {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 <div id="th-percentile" class="section level2">
@@ -1926,13 +2219,40 @@ span.r {color: red;}
 <li>[1, 2, 3, …, 95, 96, 97, 98, 99, 100], 95 percentile of all lengths is 95</li>
 </ul>
 <p><a href="https://app.laicode.io/app/problem/114" class="uri">https://app.laicode.io/app/problem/114</a></p>
-<pre class="java"><code></code></pre>
+<pre class="java"><code>public class NinetyFivePercentile {
+  public int percentile95(List&lt;Integer&gt; lengths) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
 </div>
 </div>
 <div id="class-16---recursion-ii" class="section level1">
 <h1><span class="header-section-number">6</span> Class 16 - Recursion II</h1>
+<div id="max-path-sum-binary-tree-path-from-leaf-to-root" class="section level2">
+<h2><span class="header-section-number">6.1</span> Max Path Sum Binary Tree (path from leaf to root)</h2>
+<p>Not found</p>
+<pre class="java"><code>public class MaxPathSumLeafToRoot {
+  // Method 1: Pass down the prefix sum.
+  public int maxPathSum(TreeNode root) {
+    
+  }
+  
+  private int maxPathSum(TreeNode root, int sum) {
+    
+  }
+  
+  // Method 2: Bottom up return the max suffix sum.
+  public int maxPathSumII(TreeNode root) {
+    
+  }
+}</code></pre>
 <p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
+<div id="section" class="section level2">
+<h2><span class="header-section-number">6.2</span> </h2>
+<p><span class="r"><strong><em>More Notes Pending</em></strong></span></p>
+</div>
 </div>
 
 
