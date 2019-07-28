@@ -239,19 +239,19 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="updated">24th  
     [Design 6](LO/Algorithm_Class_44.html)</td>
   <td></td>
-  <td>26th  
-    Class 20</td>
-  <td>27th  
-    Practice 20</td>
+  <td class="pending">26th  
+    [Class 20](LO/Algorithm_Class_45.html)</td>
+  <td class="pending">27th  
+    [Practice 20](LO/Algorithm_Class_46.html)</td>
   <td>28th  
     Class 21</td>
 </tr>
 <tr>
   <td>29th  
-    ???</td>
+    Practice 21</td>
   <td></td>
   <td>31st  
-    ???</td>
+    Design 7</td>
   <td class="diagonalRising"></td>
   <td class="diagonalRising"></td>
   <td class="diagonalRising"></td>
@@ -279,11 +279,9 @@ td.updated {background-color: MediumSpringGreen;}
 - Design 6: Web Applications [Link](LO/Algorithm_Class_44.html)
 - Class 20: 加强 2 [Link](LO/Algorithm_Class_45.html) (pending)
     - Practice 20 [Link](LO/Algorithm_Class_46.html) (pending)
-- Class 21: Recursion II [Link](LO/Algorithm_Class_47.html) (pending)
-
-
-
-
+- Class 21: Recursion III [Link](LO/Algorithm_Class_47.html) (pending)
+    - Practice 21 [Link](LO/Algorithm_Class_48.html) (pending)
+- Design 7: 習題, Web crawler and feed & URL Shortener [Link](LO/Algorithm_Class_49.html) (pending)
 
 ## August/2019
 <table>
@@ -302,11 +300,11 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="diagonalRising"></td>
   <td></td>
   <td>2nd  
-    ???</td>
+    Class 22</td>
   <td>3rd  
-    ???</td>
+    Design 8</td>
   <td>4th  
-    ???</td>
+    Class 23</td>
 </tr>
 <tr>
   <td>5th  
@@ -323,37 +321,142 @@ td.updated {background-color: MediumSpringGreen;}
     ???</td>
 </tr>
 <tr>
+  <td>12th  
+    ???</td>
   <td></td>
+  <td>14th  
+    ???</td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>16th  
+    ???</td>
+  <td>17th  
+    ???</td>
+  <td>18th  
+    ???</td>
 </tr>
 <tr>
+  <td>19th  
+    ???</td>
   <td></td>
+  <td>21st  
+    ???</td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>23th  
+    ???</td>
+  <td>24th  
+    ???</td>
+  <td>25th  
+    ???</td>
 </tr>
 <tr>
+  <td>26th  
+    ???</td>
   <td></td>
+  <td>28th  
+    ???</td>
   <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>30th  
+    ???</td>
+  <td>31th  
+    ???</td>
   <td class="diagonalRising"></td>
 </tr>
 </table>
 
+- Class 22: DFS II [Link](LO/Algorithm_Class_50.html) (pending)
+- Design 8: Database Overview [Link](LO/Algorithm_Class_51.html) (pending)
+- Class 23: 加强 3 [Link](LO/Algorithm_Class_52.html) (pending)
 
 
 
+## September/2019
+<table>
+<tr>
+  <td>**Mon**</td>
+  <td>**Tue**</td>
+  <td>**Wed**</td>
+  <td>**Thu**</td>
+  <td>**Fri**</td>
+  <td>**Sat**</td>
+  <td>**Sun**</td>
+</tr>
+<tr>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td>1st  
+    ???</td>
+</tr>
+<tr>
+  <td>2nd  
+    ???</td>
+  <td></td>
+  <td>4th  
+    ???</td>
+  <td></td>
+  <td>6th  
+    ???</td>
+  <td>7th  
+    ???</td>
+  <td>8th  
+    ???</td>
+</tr>
+<tr>
+  <td>9th  
+    ???</td>
+  <td></td>
+  <td>11th  
+    ???</td>
+  <td></td>
+  <td>13th  
+    ???</td>
+  <td>14th  
+    ???</td>
+  <td>15th  
+    ???</td>
+</tr>
+<tr>
+  <td>16th  
+    ???</td>
+  <td></td>
+  <td>18th  
+    ???</td>
+  <td></td>
+  <td>20th  
+    ???</td>
+  <td>21st  
+    ???</td>
+  <td>22nd  
+    ???</td>
+</tr>
+<tr>
+  <td>23rd  
+    ???</td>
+  <td></td>
+  <td>25th  
+    ???</td>
+  <td></td>
+  <td>27th  
+    ???</td>
+  <td>28th  
+    ???</td>
+  <td>29th  
+    ???</td>
+</tr>
+<tr>
+  <td>30th  
+    ???</td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+</tr>
+</table>
 
 
 ---
