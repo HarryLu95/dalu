@@ -243,15 +243,15 @@ td.updated {background-color: MediumSpringGreen;}
     [Class 20](LO/Algorithm_Class_45.html)</td>
   <td class="pending">27th  
     [Practice 20](LO/Algorithm_Class_46.html)</td>
-  <td>28th  
+  <td class="pending">28th  
     Class 21</td>
 </tr>
 <tr>
-  <td>29th  
-    Practice 21</td>
+  <td class="pending">29th  
+    [Practice 21](LO/Algorithm_Class_48.html)</td>
   <td></td>
-  <td>31st  
-    Design 7</td>
+  <td class="pending">31st  
+    [Design 7](LO/Algorithm_Class_49.html)</td>
   <td class="diagonalRising"></td>
   <td class="diagonalRising"></td>
   <td class="diagonalRising"></td>
@@ -299,26 +299,26 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="diagonalRising"></td>
   <td class="diagonalRising"></td>
   <td></td>
-  <td>2nd  
-    Class 22</td>
-  <td>3rd  
-    Design 8</td>
-  <td>4th  
-    Class 23</td>
+  <td class="pending">2nd  
+    [Class 22](LO/Algorithm_Class_50.html)</td>
+  <td class="pending">3rd  
+    [Design 8](LO/Algorithm_Class_51.html)</td>
+  <td class="pending">4th  
+    [Class 23](LO/Algorithm_Class_52.html)</td>
 </tr>
 <tr>
-  <td>5th  
-    ???</td>
+  <td class="pending">5th  
+    [Design 9](LO/Algorithm_Class_53.html)</td>
   <td></td>
-  <td>7th  
-    ???</td>
+  <td class="pending">7th  
+    [Practice 22](LO/Algorithm_Class_54.html)</td>
   <td></td>
   <td>9th  
-    ???</td>
+    Design 10</td>
   <td>10th  
-    ???</td>
+    Class 24</td>
   <td>11th  
-    ???</td>
+    Class 25</td>
 </tr>
 <tr>
   <td>12th  
@@ -366,7 +366,11 @@ td.updated {background-color: MediumSpringGreen;}
 - Class 22: DFS II [Link](LO/Algorithm_Class_50.html) (pending)
 - Design 8: Database Overview [Link](LO/Algorithm_Class_51.html) (pending)
 - Class 23: 加强 3 [Link](LO/Algorithm_Class_52.html) (pending)
-
+- Design 9: Database Overview II [Link](LO/Algorithm_Class_53.html) (pending)
+    - Practice 22 [Link](LO/Algorithm_Class_54.html) (pending)
+- Design 10: Data Processing [Link](LO/Algorithm_Class_55.html) (pending)
+- Class 24: 加强 4 [Link](LO/Algorithm_Class_56.html) (pending)
+- Class 25: Project [Link](LO/Algorithm_Class_57.html) (pending)
 
 
 ## September/2019
