@@ -313,30 +313,30 @@ td.updated {background-color: MediumSpringGreen;}
   <td class="pending">7th  
     [Practice 22](LO/Algorithm_Class_54.html)</td>
   <td></td>
-  <td>9th  
-    Design 10</td>
-  <td>10th  
-    Class 24</td>
-  <td>11th  
-    Class 25</td>
+  <td class="pending">9th  
+    [Design 10](LO/Algorithm_Class_55.html)</td>
+  <td class="pending">10th  
+    [Class 24](LO/Algorithm_Class_56.html)</td>
+  <td class="pending">11th  
+    [Class 25](LO/Algorithm_Class_57.html)</td>
 </tr>
 <tr>
-  <td>12th  
-    ???</td>
+  <td class="pending">12th  
+    [Class 26](LO/Algorithm_Class_58.html)</td>
   <td></td>
-  <td>14th  
-    ???</td>
+  <td class="pending">14th  
+    [Practice 23](LO/Algorithm_Class_59.html)</td>
   <td></td>
-  <td>16th  
-    ???</td>
+  <td class="pending">16th  
+    [Class 27](LO/Algorithm_Class_60.html)</td>
   <td>17th  
-    ???</td>
+    Practice 24</td>
   <td>18th  
-    ???</td>
+    Class 28</td>
 </tr>
 <tr>
   <td>19th  
-    ???</td>
+    Class 29</td>
   <td></td>
   <td>21st  
     ???</td>
@@ -371,7 +371,12 @@ td.updated {background-color: MediumSpringGreen;}
 - Design 10: Data Processing [Link](LO/Algorithm_Class_55.html) (pending)
 - Class 24: 加强 4 [Link](LO/Algorithm_Class_56.html) (pending)
 - Class 25: Project [Link](LO/Algorithm_Class_57.html) (pending)
-
+- Class 26: DP IV [Link](LO/Algorithm_Class_58.html) (pending)
+    - Practice 23 [Link](LO/Algorithm_Class_59.html) (pending)
+- Class 27: Trie [Link](LO/Algorithm_Class_60.html) (pending)
+    - Practice 24 [Link](LO/Algorithm_Class_61.html) (pending)
+- Class 28: 加課 [Link](LO/Algorithm_Class_62.html) (pending)
+- Class 29: Final [Link](LO/Algorithm_Class_63.html) (pending)
 
 ## September/2019
 <table>
