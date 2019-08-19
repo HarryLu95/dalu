@@ -329,36 +329,28 @@ td.updated {background-color: MediumSpringGreen;}
   <td></td>
   <td class="pending">16th  
     [Class 27](LO/Algorithm_Class_60.html)</td>
-  <td>17th  
-    Practice 24</td>
-  <td>18th  
-    Class 28</td>
+  <td class="pending">17th  
+    [Practice 24](LO/Algorithm_Class_61.html)</td>
+  <td class="pending">18th  
+    [Class 28](LO/Algorithm_Class_62.html)</td>
 </tr>
 <tr>
   <td>19th  
     Class 29</td>
   <td></td>
-  <td>21st  
-    ???</td>
   <td></td>
-  <td>23th  
-    ???</td>
-  <td>24th  
-    ???</td>
-  <td>25th  
-    ???</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
 </tr>
 <tr>
-  <td>26th  
-    ???</td>
   <td></td>
-  <td>28th  
-    ???</td>
   <td></td>
-  <td>30th  
-    ???</td>
-  <td>31th  
-    ???</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
   <td class="diagonalRising"></td>
 </tr>
 </table>
@@ -377,96 +369,6 @@ td.updated {background-color: MediumSpringGreen;}
     - Practice 24 [Link](LO/Algorithm_Class_61.html) (pending)
 - Class 28: 加課 [Link](LO/Algorithm_Class_62.html) (pending)
 - Class 29: Final [Link](LO/Algorithm_Class_63.html) (pending)
-
-## September/2019
-<table>
-<tr>
-  <td>**Mon**</td>
-  <td>**Tue**</td>
-  <td>**Wed**</td>
-  <td>**Thu**</td>
-  <td>**Fri**</td>
-  <td>**Sat**</td>
-  <td>**Sun**</td>
-</tr>
-<tr>
-  <td class="diagonalRising"></td>
-  <td class="diagonalRising"></td>
-  <td class="diagonalRising"></td>
-  <td class="diagonalRising"></td>
-  <td class="diagonalRising"></td>
-  <td class="diagonalRising"></td>
-  <td>1st  
-    ???</td>
-</tr>
-<tr>
-  <td>2nd  
-    ???</td>
-  <td></td>
-  <td>4th  
-    ???</td>
-  <td></td>
-  <td>6th  
-    ???</td>
-  <td>7th  
-    ???</td>
-  <td>8th  
-    ???</td>
-</tr>
-<tr>
-  <td>9th  
-    ???</td>
-  <td></td>
-  <td>11th  
-    ???</td>
-  <td></td>
-  <td>13th  
-    ???</td>
-  <td>14th  
-    ???</td>
-  <td>15th  
-    ???</td>
-</tr>
-<tr>
-  <td>16th  
-    ???</td>
-  <td></td>
-  <td>18th  
-    ???</td>
-  <td></td>
-  <td>20th  
-    ???</td>
-  <td>21st  
-    ???</td>
-  <td>22nd  
-    ???</td>
-</tr>
-<tr>
-  <td>23rd  
-    ???</td>
-  <td></td>
-  <td>25th  
-    ???</td>
-  <td></td>
-  <td>27th  
-    ???</td>
-  <td>28th  
-    ???</td>
-  <td>29th  
-    ???</td>
-</tr>
-<tr>
-  <td>30th  
-    ???</td>
-  <td class="diagonalRising"></td>
-  <td class="diagonalRising"></td>
-  <td class="diagonalRising"></td>
-  <td class="diagonalRising"></td>
-  <td class="diagonalRising"></td>
-  <td class="diagonalRising"></td>
-</tr>
-</table>
-
 
 ---
 
@@ -546,6 +448,8 @@ td.updated {background-color: MediumSpringGreen;}
     - 10.3 All Unique Characters II
     - 10.4 Reverse Bits
     - 10.5 Hexadecimal Representation
+
+## Section 2
 - Class 11 - DFS II
     - 11.1 All Subsequences Of Sorted String (All Subsets II)
     - 11.2 All Valid Permutations Of Parentheses II (L pairs of (), M pairs of [], N pairs of {})
@@ -576,7 +480,7 @@ td.updated {background-color: MediumSpringGreen;}
     - 15.6 Median Tracker Of Data Flow
     - 15.7 95th Percentile
 - Class 16 - Recursion II
-
+    - 
 
 
 
