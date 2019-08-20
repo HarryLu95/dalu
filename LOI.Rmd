@@ -335,8 +335,8 @@ td.updated {background-color: MediumSpringGreen;}
     [Class 28](LO/Algorithm_Class_62.html)</td>
 </tr>
 <tr>
-  <td>19th  
-    Class 29</td>
+  <td class="pending">19th  
+    [Class 29](LO/Algorithm_Class_63.html)</td>
   <td></td>
   <td></td>
   <td></td>
