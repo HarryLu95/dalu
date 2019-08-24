@@ -1,0 +1,66 @@
+---
+title: "To Do"
+output: html_document
+---
+
+<style>
+h1 {font-size: 28px; color: black; font-weight: bold; text-align: left;}
+h1.title {color: black; text-align: center;}
+hr {height: 1px; background-color: black;}
+p {font-size: 16px; color: black;}
+ol {font-size: 16px; color: black;}
+ul {font-size: 16px; color: black;}
+</style>
+
+---
+
+#1. To do 申請:
+- RELX Group - [Associate Statistical Modeler](https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18286)
+- RELX Group - [Associate Statistical Modeler](https://4re.referrals.selectminds.com/jobs/associate-statistical-modeler-18070)
+- BlackRock - Analyst Program
+- BlackRock - Summer Analyst Program
+
+- \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+- Procter & Gamble (P&G) - [Business Analytics Manager](https://cornell.joinhandshake.com/jobs/1885063)
+    - **Dec/21** 11:59pm
+- Procter & Gamble (P&G) - [Associate Information Technology Manager](https://cornell.joinhandshake.com/jobs/1547833)
+    - **Dec/22** 12:55am
+- Trexquant Investment LP - [Data Scientist](https://cornell.joinhandshake.com/jobs/2029239)
+    - **Dec/28** 9:00am
+- MIO Partners - [Quantitative Research Analyst (QRA)](https://cornell.joinhandshake.com/jobs/1957352)
+    - **Dec/28** 11:59pm
+- Bed Bath & Beyond - [Marketing Analyst](https://cornell.joinhandshake.com/jobs/1889897)
+    - **Dec/30** 11:59pm
+- RxAdvance - [Business Analyst](https://cornell.joinhandshake.com/jobs/1985303)
+    - **Dec/30** 11:59pm
+- Oracle - [Data Scientist](https://cornell.joinhandshake.com/jobs/1938167)
+    - **Dec/30** 11:59pm
+- Encore Capital Group - [Business Analyst](https://cornell.joinhandshake.com/jobs/588684)
+    - **Dec/31** 8:00pm
+- GE - [Sr Data Scientist](https://cornell.joinhandshake.com/jobs/1816913)
+    - **Dec/31** 11:59pm
+- CareDash - [Data Analyst](https://cornell.joinhandshake.com/jobs/2004621)
+    - **Dec/31** 11:59pm
+
+
+
+
+
+
+
+---
+
+#2. To do:
+
+- None
+
+---
+
+#3. 購物:
+
+- None
+
+---
+
+#4. Job Details

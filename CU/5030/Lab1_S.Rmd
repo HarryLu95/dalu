@@ -1,0 +1,219 @@
+---
+title: "Lab 1 - Basic RStudio and SLR"
+output:
+  pdf_document: default
+  html_document:
+    highlight: pygments
+    theme: cerulean
+  word_document: default
+---
+-----
+
+# Lab Goals
+
+In this lab we will:  
+
+1. Review some of the basic functionality of R and RStudio including:
+    
+    a. the purpose and format of "code chunks" in .Rmd documents
+    
+    b. basic math in R
+    
+    c. how to correctly denote math equations and symbols within your R Markdown document
+    
+2. Download a data file into the workspace for this R Markdown document and do some basic checks on the downloaded file
+
+3. Run a linear model in this R Markdown document using the `lm()` function and review how to interpret the results
+
+
+# Exploring R and RStudio 
+
+## Code Chunks
+
+  1. All R code to be run within an R Markdown document must be included in a *code chunk*.  You can add a code chunk to this document by clicking on *Code -> Insert Chunk* in the toolbar above for this R markdown document.  Include a code chunk here.
+
+```{r}
+1 + 1
+print(c(1,2,3,4))
+```
+
+
+  2. Remember that at its most basic level, R can be used as a calculator.  Also, keep in mind that R code included in a code chunk can be highlighted and run in the console below by selecting "Run" from the toolbar for the R Markdown document.  Run the following calculations in the console below.
+
+```{r}
+2+3
+2-3
+2*3
+2/3
+2^3
+```
+  
+  3.  Any code included in a code chunk will be run within the associated R Markdown document once the document has been knitted.  Knit this R Markdown document into pdf or Word document and look at the output from the code chunk above. It should match the output from running this code in the console below.
+  
+  4. It is important to understand that the console below and this R Markdown document have **separate** workspaces.  You cannot access information or variables from either workspace that has not been previously defined in that workspace.
+  
+## Proper Syntax for the Equation Editor
+
+Often in the text of a R Markdown document, we would like to include mathematical symbols or equations.  **It is important that all mathematical symbols are surrounded by $ signs for the equation editor to interpret it correctly.**  While this may seem cumbersome, it enables us to write some nice mathematical formulas in our knitted documents.  Here are some examples.  Knit this document to see the effect of denoting each line below as "math code." 
+
+  1. $5>4$
+  2. $x \leq 2$
+  3. $\pi^2$
+  4. $x^3$
+  5. $Y_{ij}$
+  6. $\frac{1}{2} + 1$
+  
+**Remember this IS NOT R code.  It cannot be used in a code chunk or in the console below.  This is strictly for mathematical expressions in the text of the R Markdown document.**
+
+As an exercise, please write the taylor series of $e^x$ in "math code" below. (Don't worry if you don't know the expression: I'll write the expression on the board.)
+
+$e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots$
+
+## Loading Data
+
+We will explore some of the capabilities of R and RStudio using the Old Faithful data.  Perform the following steps to load this data into the workspace for this document:
+
+  1. For this lab, we will run a linear model using eruption data from the geyser Old Faithful.  This data is found in the file *Faithful.csv* in the Lab 1 folder on blackboard.  Download this file into the folder for Lab 1 on your computer.
+    
+  2. We will first load the Old Faithful data into the working directory for the console below.  Start by making the following selections from the menu for Rstudio above, *Tools->Import Dataset->From Text File...*.  A window will pop up in which you can navigate to where you downloaded *Faithful.csv* on your computer.  Open this file.
+    
+  3. You should now see a preview of the Old Faithful data.  Whenever you load data into R, it is important to check that it loaded correctly.  Does the preview of the data look OK?  If so, load the data into the workspace of the console.
+    
+  4. Now we will include the necessary code in a code chunk here to load the Old Faithful data into the workspace of this R Markdown document.  This is easily done by copying the code from the console below that R used to load the data into the workspace for the console.  Include this code in a code chunk here.  *Do not include the line below using the `View()` function.  This function will cause an error when you try to knit this .Rmd document.*    
+  
+```{r}
+# Faithful <- read.csv("Faithful.csv", head=TRUE)
+Faithful <- read.csv("~/CORNELL/Courses/2018Fall/TA BTRY 4030 Linear Models with Matrices/Lab1/Faithful.csv")
+```
+    
+  5. Knit this document into a Word or pdf document.
+    
+    
+## Data Checks
+
+The data is now loaded into this R Markdown document, but did it load correctly?  Complete the following steps to do some basic checks.
+
+  1. Insert a code chunk here and use the following R functions with `Faithful` as the argument: `head()`, `tail()`, `names()`.  Run this code in the console.  What information can be determined by running these fuctions in R?  
+  
+```{r}
+head(Faithful, n = 12L)
+tail(Faithful)
+names(Faithful)
+```
+
+  2. Each row in this data set consists of two observations associated with an eruption of Old Faithful.  The variable `eruptions` is the elapsed time of the eruption in minutes.  The variable `waiting` is the time from the last eruption to the current eruption in minutes.  Suppose we would like a summary of `eruptions`.  Type `summary(eruptions)` in a code chunk below and try to knit your document.  Did your document knit?  If not, try to determine why by looking at the error message in the R Markdown tab below.  How can we fix this error (there are a couple of options)?  Fix the error and re-knit your document.
+  
+```{r}
+summary(Faithful$eruptions)
+summary(Faithful["eruptions"])
+```
+  
+## Simple Linear Regression
+
+Under certain conditions, a simple linear regression model is appropriate to model the relationship between a response, Y, and a predictor, X. For a  bivariate random sample, $(X_1,Y_1),...,(X_n,Y_n)$, the model assumes the following relationship between $X_i$ and $Y_i$
+
+$Y_i = \beta_0 + \beta_1 X_i + \epsilon_{i}$  
+
+where
+  
+  1. $\beta_0$ is the intercept of the regression line
+  2. $\beta_1$ corresponds to the amount the expected value of $Y_i$ increases per unit increase in $X_i$ (the slope of the regression line)
+  3. $E(Y_i|X_i) =\beta_0 + \beta_1 X_i$
+  4. $\epsilon_i$ is the error term for observation $Y_i$
+  5. $\epsilon_i \sim N(0,\sigma^2_{\epsilon})$ for all $i = 1,\dots,n$ and are mutually independent
+
+
+Here we will run a simple linear regression model in R with `eruptions` as the response and `waiting` as the predictor.  Complete the following steps.
+
+  1. It is always a good idea to look at your data.  In a code chunk here include a histogram of both variables and a scatterplot of `eruptions` by `waiting.`  Use the R functions `hist()` and `plot()`.
+
+```{r}
+hist(Faithful$eruptions, breaks=20)
+hist(Faithful$waiting, breaks=20)
+```
+```{r}
+plot(x = Faithful$waiting, y = Faithful$eruptions)
+```
+
+    a. What is notable about the sample distributions of `eruptions` and `waiting`?  
+    
+   *They appear to be bi-modal -- having two clusters each.* 
+  
+    b. Does there appear to be a linear relationship between the time between eruptions and the length of the eruption? 
+    
+    *This looks approximately reasonable*
+    
+  2. Lets check the assumptions for a SLR model.
+  
+    a.  Are the observations independent? 
+    
+    * Possibly not, since we know they arrive successively in time*. 
+    
+    b.  The following code will (Reminder: set `eval=TRUE`):
+    
+        1. Run the linear model in R
+        2. Create a plot of the residuals by the fitted values 
+        3. Create a Q-Q plot of the residuals.  For this plot, you will need the `car` package.  If the `car` package is not already installed, select *Tools>Install Packages...* from the menu for RStudio.  Type `car` for the package in the window that pops up.  Then click on "Install."  It may take a minute or so for this package to install in R.  You will know this package is not installed if you get an error related to this package when you try to run the code in the code chunk below.
+        
+```{r, tidy=FALSE}
+faithful.lm <- lm(Faithful$eruptions ~ Faithful$waiting)   # lm named faithful.lm is run
+plot(faithful.lm$fitted.values, faithful.lm$residuals)  # plots residuals by the fitted values
+abline(0, 0)                                            # plots line at y=0
+library(car)                                           # accesses the "car" library that contains qqPlot()
+qqPlot(faithful.lm$residuals)                          # Q-Q plot of residuals
+```
+
+  c. Knit your document to see the output from the R code from (b).  Is the homogeneity of variance assumption met?  Is the normality assumption met? 
+  
+    homogeneity of variance: probably no
+    
+    normality assumption: probably yes
+    
+  3. For the purpose of reviewing the R output from running a linear model, we will temporarily ignore the violation of assumptions for the regression model.  Use the `summary()` function in a code chunk below to obtain parameter estimates and other information about this model.  You can look at this information in the console without knitting your document by first running the linear model in the console and then looking at a summary of that model.
+  
+```{r}
+summary(faithful.lm)
+```
+  
+  4. What is the estimated relationship between expected length of eruption and the time since the last eruption?
+  
+  length of eruption = -1.874016 + 0.075628 * time since last eruption
+  
+  5. Interpret the $R^2$ value of this model.
+  
+  Linear model fit explains 81.15% of the sample variance.
+  
+  6. Is there a significant linear relationship between expected `eruptions` and `waiting`?
+  
+  yes: t test p-value < 2e-16
+  
+  7. What is the value of $\hat\beta_1$?  Interpret $\hat\beta_1$ in the context of this analysis.
+  
+  0.075628
+  
+  for everytime 1 more unit of waiting, the next eruption lasts 0.075628 unit longer.
+
+  
+  
+  
+  
+  
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
