@@ -347,9 +347,11 @@ td.updated {background-color: MediumSpringGreen;}
 <tr>
   <td></td>
   <td></td>
+  <td>28th  
+    [X Class 01](LO/Algorithm_Class_64.html)</td>
   <td></td>
-  <td></td>
-  <td></td>
+  <td>30th  
+    [X Class 02](LO/Algorithm_Class_65.html)</td>
   <td></td>
   <td class="diagonalRising"></td>
 </tr>
@@ -369,6 +371,8 @@ td.updated {background-color: MediumSpringGreen;}
     - Practice 24 [Link](LO/Algorithm_Class_61.html) (pending)
 - Class 28: 加課 [Link](LO/Algorithm_Class_62.html) (pending)
 - Class 29: Final [Link](LO/Algorithm_Class_63.html) (pending)
+- X Class 01: 面試準備 + 理解語義 [Link](LO/Algorithm_Class_64.html) (pending)
+- X Class 02
 
 ---
 
