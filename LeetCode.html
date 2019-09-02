@@ -1662,6 +1662,7 @@ insert into Scores (Id, Score) values (&#39;3&#39;, &#39;4.0&#39;)
 insert into Scores (Id, Score) values (&#39;4&#39;, &#39;3.85&#39;)
 insert into Scores (Id, Score) values (&#39;5&#39;, &#39;4.0&#39;)
 insert into Scores (Id, Score) values (&#39;6&#39;, &#39;3.65&#39;)</code></pre>
+<p>Write a SQL query to rank scores. If there is a tie between two scores, both should have the same ranking. Note that after a tie, the next ranking number should be the next consecutive integer value. In other words, there should be no “holes” between ranks.</p>
 <pre><code>+----+-------+
 | Id | Score |
 +----+-------+
@@ -1672,7 +1673,7 @@ insert into Scores (Id, Score) values (&#39;6&#39;, &#39;3.65&#39;)</code></pre>
 | 5  | 4.00  |
 | 6  | 3.65  |
 +----+-------+</code></pre>
-<p>For example, given the above Scores table, your query should generate the following report (order by highest score):</p>
+<p>For example, given the above <code>Scores</code> table, your query should generate the following report (order by highest score):</p>
 <pre><code>+-------+------+
 | Score | Rank |
 +-------+------+
@@ -1686,11 +1687,18 @@ insert into Scores (Id, Score) values (&#39;6&#39;, &#39;3.65&#39;)</code></pre>
 </div>
 <div id="my-solution-3" class="section level2">
 <h2>My Solution</h2>
-<pre><code></code></pre>
+<pre class="mysql"><code># Write your MySQL query statement below
+SELECT Scores.Score, COUNT(t.Score) AS Rank
+    FROM Scores, (SELECT DISTINCT Score FROM Scores) As t
+    WHERE Scores.Score &lt;= t.Score
+    GROUP BY Scores.Id, Scores.Score
+    ORDER BY Scores.Score DESC;</code></pre>
+<p>Runtime: 265 ms, faster than 72.70% of MySQL online submissions for Rank Scores.</p>
+<p>Memory Usage: N/A</p>
 </div>
 </div>
 <div id="consecutive-numbers" class="section level1">
-<h1>180. Consecutive Numbers</h1>
+<h1>180. Consecutive Numbers *</h1>
 <p><a href="https://leetcode.com/problems/consecutive-numbers/" class="uri">https://leetcode.com/problems/consecutive-numbers/</a></p>
 <div id="requirement-4" class="section level2">
 <h2>Requirement</h2>
@@ -1758,7 +1766,14 @@ insert into Employee (Id, Name, Salary, ManagerId) values (&#39;4&#39;, &#39;Max
 </div>
 <div id="my-solution-5" class="section level2">
 <h2>My Solution</h2>
-<pre><code></code></pre>
+<pre class="mysql"><code># Write your MySQL query statement below
+SELECT e2.Name AS Employee
+    FROM Employee e1, Employee e2
+    WHERE e1.Id = e2.ManagerId
+        AND e1.Salary &lt; e2.Salary;</code></pre>
+<p>Runtime: 334 ms, faster than 43.44% of MySQL online submissions for Employees Earning More Than Their Managers.</p>
+<p>Memory Usage: N/A</p>
+<p><code>e1</code> is for managers, <code>e2</code> is for non-managers. <code>e1.Id</code> selects out the manager.</p>
 </div>
 </div>
 <div id="duplicate-emails" class="section level1">
@@ -1790,7 +1805,13 @@ insert into Person (Id, Email) values (&#39;3&#39;, &#39;a@b.com&#39;)</code></p
 </div>
 <div id="my-solution-6" class="section level2">
 <h2>My Solution</h2>
-<pre><code></code></pre>
+<pre class="mysql"><code># Write your MySQL query statement below
+SELECT DISTINCT Email
+    FROM Person
+    GROUP BY Email
+    HAVING COUNT(Email) &gt; 1;</code></pre>
+<p>Runtime: 174 ms, faster than 96.19% of MySQL online submissions for Duplicate Emails.</p>
+<p>Memory Usage: N/A</p>
 </div>
 </div>
 <div id="customers-who-never-order" class="section level1">
@@ -1836,7 +1857,128 @@ insert into Orders (Id, CustomerId) values (&#39;2&#39;, &#39;1&#39;)</code></pr
 </div>
 <div id="my-solution-7" class="section level2">
 <h2>My Solution</h2>
-<pre><code></code></pre>
+<pre class="mysql"><code># Write your MySQL query statement below
+SELECT Customers.Name AS Customers
+    FROM Customers
+    WHERE Customers.Id NOT IN (SELECT CustomerId FROM Orders);</code></pre>
+<p>Runtime: 227 ms, faster than 93.37% of MySQL online submissions for Customers Who Never Order.</p>
+<p>Memory Usage: N/A</p>
+</div>
+</div>
+<div id="department-highest-salary" class="section level1">
+<h1>184. Department Highest Salary</h1>
+<p><a href="https://leetcode.com/problems/department-highest-salary/" class="uri">https://leetcode.com/problems/department-highest-salary/</a></p>
+<div id="requirement-8" class="section level2">
+<h2>Requirement</h2>
+<p>SQL Schema</p>
+<pre class="sql"><code>Create table If Not Exists Employee (Id int, Name varchar(255), Salary int, DepartmentId int)
+Create table If Not Exists Department (Id int, Name varchar(255))
+Truncate table Employee
+insert into Employee (Id, Name, Salary, DepartmentId) values (&#39;1&#39;, &#39;Joe&#39;, &#39;70000&#39;, &#39;1&#39;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&#39;2&#39;, &#39;Jim&#39;, &#39;90000&#39;, &#39;1&#39;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&#39;3&#39;, &#39;Henry&#39;, &#39;80000&#39;, &#39;2&#39;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&#39;4&#39;, &#39;Sam&#39;, &#39;60000&#39;, &#39;2&#39;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&#39;5&#39;, &#39;Max&#39;, &#39;90000&#39;, &#39;1&#39;)
+Truncate table Department
+insert into Department (Id, Name) values (&#39;1&#39;, &#39;IT&#39;)
+insert into Department (Id, Name) values (&#39;2&#39;, &#39;Sales&#39;)</code></pre>
+<p>The <code>Employee</code> table holds all employees. Every employee has an Id, a salary, and there is also a column for the department Id.</p>
+<pre><code>+----+-------+--------+--------------+
+| Id | Name  | Salary | DepartmentId |
++----+-------+--------+--------------+
+| 1  | Joe   | 70000  | 1            |
+| 2  | Jim   | 90000  | 1            |
+| 3  | Henry | 80000  | 2            |
+| 4  | Sam   | 60000  | 2            |
+| 5  | Max   | 90000  | 1            |
++----+-------+--------+--------------+</code></pre>
+<p>The <code>Department</code> table holds all departments of the company.</p>
+<pre><code>+----+----------+
+| Id | Name     |
++----+----------+
+| 1  | IT       |
+| 2  | Sales    |
++----+----------+</code></pre>
+<p>Write a SQL query to find employees who have the highest salary in each of the departments. For the above tables, your SQL query should return the following rows (order of rows does not matter).</p>
+<pre><code>+------------+----------+--------+
+| Department | Employee | Salary |
++------------+----------+--------+
+| IT         | Max      | 90000  |
+| IT         | Jim      | 90000  |
+| Sales      | Henry    | 80000  |
++------------+----------+--------+</code></pre>
+<p>Explanation:</p>
+<p>Max and Jim both have the highest salary in the IT department and Henry has the highest salary in the Sales department.</p>
+</div>
+<div id="my-solution-8" class="section level2">
+<h2>My Solution</h2>
+<pre class="mysql"><code># Write your MySQL query statement below
+SELECT Department.Name AS Department, Employee.Name AS Employee, Employee.Salary AS Salary
+    FROM Employee, Department, (SELECT MAX(Salary) AS Salary, DepartmentId
+                                    FROM Employee
+                                    GROUP BY DepartmentId) t
+    WHERE Employee.Salary = t.Salary
+        AND Employee.DepartmentId = t.DepartmentId
+        AND Employee.DepartmentId = Department.Id;</code></pre>
+<p>Runtime: 300 ms, faster than 79.13% of MySQL online submissions for Department Highest Salary.</p>
+<p>Memory Usage: N/A</p>
+</div>
+</div>
+<div id="department-top-three-salaries" class="section level1">
+<h1>185. Department Top Three Salaries</h1>
+<p><a href="https://leetcode.com/problems/department-top-three-salaries/" class="uri">https://leetcode.com/problems/department-top-three-salaries/</a></p>
+<div id="requirement-9" class="section level2">
+<h2>Requirement</h2>
+<p>SQL Schema</p>
+<pre class="sql"><code>Create table If Not Exists Employee (Id int, Name varchar(255), Salary int, DepartmentId int)
+Create table If Not Exists Department (Id int, Name varchar(255))
+Truncate table Employee
+insert into Employee (Id, Name, Salary, DepartmentId) values (&#39;1&#39;, &#39;Joe&#39;, &#39;85000&#39;, &#39;1&#39;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&#39;2&#39;, &#39;Henry&#39;, &#39;80000&#39;, &#39;2&#39;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&#39;3&#39;, &#39;Sam&#39;, &#39;60000&#39;, &#39;2&#39;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&#39;4&#39;, &#39;Max&#39;, &#39;90000&#39;, &#39;1&#39;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&#39;5&#39;, &#39;Janet&#39;, &#39;69000&#39;, &#39;1&#39;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&#39;6&#39;, &#39;Randy&#39;, &#39;85000&#39;, &#39;1&#39;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&#39;7&#39;, &#39;Will&#39;, &#39;70000&#39;, &#39;1&#39;)
+Truncate table Department
+insert into Department (Id, Name) values (&#39;1&#39;, &#39;IT&#39;)
+insert into Department (Id, Name) values (&#39;2&#39;, &#39;Sales&#39;)</code></pre>
+<p>The <code>Employee</code> table holds all employees. Every employee has an Id, and there is also a column for the department Id.</p>
+<pre><code>+----+-------+--------+--------------+
+| Id | Name  | Salary | DepartmentId |
++----+-------+--------+--------------+
+| 1  | Joe   | 85000  | 1            |
+| 2  | Henry | 80000  | 2            |
+| 3  | Sam   | 60000  | 2            |
+| 4  | Max   | 90000  | 1            |
+| 5  | Janet | 69000  | 1            |
+| 6  | Randy | 85000  | 1            |
+| 7  | Will  | 70000  | 1            |
++----+-------+--------+--------------+</code></pre>
+<p>The <code>Department</code> table holds all departments of the company.</p>
+<pre><code>+----+----------+
+| Id | Name     |
++----+----------+
+| 1  | IT       |
+| 2  | Sales    |
++----+----------+</code></pre>
+<p>Write a SQL query to find employees who earn the top three salaries in each of the department. For the above tables, your SQL query should return the following rows (order of rows does not matter).</p>
+<pre><code>+------------+----------+--------+
+| Department | Employee | Salary |
++------------+----------+--------+
+| IT         | Max      | 90000  |
+| IT         | Randy    | 85000  |
+| IT         | Joe      | 85000  |
+| IT         | Will     | 70000  |
+| Sales      | Henry    | 80000  |
+| Sales      | Sam      | 60000  |
++------------+----------+--------+</code></pre>
+<p>Explanation:</p>
+<p>In IT department, Max earns the highest salary, both Randy and Joe earn the second highest salary, and Will earns the third highest salary. There are only two employees in the Sales department, Henry earns the highest salary while Sam earns the second highest salary.</p>
+</div>
+<div id="my-solution-9" class="section level2">
+<h2>My Solution</h2>
+<pre class="mysql"><code></code></pre>
 </div>
 </div>
 
