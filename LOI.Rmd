@@ -372,7 +372,53 @@ td.updated {background-color: MediumSpringGreen;}
 - Class 28: 加課 [Link](LO/Algorithm_Class_62.html) (pending)
 - Class 29: Final [Link](LO/Algorithm_Class_63.html) (pending)
 - X Class 01: 面試準備 + 理解語義 [Link](LO/Algorithm_Class_64.html) (pending)
-- X Class 02
+- X Class 02: Array & String Related Problems [Link](LO/Algorithm_Class_65.html) (pending)
+
+## September/2019
+<table>
+<tr>
+  <td>**Mon**</td>
+  <td>**Tue**</td>
+  <td>**Wed**</td>
+  <td>**Thu**</td>
+  <td>**Fri**</td>
+  <td>**Sat**</td>
+  <td>**Sun**</td>
+</tr>
+<tr>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td class="diagonalRising"></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>4th  
+    [X Class 03](LO/Algorithm_Class_66.html)</td>
+  <td></td>
+  <td>6th  
+    X Class 04</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>11th  
+    X Class 05</td>
+  <td></td>
+  <td>13th  
+    X Class 06</td>
+  <td></td>
+  <td></td>
+</tr>
+</table>
+
+- X Class 03: Tree [Link](LO/Algorithm_Class_66.html) (pending)
 
 ---
 
