@@ -1263,6 +1263,66 @@ window.buildTabsets = function(tocID) {
 };
 
 </script>
+<script>
+window.initializeCodeFolding = function(show) {
+
+  // handlers for show-all and hide all
+  $("#rmd-show-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('show');
+    });
+  });
+  $("#rmd-hide-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('hide');
+    });
+  });
+
+  // index for unique code element ids
+  var currentIndex = 1;
+
+  // select all R code blocks
+  var rCodeBlocks = $('pre.r, pre.python, pre.bash, pre.sql, pre.cpp, pre.stan, pre.julia');
+  rCodeBlocks.each(function() {
+
+    // create a collapsable div to wrap the code in
+    var div = $('<div class="collapse r-code-collapse"></div>');
+    if (show)
+      div.addClass('in');
+    var id = 'rcode-643E0F36' + currentIndex++;
+    div.attr('id', id);
+    $(this).before(div);
+    $(this).detach().appendTo(div);
+
+    // add a show code button right above
+    var showCodeText = $('<span>' + (show ? 'Hide' : 'Code') + '</span>');
+    var showCodeButton = $('<button type="button" class="btn btn-default btn-xs code-folding-btn pull-right"></button>');
+    showCodeButton.append(showCodeText);
+    showCodeButton
+        .attr('data-toggle', 'collapse')
+        .attr('data-target', '#' + id)
+        .attr('aria-expanded', show)
+        .attr('aria-controls', id);
+
+    var buttonRow = $('<div class="row"></div>');
+    var buttonCol = $('<div class="col-md-12"></div>');
+
+    buttonCol.append(showCodeButton);
+    buttonRow.append(buttonCol);
+
+    div.before(buttonRow);
+
+    // update state of button on show/hide
+    div.on('hidden.bs.collapse', function () {
+      showCodeText.text('Code');
+    });
+    div.on('show.bs.collapse', function () {
+      showCodeText.text('Hide');
+    });
+  });
+
+}
+</script>
 <style type="text/css">.hljs-literal {
 color: #990073;
 }
@@ -1418,6 +1478,9 @@ summary {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -1506,6 +1569,14 @@ div.tocify {
 
 
 <div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
 
 
 
@@ -1925,7 +1996,7 @@ SELECT Department.Name AS Department, Employee.Name AS Employee, Employee.Salary
 </div>
 </div>
 <div id="department-top-three-salaries" class="section level1">
-<h1>185. Department Top Three Salaries</h1>
+<h1>185. Department Top Three Salaries *</h1>
 <p><a href="https://leetcode.com/problems/department-top-three-salaries/" class="uri">https://leetcode.com/problems/department-top-three-salaries/</a></p>
 <div id="requirement-9" class="section level2">
 <h2>Requirement</h2>
@@ -1978,7 +2049,58 @@ insert into Department (Id, Name) values (&#39;2&#39;, &#39;Sales&#39;)</code></
 </div>
 <div id="my-solution-9" class="section level2">
 <h2>My Solution</h2>
-<pre class="mysql"><code></code></pre>
+<pre class="mysql"><code># Write your MySQL query statement below
+SELECT Department.Name AS Department, Employee.Name AS Employee, Employee.Salary AS Salary
+FROM Department,
+    Employee,
+    (SELECT DISTINCT Salary, DepartmentId
+        FROM Employee
+        WHERE DepartmentId = 1
+        ORDER BY Salary DESC
+        LIMIT 3) S1,
+    (SELECT DISTINCT Salary, DepartmentId
+        FROM Employee
+        WHERE DepartmentId = 2
+        ORDER BY Salary DESC
+        LIMIT 3) S2
+WHERE Department.Id = Employee.DepartmentId
+    AND (Employee.Salary = S1.Salary AND Employee.DepartmentId = S1.DepartmentId)
+    OR (Employee.Salary = S2.Salary AND Employee.DepartmentId = S2.DepartmentId);</code></pre>
+</div>
+</div>
+<div id="delete-duplicate-emails" class="section level1">
+<h1>196. Delete Duplicate Emails</h1>
+<p><a href="https://leetcode.com/problems/delete-duplicate-emails/" class="uri">https://leetcode.com/problems/delete-duplicate-emails/</a></p>
+<div id="requirement-10" class="section level2">
+<h2>Requirement</h2>
+<p>Write a SQL query to <strong>delete</strong> all duplicate email entries in a table named <code>Person</code>, keeping only unique emails based on its <strong>smallest Id</strong>.</p>
+<pre><code>+----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
+| 3  | john@example.com |
++----+------------------+
+Id is the primary key column for this table.</code></pre>
+<p>For example, after running your query, the above <code>Person</code> table should have the following rows:</p>
+<pre><code>+----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
++----+------------------+</code></pre>
+<p>Note:</p>
+<p>Your output is the whole <code>Person</code> table after executing your sql. Use <code>delete</code> statement.</p>
+</div>
+<div id="my-solution-10" class="section level2">
+<h2>My Solution</h2>
+<pre class="mysql"><code># Write your MySQL query statement below
+DELETE p1
+  FROM Person p1, Person p2
+  WHERE p1.Email = p2.Email
+    AND p1.Id &gt; p2.Id;</code></pre>
+<p>Runtime: 830 ms, faster than 46.41% of MySQL online submissions for Delete Duplicate Emails.</p>
+<p>Memory Usage: N/A</p>
 </div>
 </div>
 
@@ -2017,6 +2139,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {
