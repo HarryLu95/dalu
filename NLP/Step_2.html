@@ -13439,12 +13439,12 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># packages: json</span>
 
-<span class="n">business_categories</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">business_categories</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">business_lines</span><span class="p">:</span>
     <span class="n">record</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
     <span class="n">curr_category</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;categories&quot;</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">curr_category</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">business_categories</span><span class="p">:</span>
-        <span class="n">business_categories</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">curr_category</span><span class="p">)</span>
+        <span class="n">business_categories</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">curr_category</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of business categories:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">business_categories</span><span class="p">))</span>
 </pre></div>
 
@@ -13478,13 +13478,13 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># packages: re</span>
 
-<span class="n">categories_with_restaurant</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">categories_with_restaurant</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">business_categories</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">category</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">curr_category</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Restaurants&quot;</span><span class="p">,</span> <span class="n">category</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">curr_category</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">category</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">categories_with_restaurant</span><span class="p">:</span>
-                <span class="n">categories_with_restaurant</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
+                <span class="n">categories_with_restaurant</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of business related to </span><span class="se">\&quot;</span><span class="s2">Restaurants</span><span class="se">\&quot;</span><span class="s2">:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">categories_with_restaurant</span><span class="p">))</span>
 </pre></div>
 
@@ -13577,7 +13577,7 @@ Total number of states: 36
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>All the states states:
+<pre>All the states:
  AZ, ON, NC, AB, NV, OH, PA, QC, WI, IL, NY, SC, TX, UT, NM, FL, CA, VA, BAS, NE, AK, XGM, WA, XWY, CON, BC, GA, VT, CT, AL, DUR, TN, NJ, AR, XGL, DOW
 </pre>
 </div>
@@ -13594,15 +13594,15 @@ Total number of states: 36
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># packages: us</span>
 
-<span class="n">US_states</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">Other_states</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">US_states</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">Other_states</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">states</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">us</span><span class="o">.</span><span class="n">states</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">US_states</span><span class="p">:</span>
-            <span class="n">US_states</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="n">US_states</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Other_states</span><span class="p">:</span>
-            <span class="n">Other_states</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="n">Other_states</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">US_states</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Other_states</span><span class="p">)</span>
 </pre></div>
@@ -13621,8 +13621,8 @@ Total number of states: 36
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;AZ&#39;, &#39;NC&#39;, &#39;NV&#39;, &#39;OH&#39;, &#39;PA&#39;, &#39;WI&#39;, &#39;IL&#39;, &#39;NY&#39;, &#39;SC&#39;, &#39;TX&#39;, &#39;UT&#39;, &#39;NM&#39;, &#39;FL&#39;, &#39;CA&#39;, &#39;VA&#39;, &#39;NE&#39;, &#39;AK&#39;, &#39;WA&#39;, &#39;GA&#39;, &#39;VT&#39;, &#39;CT&#39;, &#39;AL&#39;, &#39;TN&#39;, &#39;NJ&#39;, &#39;AR&#39;]
-[&#39;ON&#39;, &#39;AB&#39;, &#39;QC&#39;, &#39;BAS&#39;, &#39;XGM&#39;, &#39;XWY&#39;, &#39;CON&#39;, &#39;BC&#39;, &#39;DUR&#39;, &#39;XGL&#39;, &#39;DOW&#39;]
+<pre>{&#39;CA&#39;, &#39;NM&#39;, &#39;UT&#39;, &#39;OH&#39;, &#39;VT&#39;, &#39;VA&#39;, &#39;NY&#39;, &#39;NJ&#39;, &#39;AR&#39;, &#39;WI&#39;, &#39;GA&#39;, &#39;NE&#39;, &#39;AZ&#39;, &#39;CT&#39;, &#39;FL&#39;, &#39;SC&#39;, &#39;TN&#39;, &#39;PA&#39;, &#39;WA&#39;, &#39;NV&#39;, &#39;TX&#39;, &#39;AK&#39;, &#39;NC&#39;, &#39;IL&#39;, &#39;AL&#39;}
+{&#39;AB&#39;, &#39;CON&#39;, &#39;ON&#39;, &#39;BC&#39;, &#39;DUR&#39;, &#39;DOW&#39;, &#39;XGL&#39;, &#39;BAS&#39;, &#39;QC&#39;, &#39;XGM&#39;, &#39;XWY&#39;}
 </pre>
 </div>
 </div>
@@ -14543,19 +14543,8 @@ Total number of states: 36
     <span class="k">if</span> <span class="n">curr_state</span> <span class="ow">in</span> <span class="n">US_states</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">curr_category</span> <span class="ow">in</span> <span class="n">categories_with_restaurant</span><span class="p">:</span>
             <span class="n">US_restaurant_business_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of businesses:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">business_lines</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of businesses:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">business_lines</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Restaurant related businesses in the US:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">US_restaurant_business_lines</span><span class="p">))</span>
 </pre></div>
 
@@ -14585,13 +14574,20 @@ Restaurant related businesses in the US: 35878
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[157]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># packages: nltk</span>
 
-<span class="n">stop_words</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s2">&quot;English&quot;</span><span class="p">)</span>
-<span class="n">special_chars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">,</span> <span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;``&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span><span class="p">]</span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s2">&quot;English&quot;</span><span class="p">))</span>
+<span class="n">stop_words</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;&#39;m&quot;</span><span class="p">)</span>
+<span class="n">stop_words</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;&#39;s&quot;</span><span class="p">)</span>
+<span class="n">stop_words</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;&#39;t&quot;</span><span class="p">)</span>
+<span class="n">stop_words</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;&#39;re&quot;</span><span class="p">)</span>
+<span class="n">stop_words</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;&#39;ll&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stop words:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">stop_words</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">special_chars</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">,</span> <span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&amp;&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;``&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Customized special characters:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">special_chars</span><span class="p">)</span>
 <span class="n">wnl</span> <span class="o">=</span> <span class="n">WordNetLemmatizer</span><span class="p">()</span>
 <span class="c1"># stemmer = nltk.stem.SnowballStemmer(&quot;english&quot;)</span>
@@ -14601,24 +14597,24 @@ Restaurant related businesses in the US: 35878
     <span class="c1"># choose the review text from &quot;stars&quot; and &quot;text&quot;</span>
     <span class="n">texts</span> <span class="o">=</span> <span class="n">string</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
     <span class="c1"># tokenize</span>
-    <span class="n">texts</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">texts</span><span class="p">)</span>
+    <span class="n">texts</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">texts</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
     <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">:</span>
             <span class="k">continue</span>
         <span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">special_chars</span><span class="p">:</span>
             <span class="k">continue</span>
-        <span class="n">new_texts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wnl</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">token</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="n">new_texts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wnl</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">token</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">new_texts</span>
 
 <span class="k">def</span> <span class="nf">clean_text</span><span class="p">(</span><span class="n">single_review_text</span><span class="p">):</span>
     <span class="n">new_texts</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">texts</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">single_review_text</span><span class="p">)</span>
+    <span class="n">texts</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">single_review_text</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
     <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">:</span>
             <span class="k">continue</span>
         <span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">special_chars</span><span class="p">:</span>
             <span class="k">continue</span>
-        <span class="n">new_texts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wnl</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">token</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="n">new_texts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wnl</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">token</span><span class="p">))</span>
     <span class="n">new_texts_string</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_texts</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">new_texts_string</span>
 </pre></div>
@@ -14637,8 +14633,11 @@ Restaurant related businesses in the US: 35878
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Customized special characters:
- [&#39;*&#39;, &#39;!&#39;, &#39;?&#39;, &#39;(&#39;, &#39;)&#39;, &#39;.&#39;, &#39;--&#39;, &#39;---&#39;, &#39;;&#39;, &#39;,&#39;, &#39;``&#39;, &#34;&#39;&#39;&#34;, &#39;...&#39;]
+<pre>Stop words:
+ {&#34;you&#39;re&#34;, &#39;he&#39;, &#39;did&#39;, &#39;don&#39;, &#39;off&#39;, &#34;shan&#39;t&#34;, &#34;you&#39;d&#34;, &#39;have&#39;, &#39;will&#39;, &#39;or&#39;, &#39;so&#39;, &#39;under&#39;, &#39;but&#39;, &#39;are&#39;, &#39;mustn&#39;, &#39;been&#39;, &#39;mightn&#39;, &#39;him&#39;, &#39;d&#39;, &#39;once&#39;, &#39;his&#39;, &#39;her&#39;, &#39;ain&#39;, &#39;theirs&#39;, &#39;up&#39;, &#34;don&#39;t&#34;, &#39;herself&#39;, &#39;doing&#39;, &#39;being&#39;, &#39;himself&#39;, &#39;own&#39;, &#39;between&#39;, &#34;wasn&#39;t&#34;, &#39;be&#39;, &#39;for&#39;, &#39;above&#39;, &#39;through&#39;, &#39;she&#39;, &#39;it&#39;, &#39;itself&#39;, &#34;aren&#39;t&#34;, &#39;couldn&#39;, &#34;haven&#39;t&#34;, &#39;out&#39;, &#39;any&#39;, &#39;by&#39;, &#39;shan&#39;, &#39;during&#39;, &#34;mightn&#39;t&#34;, &#39;m&#39;, &#39;more&#39;, &#39;of&#39;, &#34;mustn&#39;t&#34;, &#34;weren&#39;t&#34;, &#39;before&#39;, &#39;has&#39;, &#39;as&#39;, &#39;were&#39;, &#39;a&#39;, &#39;if&#39;, &#39;until&#39;, &#39;re&#39;, &#39;where&#39;, &#39;an&#39;, &#34;couldn&#39;t&#34;, &#39;our&#39;, &#39;hadn&#39;, &#39;on&#39;, &#39;against&#39;, &#39;into&#39;, &#34;that&#39;ll&#34;, &#39;here&#39;, &#34;&#39;s&#34;, &#39;aren&#39;, &#39;to&#39;, &#39;hasn&#39;, &#34;didn&#39;t&#34;, &#39;s&#39;, &#39;how&#39;, &#39;ve&#39;, &#39;was&#39;, &#39;why&#39;, &#34;&#39;t&#34;, &#39;is&#39;, &#39;who&#39;, &#39;at&#39;, &#39;in&#39;, &#39;few&#39;, &#39;whom&#39;, &#39;that&#39;, &#39;won&#39;, &#39;they&#39;, &#39;ours&#39;, &#39;having&#39;, &#39;other&#39;, &#39;nor&#39;, &#39;this&#39;, &#39;am&#39;, &#39;because&#39;, &#39;me&#39;, &#39;below&#39;, &#34;won&#39;t&#34;, &#39;y&#39;, &#39;can&#39;, &#39;all&#39;, &#39;haven&#39;, &#34;doesn&#39;t&#34;, &#39;further&#39;, &#39;t&#39;, &#39;shouldn&#39;, &#39;yourself&#39;, &#39;them&#39;, &#39;not&#39;, &#39;very&#39;, &#39;isn&#39;, &#39;which&#39;, &#39;wasn&#39;, &#39;no&#39;, &#39;these&#39;, &#39;and&#39;, &#39;same&#39;, &#39;yourselves&#39;, &#39;than&#39;, &#39;yours&#39;, &#39;hers&#39;, &#39;didn&#39;, &#39;their&#39;, &#39;such&#39;, &#39;some&#39;, &#39;most&#39;, &#34;she&#39;s&#34;, &#39;over&#39;, &#39;my&#39;, &#39;ll&#39;, &#39;doesn&#39;, &#39;i&#39;, &#39;both&#39;, &#39;needn&#39;, &#34;you&#39;ve&#34;, &#39;o&#39;, &#39;themselves&#39;, &#34;needn&#39;t&#34;, &#34;&#39;m&#34;, &#34;&#39;ll&#34;, &#39;ourselves&#39;, &#39;weren&#39;, &#39;your&#39;, &#39;we&#39;, &#39;what&#39;, &#34;hasn&#39;t&#34;, &#39;again&#39;, &#39;wouldn&#39;, &#39;there&#39;, &#39;just&#39;, &#34;hadn&#39;t&#34;, &#34;&#39;re&#34;, &#39;does&#39;, &#39;those&#39;, &#34;you&#39;ll&#34;, &#39;while&#39;, &#34;shouldn&#39;t&#34;, &#39;after&#39;, &#39;only&#39;, &#39;now&#39;, &#39;had&#39;, &#39;with&#39;, &#39;the&#39;, &#39;then&#39;, &#34;it&#39;s&#34;, &#39;do&#39;, &#39;too&#39;, &#34;wouldn&#39;t&#34;, &#39;you&#39;, &#39;down&#39;, &#39;ma&#39;, &#39;from&#39;, &#39;its&#39;, &#34;isn&#39;t&#34;, &#39;myself&#39;, &#34;should&#39;ve&#34;, &#39;each&#39;, &#39;should&#39;, &#39;when&#39;, &#39;about&#39;}
+
+Customized special characters:
+ {&#39;)&#39;, &#39;...&#39;, &#39;``&#39;, &#39;!&#39;, &#39;&amp;&#39;, &#39;,&#39;, &#39;(&#39;, &#39;-&#39;, &#39;*&#39;, &#39;---&#39;, &#34;&#39;&#39;&#34;, &#39;;&#39;, &#39;--&#39;, &#39;?&#39;, &#39;.&#39;}
 </pre>
 </div>
 </div>
@@ -14647,20 +14646,15 @@ Restaurant related businesses in the US: 35878
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="&lt;font-color-=-&quot;red&quot;&gt;-!!!-&lt;/font&gt;">&lt;font color = "red"&gt; !!! &lt;/font&gt;<a class="anchor-link" href="#&lt;font-color-=-&quot;red&quot;&gt;-!!!-&lt;/font&gt;">&#182;</a></h1>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># packages: json</span>
 <span class="c1"># variables: &quot;US_restaurant_business_lines&quot; from block 43</span>
+
+<span class="c1"># enter a state code (string), return all the restaurant business ids (list)</span>
 
 <span class="k">def</span> <span class="nf">get_review_state</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
     <span class="n">state_restaurant_business_ids</span> <span class="o">=</span> <span class="p">[]</span>
@@ -14678,11 +14672,14 @@ Restaurant related businesses in the US: 35878
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># packages: json</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">######################### STOP USING ####################################</span>
+<span class="c1"># packages: json</span>
 <span class="c1"># variables: &quot;US_restaurant_business_lines&quot; from block 43</span>
+
+<span class="c1"># not use!!! (not enough data for city level)</span>
 
 <span class="k">def</span> <span class="nf">get_review_state_city</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">city</span><span class="p">):</span>
     <span class="n">city_restaurant_business_ids</span> <span class="o">=</span> <span class="p">[]</span>
@@ -14712,7 +14709,7 @@ Restaurant related businesses in the US: 35878
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All the US states:&quot;</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">US_states</span><span class="p">)))</span>
@@ -14743,10 +14740,11 @@ Restaurant related businesses in the US: 35878
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">US_restaurant_business_lines</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># test for NY</span>
+<span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">US_restaurant_business_lines</span><span class="p">:</span>
     <span class="n">curr_business_id</span><span class="p">,</span> <span class="n">curr_state</span><span class="p">,</span> <span class="n">curr_city</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;business_id&quot;</span><span class="p">],</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">],</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">]</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">curr_state</span> <span class="o">==</span> <span class="s2">&quot;NY&quot;</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">curr_city</span><span class="p">,</span> <span class="n">curr_business_id</span><span class="p">)</span>
@@ -14788,10 +14786,11 @@ Mooers jH19V2I9fIslnNhDzPmdkA
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ny</span> <span class="o">=</span> <span class="n">get_review_state</span><span class="p">(</span><span class="s2">&quot;NY&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># test for NY</span>
+<span class="n">ny</span> <span class="o">=</span> <span class="n">get_review_state</span><span class="p">(</span><span class="s2">&quot;NY&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ny</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ny</span><span class="p">)</span>
 </pre></div>
@@ -14822,7 +14821,7 @@ Mooers jH19V2I9fIslnNhDzPmdkA
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">restaurants_num_state</span> <span class="o">=</span> <span class="p">{}</span>
@@ -14830,19 +14829,8 @@ Mooers jH19V2I9fIslnNhDzPmdkA
     <span class="n">curr</span> <span class="o">=</span> <span class="n">get_review_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
     <span class="n">curr_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">state</span> <span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">curr</span><span class="p">)}</span>
     <span class="n">restaurants_num_state</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">curr_dict</span><span class="p">)</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">restaurants_num_state</span>
+<span class="n">restaurants_num_state</span>
 </pre></div>
 
     </div>
@@ -14855,7 +14843,7 @@ Mooers jH19V2I9fIslnNhDzPmdkA
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[83]:</div>
+    <div class="prompt output_prompt">Out[86]:</div>
 
 
 
@@ -14896,10 +14884,10 @@ Mooers jH19V2I9fIslnNhDzPmdkA
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All the states where the number of restaurants is greater than 100.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All the states where the number of restaurants is greater than 100:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">restaurants_num_state</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">restaurants_num_state</span><span class="p">[</span><span class="n">pair</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">pair</span><span class="p">,</span> <span class="n">restaurants_num_state</span><span class="p">[</span><span class="n">pair</span><span class="p">])</span>
@@ -14919,7 +14907,7 @@ Mooers jH19V2I9fIslnNhDzPmdkA
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>All the states where the number of restaurants is greater than 100.
+<pre>All the states where the number of restaurants is greater than 100:
 
 AZ 11465
 IL 672
@@ -14939,7 +14927,7 @@ WI 1703
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[163]:</div>
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">SC_restaurant_id</span> <span class="o">=</span> <span class="n">get_review_state</span><span class="p">(</span><span class="s2">&quot;SC&quot;</span><span class="p">)</span>
@@ -14952,10 +14940,12 @@ WI 1703
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[164]:</div>
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;review.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">review</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;first_state_data.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># packages: json</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;review.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">review</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_SC.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">review</span><span class="p">:</span>
         <span class="n">record</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
         <span class="n">curr_business_id</span><span class="p">,</span> <span class="n">curr_star</span><span class="p">,</span> <span class="n">curr_text</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;business_id&quot;</span><span class="p">],</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;stars&quot;</span><span class="p">],</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
@@ -14971,47 +14961,12 @@ WI 1703
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Below: test for writing json style string to file</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[149]:</div>
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;review.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
-<span class="n">line_1</span> <span class="o">=</span> <span class="n">myfile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-<span class="n">myfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original the first line from </span><span class="se">\&quot;</span><span class="s2">review.json</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">line_1</span><span class="se">\&quot;</span><span class="s2">:&quot;</span><span class="p">,</span> <span class="n">line_1</span><span class="p">,</span> <span class="s2">&quot;type of </span><span class="se">\&quot;</span><span class="s2">line_1</span><span class="se">\&quot;</span><span class="s2">:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">line_1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Load the first line into a dictionary:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">record</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line_1</span><span class="p">)</span>
-<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;business_id&quot;</span><span class="p">],</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;stars&quot;</span><span class="p">],</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- business_id:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- stars:&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- text:&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-
-<span class="n">extract</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s2">&quot;business_id&quot;</span><span class="p">:</span><span class="n">a</span><span class="p">,</span><span class="s2">&quot;stars&quot;</span><span class="p">:</span><span class="n">b</span><span class="p">,</span><span class="s2">&quot;text&quot;</span><span class="p">:</span><span class="n">c</span><span class="p">})</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">extract</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type of </span><span class="se">\&quot;</span><span class="s2">extract</span><span class="se">\&quot;</span><span class="s2">:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">extract</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Load the three items back to a new file, and check the contents by loading them back:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">load_back</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">extract</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">load_back</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type of </span><span class="se">\&quot;</span><span class="s2">load_back</span><span class="se">\&quot;</span><span class="s2">:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">load_back</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- business_id:&quot;</span><span class="p">,</span> <span class="n">load_back</span><span class="p">[</span><span class="s2">&quot;business_id&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- stars:&quot;</span><span class="p">,</span> <span class="n">load_back</span><span class="p">[</span><span class="s2">&quot;stars&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- text:&quot;</span><span class="p">,</span> <span class="n">load_back</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">SC_restaurant_id</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -15028,28 +14983,7 @@ WI 1703
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Original the first line from &#34;review.json&#34;:
-
-&#34;line_1&#34;: {&#34;review_id&#34;:&#34;Q1sbwvVQXV2734tPgoKj4Q&#34;,&#34;user_id&#34;:&#34;hG7b0MtEbXx5QzbzE6C_VA&#34;,&#34;business_id&#34;:&#34;ujmEBvifdJM6h6RLv4wQIg&#34;,&#34;stars&#34;:1.0,&#34;useful&#34;:6,&#34;funny&#34;:1,&#34;cool&#34;:0,&#34;text&#34;:&#34;Total bill for this horrible service? Over $8Gs. These crooks actually had the nerve to charge us $69 for 3 pills. I checked online the pills can be had for 19 cents EACH! Avoid Hospital ERs at all costs.&#34;,&#34;date&#34;:&#34;2013-05-07 04:34:36&#34;}
- type of &#34;line_1&#34;: &lt;class &#39;str&#39;&gt;
-
-Load the first line into a dictionary:
-
-- business_id: ujmEBvifdJM6h6RLv4wQIg
-- stars: 1.0
-- text: Total bill for this horrible service? Over $8Gs. These crooks actually had the nerve to charge us $69 for 3 pills. I checked online the pills can be had for 19 cents EACH! Avoid Hospital ERs at all costs.
-
-{&#34;business_id&#34;: &#34;ujmEBvifdJM6h6RLv4wQIg&#34;, &#34;stars&#34;: 1.0, &#34;text&#34;: &#34;Total bill for this horrible service? Over $8Gs. These crooks actually had the nerve to charge us $69 for 3 pills. I checked online the pills can be had for 19 cents EACH! Avoid Hospital ERs at all costs.&#34;}
-type of &#34;extract&#34;: &lt;class &#39;str&#39;&gt;
-
-Load the three items back to a new file, and check the contents by loading them back:
-
-{&#39;business_id&#39;: &#39;ujmEBvifdJM6h6RLv4wQIg&#39;, &#39;stars&#39;: 1.0, &#39;text&#39;: &#39;Total bill for this horrible service? Over $8Gs. These crooks actually had the nerve to charge us $69 for 3 pills. I checked online the pills can be had for 19 cents EACH! Avoid Hospital ERs at all costs.&#39;}
-type of &#34;load_back&#34;: &lt;class &#39;dict&#39;&gt;
-
-- business_id: ujmEBvifdJM6h6RLv4wQIg
-- stars: 1.0
-- text: Total bill for this horrible service? Over $8Gs. These crooks actually had the nerve to charge us $69 for 3 pills. I checked online the pills can be had for 19 cents EACH! Avoid Hospital ERs at all costs.
+<pre>384
 </pre>
 </div>
 </div>
@@ -15061,22 +14995,26 @@ type of &#34;load_back&#34;: &lt;class &#39;dict&#39;&gt;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Above-summary">Above summary<a class="anchor-link" href="#Above-summary">&#182;</a></h1><p>Inspect all files from the zipped file. We are focusing on two of them: <code>business.json</code> and <code>review.json</code>.</p>
-<p>In order to get the target data from <code>reivew.json</code> (reviews from all the restaurants in a given state/city), we need to get the business ids from <code>business.json</code> with corresponding "state code", "zip code", "category tag".</p>
-<p>There are "8" states in the US which contain more than 100 restaurants (in this study).</p>
-<p>"SC" (South Carolina) has been chosen for the following analysis.</p>
+<p>Below is the data for the other 7 states:</p>
+<ul>
+<li>AZ, IL, NC, NV, OH, PA, WI</li>
+</ul>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[165]:</div>
+<div class="prompt input_prompt">In&nbsp;[93]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">SC_review_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;first_state_data.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
-<span class="n">SC_lines</span> <span class="o">=</span> <span class="n">SC_review_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<span class="n">SC_review_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">AZ_restaurant_id</span> <span class="o">=</span> <span class="n">get_review_state</span><span class="p">(</span><span class="s2">&quot;AZ&quot;</span><span class="p">)</span>
+<span class="n">IL_restaurant_id</span> <span class="o">=</span> <span class="n">get_review_state</span><span class="p">(</span><span class="s2">&quot;IL&quot;</span><span class="p">)</span>
+<span class="n">NC_restaurant_id</span> <span class="o">=</span> <span class="n">get_review_state</span><span class="p">(</span><span class="s2">&quot;NC&quot;</span><span class="p">)</span>
+<span class="n">NV_restaurant_id</span> <span class="o">=</span> <span class="n">get_review_state</span><span class="p">(</span><span class="s2">&quot;NV&quot;</span><span class="p">)</span>
+<span class="n">OH_restaurant_id</span> <span class="o">=</span> <span class="n">get_review_state</span><span class="p">(</span><span class="s2">&quot;OH&quot;</span><span class="p">)</span>
+<span class="n">PA_restaurant_id</span> <span class="o">=</span> <span class="n">get_review_state</span><span class="p">(</span><span class="s2">&quot;PA&quot;</span><span class="p">)</span>
+<span class="n">WI_restaurant_id</span> <span class="o">=</span> <span class="n">get_review_state</span><span class="p">(</span><span class="s2">&quot;WI&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15086,10 +15024,124 @@ type of &#34;load_back&#34;: &lt;class &#39;dict&#39;&gt;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[167]:</div>
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of records from South Carolina:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">SC_lines</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of restaurant id in: AZ&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">AZ_restaurant_id</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of restaurant id in: IL&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">IL_restaurant_id</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of restaurant id in: NC&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">NC_restaurant_id</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of restaurant id in: NV&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">NV_restaurant_id</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of restaurant id in: OH&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">OH_restaurant_id</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of restaurant id in: PA&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">PA_restaurant_id</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of restaurant id in: WI&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">WI_restaurant_id</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of restaurant id in: AZ 11465
+Number of restaurant id in: IL 672
+Number of restaurant id in: NC 4326
+Number of restaurant id in: NV 7783
+Number of restaurant id in: OH 5522
+Number of restaurant id in: PA 4001
+Number of restaurant id in: WI 1703
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[96]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># packages: json</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;review.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">review</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_AZ.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">AZ</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_IL.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">IL</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_NC.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">NC</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_NV.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">NV</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_OH.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">OH</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_PA.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">PA</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_WI.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">WI</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">review</span><span class="p">:</span>
+        <span class="n">record</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="n">curr_business_id</span><span class="p">,</span> <span class="n">curr_star</span><span class="p">,</span> <span class="n">curr_text</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;business_id&quot;</span><span class="p">],</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;stars&quot;</span><span class="p">],</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
+        <span class="n">cleaned_text</span> <span class="o">=</span> <span class="n">clean_text</span><span class="p">(</span><span class="n">curr_text</span><span class="p">)</span>
+        <span class="n">extract</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s2">&quot;business_id&quot;</span><span class="p">:</span><span class="n">curr_business_id</span><span class="p">,</span> <span class="s2">&quot;stars&quot;</span><span class="p">:</span><span class="n">curr_star</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span><span class="n">cleaned_text</span><span class="p">})</span>
+        <span class="n">write_line</span> <span class="o">=</span> <span class="n">extract</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="n">curr_business_id</span> <span class="ow">in</span> <span class="n">AZ_restaurant_id</span><span class="p">:</span>
+            <span class="n">AZ</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">write_line</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">curr_business_id</span> <span class="ow">in</span> <span class="n">IL_restaurant_id</span><span class="p">:</span>
+            <span class="n">IL</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">write_line</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">curr_business_id</span> <span class="ow">in</span> <span class="n">NC_restaurant_id</span><span class="p">:</span>
+            <span class="n">NC</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">write_line</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">curr_business_id</span> <span class="ow">in</span> <span class="n">NV_restaurant_id</span><span class="p">:</span>
+            <span class="n">NV</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">write_line</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">curr_business_id</span> <span class="ow">in</span> <span class="n">OH_restaurant_id</span><span class="p">:</span>
+            <span class="n">OH</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">write_line</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">curr_business_id</span> <span class="ow">in</span> <span class="n">PA_restaurant_id</span><span class="p">:</span>
+            <span class="n">PA</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">write_line</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">curr_business_id</span> <span class="ow">in</span> <span class="n">WI_restaurant_id</span><span class="p">:</span>
+            <span class="n">WI</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">write_line</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Above-summary">Above summary<a class="anchor-link" href="#Above-summary">&#182;</a></h1><p>Inspect all files from the zipped file. We are focusing on two of them: <code>business.json</code> and <code>review.json</code>.</p>
+<p>In order to get the target data from <code>reivew.json</code> (reviews from all the restaurants in a given state/city), we need to get the business ids from <code>business.json</code> with corresponding "state code", "zip code", "category tag".</p>
+<p>There are "8" states in the US which contain more than 100 restaurants (in this study).</p>
+<p>"SC" (South Carolina) has been chosen for the following analysis in "Step_3".</p>
+<p>The other states are pending.</p>
+<ul>
+<li>AZ: Arizona</li>
+<li>IL: Illinois</li>
+<li>NC: North Carolina</li>
+<li>NV: Nevada</li>
+<li>OH: Ohio</li>
+<li>PA: Pennsylvania</li>
+<li>WI: Wisconsin</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_SC.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">SC</span><span class="p">:</span>
+    <span class="n">SC_lines</span> <span class="o">=</span> <span class="n">SC</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of records from South Carolina:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">SC_lines</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -15107,6 +15159,237 @@ type of &#34;load_back&#34;: &lt;class &#39;dict&#39;&gt;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Total number of records from South Carolina: 14401
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[101]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_AZ.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">AZ</span><span class="p">:</span>
+    <span class="n">AZ_lines</span> <span class="o">=</span> <span class="n">AZ</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of records from Arizona:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">AZ_lines</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Total number of records from Arizona: 1191691
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_IL.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">IL</span><span class="p">:</span>
+    <span class="n">IL_lines</span> <span class="o">=</span> <span class="n">IL</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of records from Illinois:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">IL_lines</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Total number of records from Illinois: 28741
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_NC.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">NC</span><span class="p">:</span>
+    <span class="n">NC_lines</span> <span class="o">=</span> <span class="n">NC</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of records from North Carolina:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">NC_lines</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Total number of records from North Carolina: 272619
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_NV.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">NV</span><span class="p">:</span>
+    <span class="n">NV_lines</span> <span class="o">=</span> <span class="n">NV</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of records from Nevada:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">NV_lines</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Total number of records from Nevada: 1391673
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_OH.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">OH</span><span class="p">:</span>
+    <span class="n">OH_lines</span> <span class="o">=</span> <span class="n">OH</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of records from Ohio:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">OH_lines</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Total number of records from Ohio: 227182
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_PA.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">PA</span><span class="p">:</span>
+    <span class="n">PA_lines</span> <span class="o">=</span> <span class="n">PA</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of records from Pennsylvania:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">PA_lines</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Total number of records from Pennsylvania: 204438
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[107]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;business_data_WI.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">WI</span><span class="p">:</span>
+    <span class="n">WI_lines</span> <span class="o">=</span> <span class="n">WI</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of records from Wisconsin:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">WI_lines</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Total number of records from Wisconsin: 93488
 </pre>
 </div>
 </div>
@@ -15268,6 +15551,92 @@ type of &#34;load_back&#34;: &lt;class &#39;dict&#39;&gt;
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>set.add</p>
+
+</div>
+</div>
 </div>
     </div>
   </div>
