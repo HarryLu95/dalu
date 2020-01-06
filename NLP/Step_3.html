@@ -13373,8 +13373,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>3.1.1 Original one-hot encoding matrix:</p>
-<ul>
+<h3 id="3.1.1-Original-one-hot-encoding-matrix:">3.1.1 Original one-hot encoding matrix:<a class="anchor-link" href="#3.1.1-Original-one-hot-encoding-matrix:">&#182;</a></h3><ul>
 <li>$X$: <code>SC_train_top_word_matrix</code>, a 11520 by 5000 matrix</li>
 <li>$X'$: <code>SC_validation_top_word_matrix</code>, a 1440 by 5000 matrix</li>
 </ul>
@@ -13445,8 +13444,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>3.1.2 Normalization of the matrix</p>
-<ul>
+<h3 id="3.1.2-Normalization-of-the-matrix">3.1.2 Normalization of the matrix<a class="anchor-link" href="#3.1.2-Normalization-of-the-matrix">&#182;</a></h3><ul>
 <li>$X_\text{norm}$: <code>SC_train_top_word_matrix_norm</code>, a 11520 by 5000 matrix, and the sum of each row is 1</li>
 <li>$X_\text{norm}'$: <code>SC_validation_top_word_matrix_norm</code>, a 1440 by 5000 matrix, and the sum of each row is 1</li>
 </ul>
@@ -13496,10 +13494,9 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>3.1.3 TF-IDF matrix</p>
-<ul>
-<li>$X_\text{tfidf}$: <code>SC_train_tfidf_matrix</code>, a 11520 by 5000 matrix</li>
-<li>$X_\text{tfidf}'$: <code>SC_validation_tfidf_matrix</code>, a 1440 by 5000 matrix</li>
+<h3 id="3.1.3-TF-IDF-matrix">3.1.3 TF-IDF matrix<a class="anchor-link" href="#3.1.3-TF-IDF-matrix">&#182;</a></h3><ul>
+<li>$X_\text{tfidf}$: <code>SC_train_tfidf_matrix</code>, a 11520 by 3300 matrix</li>
+<li>$X_\text{tfidf}'$: <code>SC_validation_tfidf_matrix</code>, a 1440 by 3300 matrix</li>
 </ul>
 
 </div>
@@ -13523,8 +13520,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Initialize the TF-IDF vectorizer (top 5000)</span>
-<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">max_features</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Initialize the TF-IDF vectorizer (top 3300)</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">min_df</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">max_features</span> <span class="o">=</span> <span class="mi">3300</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13542,13 +13539,14 @@ div#notebook {
 <span class="c1"># =======================</span>
 <span class="c1">### 8. Build the feature matrix</span>
 <span class="n">SC_train_tfidf_matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">SC_train_texts</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
-
+<span class="n">SC_train_feature_names</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span>
 
 <span class="c1"># ============================</span>
 <span class="c1"># ======== Validation ========</span>
 <span class="c1"># ============================</span>
 <span class="c1">### 8. Build the feature matrix</span>
 <span class="n">SC_validation_tfidf_matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">SC_validation_texts</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">SC_validation_feature_names</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13561,27 +13559,13 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### (Optional) Get feature names</span>
-<span class="n">feature_names</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Test</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Test (train set)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="c1"># range(len(SC_train_tfidf_matrix))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------- This is record&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;--------&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_names</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">SC_train_feature_names</span><span class="p">)):</span>
         <span class="k">if</span> <span class="n">SC_train_tfidf_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">continue</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">feature_names</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">SC_train_tfidf_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">SC_train_feature_names</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">SC_train_tfidf_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13599,31 +13583,109 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>-------- This is record 0 --------
-altered 0.4993646618888618
-ball 0.37949281458919515
-navigator 0.22739280673833653
-residue 0.1395957067680371
-risotto 0.41790294765614616
-soda 0.24798745067879283
-staleness 0.4074005092042667
-training 0.24850860599176
-transplant 0.2674945545645018
+afraid 0.4993646618888618
+awful 0.37949281458919515
+lunch 0.22739280673833653
+place 0.1395957067680371
+positive 0.41790294765614616
+say 0.24798745067879283
+single 0.4074005092042667
+thing 0.24850860599176
+think 0.2674945545645018
 -------- This is record 1 --------
-basis 0.40409219345242087
-cheer 0.1865176438424083
-environment 0.3305038965517092
-existent 0.23234628141562164
-given 0.1114952494674605
-miso 0.18594126913255396
-pop 0.20622635644474363
-redo 0.4366338365929708
-residue 0.11566997160114244
-roast 0.24213161001287695
-smart 0.19869869722989167
-smoother 0.20896551152420081
-soupy 0.265066785718975
-speaker 0.1242628833060623
-younger 0.34301982856383184
+balance 0.40409219345242087
+came 0.1865176438424083
+expecting 0.3305038965517092
+fast 0.23234628141562164
+good 0.1114952494674605
+little 0.18594126913255396
+new 0.20622635644474363
+pastrami 0.4366338365929708
+place 0.11566997160114244
+potato 0.24213161001287695
+salad 0.19869869722989167
+sandwich 0.20896551152420081
+seemed 0.265066785718975
+service 0.1242628833060623
+york 0.34301982856383184
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Test (validation set)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="c1"># range(len(SC_validation_tfidf_matrix))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------- This is record&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;--------&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">SC_validation_feature_names</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">SC_validation_tfidf_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">SC_validation_feature_names</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">SC_validation_tfidf_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-------- This is record 0 --------
+breakfast 0.4103045558597571
+cozy 0.3268083581218531
+definitely 0.18184654450560608
+dish 0.20806525164354067
+family 0.2029269777396043
+friendly 0.161191164301109
+highlight 0.3445223743972965
+home 0.21051070417777745
+made 0.19577262499880574
+order 0.15350653980099183
+restaurant 0.14616301873208873
+service 0.11147246781253105
+small 0.2029269777396043
+style 0.2691756550089366
+typical 0.29083966627015484
+waitress 0.20572279663679569
+wonderful 0.2448555992959191
+would 0.14877878500237549
+-------- This is record 1 --------
+30 0.2024631620885946
+45 0.22310927500933764
+around 0.14959560029308933
+ask 0.16843693535312013
+deal 0.20487638092867
+delivery 0.23886908642395271
+first 0.13675646685140982
+five 0.21778505283919075
+forty 0.29907136518883254
+get 0.1102931824540642
+gon 0.28938096273350467
+help 0.20876794704151277
+hour 0.18004555090434754
+kind 0.1876839134567508
+minute 0.2938032079604217
+na 0.2689702258063926
+need 0.16533370375198506
+pizza 0.15675557259693695
+place 0.08573065833649238
+ridiculous 0.24167178558335664
+time 0.19948012074727245
+wait 0.2839368921879165
 </pre>
 </div>
 </div>
@@ -13635,28 +13697,9 @@ younger 0.34301982856383184
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>3.1.4 Feature hashing: 5000 -&gt; 100, hashvalue mod 100 (improve space)</p>
-<ul>
-<li>???</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.2-Labels">3.2 Labels<a class="anchor-link" href="#3.2-Labels">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>3.2.1 Binary labels</p>
-<ul>
-<li>$\mathbf{y}$ (<code>SC_train_stars_binary</code>), a 11520 list with <code>0</code>s and <code>1</code>s</li>
-<li>$\mathbf{y}'$ (<code>SC_validation_stars_binary</code>), a 1440 list with <code>0</code>s and <code>1</code>s</li>
+<h3 id="3.1.4-Feature-hashing:-3300-to-100">3.1.4 Feature hashing: 3300 to 100<a class="anchor-link" href="#3.1.4-Feature-hashing:-3300-to-100">&#182;</a></h3><ul>
+<li>$X_\text{hash}$: <code>SC_train_tfidf_hashed_matrix</code>, a 11520 by 100 matrix</li>
+<li>$X_\text{hash}'$: <code>SC_validation_tfidf_hashed_matrix</code>, a 1440 by 100 matrix</li>
 </ul>
 
 </div>
@@ -13667,13 +13710,7 @@ younger 0.34301982856383184
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### 9. Convert &quot;SC_train_stars&quot; to binary labels</span>
-<span class="n">SC_train_stars_binary</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">SC_train_stars</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">item</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="n">SC_train_stars_binary</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 3, 4, 5 -&gt; true(1)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">SC_train_stars_binary</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># 0, 1, 2 -&gt; false(0)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction</span> <span class="k">import</span> <span class="n">FeatureHasher</span>
 </pre></div>
 
     </div>
@@ -13686,7 +13723,234 @@ younger 0.34301982856383184
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### 9. Convert &quot;SC_validation_stars&quot; to binary labels</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Initialize the feature hasher (3300 -&gt; 100)</span>
+<span class="n">hasher</span> <span class="o">=</span> <span class="n">FeatureHasher</span><span class="p">(</span><span class="n">n_features</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>long time (below):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># =======================</span>
+<span class="c1"># ======== Train ========</span>
+<span class="c1"># =======================</span>
+<span class="c1">### 9. Build the hashed matrix</span>
+<span class="n">SC_train_feature_dictionary_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">SC_train_tfidf_matrix</span><span class="p">)):</span>
+    <span class="n">curr_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">SC_train_feature_names</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">SC_train_tfidf_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">curr_pair</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="n">SC_train_feature_names</span><span class="p">[</span><span class="n">j</span><span class="p">]],</span> <span class="p">[</span><span class="n">SC_train_tfidf_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]]))</span>
+        <span class="n">curr_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">curr_pair</span><span class="p">)</span>
+    <span class="n">SC_train_feature_dictionary_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">curr_dict</span><span class="p">)</span>
+<span class="n">SC_train_tfidf_hashed_matrix</span> <span class="o">=</span> <span class="n">hasher</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">SC_train_feature_dictionary_list</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+
+
+<span class="c1"># ============================</span>
+<span class="c1"># ======== Validation ========</span>
+<span class="c1"># ============================</span>
+<span class="c1">### 9. Build the hashed matrix</span>
+<span class="n">SC_validation_feature_dictionary_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">SC_validation_tfidf_matrix</span><span class="p">)):</span>
+    <span class="n">curr_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">SC_validation_feature_names</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">SC_validation_tfidf_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">curr_pair</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="n">SC_validation_feature_names</span><span class="p">[</span><span class="n">j</span><span class="p">]],</span> <span class="p">[</span><span class="n">SC_validation_tfidf_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]]))</span>
+        <span class="n">curr_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">curr_pair</span><span class="p">)</span>
+    <span class="n">SC_validation_feature_dictionary_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">curr_dict</span><span class="p">)</span>
+<span class="n">SC_validation_tfidf_hashed_matrix</span> <span class="o">=</span> <span class="n">hasher</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">SC_validation_feature_dictionary_list</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Test (train set)</span>
+<span class="n">SC_train_feature_dictionary_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[{&#39;afraid&#39;: 0.4993646618888618,
+  &#39;awful&#39;: 0.37949281458919515,
+  &#39;lunch&#39;: 0.22739280673833653,
+  &#39;place&#39;: 0.1395957067680371,
+  &#39;positive&#39;: 0.41790294765614616,
+  &#39;say&#39;: 0.24798745067879283,
+  &#39;single&#39;: 0.4074005092042667,
+  &#39;thing&#39;: 0.24850860599176,
+  &#39;think&#39;: 0.2674945545645018},
+ {&#39;balance&#39;: 0.40409219345242087,
+  &#39;came&#39;: 0.1865176438424083,
+  &#39;expecting&#39;: 0.3305038965517092,
+  &#39;fast&#39;: 0.23234628141562164,
+  &#39;good&#39;: 0.1114952494674605,
+  &#39;little&#39;: 0.18594126913255396,
+  &#39;new&#39;: 0.20622635644474363,
+  &#39;pastrami&#39;: 0.4366338365929708,
+  &#39;place&#39;: 0.11566997160114244,
+  &#39;potato&#39;: 0.24213161001287695,
+  &#39;salad&#39;: 0.19869869722989167,
+  &#39;sandwich&#39;: 0.20896551152420081,
+  &#39;seemed&#39;: 0.265066785718975,
+  &#39;service&#39;: 0.1242628833060623,
+  &#39;york&#39;: 0.34301982856383184}]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Test (validation set)</span>
+<span class="n">SC_validation_feature_dictionary_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[{&#39;breakfast&#39;: 0.4103045558597571,
+  &#39;cozy&#39;: 0.3268083581218531,
+  &#39;definitely&#39;: 0.18184654450560608,
+  &#39;dish&#39;: 0.20806525164354067,
+  &#39;family&#39;: 0.2029269777396043,
+  &#39;friendly&#39;: 0.161191164301109,
+  &#39;highlight&#39;: 0.3445223743972965,
+  &#39;home&#39;: 0.21051070417777745,
+  &#39;made&#39;: 0.19577262499880574,
+  &#39;order&#39;: 0.15350653980099183,
+  &#39;restaurant&#39;: 0.14616301873208873,
+  &#39;service&#39;: 0.11147246781253105,
+  &#39;small&#39;: 0.2029269777396043,
+  &#39;style&#39;: 0.2691756550089366,
+  &#39;typical&#39;: 0.29083966627015484,
+  &#39;waitress&#39;: 0.20572279663679569,
+  &#39;wonderful&#39;: 0.2448555992959191,
+  &#39;would&#39;: 0.14877878500237549},
+ {&#39;30&#39;: 0.2024631620885946,
+  &#39;45&#39;: 0.22310927500933764,
+  &#39;around&#39;: 0.14959560029308933,
+  &#39;ask&#39;: 0.16843693535312013,
+  &#39;deal&#39;: 0.20487638092867,
+  &#39;delivery&#39;: 0.23886908642395271,
+  &#39;first&#39;: 0.13675646685140982,
+  &#39;five&#39;: 0.21778505283919075,
+  &#39;forty&#39;: 0.29907136518883254,
+  &#39;get&#39;: 0.1102931824540642,
+  &#39;gon&#39;: 0.28938096273350467,
+  &#39;help&#39;: 0.20876794704151277,
+  &#39;hour&#39;: 0.18004555090434754,
+  &#39;kind&#39;: 0.1876839134567508,
+  &#39;minute&#39;: 0.2938032079604217,
+  &#39;na&#39;: 0.2689702258063926,
+  &#39;need&#39;: 0.16533370375198506,
+  &#39;pizza&#39;: 0.15675557259693695,
+  &#39;place&#39;: 0.08573065833649238,
+  &#39;ridiculous&#39;: 0.24167178558335664,
+  &#39;time&#39;: 0.19948012074727245,
+  &#39;wait&#39;: 0.2839368921879165}]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.2-Labels">3.2 Labels<a class="anchor-link" href="#3.2-Labels">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.2.1-Binary-labels">3.2.1 Binary labels<a class="anchor-link" href="#3.2.1-Binary-labels">&#182;</a></h3><ul>
+<li>$\mathbf{y}_\text{binary}$ (<code>SC_train_stars_binary</code>), a 11520 list with <code>0</code>s and <code>1</code>s</li>
+<li>$\mathbf{y}_\text{binary}'$ (<code>SC_validation_stars_binary</code>), a 1440 list with <code>0</code>s and <code>1</code>s</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># =======================</span>
+<span class="c1"># ======== Train ========</span>
+<span class="c1"># =======================</span>
+<span class="c1">### 10. Convert &quot;SC_train_stars&quot; to binary labels</span>
+<span class="n">SC_train_stars_binary</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">SC_train_stars</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">item</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">SC_train_stars_binary</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 3, 4, 5 -&gt; true(1)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">SC_train_stars_binary</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># 0, 1, 2 -&gt; false(0)</span>
+
+
+<span class="c1"># ============================</span>
+<span class="c1"># ======== Validation ========</span>
+<span class="c1"># ============================</span>
+<span class="c1">### 10. Convert &quot;SC_validation_stars&quot; to binary labels</span>
 <span class="n">SC_validation_stars_binary</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">SC_validation_stars</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">item</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
@@ -13703,8 +13967,7 @@ younger 0.34301982856383184
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>3.2.2 multi-class</p>
-<ul>
+<h3 id="3.2.2-multi-class">3.2.2 multi-class<a class="anchor-link" href="#3.2.2-multi-class">&#182;</a></h3><ul>
 <li>???</li>
 </ul>
 
@@ -13745,7 +14008,7 @@ younger 0.34301982856383184
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
@@ -13784,7 +14047,7 @@ younger 0.34301982856383184
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_1</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">penalty</span> <span class="o">=</span> <span class="s2">&quot;l2&quot;</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">9999</span><span class="p">)</span>
@@ -13805,7 +14068,7 @@ younger 0.34301982856383184
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train</span>
@@ -13852,10 +14115,10 @@ younger 0.34301982856383184
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>training time of classifier_1:
- 0:00:03.041003
+ 0:00:03.140177
 
 predicting time of classifier_1:
- 0:00:00.281821
+ 0:00:00.305300
 
 prediction:
  [1 0 1 ... 1 1 1]
@@ -13893,7 +14156,7 @@ avg / total       0.64      0.68      0.66      1440
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train</span>
@@ -13940,10 +14203,10 @@ avg / total       0.64      0.68      0.66      1440
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>training time of classifier_2:
- 0:00:02.940025
+ 0:00:03.347528
 
 predicting time of classifier_2:
- 0:00:00.320138
+ 0:00:00.328910
 
 prediction:
  [1 1 1 ... 1 1 1]
@@ -13993,7 +14256,7 @@ avg / total       0.57      0.75      0.65      1440
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train</span>
@@ -14040,10 +14303,10 @@ avg / total       0.57      0.75      0.65      1440
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>training time of classifier_3:
- 0:00:00.192710
+ 0:00:00.197980
 
 predicting time of classifier_3:
- 0:00:00.011933
+ 0:00:00.012915
 
 prediction:
  [1 1 1 ... 1 1 1]
@@ -14081,7 +14344,7 @@ avg / total       0.62      0.74      0.65      1440
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train</span>
@@ -14128,10 +14391,10 @@ avg / total       0.62      0.74      0.65      1440
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>training time of classifier_4:
- 0:00:00.663252
+ 0:00:00.668211
 
 predicting time of classifier_4:
- 0:00:00.026897
+ 0:00:00.024933
 
 prediction:
  [1 1 1 ... 1 1 1]
@@ -14181,7 +14444,7 @@ avg / total       0.57      0.75      0.65      1440
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train</span>
@@ -14228,29 +14491,29 @@ avg / total       0.57      0.75      0.65      1440
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>training time of classifier_5:
- 0:00:00.229359
+ 0:00:00.142833
 
 predicting time of classifier_5:
- 0:00:00.013967
+ 0:00:00.021214
 
 prediction:
- [0 1 1 ... 1 1 1]
+ [1 1 1 ... 1 1 1]
 true:
  [1 0 1 ... 0 0 1]
 
 Confusion Matrix:
-[[ 61 293]
- [116 970]]
+[[ 60 294]
+ [ 99 987]]
 
-Accuracy Score: 0.7159722222222222
+Accuracy Score: 0.7270833333333333
 
 Report:
              precision    recall  f1-score   support
 
-          0       0.34      0.17      0.23       354
-          1       0.77      0.89      0.83      1086
+          0       0.38      0.17      0.23       354
+          1       0.77      0.91      0.83      1086
 
-avg / total       0.66      0.72      0.68      1440
+avg / total       0.67      0.73      0.69      1440
 
 </pre>
 </div>
@@ -14269,7 +14532,7 @@ avg / total       0.66      0.72      0.68      1440
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train</span>
@@ -14316,10 +14579,10 @@ avg / total       0.66      0.72      0.68      1440
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>training time of classifier_6:
- 0:00:00.652255
+ 0:00:00.492675
 
 predicting time of classifier_6:
- 0:00:00.025929
+ 0:00:00.015674
 
 prediction:
  [1 1 1 ... 1 1 1]
@@ -14356,6 +14619,208 @@ avg / total       0.57      0.75      0.65      1440
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="7.-logistic-regression-on-hashed-tf-idf-data">7. logistic regression on hashed tf-idf data<a class="anchor-link" href="#7.-logistic-regression-on-hashed-tf-idf-data">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">classifier_7</span> <span class="o">=</span> <span class="n">model_1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">SC_train_tfidf_hashed_matrix</span><span class="p">,</span> <span class="n">SC_train_stars_binary</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;training time of classifier_7:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># predict</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">pred_7</span> <span class="o">=</span> <span class="n">classifier_7</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">SC_validation_tfidf_hashed_matrix</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;predicting time of classifier_7:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># result</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;prediction:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pred_7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;true:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">SC_validation_stars_binary</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># confusion matrix</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Confusion Matrix:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">SC_validation_stars_binary</span><span class="p">),</span> <span class="n">pred_7</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy Score:&quot;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">SC_validation_stars_binary</span><span class="p">),</span> <span class="n">pred_7</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Report:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">SC_validation_stars_binary</span><span class="p">),</span> <span class="n">pred_7</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>training time of classifier_7:
+ 0:00:00.047459
+
+predicting time of classifier_7:
+ 0:00:00
+
+prediction:
+ [1 0 1 ... 0 1 1]
+true:
+ [1 0 1 ... 0 0 1]
+
+Confusion Matrix:
+[[ 142  212]
+ [  71 1015]]
+
+Accuracy Score: 0.8034722222222223
+
+Report:
+             precision    recall  f1-score   support
+
+          0       0.67      0.40      0.50       354
+          1       0.83      0.93      0.88      1086
+
+avg / total       0.79      0.80      0.79      1440
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="8.-random-forest-on-hashed-ft-idf-data">8. random forest on hashed ft-idf data<a class="anchor-link" href="#8.-random-forest-on-hashed-ft-idf-data">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">classifier_8</span> <span class="o">=</span> <span class="n">model_2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">SC_train_tfidf_hashed_matrix</span><span class="p">,</span> <span class="n">SC_train_stars_binary</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;training time of classifier_8:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># predict</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">pred_8</span> <span class="o">=</span> <span class="n">classifier_8</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">SC_validation_tfidf_hashed_matrix</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;predicting time of classifier_8:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># result</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;prediction:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pred_8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;true:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">SC_validation_stars_binary</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># confusion matrix</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Confusion Matrix:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">SC_validation_stars_binary</span><span class="p">),</span> <span class="n">pred_8</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy Score:&quot;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">SC_validation_stars_binary</span><span class="p">),</span> <span class="n">pred_8</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Report:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">SC_validation_stars_binary</span><span class="p">),</span> <span class="n">pred_8</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>training time of classifier_8:
+ 0:00:00.115904
+
+predicting time of classifier_8:
+ 0:00:00
+
+prediction:
+ [1 1 1 ... 1 1 1]
+true:
+ [1 0 1 ... 0 0 1]
+
+Confusion Matrix:
+[[   1  353]
+ [   0 1086]]
+
+Accuracy Score: 0.7548611111111111
+
+Report:
+             precision    recall  f1-score   support
+
+          0       1.00      0.00      0.01       354
+          1       0.75      1.00      0.86      1086
+
+avg / total       0.81      0.75      0.65      1440
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 
