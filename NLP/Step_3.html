@@ -14526,7 +14526,7 @@ avg / total       0.67      0.73      0.69      1440
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="6.-random-forest-on-ft-idf-data">6. random forest on ft-idf data<a class="anchor-link" href="#6.-random-forest-on-ft-idf-data">&#182;</a></h3>
+<h3 id="6.-random-forest-on-tf-idf-data">6. random forest on tf-idf data<a class="anchor-link" href="#6.-random-forest-on-tf-idf-data">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -14714,7 +14714,7 @@ avg / total       0.79      0.80      0.79      1440
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="8.-random-forest-on-hashed-ft-idf-data">8. random forest on hashed ft-idf data<a class="anchor-link" href="#8.-random-forest-on-hashed-ft-idf-data">&#182;</a></h3>
+<h3 id="8.-random-forest-on-hashed-tf-idf-data">8. random forest on hashed tf-idf data<a class="anchor-link" href="#8.-random-forest-on-hashed-tf-idf-data">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -14851,103 +14851,33 @@ avg / total       0.81      0.75      0.65      1440
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>============================</p>
+<p>Note:</p>
+<ol>
+<li>train之後predict自己，看結果，是不是有overfitting</li>
+<li>tune parameter, modify feature size<ul>
+<li>tree number</li>
+<li>tree depth</li>
+<li>C value ($\lambda$)</li>
+<li>l1, l2 penalty</li>
+<li>other...</li>
+</ul>
+</li>
+<li>sample balance (label)</li>
+<li>Gradient Boosted Tree<ul>
+<li>xgboost</li>
+<li>letgbm</li>
+</ul>
+</li>
+<li>write functions</li>
+<li>multi-class</li>
+<li>test on one-hot encoding package (<code>from sklearn.preprocessing import OneHotEncoder</code>)</li>
+</ol>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="One-Hot-Encoding">One Hot Encoding<a class="anchor-link" href="#One-Hot-Encoding">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import numpy as np</span>
-<span class="c1"># import pandas as pd</span>
-<span class="c1"># from sklearn.preprocessing import OneHotEncoder</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># enc = OneHotEncoder(handle_unknown = &quot;ignore&quot;)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># X = np.array([list(dict(ct_top5000).keys()), list(dict(ct_top5000).values())])</span>
-<span class="c1"># print(X.shape)</span>
-<span class="c1"># print(X[0][0:10])</span>
-<span class="c1"># print(X[1][0:10])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># enc.fit(X)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
