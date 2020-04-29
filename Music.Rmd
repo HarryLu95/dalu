@@ -15,13 +15,13 @@ bdi {font-size: 12px; color: black;}
 }
 </style>
 
-#Music Sheets{.tabset}
-##Summary
+# Music Sheets{.tabset}
+## Summary
 Hello! Thanks for visiting my music site!
 
 ---
 
-##Self-Arranged Music
+## Self-Arranged Music
 I use [MuseScore](https://musescore.com/dashboard) to create the music sheets. Welcome to visit [my profile](https://musescore.com/user/31617737) on MuseScore!
 
 - [Rain Butterfly](Music Sheets/MS_雨蝶.pdf)
@@ -29,7 +29,7 @@ I use [MuseScore](https://musescore.com/dashboard) to create the music sheets. W
 
 ---
 
-##Downloads
+## Downloads
 Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/), [kuroto2000](http://kuroto2000.com/), [MuseScore](https://musescore.com/dashboard), and [Scribd](https://www.scribd.com/) provides all the downloads.
 
 - [理查德克萊德曼 - 夢中的婚禮 Mariage d'Amour](Music Sheets/理查德克萊德曼-夢中的婚禮.pdf) [<bdi>original</bdi>](http://www.gangqinpu.com/html/87.htm)
@@ -134,16 +134,17 @@ Acknowledgement [虫虫钢琴](http://www.gangqinpu.com/), [kuroto2000](http://k
 
 ---
 
-##Dadebrayant
+## Dadebrayant
 [Website](https://www.dadebrayant.com/)
 
-- [A7X - A Little Piece of Heaven](Music Sheets/A_Little_Piece_of_Heaven.pdf)
-- [A7X - The Stage](Music Sheets/The_Stage.pdf)
+- [A7X - A Little Piece of Heaven](Music Sheets/A7X - A Little Piece of Heaven.pdf)
+- [A7X - The Stage](Music Sheets/A7X - The Stage.pdf)
+- [A7X - Hail To the King](Music Sheets/A7X - Hail To the King.pdf)
 
 ---
 
-#Playlist{.tabset}
-##Picked Songs
+# Playlist{.tabset}
+## Picked Songs
 <font face="Times New Roman" size=5>
 1 歌に形はないけれど (Uta ni Katachi wa Nai Keredo)
 </font>
@@ -170,7 +171,7 @@ It is a character song for Vegeta performed by **Shin Oya**.
 </br>
 </br>
 
-##1{.tabset}
+## 1{.tabset}
 <center><font face="Times New Roman" size=5>歌に形はないけれど</font></center>
 
 </br>
@@ -285,7 +286,7 @@ kagayaku hoshi ni naritai
 
 </center></font></div>
 
-###1. Piano
+### 1. Piano
 <center><iframe height="300" src="https://www.youtube.com/embed/rV70FkmXGM8?autoplay=0"></iframe></center>
 
 ---
@@ -294,7 +295,7 @@ kagayaku hoshi ni naritai
 </br>
 </br>
 
-###2. Instrumental
+### 2. Instrumental
 <center><iframe height="300" src="https://www.youtube.com/embed/XiROef7Q4xs?autoplay=0"></iframe></center>
 
 ---
@@ -303,7 +304,7 @@ kagayaku hoshi ni naritai
 </br>
 </br>
 
-###3. Vocal (Female)
+### 3. Vocal (Female)
 <center><iframe height="300" src="https://www.youtube.com/embed/Re6JJ_njYR4?autoplay=0"></iframe></center>
 
 ---
@@ -312,7 +313,7 @@ kagayaku hoshi ni naritai
 </br>
 </br>
 
-###4. Vocal (Male)
+### 4. Vocal (Male)
 <center><iframe height="300" src="https://www.youtube.com/embed/oAgI773mFT4?autoplay=0"></iframe></center>
 
 ---
@@ -321,7 +322,7 @@ kagayaku hoshi ni naritai
 </br>
 </br>
 
-###5. Music Video
+### 5. Music Video
 <font face="Times New Roman" size=5>
 
 - [雖然歌聲沒有形狀](http://v.yinyuetai.com/video/2125040), Yinyuetai
@@ -347,7 +348,7 @@ kagayaku hoshi ni naritai
 </br>
 </br>
 
-##2{.tabset}
+## 2{.tabset}
 <center><font face="Times New Roman" size=5>愛はバラードのように～ベジータのテーマ～</font></center>
 
 </br>
