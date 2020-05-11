@@ -26,6 +26,7 @@ I use [MuseScore](https://musescore.com/dashboard) to create the music sheets. W
 
 - [Rain Butterfly](Music Sheets/MS_雨蝶.pdf)
 - [Time to Say Goodbye](Music Sheets/MS_Time_To_Say_Goodbye.pdf)
+- [美麗拍檔](Music Sheets/美麗拍檔.pdf)
 
 ---
 
