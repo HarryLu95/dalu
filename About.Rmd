@@ -6,7 +6,11 @@ output: html_document
 
 </style>
 
+
+
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
+
+
 
 <div class="about-contact">
 <font face="Baskerville Old Face" color=black size=6>Contact</font>
@@ -23,12 +27,14 @@ output: html_document
 
 <div class="about-content">
 
-#(I) Educational Background
+
+
+# (I) Educational Background
 <font face="Times New Roman" color=black size=4>
 
 - **Graduate**
     - Cornell University, NY, USA
-    - August 2018 - Present
+    - August 2018 - May 2019
     - <i class="fa fa-hand-o-right"></i> &nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Cornell_Logo.png" width="75">](https://www.cornell.edu/)
     - MPS in Applied Statistics
 - **Undergraduate**
@@ -47,9 +53,14 @@ output: html_document
 
 </font>
 
-#(II) Professional Background
+# (II) Professional Background
 <font face="Times New Roman" color=black size=4>
 
+- **Citigroup, Inc.**
+    - **Data Analyst** @ Compliance Department
+    - October 2019 - Present
+    - New York, NY, United States
+    - <i class="fa fa-hand-o-right"></i>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Citi_Logo.png" width="125">](https://www.citigroup.com/citi/)
 - **Crane Management Service, Inc.**
     - **Statistical Analyst of Marketing**
     - March 2018 - August 2018
@@ -87,7 +98,7 @@ output: html_document
 
 </font>
 
-#(III) Skills
+# (III) Skills
 <font face="Times New Roman" color=black size=4>
 
 - **Languages**: Mandarin, English
@@ -97,7 +108,7 @@ output: html_document
 
 </font>
 
-#(IV) Hobby
+# (IV) Hobby
 <font face="Times New Roman" color=black size=4>
 
 - Sports: Swimming, Running, Cycling, Skating, Volleyball, Ping Pong, Billiards, Chess, Yoga, etc.

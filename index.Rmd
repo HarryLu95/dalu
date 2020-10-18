@@ -10,79 +10,65 @@ p {font-family: Times New Roman; color: black; font-size: 24px; text-align: just
 
 My name is Harry Lu. I am from Beijing, China.
 
-Currently I am a master student in Applied Statistics at Cornell University in Ithaca, New York.
+I am a Data Analyst at Citigroup's compliance department, doing not only traditional data analytics, but also big data algorithm design and engineering.
 
-I learned to program in R and to use RStudio during my undergraduate study. During my internships at *Fishmarket* and *Crane Management Services*, I used R to clean, to analyze, to visualize (e.g. 'ggplot2', 'ggmap', 'shiny') and to forecast complex data and to distill complex data to make it easier for others to understand. I made sensible interpretations of the result, solve business problems and help clients or manager make better decisions.
-
-Passion for applying my valuable insights, knowledge, experiences and backgrounds on jobs and daily life. Strong people skills; be able to have empathy, to listen, to negotiate, to persuade and to make useful recommendations.
+I learned to do statistical programming in R initially. At *Fishmarket* and *Crane Management Services*, I used R to clean, to analyze, to visualize (e.g. `ggplot2`, `ggmap`, `shiny`) and to forecast complex data and to distill complex data to make it easier for others to understand. Then, SAS, SQL, Python and Spark became my tools, and I could do more kinds of project with them, such as NLP, database management, report generation, dynamic website design.
 
 Welcome to take a look at my [Resume](Resume.html)!
 
 [Find out](About.html) more interesting facts on me!
 
 <script type="text/javascript">
-var caution=false
-function setCookie(name,value,expires,path,domain,secure) 
-{
- var curCookie=name+"="+escape(value) +
- ((expires)?";expires="+expires.toGMTString() : "") +
- ((path)?"; path=" + path : "") +
- ((domain)? "; domain=" + domain : "") +
- ((secure)?";secure" : "")
- if(!caution||(name + "=" + escape(value)).length <= 4000)
- {
- document.cookie = curCookie
- }
- else if(confirm("Cookie exceeds 4KB and will be cut!"))
- {
- document.cookie = curCookie
- }
+var caution = false
+function setCookie(name, value, expires, path, domain, secure) {
+  var curCookie = name + "=" + escape(value) +
+                  ((expires)?"; expires=" + expires.toGMTString() : "") +
+                  ((path)?"; path=" + path : "") +
+                  ((domain)?"; domain=" + domain : "") +
+                  ((secure)?"; secure" : "")
+  if (!caution || (name + "=" + escape(value)).length <= 4000) {
+    document.cookie = curCookie
+  }
+  else if(confirm("Cookie exceeds 4KB and will be cut!")) {
+    document.cookie = curCookie
+  }
 }
-function getCookie(name) 
-{
- var prefix = name + "="
- var cookieStartIndex = document.cookie.indexOf(prefix)
- if (cookieStartIndex == -1)
- {
- return null
- }    
- var cookieEndIndex=document.cookie.indexOf(";",cookieStartIndex+prefix.length)
- if(cookieEndIndex == -1)
- {
- cookieEndIndex = document.cookie.length
- }
- return unescape(document.cookie.substring(cookieStartIndex+prefix.length,cookieEndIndex))
+function getCookie(name) {
+  var prefix = name + "="
+  var cookieStartIndex = document.cookie.indexOf(prefix)
+  if (cookieStartIndex == -1) {
+    return null
+  }    
+  var cookieEndIndex=document.cookie.indexOf(";", cookieStartIndex + prefix.length)
+  if(cookieEndIndex == -1) {
+    cookieEndIndex = document.cookie.length
+  }
+  return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex))
 }
-function deleteCookie(name, path, domain) 
-{
- if(getCookie(name)) 
- {
- document.cookie = name + "=" + 
- ((path) ? "; path=" + path : "") +
- ((domain) ? "; domain=" + domain : "") +
- "; expires=Thu, 01-Jan-70 00:00:01 GMT"
- }
+function deleteCookie(name, path, domain) {
+  if(getCookie(name)) {
+    document.cookie = name + "=" +
+                      ((path)?"; path=" + path : "") +
+                      ((domain)?"; domain=" + domain : "") +
+                      "; expires=Thu, 01-Jan-70 00:00:01 GMT"
+  }
 }
-function fixDate(date) 
-{
- var base=new Date(0)
- var skew=base.getTime()
- if(skew>0)
- {
- date.setTime(date.getTime()-skew)
- }    
+function fixDate(date) {
+  var base = new Date(0)
+  var skew = base.getTime()
+  if(skew > 0) {
+    date.setTime(date.getTime() - skew)
+  }    
 }
-var now=new Date()
+var now = new Date()
 fixDate(now)
-now.setTime(now.getTime()+365 * 24 * 60 * 60 * 1000)
+now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000)
 var visits = getCookie("counter")
-if(!visits)
-{
- visits=1;
+if(!visits) {
+  visits = 1;
 }  
-else
-{
- visits=parseInt(visits)+1;
+else {
+  visits = parseInt(visits) + 1;
 }  
 setCookie("counter", visits, now)
 document.write("Number of Visit: " + visits)
