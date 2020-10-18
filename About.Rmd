@@ -3,64 +3,60 @@ title: "About Me"
 output: html_document
 ---
 <style>
-
+ul {font-family: Times New Roman; color: black; font-size: 18px; text-align: justify;}
 </style>
 
 
 
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
 
+```{r,echo = FALSE, message = FALSE, warning = FALSE}
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
 
+---
 
 <div class="about-contact">
-<font face="Baskerville Old Face" color=black size=6>Contact</font>
 
-<font face="Times New Roman" color=black size=4>
+# Contact
+- <i class="fas fa-envelope-square"></i> lvda_1\@163.com
+- [<i class="fab fa-github-square"></i> Github](https://github.com/HarryLu95)
+- [<i class="fab fa-linkedin"></i> LinkedIn](https://www.linkedin.com/in/dalu0511/)
+- [<i class="fas fa-file"></i> **RESUME**](Resume.html)
 
-- Email: lvda_1\@163.com
-- [Github](https://github.com/HarryLu95)
-- [LinkedIn](https://www.linkedin.com/in/dalu0511/)
-- <font size=5>[**RESUME**](Resume.html)</font>
-
-</font>
 </div>
+
+
 
 <div class="about-content">
 
-
-
-# (I) Educational Background
-<font face="Times New Roman" color=black size=4>
-
-- **Graduate**
+# <i class="fas fa-graduation-cap"></i> Educational Background
+- <i class="fas fa-university"></i> **Graduate**
     - Cornell University, NY, USA
     - August 2018 - May 2019
     - <i class="fa fa-hand-o-right"></i> &nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Cornell_Logo.png" width="75">](https://www.cornell.edu/)
-    - MPS in Applied Statistics
-- **Undergraduate**
+    - Master's in Applied Statistics
+- <i class="fas fa-university"></i> **Undergraduate**
     - University of Massachusetts Amherst, MA, USA
     - September 2013 - May 2017
     - <i class="fa fa-hand-o-right"></i> &nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/UMA_Logo.png" width="75">](http://www.umass.edu/)
     - Bachelor of Science in Mathematics
-- **High School**
+    - Minor in Chemistry
+- <i class="fas fa-school"></i> **High School**
     - International Department, Beijing National Day School (BNDS), Beijing, China
     - September 2010 - July 2013
     - <i class="fa fa-hand-o-right"></i> [<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/BNDS_Logo.png" width="100">](http://www.bndsedu.com/)
-- **Middle School**
+- <i class="fas fa-school"></i> **Middle School**
     - The Experimental High School Attached Beijing Normal University (ESBNU), Beijing, China
     - September 2007 - July 2010
     - <i class="fa fa-hand-o-right"></i> &nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/SDSZ_Logo.png" width="75">](http://www.sdsz.com.cn/item/list.asp?id=1635)
 
-</font>
-
-# (II) Professional Background
-<font face="Times New Roman" color=black size=4>
-
+# <i class="fas fa-briefcase"></i> Professional Background
 - **Citigroup, Inc.**
     - **Data Analyst** @ Compliance Department
     - October 2019 - Present
     - New York, NY, United States
-    - <i class="fa fa-hand-o-right"></i>[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Citi_Logo.png" width="125">](https://www.citigroup.com/citi/)
+    - <i class="fa fa-hand-o-right"></i> &nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Citi_Logo.png" width="75">](https://www.citigroup.com/citi/)
 - **Crane Management Service, Inc.**
     - **Statistical Analyst of Marketing**
     - March 2018 - August 2018
@@ -94,27 +90,16 @@ output: html_document
     - June 2014 - July 2014
     - Beijing, China
     - <i class="fa fa-hand-o-right"></i> [<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/PengHua_Logo.jpg" width="75">](https://www.phfund.com.cn/web/en/index)
-- [Come to visit my LinkedIn! <i class="fa fa-linkedin-square" aria-hidden="true"></i>](https://www.linkedin.com/in/dalu0511/)
 
-</font>
-
-# (III) Skills
-<font face="Times New Roman" color=black size=4>
-
+# Skills
 - **Languages**: Mandarin, English
-- **Computer Languages**: [R](https://www.r-project.org/), SAS, SQL, Python, Markdown, HTML, CSS, Java, Git Bash
-- **Computer Software**: [RStudio](https://www.rstudio.com/), Eclipse Java, Microsoft Excel, Microsoft Word, Microsoft PowerPoint, Adobe Photoshop, Tableau (future), Hadoop (Future), [Analyzing Digital Images](http://www.umassk12.net/adi/)
-- [Come to visit my GitHub! <i class="fa fa-github" aria-hidden="true"></i>](https://github.com/HarryLu95)
+- **Computer Languages**: [R](https://www.r-project.org/), Python, SAS, Hive, SQL, Markdown, HTML, CSS, Java, Bash
+- **Software / Environment**: [RStudio](https://www.rstudio.com/), Jupyter Notebook, Hadoop Hue, Hadoop, Tectia, Unix, Git Bash, Eclipse Java, Microsoft Excel, Microsoft Word, Microsoft PowerPoint, Adobe Photoshop, Sisense, [Analyzing Digital Images](http://www.umassk12.net/adi/)
 
-</font>
-
-# (IV) Hobby
-<font face="Times New Roman" color=black size=4>
-
-- Sports: Swimming, Running, Cycling, Skating, Volleyball, Ping Pong, Billiards, Chess, Yoga, etc.
+# Hobby
+- Sports: <i class="fas fa-swimmer"></i>, Running, Biking, Skating, Volleyball, <i class="fas fa-table-tennis"></i>, Billiards, <i class="fas fa-chess"></i>, Yoga, etc.
 - Musical Instruments: Piano, Keyboard, Oboe.
 - I'm a photographer. [Come to see what I've taken!](Gallery.html)
 - I'm also a cook. I love cooking, especially Chinese food. [Come to see what I've cooked!](Gallery.html)
 
-</font>
 </div>
