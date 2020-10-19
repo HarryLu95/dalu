@@ -12,7 +12,7 @@ My name is Harry Lu. I am from Beijing, China.
 
 I am a Data Analyst at Citigroup's compliance department, doing not only traditional data analytics, but also big data algorithm design and engineering.
 
-I learned to do statistical programming in R initially. At *Fishmarket* and *Crane Management Services*, I used R to clean, to analyze, to visualize (e.g. `ggplot2`, `ggmap`, `shiny`) and to forecast complex data and to distill complex data to make it easier for others to understand. Then, SAS, SQL, Python and Spark became my tools, and I could do more kinds of project with them, such as NLP, database management, report generation, dynamic website design.
+R is the first programming language that I learned. At *Fishmarket* and *Crane Management Services*, I used R to clean, to analyze, to visualize (e.g. `ggplot2`, `ggmap`, `shiny`), to forecast and to distill complex data to make it easier for others to understand. Then, SAS, SQL, Python and Spark became my tools. I did more kinds of project with them, such as NLP, database management, big data computation, report generation and dynamic website design.
 
 Welcome to take a look at my [Resume](Resume.html)!
 
