@@ -23,6 +23,12 @@ ul.nav {
   font-family: Helvetica;
   font-size: 15px;
 }
+p {
+  font-family: Times New Roman;
+  color: black;
+  font-size: 24px;
+  text-align: justify;
+}
 /*==========================主页图标==========================*/
 #backhome a { /* back to home button */
 	position: fixed;
