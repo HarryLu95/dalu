@@ -11,7 +11,7 @@ h1 {
   font-style: normal;
   text-align: left;
 }
-h1.title {
+.title {
   font-family: Baskerville Old Face;
   font-size: 36px;
   color: black;
@@ -19,7 +19,7 @@ h1.title {
   font-style: normal;
   text-align: center;
 }
-ul.nav {
+.nav {
   font-family: Helvetica;
   font-size: 15px;
 }
@@ -38,9 +38,9 @@ p {
 	z-index: 1000;
 	background: Lavender; /* 小按钮底色 */
 	padding: 5px; /* 小按钮中文字到按钮边缘的距离 */
-	border-radius: 4px; /* 小按钮圆角的弯曲程度(半径)*/
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
+	border-radius: 4px; /* 小按钮圆角的弯曲程度(半径)*/
 	font-weight: normal; /* 小按钮中文字的粗细 */
 	text-decoration: none;
 }
@@ -58,9 +58,9 @@ p {
 	z-index: 1000;
 	background: Lavender; /* 小按钮底色 */
 	padding: 5px; /* 小按钮中文字到按钮边缘的距离 */
-	border-radius: 4px; /* 小按钮圆角的弯曲程度(半径)*/
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
+	border-radius: 4px; /* 小按钮圆角的弯曲程度(半径)*/
 	font-weight: normal; /* 小按钮中文字的粗细 */
 	text-decoration: none;
 }
@@ -77,10 +77,10 @@ p {
     position: fixed;
     width: 30%;
     top: 130px;
-    right: 0px;
+    right: 0;
   }
   .about-content {
-    margin-left: 0%;
+    margin-left: 0;
     margin-top: -20px;
     float: left;
     width: 80%;
@@ -89,10 +89,12 @@ p {
   .two-column {
     padding: 1em;
     -moz-column-count: 2;
-    -moz-column-gap: 1em;
+    -ms-column-count: 2;
     -webkit-column-count: 2;
-    -webkit-column-gap: 1em;
     column-count: 2;
+    -moz-column-gap: 1em;
+    -ms-column-gap: 1em;
+    -webkit-column-gap: 1em;
     column-gap: 1em;
   }
 }
