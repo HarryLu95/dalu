@@ -15,7 +15,7 @@ img {display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px;
 
 <div id="backhome"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div>
 
-#Extra-curricular Activities
+# Extra-curricular Activities
 - Guest Speaker at *EducationUSA*, Beijing, China.
 
 ![](Gallery/EducationUSA_2014.jpg)
