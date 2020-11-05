@@ -22,6 +22,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -32,7 +34,7 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-      </style>
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -347,22 +349,34 @@ ul {font-family: Times New Roman; font-size: 20px;}
 <li><i class="fa fa-book"></i> Research: <a href="Projects%20&amp;%20Researches/Forecasting_Stock_Value.html">Forecasting Stock Value</a></li>
 <li><i class="fa fa-book"></i> Research: <a href="Projects%20&amp;%20Researches/Arsenic_Measurement.html">Study on Measurement Method of Arsenic in Rice</a></li>
 <li><i class="fa fa-calendar-check-o"></i> Project: <a href="Projects%20&amp;%20Researches/Outlier_Detection.html">Development of General Outlier Detection Algorithm</a></li>
-<li><i class="fa fa-calendar-check-o"></i> Project: <a href="Projects%20&amp;%20Researches/Interactive_Web_App.html">Development of Interactive Web Applications and Exploration of Different Visualization Techniques using R-Shiny</a></li>
+<li><i class="fa fa-calendar-check-o"></i> Project: <a href="Projects%20&amp;%20Researches/Interactive_Web_App.html">Development of Interactive Web Applications and Exploration of Different Visualization Techniques using R-Shiny</a>
+<ul>
+<li><i class="fa fa-hand-o-right"></i> <a href="https://harrylu95.shinyapps.io/World_Facts/">App</a></li>
+</ul></li>
 <li><i class="fa fa-calendar-check-o"></i> Project: <a href="Projects%20&amp;%20Researches/Web_Data_Wrangling.html">Information Retrieval on the web and Data Wrangling</a></li>
 <li><i class="fa fa-calendar-check-o"></i> Project: <a href="Projects%20&amp;%20Researches/Bird_Breeding_Pairs.html">Statistical Analysis of Bird Breeding Pairs</a> (F-test, ANOVA, ggplot2, etc.)</li>
 </ul>
 </div>
-<div id="after-graduation" class="section level1">
-<h1>After Graduation</h1>
+<div id="after-umass" class="section level1">
+<h1>After UMass</h1>
 <ul>
 <li><i class="fa fa-book"></i> Research: <a href="Projects%20&amp;%20Researches/Amazon_s_Secret.html">Are Customer Review Scores Influencing Sale Rankings? A Study on Amazon Best Sellers</a></li>
-<li><i class="fa fa-calendar-check-o"></i> Project: NLP Analysis on Yelp Dataset Challenge</li>
 </ul>
 </div>
 <div id="at-cornell-university" class="section level1">
 <h1>At Cornell University</h1>
 <ul>
-<li>.</li>
+<li><i class="fa fa-calendar-check-o"></i> Project: Forecasting House Price Index</li>
+</ul>
+</div>
+<div id="after-cornell" class="section level1">
+<h1>After Cornell</h1>
+<ul>
+<li><i class="fa fa-calendar-check-o"></i> Project: Development of Shiny Application on Real Time Financial Data
+<ul>
+<li><i class="fa fa-hand-o-right"></i> <a href="https://harrylu95.shinyapps.io/Yahoo_Finance_Data_v1/">App</a></li>
+</ul></li>
+<li><i class="fa fa-calendar-check-o"></i> Project: NLP Analysis on Yelp Dataset Challenge</li>
 </ul>
 </div>
 
@@ -375,7 +389,7 @@ ul {font-family: Times New Roman; font-size: 20px;}
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

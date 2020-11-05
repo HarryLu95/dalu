@@ -18,12 +18,18 @@ ul {font-family: Times New Roman; font-size: 20px;}
 - <i class="fa fa-book"></i> Research: [Study on Measurement Method of Arsenic in Rice](Projects & Researches/Arsenic_Measurement.html)
 - <i class="fa fa-calendar-check-o"></i> Project: [Development of General Outlier Detection Algorithm](Projects & Researches/Outlier_Detection.html)
 - <i class="fa fa-calendar-check-o"></i> Project: [Development of Interactive Web Applications and Exploration of Different Visualization Techniques using R-Shiny](Projects & Researches/Interactive_Web_App.html)
+    - <i class="fa fa-hand-o-right"></i> [App](https://harrylu95.shinyapps.io/World_Facts/)
 - <i class="fa fa-calendar-check-o"></i> Project: [Information Retrieval on the web and Data Wrangling](Projects & Researches/Web_Data_Wrangling.html)
 - <i class="fa fa-calendar-check-o"></i> Project: [Statistical Analysis of Bird Breeding Pairs](Projects & Researches/Bird_Breeding_Pairs.html) (F-test, ANOVA, ggplot2, etc.)
 
-# After Graduation
+# After UMass
 - <i class="fa fa-book"></i> Research: [Are Customer Review Scores Influencing Sale Rankings? A Study on Amazon Best Sellers](Projects & Researches/Amazon_s_Secret.html)
-- <i class="fa fa-calendar-check-o"></i> Project: NLP Analysis on Yelp Dataset Challenge
 
 # At Cornell University
-- .
+- <i class="fa fa-calendar-check-o"></i> Project: Forecasting House Price Index
+
+# After Cornell
+- <i class="fa fa-calendar-check-o"></i> Project: Development of Shiny Application on Real Time Financial Data
+    - <i class="fa fa-hand-o-right"></i> [App](https://harrylu95.shinyapps.io/Yahoo_Finance_Data_v1/)
+- <i class="fa fa-calendar-check-o"></i> Project: NLP Analysis on Yelp Dataset Challenge
+
