@@ -5,9 +5,9 @@ account: harrylu95
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 295643
-bundleId: 3824305
+bundleId: 3826362
 url: https://harrylu95.shinyapps.io/World_Facts/
-when: 1604590463.10369
+when: 1604637456.75761
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: Amazon_s_Secret.html|Arsenic_1.html|Arsenic_2.html|Arsenic_3.html|Arsenic_4.html|Arsenic_5.html|Arsenic_Measurement.html|Bird_Breeding_Pairs.html|Forecasting_Stock_Value.html|Interactive_Web_App.html|Outlier_Detection.html|Web_Data_Wrangling.html
