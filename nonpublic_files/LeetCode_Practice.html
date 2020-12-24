@@ -2241,7 +2241,7 @@ test_27_2</code></pre>
 <hr />
 </div>
 <div id="implement-strstr" class="section level3">
-<h3>28. Implement <code>strStr()</code></h3>
+<h3>(28.) Implement <code>strStr()</code></h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/implement-strstr/" class="uri">https://leetcode.com/problems/implement-strstr/</a></li>
 <li>Implement <a href="http://www.cplusplus.com/reference/cstring/strstr/"><code>strStr()</code></a>.</li>
@@ -2278,21 +2278,29 @@ Output: 0</code></pre>
     def strStr(self, haystack, needle):
         if len(needle) == 0:
             return 0
+        l = len(needle)
+        for i in range(0, len(haystack) - l + 1):
+            curr_window = haystack[i:(i+l)]
+            if curr_window == needle:
+                return i
         return -1
 test_28 = Solution_28()</code></pre>
 <pre class="python"><code>test_28_1 = test_28.strStr(&quot;hello&quot;, &quot;ll&quot;)
 test_28_1</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>2</code></pre>
 <pre class="python"><code>test_28_2 = test_28.strStr(&quot;aaaaa&quot;, &quot;bba&quot;)
 test_28_2</code></pre>
 <pre><code>-1</code></pre>
 <pre class="python"><code>test_28_3 = test_28.strStr(&quot;&quot;, &quot;&quot;)
 test_28_3</code></pre>
 <pre><code>0</code></pre>
+<pre class="python"><code>test_28_4 = test_28.strStr(&quot;a&quot;, &quot;a&quot;)
+test_28_4</code></pre>
+<pre><code>0</code></pre>
 <hr />
 </div>
 <div id="search-insert-position" class="section level3">
-<h3>35. Search Insert Position</h3>
+<h3>(35.) Search Insert Position</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/search-insert-position/" class="uri">https://leetcode.com/problems/search-insert-position/</a></li>
 <li>Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</li>
@@ -2333,28 +2341,34 @@ Output: 0</code></pre>
     def searchInsert(self, nums: List[int], target: int) -&gt; int:</code></pre>
 <pre class="python"><code>class Solution_35:
     def searchInsert(self, nums, target):
-        return -1
+        if target &gt; nums[-1]:
+            return len(nums)
+        for i in range(len(nums)):
+            curr_num = nums[i]
+            if curr_num &lt; target:
+                continue
+            return i
 
 test_35 = Solution_35()</code></pre>
 <pre class="python"><code>test_35_1 = test_35.searchInsert([1,3,5,6], 5)
 test_35_1</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>2</code></pre>
 <pre class="python"><code>test_35_2 = test_35.searchInsert([1,3,5,6], 2)
 test_35_2</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>1</code></pre>
 <pre class="python"><code>test_35_3 = test_35.searchInsert([1,3,5,6], 7)
 test_35_3</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>4</code></pre>
 <pre class="python"><code>test_35_4 = test_35.searchInsert([1,3,5,6], 0)
 test_35_4</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>0</code></pre>
 <pre class="python"><code>test_35_5 = test_35.searchInsert([1], 0)
 test_35_5</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>0</code></pre>
 <hr />
 </div>
 <div id="count-and-say" class="section level3">
-<h3>38. Count and Say</h3>
+<h3>(38.) Count and Say</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/count-and-say/" class="uri">https://leetcode.com/problems/count-and-say/</a></li>
 <li>The <strong>count-and-say</strong> sequence is a sequence of digit strings defined by the recursive formula:
@@ -2396,15 +2410,34 @@ countAndSay(4) = say &quot;21&quot; = one 2 + one 1 = &quot;12&quot; + &quot;11&
     def countAndSay(self, n: int) -&gt; str:</code></pre>
 <pre class="python"><code>class Solution_38:
     def countAndSay(self, n):
-        return -1
+        def convert(input_string):
+            output = &quot;&quot;
+            curr_digit = input_string[0]
+            curr_count = 1
+            for i in range(1, len(input_string)):
+                if curr_digit == input_string[i]:
+                    curr_count = curr_count + 1
+                    continue
+                output = output + str(curr_count) + str(curr_digit)
+                curr_digit = input_string[i]
+                curr_count = 1
+            output = output + str(curr_count) + str(curr_digit)
+            return output
+        result = &quot;1&quot;
+        if n == 1:
+            return result
+        while n &gt; 1:
+            result = convert(result)
+            n = n - 1
+        return result
 
 test_38 = Solution_38()</code></pre>
 <pre class="python"><code>test_38_1 = test_38.countAndSay(1)
 test_38_1</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>&#39;1&#39;</code></pre>
 <pre class="python"><code>test_38_2 = test_38.countAndSay(4)
 test_38_2</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>&#39;1211&#39;</code></pre>
 <hr />
 </div>
 <div id="maximum-subarray" class="section level3">
@@ -2478,6 +2511,64 @@ test_53_4</code></pre>
 <pre class="python"><code>test_53_5 = test_53.maxSubArray([-2147483647])
 test_53_5</code></pre>
 <pre><code>-2147483647</code></pre>
+<hr />
+</div>
+<div id="length-of-last-word" class="section level3">
+<h3>58. Length of Last Word</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/length-of-last-word/" class="uri">https://leetcode.com/problems/length-of-last-word/</a></li>
+<li>Given a string <code>s</code> consists of some words separated by spaces, return <strong>the length of the last word in the string</strong>. <strong>If the last word does not exist, return</strong> <code>0</code>.</li>
+<li>A <code>word</code> is a maximal substring consisting of non-space characters only.</li>
+<li><strong>Example 1:</strong></li>
+</ul>
+<pre><code>Input: s = &quot;Hello World&quot;
+Output: 5</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>Input: s = &quot; &quot;
+Output: 0</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10^4</code></li>
+<li><code>s</code> consists of only English letters and spaces <code>&#39; &#39;</code>.</li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def lengthOfLastWord(self, s: str) -&gt; int:</code></pre>
+<pre class="python"><code>class Solution_58:
+    def lengthOfLastWord(self, s):
+        return -1
+
+test_58 = Solution_58()</code></pre>
+<pre class="python"><code>test_58_1 = test_58.lengthOfLastWord(&quot;Hello World&quot;)
+test_58_1</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_58_2 = test_58.lengthOfLastWord(&quot; &quot;)
+test_58_2</code></pre>
+<pre><code>-1</code></pre>
+<hr />
+</div>
+<div id="plus-one" class="section level3">
+<h3>66. Plus One</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/plus-one/" class="uri">https://leetcode.com/problems/plus-one/</a></li>
+</ul>
+<hr />
+</div>
+<div id="add-binary" class="section level3">
+<h3>67. Add Binary</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/add-binary/" class="uri">https://leetcode.com/problems/add-binary/</a></li>
+</ul>
+<hr />
+</div>
+<div id="sqrtx" class="section level3">
+<h3>69. <code>Sqrt(x)</code></h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/sqrtx/" class="uri">https://leetcode.com/problems/sqrtx/</a></li>
+</ul>
 <hr />
 </div>
 <div id="climbing-stairs" class="section level3">
