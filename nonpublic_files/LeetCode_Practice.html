@@ -2176,17 +2176,235 @@ test_26_2</code></pre>
 <hr />
 </div>
 <div id="remove-element" class="section level3">
-<h3>27. Remove Element</h3>
+<h3>(27.) Remove Element</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/remove-element/" class="uri">https://leetcode.com/problems/remove-element/</a></li>
+<li>Given an array <code>nums</code> and a value <code>val</code>, remove all instances of that value <strong>in-place</strong> and return the new length.</li>
+<li>Do not allocate extra space for another array, you must do this by <strong>modifying the input array in-place</strong> with <code>O(1)</code> extra memory.</li>
+<li>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</li>
+<li><strong>Clarification:</strong>
+<ul>
+<li>Confused why the returned value is an integer but your answer is an array?</li>
+<li>Note that the input array is passed in by <strong>reference</strong>, which means a modification to the input array will be known to the caller as well.</li>
+<li>Internally you can think of this:</li>
+</ul></li>
 </ul>
+<pre><code>// nums is passed in by reference. (i.e., without making a copy)
+int len = removeElement(nums, val);
+
+// any modification to nums in your function would be known by the caller.
+// using the length returned by your function, it prints the first len elements.
+for (int i = 0; i &lt; len; i++) {
+    print(nums[i]);
+}</code></pre>
+<ul>
+<li><strong>Example 1:</strong></li>
+</ul>
+<pre><code>Input: nums = [3,2,2,3], val = 3
+Output: 2, nums = [2,2]
+Explanation: Your function should return length = 2, with the first two elements of nums being 2.
+It doesn&#39;t matter what you leave beyond the returned length. For example if you return 2 with nums = [2,2,3,3] or nums = [2,2,0,0], your answer will be accepted.</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>Input: nums = [0,1,2,2,3,0,4,2], val = 2
+Output: 5, nums = [0,1,4,0,3]
+Explanation: Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4. Note that the order of those five elements can be arbitrary. It doesn&#39;t matter what values are set beyond the returned length.</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li><code>0 &lt;= nums.length &lt;= 100</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 50</code></li>
+<li><code>0 &lt;= val &lt;= 100</code></li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def removeElement(self, nums: List[int], val: int) -&gt; int:</code></pre>
+<pre class="python"><code>class Solution_27:
+    def removeElement(self, nums, val):
+        slow = 0
+        for fast in range(len(nums)):
+            if nums[fast] == val:
+                continue
+            nums[slow], nums[fast] = nums[fast], nums[slow]
+            slow = slow + 1
+        output_nums = nums[:slow]
+        return len(output_nums)
+
+test_27 = Solution_27()</code></pre>
+<pre class="python"><code>test_27_1 = test_27.removeElement([3,2,2,3], 3)
+test_27_1</code></pre>
+<pre><code>2</code></pre>
+<pre class="python"><code>test_27_2 = test_27.removeElement([0,1,2,2,3,0,4,2], 2)
+test_27_2</code></pre>
+<pre><code>5</code></pre>
 <hr />
 </div>
 <div id="implement-strstr" class="section level3">
-<h3>28. Implement strStr()</h3>
+<h3>28. Implement <code>strStr()</code></h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/implement-strstr/" class="uri">https://leetcode.com/problems/implement-strstr/</a></li>
+<li>Implement <a href="http://www.cplusplus.com/reference/cstring/strstr/"><code>strStr()</code></a>.</li>
+<li>Return the index of the first occurrence of needle in haystack, or <code>-1</code> if <code>needle</code> is not part of <code>haystack</code>.</li>
+<li><strong>Clarification:</strong>
+<ul>
+<li>What should we return when <code>needle</code> is an empty string? This is a great question to ask during an interview.</li>
+<li>For the purpose of this problem, we will return 0 when <code>needle</code> is an empty string. This is consistent to C’s <code>strstr()</code> and Java’s <code>indexOf()</code>.</li>
+</ul></li>
+<li><strong>Example 1:</strong></li>
 </ul>
+<pre><code>Input: haystack = &quot;hello&quot;, needle = &quot;ll&quot;
+Output: 2</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>Input: haystack = &quot;aaaaa&quot;, needle = &quot;bba&quot;
+Output: -1</code></pre>
+<ul>
+<li><strong>Example 3:</strong></li>
+</ul>
+<pre><code>Input: haystack = &quot;&quot;, needle = &quot;&quot;
+Output: 0</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li><code>0 &lt;= haystack.length, needle.length &lt;= 5 * 10^4</code></li>
+<li><code>haystack</code> and <code>needle</code> consist of only lower-case English characters.</li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def strStr(self, haystack: str, needle: str) -&gt; int:</code></pre>
+<pre class="python"><code>class Solution_28:
+    def strStr(self, haystack, needle):
+        if len(needle) == 0:
+            return 0
+        return -1
+test_28 = Solution_28()</code></pre>
+<pre class="python"><code>test_28_1 = test_28.strStr(&quot;hello&quot;, &quot;ll&quot;)
+test_28_1</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_28_2 = test_28.strStr(&quot;aaaaa&quot;, &quot;bba&quot;)
+test_28_2</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_28_3 = test_28.strStr(&quot;&quot;, &quot;&quot;)
+test_28_3</code></pre>
+<pre><code>0</code></pre>
+<hr />
+</div>
+<div id="search-insert-position" class="section level3">
+<h3>35. Search Insert Position</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/search-insert-position/" class="uri">https://leetcode.com/problems/search-insert-position/</a></li>
+<li>Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</li>
+<li><strong>Example 1:</strong></li>
+</ul>
+<pre><code>Input: nums = [1,3,5,6], target = 5
+Output: 2</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>Input: nums = [1,3,5,6], target = 2
+Output: 1</code></pre>
+<ul>
+<li><strong>Example 3:</strong></li>
+</ul>
+<pre><code>Input: nums = [1,3,5,6], target = 7
+Output: 4</code></pre>
+<ul>
+<li><strong>Example 4:</strong></li>
+</ul>
+<pre><code>Input: nums = [1,3,5,6], target = 0
+Output: 0</code></pre>
+<ul>
+<li><strong>Example 5:</strong></li>
+</ul>
+<pre><code>Input: nums = [1], target = 0
+Output: 0</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10^4</code></li>
+<li><code>-10^4 &lt;= nums[i] &lt;= 10^4</code></li>
+<li><code>nums</code> contains <strong>distinct</strong> values sorted in <strong>ascending</strong> order.</li>
+<li><code>-10^4 &lt;= target &lt;= 10^4</code></li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def searchInsert(self, nums: List[int], target: int) -&gt; int:</code></pre>
+<pre class="python"><code>class Solution_35:
+    def searchInsert(self, nums, target):
+        return -1
+
+test_35 = Solution_35()</code></pre>
+<pre class="python"><code>test_35_1 = test_35.searchInsert([1,3,5,6], 5)
+test_35_1</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_35_2 = test_35.searchInsert([1,3,5,6], 2)
+test_35_2</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_35_3 = test_35.searchInsert([1,3,5,6], 7)
+test_35_3</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_35_4 = test_35.searchInsert([1,3,5,6], 0)
+test_35_4</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_35_5 = test_35.searchInsert([1], 0)
+test_35_5</code></pre>
+<pre><code>-1</code></pre>
+<hr />
+</div>
+<div id="count-and-say" class="section level3">
+<h3>38. Count and Say</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/count-and-say/" class="uri">https://leetcode.com/problems/count-and-say/</a></li>
+<li>The <strong>count-and-say</strong> sequence is a sequence of digit strings defined by the recursive formula:
+<ul>
+<li><code>countAndSay(1) = &quot;1&quot;</code></li>
+<li><code>countAndSay(n)</code> is the way you would “say” the digit string from <code>countAndSay(n-1)</code>, which is then converted into a different digit string.</li>
+</ul></li>
+<li>To determine how you “say” a digit string, split it into the <strong>minimal</strong> number of groups so that each group is a contiguous section all of the <strong>same character</strong>. Then for each group, say the number of characters, then say the character. To convert the saying into a digit string, replace the counts with a number and concatenate every saying.</li>
+<li>For example, the saying and conversion for digit string <code>&quot;3322251&quot;</code>:</li>
+</ul>
+<pre><code>&quot;3322251&quot;
+two 3&#39;s, three 2&#39;s, one 5, and one 1
+2 3 + 3 2 + 1 5 + 1 1
+&quot;23321511&quot;</code></pre>
+<ul>
+<li>Given a positive integer <code>n</code>, return the <code>n</code>-th term of the <strong>count-and-say</strong> sequence.</li>
+<li><strong>Example 1:</strong></li>
+</ul>
+<pre><code>Input: n = 1
+Output: &quot;1&quot;
+Explanation: This is the base case.</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>Input: n = 4
+Output: &quot;1211&quot;
+Explanation:
+countAndSay(1) = &quot;1&quot;
+countAndSay(2) = say &quot;1&quot; = one 1 = &quot;11&quot;
+countAndSay(3) = say &quot;11&quot; = two 1&#39;s = &quot;21&quot;
+countAndSay(4) = say &quot;21&quot; = one 2 + one 1 = &quot;12&quot; + &quot;11&quot; = &quot;1211&quot;</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li><code>1 &lt;= n &lt;= 30</code></li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def countAndSay(self, n: int) -&gt; str:</code></pre>
+<pre class="python"><code>class Solution_38:
+    def countAndSay(self, n):
+        return -1
+
+test_38 = Solution_38()</code></pre>
+<pre class="python"><code>test_38_1 = test_38.countAndSay(1)
+test_38_1</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_38_2 = test_38.countAndSay(4)
+test_38_2</code></pre>
+<pre><code>-1</code></pre>
 <hr />
 </div>
 <div id="maximum-subarray" class="section level3">
