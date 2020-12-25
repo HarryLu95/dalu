@@ -2761,6 +2761,27 @@ test_70_3</code></pre>
 <pre><code>89</code></pre>
 <hr />
 </div>
+<div id="remove-duplicates-from-sorted-list" class="section level3">
+<h3>83. Remove Duplicates from Sorted List</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/" class="uri">https://leetcode.com/problems/remove-duplicates-from-sorted-list/</a></li>
+</ul>
+<hr />
+</div>
+<div id="merge-sorted-array" class="section level3">
+<h3>88. Merge Sorted Array</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/merge-sorted-array/" class="uri">https://leetcode.com/problems/merge-sorted-array/</a></li>
+</ul>
+<hr />
+</div>
+<div id="same-tree" class="section level3">
+<h3>100. Same Tree</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/same-tree/" class="uri">https://leetcode.com/problems/same-tree/</a></li>
+</ul>
+<hr />
+</div>
 <div id="symmetric-tree" class="section level3">
 <h3>101. Symmetric Tree</h3>
 <ul>
@@ -2831,10 +2852,51 @@ Output: 1</code></pre>
 </div>
 <div id="binary-tree-level-order-traversal-ii" class="section level3">
 <h3>107. Binary Tree Level Order Traversal II</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/binary-tree-level-order-traversal-ii/" class="uri">https://leetcode.com/problems/binary-tree-level-order-traversal-ii/</a></li>
+</ul>
+<hr />
+</div>
+<div id="convert-sorted-array-to-binary-search-tree" class="section level3">
+<h3>108. Convert Sorted Array to Binary Search Tree</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/" class="uri">https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/</a></li>
+</ul>
 <hr />
 </div>
 <div id="balanced-binary-tree" class="section level3">
 <h3>110. Balanced Binary Tree</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/balanced-binary-tree/" class="uri">https://leetcode.com/problems/balanced-binary-tree/</a></li>
+</ul>
+<hr />
+</div>
+<div id="minimum-depth-of-binary-tree" class="section level3">
+<h3>111. Minimum Depth of Binary Tree</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/minimum-depth-of-binary-tree/" class="uri">https://leetcode.com/problems/minimum-depth-of-binary-tree/</a></li>
+</ul>
+<hr />
+</div>
+<div id="path-sum" class="section level3">
+<h3>112. Path Sum</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/path-sum/" class="uri">https://leetcode.com/problems/path-sum/</a></li>
+</ul>
+<hr />
+</div>
+<div id="pascals-triangle" class="section level3">
+<h3>118. Pascal’s Triangle</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/pascals-triangle/" class="uri">https://leetcode.com/problems/pascals-triangle/</a></li>
+</ul>
+<hr />
+</div>
+<div id="pascals-triangle-ii" class="section level3">
+<h3>119. Pascal’s Triangle II</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/pascals-triangle-ii/" class="uri">https://leetcode.com/problems/pascals-triangle-ii/</a></li>
+</ul>
 <hr />
 </div>
 <div id="best-time-to-buy-and-sell-stock" class="section level3">
@@ -2883,6 +2945,74 @@ test_121_1</code></pre>
 <pre class="python"><code>test_121_2 = test_121.maxProfit([7,6,4,3,1])
 test_121_2</code></pre>
 <pre><code>0</code></pre>
+<hr />
+</div>
+<div id="best-time-to-buy-and-sell-stock-ii" class="section level3">
+<h3>(122.) Best Time to Buy and Sell Stock II</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/" class="uri">https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/</a></li>
+<li>Say you have an array <code>prices</code> for which the <span class="math inline">\(i\)</span>-th element is the price of a given stock on day <span class="math inline">\(i\)</span>.</li>
+<li>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).</li>
+<li><strong>Note:</strong> You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</li>
+<li><strong>Example 1:</strong></li>
+</ul>
+<pre><code>Input: [7,1,5,3,6,4]
+Output: 7
+Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
+             Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.</code></pre>
+<p><strong>Example 2:</strong></p>
+<pre><code>Input: [1,2,3,4,5]
+Output: 4
+Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
+             Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are
+             engaging multiple transactions at the same time. You must sell before buying again.</code></pre>
+<p><strong>Example 3:</strong></p>
+<pre><code>Input: [7,6,4,3,1]
+Output: 0
+Explanation: In this case, no transaction is done, i.e. max profit = 0.</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li><code>1 &lt;= prices.length &lt;= 3 * 10 ^ 4</code></li>
+<li><code>0 &lt;= prices[i] &lt;= 10 ^ 4</code></li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def maxProfit(self, prices: List[int]) -&gt; int:</code></pre>
+<pre class="python"><code>class Solution_122:
+    def maxProfit(self, prices):
+        if len(prices) == 0:
+            return 0
+        buy = prices[0]
+        sell = prices[0]
+        profit = 0
+        for i in range(1, len(prices)):
+            if sell &gt;= prices[i]:
+                profit = profit + sell - buy
+                buy = prices[i]
+                sell = prices[i]
+            else:
+                sell = prices[i]
+        profit = profit + sell - buy
+        return profit
+
+test_122 = Solution_122()</code></pre>
+<pre class="python"><code>test_122_1 = test_122.maxProfit([7,1,5,3,6,4])
+test_122_1</code></pre>
+<pre><code>7</code></pre>
+<pre class="python"><code>test_122_2 = test_122.maxProfit([1,2,3,4,5])
+test_122_2</code></pre>
+<pre><code>4</code></pre>
+<pre class="python"><code>test_122_3 = test_122.maxProfit([7,6,4,3,1])
+test_122_3</code></pre>
+<pre><code>0</code></pre>
+<hr />
+</div>
+<div id="valid-palindrome" class="section level3">
+<h3>125. Valid Palindrome</h3>
+<ul>
+<li>Link: <a href="https://leetcode.com/problems/valid-palindrome/" class="uri">https://leetcode.com/problems/valid-palindrome/</a></li>
+</ul>
 <hr />
 </div>
 <div id="single-number" class="section level3">
