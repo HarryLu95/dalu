@@ -2599,7 +2599,7 @@ test_66_3</code></pre>
 <hr />
 </div>
 <div id="add-binary" class="section level3">
-<h3>67. Add Binary</h3>
+<h3>(67.) Add Binary</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/add-binary/" class="uri">https://leetcode.com/problems/add-binary/</a></li>
 <li>Given two binary strings <code>a</code> and <code>b</code>, return <strong>their sum as a binary string</strong>.</li>
@@ -2624,19 +2624,37 @@ Output: &quot;10101&quot;</code></pre>
     def addBinary(self, a: str, b: str) -&gt; str:</code></pre>
 <pre class="python"><code>class Solution_67:
     def addBinary(self, a, b):
-        return -1
+        def convert_2_string_to_10_value(x_str):
+            x_val = 0
+            x_len = len(x_str)
+            for i in range(x_len, 0, -1):
+                curr_digit = int(x_str[x_len - i])
+                curr_value = curr_digit * 2**(i - 1)
+                x_val = x_val + curr_value
+            return x_val
+        a_val = convert_2_string_to_10_value(a)
+        b_val = convert_2_string_to_10_value(b)
+        total_val = a_val + b_val
+        if total_val == 0:
+            return &quot;0&quot;
+        output_str = &quot;&quot;
+        while total_val &gt; 0:
+            curr_digit = total_val % 2
+            output_str = str(curr_digit) + output_str
+            total_val = total_val // 2
+        return output_str
 
 test_67 = Solution_67()</code></pre>
 <pre class="python"><code>test_67_1 = test_67.addBinary(&quot;11&quot;, &quot;1&quot;)
 test_67_1</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>&#39;100&#39;</code></pre>
 <pre class="python"><code>test_67_2 = test_67.addBinary(&quot;1010&quot;, &quot;1011&quot;)
 test_67_2</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>&#39;10101&#39;</code></pre>
 <hr />
 </div>
 <div id="sqrtx" class="section level3">
-<h3>69. <code>Sqrt(x)</code></h3>
+<h3>(69.) <code>Sqrt(x)</code></h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/sqrtx/" class="uri">https://leetcode.com/problems/sqrtx/</a></li>
 <li>Given a non-negative integer <code>x</code>, compute and return <strong>the square root</strong> of <code>x</code>.</li>
@@ -2661,15 +2679,31 @@ Explanation: The square root of 8 is 2.82842..., and since the decimal part is t
     def mySqrt(self, x: int) -&gt; int:</code></pre>
 <pre class="python"><code>class Solution_69:
     def mySqrt(self, x):
-        return -1
+        large = x
+        small = 1
+        while (large - small) &gt;= 0.00001:
+            middle_square = (small + large) * (small + large) / 4
+            if middle_square == x:
+                return int((small + large) / 2)
+            if middle_square &gt; x:
+                large = (small + large) / 2
+            if middle_square &lt; x:
+                small = (small + large) / 2
+        return int(large)
 
 test_69 = Solution_69()</code></pre>
 <pre class="python"><code>test_69_1 = test_69.mySqrt(4)
 test_69_1</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>2</code></pre>
 <pre class="python"><code>test_69_2 = test_69.mySqrt(8)
 test_69_2</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>2</code></pre>
+<pre class="python"><code>test_69_3 = test_69.mySqrt(9)
+test_69_3</code></pre>
+<pre><code>3</code></pre>
+<pre class="python"><code>test_69_4 = test_69.mySqrt(2147395599)
+test_69_4</code></pre>
+<pre><code>46339</code></pre>
 <hr />
 </div>
 <div id="climbing-stairs" class="section level3">
