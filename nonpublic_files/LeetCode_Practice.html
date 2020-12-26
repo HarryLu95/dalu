@@ -2514,7 +2514,7 @@ test_53_5</code></pre>
 <hr />
 </div>
 <div id="length-of-last-word" class="section level3">
-<h3>58. Length of Last Word</h3>
+<h3>(58.) Length of Last Word</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/length-of-last-word/" class="uri">https://leetcode.com/problems/length-of-last-word/</a></li>
 <li>Given a string <code>s</code> consists of some words separated by spaces, return <strong>the length of the last word in the string</strong>. <strong>If the last word does not exist, return</strong> <code>0</code>.</li>
@@ -2539,19 +2539,43 @@ Output: 0</code></pre>
     def lengthOfLastWord(self, s: str) -&gt; int:</code></pre>
 <pre class="python"><code>class Solution_58:
     def lengthOfLastWord(self, s):
-        return -1
+        # if s == &quot; &quot;:
+        #     return 0
+        curr_index = len(s) - 1
+        output_len = 0
+        while (curr_index &gt;= 0) &amp; (s[curr_index] == &quot; &quot;):
+            curr_index = curr_index - 1
+        while curr_index &gt;= 0:
+            if s[curr_index] != &quot; &quot;:
+                output_len = output_len + 1
+                curr_index = curr_index - 1
+                continue
+            break
+        return output_len
 
 test_58 = Solution_58()</code></pre>
 <pre class="python"><code>test_58_1 = test_58.lengthOfLastWord(&quot;Hello World&quot;)
 test_58_1</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>5</code></pre>
 <pre class="python"><code>test_58_2 = test_58.lengthOfLastWord(&quot; &quot;)
 test_58_2</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>0</code></pre>
+<pre class="python"><code>test_58_3 = test_58.lengthOfLastWord(&quot;a&quot;)
+test_58_3</code></pre>
+<pre><code>1</code></pre>
+<pre class="python"><code>test_58_4 = test_58.lengthOfLastWord(&quot;a &quot;)
+test_58_4</code></pre>
+<pre><code>1</code></pre>
+<pre class="python"><code>test_58_5 = test_58.lengthOfLastWord(&quot;b   a    &quot;)
+test_58_5</code></pre>
+<pre><code>1</code></pre>
+<pre class="python"><code>test_58_6 = test_58.lengthOfLastWord(&quot;        &quot;)
+test_58_6</code></pre>
+<pre><code>0</code></pre>
 <hr />
 </div>
 <div id="plus-one" class="section level3">
-<h3>66. Plus One</h3>
+<h3>(66.) Plus One</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/plus-one/" class="uri">https://leetcode.com/problems/plus-one/</a></li>
 <li>Given a <strong>non-empty</strong> array of decimal digits representing a non-negative integer, increment one to the integer.</li>
@@ -2584,18 +2608,42 @@ Output: [1]</code></pre>
     def plusOne(self, digits: List[int]) -&gt; List[int]:</code></pre>
 <pre class="python"><code>class Solution_66:
     def plusOne(self, digits):
-        return -1
+        curr_index = len(digits) - 1
+        if digits[curr_index] != 9:
+            digits[curr_index] = digits[curr_index] + 1
+            return digits
+        while curr_index &gt;= 1:
+            if digits[curr_index] == 9:
+                digits[curr_index] = 0
+                curr_index = curr_index - 1
+                continue
+            break
+        if digits[curr_index] == 9:
+            digits[curr_index] = 0
+            digits = [1] + digits
+            return digits
+        digits[curr_index] = digits[curr_index] + 1
+        return digits
 
 test_66 = Solution_66()</code></pre>
 <pre class="python"><code>test_66_1 = test_66.plusOne([1,2,3])
 test_66_1</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>[1, 2, 4]</code></pre>
 <pre class="python"><code>test_66_2 = test_66.plusOne([4,3,2,1])
 test_66_2</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>[4, 3, 2, 2]</code></pre>
 <pre class="python"><code>test_66_3 = test_66.plusOne([0])
 test_66_3</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>[1]</code></pre>
+<pre class="python"><code>test_66_4 = test_66.plusOne([1, 9])
+test_66_4</code></pre>
+<pre><code>[2, 0]</code></pre>
+<pre class="python"><code>test_66_5 = test_66.plusOne([9, 9])
+test_66_5</code></pre>
+<pre><code>[1, 0, 0]</code></pre>
+<pre class="python"><code>test_66_6 = test_66.plusOne([9, 8, 9])
+test_66_6</code></pre>
+<pre><code>[9, 9, 0]</code></pre>
 <hr />
 </div>
 <div id="add-binary" class="section level3">
