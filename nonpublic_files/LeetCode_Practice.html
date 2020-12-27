@@ -1645,7 +1645,7 @@ Output: [0,1]</code></pre>
     def twoSum(self, nums: List[int], target: int) -&gt; List[int]:</code></pre>
 <pre class="python"><code>class Solution_1:
     def twoSum(self, nums, target):
-        if (nums is None or len(nums) &lt; 2):
+        if (nums == None or len(nums) &lt; 2):
             return [-1, -1]
         checked_num = []
         for i in range(len(nums)):
@@ -2076,9 +2076,9 @@ Output: [0]</code></pre>
                 curr.next = ListNode(l2.val)
                 l2 = l2.next
             curr = curr.next
-        if l1 is None:
+        if l1 == None:
             curr.next = l2
-        elif l2 is None:
+        elif l2 == None:
             curr.next = l1
         return dummy.next
 
@@ -2786,9 +2786,9 @@ Explanation: There are three ways to climb to the top.
     def climbStairs(self, n: int) -&gt; int:</code></pre>
 <pre class="python"><code>class Solution_70:
     def climbStairs(self, n):
-        if n is 1:
+        if n == 1:
             return 1
-        if n is 2:
+        if n == 2:
             return 2
         prev = 1
         curr = 2
@@ -2810,7 +2810,7 @@ test_70_3</code></pre>
 <hr />
 </div>
 <div id="remove-duplicates-from-sorted-list" class="section level3">
-<h3>83. Remove Duplicates from Sorted List</h3>
+<h3>(83.) Remove Duplicates from Sorted List</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/" class="uri">https://leetcode.com/problems/remove-duplicates-from-sorted-list/</a></li>
 <li>Given a sorted linked list, delete all duplicates such that each element appear only <strong>once</strong>.</li>
@@ -2827,9 +2827,43 @@ Output: 1-&gt;2-&gt;3</code></pre>
     def deleteDuplicates(self, head: ListNode) -&gt; ListNode:</code></pre>
 <pre class="python"><code>class Solution_83:
     def deleteDuplicates(self, head):
-        return -1
+        if head == None:
+            return None
+        slow = head
+        fast = head
+        while fast.next != None:
+            fast = fast.next
+            if fast.val == slow.val:
+                continue
+            slow.next = fast
+            slow = slow.next
+        slow.next = None
+        return head
 
 test_83 = Solution_83()</code></pre>
+<pre class="python"><code>head_1 = ListNode(1)
+a_1 = ListNode(1)
+a_2 = ListNode(2)
+head_1.next = a_1
+a_1.next = a_2
+head_2 = ListNode(1)
+b_1 = ListNode(1)
+b_2 = ListNode(2)
+b_3 = ListNode(3)
+b_4 = ListNode(3)
+head_2.next = b_1
+b_1.next = b_2
+b_2.next = b_3
+b_3.next = b_4
+test_83_1 = test_83.deleteDuplicates(head_1)
+print(f&quot;{test_83_1.val}, {test_83_1.next.val}&quot;)</code></pre>
+<pre><code>1, 2</code></pre>
+<pre class="python"><code>test_83_2 = test_83.deleteDuplicates(head_2)
+print(f&quot;{test_83_2.val}, {test_83_2.next.val}, {test_83_2.next.next.val}&quot;)</code></pre>
+<pre><code>1, 2, 3</code></pre>
+<pre class="python"><code>test_83_3 = test_83.deleteDuplicates(None)
+print(f&quot;{test_83_3}&quot;)</code></pre>
+<pre><code>None</code></pre>
 <hr />
 </div>
 <div id="merge-sorted-array" class="section level3">
