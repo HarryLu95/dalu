@@ -2846,7 +2846,13 @@ a_1 = ListNode(1)
 a_2 = ListNode(2)
 head_1.next = a_1
 a_1.next = a_2
-head_2 = ListNode(1)
+test_83_1 = test_83.deleteDuplicates(head_1)
+print(f&quot;Input 1:\n  {head_1.val}-&gt;{a_1.val}-&gt;{a_2.val}\nOutput 1:\n  {test_83_1.val}-&gt;{test_83_1.next.val}&quot;)</code></pre>
+<pre><code>Input 1:
+  1-&gt;1-&gt;2
+Output 1:
+  1-&gt;2</code></pre>
+<pre class="python"><code>head_2 = ListNode(1)
 b_1 = ListNode(1)
 b_2 = ListNode(2)
 b_3 = ListNode(3)
@@ -2855,13 +2861,7 @@ head_2.next = b_1
 b_1.next = b_2
 b_2.next = b_3
 b_3.next = b_4
-test_83_1 = test_83.deleteDuplicates(head_1)
-print(f&quot;Input 1:\n  {head_1.val}-&gt;{a_1.val}-&gt;{a_2.val}\nOutput 1:\n  {test_83_1.val}-&gt;{test_83_1.next.val}&quot;)</code></pre>
-<pre><code>Input 1:
-  1-&gt;1-&gt;2
-Output 1:
-  1-&gt;2</code></pre>
-<pre class="python"><code>test_83_2 = test_83.deleteDuplicates(head_2)
+test_83_2 = test_83.deleteDuplicates(head_2)
 print(f&quot;Input 2:\n  {head_2.val}-&gt;{b_1.val}-&gt;{b_2.val}-&gt;{b_3.val}-&gt;{b_4.val}\nOutput 2:\n  {test_83_2.val}-&gt;{test_83_2.next.val}-&gt;{test_83_2.next.next.val}&quot;)</code></pre>
 <pre><code>Input 2:
   1-&gt;1-&gt;2-&gt;3-&gt;3
@@ -2876,9 +2876,76 @@ Output 3:
 <hr />
 </div>
 <div id="merge-sorted-array" class="section level3">
-<h3>88. Merge Sorted Array</h3>
+<h3>(88.) Merge Sorted Array</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/merge-sorted-array/" class="uri">https://leetcode.com/problems/merge-sorted-array/</a></li>
+<li>Given two sorted integer arrays <code>nums1</code> and <code>nums2</code>, merge <code>nums2</code> into <code>nums1</code> as one sorted array.</li>
+<li><strong>Note:</strong>
+<ul>
+<li>The number of elements initialized in <code>nums1</code> and <code>nums2</code> are <code>m</code> and <code>n</code> respectively.</li>
+<li>You may assume that <code>nums1</code> has enough space (size that is <strong>equal</strong> to <code>m + n</code>) to hold additional elements from <code>nums2</code>.</li>
+</ul></li>
+<li><strong>Example:</strong></li>
+</ul>
+<pre><code>Input:
+nums1 = [1,2,3,0,0,0], m = 3
+nums2 = [2,5,6],       n = 3
+
+Output: [1,2,2,3,5,6]</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li><code>-10^9 &lt;= nums1[i], nums2[i] &lt;= 10^9</code></li>
+<li><code>nums1.length == m + n</code></li>
+<li><code>nums2.length == n</code></li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -&gt; None:
+        &quot;&quot;&quot;
+        Do not return anything, modify nums1 in-place instead.
+        &quot;&quot;&quot;</code></pre>
+<pre class="python"><code>class Solution_88:
+    def merge(self, nums1, m, nums2, n):
+        if n == 0:
+            return nums1
+        i = 0
+        j = 0
+        while i &lt;= m - 1:
+            if nums1[i] &lt;= nums2[j]:
+                i = i + 1
+                # print(nums1, nums2, i, j)
+                continue
+            nums1[i], nums2[j] = nums2[j], nums1[i]
+            i = i + 1
+            j_temp = j
+            # print(nums1, nums2, i, j)
+            while j_temp &lt;= n - 2:
+                if nums2[j_temp] &gt; nums2[j_temp + 1]:
+                    nums2[j_temp], nums2[j_temp + 1] = nums2[j_temp + 1], nums2[j_temp]
+                    j_temp = j_temp + 1
+                    continue
+                break
+        for k in range(n):
+            nums1[m + k] = nums2[k]
+        return nums1
+
+test_88 = Solution_88()</code></pre>
+<pre class="python"><code>test_88_1 = test_88.merge([1,2,3,0,0,0], 3, [2,5,6], 3)
+test_88_1</code></pre>
+<pre><code>[1, 2, 2, 3, 5, 6]</code></pre>
+<pre class="python"><code>test_88_2 = test_88.merge([1], 1, [], 0)
+test_88_2</code></pre>
+<pre><code>[1]</code></pre>
+<pre class="python"><code>test_88_3 = test_88.merge([2, 0], 1, [1], 1)
+test_88_3</code></pre>
+<pre><code>[1, 2]</code></pre>
+<pre class="python"><code>test_88_4 = test_88.merge([4,5,6,0,0,0], 3, [1,2,3], 3)
+test_88_4</code></pre>
+<pre><code>[1, 2, 3, 4, 5, 6]</code></pre>
+<ul>
+<li>Runtime: 32 ms, faster than 87.67% of Python3 online submissions for Merge Sorted Array.</li>
+<li>Memory Usage: 14.3 MB, less than 43.61% of Python3 online submissions for Merge Sorted Array.</li>
 </ul>
 <hr />
 </div>
@@ -2886,7 +2953,83 @@ Output 3:
 <h3>100. Same Tree</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/same-tree/" class="uri">https://leetcode.com/problems/same-tree/</a></li>
+<li>Given the roots of two binary trees <code>p</code> and <code>q</code>, write a function to check if they are the same or not.</li>
+<li>Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.</li>
+<li><strong>Example 1:</strong></li>
 </ul>
+<pre><code>  1      1
+ / \    / \
+2   3  2   3
+
+Input: p = [1,2,3], q = [1,2,3]
+Output: true</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>  1      1
+ /        \
+2          2
+
+Input: p = [1,2], q = [1,null,2]
+Output: false</code></pre>
+<ul>
+<li><strong>Example 3:</strong></li>
+</ul>
+<pre><code>  1      1
+ / \    / \
+2   1  1   2
+
+Input: p = [1,2,1], q = [1,1,2]
+Output: false</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li>The number of nodes in both trees is in the range <code>[0, 100]</code>.</li>
+<li><code>-10^4 &lt;= Node.val &lt;= 10^4</code></li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def isSameTree(self, p: TreeNode, q: TreeNode) -&gt; bool:</code></pre>
+<pre class="python"><code>class Solution_100:
+    def isSameTree(self, p, q):
+        return -1
+
+test_100 = Solution_100()</code></pre>
+<pre class="python"><code>head_1 = TreeNode(1)
+a_1 = TreeNode(2)
+a_2 = TreeNode(3)
+head_1.left = a_1
+head_1.right = a_2
+head_2 = TreeNode(1)
+b_1 = TreeNode(2)
+b_2 = TreeNode(3)
+head_2.left = b_1
+head_2.right = b_2
+test_100_1 = test_100.isSameTree(head_1, head_2)
+test_100_1</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>head_3 = TreeNode(1)
+c_1 = TreeNode(2)
+head_3.left = c_1
+head_4 = TreeNode(1)
+d_1 = TreeNode(2)
+head_4.right = d_1
+test_100_2 = test_100.isSameTree(head_3, head_4)
+test_100_2</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>head_5 = TreeNode(1)
+e_1 = TreeNode(2)
+e_2 = TreeNode(1)
+head_5.left = e_1
+head_5.right = e_2
+head_6 = TreeNode(1)
+f_1 = TreeNode(1)
+f_2 = TreeNode(2)
+head_6.left = f_1
+head_6.right = f_2
+test_100_3 = test_100.isSameTree(head_5, head_6)
+test_100_3</code></pre>
+<pre><code>-1</code></pre>
 <hr />
 </div>
 <div id="symmetric-tree" class="section level3">
