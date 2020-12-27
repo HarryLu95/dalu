@@ -3069,6 +3069,39 @@ test_100_3</code></pre>
 </ul>
 <pre><code>class Solution:
     def isSymmetric(self, root: TreeNode) -&gt; bool:</code></pre>
+<pre class="python"><code>class Solution_101:
+    def isSymmetric(self, root):
+        return False
+
+test_101 = Solution_101()</code></pre>
+<pre class="python"><code>head_1 = TreeNode(1)
+a_1 = TreeNode(2)
+a_2 = TreeNode(2)
+a_3 = TreeNode(3)
+a_4 = TreeNode(4)
+a_5 = TreeNode(4)
+a_6 = TreeNode(3)
+head_1.left = a_1
+head_1.right = a_2
+a_1.left = a_3
+a_1.right = a_4
+a_2.left = a_5
+a_2.right = a_6
+test_101_1 = test_101.isSymmetric(head_1)
+test_101_1</code></pre>
+<pre><code>False</code></pre>
+<pre class="python"><code>head_2 = TreeNode(1)
+b_1 = TreeNode(2)
+b_2 = TreeNode(2)
+b_3 = TreeNode(3)
+b_4 = TreeNode(4)
+head_2.left = b_1
+head_2.right = b_2
+b_1.right = b_3
+b_2.right = b_4
+test_101_2 = test_101.isSymmetric(head_2)
+test_101_2</code></pre>
+<pre><code>False</code></pre>
 <hr />
 </div>
 <div id="maximum-depth-of-binary-tree" class="section level3">
