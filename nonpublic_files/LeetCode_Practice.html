@@ -2992,7 +2992,13 @@ Output: false</code></pre>
     def isSameTree(self, p: TreeNode, q: TreeNode) -&gt; bool:</code></pre>
 <pre class="python"><code>class Solution_100:
     def isSameTree(self, p, q):
-        return -1
+        if (p == None) | (q == None):
+            return False
+        elif p.val != q.val:
+            return False
+        # elif (p.left.val != q.left.val) | (p.right.val != q.right.val):
+        #     return False
+        return self.isSameTree(p.left, q.left) &amp; self.isSameTree(p.right, q.right)
 
 test_100 = Solution_100()</code></pre>
 <pre class="python"><code>head_1 = TreeNode(1)
@@ -3007,7 +3013,7 @@ head_2.left = b_1
 head_2.right = b_2
 test_100_1 = test_100.isSameTree(head_1, head_2)
 test_100_1</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>False</code></pre>
 <pre class="python"><code>head_3 = TreeNode(1)
 c_1 = TreeNode(2)
 head_3.left = c_1
@@ -3016,7 +3022,7 @@ d_1 = TreeNode(2)
 head_4.right = d_1
 test_100_2 = test_100.isSameTree(head_3, head_4)
 test_100_2</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>False</code></pre>
 <pre class="python"><code>head_5 = TreeNode(1)
 e_1 = TreeNode(2)
 e_2 = TreeNode(1)
@@ -3029,7 +3035,7 @@ head_6.left = f_1
 head_6.right = f_2
 test_100_3 = test_100.isSameTree(head_5, head_6)
 test_100_3</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>False</code></pre>
 <hr />
 </div>
 <div id="symmetric-tree" class="section level3">
