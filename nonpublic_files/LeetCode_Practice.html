@@ -1595,6 +1595,7 @@ ul {font-size: 16px; color: black;}
 <div id="algorithms" class="section level1">
 <h1>1. Algorithms</h1>
 <pre class="python"><code>from collections import Counter
+import string
 
 # Definition for singly-linked list.
 class ListNode:
@@ -3467,7 +3468,7 @@ test_122_3</code></pre>
 <hr />
 </div>
 <div id="valid-palindrome" class="section level3">
-<h3>125. Valid Palindrome</h3>
+<h3>(125.) Valid Palindrome</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/valid-palindrome/" class="uri">https://leetcode.com/problems/valid-palindrome/</a></li>
 <li>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</li>
@@ -3489,6 +3490,43 @@ Output: false</code></pre>
 </ul>
 <pre><code>class Solution:
     def isPalindrome(self, s: str) -&gt; bool:</code></pre>
+<pre class="python"><code>class Solution_125:
+    def isPalindrome(self, s):
+        valid_char = string.ascii_lowercase + string.digits
+        left_index = 0
+        right_index = len(s) - 1
+        while left_index &lt; right_index:
+            while (left_index &lt; len(s) - 1) &amp; (s[left_index].lower() not in valid_char):
+                left_index = left_index + 1
+            if left_index == len(s) - 1:
+                return True
+            while (right_index &gt; 0) &amp; (s[right_index].lower() not in valid_char):
+                right_index = right_index - 1
+            left_val = s[left_index].lower()
+            right_val = s[right_index].lower()
+            # print(left_index, left_val, right_index, right_val)
+            if left_val == right_val:
+                left_index = left_index + 1
+                right_index = right_index - 1
+                continue
+            return False
+        return True
+
+test_125 = Solution_125()</code></pre>
+<pre class="python"><code>string.digits</code></pre>
+<pre><code>&#39;0123456789&#39;</code></pre>
+<pre class="python"><code>test_125_1 = test_125.isPalindrome(&quot;A man, a plan, a canal: Panama&quot;)
+test_125_1</code></pre>
+<pre><code>True</code></pre>
+<pre class="python"><code>test_125_2 = test_125.isPalindrome(&quot;race a car&quot;)
+test_125_2</code></pre>
+<pre><code>False</code></pre>
+<pre class="python"><code>test_125_3 = test_125.isPalindrome(&quot;.,&quot;)
+test_125_3</code></pre>
+<pre><code>True</code></pre>
+<pre class="python"><code>test_125_4 = test_125.isPalindrome(&quot;0P&quot;)
+test_125_4</code></pre>
+<pre><code>False</code></pre>
 <hr />
 </div>
 <div id="single-number" class="section level3">
