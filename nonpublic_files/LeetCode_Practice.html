@@ -4042,7 +4042,7 @@ test_171_3</code></pre>
 <hr />
 </div>
 <div id="factorial-trailing-zeroes" class="section level3">
-<h3>172. Factorial Trailing Zeroes</h3>
+<h3>(172.) Factorial Trailing Zeroes</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/factorial-trailing-zeroes/" class="uri">https://leetcode.com/problems/factorial-trailing-zeroes/</a></li>
 <li>Given an integer <code>n</code>, return <strong>the number of trailing zeroes in</strong> <code>n!</code>.</li>
@@ -4073,18 +4073,25 @@ Output: 0</code></pre>
     def trailingZeroes(self, n: int) -&gt; int:</code></pre>
 <pre class="python"><code>class Solution_172:
     def trailingZeroes(self, n):
-        return -1
+        output = 0
+        while n &gt; 0:
+            output = output + n // 5
+            n = n // 5
+        return output
 
 test_172 = Solution_172()</code></pre>
 <pre class="python"><code>test_172_1 = test_172.trailingZeroes(3)
 test_172_1</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>0</code></pre>
 <pre class="python"><code>test_172_2 = test_172.trailingZeroes(5)
 test_172_2</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>1</code></pre>
 <pre class="python"><code>test_172_3 = test_172.trailingZeroes(0)
 test_172_3</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>0</code></pre>
+<pre class="python"><code>test_172_4 = test_172.trailingZeroes(25)
+test_172_4</code></pre>
+<pre><code>6</code></pre>
 <hr />
 </div>
 <div id="reverse-bits" class="section level3">
