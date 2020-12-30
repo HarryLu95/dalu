@@ -3871,7 +3871,7 @@ test_167_4</code></pre>
 <hr />
 </div>
 <div id="excel-sheet-column-title" class="section level3">
-<h3>168. Excel Sheet Column Title</h3>
+<h3>(168.) Excel Sheet Column Title</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/excel-sheet-column-title/" class="uri">https://leetcode.com/problems/excel-sheet-column-title/</a></li>
 <li>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</li>
@@ -3902,6 +3902,43 @@ Output: &quot;AB&quot;</code></pre>
 Output: &quot;ZY&quot;</code></pre>
 <pre><code>class Solution:
     def convertToTitle(self, n: int) -&gt; str:</code></pre>
+<pre class="python"><code>class Solution_168:
+    def convertToTitle(self, n):
+        letters = string.ascii_uppercase
+        output = &quot;&quot;
+        while n &gt; 26:
+            curr_letter_index = n % 26
+            curr_letter = letters[curr_letter_index - 1]
+            print(n, curr_letter_index, curr_letter)
+            output = curr_letter + output
+            if curr_letter_index == 0:
+                n = n // 26 - 1
+            else:
+                n = n // 26
+        last_letter = letters[(n - 26) % 26 - 1]
+        output = last_letter + output
+        return output
+
+test_168 = Solution_168()</code></pre>
+<pre class="python"><code>test_168_1 = test_168.convertToTitle(1)
+test_168_1</code></pre>
+<pre><code>&#39;A&#39;</code></pre>
+<pre class="python"><code>test_168_2 = test_168.convertToTitle(28)</code></pre>
+<pre><code>28 2 B</code></pre>
+<pre class="python"><code>test_168_2</code></pre>
+<pre><code>&#39;AB&#39;</code></pre>
+<pre class="python"><code>test_168_3 = test_168.convertToTitle(701)</code></pre>
+<pre><code>701 25 Y</code></pre>
+<pre class="python"><code>test_168_3</code></pre>
+<pre><code>&#39;ZY&#39;</code></pre>
+<pre class="python"><code>test_168_4 = test_168.convertToTitle(52)</code></pre>
+<pre><code>52 0 Z</code></pre>
+<pre class="python"><code>test_168_4</code></pre>
+<pre><code>&#39;AZ&#39;</code></pre>
+<ul>
+<li>Runtime: 24 ms, faster than 91.69% of Python3 online submissions for Excel Sheet Column Title.</li>
+<li>Memory Usage: 14.1 MB, less than 83.82% of Python3 online submissions for Excel Sheet Column Title.</li>
+</ul>
 <hr />
 </div>
 <div id="majority-element" class="section level3">
