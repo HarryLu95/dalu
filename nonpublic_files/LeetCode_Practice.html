@@ -4095,7 +4095,7 @@ test_172_4</code></pre>
 <hr />
 </div>
 <div id="reverse-bits" class="section level3">
-<h3>190. Reverse Bits</h3>
+<h3>(190.) Reverse Bits</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/reverse-bits/" class="uri">https://leetcode.com/problems/reverse-bits/</a></li>
 <li>Reverse bits of a given 32 bits unsigned integer.</li>
@@ -4129,15 +4129,22 @@ Explanation: The input binary string 11111111111111111111111111111101 represents
     def reverseBits(self, n: int) -&gt; int:</code></pre>
 <pre class="python"><code>class Solution_190:
     def reverseBits(self, n):
-        return -1
+        output = 0
+        for i in range(32):
+            curr_int = n - (n &gt;&gt; 1) * 2
+            n = n &gt;&gt; 1
+            if curr_int == 0:
+                continue
+            output = output + 2**(31 - i)
+        return output
 
 test_190 = Solution_190()</code></pre>
-<pre class="python"><code>test_190_1 = test_190.reverseBits(&quot;00000010100101000001111010011100&quot;)
+<pre class="python"><code>test_190_1 = test_190.reverseBits(int(&quot;00000010100101000001111010011100&quot;, 2))
 test_190_1</code></pre>
-<pre><code>-1</code></pre>
-<pre class="python"><code>test_190_2 = test_190.reverseBits(&quot;11111111111111111111111111111101&quot;)
+<pre><code>964176192</code></pre>
+<pre class="python"><code>test_190_2 = test_190.reverseBits(int(&quot;11111111111111111111111111111101&quot;, 2))
 test_190_2</code></pre>
-<pre><code>-1</code></pre>
+<pre><code>3221225471</code></pre>
 <hr />
 </div>
 <div id="number-of-1-bits" class="section level3">
