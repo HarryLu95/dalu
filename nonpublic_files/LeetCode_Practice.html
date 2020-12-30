@@ -3978,24 +3978,159 @@ test_169_2</code></pre>
 <hr />
 </div>
 <div id="excel-sheet-column-number" class="section level3">
-<h3>171. Excel Sheet Column Number</h3>
+<h3>(171.) Excel Sheet Column Number</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/excel-sheet-column-number/" class="uri">https://leetcode.com/problems/excel-sheet-column-number/</a></li>
+<li>Given a column title as appear in an Excel sheet, return its corresponding column number.</li>
+<li>For example:</li>
 </ul>
+<pre><code>    A -&gt; 1
+    B -&gt; 2
+    C -&gt; 3
+    ...
+    Z -&gt; 26
+    AA -&gt; 27
+    AB -&gt; 28 
+    ...</code></pre>
+<ul>
+<li><strong>Example 1:</strong></li>
+</ul>
+<pre><code>Input: &quot;A&quot;
+Output: 1</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>Input: &quot;AB&quot;
+Output: 28</code></pre>
+<ul>
+<li><strong>Example 3:</strong></li>
+</ul>
+<pre><code>Input: &quot;ZY&quot;
+Output: 701</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 7</code></li>
+<li><code>s</code> consists only of uppercase English letters.</li>
+<li><code>s</code> is between “A” and “FXSHRXW”.</li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def titleToNumber(self, s: str) -&gt; int:</code></pre>
+<pre class="python"><code>class Solution_171:
+    def titleToNumber(self, s):
+        letters = string.ascii_uppercase
+        length = len(s)
+        output = 0
+        for i in range(length):
+            power = length - 1 - i
+            curr_letter = s[i]
+            curr_value = (letters.find(curr_letter) + 1) * 26**power
+            output = output + curr_value
+        return output
+
+test_171 = Solution_171()</code></pre>
+<pre class="python"><code>test_171_1 = test_171.titleToNumber(&quot;A&quot;)
+test_171_1</code></pre>
+<pre><code>1</code></pre>
+<pre class="python"><code>test_171_2 = test_171.titleToNumber(&quot;AB&quot;)
+test_171_2</code></pre>
+<pre><code>28</code></pre>
+<pre class="python"><code>test_171_3 = test_171.titleToNumber(&quot;ZY&quot;)
+test_171_3</code></pre>
+<pre><code>701</code></pre>
 <hr />
 </div>
 <div id="factorial-trailing-zeroes" class="section level3">
 <h3>172. Factorial Trailing Zeroes</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/factorial-trailing-zeroes/" class="uri">https://leetcode.com/problems/factorial-trailing-zeroes/</a></li>
+<li>Given an integer <code>n</code>, return <strong>the number of trailing zeroes in</strong> <code>n!</code>.</li>
+<li><strong>Follow up:</strong> Could you write a solution that works in logarithmic time complexity?</li>
+<li><strong>Example 1:</strong></li>
 </ul>
+<pre><code>Input: n = 3
+Output: 0
+Explanation: 3! = 6, no trailing zero.</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>Input: n = 5
+Output: 1
+Explanation: 5! = 120, one trailing zero.</code></pre>
+<ul>
+<li><strong>Example 3:</strong></li>
+</ul>
+<pre><code>Input: n = 0
+Output: 0</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li><code>0 &lt;= n &lt;= 10^4</code></li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def trailingZeroes(self, n: int) -&gt; int:</code></pre>
+<pre class="python"><code>class Solution_172:
+    def trailingZeroes(self, n):
+        return -1
+
+test_172 = Solution_172()</code></pre>
+<pre class="python"><code>test_172_1 = test_172.trailingZeroes(3)
+test_172_1</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_172_2 = test_172.trailingZeroes(5)
+test_172_2</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_172_3 = test_172.trailingZeroes(0)
+test_172_3</code></pre>
+<pre><code>-1</code></pre>
 <hr />
 </div>
 <div id="reverse-bits" class="section level3">
 <h3>190. Reverse Bits</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/reverse-bits/" class="uri">https://leetcode.com/problems/reverse-bits/</a></li>
+<li>Reverse bits of a given 32 bits unsigned integer.</li>
+<li><strong>Note:</strong>
+<ul>
+<li>Note that in some languages such as Java, there is no unsigned integer type. In this case, both input and output will be given as a signed integer type. They should not affect your implementation, as the integer’s internal binary representation is the same, whether it is signed or unsigned.</li>
+<li>In Java, the compiler represents the signed integers using 2’s complement notation. Therefore, in <strong>Example 2</strong> above, the input represents the signed integer <code>-3</code> and the output represents the signed integer <code>-1073741825</code>.</li>
+</ul></li>
+<li><strong>Follow up:</strong>
+<ul>
+<li>If this function is called many times, how would you optimize it?</li>
+</ul></li>
+<li><strong>Example 1:</strong></li>
 </ul>
+<pre><code>Input: n = 00000010100101000001111010011100
+Output:    964176192 (00111001011110000010100101000000)
+Explanation: The input binary string 00000010100101000001111010011100 represents the unsigned integer 43261596, so return 964176192 which its binary representation is 00111001011110000010100101000000.</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>Input: n = 11111111111111111111111111111101
+Output:   3221225471 (10111111111111111111111111111111)
+Explanation: The input binary string 11111111111111111111111111111101 represents the unsigned integer 4294967293, so return 3221225471 which its binary representation is 10111111111111111111111111111111.</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li>The input must be a <strong>binary string</strong> of length <code>32</code></li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def reverseBits(self, n: int) -&gt; int:</code></pre>
+<pre class="python"><code>class Solution_190:
+    def reverseBits(self, n):
+        return -1
+
+test_190 = Solution_190()</code></pre>
+<pre class="python"><code>test_190_1 = test_190.reverseBits(&quot;00000010100101000001111010011100&quot;)
+test_190_1</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_190_2 = test_190.reverseBits(&quot;11111111111111111111111111111101&quot;)
+test_190_2</code></pre>
+<pre><code>-1</code></pre>
 <hr />
 </div>
 <div id="number-of-1-bits" class="section level3">
