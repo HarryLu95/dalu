@@ -4208,7 +4208,7 @@ test_191_3</code></pre>
 <hr />
 </div>
 <div id="happy-number" class="section level3">
-<h3>202. Happy Number</h3>
+<h3>(202.) Happy Number</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/happy-number/" class="uri">https://leetcode.com/problems/happy-number/</a></li>
 <li>Write an algorithm to determine if a number <code>n</code> is happy.</li>
@@ -4241,6 +4241,29 @@ Output: false</code></pre>
 </ul>
 <pre><code>class Solution:
     def isHappy(self, n: int) -&gt; bool:</code></pre>
+<pre class="python"><code>class Solution_202:
+    def isHappy(self, n):
+        while n &gt; 4:
+            curr_square_sum = 0
+            temp_n = n
+            while temp_n &gt; 0:
+                curr_square_sum = curr_square_sum + (temp_n % 10)**2
+                temp_n = temp_n // 10
+            n = curr_square_sum
+        if n == 1:
+            return True
+        return False
+
+test_202 = Solution_202()</code></pre>
+<pre class="python"><code>test_202_1 = test_202.isHappy(19)
+test_202_1</code></pre>
+<pre><code>True</code></pre>
+<pre class="python"><code>test_202_2 = test_202.isHappy(2)
+test_202_2</code></pre>
+<pre><code>False</code></pre>
+<pre class="python"><code>test_202_3 = test_202.isHappy(4)
+test_202_3</code></pre>
+<pre><code>False</code></pre>
 <hr />
 </div>
 <div id="remove-linked-list-elements" class="section level3">
