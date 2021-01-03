@@ -2848,11 +2848,11 @@ a_2 = ListNode(2)
 head_1.next = a_1
 a_1.next = a_2
 test_83_1 = test_83.deleteDuplicates(head_1)
-print(f&quot;Input 1:\n  {head_1.val}-&gt;{a_1.val}-&gt;{a_2.val}\nOutput 1:\n  {test_83_1.val}-&gt;{test_83_1.next.val}&quot;)</code></pre>
+print(f&quot;Input 1:\n  {head_1.val}-&gt;{a_1.val}-&gt;{a_2.val}-&gt;{a_2.next}\nOutput 1:\n  {test_83_1.val}-&gt;{test_83_1.next.val}-&gt;{test_83_1.next.next}&quot;)</code></pre>
 <pre><code>Input 1:
-  1-&gt;1-&gt;2
+  1-&gt;1-&gt;2-&gt;None
 Output 1:
-  1-&gt;2</code></pre>
+  1-&gt;2-&gt;None</code></pre>
 <pre class="python"><code>head_2 = ListNode(1)
 b_1 = ListNode(1)
 b_2 = ListNode(2)
@@ -2863,13 +2863,14 @@ b_1.next = b_2
 b_2.next = b_3
 b_3.next = b_4
 test_83_2 = test_83.deleteDuplicates(head_2)
-print(f&quot;Input 2:\n  {head_2.val}-&gt;{b_1.val}-&gt;{b_2.val}-&gt;{b_3.val}-&gt;{b_4.val}\nOutput 2:\n  {test_83_2.val}-&gt;{test_83_2.next.val}-&gt;{test_83_2.next.next.val}&quot;)</code></pre>
+print(f&quot;Input 2:\n  {head_2.val}-&gt;{b_1.val}-&gt;{b_2.val}-&gt;{b_3.val}-&gt;{b_4.val}-&gt;{b_4.next}\nOutput 2:\n  {test_83_2.val}-&gt;{test_83_2.next.val}-&gt;{test_83_2.next.next.val}-&gt;{test_83_2.next.next.next}&quot;)</code></pre>
 <pre><code>Input 2:
-  1-&gt;1-&gt;2-&gt;3-&gt;3
+  1-&gt;1-&gt;2-&gt;3-&gt;3-&gt;None
 Output 2:
-  1-&gt;2-&gt;3</code></pre>
-<pre class="python"><code>test_83_3 = test_83.deleteDuplicates(None)
-print(f&quot;Input 3:\n  None\nOutput 3:\n  {test_83_3}&quot;)</code></pre>
+  1-&gt;2-&gt;3-&gt;None</code></pre>
+<pre class="python"><code>head_3 = None
+test_83_3 = test_83.deleteDuplicates(head_3)
+print(f&quot;Input 3:\n  {head_3}\nOutput 3:\n  {test_83_3}&quot;)</code></pre>
 <pre><code>Input 3:
   None
 Output 3:
@@ -4267,7 +4268,7 @@ test_202_3</code></pre>
 <hr />
 </div>
 <div id="remove-linked-list-elements" class="section level3">
-<h3>203. Remove Linked List Elements</h3>
+<h3>(203.) Remove Linked List Elements</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/remove-linked-list-elements/" class="uri">https://leetcode.com/problems/remove-linked-list-elements/</a></li>
 <li>Remove all elements from a linked list of integers that have value <code>val</code>.</li>
@@ -4277,6 +4278,85 @@ test_202_3</code></pre>
 Output: 1-&gt;2-&gt;3-&gt;4-&gt;5</code></pre>
 <pre><code>class Solution:
     def removeElements(self, head: ListNode, val: int) -&gt; ListNode:</code></pre>
+<pre class="python"><code>class Solution_203:
+    def removeElements(self, head, val):
+        if head == None:
+            return None
+        while (head.val == val) &amp; (head.next != None):
+            head = head.next
+        if (head.val != val) &amp; (head.next == None):
+            return head
+        elif (head.val == val) &amp; (head.next == None):
+            return None
+        slow = head
+        fast = head
+        while fast.next != None:
+            fast = fast.next
+            if fast.val == val:
+                continue
+            slow.next = fast
+            slow = fast
+        if fast.val == val:
+            slow.next = None
+            return head
+        slow.next = fast
+        fast.next = None
+        return head
+
+test_203 = Solution_203()</code></pre>
+<pre class="python"><code>head_1 = ListNode(1)
+a_1 = ListNode(2)
+a_2 = ListNode(6)
+a_3 = ListNode(3)
+a_4 = ListNode(4)
+a_5 = ListNode(5)
+a_6 = ListNode(6)
+head_1.next = a_1
+a_1.next = a_2
+a_2.next = a_3
+a_3.next = a_4
+a_4.next = a_5
+a_5.next = a_6
+test_203_1 = test_203.removeElements(head_1, 6)
+print(f&quot;Input 1:\n  {head_1.val}-&gt;{a_1.val}-&gt;{a_2.val}-&gt;{a_3.val}-&gt;{a_4.val}-&gt;{a_5.val}-&gt;{a_6.val}-&gt;{a_6.next}, target = 6\nOutput 1:\n  {test_203_1.val}-&gt;{test_203_1.next.val}-&gt;{test_203_1.next.next.val}-&gt;{test_203_1.next.next.next.val}-&gt;{test_203_1.next.next.next.next.val}-&gt;{test_203_1.next.next.next.next.next}&quot;)</code></pre>
+<pre><code>Input 1:
+  1-&gt;2-&gt;6-&gt;3-&gt;4-&gt;5-&gt;6-&gt;None, target = 6
+Output 1:
+  1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;None</code></pre>
+<pre class="python"><code>head_2 = ListNode(1)
+test_203_2 = test_203.removeElements(head_2, 1)
+print(f&quot;Input 2:\n  {head_2.val}-&gt;{head_2.next}, target = 1\nOutput 2:\n  {test_203_2}&quot;)</code></pre>
+<pre><code>Input 2:
+  1-&gt;None, target = 1
+Output 2:
+  None</code></pre>
+<pre class="python"><code>head_3 = None
+test_203_3 = test_203.removeElements(head_3, 1)
+print(f&quot;Input 3:\n  {head_3}, target = 1\nOutput 3:\n  {test_203_3}&quot;)</code></pre>
+<pre><code>Input 3:
+  None, target = 1
+Output 3:
+  None</code></pre>
+<pre class="python"><code>head_4 = ListNode(1)
+d_1 = ListNode(2)
+head_4.next = d_1
+test_203_4 = test_203.removeElements(head_4, 1)
+print(f&quot;Input 4:\n  {head_4.val}-&gt;{d_1.val}-&gt;{d_1.next}, target = 1\nOutput 4:\n  {test_203_4.val}-&gt;{test_203_4.next}&quot;)</code></pre>
+<pre><code>Input 4:
+  1-&gt;2-&gt;None, target = 1
+Output 4:
+  2-&gt;None</code></pre>
+<pre class="python"><code>head_5 = ListNode(1)
+e_1 = ListNode(2)
+e_2 = ListNode(1)
+head_5.next = e_1
+e_1.next = e_2
+test_203_5 = test_203.removeElements(head_5, 2)
+print(f&quot;Input 5:\n  {head_5.val}-&gt;{e_1.val}-&gt;{e_2.val}-&gt;{e_2.next}, target = 2\nOutput 5:\n  {test_203_5.val}-&gt;{test_203_5.next.val}-&gt;{test_203_5.next.next}&quot;)</code></pre>
+<pre><code>Input 5:
+  1-&gt;2-&gt;1-&gt;None, target = 2
+Output 5:
+  1-&gt;1-&gt;None</code></pre>
 <hr />
 </div>
 <div id="count-primes" class="section level3">
