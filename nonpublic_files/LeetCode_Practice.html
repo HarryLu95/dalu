@@ -2095,14 +2095,30 @@ b_2 = ListNode(4)
 head_2.next = b_1
 b_1.next = b_2
 test_21_1 = test_21.mergeTwoLists(head_1, head_2)
-print(f&quot;[{test_21_1.val}, {test_21_1.next.val}, {test_21_1.next.next.val}, {test_21_1.next.next.next.val}, {test_21_1.next.next.next.next.val}, {test_21_1.next.next.next.next.next.val}]&quot;)</code></pre>
-<pre><code>[1, 1, 2, 3, 4, 4]</code></pre>
-<pre class="python"><code>test_21_2 = test_21.mergeTwoLists(None, None)
-print(f&quot;{test_21_2}&quot;)</code></pre>
-<pre><code>None</code></pre>
-<pre class="python"><code>test_21_3 = test_21.mergeTwoLists(None, ListNode(0))
-print(f&quot;[{test_21_3.val}]&quot;)</code></pre>
-<pre><code>[0]</code></pre>
+print(f&quot;Input 1:\n  {head_1.val}-&gt;{a_1.val}-&gt;{a_2.val}-&gt;{a_2.next}\n  {head_2.val}-&gt;{b_1.val}-&gt;{b_2.val}-&gt;{b_2.next}\nOutput 1:\n  {test_21_1.val}-&gt;{test_21_1.next.val}-&gt;{test_21_1.next.next.val}-&gt;{test_21_1.next.next.next.val}-&gt;{test_21_1.next.next.next.next.val}-&gt;{test_21_1.next.next.next.next.next.val}-&gt;{test_21_1.next.next.next.next.next.next}&quot;)</code></pre>
+<pre><code>Input 1:
+  1-&gt;2-&gt;4-&gt;None
+  1-&gt;3-&gt;4-&gt;None
+Output 1:
+  1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4-&gt;None</code></pre>
+<pre class="python"><code>head_3 = None
+head_4 = None
+test_21_2 = test_21.mergeTwoLists(head_3, head_4)
+print(f&quot;Input 2:\n  {head_3}\n  {head_4}\nOutput 2:\n  {test_21_2}&quot;)</code></pre>
+<pre><code>Input 2:
+  None
+  None
+Output 2:
+  None</code></pre>
+<pre class="python"><code>head_5 = None
+head_6 = ListNode(0)
+test_21_3 = test_21.mergeTwoLists(head_5, head_6)
+print(f&quot;Input 3:\n  {head_5}\n  {head_6.val}-&gt;{head_6.next}\nOutput 3:\n  {test_21_3.val}-&gt;{test_21_3.next}&quot;)</code></pre>
+<pre><code>Input 3:
+  None
+  0-&gt;None
+Output 3:
+  0-&gt;None</code></pre>
 <ul>
 <li>Runtime: 36 ms, faster than 73.56% of Python3 online submissions for Merge Two Sorted Lists.</li>
 <li>Memory Usage: 14.2 MB, less than 60.45% of Python3 online submissions for Merge Two Sorted Lists.</li>
@@ -4466,13 +4482,13 @@ head_1.next = a_1
 a_1.next = a_2
 a_2.next = a_3
 a_3.next = a_4
-print(f&quot;Input:\n  {head_1.val}-&gt;{a_1.val}-&gt;{a_2.val}-&gt;{a_3.val}-&gt;{a_4.val}&quot;)</code></pre>
+print(f&quot;Input:\n  {head_1.val}-&gt;{a_1.val}-&gt;{a_2.val}-&gt;{a_3.val}-&gt;{a_4.val}-&gt;{a_4.next}&quot;)</code></pre>
 <pre><code>Input:
-  1-&gt;2-&gt;3-&gt;4-&gt;5</code></pre>
+  1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;None</code></pre>
 <pre class="python"><code>test_206_1 = test_206.reverseList_iterative(head_1)
-print(f&quot;Output (iteratively):\n  {test_206_1.val}-&gt;{test_206_1.next.val}-&gt;{test_206_1.next.next.val}-&gt;{test_206_1.next.next.next.val}-&gt;{test_206_1.next.next.next.next.val}&quot;)</code></pre>
+print(f&quot;Output (iteratively):\n  {test_206_1.val}-&gt;{test_206_1.next.val}-&gt;{test_206_1.next.next.val}-&gt;{test_206_1.next.next.next.val}-&gt;{test_206_1.next.next.next.next.val}-&gt;{test_206_1.next.next.next.next.next}&quot;)</code></pre>
 <pre><code>Output (iteratively):
-  5-&gt;4-&gt;3-&gt;2-&gt;1</code></pre>
+  5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;None</code></pre>
 <pre class="python"><code>head_1 = ListNode(1)
 a_1 = ListNode(2)
 a_2 = ListNode(3)
@@ -4483,9 +4499,9 @@ a_1.next = a_2
 a_2.next = a_3
 a_3.next = a_4
 test_206_2 = test_206.reverseList_recursive(head_1)
-print(f&quot;Output (recursively):\n  {test_206_2.val}-&gt;{test_206_2.next.val}-&gt;{test_206_2.next.next.val}-&gt;{test_206_2.next.next.next.val}-&gt;{test_206_2.next.next.next.next.val}&quot;)</code></pre>
+print(f&quot;Output (recursively):\n  {test_206_2.val}-&gt;{test_206_2.next.val}-&gt;{test_206_2.next.next.val}-&gt;{test_206_2.next.next.next.val}-&gt;{test_206_2.next.next.next.next.val}-&gt;{test_206_2.next.next.next.next.next}&quot;)</code></pre>
 <pre><code>Output (recursively):
-  5-&gt;4-&gt;3-&gt;2-&gt;1</code></pre>
+  5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;None</code></pre>
 <hr />
 </div>
 <div id="contains-duplicate" class="section level3">
