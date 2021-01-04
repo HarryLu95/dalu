@@ -4620,14 +4620,75 @@ print(f&quot;Output (recursively):\n  {test_206_2.val}-&gt;{test_206_2.next.val}
 <h3>217. Contains Duplicate</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/contains-duplicate/" class="uri">https://leetcode.com/problems/contains-duplicate/</a></li>
+<li>Given an array of integers, find if the array contains any duplicates.</li>
+<li>Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.</li>
+<li><strong>Example 1:</strong></li>
 </ul>
+<pre><code>Input: [1,2,3,1]
+Output: true</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>Input: [1,2,3,4]
+Output: false</code></pre>
+<ul>
+<li><strong>Example 3:</strong></li>
+</ul>
+<pre><code>Input: [1,1,1,3,3,4,3,2,4,2]
+Output: true</code></pre>
+<pre><code>class Solution:
+    def containsDuplicate(self, nums: List[int]) -&gt; bool:</code></pre>
+<pre class="python"><code>class Solution_217:
+    def containsDuplicate(self, nums):
+        return -1
+
+test_217 = Solution_217()</code></pre>
+<pre class="python"><code>test_217_1 = test_217.containsDuplicate([1,2,3,1])
+test_217_1</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_217_2 = test_217.containsDuplicate([1,2,3,4])
+test_217_2</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_217_3 = test_217.containsDuplicate([1,1,1,3,3,4,3,2,4,2])
+test_217_3</code></pre>
+<pre><code>-1</code></pre>
 <hr />
 </div>
 <div id="contains-duplicate-ii" class="section level3">
 <h3>219. Contains Duplicate II</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/contains-duplicate-ii/" class="uri">https://leetcode.com/problems/contains-duplicate-ii/</a></li>
+<li>Given an array of integers and an integer <code>k</code>, find out whether there are two distinct indices <code>i</code> and <code>j</code> in the array such that <code>nums[i] = nums[j]</code> and the <strong>absolute</strong> difference between <code>i</code> and <code>j</code> is at most <code>k</code>.</li>
+<li><strong>Example 1:</strong></li>
 </ul>
+<pre><code>Input: nums = [1,2,3,1], k = 3
+Output: true</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>Input: nums = [1,0,1,1], k = 1
+Output: true</code></pre>
+<ul>
+<li><strong>Example 3:</strong></li>
+</ul>
+<pre><code>Input: nums = [1,2,3,1,2,3], k = 2
+Output: false</code></pre>
+<pre><code>class Solution:
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -&gt; bool:</code></pre>
+<pre class="python"><code>class Solution_219:
+    def containsNearbyDuplicate(self, nums, k):
+        return -1
+
+test_219 = Solution_219()</code></pre>
+<pre class="python"><code>test_219_1 = test_219.containsNearbyDuplicate([1,2,3,1], 3)
+test_219_1</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_219_2 = test_219.containsNearbyDuplicate([1,0,1,1], 1)
+test_219_2</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_219_3 = test_219.containsNearbyDuplicate([1,2,3,1,2,3], 2)
+test_219_3</code></pre>
+<pre><code>-1</code></pre>
 <hr />
 </div>
 <div id="implement-stack-using-queues" class="section level3">
