@@ -3768,7 +3768,7 @@ print(f&quot;Min from {test_155.p()}: {test_155.getMin()}&quot;)</code></pre>
 <hr />
 </div>
 <div id="intersection-of-two-linked-lists" class="section level3">
-<h3>160. Intersection of Two Linked Lists</h3>
+<h3>(160.) Intersection of Two Linked Lists</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/" class="uri">https://leetcode.com/problems/intersection-of-two-linked-lists/</a></li>
 <li>Write a program to find the node at which the intersection of two singly linked lists begins.</li>
@@ -3809,6 +3809,14 @@ Output: null
 Input Explanation: From the head of A, it reads as [2,6,4]. From the head of B, it reads as [1,5]. Since the two lists do not intersect, intersectVal must be 0, while skipA and skipB can be arbitrary values.
 Explanation: The two lists do not intersect, so return null.</code></pre>
 <ul>
+<li><strong>Example 4:</strong></li>
+</ul>
+<pre><code>A: 2 -&gt; 2 -\
+            -&gt; 4 -&gt; 5 -&gt; 4
+B: 2 -&gt; 2 -/
+
+Input: intersectVal = 4, listA = [2,2,4,5,4], listB = [2,2,4,5,4], skipA = 2, skipB = 2</code></pre>
+<ul>
 <li><strong>Notes:</strong>
 <ul>
 <li>If the two linked lists have no intersection at all, return <code>null</code>.</li>
@@ -3820,6 +3828,110 @@ Explanation: The two lists do not intersect, so return null.</code></pre>
 </ul>
 <pre><code>class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -&gt; ListNode:</code></pre>
+<pre class="python"><code>class Solution_160:
+    def getIntersectionNode(self, headA, headB):
+        def get_values(head):
+            value = []
+            if head is None:
+                return value
+            else:
+                while head.next:
+                    value.append(head.val)
+                    head = head.next
+                value.append(head.val)
+                return value
+        if headA == None:
+            return None
+        elif headB == None:
+            return None
+        possible_intersections = []
+        value_a = get_values(headA)
+        value_b = get_values(headB)
+        reverse_a = value_a[::-1]
+        reverse_b = value_b[::-1]
+        length_a = len(value_a)
+        length_b = len(value_b)
+        i = 0
+        while (i &lt; length_a) &amp; (i &lt; length_b):
+            if reverse_a[i] == reverse_b[i]:
+                possible_intersections.append(reverse_a[i])
+            i = i + 1
+        for j in range(len(possible_intersections), 0, -1):
+            a_pointer = headA
+            b_pointer = headB
+            a_move_num = length_a - j
+            b_move_num = length_b - j
+            while a_move_num &gt; 0:
+                a_pointer = a_pointer.next
+                a_move_num = a_move_num - 1
+            while b_move_num &gt; 0:
+                b_pointer = b_pointer.next
+                b_move_num = b_move_num - 1
+            if a_pointer == b_pointer:
+                return a_pointer
+            continue
+        return None
+
+test_160 = Solution_160()</code></pre>
+<pre class="python"><code>head_1 = ListNode(4)
+a_1 = ListNode(1)
+head_2 = ListNode(5)
+a_2 = ListNode(6)
+a_3 = ListNode(1)
+a_4 = ListNode(8)
+a_5 = ListNode(4)
+a_6 = ListNode(5)
+head_1.next = a_1
+head_2.next = a_2
+a_2.next = a_3
+a_1.next = a_4
+a_3.next = a_4
+a_4.next = a_5
+a_5.next = a_6
+test_160_1 = test_160.getIntersectionNode(head_1, head_2)
+print(test_160_1.val)</code></pre>
+<pre><code>8</code></pre>
+<pre class="python"><code>head_3 = ListNode(1)
+b_1 = ListNode(9)
+b_2 = ListNode(1)
+head_4 = ListNode(3)
+b_3 = ListNode(2)
+b_4 = ListNode(4)
+head_3.next = b_1
+b_1.next = b_2
+b_2.next = b_3
+head_4.next = b_3
+b_3.next = b_4
+test_160_2 = test_160.getIntersectionNode(head_3, head_4)
+print(test_160_2.val)</code></pre>
+<pre><code>2</code></pre>
+<pre class="python"><code>head_5 = ListNode(2)
+c_1 = ListNode(6)
+c_2 = ListNode(4)
+head_6 = ListNode(1)
+c_3 = ListNode(5)
+head_5.next = c_1
+c_1.next = c_2
+head_6.next = c_3
+test_160_3 = test_160.getIntersectionNode(head_5, head_6)
+print(test_160_3)</code></pre>
+<pre><code>None</code></pre>
+<pre class="python"><code>head_7 = ListNode(2)
+d_1 = ListNode(2)
+head_8 = ListNode(2)
+d_2 = ListNode(2)
+d_3 = ListNode(4)
+d_4 = ListNode(5)
+d_5 = ListNode(4)
+head_7.next = d_1
+head_8.next = d_2
+d_1.next = d_3
+d_2.next = d_3
+d_3.next = d_4
+d_4.next = d_5
+test_160_4 = test_160.getIntersectionNode(head_7, head_8)
+print(test_160_4.val)</code></pre>
+<pre><code>4</code></pre>
 <hr />
 </div>
 <div id="two-sum-ii---input-array-is-sorted" class="section level3">
