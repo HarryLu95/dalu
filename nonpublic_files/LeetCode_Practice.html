@@ -4518,7 +4518,7 @@ Output: 0</code></pre>
 <hr />
 </div>
 <div id="isomorphic-strings" class="section level3">
-<h3>205. Isomorphic Strings</h3>
+<h3>(205.) Isomorphic Strings</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/isomorphic-strings/" class="uri">https://leetcode.com/problems/isomorphic-strings/</a></li>
 <li>Given two strings <code>s</code> and <code>t</code>, determine if they are isomorphic.</li>
@@ -4546,6 +4546,35 @@ Output: true</code></pre>
 </ul>
 <pre><code>class Solution:
     def isIsomorphic(self, s: str, t: str) -&gt; bool:</code></pre>
+<pre class="python"><code>class Solution_205:
+    def isIsomorphic(self, s, t):
+        d = dict()
+        for i in range(len(s)):
+            curr_s = s[i]
+            curr_t = t[i]
+            if curr_s not in d.keys():
+                if curr_t not in d.values():
+                    d.update({curr_s: curr_t})
+                    continue
+                return False
+            elif d[curr_s] != curr_t:
+                return False
+            continue
+        return True
+
+test_205 = Solution_205()</code></pre>
+<pre class="python"><code>test_205_1 = test_205.isIsomorphic(&quot;egg&quot;, &quot;add&quot;)
+test_205_1</code></pre>
+<pre><code>True</code></pre>
+<pre class="python"><code>test_205_2 = test_205.isIsomorphic(&quot;foo&quot;, &quot;bar&quot;)
+test_205_2</code></pre>
+<pre><code>False</code></pre>
+<pre class="python"><code>test_205_3 = test_205.isIsomorphic(&quot;paper&quot;, &quot;title&quot;)
+test_205_3</code></pre>
+<pre><code>True</code></pre>
+<pre class="python"><code>test_205_4 = test_205.isIsomorphic(&quot;badc&quot;, &quot;baba&quot;)
+test_205_4</code></pre>
+<pre><code>False</code></pre>
 <hr />
 </div>
 <div id="reverse-linked-list" class="section level3">
@@ -4695,7 +4724,71 @@ test_219_3</code></pre>
 <h3>225. Implement Stack using Queues</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/implement-stack-using-queues/" class="uri">https://leetcode.com/problems/implement-stack-using-queues/</a></li>
+<li>Implement a last in first out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal queue (<code>push</code>, <code>top</code>, <code>pop</code>, and <code>empty</code>).</li>
+<li>Implement the <code>MyStack</code> class:
+<ul>
+<li><code>void push(int x)</code>: Pushes element x to the top of the stack.</li>
+<li><code>int pop()</code>: Removes the element on the top of the stack and returns it.</li>
+<li><code>int top()</code>: Returns the element on the top of the stack.</li>
+<li><code>boolean empty()</code>: Returns <code>true</code> if the stack is empty, <code>false</code> otherwise.</li>
+</ul></li>
+<li><strong>Notes:</strong>
+<ul>
+<li>You must use <strong>only</strong> standard operations of a queue, which means only <code>push to back</code>, <code>peek/pop from front</code>, <code>size</code>, and <code>is empty</code> operations are valid.</li>
+<li>Depending on your language, the queue may not be supported natively. You may simulate a queue using a list or deque (double-ended queue), as long as you use only a queue’s standard operations.</li>
+</ul></li>
+<li><strong>Example 1:</strong></li>
 </ul>
+<pre><code>Input
+[&quot;MyStack&quot;, &quot;push&quot;, &quot;push&quot;, &quot;top&quot;, &quot;pop&quot;, &quot;empty&quot;]
+[[], [1], [2], [], [], []]
+Output
+[null, null, null, 2, 2, false]
+
+Explanation
+MyStack myStack = new MyStack();
+myStack.push(1);
+myStack.push(2);
+myStack.top(); // return 2
+myStack.pop(); // return 2
+myStack.empty(); // return False</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li><code>1 &lt;= x &lt;= 9</code></li>
+<li>At most <code>100</code> calls will be made to <code>push</code>, <code>pop</code>, <code>top</code>, and <code>empty</code>.</li>
+<li>All the calls to <code>pop</code> and <code>top</code> are valid.</li>
+</ul></li>
+<li><strong>Follow-up:</strong> Can you implement the stack such that each operation is <a href="https://en.wikipedia.org/wiki/Amortized_analysis"><strong>amortized</strong></a> <code>O(1)</code> time complexity? In other words, performing <code>n</code> operations will take overall <code>O(n)</code> time even if one of those operations may take longer. You can use more than two queues.</li>
+</ul>
+<pre><code>class MyStack:
+    def __init__(self):
+        &quot;&quot;&quot;
+        Initialize your data structure here.
+        &quot;&quot;&quot;
+    def push(self, x: int) -&gt; None:
+        &quot;&quot;&quot;
+        Push element x onto stack.
+        &quot;&quot;&quot;
+    def pop(self) -&gt; int:
+        &quot;&quot;&quot;
+        Removes the element on top of the stack and returns that element.
+        &quot;&quot;&quot;
+    def top(self) -&gt; int:
+        &quot;&quot;&quot;
+        Get the top element.
+        &quot;&quot;&quot;
+    def empty(self) -&gt; bool:
+        &quot;&quot;&quot;
+        Returns whether the stack is empty.
+        &quot;&quot;&quot;
+
+# Your MyStack object will be instantiated and called as such:
+# obj = MyStack()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.empty()</code></pre>
 <hr />
 </div>
 <div id="invert-binary-tree" class="section level3">
@@ -4770,14 +4863,139 @@ print(f&quot;   {test_226_1.val}\n  {test_226_1.left.val} {test_226_1.right.val}
 <h3>228. Summary Ranges</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/summary-ranges/" class="uri">https://leetcode.com/problems/summary-ranges/</a></li>
+<li>You are given a <strong>sorted unique</strong> integer array <code>nums</code>.</li>
+<li>Return the <strong>smallest sorted</strong> list of ranges that <strong>cover all the numbers in the array exactly</strong>. That is, each element of <code>nums</code> is covered by exactly one of the ranges, and there is no integer <code>x</code> such that <code>x</code> is in one of the ranges but not in <code>nums</code>.</li>
+<li>Each range <code>[a,b]</code> in the list should be output as:
+<ul>
+<li><code>&quot;a-&gt;b&quot;</code> if <code>a != b</code></li>
+<li><code>&quot;a&quot;</code> if <code>a == b</code></li>
+</ul></li>
+<li><strong>Example 1:</strong></li>
 </ul>
+<pre><code>Input: nums = [0,1,2,4,5,7]
+Output: [&quot;0-&gt;2&quot;,&quot;4-&gt;5&quot;,&quot;7&quot;]
+Explanation: The ranges are:
+[0,2] --&gt; &quot;0-&gt;2&quot;
+[4,5] --&gt; &quot;4-&gt;5&quot;
+[7,7] --&gt; &quot;7&quot;</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>Input: nums = [0,2,3,4,6,8,9]
+Output: [&quot;0&quot;,&quot;2-&gt;4&quot;,&quot;6&quot;,&quot;8-&gt;9&quot;]
+Explanation: The ranges are:
+[0,0] --&gt; &quot;0&quot;
+[2,4] --&gt; &quot;2-&gt;4&quot;
+[6,6] --&gt; &quot;6&quot;
+[8,9] --&gt; &quot;8-&gt;9&quot;</code></pre>
+<ul>
+<li><strong>Example 3:</strong></li>
+</ul>
+<pre><code>Input: nums = []
+Output: []</code></pre>
+<ul>
+<li><strong>Example 4:</strong></li>
+</ul>
+<pre><code>Input: nums = [-1]
+Output: [&quot;-1&quot;]</code></pre>
+<ul>
+<li><strong>Example 5:</strong></li>
+</ul>
+<pre><code>Input: nums = [0]
+Output: [&quot;0&quot;]</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li><code>0 &lt;= nums.length &lt;= 20</code></li>
+<li><code>-2^31 &lt;= nums[i] &lt;= 2^31 - 1</code></li>
+<li>All the values of <code>nums</code> are <strong>unique</strong>.</li>
+<li><code>nums</code> is sorted in ascending order.</li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def summaryRanges(self, nums: List[int]) -&gt; List[str]:</code></pre>
+<pre class="python"><code>class Solution_228:
+    def summaryRanges(self, nums):
+        return -1
+
+test_228 = Solution_228()</code></pre>
+<pre class="python"><code>test_228_1 = test_228.summaryRanges([0,1,2,4,5,7])
+test_228_1</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_228_2 = test_228.summaryRanges([0,2,3,4,6,8,9])
+test_228_2</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_228_3 = test_228.summaryRanges([])
+test_228_3</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_228_4 = test_228.summaryRanges([-1])
+test_228_4</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_228_5 = test_228.summaryRanges([0])
+test_228_5</code></pre>
+<pre><code>-1</code></pre>
 <hr />
 </div>
 <div id="power-of-two" class="section level3">
 <h3>231. Power of Two</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/power-of-two/" class="uri">https://leetcode.com/problems/power-of-two/</a></li>
+<li>Given an integer <code>n</code>, return <code>true</code> <strong>if it is a power of two</strong>. Otherwise, return <code>false</code>.</li>
+<li>An integer <code>n</code> is a power of two, if there exists an integer <code>x</code> such that <code>n == 2x</code>.</li>
+<li><strong>Example 1:</strong></li>
 </ul>
+<pre><code>Input: n = 1
+Output: true
+Explanation: 2^0 = 1</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>Input: n = 16
+Output: true
+Explanation: 2^4 = 16</code></pre>
+<ul>
+<li><strong>Example 3:</strong></li>
+</ul>
+<pre><code>Input: n = 3
+Output: false</code></pre>
+<ul>
+<li><strong>Example 4:</strong></li>
+</ul>
+<pre><code>Input: n = 4
+Output: true</code></pre>
+<ul>
+<li><strong>Example 5:</strong></li>
+</ul>
+<pre><code>Input: n = 5
+Output: false</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li><code>-2^31 &lt;= n &lt;= 2^31 - 1</code></li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def isPowerOfTwo(self, n: int) -&gt; bool:</code></pre>
+<pre class="python"><code>class Solution_231:
+    def isPowerOfTwo(self, n):
+        return -1
+
+test_231 = Solution_231()</code></pre>
+<pre class="python"><code>test_231_1 = test_231.isPowerOfTwo(1)
+test_231_1</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_231_2 = test_231.isPowerOfTwo(16)
+test_231_2</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_231_3 = test_231.isPowerOfTwo(3)
+test_231_3</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_231_4 = test_231.isPowerOfTwo(4)
+test_231_4</code></pre>
+<pre><code>-1</code></pre>
+<pre class="python"><code>test_231_5 = test_231.isPowerOfTwo(5)
+test_231_5</code></pre>
+<pre><code>-1</code></pre>
 <hr />
 </div>
 <div id="implement-queue-using-stacks" class="section level3">
