@@ -5337,7 +5337,34 @@ Explanation: The process is like: 3 + 8 = 11, 1 + 1 = 2.
 <h3>263. Ugly Number</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/ugly-number/" class="uri">https://leetcode.com/problems/ugly-number/</a></li>
+<li>Write a program to check whether a given number is an ugly number.</li>
+<li>Ugly numbers are <strong>positive numbers</strong> whose prime factors only include <code>2, 3, 5</code>.</li>
+<li><strong>Example 1:</strong></li>
 </ul>
+<pre><code>Input: 6
+Output: true
+Explanation: 6 = 2 × 3</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>Input: 8
+Output: true
+Explanation: 8 = 2 × 2 × 2</code></pre>
+<ul>
+<li><strong>Example 3:</strong></li>
+</ul>
+<pre><code>Input: 14
+Output: false 
+Explanation: 14 is not ugly since it includes another prime factor 7.</code></pre>
+<ul>
+<li><strong>Note:</strong>
+<ul>
+<li><code>1</code> is typically treated as an ugly number.</li>
+<li>Input is within the 32-bit signed integer range: <code>[−2^31,  2^31 − 1]</code>.</li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def isUgly(self, num: int) -&gt; bool:</code></pre>
 <hr />
 </div>
 <div id="missing-number" class="section level3">
