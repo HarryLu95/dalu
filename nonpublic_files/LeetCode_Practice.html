@@ -5143,7 +5143,45 @@ test_234_2</code></pre>
 <h3>235. Lowest Common Ancestor of a Binary Search Tree</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/" class="uri">https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/</a></li>
+<li>Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.</li>
+<li>According to the <a href="https://en.wikipedia.org/wiki/Lowest_common_ancestor">definition of LCA on Wikipedia</a>: “The lowest common ancestor is defined between two nodes <code>p</code> and <code>q</code> as the lowest node in T that has both <code>p</code> and <code>q</code> as descendants (where we allow <strong>a node to be a descendant of itself</strong>).”</li>
+<li><strong>Example 1:</strong></li>
 </ul>
+<pre><code>
+
+Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+Output: 6
+Explanation: The LCA of nodes 2 and 8 is 6.</code></pre>
+<ul>
+<li><strong>Example 2:</strong></li>
+</ul>
+<pre><code>
+
+Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+Output: 2
+Explanation: The LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition.</code></pre>
+<ul>
+<li><strong>Example 3:</strong></li>
+</ul>
+<pre><code>Input: root = [2,1], p = 2, q = 1
+Output: 2</code></pre>
+<ul>
+<li><strong>Constraints:</strong>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[2, 10^5]</code>.</li>
+<li><code>-10^9 &lt;= Node.val &lt;= 10^9</code></li>
+<li>All <code>Node.val</code> are unique.</li>
+<li><code>p != q</code></li>
+<li><code>p</code> and <code>q</code> will exist in the BST.</li>
+</ul></li>
+</ul>
+<pre><code>class Solution:
+    def lowestCommonAncestor(self, root: &#39;TreeNode&#39;, p: &#39;TreeNode&#39;, q: &#39;TreeNode&#39;) -&gt; &#39;TreeNode&#39;:</code></pre>
+<pre class="python"><code>class Solution_235:
+    def lowestCommonAncestor(self, root, p, q):
+        return -1
+
+test_235 = Solution_235()</code></pre>
 <hr />
 </div>
 <div id="delete-node-in-a-linked-list" class="section level3">
