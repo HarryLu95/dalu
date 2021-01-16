@@ -5197,7 +5197,7 @@ test_235 = Solution_235()</code></pre>
 <hr />
 </div>
 <div id="delete-node-in-a-linked-list" class="section level3">
-<h3>237. Delete Node in a Linked List</h3>
+<h3>(237.) Delete Node in a Linked List</h3>
 <ul>
 <li>Link: <a href="https://leetcode.com/problems/delete-node-in-a-linked-list/" class="uri">https://leetcode.com/problems/delete-node-in-a-linked-list/</a></li>
 <li>Write a function to <strong>delete a node</strong> in a singly-linked list. You will <strong>not</strong> be given access to the <code>head</code> of the list, instead you will be given access to <strong>the node to be deleted</strong> directly.</li>
@@ -5249,6 +5249,76 @@ Output: [5,-99]</code></pre>
         :type node: ListNode
         :rtype: void Do not return anything, modify node in-place instead.
         &quot;&quot;&quot;</code></pre>
+<pre class="python"><code>class Solution_237:
+    def deleteNode(self, node):
+        node.val = node.next.val
+        node.next = node.next.next
+
+test_237 = Solution_237()</code></pre>
+<pre class="python"><code>head_1 = ListNode(4)
+a_1 = ListNode(5)
+a_2 = ListNode(1)
+a_3 = ListNode(9)
+head_1.next = a_1
+a_1.next = a_2
+a_2.next = a_3
+print(f&quot;Input 1:\n  {head_1.val}-&gt;{a_1.val}-&gt;{a_2.val}-&gt;{a_3.val}, node = {a_1.val}&quot;)</code></pre>
+<pre><code>Input 1:
+  4-&gt;5-&gt;1-&gt;9, node = 5</code></pre>
+<pre class="python"><code>test_237_1 = test_237.deleteNode(a_1)
+print(f&quot;Output 1:\n  {head_1.val}-&gt;{head_1.next.val}-&gt;{head_1.next.next.val}-&gt;{head_1.next.next.next}&quot;)</code></pre>
+<pre><code>Output 1:
+  4-&gt;1-&gt;9-&gt;None</code></pre>
+<pre class="python"><code>head_2 = ListNode(4)
+b_1 = ListNode(5)
+b_2 = ListNode(1)
+b_3 = ListNode(9)
+head_2.next = b_1
+b_1.next = b_2
+b_2.next = b_3
+print(f&quot;Input 2:\n  {head_2.val}-&gt;{b_1.val}-&gt;{b_2.val}-&gt;{b_3.val}, node = {b_2.val}&quot;)</code></pre>
+<pre><code>Input 2:
+  4-&gt;5-&gt;1-&gt;9, node = 1</code></pre>
+<pre class="python"><code>test_237_2 = test_237.deleteNode(b_2)
+print(f&quot;Output 2:\n  {head_2.val}-&gt;{head_2.next.val}-&gt;{head_2.next.next.val}-&gt;{head_2.next.next.next}&quot;)</code></pre>
+<pre><code>Output 2:
+  4-&gt;5-&gt;9-&gt;None</code></pre>
+<pre class="python"><code>head_3 = ListNode(1)
+c_1 = ListNode(2)
+c_2 = ListNode(3)
+c_3 = ListNode(4)
+head_3.next = c_1
+c_1.next = c_2
+c_2.next = c_3
+print(f&quot;Input 3:\n  {head_3.val}-&gt;{c_1.val}-&gt;{c_2.val}-&gt;{c_3.val}, node = {c_2.val}&quot;)</code></pre>
+<pre><code>Input 3:
+  1-&gt;2-&gt;3-&gt;4, node = 3</code></pre>
+<pre class="python"><code>test_237_3 = test_237.deleteNode(c_2)
+print(f&quot;Output 3:\n  {head_3.val}-&gt;{head_3.next.val}-&gt;{head_3.next.next.val}-&gt;{head_3.next.next.next}&quot;)</code></pre>
+<pre><code>Output 3:
+  1-&gt;2-&gt;4-&gt;None</code></pre>
+<pre class="python"><code>head_4 = ListNode(0)
+d_1 = ListNode(1)
+head_4.next = d_1
+print(f&quot;Input 4:\n  {head_4.val}-&gt;{d_1.val}, node = {head_4.val}&quot;)</code></pre>
+<pre><code>Input 4:
+  0-&gt;1, node = 0</code></pre>
+<pre class="python"><code>test_237_4 = test_237.deleteNode(head_4)
+print(f&quot;Output 4:\n  {head_4.val}-&gt;{head_4.next}&quot;)</code></pre>
+<pre><code>Output 4:
+  1-&gt;None</code></pre>
+<pre class="python"><code>head_5 = ListNode(-3)
+e_1 = ListNode(5)
+e_2 = ListNode(-99)
+head_5.next = e_1
+e_1.next = e_2
+print(f&quot;Input 5:\n  {head_5.val} -&gt; {e_1.val} -&gt; {e_2.val}, node = {head_5.val}&quot;)</code></pre>
+<pre><code>Input 5:
+  -3 -&gt; 5 -&gt; -99, node = -3</code></pre>
+<pre class="python"><code>test_237_5 = test_237.deleteNode(head_5)
+print(f&quot;Output 5:\n  {head_5.val} -&gt; {head_5.next.val} -&gt; {head_5.next.next}&quot;)</code></pre>
+<pre><code>Output 5:
+  5 -&gt; -99 -&gt; None</code></pre>
 <hr />
 </div>
 <div id="valid-anagram" class="section level3">
