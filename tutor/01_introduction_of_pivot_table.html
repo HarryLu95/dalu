@@ -2335,9 +2335,50 @@ Black
 </div>
 <div id="python-1" class="section level2" number="4.2">
 <h2 number="4.2"><span class="header-section-number">4.2</span> Python</h2>
+<pre class="python"><code>df_2\
+    .groupby([&quot;Item sold&quot;])\
+    .agg({&quot;Units sold&quot;: np.sum,
+          &quot;Total price&quot;: [min, max, np.mean]})\
+    .reset_index()</code></pre>
+<pre><code>  Item sold Units sold Total price                
+                   sum         min     max    mean
+0    Laptop          4      140000  140000  140000
+1     Mouse         10        2800    5100    3950
+2  Notebook         18      200000  270000  235000</code></pre>
 </div>
 <div id="r-1" class="section level2" number="4.3">
 <h2 number="4.3"><span class="header-section-number">4.3</span> R</h2>
+<pre class="r"><code>df_2 %&gt;%
+  group_by(`Item sold`) %&gt;%
+  summarise(Units_sold_total = `Units sold` %&gt;% sum(),
+            Totol_price_min = `Total price` %&gt;% min(),
+            Totol_price_max = `Total price` %&gt;% max(),
+            Totol_price_average = `Total price` %&gt;% mean())</code></pre>
+<pre><code># A tibble: 3 x 5
+  `Item sold` Units_sold_total Totol_price_min Totol_price_max Totol_price_aver~
+  &lt;chr&gt;                  &lt;dbl&gt;           &lt;dbl&gt;           &lt;dbl&gt;             &lt;dbl&gt;
+1 Laptop                     4          140000          140000            140000
+2 Mouse                     10            2800            5100              3950
+3 Notebook                  18          200000          270000            235000</code></pre>
+</div>
+<div id="sql-1" class="section level2" number="4.4">
+<h2 number="4.4"><span class="header-section-number">4.4</span> SQL</h2>
+<pre class="r"><code>tutor_db %&gt;%
+  dbGetQuery(&quot;SELECT `Item sold`,
+                     SUM(`Units sold`) AS Units_sold_total,
+                     MIN(`Total price`) AS Totol_price_min,
+                     MAX(`Total price`) AS Totol_price_max,
+                     AVG(`Total price`) AS Totol_price_average
+              FROM sample_data_01_2
+              GROUP BY `Item sold`&quot;)</code></pre>
+<pre><code>  Item sold Units_sold_total Totol_price_min Totol_price_max
+1    Laptop                4          140000          140000
+2     Mouse               10            2800            5100
+3  Notebook               18          200000          270000
+  Totol_price_average
+1              140000
+2                3950
+3              235000</code></pre>
 </div>
 </div>
 <div id="common-types-of-data-storing" class="section level1" number="5">
