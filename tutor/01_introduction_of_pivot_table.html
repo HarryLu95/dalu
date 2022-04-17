@@ -2158,6 +2158,25 @@ West   Fancy    11  12.06  12.06  12.060
 5 West   Golf           26      11.5      12.6          12.1
 6 West   Tee            26      11.4      13.4          12.4</code></pre>
 </div>
+<div id="sql" class="section level2" number="3.4">
+<h2 number="3.4"><span class="header-section-number">3.4</span> SQL</h2>
+<pre class="r"><code>tutor_db %&gt;%
+  dbGetQuery(&quot;SELECT Region,
+                     Style,
+                     SUM(Units) AS Units_total,
+                     MIN(Price) AS Price_min,
+                     MAX(Price) AS Price_max,
+                     AVG(Price) AS Price_average
+              FROM sample_data_01_1
+              GROUP BY Region, Style&quot;)</code></pre>
+<pre><code>  Region Style Units_total Price_min Price_max Price_average
+1   East Fancy          22     11.96     13.74        12.850
+2   East  Golf          22     12.12     13.00        12.560
+3   East   Tee          22     11.04     11.27        11.155
+4   West Fancy          11     12.06     12.06        12.060
+5   West  Golf          26     11.48     12.63        12.055
+6   West   Tee          26     11.44     13.42        12.430</code></pre>
+</div>
 </div>
 <div id="application-on-sample-data-2" class="section level1 tabset" number="4">
 <h1 class="tabset" number="4"><span class="header-section-number">4</span> Application on sample data 2</h1>
@@ -2331,7 +2350,7 @@ Black
 </ul>
 </div>
 <div id="data-science-tools" class="section level1" number="6">
-<h1 number="6"><span class="header-section-number">6</span> Data Science Tools</h1>
+<h1 number="6"><span class="header-section-number">6</span> Data science tools</h1>
 <ul>
 <li>Python:
 <ul>
@@ -2345,18 +2364,461 @@ Black
 </div>
 <div id="practice-on-public-datasets" class="section level1" number="7">
 <h1 number="7"><span class="header-section-number">7</span> Practice on public datasets</h1>
-<div id="lobster" class="section level2" number="7.1">
-<h2 number="7.1"><span class="header-section-number">7.1</span> Lobster</h2>
+<div id="lobster-abundance" class="section level2" number="7.1">
+<h2 number="7.1"><span class="header-section-number">7.1</span> Lobster abundance</h2>
 <ul>
 <li>Data: <code>Lobster_Abundance_All_Years_20220128.csv</code>
 <ul>
 <li><a href="public_dataset/Lobster_Abundance_All_Years_20220128.csv">download</a></li>
 </ul></li>
+</ul>
+<pre><code>      YEAR          MONTH            DATE                SITE          
+ Min.   :2012   Min.   :8.000   Min.   :2012-08-20   Length:7021       
+ 1st Qu.:2016   1st Qu.:8.000   1st Qu.:2016-08-22   Class :character  
+ Median :2018   Median :8.000   Median :2018-08-21   Mode  :character  
+ Mean   :2017   Mean   :8.011   Mean   :2018-02-02                     
+ 3rd Qu.:2020   3rd Qu.:8.000   3rd Qu.:2020-08-24                     
+ Max.   :2021   Max.   :9.000   Max.   :2021-08-26                     
+    TRANSECT      REPLICATE            SIZE_MM           COUNT       
+ Min.   :1.000   Length:7021        Min.   :-99999   Min.   : 0.000  
+ 1st Qu.:2.000   Class :character   1st Qu.:    65   1st Qu.: 1.000  
+ Median :4.000   Mode  :character   Median :    75   Median : 1.000  
+ Mean   :4.105                      Mean   : -6566   Mean   : 1.459  
+ 3rd Qu.:6.000                      3rd Qu.:    83   3rd Qu.: 2.000  
+ Max.   :9.000                      Max.   :   230   Max.   :41.000  
+     NUM_AO             AREA    
+ Min.   : 0.0000   Min.   :300  
+ 1st Qu.: 0.0000   1st Qu.:300  
+ Median : 0.0000   Median :300  
+ Mean   : 0.0255   Mean   :300  
+ 3rd Qu.: 0.0000   3rd Qu.:300  
+ Max.   :10.0000   Max.   :300  </code></pre>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+YEAR
+</th>
+<th style="text-align:center;">
+MONTH
+</th>
+<th style="text-align:center;">
+DATE
+</th>
+<th style="text-align:center;">
+SITE
+</th>
+<th style="text-align:center;">
+TRANSECT
+</th>
+<th style="text-align:center;">
+REPLICATE
+</th>
+<th style="text-align:center;">
+SIZE_MM
+</th>
+<th style="text-align:center;">
+COUNT
+</th>
+<th style="text-align:center;">
+NUM_AO
+</th>
+<th style="text-align:center;">
+AREA
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+2012
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+2012-08-20
+</td>
+<td style="text-align:center;">
+IVEE
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+A
+</td>
+<td style="text-align:center;">
+-99999
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+300
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2012
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+2012-08-20
+</td>
+<td style="text-align:center;">
+IVEE
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+B
+</td>
+<td style="text-align:center;">
+-99999
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+300
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2012
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+2012-08-20
+</td>
+<td style="text-align:center;">
+IVEE
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+C
+</td>
+<td style="text-align:center;">
+-99999
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+300
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2012
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+2012-08-20
+</td>
+<td style="text-align:center;">
+IVEE
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+D
+</td>
+<td style="text-align:center;">
+-99999
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+300
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2012
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+2012-08-20
+</td>
+<td style="text-align:center;">
+IVEE
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+A
+</td>
+<td style="text-align:center;">
+-99999
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+300
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="lobster-trap-counts" class="section level2" number="7.2">
+<h2 number="7.2"><span class="header-section-number">7.2</span> Lobster trap counts</h2>
+<ul>
 <li>Data: <code>Lobster_Trap_Counts_All_Years_20210519.csv</code>
 <ul>
 <li><a href="public_dataset/Lobster_Trap_Counts_All_Years_20210519.csv">download</a></li>
 </ul></li>
 </ul>
+<pre><code>      YEAR          MONTH            DATE            FISHING_SEASON    
+ Min.   :2012   Min.   : 1.00   Min.   :2012-10-05   Length:11071      
+ 1st Qu.:2014   1st Qu.: 2.00   1st Qu.:2014-11-05   Class :character  
+ Median :2017   Median :10.00   Median :2017-01-05   Mode  :character  
+ Mean   :2016   Mean   : 7.47   Mean   :2017-01-09                     
+ 3rd Qu.:2019   3rd Qu.:11.00   3rd Qu.:2019-02-11                     
+ Max.   :2021   Max.   :12.00   Max.   :2021-03-11                     
+     SITE           SEGMENT_START      SEGMENT_END            TRAPS       
+ Length:11071       Length:11071       Length:11071       Min.   :-99999  
+ Class :character   Class :character   Class :character   1st Qu.:     0  
+ Mode  :character   Mode  :character   Mode  :character   Median :     0  
+                                                          Mean   : -1045  
+                                                          3rd Qu.:     4  
+                                                          Max.   :    44  
+   OBSERVER            NOTES          
+ Length:11071       Length:11071      
+ Class :character   Class :character  
+ Mode  :character   Mode  :character  
+                                      
+                                      
+                                      </code></pre>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+YEAR
+</th>
+<th style="text-align:center;">
+MONTH
+</th>
+<th style="text-align:center;">
+DATE
+</th>
+<th style="text-align:center;">
+FISHING_SEASON
+</th>
+<th style="text-align:center;">
+SITE
+</th>
+<th style="text-align:center;">
+SEGMENT_START
+</th>
+<th style="text-align:center;">
+SEGMENT_END
+</th>
+<th style="text-align:center;">
+TRAPS
+</th>
+<th style="text-align:center;">
+OBSERVER
+</th>
+<th style="text-align:center;">
+NOTES
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+2012
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+2012-10-05
+</td>
+<td style="text-align:center;">
+2012-2013
+</td>
+<td style="text-align:center;">
+ABUR
+</td>
+<td style="text-align:center;">
+119 44.950
+</td>
+<td style="text-align:center;">
+119 44.900
+</td>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:center;">
+Matt Kay
+</td>
+<td style="text-align:center;">
+FIXED Start/Stop
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2012
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+2012-10-05
+</td>
+<td style="text-align:center;">
+2012-2013
+</td>
+<td style="text-align:center;">
+ABUR
+</td>
+<td style="text-align:center;">
+119 44.900
+</td>
+<td style="text-align:center;">
+119 44.850
+</td>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+Matt Kay
+</td>
+<td style="text-align:center;">
+FIXED Start/Stop
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2012
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+2012-10-05
+</td>
+<td style="text-align:center;">
+2012-2013
+</td>
+<td style="text-align:center;">
+ABUR
+</td>
+<td style="text-align:center;">
+119 44.850
+</td>
+<td style="text-align:center;">
+119 44.800
+</td>
+<td style="text-align:center;">
+21
+</td>
+<td style="text-align:center;">
+Matt Kay
+</td>
+<td style="text-align:center;">
+FIXED Start/Stop
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2012
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+2012-10-05
+</td>
+<td style="text-align:center;">
+2012-2013
+</td>
+<td style="text-align:center;">
+ABUR
+</td>
+<td style="text-align:center;">
+119 44.800
+</td>
+<td style="text-align:center;">
+119 44.750
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+Matt Kay
+</td>
+<td style="text-align:center;">
+FIXED Start/Stop
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2012
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+2012-10-05
+</td>
+<td style="text-align:center;">
+2012-2013
+</td>
+<td style="text-align:center;">
+ABUR
+</td>
+<td style="text-align:center;">
+119 44.750
+</td>
+<td style="text-align:center;">
+119 44.700
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+Matt Kay
+</td>
+<td style="text-align:center;">
+FIXED Start/Stop
+</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <center>
 <p>Copyright © 2022 Harry Lu. All rights reserved.</p>
