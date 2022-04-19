@@ -1541,6 +1541,279 @@ ul {font-size: 16px; color: black;}
 <hr />
 <div id="background" class="section level1" number="1">
 <h1 number="1"><span class="header-section-number">1</span> Background</h1>
+<ul>
+<li>Statistical programming language</li>
+<li>R (Core) and R Studio (IDE, Integrated development environment)</li>
+<li>Very popular in statistical academic fields: statistics, biostatistics</li>
+<li>Also quite popular in industry</li>
+<li>Different from traditional programming languages, special data structures
+<ul>
+<li>R’s data structures include vectors, arrays, lists, and data frames</li>
+</ul></li>
+<li>Has a lot of statistical libraries</li>
+<li>Great at data visualization: <code>ggplot2</code></li>
+</ul>
+</div>
+<div id="r-markdown" class="section level1" number="2">
+<h1 number="2"><span class="header-section-number">2</span> R Markdown</h1>
+<div id="textbook" class="section level2" number="2.1">
+<h2 number="2.1"><span class="header-section-number">2.1</span> Textbook</h2>
+<ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown/"><strong>R Markdown: The Definitive Guide</strong></a>
+<ul>
+<li>Yihui Xie, J. J. Allaire, Garrett Grolemund, 2022-04-11</li>
+</ul></li>
+</ul>
+</div>
+<div id="basic-structure" class="section level2" number="2.2">
+<h2 number="2.2"><span class="header-section-number">2.2</span> Basic structure</h2>
+<ul>
+<li>YAML</li>
+</ul>
+<pre><code>---
+title: &quot;&lt;document title&gt;&quot;
+subtitle: &quot;&lt;document subtitle&gt;&quot;
+author: &quot;&lt;document author&gt;&quot;
+date: &quot;&lt;document date&gt;&quot;
+output:
+  html_document:
+    toc: &lt;TRUE&gt;
+    toc_float: 
+      collapsed: &lt;FALSE&gt;
+      smooth_scroll: &lt;FALSE&gt;
+    toc_depth: &lt;2&gt;
+    number_sections: &lt;TRUE&gt;
+---</code></pre>
+<ul>
+<li>Texts
+<ul>
+<li>Markdown</li>
+</ul></li>
+<li>Code chunks
+<ul>
+<li>R</li>
+<li>Other language</li>
+</ul></li>
+<li>Results</li>
+</ul>
+</div>
+<div id="output-format" class="section level2" number="2.3">
+<h2 number="2.3"><span class="header-section-number">2.3</span> Output format</h2>
+<ul>
+<li>HTML
+<ul>
+<li>tabset</li>
+</ul></li>
+</ul>
+<pre><code>## &lt;level 2 header&gt; {.tabset .tabset-fade .tabset-pills}
+
+### &lt;level 3 header&gt;
+
+(tab content)
+
+### &lt;level 3 header&gt;
+
+(tab content)</code></pre>
+<ul>
+<li>Pdf/Word</li>
+<li>Beamer slides</li>
+<li>Website</li>
+<li>Book</li>
+<li>Journal articles</li>
+<li>Homework (R-Pub)</li>
+<li>More…</li>
+</ul>
+</div>
+<div id="r-chuck" class="section level2" number="2.4">
+<h2 number="2.4"><span class="header-section-number">2.4</span> R chuck</h2>
+<ul>
+<li>Shortcut: <code>Ctrl + Alt + I</code> (<code>Cmd + Option + I</code> on macOS)</li>
+</ul>
+<pre><code>```{r}
+&lt;r code&gt;
+```</code></pre>
+<pre><code>```{}
+&lt;text in chuck&gt;
+```</code></pre>
+<ul>
+<li>Useful parameters
+<ul>
+<li><code>message</code>: <code>TRUE</code> (<code>T</code>) or <code>FALSE</code> (<code>F</code>), show or hide message</li>
+<li><code>warning</code>: <code>TRUE</code> (<code>T</code>) or <code>FALSE</code> (<code>F</code>), show or hide warning</li>
+<li><code>eval</code>: <code>TRUE</code> (<code>T</code>) or <code>FALSE</code> (<code>F</code>), run or skip code chuck</li>
+<li><code>echo</code>: <code>TRUE</code> (<code>T</code>) or <code>FALSE</code> (<code>F</code>), show or hide code chuck</li>
+<li><code>fig.align</code>: <code>left</code>, <code>center</code>, or <code>right</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="base-r" class="section level1" number="3">
+<h1 number="3"><span class="header-section-number">3</span> Base R</h1>
+<div id="using-package" class="section level2" number="3.1">
+<h2 number="3.1"><span class="header-section-number">3.1</span> Using Package</h2>
+<pre class="r"><code>install.packages(&quot;dplyr&quot;)
+library(dplyr)
+dplyr::select()</code></pre>
+</div>
+<div id="variable-name-comment" class="section level2" number="3.2">
+<h2 number="3.2"><span class="header-section-number">3.2</span> Variable name &amp; comment</h2>
+</div>
+<div id="data-types" class="section level2" number="3.3">
+<h2 number="3.3"><span class="header-section-number">3.3</span> Data types</h2>
+<ul>
+<li>logical (boolean)
+<ul>
+<li><code>TRUE</code> (<code>T</code>), <code>FALSE</code> (<code>F</code>)</li>
+</ul></li>
+<li>integer
+<ul>
+<li><code>1L</code>, <code>-2L</code></li>
+</ul></li>
+<li>complex
+<ul>
+<li><code>1+2i</code>, <code>-2+3i</code></li>
+</ul></li>
+<li>numeric (integer or float)
+<ul>
+<li><code>1</code>, <code>0</code>, <code>1.5</code>, <code>-3.2</code></li>
+</ul></li>
+<li>character (string)
+<ul>
+<li><code>&quot;a&quot;</code>, <code>&quot;1&quot;</code>, <code>&quot;2.0&quot;</code>, <code>&quot;TRUE&quot;</code>, <code>&quot;FALSE&quot;</code></li>
+</ul></li>
+</ul>
+</div>
+<div id="data-structures" class="section level2" number="3.4">
+<h2 number="3.4"><span class="header-section-number">3.4</span> Data structures</h2>
+<ul>
+<li>factor (string with level)
+<ul>
+<li>for statistical model</li>
+</ul></li>
+<li>vector</li>
+<li>list</li>
+<li>matrix</li>
+<li>array</li>
+<li>dataframe</li>
+</ul>
+</div>
+<div id="vectors" class="section level2" number="3.5">
+<h2 number="3.5"><span class="header-section-number">3.5</span> Vectors</h2>
+<div id="creating-vectors" class="section level3" number="3.5.1">
+<h3 number="3.5.1"><span class="header-section-number">3.5.1</span> Creating vectors</h3>
+<ul>
+<li>combine/join elements:</li>
+</ul>
+<pre class="r"><code>c(1, 2, 4)</code></pre>
+<pre><code>[1] 1 2 4</code></pre>
+<ul>
+<li>integer sequence:</li>
+</ul>
+<pre class="r"><code>1:4</code></pre>
+<pre><code>[1] 1 2 3 4</code></pre>
+<ul>
+<li>complex sequence:</li>
+</ul>
+<pre class="r"><code>seq(from = 1, to = 4, by = 0.4)</code></pre>
+<pre><code>[1] 1.0 1.4 1.8 2.2 2.6 3.0 3.4 3.8</code></pre>
+<ul>
+<li>repetition by times:</li>
+</ul>
+<pre class="r"><code>rep(1:4, times = 2)</code></pre>
+<pre><code>[1] 1 2 3 4 1 2 3 4</code></pre>
+<pre class="r"><code># 1:4 %&gt;% rep(times = 2)</code></pre>
+<ul>
+<li>repetition by each:</li>
+</ul>
+<pre class="r"><code>rep(1:3, each = 4)</code></pre>
+<pre><code> [1] 1 1 1 1 2 2 2 2 3 3 3 3</code></pre>
+<pre class="r"><code># 1:3 %&gt;% rep(each = 4)</code></pre>
+</div>
+<div id="vector-functions" class="section level3" number="3.5.2">
+<h3 number="3.5.2"><span class="header-section-number">3.5.2</span> Vector functions</h3>
+<pre class="r"><code>x = c(1, 3, 2, 5, 4, 5)</code></pre>
+<ul>
+<li>sort (ascending):</li>
+</ul>
+<pre class="r"><code>sort(x)</code></pre>
+<pre><code>[1] 1 2 3 4 5 5</code></pre>
+<pre class="r"><code># x %&gt;% sort()</code></pre>
+<ul>
+<li>sort (descending):</li>
+</ul>
+<pre class="r"><code>sort(x, decreasing = TRUE)</code></pre>
+<pre><code>[1] 5 5 4 3 2 1</code></pre>
+<pre class="r"><code># x %&gt;% sort(decreasing = TRUE)</code></pre>
+<ul>
+<li>reverse:</li>
+</ul>
+<pre class="r"><code>rev(x)</code></pre>
+<pre><code>[1] 5 4 5 2 3 1</code></pre>
+<pre class="r"><code># x %&gt;% rev()</code></pre>
+<ul>
+<li>counts of values:</li>
+</ul>
+<pre class="r"><code>table(x)</code></pre>
+<pre><code>x
+1 2 3 4 5 
+1 1 1 1 2 </code></pre>
+<pre class="r"><code># x %&gt;% table()</code></pre>
+<ul>
+<li>unique values:</li>
+</ul>
+<pre class="r"><code>unique(x)</code></pre>
+<pre><code>[1] 1 3 2 5 4</code></pre>
+<pre class="r"><code># x %&gt;% unique()</code></pre>
+</div>
+<div id="select-vector-elements" class="section level3" number="3.5.3">
+<h3 number="3.5.3"><span class="header-section-number">3.5.3</span> Select vector element(s)</h3>
+<ul>
+<li>Note: In R, index starts at 1</li>
+</ul>
+<pre class="r"><code>x = c(1, -3, 2, -5, 4, 5, 10)</code></pre>
+<ul>
+<li>get the 3rd element:</li>
+</ul>
+<pre class="r"><code>x[3]</code></pre>
+<pre><code>[1] 2</code></pre>
+<pre class="r"><code># x %&gt;% extract(3)</code></pre>
+<ul>
+<li>remove the 3rd element:</li>
+</ul>
+<pre class="r"><code>x[-3]</code></pre>
+<pre><code>[1]  1 -3 -5  4  5 10</code></pre>
+<pre class="r"><code># x %&gt;% extract(-3)
+# x %&gt;% extract(3 %&gt;% subtract())</code></pre>
+<ul>
+<li>get the 2nd to the 4th elements:</li>
+</ul>
+<pre class="r"><code>x[2:4]</code></pre>
+<pre><code>[1] -3  2 -5</code></pre>
+<pre class="r"><code># x %&gt;% extract(2:4)</code></pre>
+<ul>
+<li>remove the 2nd to the 4th elements:</li>
+</ul>
+<pre class="r"><code>x[-(2:4)]</code></pre>
+<pre><code>[1]  1  4  5 10</code></pre>
+<pre class="r"><code># x %&gt;% extract(-(2:4))
+# x %&gt;% extract(2:4 %&gt;% subtract())</code></pre>
+<ul>
+<li>get the 1st and the 3rd elements:</li>
+</ul>
+<pre class="r"><code>x[c(1, 3)]</code></pre>
+<pre><code>[1] 1 2</code></pre>
+<pre class="r"><code># x %&gt;% extract(c(1, 3))</code></pre>
+<ul>
+<li>?</li>
+</ul>
+<pre class="r"><code>x == 10</code></pre>
+<pre><code>[1] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE</code></pre>
+<pre class="r"><code>x[x == 10]</code></pre>
+<pre><code>[1] 10</code></pre>
+<pre class="r"><code>x[x &lt; 0]</code></pre>
+<pre><code>[1] -3 -5</code></pre>
+</div>
+</div>
 </div>
 
 
