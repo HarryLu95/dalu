@@ -1740,10 +1740,99 @@ dplyr::select()</code></pre>
 <li>dataframe</li>
 </ul>
 </div>
-<div id="vectors" class="section level2" number="4.5">
-<h2 number="4.5"><span class="header-section-number">4.5</span> Vectors</h2>
-<div id="creating-vectors" class="section level3" number="4.5.1">
-<h3 number="4.5.1"><span class="header-section-number">4.5.1</span> Creating vectors</h3>
+<div id="build-in-constants" class="section level2" number="4.5">
+<h2 number="4.5"><span class="header-section-number">4.5</span> Build-in constants</h2>
+<ol style="list-style-type: decimal">
+<li><code>pi</code></li>
+</ol>
+<pre class="r"><code>pi</code></pre>
+<pre><code>[1] 3.141593</code></pre>
+<ul>
+<li><code>LETTERS</code>, <code>letters</code></li>
+</ul>
+<pre class="r"><code>LETTERS</code></pre>
+<pre><code> [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot; &quot;P&quot; &quot;Q&quot; &quot;R&quot; &quot;S&quot;
+[20] &quot;T&quot; &quot;U&quot; &quot;V&quot; &quot;W&quot; &quot;X&quot; &quot;Y&quot; &quot;Z&quot;</code></pre>
+<pre class="r"><code>letters</code></pre>
+<pre><code> [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot;
+[20] &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
+<ul>
+<li><code>month.abb</code>, <code>month.name</code></li>
+</ul>
+<pre class="r"><code>month.abb</code></pre>
+<pre><code> [1] &quot;Jan&quot; &quot;Feb&quot; &quot;Mar&quot; &quot;Apr&quot; &quot;May&quot; &quot;Jun&quot; &quot;Jul&quot; &quot;Aug&quot; &quot;Sep&quot; &quot;Oct&quot; &quot;Nov&quot; &quot;Dec&quot;</code></pre>
+<pre class="r"><code>month.name</code></pre>
+<pre><code> [1] &quot;January&quot;   &quot;February&quot;  &quot;March&quot;     &quot;April&quot;     &quot;May&quot;       &quot;June&quot;     
+ [7] &quot;July&quot;      &quot;August&quot;    &quot;September&quot; &quot;October&quot;   &quot;November&quot;  &quot;December&quot; </code></pre>
+</div>
+<div id="operations" class="section level2" number="4.6">
+<h2 number="4.6"><span class="header-section-number">4.6</span> Operations</h2>
+<ol style="list-style-type: decimal">
+<li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>^</code> (power), <code>%%</code> (remainder), <code>%/%</code> (quotient)</li>
+<li>logic: <code>&amp;</code>, <code>|</code>, <code>!</code></li>
+<li>compare: <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>&gt;</code></li>
+</ol>
+</div>
+<div id="math" class="section level2" number="4.7">
+<h2 number="4.7"><span class="header-section-number">4.7</span> Math</h2>
+<ol style="list-style-type: decimal">
+<li>logarithm: <code>log()</code>, <code>log2()</code>, <code>log10()</code></li>
+</ol>
+<pre class="r"><code>log(24)</code></pre>
+<pre><code>[1] 3.178054</code></pre>
+<pre class="r"><code>log2(8)</code></pre>
+<pre><code>[1] 3</code></pre>
+<pre class="r"><code>log10(100)</code></pre>
+<pre><code>[1] 2</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>exponential: <code>exp()</code></li>
+</ol>
+<pre class="r"><code>exp(3.178)</code></pre>
+<pre><code>[1] 23.99871</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>trigonometry: <code>sin()</code>, <code>cos()</code>, <code>tan()</code>, etc.</li>
+</ol>
+<pre class="r"><code>sin(pi/6)</code></pre>
+<pre><code>[1] 0.5</code></pre>
+<pre class="r"><code>cos(pi/3)</code></pre>
+<pre><code>[1] 0.5</code></pre>
+<pre class="r"><code>tan(pi/4)</code></pre>
+<pre><code>[1] 1</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li><code>abs()</code>, <code>sign()</code></li>
+</ol>
+<pre class="r"><code>abs(-10)</code></pre>
+<pre><code>[1] 10</code></pre>
+<pre class="r"><code>sign(-2:3)</code></pre>
+<pre><code>[1] -1 -1  0  1  1  1</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li><code>sqrt()</code></li>
+</ol>
+<pre class="r"><code>sqrt(81)</code></pre>
+<pre><code>[1] 9</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li><code>floor()</code>, <code>ceiling()</code>, <code>trunc()</code></li>
+</ol>
+<pre class="r"><code>floor(3.8)</code></pre>
+<pre><code>[1] 3</code></pre>
+<pre class="r"><code>floor(-3.2)</code></pre>
+<pre><code>[1] -4</code></pre>
+<pre class="r"><code>ceiling(3.8)</code></pre>
+<pre><code>[1] 4</code></pre>
+<pre class="r"><code>ceiling(-3.2)</code></pre>
+<pre><code>[1] -3</code></pre>
+<pre class="r"><code>trunc(3.8)</code></pre>
+<pre><code>[1] 3</code></pre>
+<pre class="r"><code>trunc(-3.2)</code></pre>
+<pre><code>[1] -3</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li><code>round()</code>, <code>signif()</code></li>
+</ol>
+</div>
+<div id="vectors" class="section level2" number="4.8">
+<h2 number="4.8"><span class="header-section-number">4.8</span> Vectors</h2>
+<div id="creating-vectors" class="section level3" number="4.8.1">
+<h3 number="4.8.1"><span class="header-section-number">4.8.1</span> Creating vectors</h3>
 <ol style="list-style-type: decimal">
 <li>combine/join elements:</li>
 </ol>
@@ -1772,8 +1861,8 @@ dplyr::select()</code></pre>
 <pre><code> [1] 1 1 1 1 2 2 2 2 3 3 3 3</code></pre>
 <pre class="r"><code># 1:3 %&gt;% rep(each = 4)</code></pre>
 </div>
-<div id="vector-functions" class="section level3" number="4.5.2">
-<h3 number="4.5.2"><span class="header-section-number">4.5.2</span> Vector functions</h3>
+<div id="vector-functions" class="section level3" number="4.8.2">
+<h3 number="4.8.2"><span class="header-section-number">4.8.2</span> Vector functions</h3>
 <pre class="r"><code>x = c(1, 3, 2, 5, 4, 5)</code></pre>
 <ol style="list-style-type: decimal">
 <li>sort (ascending):</li>
@@ -1808,8 +1897,8 @@ dplyr::select()</code></pre>
 <pre><code>[1] 1 3 2 5 4</code></pre>
 <pre class="r"><code># x %&gt;% unique()</code></pre>
 </div>
-<div id="select-vector-elements" class="section level3" number="4.5.3">
-<h3 number="4.5.3"><span class="header-section-number">4.5.3</span> Select vector element(s)</h3>
+<div id="select-vector-elements" class="section level3" number="4.8.3">
+<h3 number="4.8.3"><span class="header-section-number">4.8.3</span> Select vector element(s)</h3>
 <ul>
 <li>Note: In R, index starts at 1</li>
 </ul>
