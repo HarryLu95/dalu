@@ -1553,11 +1553,25 @@ ul {font-size: 16px; color: black;}
 </div>
 <div id="problem-2" class="section level1" number="2">
 <h1 number="2"><span class="header-section-number">2</span> Problem 2</h1>
-<ul>
-<li>Create a</li>
-</ul>
+<ol style="list-style-type: decimal">
+<li>Load the data from <code>https://www.harrylu.net/tutor/sample_data_01_2.csv</code>.</li>
+<li>Use <code>table()</code> function to find the unique values of “Color of item”.</li>
+<li>Find the sales of Jones on Black Mouse.</li>
+<li>Find the total sales on Notebook.</li>
+<li>Find the total units of White items.</li>
+</ol>
 <pre class="r"><code>site_url = &quot;https://www.harrylu.net/tutor/&quot;
-df_2 = read_csv(site_url %&gt;% paste0(&quot;sample_data_01_2.csv&quot;))</code></pre>
+df_2 = read_csv(site_url %&gt;% paste0(&quot;sample_data_01_2.csv&quot;))
+df_2</code></pre>
+<pre><code># A tibble: 5 x 7
+  `Date of sale` `Sales person` `Item sold` `Color of item` `Units sold`
+  &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       &lt;chr&gt;                  &lt;dbl&gt;
+1 10/1/2013      Jones          Notebook    Black                      8
+2 10/2/2013      Price          Laptop      Red                        4
+3 10/3/2013      George         Mouse       Red                        6
+4 10/4/2013      Larry          Notebook    White                     10
+5 10/5/2013      Jones          Mouse       Black                      4
+# ... with 2 more variables: Per unit price &lt;dbl&gt;, Total price &lt;dbl&gt;</code></pre>
 </div>
 
 
