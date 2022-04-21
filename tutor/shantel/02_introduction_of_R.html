@@ -1692,6 +1692,9 @@ output:
 </div>
 <div id="base-r" class="section level1" number="4">
 <h1 number="4"><span class="header-section-number">4</span> Base R</h1>
+<ul>
+<li>Also include some Tidyverse knowledge</li>
+</ul>
 <div id="using-package" class="section level2" number="4.1">
 <h2 number="4.1"><span class="header-section-number">4.1</span> Using Package</h2>
 <pre class="r"><code>install.packages(&quot;dplyr&quot;)
@@ -1968,6 +1971,65 @@ dplyr::select()</code></pre>
 <pre><code>orange 
     10 </code></pre>
 <pre class="r"><code># x %&gt;% extract(&quot;orange&quot;)</code></pre>
+</div>
+</div>
+<div id="dataframe" class="section level2" number="4.9">
+<h2 number="4.9"><span class="header-section-number">4.9</span> Dataframe</h2>
+<ul>
+<li>History, compare with matrix, compare with relational table</li>
+</ul>
+<div id="read-data" class="section level3" number="4.9.1">
+<h3 number="4.9.1"><span class="header-section-number">4.9.1</span> Read data</h3>
+<ul>
+<li><code>read.csv()</code> (Base)</li>
+<li><code>read_csv()</code> (Tidyverse: readr)</li>
+<li>Other: <code>read_delim()</code>, <code>read_tsv()</code>, etc.</li>
+<li>Lesson 1: common types of data storing</li>
+</ul>
+</div>
+<div id="view" class="section level3" number="4.9.2">
+<h3 number="4.9.2"><span class="header-section-number">4.9.2</span> View</h3>
+<ul>
+<li><code>head()</code>, <code>tail()</code></li>
+<li><code>str()</code> (structure)</li>
+<li><code>summary()</code></li>
+</ul>
+</div>
+<div id="inspect" class="section level3" number="4.9.3">
+<h3 number="4.9.3"><span class="header-section-number">4.9.3</span> Inspect</h3>
+<ul>
+<li>size: <code>dim()</code>, <code>nrow()</code>, <code>ncol()</code></li>
+<li>content: <code>head()</code>, <code>tail()</code></li>
+<li>names: <code>names()</code>, <code>rownames()</code>, <code>colnames()</code></li>
+<li>summary: <code>str()</code>, <code>summary()</code></li>
+</ul>
+</div>
+<div id="slice" class="section level3" number="4.9.4">
+<h3 number="4.9.4"><span class="header-section-number">4.9.4</span> Slice</h3>
+<ul>
+<li><code>[]</code>, <code>$</code> (Base)</li>
+<li><code>extract()</code>, <code>use_series()</code> (Tidyverse: magrittr)</li>
+</ul>
+</div>
+</div>
+<div id="matrix" class="section level2" number="4.10">
+<h2 number="4.10"><span class="header-section-number">4.10</span> Matrix</h2>
+<ul>
+<li><code>matrix()</code></li>
+</ul>
+<div id="slice-1" class="section level3" number="4.10.1">
+<h3 number="4.10.1"><span class="header-section-number">4.10.1</span> Slice</h3>
+<ul>
+<li><code>[]</code></li>
+</ul>
+</div>
+<div id="functions" class="section level3" number="4.10.2">
+<h3 number="4.10.2"><span class="header-section-number">4.10.2</span> Functions</h3>
+<ul>
+<li>transpose: <code>t()</code></li>
+<li>multiplication: <code>%*%</code> (Base), <code>multiply_by_matrix()</code> (Tidyverse: magrittr)</li>
+<li><code>solve()</code></li>
+</ul>
 </div>
 </div>
 </div>
