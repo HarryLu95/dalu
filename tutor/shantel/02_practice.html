@@ -1562,16 +1562,29 @@ ul {font-size: 16px; color: black;}
 </ol>
 <pre class="r"><code>site_url = &quot;https://www.harrylu.net/tutor/&quot;
 df_2 = read_csv(site_url %&gt;% paste0(&quot;sample_data_01_2.csv&quot;))
-df_2</code></pre>
-<pre><code># A tibble: 5 x 7
+df_2 %&gt;% head(3)</code></pre>
+<pre><code># A tibble: 3 x 7
   `Date of sale` `Sales person` `Item sold` `Color of item` `Units sold`
   &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       &lt;chr&gt;                  &lt;dbl&gt;
 1 10/1/2013      Jones          Notebook    Black                      8
 2 10/2/2013      Price          Laptop      Red                        4
 3 10/3/2013      George         Mouse       Red                        6
-4 10/4/2013      Larry          Notebook    White                     10
-5 10/5/2013      Jones          Mouse       Black                      4
 # ... with 2 more variables: Per unit price &lt;dbl&gt;, Total price &lt;dbl&gt;</code></pre>
+<pre class="r"><code>df_2 %&gt;% summary()</code></pre>
+<pre><code> Date of sale       Sales person        Item sold         Color of item     
+ Length:5           Length:5           Length:5           Length:5          
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+   Units sold   Per unit price   Total price    
+ Min.   : 4.0   Min.   :  700   Min.   :  2800  
+ 1st Qu.: 4.0   1st Qu.:  850   1st Qu.:  5100  
+ Median : 6.0   Median :25000   Median :140000  
+ Mean   : 6.4   Mean   :17710   Mean   :123580  
+ 3rd Qu.: 8.0   3rd Qu.:27000   3rd Qu.:200000  
+ Max.   :10.0   Max.   :35000   Max.   :270000  </code></pre>
 </div>
 
 
