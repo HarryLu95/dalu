@@ -1971,8 +1971,15 @@ dplyr::select()</code></pre>
 <ul>
 <li>History, compare with matrix, compare with relational table</li>
 </ul>
+<div id="creating-dataframe" class="section level3">
+<h3><span class="header-section-number">4.9.1</span> Creating dataframe</h3>
+<ul>
+<li><code>data.frame</code></li>
+<li><code>tibble</code> (Tidyverse)</li>
+</ul>
+</div>
 <div id="read-data" class="section level3">
-<h3><span class="header-section-number">4.9.1</span> Read data</h3>
+<h3><span class="header-section-number">4.9.2</span> Read data</h3>
 <ul>
 <li><code>read.csv()</code> (Base)</li>
 <li><code>read_csv()</code> (Tidyverse: readr)</li>
@@ -1981,7 +1988,7 @@ dplyr::select()</code></pre>
 </ul>
 </div>
 <div id="view" class="section level3">
-<h3><span class="header-section-number">4.9.2</span> View</h3>
+<h3><span class="header-section-number">4.9.3</span> View</h3>
 <ul>
 <li><code>head()</code>, <code>tail()</code></li>
 <li><code>str()</code> (structure)</li>
@@ -1989,7 +1996,7 @@ dplyr::select()</code></pre>
 </ul>
 </div>
 <div id="inspect" class="section level3">
-<h3><span class="header-section-number">4.9.3</span> Inspect</h3>
+<h3><span class="header-section-number">4.9.4</span> Inspect</h3>
 <ul>
 <li>size: <code>dim()</code>, <code>nrow()</code>, <code>ncol()</code></li>
 <li>content: <code>head()</code>, <code>tail()</code></li>
@@ -1998,7 +2005,7 @@ dplyr::select()</code></pre>
 </ul>
 </div>
 <div id="slice" class="section level3">
-<h3><span class="header-section-number">4.9.4</span> Slice</h3>
+<h3><span class="header-section-number">4.9.5</span> Slice</h3>
 <ul>
 <li><code>[]</code>, <code>$</code> (Base)</li>
 <li><code>extract()</code>, <code>use_series()</code> (Tidyverse: magrittr)</li>
@@ -2007,23 +2014,70 @@ dplyr::select()</code></pre>
 </div>
 <div id="matrix" class="section level2">
 <h2><span class="header-section-number">4.10</span> Matrix</h2>
+<div id="creating-matrix" class="section level3">
+<h3><span class="header-section-number">4.10.1</span> Creating matrix</h3>
 <ul>
 <li><code>matrix()</code></li>
 </ul>
+</div>
 <div id="slice-1" class="section level3">
-<h3><span class="header-section-number">4.10.1</span> Slice</h3>
+<h3><span class="header-section-number">4.10.2</span> Slice</h3>
 <ul>
 <li><code>[]</code></li>
+<li><code>extract</code> (Tidyverse: magrittr)</li>
 </ul>
 </div>
 <div id="functions" class="section level3">
-<h3><span class="header-section-number">4.10.2</span> Functions</h3>
+<h3><span class="header-section-number">4.10.3</span> Functions</h3>
 <ul>
 <li>transpose: <code>t()</code></li>
 <li>multiplication: <code>%*%</code> (Base), <code>multiply_by_matrix()</code> (Tidyverse: magrittr)</li>
 <li><code>solve()</code></li>
 </ul>
+<p><span class="math display">\[\mathbf{M}\cdot\vec{x}=\mathbf{N}\]</span></p>
+<p><span class="math display">\[\mathbf{M}\cdot\mathbf{X}=\mathbf{N}\]</span></p>
 </div>
+</div>
+<div id="list" class="section level2">
+<h2><span class="header-section-number">4.11</span> List</h2>
+<div id="creating-list" class="section level3">
+<h3><span class="header-section-number">4.11.1</span> Creating list</h3>
+<ul>
+<li><code>list</code></li>
+</ul>
+</div>
+<div id="slice-2" class="section level3">
+<h3><span class="header-section-number">4.11.2</span> Slice</h3>
+<ul>
+<li>element from list:
+<ul>
+<li><code>[[]]</code></li>
+<li><code>extract2</code> (Tidyverse: magrittr)</li>
+</ul></li>
+<li>element from element:
+<ul>
+<li>use the methods for each element’s data structure</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="string" class="section level2">
+<h2><span class="header-section-number">4.12</span> String</h2>
+<ul>
+<li>create string: <code>&quot;&quot;</code></li>
+<li>string length: <code>nchar</code></li>
+<li>connect strings: <code>paste</code></li>
+<li>substring</li>
+<li>match string pattern</li>
+<li>replace string pattern</li>
+<li><code>toupper</code>, <code>tolower</code></li>
+</ul>
+</div>
+<div id="factor" class="section level2">
+<h2><span class="header-section-number">4.13</span> Factor</h2>
+<ul>
+<li><code>factor</code></li>
+</ul>
 </div>
 </div>
 
