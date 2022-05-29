@@ -1538,6 +1538,21 @@ ul {font-size: 16px; color: black;}
 <ul>
 <li><code>list</code></li>
 </ul>
+<pre class="r"><code>l_1 = list(&quot;x&quot; = c(1, 2, 3),
+           &quot;aaa&quot; = c(&quot;a&quot;, &quot;b&quot;),
+           matrix(c(1:12), nrow = 3, ncol = 4))</code></pre>
+<pre class="r"><code>l_1</code></pre>
+<pre><code>$x
+[1] 1 2 3
+
+$aaa
+[1] &quot;a&quot; &quot;b&quot;
+
+[[3]]
+     [,1] [,2] [,3] [,4]
+[1,]    1    4    7   10
+[2,]    2    5    8   11
+[3,]    3    6    9   12</code></pre>
 </div>
 <div id="slice" class="section level3">
 <h3><span class="header-section-number">1.1.2</span> Slice</h3>
@@ -1552,19 +1567,279 @@ ul {font-size: 16px; color: black;}
 <li>use the methods for each element’s data structure</li>
 </ul></li>
 </ul>
+<pre class="r"><code>l_1 %&gt;% extract2(&quot;x&quot;)</code></pre>
+<pre><code>[1] 1 2 3</code></pre>
+<pre class="r"><code>l_1 %&gt;% extract2(1)</code></pre>
+<pre><code>[1] 1 2 3</code></pre>
+<pre class="r"><code>l_1 %&gt;% extract2(3)</code></pre>
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1    4    7   10
+[2,]    2    5    8   11
+[3,]    3    6    9   12</code></pre>
 </div>
 </div>
 <div id="string" class="section level2">
 <h2><span class="header-section-number">1.2</span> String</h2>
 <ul>
-<li>create string: <code>&quot;&quot;</code></li>
-<li>string length: <code>nchar</code></li>
-<li>connect strings: <code>paste</code></li>
-<li>substring</li>
-<li>match string pattern</li>
-<li>replace string pattern</li>
-<li><code>toupper</code>, <code>tolower</code></li>
+<li>Tidyverse: stringr</li>
 </ul>
+<center>
+<img src="data:image/png;base64,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" width="120" />
+</center>
+<div id="string-manipulation" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> String Manipulation</h3>
+<ul>
+<li>create string: <code>&quot;&quot;</code></li>
+</ul>
+<pre class="r"><code>s_1 = c(&quot;why&quot;, &quot;video&quot;, &quot;cross&quot;, &quot;extra&quot;, &quot;deal&quot;, &quot;authority&quot;)</code></pre>
+<ul>
+<li>string length:
+<ul>
+<li><code>nchar</code> (Base)</li>
+<li><code>str_length</code> (Tidyverse: stringr)</li>
+</ul></li>
+</ul>
+<pre class="r"><code>s_1 %&gt;% nchar()</code></pre>
+<pre><code>[1] 3 5 5 5 4 9</code></pre>
+<pre class="r"><code>s_1 %&gt;% str_length()</code></pre>
+<pre><code>[1] 3 5 5 5 4 9</code></pre>
+<ul>
+<li>join strings:
+<ul>
+<li><code>paste</code>, <code>paste0</code> (Base)</li>
+<li><code>str_c</code> (Tidyverse: stringr)</li>
+</ul></li>
+</ul>
+<pre class="r"><code>s_1[1] %&gt;% paste0(s_1[2])</code></pre>
+<pre><code>[1] &quot;whyvideo&quot;</code></pre>
+<pre class="r"><code>s_1[1] %&gt;% paste(s_1[2], sep = &quot;, &quot;)</code></pre>
+<pre><code>[1] &quot;why, video&quot;</code></pre>
+<pre class="r"><code>s_1 %&gt;% paste(collapse = &quot;, &quot;)</code></pre>
+<pre><code>[1] &quot;why, video, cross, extra, deal, authority&quot;</code></pre>
+<pre class="r"><code>s_1[1] %&gt;% str_c(s_1[2], sep = &quot;, &quot;)</code></pre>
+<pre><code>[1] &quot;why, video&quot;</code></pre>
+<pre class="r"><code>s_1 %&gt;% str_c(collapse = &quot;, &quot;)</code></pre>
+<pre><code>[1] &quot;why, video, cross, extra, deal, authority&quot;</code></pre>
+<ul>
+<li>substring
+<ul>
+<li><code>substr</code> (Base)</li>
+<li><code>str_sub</code> (Tidyverse: stringr)</li>
+</ul></li>
+</ul>
+<pre class="r"><code>s_1 %&gt;% substr(start = 1, stop = 4)</code></pre>
+<pre><code>[1] &quot;why&quot;  &quot;vide&quot; &quot;cros&quot; &quot;extr&quot; &quot;deal&quot; &quot;auth&quot;</code></pre>
+<pre class="r"><code>s_1 %&gt;% str_sub(start = 1, end = 4)</code></pre>
+<pre><code>[1] &quot;why&quot;  &quot;vide&quot; &quot;cros&quot; &quot;extr&quot; &quot;deal&quot; &quot;auth&quot;</code></pre>
+<ul>
+<li>add space: <code>str_pad</code> (Tidyverse: stringr)</li>
+</ul>
+<pre class="r"><code>s_1 %&gt;% str_pad(width = 10, side = &quot;left&quot;)</code></pre>
+<pre><code>[1] &quot;       why&quot; &quot;     video&quot; &quot;     cross&quot; &quot;     extra&quot; &quot;      deal&quot;
+[6] &quot; authority&quot;</code></pre>
+<pre class="r"><code>s_1 %&gt;% str_pad(width = 10, side = &quot;right&quot;)</code></pre>
+<pre><code>[1] &quot;why       &quot; &quot;video     &quot; &quot;cross     &quot; &quot;extra     &quot; &quot;deal      &quot;
+[6] &quot;authority &quot;</code></pre>
+<pre class="r"><code>s_1 %&gt;% str_pad(width = 10, side = &quot;both&quot;)</code></pre>
+<pre><code>[1] &quot;   why    &quot; &quot;  video   &quot; &quot;  cross   &quot; &quot;  extra   &quot; &quot;   deal   &quot;
+[6] &quot;authority &quot;</code></pre>
+<pre class="r"><code>s_1 %&gt;% str_pad(width = 10, side = &quot;both&quot;, pad = &quot;*&quot;)</code></pre>
+<pre><code>[1] &quot;***why****&quot; &quot;**video***&quot; &quot;**cross***&quot; &quot;**extra***&quot; &quot;***deal***&quot;
+[6] &quot;authority*&quot;</code></pre>
+<ul>
+<li>remove space:
+<ul>
+<li><code>str_trim</code>, <code>str_squish</code> (Tidyverse: stringr)</li>
+</ul></li>
+</ul>
+<pre class="r"><code>s_2 = c(&quot;   why    &quot;, &quot;  video   &quot;, &quot;  cross   &quot;, &quot;  extra   &quot;, &quot;   deal   &quot;, &quot;authority &quot;)</code></pre>
+<pre class="r"><code>s_2 %&gt;% str_trim()</code></pre>
+<pre><code>[1] &quot;why&quot;       &quot;video&quot;     &quot;cross&quot;     &quot;extra&quot;     &quot;deal&quot;      &quot;authority&quot;</code></pre>
+<pre class="r"><code>s_3 = &quot;  why   video     cross  extra deal authority     &quot;</code></pre>
+<pre class="r"><code>s_3 %&gt;% str_squish()</code></pre>
+<pre><code>[1] &quot;why video cross extra deal authority&quot;</code></pre>
+<ul>
+<li>truncate string:
+<ul>
+<li><code>strtrim</code> (Base)</li>
+<li><code>str_trunc</code> (Tidyverse: stringr)</li>
+</ul></li>
+</ul>
+<pre class="r"><code>s_4 = &quot;This string is moderately long&quot;</code></pre>
+<pre class="r"><code>s_4 %&gt;% strtrim(width = 20)</code></pre>
+<pre><code>[1] &quot;This string is moder&quot;</code></pre>
+<pre class="r"><code>s_4 %&gt;% str_trunc(width = 20, side = &quot;right&quot;, ellipsis = &quot;&quot;)</code></pre>
+<pre><code>[1] &quot;This string is moder&quot;</code></pre>
+<pre class="r"><code>s_4 %&gt;% str_trunc(width = 20, side = &quot;right&quot;)</code></pre>
+<pre><code>[1] &quot;This string is mo...&quot;</code></pre>
+<pre class="r"><code>s_4 %&gt;% str_trunc(width = 20, side = &quot;center&quot;)</code></pre>
+<pre><code>[1] &quot;This stri...ely long&quot;</code></pre>
+<pre class="r"><code>s_4 %&gt;% str_trunc(width = 20, side = &quot;left&quot;)</code></pre>
+<pre><code>[1] &quot;...s moderately long&quot;</code></pre>
+<ul>
+<li>upper case:
+<ul>
+<li><code>toupper</code> (Base)</li>
+<li><code>str_to_upper</code> (Tidyverse: stringr)</li>
+<li><code>str_to_title</code> (Tidyverse: stringr)</li>
+<li><code>str_to_sentence</code> (Tidyverse: stringr)</li>
+</ul></li>
+<li>lower case:
+<ul>
+<li><code>tolower</code> (Base)</li>
+<li><code>str_to_lower</code> (Tidyverse: stringr)</li>
+</ul></li>
+</ul>
+</div>
+<div id="regular-expression-regex" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Regular Expression (Regex)</h3>
+<pre class="r"><code>s_5 = c(&quot;apple&quot;,
+        &quot;219 733 8965&quot;,
+        &quot;329-293-8753&quot;,
+        &quot;Work: 579-499-7527; Home: 543.355.3679&quot;)
+phone_pattern = &quot;([2-9][0-9]{2})[- .]([0-9]{3})[- .]([0-9]{4})&quot;</code></pre>
+<ul>
+<li>find if a pattern exists in a vector, and return boolean:
+<ul>
+<li><code>grepl</code> (Base)</li>
+<li><code>str_detect</code> (Tidyverse: stringr)</li>
+</ul></li>
+</ul>
+<pre class="r"><code>s_5 %&gt;% grepl(pattern = phone_pattern)</code></pre>
+<pre><code>[1] FALSE  TRUE  TRUE  TRUE</code></pre>
+<pre class="r"><code>s_5 %&gt;% str_detect(pattern = phone_pattern)</code></pre>
+<pre><code>[1] FALSE  TRUE  TRUE  TRUE</code></pre>
+<ul>
+<li>find the count of pattern:
+<ul>
+<li><code>str_count</code> (Tidyverse: stringr)</li>
+</ul></li>
+</ul>
+<pre class="r"><code>s_5 %&gt;% str_count(pattern = phone_pattern)</code></pre>
+<pre><code>[1] 0 1 1 2</code></pre>
+<ul>
+<li>find if a pattern exists in a vector, and return the True index:
+<ul>
+<li><code>grep</code> (Base)</li>
+</ul></li>
+</ul>
+<pre class="r"><code>s_5 %&gt;% grep(pattern = phone_pattern)</code></pre>
+<pre><code>[1] 2 3 4</code></pre>
+<ul>
+<li>get all matched elements from a vector:
+<ul>
+<li><code>str_subset</code> (Tidyverse: stringr)</li>
+</ul></li>
+</ul>
+<pre class="r"><code>s_5 %&gt;% extract(s_5 %&gt;% grep(pattern = phone_pattern))</code></pre>
+<pre><code>[1] &quot;219 733 8965&quot;                          
+[2] &quot;329-293-8753&quot;                          
+[3] &quot;Work: 579-499-7527; Home: 543.355.3679&quot;</code></pre>
+<pre class="r"><code>s_5 %&gt;% str_subset(pattern = phone_pattern)</code></pre>
+<pre><code>[1] &quot;219 733 8965&quot;                          
+[2] &quot;329-293-8753&quot;                          
+[3] &quot;Work: 579-499-7527; Home: 543.355.3679&quot;</code></pre>
+<ul>
+<li>find pattern locations:
+<ul>
+<li><code>str_locate</code>, <code>str_locate_all</code> (Tidyverse: stringr)</li>
+</ul></li>
+</ul>
+<pre class="r"><code>s_5 %&gt;% str_locate(pattern = phone_pattern)</code></pre>
+<pre><code>     start end
+[1,]    NA  NA
+[2,]     1  12
+[3,]     1  12
+[4,]     7  18</code></pre>
+<pre class="r"><code>s_5 %&gt;% str_locate_all(pattern = phone_pattern)</code></pre>
+<pre><code>[[1]]
+     start end
+
+[[2]]
+     start end
+[1,]     1  12
+
+[[3]]
+     start end
+[1,]     1  12
+
+[[4]]
+     start end
+[1,]     7  18
+[2,]    27  38</code></pre>
+<pre class="r"><code>s_5 %&gt;% str_locate_all(pattern = phone_pattern) %&gt;% extract2(4)</code></pre>
+<pre><code>     start end
+[1,]     7  18
+[2,]    27  38</code></pre>
+<ul>
+<li>extract matched strings:
+<ul>
+<li><code>str_extract</code>, <code>str_extract_all</code> (Tidyverse: stringr)</li>
+</ul></li>
+</ul>
+<pre class="r"><code>s_5 %&gt;% str_extract(pattern = phone_pattern)</code></pre>
+<pre><code>[1] NA             &quot;219 733 8965&quot; &quot;329-293-8753&quot; &quot;579-499-7527&quot;</code></pre>
+<pre class="r"><code>s_5 %&gt;% str_extract_all(pattern = phone_pattern)</code></pre>
+<pre><code>[[1]]
+character(0)
+
+[[2]]
+[1] &quot;219 733 8965&quot;
+
+[[3]]
+[1] &quot;329-293-8753&quot;
+
+[[4]]
+[1] &quot;579-499-7527&quot; &quot;543.355.3679&quot;</code></pre>
+<pre class="r"><code>s_5 %&gt;% str_extract_all(pattern = phone_pattern, simplify = TRUE)</code></pre>
+<pre><code>     [,1]           [,2]          
+[1,] &quot;&quot;             &quot;&quot;            
+[2,] &quot;219 733 8965&quot; &quot;&quot;            
+[3,] &quot;329-293-8753&quot; &quot;&quot;            
+[4,] &quot;579-499-7527&quot; &quot;543.355.3679&quot;</code></pre>
+<ul>
+<li>replace string pattern:
+<ul>
+<li><code>sub</code>, <code>gsub</code> (Base)</li>
+<li><code>str_replace</code>, <code>str_replace_all</code> (Tidyverse: stringr)</li>
+</ul></li>
+</ul>
+<pre class="r"><code>s_6 = &quot;This is an example of string replacement.&quot;</code></pre>
+<pre class="r"><code>s_6 %&gt;% sub(pattern = &quot; &quot;, replacement = &quot;*&quot;)</code></pre>
+<pre><code>[1] &quot;This*is an example of string replacement.&quot;</code></pre>
+<pre class="r"><code>s_6 %&gt;% gsub(pattern = &quot; &quot;, replacement = &quot;*&quot;)</code></pre>
+<pre><code>[1] &quot;This*is*an*example*of*string*replacement.&quot;</code></pre>
+<pre class="r"><code>s_6 %&gt;% str_replace(pattern = &quot; &quot;, replacement = &quot;*&quot;)</code></pre>
+<pre><code>[1] &quot;This*is an example of string replacement.&quot;</code></pre>
+<pre class="r"><code>s_6 %&gt;% str_replace_all(pattern = &quot; &quot;, replacement = &quot;*&quot;)</code></pre>
+<pre><code>[1] &quot;This*is*an*example*of*string*replacement.&quot;</code></pre>
+<ul>
+<li>split string, return a <code>list</code>
+<ul>
+<li><code>strsplit</code></li>
+<li><code>str_split</code></li>
+</ul></li>
+</ul>
+<pre class="r"><code>s_7 = c(&quot;abc,defg,hij&quot;, &quot;opq,rst&quot;, &quot;xyz&quot;)</code></pre>
+<pre class="r"><code>s_7 %&gt;% strsplit(split = &quot;,&quot;)</code></pre>
+<pre><code>[[1]]
+[1] &quot;abc&quot;  &quot;defg&quot; &quot;hij&quot; 
+
+[[2]]
+[1] &quot;opq&quot; &quot;rst&quot;
+
+[[3]]
+[1] &quot;xyz&quot;</code></pre>
+<pre class="r"><code>s_7 %&gt;% str_split(pattern = &quot;,&quot;)</code></pre>
+<pre><code>[[1]]
+[1] &quot;abc&quot;  &quot;defg&quot; &quot;hij&quot; 
+
+[[2]]
+[1] &quot;opq&quot; &quot;rst&quot;
+
+[[3]]
+[1] &quot;xyz&quot;</code></pre>
+</div>
 </div>
 <div id="factor" class="section level2">
 <h2><span class="header-section-number">1.3</span> Factor</h2>
