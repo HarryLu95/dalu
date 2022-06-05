@@ -4182,12 +4182,11 @@ ul {font-size: 16px; color: black;}
 <li>What is the average size of lobster per each date?</li>
 </ol>
 <pre class="r"><code>average_size_per_date_df = df %&gt;%
-  filter(SIZE_MM != -99999) %&gt;%
   group_by(DATE) %&gt;%
   summarise(average_size = SIZE_MM %&gt;% mean() %&gt;% round(digits = 2))
 datatable(average_size_per_date_df)</code></pre>
-<div id="htmlwidget-ffaeb7cf3d41bc166151" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ffaeb7cf3d41bc166151">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53"],["2012-08-20","2012-08-22","2012-08-24","2012-08-27","2012-08-28","2012-08-29","2013-08-21","2013-08-22","2013-08-23","2013-08-26","2013-08-27","2014-08-25","2014-08-26","2014-08-28","2014-08-29","2014-09-02","2014-09-05","2014-09-12","2015-08-24","2015-08-25","2015-08-26","2015-08-27","2015-08-28","2016-08-22","2016-08-23","2016-08-24","2016-08-25","2016-08-26","2017-08-21","2017-08-22","2017-08-23","2017-08-24","2017-08-25","2018-08-20","2018-08-21","2018-08-22","2018-08-23","2018-08-24","2019-08-22","2019-08-23","2019-08-26","2019-08-27","2019-08-28","2019-08-29","2020-08-24","2020-08-25","2020-08-26","2020-08-27","2020-08-28","2021-08-23","2021-08-24","2021-08-25","2021-08-26"],[66.32,74.6,71,75.29,70.09,76.07,73.49,75.59,71.87,73.32,75.8,79.16,79.77,75.43,75.58,88,72.62,80.69,67.15,72.98,78.62,65.99,71.26,72.82,76.58,69.42,69.56,65.92,74.05,72.57,77.46,74.54,72.91,71.16,76.11,74.38,80.64,76.24,83.52,87.91,79.34,80.08,77,72.99,73.03,76.72,82.57,75.73,68.95,80.38,81.12,72.88,88.75]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DATE<\/th>\n      <th>average_size<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f5e437b664c73f0f6942" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f5e437b664c73f0f6942">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53"],["2012-08-20","2012-08-22","2012-08-24","2012-08-27","2012-08-28","2012-08-29","2013-08-21","2013-08-22","2013-08-23","2013-08-26","2013-08-27","2014-08-25","2014-08-26","2014-08-28","2014-08-29","2014-09-02","2014-09-05","2014-09-12","2015-08-24","2015-08-25","2015-08-26","2015-08-27","2015-08-28","2016-08-22","2016-08-23","2016-08-24","2016-08-25","2016-08-26","2017-08-21","2017-08-22","2017-08-23","2017-08-24","2017-08-25","2018-08-20","2018-08-21","2018-08-22","2018-08-23","2018-08-24","2019-08-22","2019-08-23","2019-08-26","2019-08-27","2019-08-28","2019-08-29","2020-08-24","2020-08-25","2020-08-26","2020-08-27","2020-08-28","2021-08-23","2021-08-24","2021-08-25","2021-08-26"],[-46772.77,-86475.54,-33915.04,-13997.66,-35248.41,-6825.66,-31528.35,-16375.03,-16606.61,-39085.41,-13570.76,-16183.54,-6047.5,-2704.42,-4352.5,88,-34327,-12429.27,-24949.39,-338.84,-1476.99,65.99,-15055.64,-3851.56,-18494.14,-37956.58,-2371.13,65.92,-33821.66,-1790.46,-12873.61,-552.88,-1051.49,-30595.5,76.11,-1054.27,-2612.09,76.24,-1736.16,-7813.68,79.34,-2107.44,-39953.4,72.99,-266.19,76.72,-6251.71,-61508.72,-884.08,-3431.18,-69205.12,-293.68,-10858.34]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DATE<\/th>\n      <th>average_size<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="q6" class="section level2">
 <h2><span class="header-section-number">2.6</span> Q6</h2>
@@ -4195,15 +4194,14 @@ datatable(average_size_per_date_df)</code></pre>
 <li>What is the average size of lobster per each month?</li>
 </ol>
 <pre class="r"><code>average_size_per_month_df = df %&gt;%
-  filter(SIZE_MM != -99999) %&gt;%
   mutate(MONTH = DATE %&gt;%
            floor_date(unit = &quot;months&quot;) %&gt;%
            str_sub(start = 1, end = 7)) %&gt;%
   group_by(MONTH) %&gt;%
   summarise(average_size = SIZE_MM %&gt;% mean() %&gt;% round(digits = 2))
 datatable(average_size_per_month_df)</code></pre>
-<div id="htmlwidget-09f5749911b50a0f2943" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-09f5749911b50a0f2943">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11"],["2012-08","2013-08","2014-08","2014-09","2015-08","2016-08","2017-08","2018-08","2019-08","2020-08","2021-08"],[73.17,74.74,77.92,78.66,72.75,70.96,73.78,76.41,81,75.69,78.77]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>MONTH<\/th>\n      <th>average_size<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2c446ed319e894a408b4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2c446ed319e894a408b4">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11"],["2012-08","2013-08","2014-08","2014-09","2015-08","2016-08","2017-08","2018-08","2019-08","2020-08","2021-08"],[-32921.64,-22282.16,-7374.62,-20450.09,-4888.31,-8434.09,-4440.78,-2339.2,-4051.77,-3352.17,-5965.26]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>MONTH<\/th>\n      <th>average_size<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="q7" class="section level2">
 <h2><span class="header-section-number">2.7</span> Q7</h2>
@@ -4217,7 +4215,7 @@ datatable(average_size_per_month_df)</code></pre>
                     max())) %&gt;%
   use_series(MONTH)
 largest_average_size_month</code></pre>
-<pre><code>[1] &quot;2019-08&quot;</code></pre>
+<pre><code>[1] &quot;2018-08&quot;</code></pre>
 </div>
 </div>
 <div id="problem-3" class="section level1">
