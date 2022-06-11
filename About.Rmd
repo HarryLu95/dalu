@@ -54,7 +54,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 # <i class="fas fa-briefcase"></i> Professional Background
 - **Citigroup, Inc.**
-    - **Data Analyst** @ Compliance Department
+    - **Data Scientist** @ Compliance Department
     - October 2019 - Present
     - New York, NY, United States
     - <i class="fa fa-hand-o-right"></i> &nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Citi_Logo.png" width="75">](https://www.citigroup.com/citi/)
