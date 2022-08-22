@@ -31,5 +31,6 @@ ul {font-family: Times New Roman; font-size: 20px;}
 # After Cornell
 - <i class="fa fa-calendar-check-o"></i> Project: [Development of Shiny Application on Real Time Financial Data](Projects & Researches/Yahoo_Finance_Data_documentation.html)
     - <i class="fa fa-hand-o-right"></i> [App](https://harrylu95.shinyapps.io/Yahoo_Finance_Data_v2/)
+    - <i class="fa fa-hand-o-right"></i> [New App](https://harrylu95.shinyapps.io/Financial_Data/)
 - <i class="fa fa-calendar-check-o"></i> Project: NLP Analysis on Yelp Dataset Challenge
 
