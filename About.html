@@ -13,7 +13,8 @@
 
 <title>About Me</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -58,6 +59,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -82,6 +84,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -234,7 +239,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -245,35 +250,35 @@ $(document).ready(function () {
       <ul class="nav navbar-nav">
         <li>
   <a href="index.html">
-    <span class="fas fa-home"></span>
+    <span class="fa fa-home"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="About.html">
-    <span class="fas fa-bars"></span>
+    <span class="fa fa-bars"></span>
      
     About Me
   </a>
 </li>
 <li>
   <a href="Projects.html">
-    <span class="fas fa-folder-open"></span>
+    <span class="fa fa-folder-open"></span>
      
     Projects
   </a>
 </li>
 <li>
   <a href="Activity.html">
-    <span class="fas fa-star"></span>
+    <span class="fa fa-star"></span>
      
     Activities
   </a>
 </li>
 <li>
   <a href="Gallery.html">
-    <span class="fas fa-picture-o"></span>
+    <span class="fa fa-picture-o"></span>
      
     Gallery
   </a>
@@ -302,114 +307,190 @@ ul {font-family: Times New Roman; color: black; font-size: 18px; text-align: jus
 <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
 </div>
 <hr />
-<div class="about-contact">
-<h1 id="contact">Contact</h1>
+<div id="contact" class="section level1 about-contact">
+<h1>Contact</h1>
 <ul>
 <li><i class="fas fa-envelope-square"></i> lvda_1@163.com</li>
-<li><a href="https://github.com/HarryLu95"><i class="fab fa-github-square"></i> Github</a></li>
-<li><a href="https://www.linkedin.com/in/dalu0511/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-<li><a href="Resume.html"><i class="fas fa-file"></i> <strong>RESUME</strong></a></li>
+<li><a
+href="https://github.com/HarryLu95"><i class="fab fa-github-square"></i>
+Github</a></li>
+<li><a
+href="https://www.linkedin.com/in/dalu0511/"><i class="fab fa-linkedin"></i>
+LinkedIn</a></li>
+<li><a href="Resume.html"><i class="fas fa-file"></i>
+<strong>RESUME</strong></a></li>
 </ul>
 </div>
 <div class="about-content">
-<h1 id="educational-background"><i class="fas fa-graduation-cap"></i> Educational Background</h1>
+<div id="educational-background" class="section level1">
+<h1><i class="fas fa-graduation-cap"></i> Educational Background</h1>
 <ul>
 <li><i class="fas fa-university"></i> <strong>Graduate</strong>
 <ul>
 <li>Cornell University, NY, USA</li>
 <li>August 2018 - May 2019</li>
-<li><i class="fa fa-hand-o-right"></i>   <a href="https://www.cornell.edu/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Cornell_Logo.png" width="75"></a></li>
-<li>Master’s in Applied Statistics</li>
+<li><i class="fa fa-hand-o-right"></i>   <a
+href="https://www.cornell.edu/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Cornell_Logo.png" width="75"></a></li>
+<li>Master’s in Applied Statistics and Data Science</li>
+<li>Awards:
+<ul>
+<li>Best MPS Project in 2019</li>
+</ul></li>
 </ul></li>
 <li><i class="fas fa-university"></i> <strong>Undergraduate</strong>
 <ul>
 <li>University of Massachusetts Amherst, MA, USA</li>
 <li>September 2013 - May 2017</li>
-<li><i class="fa fa-hand-o-right"></i>   <a href="http://www.umass.edu/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/UMA_Logo.png" width="75"></a></li>
-<li>Bachelor of Science in Mathematics</li>
+<li><i class="fa fa-hand-o-right"></i>   <a
+href="http://www.umass.edu/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/UMA_Logo.png" width="75"></a></li>
+<li>Bachelor of Science in Mathematics
+<ul>
+<li>Concentrations: Applied Mathematics, Statistics and Data Science,
+Actuarial</li>
+</ul></li>
 <li>Minor in Chemistry</li>
+<li>Awards &amp; Scholarships:
+<ul>
+<li><a
+href="https://www.math.umass.edu/undergraduate/math-competition">Second
+Place</a> in Jacob-Cohen-Killam Mathematics Competition (2014)</li>
+<li>Dean’s List (Jan 2014 - Jan 2017)</li>
+<li>Director Scholarship (Sep 2013 - May 2017)</li>
+</ul></li>
+</ul></li>
+<li><i class="fas fa-university"></i> <strong>Summer School</strong>
+<ul>
+<li>Peking University, Beijing, China</li>
+<li>Summer 2010 - 2012</li>
 </ul></li>
 <li><i class="fas fa-school"></i> <strong>High School</strong>
 <ul>
-<li>International Department, Beijing National Day School (BNDS), Beijing, China</li>
+<li>International Department, Beijing National Day School (BNDS),
+Beijing, China</li>
 <li>September 2010 - July 2013</li>
-<li><i class="fa fa-hand-o-right"></i> <a href="http://www.bndsedu.com/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/BNDS_Logo.png" width="100"></a></li>
+<li><i class="fa fa-hand-o-right"></i> <a
+href="http://www.bnds.cn/en/index.php"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/BNDS_Logo.png" width="100"></a></li>
+<li>Awards:
+<ul>
+<li>Second Place, National Science Competition - High School - Chemistry
+Group (2013)</li>
+</ul></li>
 </ul></li>
 <li><i class="fas fa-school"></i> <strong>Middle School</strong>
 <ul>
-<li>The Experimental High School Attached Beijing Normal University (ESBNU), Beijing, China</li>
+<li>The Experimental High School Attached Beijing Normal University
+(ESBNU), Beijing, China</li>
 <li>September 2007 - July 2010</li>
-<li><i class="fa fa-hand-o-right"></i>   <a href="http://www.sdsz.com.cn/item/list.asp?id=1635"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/SDSZ_Logo.png" width="75"></a></li>
+<li><i class="fa fa-hand-o-right"></i>   <a
+href="https://www.sdsz.com.cn/item/list.asp?id=1635"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/SDSZ_Logo.png" width="75"></a></li>
+<li>Awards:
+<ul>
+<li>Silver Medal, National Middle School Math Competition (2013)</li>
+</ul></li>
 </ul></li>
 </ul>
-<h1 id="professional-background"><i class="fas fa-briefcase"></i> Professional Background</h1>
+</div>
+<div id="professional-background" class="section level1">
+<h1><i class="fas fa-briefcase"></i> Professional Background</h1>
 <ul>
 <li><strong>Citigroup, Inc.</strong>
 <ul>
-<li><strong>Data Scientist</strong> @ Compliance Department</li>
+<li><strong>Data Scientist</strong> @ Corporate Compliance
+<ul>
 <li>October 2019 - Present</li>
+</ul></li>
 <li>New York, NY, United States</li>
-<li><i class="fa fa-hand-o-right"></i>   <a href="https://www.citigroup.com/citi/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Citi_Logo.png" width="75"></a></li>
+<li><i class="fa fa-hand-o-right"></i>   <a
+href="https://www.citigroup.com/citi/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Citi_Logo.png" width="75"></a></li>
 </ul></li>
 <li><strong>Crane Management Service, Inc.</strong>
 <ul>
-<li><strong>Statistical Analyst of Marketing</strong></li>
+<li><strong>Statistical Analyst of Marketing</strong>
+<ul>
 <li>March 2018 - August 2018</li>
+</ul></li>
 <li>Los Alamitos, CA, United States</li>
 </ul></li>
 <li><strong>Fishmarket Inc.</strong>
 <ul>
-<li><strong>Marketing Analyst</strong></li>
+<li><strong>Marketing Analyst</strong>
+<ul>
 <li>September 2017 - December 2017</li>
-<li><strong>Website Developer and Maintainer</strong></li>
+</ul></li>
+<li><strong>Website Developer and Maintainer</strong>
+<ul>
 <li>October 2017 - August 2018</li>
+</ul></li>
 <li>Louisville, KY, United States</li>
-<li><i class="fa fa-hand-o-right"></i> <a href="http://fishmarketseafoods.net">Website</a></li>
+<li><i class="fa fa-hand-o-right"></i> <a
+href="http://fishmarketseafoods.net">Website</a></li>
 </ul></li>
 <li><strong>Massachusetts Education International (MEI)</strong>
 <ul>
 <li><strong>UMass Amherst Campus Ambassador</strong></li>
 <li>February 2017 - May 2017</li>
 <li>Amherst, MA, United States</li>
-<li><i class="fa fa-hand-o-right"></i><a href="https://www.meiedu.us/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/MEI_Logo.png" width="150"></a></li>
+<li><i class="fa fa-hand-o-right"></i><a
+href="https://www.meiedu.us/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/MEI_Logo.png" width="150"></a></li>
 </ul></li>
 <li><strong>EducationUSA, U.S. Embassy in Beijing</strong>
 <ul>
 <li><strong>Guest Speaker</strong></li>
 <li>June 2014 - August 2016</li>
 <li>Beijing, China</li>
-<li><i class="fa fa-hand-o-right"></i> <a href="https://educationusa.state.gov/centers/educationusa-china"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/EducationUSA_US_Logo.png" width="100"></a></li>
-<li><i class="fa fa-hand-o-right"></i> <a href="https://china.usembassy-china.org.cn/education-culture/study-usa/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/EducationUSA_China_Logo.png" width="100"></a></li>
-<li><i class="fa fa-hand-o-right"></i> <a href="https://weibo.com/educationusa"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Weibo_Logo.jpg" width="100"></a></li>
+<li><i class="fa fa-hand-o-right"></i> <a
+href="https://educationusa.state.gov/centers/educationusa-china"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/EducationUSA_US_Logo.png" width="100"></a></li>
+<li><i class="fa fa-hand-o-right"></i> <a
+href="https://china.usembassy-china.org.cn/education/study-usa/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/EducationUSA_China_Logo.png" width="100"></a></li>
+<li><i class="fa fa-hand-o-right"></i> <a
+href="https://weibo.com/educationusa"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Weibo_Logo.jpg" width="100"></a></li>
 </ul></li>
 <li><strong>CERNET Education Development Co., Ltd.</strong>
 <ul>
 <li><strong>Marketing Assistant</strong></li>
 <li>July 2015 - August 2015</li>
 <li>Beijing, China</li>
-<li><i class="fa fa-hand-o-right"></i><a href="http://www.cerschool.edu.cn/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/CernetEdu_Logo.jpg" width="125"></a></li>
+<li><i class="fa fa-hand-o-right"></i><a
+href="http://www.cerschool.edu.cn/"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/CernetEdu_Logo.jpg" width="125"></a></li>
 </ul></li>
 <li><strong>Penghua Fund Management Company Ltd.</strong>
 <ul>
 <li><strong>Business Assistant</strong></li>
 <li>June 2014 - July 2014</li>
 <li>Beijing, China</li>
-<li><i class="fa fa-hand-o-right"></i> <a href="https://www.phfund.com.cn/web/en/index"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/PengHua_Logo.jpg" width="75"></a></li>
+<li><i class="fa fa-hand-o-right"></i> <a
+href="https://www.phfund.com.cn/web/en/index"><img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/PengHua_Logo.jpg" width="75"></a></li>
 </ul></li>
 </ul>
-<h1 id="skills">Skills</h1>
+</div>
+<div id="skills" class="section level1">
+<h1>Skills</h1>
 <ul>
 <li><strong>Languages</strong>: Mandarin, English</li>
-<li><strong>Computer Languages</strong>: <a href="https://www.r-project.org/">R</a>, Python, SAS, Hive, SQL, Markdown, HTML, CSS, Java, Bash</li>
-<li><strong>Software / Environment</strong>: <a href="https://www.rstudio.com/">RStudio</a>, Jupyter Notebook, Hadoop Hue, Hadoop, Tectia, Unix, Git Bash, Eclipse Java, Microsoft Excel, Microsoft Word, Microsoft PowerPoint, Adobe Photoshop, Sisense, <a href="http://www.umassk12.net/adi/">Analyzing Digital Images</a></li>
+<li><strong>Computer Languages</strong>: <a
+href="https://www.r-project.org/">R</a>, <a
+href="https://www.python.org/">Python</a>, SAS, HiveQL, SQL, Markdown,
+HTML, CSS, Java</li>
+<li><strong>Software / Environment</strong>: <a
+href="https://posit.co/">RStudio</a>, Jupyter Notebook, PySpark, Hadoop
+Hue, Hadoop, Tectia, Unix, Git Bash, Eclipse Java, Microsoft Excel,
+Microsoft Word, Microsoft PowerPoint, Adobe Photoshop, Sisense, <a
+href="http://www.umassk12.net/adi/">Analyzing Digital Images</a></li>
 </ul>
-<h1 id="hobby">Hobby</h1>
+</div>
+<div id="hobby" class="section level1">
+<h1>Hobby</h1>
 <ul>
-<li>Sports: <i class="fas fa-swimmer"></i>, Running, Biking, Skating, Volleyball, <i class="fas fa-table-tennis"></i>, Billiards, <i class="fas fa-chess"></i>, Yoga, etc.</li>
+<li>Sports: <i class="fas fa-swimmer"></i>, Running, Biking, Skating,
+Volleyball, <i class="fas fa-table-tennis"></i>, Billiards,
+<i class="fas fa-chess"></i>, Yoga, etc.</li>
 <li>Musical Instruments: Piano, Keyboard, Oboe.</li>
-<li>I’m a photographer. <a href="Gallery.html">Come to see what I’ve taken!</a></li>
-<li>I’m also a cook. I love cooking, especially Chinese food. <a href="Gallery.html">Come to see what I’ve cooked!</a></li>
+<li>I’m a photographer. <a href="Gallery.html">Come to see what I’ve
+taken!</a></li>
+<li>I’m also a cook. I love cooking, especially Chinese food. <a
+href="Gallery.html">Come to see what I’ve cooked!</a></li>
 </ul>
+</div>
 </div>
 
 

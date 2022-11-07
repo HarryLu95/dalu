@@ -36,37 +36,51 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
     - Cornell University, NY, USA
     - August 2018 - May 2019
     - <i class="fa fa-hand-o-right"></i> &nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Cornell_Logo.png" width="75">](https://www.cornell.edu/)
-    - Master's in Applied Statistics
+    - Master's in Applied Statistics and Data Science
+    - Awards:
+        - Best MPS Project in 2019
 - <i class="fas fa-university"></i> **Undergraduate**
     - University of Massachusetts Amherst, MA, USA
     - September 2013 - May 2017
     - <i class="fa fa-hand-o-right"></i> &nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/UMA_Logo.png" width="75">](http://www.umass.edu/)
     - Bachelor of Science in Mathematics
+        - Concentrations: Applied Mathematics, Statistics and Data Science, Actuarial
     - Minor in Chemistry
+    - Awards & Scholarships:
+        - [Second Place](https://www.math.umass.edu/undergraduate/math-competition) in Jacob-Cohen-Killam Mathematics Competition (2014)
+        - Dean's List (Jan 2014 - Jan 2017)
+        - Director Scholarship (Sep 2013 - May 2017)
+- <i class="fas fa-university"></i> **Summer School**
+    - Peking University, Beijing, China
+    - Summer 2010 - 2012
 - <i class="fas fa-school"></i> **High School**
     - International Department, Beijing National Day School (BNDS), Beijing, China
     - September 2010 - July 2013
-    - <i class="fa fa-hand-o-right"></i> [<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/BNDS_Logo.png" width="100">](http://www.bndsedu.com/)
+    - <i class="fa fa-hand-o-right"></i> [<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/BNDS_Logo.png" width="100">](http://www.bnds.cn/en/index.php)
+    - Awards:
+        - Second Place, National Science Competition - High School - Chemistry Group (2013)
 - <i class="fas fa-school"></i> **Middle School**
     - The Experimental High School Attached Beijing Normal University (ESBNU), Beijing, China
     - September 2007 - July 2010
-    - <i class="fa fa-hand-o-right"></i> &nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/SDSZ_Logo.png" width="75">](http://www.sdsz.com.cn/item/list.asp?id=1635)
+    - <i class="fa fa-hand-o-right"></i> &nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/SDSZ_Logo.png" width="75">](https://www.sdsz.com.cn/item/list.asp?id=1635)
+    - Awards:
+        - Silver Medal, National Middle School Math Competition (2013)
 
 # <i class="fas fa-briefcase"></i> Professional Background
 - **Citigroup, Inc.**
-    - **Data Scientist** @ Compliance Department
-    - October 2019 - Present
+    - **Data Scientist** @ Corporate Compliance
+        - October 2019 - Present
     - New York, NY, United States
     - <i class="fa fa-hand-o-right"></i> &nbsp;&nbsp;[<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Citi_Logo.png" width="75">](https://www.citigroup.com/citi/)
 - **Crane Management Service, Inc.**
     - **Statistical Analyst of Marketing**
-    - March 2018 - August 2018
+        - March 2018 - August 2018
     - Los Alamitos, CA, United States
 - **Fishmarket Inc.**
     - **Marketing Analyst**
-    - September 2017 - December 2017
+        - September 2017 - December 2017
     - **Website Developer and Maintainer**
-    - October 2017 - August 2018
+        - October 2017 - August 2018
     - Louisville, KY, United States
     - <i class="fa fa-hand-o-right"></i> [Website](http://fishmarketseafoods.net)
 - **Massachusetts Education International (MEI)**
@@ -79,7 +93,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
     - June 2014 - August 2016
     - Beijing, China
     - <i class="fa fa-hand-o-right"></i> [<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/EducationUSA_US_Logo.png" width="100">](https://educationusa.state.gov/centers/educationusa-china)
-    - <i class="fa fa-hand-o-right"></i> [<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/EducationUSA_China_Logo.png" width="100">](https://china.usembassy-china.org.cn/education-culture/study-usa/)
+    - <i class="fa fa-hand-o-right"></i> [<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/EducationUSA_China_Logo.png" width="100">](https://china.usembassy-china.org.cn/education/study-usa/)
     - <i class="fa fa-hand-o-right"></i> [<img src="https://raw.githubusercontent.com/HarryLu95/dalu/master/Buttons%20%26%20Logos/Weibo_Logo.jpg" width="100">](https://weibo.com/educationusa)
 - **CERNET Education Development Co., Ltd.**
     - **Marketing Assistant**
@@ -94,8 +108,8 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 # Skills
 - **Languages**: Mandarin, English
-- **Computer Languages**: [R](https://www.r-project.org/), Python, SAS, Hive, SQL, Markdown, HTML, CSS, Java, Bash
-- **Software / Environment**: [RStudio](https://www.rstudio.com/), Jupyter Notebook, Hadoop Hue, Hadoop, Tectia, Unix, Git Bash, Eclipse Java, Microsoft Excel, Microsoft Word, Microsoft PowerPoint, Adobe Photoshop, Sisense, [Analyzing Digital Images](http://www.umassk12.net/adi/)
+- **Computer Languages**: [R](https://www.r-project.org/), [Python](https://www.python.org/), SAS, HiveQL, SQL, Markdown, HTML, CSS, Java
+- **Software / Environment**: [RStudio](https://posit.co/), Jupyter Notebook, PySpark, Hadoop Hue, Hadoop, Tectia, Unix, Git Bash, Eclipse Java, Microsoft Excel, Microsoft Word, Microsoft PowerPoint, Adobe Photoshop, Sisense, [Analyzing Digital Images](http://www.umassk12.net/adi/)
 
 # Hobby
 - Sports: <i class="fas fa-swimmer"></i>, Running, Biking, Skating, Volleyball, <i class="fas fa-table-tennis"></i>, Billiards, <i class="fas fa-chess"></i>, Yoga, etc.
