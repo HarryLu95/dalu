@@ -2765,7 +2765,7 @@ font-size: 0.95em;
 <h1 class="title toc-ignore">01 Jupyter Notebook and EDA</h1>
 <h3 class="subtitle">Notes for Chaya</h3>
 <h4 class="author">Harry Lu, dl947@cornell.edu</h4>
-<h4 class="date">Jul/05/2023</h4>
+<h4 class="date">Jul/05/2023 - Jul/12/2023</h4>
 
 </div>
 
@@ -2836,9 +2836,126 @@ syntax</li>
 </ul></li>
 </ul>
 </div>
-<div id="class-note" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Class Note</h1>
-<p>(pending)</p>
+<div id="package-plotly" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Package
+<code>plotly</code></h1>
+<ul>
+<li>Dynamic visualization</li>
+</ul>
+</div>
+<div id="class-note" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Class Note</h1>
+<div id="load-packages" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Load Packages</h2>
+<pre class="python"><code>### only load the target function(s) from a package, speed is faster
+from pandas import read_csv</code></pre>
+</div>
+<div id="read-data" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Read Data</h2>
+<pre class="python"><code>raw_pd = read_csv(&quot;survey_results_public.csv&quot;)</code></pre>
+</div>
+<div id="look-at-columns" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Look at Columns</h2>
+<pre class="python"><code>print(list(raw_pd.columns))</code></pre>
+</div>
+<div id="question-1---does-the-average-salary-change-based-on-gender" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Question 1 - Does the
+average salary change based on gender?</h2>
+<ul>
+<li>Use barplot to compare the mean/median</li>
+<li>Use <a href="https://stats.stackexchange.com/questions/278527/testing-whether-two-data-sets-are-statistically-different">statistical
+test</a> to determine</li>
+</ul>
+<div id="get-data" class="section level3" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Get Data</h3>
+<pre class="python"><code>### only slice the target columns out as a sub-table for the following analysis
+q1_pd = raw_pd.loc[:, [&quot;Respondent&quot;, &quot;Gender&quot;, &quot;Salary&quot;]]</code></pre>
+</div>
+<div id="fill-nas" class="section level3" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Fill NAs</h3>
+<pre class="python"><code>### fill special value based on the data type
+q1_pd[&quot;Gender&quot;] = q1_pd[&quot;Gender&quot;].fillna(&quot;x&quot;)
+q1_pd[&quot;Salary&quot;] = q1_pd[&quot;Salary&quot;].fillna(-1)</code></pre>
+</div>
+<div id="aggregate-on-gender" class="section level3" number="6.4.3">
+<h3><span class="header-section-number">6.4.3</span> Aggregate on
+Gender</h3>
+<pre class="python"><code>q1_agg_pd_1 = q1_pd\
+    .groupby([&quot;Gender&quot;])\
+    .agg({&quot;Respondent&quot;: &quot;count&quot;, &quot;Salary&quot;: &quot;mean&quot;})\
+    .reset_index()\
+    .rename(columns = {&quot;Respondent&quot;: &quot;Count&quot;, &quot;Salary&quot;: &quot;Average_Salary&quot;})</code></pre>
+<pre class="python"><code>q1_agg_pd_1</code></pre>
+</div>
+<div id="clean-up-gender" class="section level3" number="6.4.4">
+<h3><span class="header-section-number">6.4.4</span> Clean up
+Gender</h3>
+<pre class="python"><code>def clean_gender(gender):
+    &quot;&quot;&quot;
+    Input(s):
+    - gender, string
+    Output:
+    - cleaned_gender, string
+    &quot;&quot;&quot;
+    cleaned_gender = &quot;Other&quot;
+    keep = {&quot;Male&quot;, &quot;Female&quot;, &quot;x&quot;}
+    if gender in keep:
+        cleaned_gender = gender
+    return cleaned_gender</code></pre>
+<pre class="python"><code>q1_pd_new = q1_pd.loc[:, [*q1_pd.columns]]</code></pre>
+<pre class="python"><code>q1_pd_new[&quot;Gender&quot;] = q1_pd_new[&quot;Gender&quot;]\
+                        .fillna(&quot;x&quot;)\
+                        .apply(clean_gender)
+q1_pd_new[&quot;Salary&quot;] = q1_pd_new[&quot;Salary&quot;]\
+                        .fillna(-1)</code></pre>
+</div>
+<div id="count-gender" class="section level3" number="6.4.5">
+<h3><span class="header-section-number">6.4.5</span> Count Gender</h3>
+<pre class="python"><code>from collections import Counter</code></pre>
+<pre class="python"><code>Counter(q1_pd_new[&quot;Gender&quot;])
+# q1_pd_new[&quot;Gender&quot;].value_counts()</code></pre>
+<pre class="python"><code>q1_agg_pd_2 = q1_pd_new\
+    .groupby([&quot;Gender&quot;])\
+    .agg({&quot;Respondent&quot;: &quot;count&quot;, &quot;Salary&quot;: &quot;mean&quot;})\
+    .reset_index()\
+    .rename(columns = {&quot;Respondent&quot;: &quot;Count&quot;, &quot;Salary&quot;: &quot;Average_Salary&quot;})</code></pre>
+<pre class="python"><code>q1_agg_pd_2</code></pre>
+</div>
+<div id="use-plotly-to-create-barplot-1" class="section level3" number="6.4.6">
+<h3><span class="header-section-number">6.4.6</span> Use
+<code>plotly</code> to Create Barplot 1</h3>
+<ul>
+<li>Average salary per gender</li>
+</ul>
+<pre class="python"><code>import plotly.express as px</code></pre>
+<pre class="python"><code>q1_fig_1 = px.bar(q1_agg_pd_2, x = &quot;Gender&quot;, y = &quot;Average_Salary&quot;)</code></pre>
+<pre class="python"><code>q1_fig_1</code></pre>
+</div>
+<div id="clean-salary" class="section level3" number="6.4.7">
+<h3><span class="header-section-number">6.4.7</span> Clean Salary</h3>
+<pre class="python"><code>q1_pd_new_cleaned = q1_pd_new[q1_pd_new[&quot;Salary&quot;] != -1]</code></pre>
+</div>
+<div id="use-plotly-to-create-barplot-2" class="section level3" number="6.4.8">
+<h3><span class="header-section-number">6.4.8</span> Use
+<code>plotly</code> to Create Barplot 2</h3>
+<ul>
+<li>Male’s salary distribution</li>
+</ul>
+<pre class="python"><code>q1_pd_new_cleaned_male = q1_pd_new_cleaned[q1_pd_new_cleaned[&quot;Gender&quot;] == &quot;Male&quot;]</code></pre>
+<pre class="python"><code>q1_fig_2 = px.histogram(q1_pd_new_cleaned_male, x = &quot;Salary&quot;)</code></pre>
+<pre class="python"><code>q1_fig_2</code></pre>
+</div>
+<div id="use-plotly-to-create-barplot-3" class="section level3" number="6.4.9">
+<h3><span class="header-section-number">6.4.9</span> Use
+<code>plotly</code> to Create Barplot 3</h3>
+<ul>
+<li>Female’s salary distribution</li>
+</ul>
+<pre class="python"><code>q1_pd_new_cleaned_female = q1_pd_new_cleaned[q1_pd_new_cleaned[&quot;Gender&quot;] == &quot;Female&quot;]</code></pre>
+<pre class="python"><code>q1_fig_3 = px.histogram(q1_pd_new_cleaned_female, x = &quot;Salary&quot;)</code></pre>
+<pre class="python"><code>q1_fig_3</code></pre>
+</div>
+</div>
 </div>
 
 
