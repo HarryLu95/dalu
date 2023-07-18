@@ -2765,7 +2765,7 @@ font-size: 0.95em;
 <h1 class="title toc-ignore">02 Supervised Learning</h1>
 <h3 class="subtitle">Notes for Chaya</h3>
 <h4 class="author">Harry Lu, dl947@cornell.edu</h4>
-<h4 class="date">Jul/15/2023 - Jul/16/2023</h4>
+<h4 class="date">Jul/15/2023 - Jul/18/2023</h4>
 
 </div>
 
@@ -2809,7 +2809,8 @@ Modeling Works</h1>
 <ol style="list-style-type: decimal">
 <li>Extracting data</li>
 <li>Cleaning data</li>
-<li>Enriching data (feature selection, feature engineering)</li>
+<li>Enriching data (feature selection, feature engineering,
+encoding)</li>
 <li>Splitting data (train, test, validate)</li>
 <li>Building model (model selection, tuning hyperparameters)</li>
 <li>Deploying model</li>
@@ -2821,13 +2822,110 @@ Modeling Works</h1>
 <h1><span class="header-section-number">4</span> Python Code</h1>
 <div id="data" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Data</h2>
+<p><span class="math display">\[\begin{align}
+\text{all data} &amp;=
+  \left[\begin{array}{ccccc|c}
+    \mathbf{x_1} &amp; \mathbf{x_2} &amp; \cdots &amp; \mathbf{x_{n-1}}
+&amp; \mathbf{x_n} &amp; \mathbf{y}
+  \end{array}\right]\\
+X &amp;=
+  \left[\begin{array}{ccccc}
+    \mathbf{x_1} &amp; \mathbf{x_2} &amp; \cdots &amp; \mathbf{x_{n-1}}
+&amp; \mathbf{x_n}
+  \end{array}\right]\\
+Y &amp;=
+  \left[\begin{array}{c}
+    \mathbf{y}
+  \end{array}\right]
+\end{align}\]</span></p>
 </div>
 <div id="generalized-modeling-code" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Generalized Modeling
 Code</h2>
-</div>
-<div id="random-forest" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Random Forest</h2>
+<ol style="list-style-type: decimal">
+<li>Extracting data (here we use local data as example)</li>
+</ol>
+<pre class="python"><code>from pandas import read_csv
+
+raw_pd = read_csv(&quot;&lt;some_path&gt;.csv&quot;)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Cleaning data</li>
+</ol>
+<pre class="python"><code>cleaned_pd = clean_data(raw_pd)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Enriching data</li>
+</ol>
+<pre class="python"><code>enriched_pd = enrich_data(cleaned_pd)
+
+inputs_pd = enriched_pd.loc[:, [&lt;input_columns&gt;]]
+output_pd = enriched_pd.loc[:, [&lt;output_column&gt;]]</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Splitting data (8:1:1 for train:test:validation)</li>
+</ol>
+<pre class="python"><code>from sklearn.model_selection import train_test_split
+
+train_pd, test_and_validation_pd = train_test_split(
+  enriched_pd,
+  test_size = 0.2,
+  random_state = 999
+)
+test_pd, validation_pd = train_test_split(
+  test_and_validation_pd,
+  test_size = 0.5,
+  random_state = 999
+)
+
+train_x = train_pd.loc[:, [&lt;input_columns&gt;]]
+train_y = train_pd.loc[:, [&lt;output_column&gt;]]
+
+test_x = test_pd.loc[:, [&lt;input_columns&gt;]]
+test_y = test_pd.loc[:, [&lt;output_column&gt;]]</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Building model (here we use Logistic Regression and Random Forest as
+example)</li>
+</ol>
+<pre class="python"><code>from sklearn.linear_model import LogisticRegression
+
+model_1 = LogisticRegression(penalty = &quot;l2&quot;, random_state = 9999)
+
+classifier_1 = model_1.fit(train_x, train_y)
+predict_1 = classifier_1.predict(test_x)</code></pre>
+<pre class="python"><code>from sklearn.ensemble import RandomForestClassifier
+
+model_2 = RandomForestClassifier(max_depth = 3, n_estimators = 10, random_state = 9999)
+
+classifier_2 = model_2(train_x, train_y)
+predict_2 = classifier_2.predict(test_x)</code></pre>
+<pre class="python"><code>import numpy
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import classification_report
+
+### Logistic Regression
+confusion_matrix_1 = confusion_matrix(test_y, predict_1)
+# confusion_matrix_1 = confusion_matrix(numpy.array(test_y), predict_1)
+accuracy_score_1 = accuracy_score(test_y, predict_1)
+# accuracy_score_1 = accuracy_score(numpy.array(test_y), predict_1)
+classification_report_1 = classification_report(test_y, predict_1)
+# classification_report_1 = classification_report(numpy.array(test_y), predict_1)
+
+### Random Forest
+confusion_matrix_2 = confusion_matrix(test_y, predict_2)
+accuracy_score_2 = accuracy_score(test_y, predict_2)
+classification_report_2 = classification_report(test_y, predict_2)</code></pre>
+<pre class="python"><code>print(&quot;Logistic Regression:&quot;)
+print(confusion_matrix_1)
+print(accuracy_score_1)
+print(classification_report_1)</code></pre>
+<pre class="python"><code>print(&quot;Random Forest:&quot;)
+print(confusion_matrix_2)
+print(accuracy_score_2)
+print(classification_report_2)</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Deploying model (not in the scope)</p></li>
+<li><p>Monitoring model (not in the scope)</p></li>
+<li><p>Re-train model (not in the scope)</p></li>
+</ol>
 </div>
 </div>
 
