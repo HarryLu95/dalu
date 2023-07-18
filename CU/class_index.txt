@@ -1,0 +1,8 @@
+4060: Python
+4630: Financial tools
+5010: SAS
+5030: Biostatistics
+5060: DBMS & SAS HPC
+5065: Big Data
+5080: Statistics
+5876: Machine Learning
