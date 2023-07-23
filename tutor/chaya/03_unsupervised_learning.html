@@ -2765,7 +2765,7 @@ font-size: 0.95em;
 <h1 class="title toc-ignore">03 Unsupervised Learning</h1>
 <h3 class="subtitle">Notes for Chaya</h3>
 <h4 class="author">Harry Lu, dl947@cornell.edu</h4>
-<h4 class="date">Jul/18/2023 - Jul/18/2023</h4>
+<h4 class="date">Jul/18/2023 - Jul/23/2023</h4>
 
 </div>
 
@@ -2821,10 +2821,100 @@ Modeling Works</h1>
 <div id="data" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Data</h2>
 </div>
-<div id="generalized-modeling-code" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Generalized Modeling
-Code</h2>
+<div id="data-1" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Data</h2>
+<p><span class="math display">\[\begin{align}
+\text{all data} &amp;=
+  \left[\begin{array}{ccccc|c}
+    \mathbf{x_1} &amp; \mathbf{x_2} &amp; \cdots &amp; \mathbf{x_{n-1}}
+&amp; \mathbf{x_n} &amp; \mathbf{y}
+  \end{array}\right]\\
+X &amp;=
+  \left[\begin{array}{ccccc}
+    \mathbf{x_1} &amp; \mathbf{x_2} &amp; \cdots &amp; \mathbf{x_{n-1}}
+&amp; \mathbf{x_n}
+  \end{array}\right]\\
+Y &amp;=
+  \left[\begin{array}{c}
+    \mathbf{y}
+  \end{array}\right]
+\end{align}\]</span></p>
 </div>
+<div id="generalized-modeling-code" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Generalized Modeling
+Code</h2>
+<ul>
+<li>Encoding</li>
+</ul>
+<pre class="python"><code>from pandas import DataFrame
+from sklearn.preprocessing import OneHotEncoder
+encoder = OneHotEncoder()
+
+train_x_encoded = encoder.fit(train_x).transform(train_x)
+train_x_encoded_pd = DataFrame(data = train_x_encoded.toarray(),
+                               columns = encoder.get_feature_names_out())</code></pre>
+<ul>
+<li>pending</li>
+</ul>
+</div>
+</div>
+<div id="package-ast" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Package
+<code>ast</code></h1>
+<ul>
+<li>Today we used:
+<ul>
+<li><code>literal_eval</code></li>
+</ul></li>
+</ul>
+</div>
+<div id="package-copy" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Package
+<code>copy</code></h1>
+<ul>
+<li>Today we mentioned:
+<ul>
+<li><code>deepcopy</code></li>
+</ul></li>
+<li>Deep copy and shallow copy: deep copy would let all the changes
+happen in the newly created variable but not the original.</li>
+</ul>
+</div>
+<div id="function-design" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Function Design</h1>
+<ul>
+<li>Naming</li>
+<li>Input parameters</li>
+<li>Corner cases handling</li>
+<li>Output data structure</li>
+</ul>
+</div>
+<div id="lambda-function" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Lambda Function</h1>
+<ul>
+<li>One-time use function, so there’s no name and no need to define as
+an individual function</li>
+<li>Normally only one input variable</li>
+<li>Syntax:</li>
+</ul>
+<pre class="python"><code>lambda x: f(x)</code></pre>
+<ul>
+<li>Example (turning numerical number into percentage string in a
+dataframe):
+<ul>
+<li><code>pd_1[&lt;col&gt;].apply(lambda x: str(x / 100) + &quot;%&quot;)</code></li>
+</ul></li>
+</ul>
+</div>
+<div id="string-manipulation" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> String
+Manipulation</h1>
+<ul>
+<li>Today we used:
+<ul>
+<li><code>replace</code>, for string replacement</li>
+</ul></li>
+</ul>
 </div>
 
 
