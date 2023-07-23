@@ -2765,7 +2765,7 @@ font-size: 0.95em;
 <h1 class="title toc-ignore">02 Supervised Learning</h1>
 <h3 class="subtitle">Notes for Chaya</h3>
 <h4 class="author">Harry Lu, dl947@cornell.edu</h4>
-<h4 class="date">Jul/15/2023 - Jul/18/2023</h4>
+<h4 class="date">Jul/15/2023 - Jul/22/2023</h4>
 
 </div>
 
@@ -2894,7 +2894,7 @@ predict_1 = classifier_1.predict(test_x)</code></pre>
 
 model_2 = RandomForestClassifier(max_depth = 3, n_estimators = 10, random_state = 9999)
 
-classifier_2 = model_2(train_x, train_y)
+classifier_2 = model_2.fit(train_x, train_y)
 predict_2 = classifier_2.predict(test_x)</code></pre>
 <pre class="python"><code>import numpy
 from sklearn.metrics import confusion_matrix
